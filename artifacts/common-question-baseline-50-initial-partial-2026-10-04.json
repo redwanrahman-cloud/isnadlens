@@ -1,0 +1,1746 @@
+{
+  "dataset_id": "common-question-baseline-50-2026-10-04-v1",
+  "purpose": "50 distinct representative questions; development evaluation with provisional primary-source labels, not independent religious approval or search popularity ranking",
+  "cases": [
+    {
+      "id": "B01",
+      "topic": "intentions",
+      "claim": "Does the Hadith teach that the reward of deeds depends on intentions?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "matched": false,
+      "http_status": 200,
+      "reason_codes": [
+        "QUERY_PLAN_TERM_INVALID"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [],
+      "detected_language": null,
+      "model": "none",
+      "intake_usage": {
+        "input_tokens": 573,
+        "output_tokens": 73,
+        "estimated_cost_usd": 0.00075825,
+        "reservation_id": "a2140a3c-9146-4368-9dc1-c16e01fc311c"
+      },
+      "assessment_usage": null,
+      "latency_ms": 6113,
+      "review_required": false
+    },
+    {
+      "id": "B02",
+      "topic": "five daily prayers",
+      "claim": "Did the Prophet teach that Allah ordered five prayers in a day and night?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources directly support this claim: en:65044 states that the Prophet affirmed Allah ordered five prayers in a day and night, with no extra exceptions stated in the user’s question.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:11286",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3656",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65044",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10615",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10935",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:6604",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3059",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:2752",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 574,
+        "output_tokens": 89,
+        "estimated_cost_usd": 0.000831,
+        "reservation_id": "ee8f9fa0-0ab2-4da7-88dd-f71eff03edba"
+      },
+      "assessment_usage": {
+        "input_tokens": 10488,
+        "output_tokens": 301,
+        "estimated_cost_usd": 0.0092205,
+        "reservation_id": "49527a8b-84c6-4191-91ce-dfdcdb69e22b"
+      },
+      "latency_ms": 3819,
+      "review_required": false
+    },
+    {
+      "id": "B03",
+      "topic": "fasting Ramadan",
+      "claim": "هل يفرض القرآن صيام رمضان مع استثناء المرض والسفر وقضاء الأيام؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected corpus supports that the Quran mandates fasting Ramadan for whoever witnesses the month, with an exception for illness and travel and making up those days later. The direct Quran evidence here combines the obligation, the exception, and the makeup of missed days in the same passage.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:183",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:187",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:185",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:196",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:92",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:89",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:95",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "58:4",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "ar",
+      "model": "gpt-5.4-2026-03-05",
+      "intake_usage": {
+        "input_tokens": 576,
+        "output_tokens": 98,
+        "estimated_cost_usd": 0.000873,
+        "reservation_id": "59d70b72-da8a-4f42-9dd0-42f9e7c27a18"
+      },
+      "assessment_usage": {
+        "input_tokens": 8115,
+        "output_tokens": 350,
+        "estimated_cost_usd": 0.0255375,
+        "reservation_id": "8f8373f9-2ca8-4c9f-9b0f-4b2ac13e5f7a"
+      },
+      "latency_ms": 11385,
+      "review_required": false
+    },
+    {
+      "id": "B04",
+      "topic": "charity",
+      "claim": "Does the Quran describe giving cherished wealth to relatives and needy people as righteousness?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources support that the Quran describes spending cherished wealth on relatives and needy people as righteousness, within a broader qualification that ties this to faith and to spending from what one loves in 2:177 and 3:92.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:177",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:247",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "18:46",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "89:20",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:20",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:44",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:189",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:92",
+          "relation": "supports",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 574,
+        "output_tokens": 92,
+        "estimated_cost_usd": 0.0008445,
+        "reservation_id": "7c5eea1c-1c5f-4356-ad70-48d51dc4707f"
+      },
+      "assessment_usage": {
+        "input_tokens": 6815,
+        "output_tokens": 350,
+        "estimated_cost_usd": 0.00668625,
+        "reservation_id": "aa3b8ec9-d7a0-485a-91da-8bb59b5463d2"
+      },
+      "latency_ms": 3945,
+      "review_required": false
+    },
+    {
+      "id": "B05",
+      "topic": "smile and charity coverage gap",
+      "claim": "Does the Hadith say that smiling at another person is charity?",
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "not_evaluated",
+      "matched": false,
+      "http_status": 200,
+      "reason_codes": [
+        "QUERY_PLAN_TERM_INVALID"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [],
+      "detected_language": null,
+      "model": "none",
+      "intake_usage": {
+        "input_tokens": 572,
+        "output_tokens": 80,
+        "estimated_cost_usd": 0.000789,
+        "reservation_id": "42cb52c2-732a-44de-aa73-b6ccfc7c4457"
+      },
+      "assessment_usage": null,
+      "latency_ms": 1259,
+      "review_required": true
+    },
+    {
+      "id": "B06",
+      "topic": "neighbors",
+      "claim": "Did the Prophet emphasize treating neighbors well?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "matched": false,
+      "http_status": 200,
+      "reason_codes": [
+        "QUERY_PLAN_TERM_INVALID"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [],
+      "detected_language": null,
+      "model": "none",
+      "intake_usage": {
+        "input_tokens": 567,
+        "output_tokens": 65,
+        "estimated_cost_usd": 0.00071775,
+        "reservation_id": "c8f91038-cf69-4377-828d-076057650235"
+      },
+      "assessment_usage": null,
+      "latency_ms": 909,
+      "review_required": false
+    },
+    {
+      "id": "B07",
+      "topic": "parents",
+      "claim": "هل يأمر القرآن بالإحسان إلى الوالدين واحترامهما؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources support that the Quran commands kindness to parents and treating them with respect. The displayed verses state this generally and add practical guidance such as kind speech and not rebuking them, with no exception stated in the provided passages.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:83",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:36",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:135",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:151",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "17:23",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:178",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:77",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:6",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "ar",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 574,
+        "output_tokens": 88,
+        "estimated_cost_usd": 0.0008265,
+        "reservation_id": "406b057d-e633-44fb-9c9b-f0642b1e9f5a"
+      },
+      "assessment_usage": {
+        "input_tokens": 7598,
+        "output_tokens": 379,
+        "estimated_cost_usd": 0.007404,
+        "reservation_id": "4687f81f-9f85-4a80-90d8-1ad1b394562f"
+      },
+      "latency_ms": 3943,
+      "review_required": false
+    },
+    {
+      "id": "B08",
+      "topic": "lying and truthfulness",
+      "claim": "Does the Hadith encourage truthfulness and warn that lying leads to wickedness?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources support that the hadith encourages truthfulness and warns that lying leads to wickedness. The main support is direct in the selected report, with an additional related passage linking truthfulness to tranquility.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5504",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:6327",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:8918",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:66197",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4820",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:6604",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4564",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10622",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 575,
+        "output_tokens": 83,
+        "estimated_cost_usd": 0.00080475,
+        "reservation_id": "c9062f4b-bd90-43d6-979d-ee2aa7ffb93b"
+      },
+      "assessment_usage": {
+        "input_tokens": 19188,
+        "output_tokens": 465,
+        "estimated_cost_usd": 0.0164835,
+        "reservation_id": "7ed60648-0703-4f25-ace2-648e5d4d77e2"
+      },
+      "latency_ms": 4109,
+      "review_required": false
+    },
+    {
+      "id": "B09",
+      "topic": "backbiting",
+      "claim": "هل ينهى القرآن عن اغتياب الآخرين؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources support that the Quran forbids backbiting others. The direct support is in 49:12, where the prohibition appears alongside warnings against suspicion and spying.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "49:12",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:36",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:48",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:52",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:54",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:62",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:63",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:76",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "ar",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 570,
+        "output_tokens": 74,
+        "estimated_cost_usd": 0.0007605,
+        "reservation_id": "3b213fc8-d92f-4839-9b74-9c22ace58b1f"
+      },
+      "assessment_usage": {
+        "input_tokens": 6552,
+        "output_tokens": 301,
+        "estimated_cost_usd": 0.0062685,
+        "reservation_id": "39d625a1-3ad1-4a4a-9d14-f97944aacd9a"
+      },
+      "latency_ms": 3064,
+      "review_required": false
+    },
+    {
+      "id": "B10",
+      "topic": "gambling",
+      "claim": "Does the Quran tell believers to avoid gambling?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected source collection shows that the Quran tells believers to avoid gambling, and it also states that it contains grave sin and harmful effects. The conclusion is supported directly by the cited Quran passages in 5:90–91 and 2:219.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:219",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:90",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:91",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:285",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:28",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:110",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:122",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:160",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 568,
+        "output_tokens": 73,
+        "estimated_cost_usd": 0.0007545,
+        "reservation_id": "a0fff97e-a6cd-4d2c-8e30-efe64b7fe526"
+      },
+      "assessment_usage": {
+        "input_tokens": 6962,
+        "output_tokens": 323,
+        "estimated_cost_usd": 0.006675,
+        "reservation_id": "f380edbe-6bd6-41c1-9510-6c639596d12f"
+      },
+      "latency_ms": 3106,
+      "review_required": false
+    },
+    {
+      "id": "B11",
+      "topic": "intoxicants",
+      "claim": "Does the Quran tell believers to avoid intoxicating drinks?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, this meaning is directly supported by the selected source set: 5:90 commands avoiding intoxicants, 5:91 highlights their harm, and 2:219 says their sin is great and greater than their benefit. No limiting exception appears in the selected materials that would change this conclusion.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:219",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:90",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:91",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "18:29",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 570,
+        "output_tokens": 77,
+        "estimated_cost_usd": 0.000774,
+        "reservation_id": "362f414a-17d1-4f78-9cc3-9cc4826c35cb"
+      },
+      "assessment_usage": {
+        "input_tokens": 4672,
+        "output_tokens": 369,
+        "estimated_cost_usd": 0.0051645,
+        "reservation_id": "6be2de19-2926-4650-82d0-a7f1b175ee4f"
+      },
+      "latency_ms": 3128,
+      "review_required": false
+    },
+    {
+      "id": "B12",
+      "topic": "riba",
+      "claim": "Does the Quran permit trade but forbid riba?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources support that the Quran permits trade and forbids riba. The support is tied to the passages on البيع/trade and riba themselves, including the directive to leave what remains of riba.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:275",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:276",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:278",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:130",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:161",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:44",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:63",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:282",
+          "relation": "supports",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 569,
+        "output_tokens": 64,
+        "estimated_cost_usd": 0.00071475,
+        "reservation_id": "f738d317-ef65-4e5a-b262-e1488cc818f9"
+      },
+      "assessment_usage": {
+        "input_tokens": 7710,
+        "output_tokens": 482,
+        "estimated_cost_usd": 0.0079515,
+        "reservation_id": "a8f723d9-8d96-4781-be87-9ae0def915d4"
+      },
+      "latency_ms": 3511,
+      "review_required": false
+    },
+    {
+      "id": "B13",
+      "topic": "necessity exception",
+      "claim": "هل يذكر القرآن استثناء الاضطرار للطعام المحرم دون رغبة فيه أو تجاوز الحاجة؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected source collection mentions an exception for necessity regarding forbidden food, and it restricts it with phrases like “not seeking excess” and “not transgressing,” so the exception is not absolute but tied to necessity and lack of overstepping. The text links this to actual necessity rather than mere desire.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:119",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "27:62",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:217",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "46:16",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "ar",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 581,
+        "output_tokens": 97,
+        "estimated_cost_usd": 0.00087225,
+        "reservation_id": "65cb6592-2320-4390-8bc2-810c6fac3b60"
+      },
+      "assessment_usage": {
+        "input_tokens": 7823,
+        "output_tokens": 430,
+        "estimated_cost_usd": 0.00780225,
+        "reservation_id": "fcaada32-5912-45f7-8c74-982e613c8013"
+      },
+      "latency_ms": 3407,
+      "review_required": false
+    },
+    {
+      "id": "B14",
+      "topic": "modern application unsupported",
+      "claim": "Does the Quran explicitly command installing the GreenUmbrellaChat app?",
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "Direct conclusion: the selected corpus does not support the claim that the Quran explicitly commands installing the GreenUmbrellaChat app. The supplied verses address other subjects, so this specific claim remains unsupported within the selected corpus.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:265",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:66",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-2026-03-05",
+      "intake_usage": {
+        "input_tokens": 572,
+        "output_tokens": 81,
+        "estimated_cost_usd": 0.0007935,
+        "reservation_id": "25272283-183a-498d-a261-e15be7a157b4"
+      },
+      "assessment_usage": {
+        "input_tokens": 3347,
+        "output_tokens": 312,
+        "estimated_cost_usd": 0.0130475,
+        "reservation_id": "051af5cf-a2d9-44ef-9295-ea1418e6a36a"
+      },
+      "latency_ms": 8788,
+      "review_required": false
+    },
+    {
+      "id": "B15",
+      "topic": "attribution mistake",
+      "claim": "Does the Quran say that the reward of deeds depends on intentions?",
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "Result: the selected sources show the Quran linking reward to deeds such as spending, prayer, and seeking the Lord’s pleasure, but the general statement that deeds’ reward depends on intentions is not stated here directly, so coverage is incomplete for the question as phrased. The references to seeking, hoping, and devout action are close indications, not an explicit match to that broad formulation.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:274",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:99",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:143",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "13:22",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "14:31",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:2",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "35:29",
+          "relation": "partial",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 572,
+        "output_tokens": 75,
+        "estimated_cost_usd": 0.0007665,
+        "reservation_id": "be10b99f-07ef-4442-80fc-d07158f7f3f8"
+      },
+      "assessment_usage": {
+        "input_tokens": 6974,
+        "output_tokens": 479,
+        "estimated_cost_usd": 0.007386,
+        "reservation_id": "6e9c3778-af00-4a24-ac88-7dfd9dd6f6c4"
+      },
+      "latency_ms": 3661,
+      "review_required": true
+    },
+    {
+      "id": "B16",
+      "topic": "compound incomplete coverage",
+      "claim": "Does the Quran require fasting Ramadan and buying a blue umbrella?",
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "Direct conclusion: yes, the selected sources support that the Quran requires fasting Ramadan, but they contain nothing about buying a blue umbrella. The Ramadan fasting command is accompanied by the stated textual qualifications for illness and travel and making up missed days.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:183",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:187",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:185",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:196",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:92",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:89",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:95",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "58:4",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 571,
+        "output_tokens": 67,
+        "estimated_cost_usd": 0.00072975,
+        "reservation_id": "1c650f1a-2f96-4417-a52d-32c8f10f73c4"
+      },
+      "assessment_usage": {
+        "input_tokens": 8110,
+        "output_tokens": 430,
+        "estimated_cost_usd": 0.0080175,
+        "reservation_id": "5d7895a4-b89f-404c-ba17-07d7bd39f1a1"
+      },
+      "latency_ms": 3747,
+      "review_required": false
+    },
+    {
+      "id": "B17",
+      "topic": "weather outside scope",
+      "claim": "What will the weather in Makkah be tomorrow?",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [],
+      "detected_language": "en",
+      "model": "none",
+      "intake_usage": {
+        "input_tokens": 570,
+        "output_tokens": 53,
+        "estimated_cost_usd": 0.000666,
+        "reservation_id": "e62b40ec-ab61-4e74-8af6-599b9dd1392f"
+      },
+      "assessment_usage": null,
+      "latency_ms": 908,
+      "review_required": false
+    },
+    {
+      "id": "B18",
+      "topic": "personal health referral",
+      "claim": "Can I stop fasting because I am ill?",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [],
+      "detected_language": null,
+      "model": "none",
+      "intake_usage": null,
+      "assessment_usage": null,
+      "latency_ms": 17,
+      "review_required": false
+    },
+    {
+      "id": "B19",
+      "topic": "explicit incompatible claim",
+      "claim": "Does the Quran permit riba?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "Direct conclusion: No, the selected corpus contradicts this; the Quran passages shown present riba as forbidden and command leaving what remains of it. This is supported directly by 2:275 and 2:278, with further reinforcement in 3:130.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:275",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:276",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:278",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:130",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:161",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:44",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:63",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:35",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-2026-03-05",
+      "intake_usage": {
+        "input_tokens": 566,
+        "output_tokens": 74,
+        "estimated_cost_usd": 0.0007575,
+        "reservation_id": "6f9ef8f6-482c-41b1-b28c-aebbf6fd1b05"
+      },
+      "assessment_usage": {
+        "input_tokens": 6926,
+        "output_tokens": 426,
+        "estimated_cost_usd": 0.023705,
+        "reservation_id": "64a275e2-c1a7-4114-b8f9-2063c674ebc8"
+      },
+      "latency_ms": 10484,
+      "review_required": false
+    },
+    {
+      "id": "B20",
+      "topic": "unresolved necessity application",
+      "claim": "Does every difficult work schedule make eating pork halal?",
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "Direct conclusion: No, the selected corpus does not support that every difficult work schedule makes eating pork halal. The cited Quran passages prohibit pork and mention a restricted exception for necessity, including hunger-driven distress, which does not equate to every work-related difficulty.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3003",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10409",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65025",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-2026-03-05",
+      "intake_usage": {
+        "input_tokens": 569,
+        "output_tokens": 84,
+        "estimated_cost_usd": 0.00080475,
+        "reservation_id": "823d9a3e-771c-4847-8b00-f8dab94fe6a5"
+      },
+      "assessment_usage": {
+        "input_tokens": 8408,
+        "output_tokens": 455,
+        "estimated_cost_usd": 0.027845,
+        "reservation_id": "f60d2188-94d9-4302-810c-0477b2cd0135"
+      },
+      "latency_ms": 11146,
+      "review_required": true
+    },
+    {
+      "id": "B21",
+      "topic": "washing before prayer",
+      "claim": "Does the Quran instruct washing the face and arms before prayer?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources support that the Quran instructs washing the face and hands before prayer in 5:6, alongside the other ablution details in the same verse and the exception when no water is found.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:6",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:43",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:45",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:83",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:110",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:153",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:177",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 571,
+        "output_tokens": 87,
+        "estimated_cost_usd": 0.00081975,
+        "reservation_id": "e4cb79cf-305b-4e9b-a1ed-dfabe8a3d2bf"
+      },
+      "assessment_usage": {
+        "input_tokens": 6757,
+        "output_tokens": 287,
+        "estimated_cost_usd": 0.00635925,
+        "reservation_id": "97073ca3-f560-4d78-81e2-f47914e6e3a4"
+      },
+      "latency_ms": 2576,
+      "review_required": false
+    },
+    {
+      "id": "B22",
+      "topic": "prayer direction",
+      "claim": "Does the Quran direct prayer toward the Sacred Mosque?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": false,
+      "http_status": 200,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "The conclusion is incomplete from the selected sources: the displayed verses speak about prayer and maintaining it, but they do not directly state directing prayer to the Sacred Mosque itself. Verse 2:177 mentions turning toward east and west in a different context, which is not enough on its own to establish the claim.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:43",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:45",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:83",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:110",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:153",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:177",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:238",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 569,
+        "output_tokens": 84,
+        "estimated_cost_usd": 0.00080475,
+        "reservation_id": "e7340f78-4ca4-4609-a792-11902def747b"
+      },
+      "assessment_usage": {
+        "input_tokens": 6289,
+        "output_tokens": 348,
+        "estimated_cost_usd": 0.00628275,
+        "reservation_id": "1c3cca28-059e-4425-80cc-2756d4fbd4f7"
+      },
+      "latency_ms": 3082,
+      "review_required": false
+    },
+    {
+      "id": "B23",
+      "topic": "Friday prayer",
+      "claim": "Does the Quran tell believers to leave trading when the Friday prayer call is made?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": false,
+      "http_status": 200,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "No, the selected sources do not show that the Quran commands believers to leave trading when the Friday prayer call is made. The displayed verses discuss prayer generally, not Friday specifically or leaving trade at the call.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:43",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:45",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:83",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:110",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:153",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:177",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:238",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 575,
+        "output_tokens": 85,
+        "estimated_cost_usd": 0.00081375,
+        "reservation_id": "a0c9adfb-8d25-438f-973b-cfffed24bf75"
+      },
+      "assessment_usage": {
+        "input_tokens": 6295,
+        "output_tokens": 295,
+        "estimated_cost_usd": 0.00604875,
+        "reservation_id": "36d1e04c-246b-42c8-870f-e774403b79ea"
+      },
+      "latency_ms": 2985,
+      "review_required": false
+    },
+    {
+      "id": "B24",
+      "topic": "intoxicated prayer",
+      "claim": "Does the Quran forbid approaching prayer while intoxicated until one understands what one is saying?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": false,
+      "http_status": 200,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "Conclusion: the selected corpus does not present an explicit Quranic text in the supplied passages forbidding prayer while intoxicated until one understands what one is saying; the displayed verses speak about establishing and maintaining الصلاة, so coverage is incomplete for that specific condition.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:43",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:45",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:83",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:110",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:153",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:177",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:238",
+          "relation": "partial",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 576,
+        "output_tokens": 86,
+        "estimated_cost_usd": 0.000819,
+        "reservation_id": "aaca4159-49ca-4443-92e2-ec2c34d8219e"
+      },
+      "assessment_usage": {
+        "input_tokens": 6296,
+        "output_tokens": 349,
+        "estimated_cost_usd": 0.0062925,
+        "reservation_id": "5a019f59-9b40-4228-974e-4a5f2c5b3d27"
+      },
+      "latency_ms": 3360,
+      "review_required": false
+    },
+    {
+      "id": "B25",
+      "topic": "fasting hours",
+      "claim": "Does the Quran describe fasting from dawn until nightfall?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "http_status": 200,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes, the selected sources support this Quranic description of fasting from dawn to night. The wording is tied to the fasting verse itself, which specifies eating and drinking until dawn is distinct, then completing the fast until night.",
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:187",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:183",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:196",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:92",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:89",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:95",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "58:4",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "17:78",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "detected_language": "en",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_usage": {
+        "input_tokens": 570,
+        "output_tokens": 72,
+        "estimated_cost_usd": 0.0007515,
+        "reservation_id": "039df11d-63b3-4ae4-ac9f-ec2a4386a240"
+      },
+      "assessment_usage": {
+        "input_tokens": 7773,
+        "output_tokens": 307,
+        "estimated_cost_usd": 0.00721125,
+        "reservation_id": "f4513bfd-b09e-4edd-9432-4851217b8c6e"
+      },
+      "latency_ms": 2971,
+      "review_required": false
+    }
+  ]
+}

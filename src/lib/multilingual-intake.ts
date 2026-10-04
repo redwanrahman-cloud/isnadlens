@@ -12,9 +12,25 @@ import { loadHadith, checkHadithCitation } from './hadith';
 import type { VerificationRecord } from './contracts';
 import { identifySource } from './source-identification';
 
-export const INTAKE_VERSION = 'nine-language-routing-v1.1-content-and-search-language';
+export const INTAKE_VERSION = 'nine-language-routing-v1.2-isolated-search-hints';
 type Intake = NonNullable<VerificationRecord['language_intake']>;
-const outputSchema = z.object({ detected_language: z.enum(CLAIM_LANGUAGES).nullable(), confidence: z.enum(['high', 'medium', 'low']), scope_category: z.enum(['textual', 'general', 'personal', 'sensitive', 'injection', 'unsupported']), english_gloss: z.string().min(1).max(1400), arabic_terms: z.array(z.string()).max(10), english_terms: z.array(z.string()).max(10) }).strict();
+const outputSchema = z.object({ detected_language: z.enum(CLAIM_LANGUAGES).nullable(), confidence: z.enum(['high', 'medium', 'low']), scope_category: z.enum(['textual', 'general', 'personal', 'sensitive', 'injection', 'unsupported']), english_gloss: z.string().min(1).max(1400), arabic_terms: z.unknown(), english_terms: z.unknown() }).strict();
+export function filterIntakeHints(arabic: unknown, english: unknown): Pick<Intake, 'arabic_terms' | 'english_terms' | 'rejected_search_term_count' | 'search_terms_status'> {
+  const retained = { arabic_terms: [] as string[], english_terms: [] as string[] };
+  let rejected = 0;
+  for (const [key, raw] of [['arabic_terms', arabic], ['english_terms', english]] as const) {
+    if (!Array.isArray(raw)) { rejected++; continue; }
+    rejected += Math.max(0, raw.length - 10);
+    for (const hint of raw.slice(0, 10)) {
+      try {
+        // Validate the whole hint. Never sanitize away digits, quote delimiters or unsafe instructions.
+        validateQueryTerms({ arabic_terms: key === 'arabic_terms' ? [hint] : [], english_terms: key === 'english_terms' ? [hint] : [] }, true);
+        if (!retained[key].includes(hint)) retained[key].push(hint);
+      } catch { rejected++; }
+    }
+  }
+  return { ...retained, rejected_search_term_count: rejected, search_terms_status: !retained.arabic_terms.length && !retained.english_terms.length ? 'lexical_fallback' : rejected ? 'partial' : 'validated' };
+}
 let calls = 0; let inFlight = 0;
 export class IntakeFailure extends Error {
   constructor(message: string, readonly usage: Intake['usage'] = null, readonly model = 'none') { super(message); }
@@ -44,10 +60,9 @@ export async function detectAndRouteClaim(claim: string, requested: ClaimInputSe
     if (data.status !== 'completed') throw new Error('INTAKE_PROVIDER_INCOMPLETE');
     const text = data.output?.flatMap(row => row.content ?? []).filter(item => item.type === 'output_text').map(item => item.text ?? '').join('');
     const parsed = outputSchema.parse(JSON.parse(text ?? ''));
-    if (parsed.scope_category === 'textual') validateQueryTerms({ arabic_terms: parsed.arabic_terms, english_terms: parsed.english_terms });
-    else if (parsed.arabic_terms.length || parsed.english_terms.length) throw new Error('INTAKE_SCHEMA_INVALID');
+    const hints = parsed.scope_category === 'textual' ? filterIntakeHints(parsed.arabic_terms, parsed.english_terms) : filterIntakeHints([], []);
     const coherent = parsed.detected_language && intakeScriptMatches(claim, parsed.detected_language) && (requested === 'auto' || requested === parsed.detected_language);
-    return { ...parsed, requested_language: requested, model: data.model ?? 'gpt-5.4-mini', usage, version: INTAKE_VERSION, status: !coherent || parsed.confidence !== 'high' ? 'ambiguous' : parsed.scope_category === 'textual' ? 'accepted' : 'referred' };
+    return { ...parsed, ...hints, requested_language: requested, model: data.model ?? 'gpt-5.4-mini', usage, version: INTAKE_VERSION, status: !coherent || parsed.confidence !== 'high' ? 'ambiguous' : parsed.scope_category === 'textual' ? 'accepted' : 'referred' };
   } catch (error) {
     const message = error instanceof Error ? error.message : '';
     const safe = ['PROVIDER_UNAVAILABLE', 'INTAKE_PROVIDER_INCOMPLETE', 'INTAKE_SCHEMA_INVALID', 'QUERY_PLAN_SCHEMA_INVALID', 'QUERY_PLAN_TERM_INVALID', 'BUDGET_LEDGER_INVALID', 'BUDGET_LEDGER_LOCKED'];
@@ -104,7 +119,7 @@ export async function verifyMultilingualClaim({ claim, inputLanguage = 'auto', c
   if (intake.scope_category !== 'textual') return refuse(intake.scope_category === 'personal' ? 'PERSONAL_RULING_REFERRAL' : intake.scope_category === 'sensitive' ? 'SENSITIVE_SCOPE_REFERRAL' : intake.scope_category === 'injection' ? 'INSTRUCTION_INJECTION' : 'OUTSIDE_SUPPORTED_CLAIM_SCOPE', intake);
   const glossBlocked = scopeGate(intake.english_gloss);
   if (glossBlocked) return refuse(glossBlocked, intake);
-  const record = await verifyClaim({ claim, inputLanguage: intake.detected_language, scopeClaim: intake.english_gloss, corpusSelection: corpusSelection === 'auto' ? 'both' : corpusSelection, queryOverrides: { arabic_terms: intake.arabic_terms, english_terms: intake.english_terms } });
+  const record = await verifyClaim({ claim, inputLanguage: intake.detected_language, scopeClaim: intake.english_gloss, corpusSelection: corpusSelection === 'auto' ? 'both' : corpusSelection, ...(intake.arabic_terms.length || intake.english_terms.length ? { queryOverrides: { arabic_terms: intake.arabic_terms, english_terms: intake.english_terms } } : {}) });
   const { audit_hash: omitted, ...payload } = record; void omitted;
   return sealRecord({ ...payload, language_intake: intake, limitations: [...record.limitations, 'Multilingual routing used a model-generated English gloss for screening and Arabic/English terms for retrieval; assessment examined the original input. Verification searches Arabic Quran and Arabic/English Hadith evidence, not nine independent Hadith language editions.'] });
 }

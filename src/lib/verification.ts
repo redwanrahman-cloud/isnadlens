@@ -3,7 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { loadCorpus, sha256, type Corpus, type Verse } from './corpus';
 import { recordSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
 import { scopeGate, decideVerdict, nativeSafetyGate } from './policy';
-import { retrieve } from './retrieval';
+import { retrieve, retrieveWithPublishedEnglishAid } from './retrieval';
 import { assessClaim, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure } from './provider';
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation, type HadithCorpus } from './hadith';
 import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './citations';
@@ -71,7 +71,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   base.router_version = ROUTER_VERSION; base.assessment_attempts = [];
   // This argument is populated by server-side source identification, never accepted from a raw API request.
   if (sourceIdentification) base.source_identification = sourceIdentificationSchema.parse(sourceIdentification);
-  if (corpusSelection === 'hadith') base.limitations = ['Results apply only to retrieved records in the selected HadeethEnc language edition.', 'Publisher supplied grading and references are preserved; this tool does not independently authenticate hadith.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'Language editions have different coverage and are never silently merged.'];
+  if (corpusSelection === 'hadith') base.limitations = ['Results apply only to bounded retrieved records from the admitted Arabic and English HadeethEnc editions; other published languages are separate display editions.', 'Publisher supplied grading and references are preserved; this tool does not independently authenticate hadith.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'Arabic and English editions have different coverage; each record remains separately attributed and is never silently merged.'];
   if (corpusSelection === 'both') base.limitations = ['Search covers the admitted Arabic Quran edition and selected Arabic/English HadeethEnc records; it is not all Islamic literature.', 'Quran and Hadith evidence remain separately attributed; their quotations are never merged or silently substituted.', 'Publisher hadith grades are preserved, not independently authenticated.', 'A bounded retrieval can miss relevant passages; absence is not proof of a religious conclusion.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.'];
   const fail = (reason: string) => sealRecord({ ...base, reason_codes: [reason], ...(reason === 'OUTSIDE_SUPPORTED_CLAIM_SCOPE' ? {
     summary_ar: 'عدسة الإسناد مخصّصة للتحقق من الادعاءات المتعلقة بالقرآن والحديث، ولا تجيب عن الأسئلة العامة أو الطقس. اكتب ادعاءً واضحاً تريد فحصه في المصدر المحدد.',
@@ -107,7 +107,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   } else { const manifest = quran?.manifest ?? hadith!.manifest; base.corpus_manifest = manifest; base.corpus_sha256 = manifest.sha256; }
   let overrides: QueryOverrides = { arabic_terms: [], english_terms: [] };
   if (queryOverrides) {
-    try { overrides = validateQueryTerms(queryOverrides); } catch { return fail('QUERY_PLAN_TERM_INVALID'); }
+    try { overrides = validateQueryTerms(queryOverrides, Boolean(scopeClaim)); } catch { return fail('QUERY_PLAN_TERM_INVALID'); }
     base.retrieval_plan = { ...overrides, status: 'provided', reason: 'SERVER_PROVIDED_SEARCH_TERMS', model: 'none', usage: null, planner_version: QUERY_PLANNER_VERSION };
   } else if (useQueryPlanner) {
     try {
@@ -118,19 +118,37 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       base.limitations.push('AI search planning was unavailable; deterministic lexical retrieval was used instead.');
     }
   }
+  const fallbackQueries = scopeClaim && !queryOverrides && !useQueryPlanner ? [scopeClaim.slice(0, 160)] : [];
+  if (fallbackQueries.length) {
+    base.retrieval_plan = { arabic_terms: [], english_terms: [], status: 'lexical_fallback', reason: 'INTAKE_NO_USABLE_SEARCH_HINTS', model: 'none', usage: null, planner_version: QUERY_PLANNER_VERSION };
+    base.limitations.push('No usable intake search hints remained; retrieval used the original input and a bounded neutral routing gloss as lexical queries only. No generated locator or quotation was trusted.');
+  }
   const quranHints = overrides.arabic_terms.flatMap((term, index) => [term, ...(overrides.english_terms[index] ? [overrides.english_terms[index]] : [])]);
   for (let index = overrides.arabic_terms.length; index < overrides.english_terms.length; index++) quranHints.push(overrides.english_terms[index]);
-  if (quran) base.evidence_items.push(...retrieve(quran, claim, hadith ? 4 : 8, quranHints.slice(0, 8)).map(verse => authenticateEvidence(quran!, verse)));
-  if (hadith) {
-    if (!quran) base.evidence_items.push(...retrieveHadith(hadith, claim, retrievalLanguage, 8, retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms).map(record => authenticateHadith(hadith!, record)));
-    else {
-      const preferred = retrieveHadith(hadith, claim, retrievalLanguage, 2, retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms);
-      const otherLanguage = retrievalLanguage === 'ar' ? 'en' : 'ar';
-      const other = retrieveHadith(hadith, claim, otherLanguage, 2, otherLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms);
-      const chosen = [...preferred, ...other];
-      if (chosen.length < 4) for (const record of retrieveHadith(hadith, claim, retrievalLanguage, 4, retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms)) if (chosen.length < 4 && !chosen.some(item => item.language === record.language && item.id === record.id)) chosen.push(record);
-      base.evidence_items.push(...chosen.map(record => authenticateHadith(hadith!, record)));
+  if (quran) {
+    const queries = [...quranHints, ...fallbackQueries].slice(0, 8);
+    let verses: Verse[];
+    const plan = base.retrieval_plan ?? { status: 'provided' as const, reason: 'PUBLISHED_ENGLISH_QUERY_READING_AID', model: 'none', arabic_terms: [], english_terms: [], usage: null, planner_version: QUERY_PLANNER_VERSION };
+    try {
+      const result = retrieveWithPublishedEnglishAid(quran, claim, hadith ? 4 : 8, queries);
+      verses = result.verses;
+      base.retrieval_plan = { ...plan, reading_aid: result.reading_aid, reading_aid_status: 'used' };
+      base.limitations.push('The admitted QuranEnc English edition was used only to locate Arabic Quran passages. Its version/hash is recorded as a query reading aid; only immutable Arabic primary quotations entered the evidence assessment.');
+    } catch {
+      verses = retrieve(quran, claim, hadith ? 4 : 8, queries);
+      base.retrieval_plan = { ...plan, reading_aid_status: 'unavailable_or_integrity_failure' };
+      base.limitations.push('The published English query reading aid was unavailable or failed integrity validation. Retrieval fell back to Arabic corpus lexical search; no reading-aid integrity approval is claimed.');
     }
+    base.evidence_items.push(...verses.map(verse => authenticateEvidence(quran!, verse)));
+  }
+  if (hadith) {
+      const perLanguage = quran ? 2 : 4; const hadithLimit = quran ? 4 : 8;
+      const preferred = retrieveHadith(hadith, claim, retrievalLanguage, perLanguage, [...(retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries]);
+      const otherLanguage = retrievalLanguage === 'ar' ? 'en' : 'ar';
+      const other = retrieveHadith(hadith, claim, otherLanguage, perLanguage, [...(otherLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries]);
+      const chosen = [...preferred, ...other];
+      if (chosen.length < hadithLimit) for (const record of retrieveHadith(hadith, claim, retrievalLanguage, hadithLimit, [...(retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries])) if (chosen.length < hadithLimit && !chosen.some(item => item.language === record.language && item.id === record.id)) chosen.push(record);
+      base.evidence_items.push(...chosen.map(record => authenticateHadith(hadith!, record)));
   }
   base.retrieval_ids = base.evidence_items.map(e => e.evidence_id);
   if (base.evidence_items.some(e => !e.integrity.passed)) return fail('CITATION_INTEGRITY_FAILURE');

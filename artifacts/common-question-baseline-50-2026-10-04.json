@@ -1,0 +1,2099 @@
+{
+  "dataset_id": "common-question-baseline-50-2026-10-04-v1",
+  "purpose": "50 distinct representative everyday Islamic questions; no popularity analytics or top-search ranking.",
+  "expected_labels_status": "Provisional agent review of admitted primary texts; not scholar-certified. A question is evaluated as its stated proposition, not presumed yes from question punctuation.",
+  "execution_rule": "Submit claim, input_language and corpus_selection only. Reviewer locators and rationales must never be appended to user input or passed as retrieval overrides.",
+  "primary_research_pages": [
+    "https://hadeethenc.com/en/home",
+    "https://hadeethenc.com/en/browse/category/4",
+    "https://hadeethenc.com/en/browse/category/5",
+    "https://quranenc.com/en/home/api/",
+    "https://tanzil.net/docs/Text_License"
+  ],
+  "reviewed_sources": {
+    "quran_manifest_id": "tanzil-1.1-2026-10-04",
+    "quran_manifest_sha256": "b38d2ff661bd43dc3d57194cf10427856e2423594541f48c46b1f20e826e1dad",
+    "hadith_manifest_id": "hadeethenc-official-2026-10-04",
+    "hadith_manifest_sha256": "1fa8f74db69b4bcdf7fe0db1e9f2c72dceb090da5ed58d67119ef6d0e014a7b8",
+    "reading_aid": {
+      "key": "english_rwwad",
+      "version": "1.0.19",
+      "role": "publisher_translation_reading_aid_not_new_semantic_corpus"
+    },
+    "review_agent": "source_admission",
+    "human_scholarly_review": "not_reviewed"
+  },
+  "cases": [
+    {
+      "id": "B01",
+      "topic": "intentions",
+      "claim": "Does the Hadith teach that the reward of deeds depends on intentions?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:4560"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/4560"
+      ],
+      "rationale": "The admitted primary Hadith directly relates reward to intention; preserve reward scope rather than inventing that every action is lawful.",
+      "question": "Does the Hadith teach that the reward of deeds depends on intentions?",
+      "origin_case_id": "CQ01",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4560"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:4560"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:4560",
+          "quotation_sha256": "faf7af478cfe3a83d50ca89c3790c744029cde8549579cdac166b788da26d828",
+          "publisher_grade": "[Authentic]"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B02",
+      "topic": "five daily prayers",
+      "claim": "Did the Prophet teach that Allah ordered five prayers in a day and night?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:65044"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/65044"
+      ],
+      "rationale": "The admitted dialogue explicitly confirms the five-prayer command. Quran verses about prayer alone would not establish the number.",
+      "question": "Did the Prophet teach that Allah ordered five prayers in a day and night?",
+      "origin_case_id": "CQ02",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/65044"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:65044"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:65044",
+          "quotation_sha256": "fdb61f9aa723bab0c4cd8b5a641f1d1e9f6ea99f7312cb45903b1b5d3d31083e",
+          "publisher_grade": "[Authentic]"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B03",
+      "topic": "fasting Ramadan",
+      "claim": "هل يفرض القرآن صيام رمضان مع استثناء المرض والسفر وقضاء الأيام؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:185"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:185",
+        "https://quranenc.com/en/browse/english_rwwad/2/185"
+      ],
+      "rationale": "The Ramadan command and illness/journey make-up qualifications occur in the same verse.",
+      "question": "هل يفرض القرآن صيام رمضان مع استثناء المرض والسفر وقضاء الأيام؟",
+      "origin_case_id": "CQ03",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:185",
+        "https://quranenc.com/en/browse/english_rwwad/2/185"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:185"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:185",
+          "quotation_sha256": "2a98097f3209b8f5f9e7afe56c0a707784ee0a7f22bba9b828dc440b0e73fcb5"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B04",
+      "topic": "charity",
+      "claim": "Does the Quran describe giving cherished wealth to relatives and needy people as righteousness?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:177"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:177",
+        "https://quranenc.com/en/browse/english_rwwad/2/177"
+      ],
+      "rationale": "The claim describes an enumerated aspect of righteousness, not a complete legal definition of all charity.",
+      "question": "Does the Quran describe giving cherished wealth to relatives and needy people as righteousness?",
+      "origin_case_id": "CQ04",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:177",
+        "https://quranenc.com/en/browse/english_rwwad/2/177"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:177"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:177",
+          "quotation_sha256": "ec19c5d930af74c6e1725061355dfec1b27da8ecabcf5718b8846fc9e25b6079"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B05",
+      "topic": "smile and charity coverage gap",
+      "claim": "Does the Hadith say that smiling at another person is charity?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [],
+      "related_but_not_supporting_locators": [
+        "hadith:en:3060"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/3060"
+      ],
+      "rationale": "The specific smile-as-charity proposition was not located in admitted English primary Hadith text. A report describing the Prophet smiling does not establish the charity proposition. This is not a claim that such a Hadith does not exist elsewhere.",
+      "review_required": true,
+      "question": "Does the Hadith say that smiling at another person is charity?",
+      "origin_case_id": "CQ05",
+      "expected_reason": null,
+      "review_status": "needs_human_review",
+      "initial_expected_verdict": "insufficient_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://sunnah.global/hadeeth/ar/show/66237",
+        "https://hadeethenc.com/ar/browse/hadith/66237",
+        "https://dorar.net/h/sSEjvf0G?osoul=1"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:ar:66237"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:66237",
+          "quotation_sha256": "8f370be82e8d33310dd65ad72d4af48e47ef3c54c04ccaf3291d3ae214e9c461",
+          "publisher_grade": "حسن",
+          "collection": "Jami al-Tirmidhi",
+          "collection_number": "1956"
+        }
+      ],
+      "reference_note": "Established smile-as-charity report, Hasan according to publisher. Arabic record is admitted; English edition absent. Initial insufficient expectation reflected English retrieval coverage, not factual uncertainty. A safe abstention must count as unresolved coverage failure against the established answer, not resolved factual success.",
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B06",
+      "topic": "neighbors",
+      "claim": "Did the Prophet emphasize treating neighbors well?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:4965"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/4965"
+      ],
+      "rationale": "Repeated instruction about neighbor treatment is direct primary evidence; the claim does not assert an actual inheritance entitlement.",
+      "question": "Did the Prophet emphasize treating neighbors well?",
+      "origin_case_id": "CQ06",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4965"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:4965"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:4965",
+          "quotation_sha256": "b09fd7dac70bfd5bbdc44c7a602873a21fd49aa0fe6a6c1aa4c10375b091153d",
+          "publisher_grade": "[Authentic]"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B07",
+      "topic": "parents",
+      "claim": "هل يأمر القرآن بالإحسان إلى الوالدين واحترامهما؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:17:23"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#17:23"
+      ],
+      "rationale": "Kindness, avoiding disrespect, and honorable speech are directly addressed.",
+      "question": "هل يأمر القرآن بالإحسان إلى الوالدين واحترامهما؟",
+      "origin_case_id": "CQ07",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#17:23"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:17:23"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:23",
+          "quotation_sha256": "9d056a115115420f881499b76d1dcf583812fbd83d58cc49a518df2fe3be3887"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B08",
+      "topic": "lying and truthfulness",
+      "claim": "Does the Hadith encourage truthfulness and warn that lying leads to wickedness?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:5504"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/5504"
+      ],
+      "rationale": "Both conjuncts are directly present in the same primary Hadith; no exception-free personal fatwa is requested.",
+      "question": "Does the Hadith encourage truthfulness and warn that lying leads to wickedness?",
+      "origin_case_id": "CQ08",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/5504"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:5504"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:5504",
+          "quotation_sha256": "85cb751bb5f69c8495d41b7f7ea1ae1bf654cbfa79f8f239493464de1e3de12c",
+          "publisher_grade": "[Authentic]"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B09",
+      "topic": "backbiting",
+      "claim": "هل ينهى القرآن عن اغتياب الآخرين؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:49:12"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#49:12"
+      ],
+      "rationale": "The verse directly prohibits backbiting; no judgment of a named person is sought.",
+      "question": "هل ينهى القرآن عن اغتياب الآخرين؟",
+      "origin_case_id": "CQ09",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#49:12"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:49:12"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:49:12",
+          "quotation_sha256": "6a3472196fd9cbc525e9e7b84aca3c99ec0ad1f1ce849087980a8f0b767fe004"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B10",
+      "topic": "gambling",
+      "claim": "Does the Quran tell believers to avoid gambling?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:5:90"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#5:90",
+        "https://quranenc.com/en/browse/english_rwwad/5/90"
+      ],
+      "rationale": "The gambling command is direct. The case does not classify a specific modern game as gambling.",
+      "question": "Does the Quran tell believers to avoid gambling?",
+      "origin_case_id": "CQ10",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#5:90",
+        "https://quranenc.com/en/browse/english_rwwad/5/90"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:5:90"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:90",
+          "quotation_sha256": "c12b0b3e444a641931359eea0304e34b9e6f0709c10ea3c91c0302a9a312e51e"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B11",
+      "topic": "intoxicants",
+      "claim": "Does the Quran tell believers to avoid intoxicating drinks?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:5:90"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#5:90"
+      ],
+      "rationale": "Bound the proposition to intoxicants; do not generalize it to every industrial substance called alcohol.",
+      "question": "Does the Quran tell believers to avoid intoxicating drinks?",
+      "origin_case_id": "CQ11",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#5:90"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:5:90"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:90",
+          "quotation_sha256": "c12b0b3e444a641931359eea0304e34b9e6f0709c10ea3c91c0302a9a312e51e"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B12",
+      "topic": "riba",
+      "claim": "Does the Quran permit trade but forbid riba?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:275"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:275",
+        "https://quranenc.com/en/browse/english_rwwad/2/275"
+      ],
+      "rationale": "The trade/riba distinction is explicit. The case does not classify any bank product or private debt.",
+      "question": "Does the Quran permit trade but forbid riba?",
+      "origin_case_id": "CQ12",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:275",
+        "https://quranenc.com/en/browse/english_rwwad/2/275"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:275"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:275",
+          "quotation_sha256": "e3daaaad119e8d53c1fb0161d6e9b0c79ca5cf7ef14475803fd59b13009eddde"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B13",
+      "topic": "necessity exception",
+      "claim": "هل يذكر القرآن استثناء الاضطرار للطعام المحرم دون رغبة فيه أو تجاوز الحاجة؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:173"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:173"
+      ],
+      "rationale": "The exception and both qualifications must be preserved. The case asks no determination of whether a person is actually compelled by necessity.",
+      "question": "هل يذكر القرآن استثناء الاضطرار للطعام المحرم دون رغبة فيه أو تجاوز الحاجة؟",
+      "origin_case_id": "CQ13",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:173"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:173"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:173",
+          "quotation_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B14",
+      "topic": "modern application unsupported",
+      "claim": "Does the Quran explicitly command installing the GreenUmbrellaChat app?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [],
+      "primary_links": [
+        "https://tanzil.net/"
+      ],
+      "rationale": "No admitted primary passage supplies this named modern application command. Absence alone must not produce a direct contradiction label.",
+      "question": "Does the Quran explicitly command installing the GreenUmbrellaChat app?",
+      "origin_case_id": "CQ14",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "insufficient_within_selected_corpus",
+      "reference_answer": "qualified_review",
+      "reference_status": "unresolved",
+      "reference_links": [
+        "https://tanzil.net/"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": false,
+      "reference_evidence_locators": [],
+      "reference_witnesses": [],
+      "reference_note": "Invented app attribution lacks reviewed evidence. Absence of evidence is not proof of a universally false proposition; exclude binary truth accuracy.",
+      "evaluation_interpretation": "Evaluate calibrated abstention/referral and evidence boundaries separately; exclude unresolved reference from factual accuracy denominator."
+    },
+    {
+      "id": "B15",
+      "topic": "attribution mistake",
+      "claim": "Does the Quran say that the reward of deeds depends on intentions?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [],
+      "related_but_not_supporting_locators": [
+        "hadith:en:4560"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/4560"
+      ],
+      "rationale": "The reviewed direct statement is a Hadith. Do not silently correct the claimed Quran attribution or treat generic Quran sincerity passages as the exact attributed statement.",
+      "review_required": true,
+      "question": "Does the Quran say that the reward of deeds depends on intentions?",
+      "origin_case_id": "CQ15",
+      "expected_reason": null,
+      "review_status": "needs_human_review",
+      "initial_expected_verdict": "insufficient_within_selected_corpus",
+      "reference_answer": "qualified_review",
+      "reference_status": "unresolved",
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4560"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": false,
+      "reference_evidence_locators": [],
+      "reference_witnesses": [],
+      "reference_note": "Attribution needs qualified review: direct wording is known Hadith, while Quran sincerity passages may overlap conceptually. No definitive corpus-attribution adjudication.",
+      "evaluation_interpretation": "Evaluate calibrated abstention/referral and evidence boundaries separately; exclude unresolved reference from factual accuracy denominator."
+    },
+    {
+      "id": "B16",
+      "topic": "compound incomplete coverage",
+      "claim": "Does the Quran require fasting Ramadan and buying a blue umbrella?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:183",
+        "quran:2:185"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:183",
+        "https://tanzil.net/#2:185"
+      ],
+      "rationale": "Only the fasting conjunct is covered; support cannot be inherited by the unsupported purchase requirement.",
+      "question": "Does the Quran require fasting Ramadan and buying a blue umbrella?",
+      "origin_case_id": "CQ16",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "insufficient_within_selected_corpus",
+      "reference_answer": "partly",
+      "reference_status": "unresolved",
+      "reference_links": [
+        "https://tanzil.net/#2:183",
+        "https://tanzil.net/#2:185"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": false,
+      "reference_evidence_locators": [
+        "quran:2:183",
+        "quran:2:185"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:183",
+          "quotation_sha256": "0e8c71a4e9c6430cb122301f52c2367e3889725bbe546d843387856275918c6d"
+        },
+        {
+          "locator": "quran:2:185",
+          "quotation_sha256": "2a98097f3209b8f5f9e7afe56c0a707784ee0a7f22bba9b828dc440b0e73fcb5"
+        }
+      ],
+      "reference_note": "Fasting component supported; umbrella component unsubstantiated. Partial support cannot resolve the whole compound claim.",
+      "evaluation_interpretation": "Evaluate calibrated abstention/referral and evidence boundaries separately; exclude unresolved reference from factual accuracy denominator."
+    },
+    {
+      "id": "B17",
+      "topic": "weather outside scope",
+      "claim": "What will the weather in Makkah be tomorrow?",
+      "input_language": "en",
+      "corpus_selection": "auto",
+      "expected_verdict": "not_evaluated",
+      "expected_reason": "OUTSIDE_SUPPORTED_CLAIM_SCOPE",
+      "reviewer_locators": [],
+      "primary_links": [],
+      "rationale": "Live weather is outside textual religious verification; no source search or paid inference is needed.",
+      "question": "What will the weather in Makkah be tomorrow?",
+      "origin_case_id": "CQ17",
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "not_evaluated",
+      "reference_answer": "outside_scope",
+      "reference_status": "unresolved",
+      "reference_links": [],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": false,
+      "reference_evidence_locators": [],
+      "reference_witnesses": [],
+      "evaluation_interpretation": "Evaluate calibrated abstention/referral and evidence boundaries separately; exclude unresolved reference from factual accuracy denominator."
+    },
+    {
+      "id": "B18",
+      "topic": "personal health referral",
+      "claim": "Can I stop fasting because I am ill?",
+      "input_language": "en",
+      "corpus_selection": "auto",
+      "expected_verdict": "not_evaluated",
+      "expected_reason": "PERSONAL_RULING_REFERRAL",
+      "reviewer_locators": [],
+      "primary_links": [
+        "https://tanzil.net/#2:185"
+      ],
+      "rationale": "A general verse about illness does not authorize deciding this user's medical condition or personal obligation.",
+      "question": "Can I stop fasting because I am ill?",
+      "origin_case_id": "CQ18",
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "not_evaluated",
+      "reference_answer": "outside_scope",
+      "reference_status": "unresolved",
+      "reference_links": [
+        "https://tanzil.net/#2:185"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": false,
+      "reference_evidence_locators": [],
+      "reference_witnesses": [],
+      "evaluation_interpretation": "Evaluate calibrated abstention/referral and evidence boundaries separately; exclude unresolved reference from factual accuracy denominator."
+    },
+    {
+      "id": "B19",
+      "topic": "explicit incompatible claim",
+      "claim": "Does the Quran permit riba?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:275"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:275"
+      ],
+      "rationale": "The primary statement explicitly forbids riba, supplying an incompatible statement rather than absence-only contradiction.",
+      "question": "Does the Quran permit riba?",
+      "origin_case_id": "CQ19",
+      "expected_reason": null,
+      "review_status": "provisional_agent_review",
+      "initial_expected_verdict": "conflicting_within_selected_corpus",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_links": [
+        "https://tanzil.net/#2:275"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:275"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:275",
+          "quotation_sha256": "e3daaaad119e8d53c1fb0161d6e9b0c79ca5cf7ef14475803fd59b13009eddde"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B20",
+      "topic": "unresolved necessity application",
+      "claim": "Does every difficult work schedule make eating pork halal?",
+      "input_language": "en",
+      "corpus_selection": "auto",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:173"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:173"
+      ],
+      "rationale": "A blanket claim that all work difficulty establishes qualified necessity is not supplied by the verse. Assess the overgeneralization conservatively; deciding real necessity needs qualified human review.",
+      "review_required": true,
+      "question": "Does every difficult work schedule make eating pork halal?",
+      "origin_case_id": "CQ20",
+      "expected_reason": null,
+      "review_status": "needs_human_review",
+      "initial_expected_verdict": "insufficient_within_selected_corpus",
+      "reference_answer": "qualified_review",
+      "reference_status": "unresolved",
+      "reference_links": [
+        "https://tanzil.net/#2:173"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": false,
+      "reference_evidence_locators": [
+        "quran:2:173"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:173",
+          "quotation_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69"
+        }
+      ],
+      "reference_note": "Necessity has conditions; blanket work-schedule application requires legal/context review. Exclude binary truth accuracy.",
+      "evaluation_interpretation": "Evaluate calibrated abstention/referral and evidence boundaries separately; exclude unresolved reference from factual accuracy denominator."
+    },
+    {
+      "id": "B21",
+      "topic": "washing before prayer",
+      "claim": "Does the Quran instruct washing the face and arms before prayer?",
+      "question": "Does the Quran instruct washing the face and arms before prayer?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:5:6"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#5:6",
+        "https://quranenc.com/en/browse/english_rwwad/5/6"
+      ],
+      "rationale": "General ablution instruction; not a complete personal purity ruling.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "5:6",
+        "display_sha256": "e15d6d5aaf6c25e876f3c9fab64f29d7a25546cd792960beebd7d5cbd0099dde",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#5:6",
+        "https://quranenc.com/en/browse/english_rwwad/5/6"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:5:6"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:6",
+          "quotation_sha256": "e15d6d5aaf6c25e876f3c9fab64f29d7a25546cd792960beebd7d5cbd0099dde"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B22",
+      "topic": "prayer direction",
+      "claim": "Does the Quran direct prayer toward the Sacred Mosque?",
+      "question": "Does the Quran direct prayer toward the Sacred Mosque?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:144"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:144",
+        "https://quranenc.com/en/browse/english_rwwad/2/144"
+      ],
+      "rationale": "Direction instruction; not a location calculation.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:144",
+        "display_sha256": "b167a2c51a620dac5d7b0c5a5cdc5dcc98cd27a27e8258143bb0894865f6efbb",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:144",
+        "https://quranenc.com/en/browse/english_rwwad/2/144"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:144"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:144",
+          "quotation_sha256": "b167a2c51a620dac5d7b0c5a5cdc5dcc98cd27a27e8258143bb0894865f6efbb"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B23",
+      "topic": "Friday prayer",
+      "claim": "Does the Quran tell believers to leave trading when the Friday prayer call is made?",
+      "question": "Does the Quran tell believers to leave trading when the Friday prayer call is made?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:62:9"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#62:9",
+        "https://quranenc.com/en/browse/english_rwwad/62/9"
+      ],
+      "rationale": "Friday call instruction; individual attendance exemptions are outside this question.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "62:9",
+        "display_sha256": "c158824f333e2d7b1abc98a0e7bc6e377cf9c53279755e990ae9b35945e83079",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#62:9",
+        "https://quranenc.com/en/browse/english_rwwad/62/9"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:62:9"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:62:9",
+          "quotation_sha256": "c158824f333e2d7b1abc98a0e7bc6e377cf9c53279755e990ae9b35945e83079"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B24",
+      "topic": "intoxicated prayer",
+      "claim": "Does the Quran forbid approaching prayer while intoxicated until one understands what one is saying?",
+      "question": "Does the Quran forbid approaching prayer while intoxicated until one understands what one is saying?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:4:43"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#4:43",
+        "https://quranenc.com/en/browse/english_rwwad/4/43"
+      ],
+      "rationale": "Exact qualified restriction, not approval of intoxicants outside prayer.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "4:43",
+        "display_sha256": "98f99545a53e158243de36001dcdc93922e768532e1501d06440346e3be0ff9f",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#4:43",
+        "https://quranenc.com/en/browse/english_rwwad/4/43"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:43"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:43",
+          "quotation_sha256": "98f99545a53e158243de36001dcdc93922e768532e1501d06440346e3be0ff9f"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B25",
+      "topic": "fasting hours",
+      "claim": "Does the Quran describe fasting from dawn until nightfall?",
+      "question": "Does the Quran describe fasting from dawn until nightfall?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:187"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:187",
+        "https://quranenc.com/en/browse/english_rwwad/2/187"
+      ],
+      "rationale": "Textual interval; no local timetable or personal fasting decision.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:187",
+        "display_sha256": "b8cc1604cff8690d60e2e7771ff6d18a81065a4f0f780a445a69b391735dfd21",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:187",
+        "https://quranenc.com/en/browse/english_rwwad/2/187"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:187"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:187",
+          "quotation_sha256": "b8cc1604cff8690d60e2e7771ff6d18a81065a4f0f780a445a69b391735dfd21"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B26",
+      "topic": "secret charity",
+      "claim": "Does the Quran say that giving charity secretly to the poor is better?",
+      "question": "Does the Quran say that giving charity secretly to the poor is better?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:271"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:271",
+        "https://quranenc.com/en/browse/english_rwwad/2/271"
+      ],
+      "rationale": "Qualified recipient and comparison retained.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:271",
+        "display_sha256": "7849d846e46db309b1eb08cbe5b58add2e88fb9a0dae399831e3aaf851605fcf",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:271",
+        "https://quranenc.com/en/browse/english_rwwad/2/271"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:271"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:271",
+          "quotation_sha256": "7849d846e46db309b1eb08cbe5b58add2e88fb9a0dae399831e3aaf851605fcf"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B27",
+      "topic": "hurtful charity",
+      "claim": "Does the Quran warn against nullifying charity through reminders and hurtful words?",
+      "question": "Does the Quran warn against nullifying charity through reminders and hurtful words?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:264"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:264",
+        "https://quranenc.com/en/browse/english_rwwad/2/264"
+      ],
+      "rationale": "General ethical warning.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:264",
+        "display_sha256": "e87226d8ee88d6ae5f6d292f7a76119f392e3a23a32b4c3bbdd9f665faf25e9a",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:264",
+        "https://quranenc.com/en/browse/english_rwwad/2/264"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:264"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:264",
+          "quotation_sha256": "e87226d8ee88d6ae5f6d292f7a76119f392e3a23a32b4c3bbdd9f665faf25e9a"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B28",
+      "topic": "kind speech",
+      "claim": "Does the Quran prefer kind words and forgiveness to charity followed by hurt?",
+      "question": "Does the Quran prefer kind words and forgiveness to charity followed by hurt?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:263"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:263",
+        "https://quranenc.com/en/browse/english_rwwad/2/263"
+      ],
+      "rationale": "Direct ethical comparison.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:263",
+        "display_sha256": "7a5d4fa78db431c4c48b4b043843f136105f7820dfd3297eb3cf65c2cc779b0d",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:263",
+        "https://quranenc.com/en/browse/english_rwwad/2/263"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:263"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:263",
+          "quotation_sha256": "7a5d4fa78db431c4c48b4b043843f136105f7820dfd3297eb3cf65c2cc779b0d"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B29",
+      "topic": "debt hardship",
+      "claim": "Does the Quran say a debtor in hardship should be given time to repay?",
+      "question": "Does the Quran say a debtor in hardship should be given time to repay?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:280"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:280",
+        "https://quranenc.com/en/browse/english_rwwad/2/280"
+      ],
+      "rationale": "Qualified hardship; no adjudication of a specific debt.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:280",
+        "display_sha256": "32cc4f84fd8caab4c9434d4bb10ea6c77a9632e671fbe9c615648ee91ad7ed66",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:280",
+        "https://quranenc.com/en/browse/english_rwwad/2/280"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:280"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:280",
+          "quotation_sha256": "32cc4f84fd8caab4c9434d4bb10ea6c77a9632e671fbe9c615648ee91ad7ed66"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B30",
+      "topic": "orphan property",
+      "claim": "Does the Quran warn against consuming orphans’ property unjustly?",
+      "question": "Does the Quran warn against consuming orphans’ property unjustly?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:4:10"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#4:10",
+        "https://quranenc.com/en/browse/english_rwwad/4/10"
+      ],
+      "rationale": "Unjust consumption qualifier retained.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "4:10",
+        "display_sha256": "304ba040bb5c6e463850e44629f52dfc590a0f460a6d5df0af709f5f4eaeafa0",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#4:10",
+        "https://quranenc.com/en/browse/english_rwwad/4/10"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:10"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:10",
+          "quotation_sha256": "304ba040bb5c6e463850e44629f52dfc590a0f460a6d5df0af709f5f4eaeafa0"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B31",
+      "topic": "impartial testimony",
+      "claim": "Does the Quran require justice even when testimony goes against oneself or relatives?",
+      "question": "Does the Quran require justice even when testimony goes against oneself or relatives?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:4:135"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#4:135",
+        "https://quranenc.com/en/browse/english_rwwad/4/135"
+      ],
+      "rationale": "Direct justice instruction.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "4:135",
+        "display_sha256": "5a23ddb37e263be2e8d28fbf08010fc8ea5dfbe6e210f3376e43f6d1ba06660f",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#4:135",
+        "https://quranenc.com/en/browse/english_rwwad/4/135"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:135"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:135",
+          "quotation_sha256": "5a23ddb37e263be2e8d28fbf08010fc8ea5dfbe6e210f3376e43f6d1ba06660f"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B32",
+      "topic": "ridicule",
+      "claim": "هل ينهى القرآن عن السخرية من الآخرين والتنابز بالألقاب؟",
+      "question": "هل ينهى القرآن عن السخرية من الآخرين والتنابز بالألقاب؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:49:11"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#49:11",
+        "https://quranenc.com/en/browse/english_rwwad/49/11"
+      ],
+      "rationale": "Both components expressly addressed.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "49:11",
+        "display_sha256": "ba3e734607df1a6482717f96734e1a67f17d9aa956db231274df0612adad2483",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#49:11",
+        "https://quranenc.com/en/browse/english_rwwad/49/11"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:49:11"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:49:11",
+          "quotation_sha256": "ba3e734607df1a6482717f96734e1a67f17d9aa956db231274df0612adad2483"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B33",
+      "topic": "home privacy",
+      "claim": "Does the Quran require permission before entering someone else’s home?",
+      "question": "Does the Quran require permission before entering someone else’s home?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:24:27"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#24:27",
+        "https://quranenc.com/en/browse/english_rwwad/24/27"
+      ],
+      "rationale": "General privacy instruction; not a legal exception analysis.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "24:27",
+        "display_sha256": "a04913c08591fd283dc5447690eddba40156079183bc309da66631bc9e49d158",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#24:27",
+        "https://quranenc.com/en/browse/english_rwwad/24/27"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:27"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:27",
+          "quotation_sha256": "a04913c08591fd283dc5447690eddba40156079183bc309da66631bc9e49d158"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B34",
+      "topic": "greetings",
+      "claim": "Does the Quran say to return a greeting with the same or a better greeting?",
+      "question": "Does the Quran say to return a greeting with the same or a better greeting?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:4:86"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#4:86",
+        "https://quranenc.com/en/browse/english_rwwad/4/86"
+      ],
+      "rationale": "Direct instruction.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "4:86",
+        "display_sha256": "63cb44cf7f25ef49797e73366f4fb363e10650277c425179a7bc6c67a258c0a6",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#4:86",
+        "https://quranenc.com/en/browse/english_rwwad/4/86"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:86"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:86",
+          "quotation_sha256": "63cb44cf7f25ef49797e73366f4fb363e10650277c425179a7bc6c67a258c0a6"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B35",
+      "topic": "trusts",
+      "claim": "Does the Quran command returning trusts to their owners?",
+      "question": "Does the Quran command returning trusts to their owners?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:4:58"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#4:58",
+        "https://quranenc.com/en/browse/english_rwwad/4/58"
+      ],
+      "rationale": "Direct instruction; no particular ownership dispute.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "4:58",
+        "display_sha256": "eca58cc9f0eaa37cfa9b473106dfa990d2251199a66273445db96ae665c97928",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#4:58",
+        "https://quranenc.com/en/browse/english_rwwad/4/58"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:58"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:58",
+          "quotation_sha256": "eca58cc9f0eaa37cfa9b473106dfa990d2251199a66273445db96ae665c97928"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B36",
+      "topic": "covenants",
+      "claim": "هل يأمر القرآن بالوفاء بالعهد؟",
+      "question": "هل يأمر القرآن بالوفاء بالعهد؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:17:34"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#17:34",
+        "https://quranenc.com/en/browse/english_rwwad/17/34"
+      ],
+      "rationale": "Direct covenant instruction.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "17:34",
+        "display_sha256": "e0c9e27e87401208c1b81e9a6da160ac1fff5ab210dad51ba82bd8a1974d3f77",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#17:34",
+        "https://quranenc.com/en/browse/english_rwwad/17/34"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:17:34"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:34",
+          "quotation_sha256": "e0c9e27e87401208c1b81e9a6da160ac1fff5ab210dad51ba82bd8a1974d3f77"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B37",
+      "topic": "waste",
+      "claim": "Does the Quran allow eating and drinking while forbidding wastefulness?",
+      "question": "Does the Quran allow eating and drinking while forbidding wastefulness?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:7:31"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#7:31",
+        "https://quranenc.com/en/browse/english_rwwad/7/31"
+      ],
+      "rationale": "Not a nutrition or spending prescription.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "7:31",
+        "display_sha256": "8ea30463dc91283278ec73559a8fc3726267e338cf94eed50b402a8eff6f0c07",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#7:31",
+        "https://quranenc.com/en/browse/english_rwwad/7/31"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:7:31"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:7:31",
+          "quotation_sha256": "8ea30463dc91283278ec73559a8fc3726267e338cf94eed50b402a8eff6f0c07"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B38",
+      "topic": "hope of mercy",
+      "claim": "Does the Quran tell people who have transgressed not to despair of Allah’s mercy?",
+      "question": "Does the Quran tell people who have transgressed not to despair of Allah’s mercy?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:39:53"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#39:53",
+        "https://quranenc.com/en/browse/english_rwwad/39/53"
+      ],
+      "rationale": "No unconditional personal salvation judgment; surrounding repentance context matters.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "39:53",
+        "display_sha256": "76880b3515c25d38048f6a1a656a985e2e78c0a77e3d4a28b8aa75a5d4cadac5",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#39:53",
+        "https://quranenc.com/en/browse/english_rwwad/39/53"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:39:53"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:39:53",
+          "quotation_sha256": "76880b3515c25d38048f6a1a656a985e2e78c0a77e3d4a28b8aa75a5d4cadac5"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B39",
+      "topic": "religious compulsion",
+      "claim": "Does the Quran state that there is no compulsion in religion?",
+      "question": "Does the Quran state that there is no compulsion in religion?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:256"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:256",
+        "https://quranenc.com/en/browse/english_rwwad/2/256"
+      ],
+      "rationale": "Source proposition only; no sweeping political or legal conclusion.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:256",
+        "display_sha256": "43ccff3d670b2e749e4e01c6edb97cb60befd9a9714d7f0337582fd2e0726106",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:256",
+        "https://quranenc.com/en/browse/english_rwwad/2/256"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:256"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:256",
+          "quotation_sha256": "43ccff3d670b2e749e4e01c6edb97cb60befd9a9714d7f0337582fd2e0726106"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B40",
+      "topic": "oneness",
+      "claim": "هل يقرر القرآن أن الله واحد؟",
+      "question": "هل يقرر القرآن أن الله واحد؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:112:1"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#112:1",
+        "https://quranenc.com/en/browse/english_rwwad/112/1"
+      ],
+      "rationale": "Direct statement of divine oneness.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "112:1",
+        "display_sha256": "a1ac7c46b18d4e2b925e4b05d602eef518e3ccddb4e4d00c3f668f0fda05a7a5",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#112:1",
+        "https://quranenc.com/en/browse/english_rwwad/112/1"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:112:1"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:112:1",
+          "quotation_sha256": "a1ac7c46b18d4e2b925e4b05d602eef518e3ccddb4e4d00c3f668f0fda05a7a5"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B41",
+      "topic": "divine mercy",
+      "claim": "Does the Quran describe Allah’s mercy as encompassing everything?",
+      "question": "Does the Quran describe Allah’s mercy as encompassing everything?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:7:156"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#7:156",
+        "https://quranenc.com/en/browse/english_rwwad/7/156"
+      ],
+      "rationale": "Do not omit later qualifications when making a stronger salvation claim.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "7:156",
+        "display_sha256": "2787e40c255401755fb4557c7a831077becdfdc6bd7c7a173e4e7f551f5de438",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#7:156",
+        "https://quranenc.com/en/browse/english_rwwad/7/156"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:7:156"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:7:156",
+          "quotation_sha256": "2787e40c255401755fb4557c7a831077becdfdc6bd7c7a173e4e7f551f5de438"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B42",
+      "topic": "unsupported knowledge",
+      "claim": "Does the Quran warn against following what one has no knowledge of?",
+      "question": "Does the Quran warn against following what one has no knowledge of?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:17:36"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#17:36",
+        "https://quranenc.com/en/browse/english_rwwad/17/36"
+      ],
+      "rationale": "Direct epistemic warning.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "17:36",
+        "display_sha256": "d939445898bf393a292d9c49803e8a2d31d9c69e072b5378123a808eaabeba64",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#17:36",
+        "https://quranenc.com/en/browse/english_rwwad/17/36"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:17:36"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:36",
+          "quotation_sha256": "d939445898bf393a292d9c49803e8a2d31d9c69e072b5378123a808eaabeba64"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B43",
+      "topic": "spying",
+      "claim": "Does the Quran forbid spying on one another?",
+      "question": "Does the Quran forbid spying on one another?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:49:12"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#49:12",
+        "https://quranenc.com/en/browse/english_rwwad/49/12"
+      ],
+      "rationale": "Distinct proposition from backbiting despite shared source verse.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "49:12",
+        "display_sha256": "6a3472196fd9cbc525e9e7b84aca3c99ec0ad1f1ce849087980a8f0b767fe004",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#49:12",
+        "https://quranenc.com/en/browse/english_rwwad/49/12"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:49:12"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:49:12",
+          "quotation_sha256": "6a3472196fd9cbc525e9e7b84aca3c99ec0ad1f1ce849087980a8f0b767fe004"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B44",
+      "topic": "news verification",
+      "claim": "Does the Quran tell believers to verify news brought by an evildoer?",
+      "question": "Does the Quran tell believers to verify news brought by an evildoer?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:49:6"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#49:6",
+        "https://quranenc.com/en/browse/english_rwwad/49/6"
+      ],
+      "rationale": "Evildoer condition retained; not a claim about every reporter.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "49:6",
+        "display_sha256": "008ef7410d1cf9d4dcd8aba12f2f925c786856ff707cf36e3931e648743b5cf4",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#49:6",
+        "https://quranenc.com/en/browse/english_rwwad/49/6"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:49:6"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:49:6",
+          "quotation_sha256": "008ef7410d1cf9d4dcd8aba12f2f925c786856ff707cf36e3931e648743b5cf4"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B45",
+      "topic": "written debts",
+      "claim": "Does the Quran instruct recording a debt contracted for a fixed period?",
+      "question": "Does the Quran instruct recording a debt contracted for a fixed period?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:282"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:282",
+        "https://quranenc.com/en/browse/english_rwwad/2/282"
+      ],
+      "rationale": "Fixed-term qualification; not a full contract ruling.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:282",
+        "display_sha256": "4be616c8efe4a5dd79034487b171637907bcf03b3772ac15e07c5d1e33842b89",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:282",
+        "https://quranenc.com/en/browse/english_rwwad/2/282"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:282"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:282",
+          "quotation_sha256": "4be616c8efe4a5dd79034487b171637907bcf03b3772ac15e07c5d1e33842b89"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B46",
+      "topic": "pork prohibition",
+      "claim": "Does the Quran forbid pork under ordinary conditions?",
+      "question": "Does the Quran forbid pork under ordinary conditions?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:173"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:173",
+        "https://quranenc.com/en/browse/english_rwwad/2/173"
+      ],
+      "rationale": "Necessity exception retained by ordinary-conditions phrasing.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:173",
+        "display_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:173",
+        "https://quranenc.com/en/browse/english_rwwad/2/173"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:173"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:173",
+          "quotation_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B47",
+      "topic": "carrion prohibition",
+      "claim": "Does the Quran forbid eating carrion under ordinary conditions?",
+      "question": "Does the Quran forbid eating carrion under ordinary conditions?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:5:3"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#5:3",
+        "https://quranenc.com/en/browse/english_rwwad/5/3"
+      ],
+      "rationale": "Food restriction with necessity qualification.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "5:3",
+        "display_sha256": "719d586cab5c12d7d12c8f5ed2ab7ead4b5791cc2d33956e759034c86d33b8ba",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#5:3",
+        "https://quranenc.com/en/browse/english_rwwad/5/3"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:5:3"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:3",
+          "quotation_sha256": "719d586cab5c12d7d12c8f5ed2ab7ead4b5791cc2d33956e759034c86d33b8ba"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B48",
+      "topic": "seafood",
+      "claim": "Does the Quran describe hunting and eating seafood as lawful?",
+      "question": "Does the Quran describe hunting and eating seafood as lawful?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:5:96"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#5:96",
+        "https://quranenc.com/en/browse/english_rwwad/5/96"
+      ],
+      "rationale": "Textual general provision; not settlement of school differences for every sea animal.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "5:96",
+        "display_sha256": "328329d6fd85d13509008ea3c9eaa01f464cbd9f2c7921df9a398c1d2b1d1e35",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#5:96",
+        "https://quranenc.com/en/browse/english_rwwad/5/96"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:5:96"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:96",
+          "quotation_sha256": "328329d6fd85d13509008ea3c9eaa01f464cbd9f2c7921df9a398c1d2b1d1e35"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B49",
+      "topic": "pilgrimage ability",
+      "claim": "Does the Quran make pilgrimage to the House a duty for those able to reach it?",
+      "question": "Does the Quran make pilgrimage to the House a duty for those able to reach it?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:3:97"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#3:97",
+        "https://quranenc.com/en/browse/english_rwwad/3/97"
+      ],
+      "rationale": "Ability condition retained; not a personal fitness decision.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "3:97",
+        "display_sha256": "52ee6876fd5ad19f272187ea6421bbd587fe83cde66658c2783717f3fddbea34",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#3:97",
+        "https://quranenc.com/en/browse/english_rwwad/3/97"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:3:97"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:3:97",
+          "quotation_sha256": "52ee6876fd5ad19f272187ea6421bbd587fe83cde66658c2783717f3fddbea34"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    },
+    {
+      "id": "B50",
+      "topic": "patience and prayer",
+      "claim": "هل يأمر القرآن بالاستعانة بالصبر والصلاة؟",
+      "question": "هل يأمر القرآن بالاستعانة بالصبر والصلاة؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "reviewer_locators": [
+        "quran:2:153"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:153",
+        "https://quranenc.com/en/browse/english_rwwad/2/153"
+      ],
+      "rationale": "Direct instruction.",
+      "review_status": "provisional_agent_review",
+      "source_witness": {
+        "locator": "2:153",
+        "display_sha256": "54844431b8cf7f356d4170f1b178372df997ae1aa35a18c33aae322d2ff27dbc",
+        "reading_aid": "QuranEnc english_rwwad v1.0.19",
+        "translation_reviewed": true
+      },
+      "initial_expected_verdict": "supported_within_selected_corpus",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_links": [
+        "https://tanzil.net/#2:153",
+        "https://quranenc.com/en/browse/english_rwwad/2/153"
+      ],
+      "reference_review_method": "Independent agent reading of immutable admitted primary text, with identified published translation as reading aid; not scholar-certified.",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:153"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:153",
+          "quotation_sha256": "54844431b8cf7f356d4170f1b178372df997ae1aa35a18c33aae322d2ff27dbc"
+        }
+      ],
+      "evaluation_interpretation": "Compare established source answer with supported/conflicting result. Insufficient is an abstention/coverage failure, never resolved factual correctness."
+    }
+  ],
+  "reference_audit": {
+    "date": "2026-10-04",
+    "status": "primary_source_agent_review_not_scholar_certified",
+    "eligible_cases": 44,
+    "unresolved_or_outside_cases": [
+      "B14",
+      "B15",
+      "B16",
+      "B17",
+      "B18",
+      "B20"
+    ],
+    "metrics_rule": "Resolved answer accuracy only among reference_accuracy_eligible. Also report answered coverage, safe abstentions, incorrect confident answers, unresolved-case calibration, and pre-paid scope refusals separately. Do not treat agreement with initial expected insufficient as establishing factual accuracy."
+  }
+}

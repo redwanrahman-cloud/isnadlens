@@ -13,9 +13,11 @@ export class QueryPlannerFailure extends Error {
   constructor(message: string, public readonly usage: Usage | null = null, public readonly model: string = 'none') { super(message); }
 }
 let calls = 0; let inFlight = 0;
-export function validateQueryTerms(raw: unknown): QueryOverrides {
-  const parsed = queryTermsSchema.safeParse(raw);
+export function validateQueryTerms(raw: unknown, allowPartial = false): QueryOverrides {
+  const schema = allowPartial ? z.object({ arabic_terms: z.array(queryTermsSchema.shape.arabic_terms.element).max(10), english_terms: z.array(queryTermsSchema.shape.english_terms.element).max(10) }).strict() : queryTermsSchema;
+  const parsed = schema.safeParse(raw);
   if (!parsed.success) throw new QueryPlannerFailure('QUERY_PLAN_SCHEMA_INVALID');
+  if (allowPartial && !parsed.data.arabic_terms.length && !parsed.data.english_terms.length) throw new QueryPlannerFailure('QUERY_PLAN_SCHEMA_INVALID');
   for (const [language, terms] of [['ar', parsed.data.arabic_terms], ['en', parsed.data.english_terms]] as const) {
     for (const term of terms) {
       const allowed = language === 'ar' ? /^[\p{Script=Arabic}\p{M}\s]+$/u : /^[\p{Script=Latin}\p{M}\s'-]+$/u;

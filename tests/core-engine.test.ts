@@ -9,6 +9,7 @@ import { assessClaim, structuredOutputSchema } from '../src/lib/provider';
 import { reserveSpend, settleSpend, priceUsage } from '../src/lib/budget';
 import { sealRecord, verifySeal, checkExplicitCitation, authenticateEvidence, verifyClaim } from '../src/lib/verification';
 import * as provider from '../src/lib/provider';
+import * as retrievalModule from '../src/lib/retrieval';
 import type { SemanticAssessment, VerificationRecord } from '../src/lib/contracts';
 import { loadHadith, retrieveHadith, authenticateHadith, validateHadith, checkHadithCitation } from '../src/lib/hadith';
 import { parseQuranReferences, parseHadithLinks } from '../src/lib/citations';
@@ -341,12 +342,48 @@ describe('adversarial citation, selection and compound coverage regression', () 
     const corpus = loadCorpus(); const id = `${corpus.manifest.id}:2:185`;
     const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: { ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts', evidence_ids: [id], contradiction_basis: 'explicit_negation_or_incompatible_statement', basis_evidence_id: id, basis_quotation: ' ' }] }, model: 'mock-only', usage: null });
     try {
-      const record = await verifyClaim({ claim: 'The Quran never mentions Ramadan.', inputLanguage: 'en' });
+      const record = await verifyClaim({ claim: 'The Quran at 2:185 never mentions Ramadan.', inputLanguage: 'en' });
       expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toContain('SEMANTIC_BASIS_QUOTATION_INVALID');
     } finally { mocked.mockRestore(); }
   });
 });
 describe('Quran-first coverage without extra corroboration requirements', () => {
+  it('seals validated English reading-aid provenance but assesses unchanged Arabic primary source cards only', async () => {
+    const incomplete = { ...assessment, all_material_claims_covered: false, atomic_claims: [{ ...atom, relation: 'unrelated' as const, direct: false, evidence_ids: [] }] };
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: incomplete, model: 'gpt-5.4-mini', usage: null });
+    try {
+      const corpus = loadCorpus(); const claim = 'Does the Quran instruct recording a debt contracted for a fixed period?';
+      const record = await verifyClaim({ claim, inputLanguage: 'en' });
+      expect(record.retrieval_plan).toMatchObject({ reading_aid_status: 'used', reading_aid: { source: 'QuranEnc', key: 'english_rwwad', role: 'query_retrieval_only', language: 'en' } });
+      expect(record.retrieval_plan?.reading_aid?.sha256).toMatch(/^[a-f0-9]{64}$/); expect(record.evidence_items.length).toBeGreaterThan(0);
+      for (const card of record.evidence_items) expect(card.quotation).toBe(corpus.verses.find(verse => verse.id === card.locator)!.display);
+      expect(record.original_claim).toBe(claim); expect(record.corpus_sha256).toBe(corpus.manifest.sha256); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
+  it('discloses reading-aid failure and uses authenticated Arabic lexical retrieval without claiming aid integrity', async () => {
+    const aid = vi.spyOn(retrievalModule, 'retrieveWithPublishedEnglishAid').mockImplementation(() => { throw new Error('untrusted hash'); });
+    const incomplete = { ...assessment, all_material_claims_covered: false, atomic_claims: [{ ...atom, relation: 'unrelated' as const, direct: false, evidence_ids: [] }] };
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: incomplete, model: 'gpt-5.4-mini', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'The Quran mentions Ramadan fasting.', inputLanguage: 'en' });
+      expect(record.retrieval_plan?.reading_aid_status).toBe('unavailable_or_integrity_failure'); expect(record.retrieval_plan?.reading_aid).toBeUndefined();
+      expect(record.limitations.some(note => note.includes('failed integrity validation'))).toBe(true);
+      expect(record.evidence_items.length).toBeGreaterThan(0); expect(record.evidence_items.every(card => card.integrity.passed)).toBe(true); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); aid.mockRestore(); }
+  });
+  it('finds admitted Arabic primary Hadith for an English claim even when that ID has no English edition', async () => {
+    const corpus = loadHadith(); const source = corpus.records.find(row => row.language === 'ar' && row.id === '66237')!;
+    expect(source).toBeTruthy(); expect(corpus.records.find(row => row.language === 'en' && row.id === source.id)).toBeUndefined();
+    const card = authenticateHadith(corpus, source);
+    const supported = { ...assessment, atomic_claims: [{ ...atom, text: 'Smiling at another person is charity.', evidence_ids: [card.evidence_id] }] };
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: supported, model: 'gpt-5.4-mini', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'The Hadith says that smiling at another person is charity.', inputLanguage: 'en', corpusSelection: 'hadith', queryOverrides: { arabic_terms: ['تبسم', 'صدقة'], english_terms: ['smiling', 'charity'] } });
+      expect(record.evidence_items.find(item => item.evidence_id === card.evidence_id)?.quotation).toBe(source.fields.hadith_text);
+      expect(record.evidence_items.filter(item => item.source_language === 'ar')).toHaveLength(4); expect(record.evidence_items.filter(item => item.source_language === 'en')).toHaveLength(4);
+      expect(record.verdict).toBe('supported_within_selected_corpus'); expect(record.evidence_items.every(item => item.integrity.passed)).toBe(true); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
   it('accepts complete direct Quran coverage while honestly marking retrieved sale Hadith as unrelated', async () => {
     const corpus = loadCorpus(); const quranId = `${corpus.manifest.id}:2:173`;
     const supported = { ...assessment, atomic_claims: [{ ...atom, text: 'The Quran at 2:173 forbids pork.', evidence_ids: [quranId] }] };
@@ -372,7 +409,7 @@ describe('Quran-first coverage without extra corroboration requirements', () => 
   });
 });
 describe('one-step objective semantic reference router', () => {
-  const claim = 'The Quran never mentions Ramadan.';
+  const claim = 'The Quran at 2:185 never mentions Ramadan.';
   const usage = (id: string, cost: number) => ({ input_tokens: 100, output_tokens: 50, estimated_cost_usd: cost, reservation_id: id });
   function packets() {
     const corpus = loadCorpus(); const verse = corpus.verses.find(item => item.id === '2:185')!;

@@ -8,6 +8,11 @@ function publicFastingQualification(claim: string): boolean {
     && /illness|sick|journey|travel|malad|voyage|enferm|viaje|krank|reise|sakit|perjalanan|مرض|سفر|بیمار|অসুস্থ|ভ্রমণ|बीमार|यात्रा/i.test(claim)
     && /exception|exempt|qualif|make.up|mention|describ|says|استثناء|يذكر|قضاء|ذکر|রেহাই|উল্লেখ|अपवाद|छूट|excep|dispens|erw[aä]hn/i.test(claim);
 }
+function publicDebtDocumentation(claim: string): boolean {
+  return /\b(quran|qur'an|koran|hadith|hadeeth)\b|قرآن|القران|حديث/i.test(claim)
+    && /\b(debt|debts)\b|الدين|ديون/i.test(claim)
+    && /\b(record|recording|write|writing|document|documenting|documentation|contracted|fixed period|fixed term)\b|كتابة|كتابه|اكتب|توثيق|أجل مسمى|اجل مسمى/i.test(claim);
+}
 
 /** Native screening precedes any translation/detection request; never rewrites the user input. */
 export function nativeSafetyGate(claim: string): string | null {
@@ -19,6 +24,8 @@ export function nativeSafetyGate(claim: string): string | null {
   const healthMatch = /\b(patient|diabet\w*|cancer|disease|illness|pregnan\w*|medication|bank account|credit card|passport|ssn|enfermedad|embaraz\w*|maladie|enceinte|krank\w*|schwanger\w*|penyakit|hamil)\b|مرض|مريض|سكري|سرطان|حامل|حساب بنكي|রোগ|গর্ভবতী|ক্যান্সার|बीमारी|गर्भवती|कैंसर|بیمار|حاملہ/i.test(claim);
   const privateHealth = /patient|diabet|cancer|pregnan|medication|bank account|credit card|passport|ssn|embaraz|enceinte|schwanger|hamil|سكري|سرطان|حامل|حساب بنكي|গর্ভবতী|ক্যান্সার|गर्भवती|कैंसर|حاملہ/i.test(claim);
   if (healthMatch && (!publicFastingQualification(claim) || privateHealth)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
+  const namedFact = /\b([A-Z][a-z]+)\s+(has|is suffering|lives at|earns|owes)\b/.exec(claim);
+  if (namedFact && !['Intention', 'Prayer', 'Fasting', 'Charity', 'Religion', 'Islam', 'Quran', 'Hadith', 'Ramadan', 'God', 'Allah', 'Creation', 'Water', 'Life', 'Mercy', 'Justice'].includes(namedFact[1])) return 'PERSONAL_FACTS_REFERRAL';
   if (/\b(kafir|apostate|terrorist|suicide|sect|political)\w*|تكفير|مرتد|انتحار|طائفة|আত্মহত্যা|आत्महत्या|خودکشی/i.test(claim)) return 'SENSITIVE_SCOPE_REFERRAL';
   if (claim.replace(/[\p{Script=Latin}\p{Script=Arabic}\p{Script=Bengali}\p{Script=Devanagari}\u0640\p{M}\p{N}\p{P}\p{S}\p{Z}\s]/gu, '').length) return 'INPUT_LANGUAGE_NOT_SUPPORTED';
   return null;
@@ -33,8 +40,9 @@ export function scopeGate(claim: string): string | null {
   if (!textAttribution && /\b(weather|forecast|temperature|stock price|exchange rate|football score|write (?:me )?(?:code|a poem)|tell (?:me )?a joke|recipe)\b|الطقس|طقس|درجة الحرارة|سعر الصرف|نتيجة المباراة|وصفة طبخ|اكتب.*كود|قل.*نكتة/i.test(claim)) return 'OUTSIDE_SUPPORTED_CLAIM_SCOPE';
   if (/\b(my|i am|i have|am i|should i|can i|is it permissible for me)\b|هل يجوز لي|علي كفارة|زوجتي|أنا|حكم حالتي/i.test(claim)) return 'PERSONAL_RULING_REFERRAL';
   if (/\b(kafir|apostate|kill|terrorist|suicide|medical|diagnos|sect|political)\w*|تكفير|كافر|مرتد|انتحار|قتل|طائفة/i.test(claim)) return 'SENSITIVE_SCOPE_REFERRAL';
-  if (/\b(patient|diabet\w*|cancer|disease|illness|pregnan\w*|doctor|medicine|medication|salary|income|debt|bank account|credit card|passport|ssn)\b|مريض|سكري|سرطان|مرض|حامل|دواء|طبيب|راتب|دخل شخصي|ديون|حساب بنكي|رقم الهوية|جواز/i.test(claim)
-    && (!publicFastingQualification(claim) || /patient|diabet|cancer|pregnan|doctor|medicine|medication|salary|income|debt|bank account|credit card|passport|ssn|سكري|سرطان|حامل|دواء|طبيب|راتب|دخل شخصي|ديون|حساب بنكي|رقم الهوية|جواز/i.test(claim))) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
+  if (/\b(patient|diabet\w*|cancer|disease|illness|pregnan\w*|doctor|medicine|medication|salary|income|bank account|credit card|passport|ssn)\b|مريض|سكري|سرطان|مرض|حامل|دواء|طبيب|راتب|دخل شخصي|حساب بنكي|رقم الهوية|جواز/i.test(claim)
+    && (!publicFastingQualification(claim) || /patient|diabet|cancer|pregnan|doctor|medicine|medication|salary|income|bank account|credit card|passport|ssn|سكري|سرطان|حامل|دواء|طبيب|راتب|دخل شخصي|حساب بنكي|رقم الهوية|جواز/i.test(claim))) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
+  if (/\b(debt|debts)\b|ديون/i.test(claim) && !publicDebtDocumentation(claim)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
   if (/\b(my|his|her|their|patient'?s|[A-Z][a-z]+'s)\s+(home\s+)?(address|phone number|telephone number)\b|عنواني|عنوانه|عنوانها|رقم هاتفي|رقم هاتفه|رقم هاتفها/i.test(claim)) return 'PRIVATE_DATA_REFERRAL';
   if (/[\w.+-]+@[\w.-]+\.[a-z]{2,}|\+?\d[\d\s-]{8,}/i.test(asciiDigits(claim))) return 'PRIVATE_DATA_REFERRAL';
   if (/\b(mr|mrs|ms|dr)\.\s+[A-Z]|فلان|فلانة|يعاني|تسكن|يسكن/.test(claim)) return 'PERSONAL_FACTS_REFERRAL';

@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.5-transcribe",
+  "kind": "Synthetic known-text audio development check; not human accent or physical-device accuracy",
+  "free_project_confirmed_by_user": true,
+  "samples": [
+    {"language":"en","http_status":200,"expected":"Eating pork is prohibited. The Quran states this clearly and describes a necessity exception.","actual":"Eating pork is prohibited. The Quran states this clearly and describes a necessity exception.","words_preserved":true},
+    {"language":"ar","http_status":200,"expected":"أكل لحم الخنزير حرام. ورد النهي عنه في القرآن الكريم مع بيان استثناء الضرورة.","actual":"أكل لحم الخنزير حرام، ورد النهي عنه في القرآن الكريم مع بيان استثناء الضرورة.","words_preserved":true,"punctuation_differs":true}
+  ],
+  "other_languages": "Supported locale mapping checked mechanically against Google documentation; no live speech-accuracy claim"
+}

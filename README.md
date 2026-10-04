@@ -48,3 +48,10 @@ With the local server running, `node scripts/validate-development.mjs` examines 
 ## Passage translations and read-aloud
 
 Nine input/display languages are selectable. Published passage translations appear separately alongside the unchanged original. Explanation translations remain unreviewed project text. Browser Listen/Stop controls use matching available device voices. An optional server-side Google free-tier reader produces WAV audio with native browser playback, cache and quota stops; it requires a locally configured key and confirmation of an unpaid project. No paid speech fallback is used. Live English/Arabic audio generation and identical-byte cache reuse passed; physical-phone playback and pronunciation quality remain unverified. Synthesis is assistive reading rather than recorded Quran recitation. [Free reader setup](docs/FREE-SPEECH.md), [read-aloud boundary](docs/READ-ALOUD.md).
+
+## Voice input and source-answer evaluation
+Voice input supports nine language settings and automatic recognition, with local recording preview, explicit free-Google transcription and an editable transcript before use. Live synthetic English and Arabic probes passed; human microphone and physical-device accuracy are not yet independently verified. [Voice input setup and boundaries](docs/VOICE-INPUT.md).
+
+The 50 distinct-question development baseline compares app answers with separately reviewed, linked primary-source answers. Missing an established answer is a coverage failure, never a correct answer. Six unresolved or outside-scope cases are excluded from factual accuracy. [Results and initial failures](docs/BASELINE50-RESULTS.md), [reference witnesses](docs/COMMON50-SOURCES.md); the local /evaluation page exposes every question and comparison. These are representative topics, not a measured top-search list or scholarly approval.
+
+Published English Quran translation now also supplies hash-checked query-ranking assistance, mapped back to immutable Arabic evidence. Hadith ordinary search includes both admitted Arabic and English records where appropriate; grades remain publisher-attributed.

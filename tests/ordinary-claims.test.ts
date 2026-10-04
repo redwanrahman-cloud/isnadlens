@@ -1,6 +1,7 @@
 import { expect, test } from 'vitest';
 import { loadCorpus, sha256 } from '../src/lib/corpus';
-import { retrieve, queryTerms } from '../src/lib/retrieval';
+import { retrieve, queryTerms, retrieveWithPublishedEnglishAid } from '../src/lib/retrieval';
+import { readFileSync } from 'node:fs';
 import { scopeGate } from '../src/lib/policy';
 import { loadHadith, retrieveHadith } from '../src/lib/hadith';
 
@@ -76,4 +77,47 @@ test('translated subject hints anchor unfamiliar Urdu while known original topic
   expect(retrieve(corpus, 'backbiting is not permitted', 1, ['eating pork'])[0].id).toBe('49:12');
   expect(queryTerms('backbiting is not permitted')).toContain('not');
   expect(retrieve(corpus, claim + ' 21:30', 1, hints)[0].id).toBe('21:30');
+});
+test('specific prayer contexts outrank the broad prayer category without encoding passage locations', () => {
+  const corpus = loadCorpus();
+  const cases: [string, string, string[]][] = [
+    ['Does the Quran direct prayer toward the Sacred Mosque?', '2:144', ['القبلة', 'qibla', 'المسجد الحرام', 'Sacred Mosque', 'الصلاة', 'prayer']],
+    ['Does the Quran tell believers to leave trading when the Friday prayer call is made?', '62:9', ['الجمعة', 'Friday prayer', 'النداء', 'call to prayer', 'الصلاة', 'البيع', 'trade']],
+    ['Does the Quran forbid approaching prayer while intoxicated until one understands what one is saying?', '4:43', ['الصلاة', 'prayer', 'سكران', 'intoxicated', 'يفهم', 'understands']],
+  ];
+  for (const [claim, locator, hints] of cases) expect(retrieve(corpus, claim, 4, hints).some(verse => verse.id === locator), claim).toBe(true);
+});
+test('validated published English reading aid retrieves diverse actual failures as immutable Arabic evidence', () => {
+  const corpus = loadCorpus(); const before = sha256(JSON.stringify(corpus.verses));
+  const dataset = JSON.parse(readFileSync('artifacts/common-question-baseline-50-2026-10-04.json','utf8'));
+  for (const id of ['B22','B23','B24','B26','B27','B29','B32','B33','B37','B38','B41','B43']) {
+    const item=dataset.cases.find((item:{id:string})=>item.id===id);
+    const hints = id==='B32' ? ['السخرية', 'mocking others', 'التنابز بالألقاب', 'offensive nicknames'] : [];
+    const result=retrieveWithPublishedEnglishAid(corpus,item.claim,8,hints);
+    expect(result.verses.some(verse=>item.reviewer_locators.includes('quran:'+verse.id)),id).toBe(true);
+    expect(result.reading_aid).toMatchObject({key:'english_rwwad',version:'1.0.19',role:'query_retrieval_only'});
+    for(const verse of result.verses) expect(verse).toBe(corpus.verses.find(original=>original.id===verse.id));
+  }
+  expect(sha256(JSON.stringify(corpus.verses))).toBe(before);
+  expect(retrieveWithPublishedEnglishAid(corpus,'backbiting is not permitted 21:30',1,['pork']).verses[0].id).toBe('21:30');
+  expect(retrieveWithPublishedEnglishAid(corpus,'backbiting is not permitted',1,['pork']).verses[0].id).toBe('49:12');
+});
+test('ordinary smiling-as-charity wording finds admitted Arabic report without encoding its id in search', () => {
+  const corpus=loadHadith();
+  for(const claim of ['The Hadith says that smiling at another person is charity.', 'Does the Hadith say that smiling at another person is charity?']) {
+    const results=retrieveHadith(corpus,claim,'ar',4,['ابتسامة','smiling','صدقة','charity']);
+    expect(results.some(record=>record.id==='66237')).toBe(true);
+    const record=results.find(record=>record.id==='66237')!;
+    expect(record).toBe(corpus.records.find(original=>original.id==='66237'&&original.language==='ar'));
+    expect(record.fields.grade).toBe('حسن');
+  }
+});
+test('published transliteration accents do not erase a negated original Ramadan subject', () => {
+  const corpus=loadCorpus();const claim='The Quran never mentions Ramadan.';
+  const before=sha256(JSON.stringify(corpus.verses));
+  expect(retrieveWithPublishedEnglishAid(corpus,claim,8,['water','prayer']).verses.some(verse=>verse.id==='2:185')).toBe(true);
+  expect(retrieveWithPublishedEnglishAid(corpus,'The Quran never mentions Ramadān.',8).verses.some(verse=>verse.id==='2:185')).toBe(true);
+  expect(claim).toBe('The Quran never mentions Ramadan.');
+  expect(queryTerms(claim)).toContain('never');
+  expect(sha256(JSON.stringify(corpus.verses))).toBe(before);
 });

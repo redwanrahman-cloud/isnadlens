@@ -46,3 +46,7 @@ This tracks actual completion, not promised capabilities. Visual redesign requir
 Internal feature cutoff: 6 October 2026 at 09:00 Riyadh. Internal submission target: 6 October at 20:00 Riyadh; official close recorded in the recovered plan is 23:59. Reconfirm the official submission page before final submission.
 
 Published passage display and browser read-aloud verified locally. Bangla Quran is an official source link until edition version verification; device voice availability and independent linguistic review remain explicit limits.
+
+Voice dictation: synthetic English/Arabic transcription passed; human microphone, accent/noise, all-nine-language transcription and physical iPhone/Android checks remain open. Free speech quotas and explicit review-before-use are active.
+
+50-question baseline: independently traceable primary-text reference answers are separated from safe abstentions, unresolved cases and mechanical integrity. Initial misses are retained. Freeze and run a fresh independent evaluation after development repairs; do not describe these targeted retests as an untouched final benchmark or claim 100 tested questions.

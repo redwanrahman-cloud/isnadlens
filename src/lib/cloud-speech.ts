@@ -7,7 +7,7 @@ export const SPEECH_VOICES=['Achernar','Algieba','Sulafat'] as const;
 export const SPEECH_LANGUAGES=['ar','en','bn','hi','ur','id','es','fr','de'] as const;
 let active=0;
 const directory=()=>join(process.cwd(),'artifacts','private','speech');
-function speechConfiguration(){
+export function speechConfiguration(){
   const path=join(process.cwd(),'artifacts','private','google-speech.env');
   const file=existsSync(path)?readFileSync(path,'utf8'):'';
   const settings=Object.fromEntries(file.split(/\r?\n/).filter(line=>/^[A-Z_]+=/.test(line)).map(line=>{const index=line.indexOf('=');return [line.slice(0,index),line.slice(index+1).trim()];}));
@@ -21,7 +21,7 @@ export function validateSpeechInput(input:unknown):{text:string;language:string;
   if(/[\w.+-]+@[\w.-]+\.[a-z]{2,}|\+?\d[\d\s-]{8,}|\b(api.?key|password|passport|credit card|bank account|patient|diagnosis)\b|كلمة المرور|رقم الهوية|جواز السفر/i.test(value.text))throw new Error('SPEECH_PRIVATE_TEXT_REFUSED');
   return {text:value.text,language:value.language,voice:value.voice};
 }
-function reserveFreeRequest(){
+export function reserveFreeRequest(){
   mkdirSync(directory(),{recursive:true});
   const lock=join(directory(),'quota.lock');let handle:number;
   try{handle=openSync(lock,'wx');}catch{throw new Error('SPEECH_BUSY');}
