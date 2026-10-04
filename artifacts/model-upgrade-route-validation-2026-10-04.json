@@ -1,0 +1,70 @@
+{
+  "kind": "targeted_live_production_route_check_not_accuracy_benchmark",
+  "claim": "My understanding is that the Quran prohibits pork. Is that correct?",
+  "http_status": 200,
+  "passed": false,
+  "verdict": "insufficient_within_selected_corpus",
+  "model": "gpt-5.6-luna",
+  "reason_codes": [
+    "INCOMPLETE_OR_INDIRECT_COVERAGE"
+  ],
+  "seal_valid": true,
+  "summary_en": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+  "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+  "evidence": [
+    {
+      "locator": "6:145",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "5:3",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "2:173",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "16:115",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "5:60",
+      "relation": "unrelated",
+      "integrity": true
+    },
+    {
+      "locator": "5:87",
+      "relation": "unrelated",
+      "integrity": true
+    },
+    {
+      "locator": "6:140",
+      "relation": "unrelated",
+      "integrity": true
+    },
+    {
+      "locator": "66:1",
+      "relation": "unrelated",
+      "integrity": true
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 259,
+      "output_tokens": 85,
+      "estimated_cost_usd": 0.00016675,
+      "reservation_id": "060eeaa4-3942-4e95-936b-c72794b35ef9"
+    },
+    {
+      "input_tokens": 10410,
+      "output_tokens": 654,
+      "estimated_cost_usd": 0.0033873,
+      "reservation_id": "4844387d-e7a4-4413-aac4-22bd8eea1a84"
+    }
+  ]
+}

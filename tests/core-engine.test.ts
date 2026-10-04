@@ -1,4 +1,7 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
+// Preserve the captured 5.4 adapter/router contract; the 5.6 suite tests the new default.
+beforeEach(() => vi.stubEnv('OPENAI_MODEL', 'gpt-5.4-mini'));
+afterEach(() => vi.unstubAllEnvs());
 import { sha256, validateCorpus, loadCorpus, validateRawSources, validateAdmissionPins } from '../src/lib/corpus';
 import { readFileSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -228,9 +231,9 @@ describe('source integrity and query processing', () => {
   it('attaches exact immediate same-surah source context and hashes without crossing chapter boundaries', () => {
     const corpus = loadCorpus();
     const middle = authenticateEvidence(corpus, corpus.verses.find(v => v.id === '21:30')!);
-    expect(middle.source_context.map(c => c.locator)).toEqual(['21:29', '21:31']);
+    expect(middle.source_context.map(c => c.locator)).toEqual(['21:28', '21:29', '21:31', '21:32']);
     expect(middle.source_context.every(c => c.integrity_passed && sha256(c.quotation) === c.quotation_sha256)).toBe(true);
-    expect(authenticateEvidence(corpus, corpus.verses[0]).source_context.map(c => c.locator)).toEqual(['1:2']);
+    expect(authenticateEvidence(corpus, corpus.verses[0]).source_context.map(c => c.locator)).toEqual(['1:2', '1:3']);
   });
   it('rejects tampering even when the document is otherwise schema-valid', () => {
     const verse = { id: '1:1', surah: 1, ayah: 1, display: 'immutable fixture', search: 'immutable fixture', display_sha256: sha256('immutable fixture') };
@@ -588,7 +591,7 @@ describe('one-step objective semantic reference router', () => {
       expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
       expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
       expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
-      expect(record.router_version).toContain('supplied-context-v4'); expect(verifySeal(record)).toBe(true);
+      expect(record.router_version).toContain('source-hierarchy-v6'); expect(verifySeal(record)).toBe(true);
       const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
       expect(verifySeal(changed)).toBe(false);
     } finally { mocked.mockRestore(); }
@@ -602,7 +605,7 @@ describe('one-step objective semantic reference router', () => {
       expect(mocked).toHaveBeenCalledTimes(2); expect(record.assessment_attempts).toHaveLength(2); expect(verifySeal(record)).toBe(true);
     } finally { mocked.mockRestore(); }
   });
-  it('does not escalate an ordinary insufficient assessment or a semantic scope refusal', async () => {
+  it('does not escalate ordinary insufficiency, but rechecks a screened public source scope refusal once', async () => {
     const { invalid } = packets();
     const incomplete = { ...assessment, atomic_claims: [{ ...atom, relation: 'unrelated' as const, direct: false, evidence_ids: [] }], all_material_claims_covered: false };
     const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: incomplete, model: 'gpt-5.4-mini', usage: null }).mockResolvedValueOnce({ assessment: { ...invalid, in_scope: false }, model: 'gpt-5.4-mini', usage: null });
@@ -610,7 +613,7 @@ describe('one-step objective semantic reference router', () => {
       expect((await verifyClaim({ claim, inputLanguage: 'en' })).verdict).toBe('insufficient_within_selected_corpus');
       expect(mocked).toHaveBeenCalledTimes(1);
       expect((await verifyClaim({ claim, inputLanguage: 'en' })).verdict).toBe('not_evaluated');
-      expect(mocked).toHaveBeenCalledTimes(2);
+      expect(mocked).toHaveBeenCalledTimes(3);
     } finally { mocked.mockRestore(); }
   });
   it('fails closed on the strong budget stop while retaining the completed mini assessment and its cost', async () => {

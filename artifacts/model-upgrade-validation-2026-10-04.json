@@ -1,0 +1,197 @@
+{
+  "kind": "targeted_live_migration_checks_not_new_50_question_benchmark",
+  "created_at": "2026-10-04T15:04:16.367Z",
+  "application_tree_sha256": "2c4a42d64c68acf38bd392cf8836d43e5449616625ee442bff2b0cc05ac485f3",
+  "models": [
+    {
+      "model": "gpt-5.6-luna",
+      "reasoning": "low",
+      "verdict": "supported_within_selected_corpus",
+      "source_check_passed": true,
+      "summary_en": "Yes. The selected source collection directly supports the claim from the Quran at 112:1, stating Allah’s oneness. This assessment is limited to the supplied Quran passage and does not require additional Hadith evidence.",
+      "usage": [
+        {
+          "input_tokens": 2550,
+          "input_tokens_details": {
+            "cache_write_tokens": 2547,
+            "cached_tokens": 0
+          },
+          "output_tokens": 400,
+          "output_tokens_details": {
+            "reasoning_tokens": 107
+          },
+          "total_tokens": 2950,
+          "estimated_cost_usd": 0.0011175,
+          "reservation_id": "5152e584-e571-4228-8ef8-8d017f2bb421"
+        },
+        {
+          "input_tokens": 1003,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 103,
+          "output_tokens_details": {
+            "reasoning_tokens": 35
+          },
+          "total_tokens": 1106,
+          "estimated_cost_usd": 0.00037435,
+          "reservation_id": "b1180ee1-8ebb-45f0-8cd2-92508ef2619e"
+        }
+      ]
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "reasoning": "low",
+      "verdict": "supported_within_selected_corpus",
+      "source_check_passed": true,
+      "summary_en": "Yes. The supplied Quran passage at 112:1 directly supports the statement that Allah is One.",
+      "usage": [
+        {
+          "input_tokens": 2550,
+          "input_tokens_details": {
+            "cache_write_tokens": 2547,
+            "cached_tokens": 0
+          },
+          "output_tokens": 232,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 2782,
+          "estimated_cost_usd": 0.009159,
+          "reservation_id": "0991e4df-803c-474d-86ca-4ddf19042018"
+        },
+        {
+          "input_tokens": 1005,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 67,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1072,
+          "estimated_cost_usd": 0.00033164999999999996,
+          "reservation_id": "6f36963f-e3d1-4045-a92b-852252e585d5"
+        }
+      ]
+    }
+  ],
+  "context_retest": {
+    "id": "H12",
+    "claim": "Does the Quran describe freeing an enslaved person as part of the difficult path of righteousness?",
+    "expected": "supported_within_selected_corpus",
+    "actual": "supported_within_selected_corpus",
+    "reason_codes": [
+      "COMPLETE_DIRECT_COVERAGE"
+    ],
+    "model": "gpt-5.6-luna",
+    "passed": true,
+    "seal_valid": true,
+    "summary_en": "Yes. The selected source collection supports this Quranic description: freeing an enslaved person is presented within the difficult path, and provision for enslaved persons is included among acts of righteousness. This assessment is limited to the supplied Quran passages.",
+    "evidence": [
+      {
+        "locator": "4:92",
+        "relation": "unrelated",
+        "context": [
+          "4:90",
+          "4:91",
+          "4:93",
+          "4:94"
+        ]
+      },
+      {
+        "locator": "90:13",
+        "relation": "supports",
+        "context": [
+          "90:11",
+          "90:12",
+          "90:14",
+          "90:15"
+        ]
+      },
+      {
+        "locator": "2:177",
+        "relation": "supports",
+        "context": [
+          "2:175",
+          "2:176",
+          "2:178",
+          "2:179"
+        ]
+      },
+      {
+        "locator": "16:75",
+        "relation": "unrelated",
+        "context": [
+          "16:73",
+          "16:74",
+          "16:76",
+          "16:77"
+        ]
+      },
+      {
+        "locator": "24:31",
+        "relation": "unrelated",
+        "context": [
+          "24:29",
+          "24:30",
+          "24:32",
+          "24:33"
+        ]
+      },
+      {
+        "locator": "20:77",
+        "relation": "unrelated",
+        "context": [
+          "20:75",
+          "20:76",
+          "20:78",
+          "20:79"
+        ]
+      },
+      {
+        "locator": "42:52",
+        "relation": "unrelated",
+        "context": [
+          "42:50",
+          "42:51",
+          "42:53"
+        ]
+      },
+      {
+        "locator": "9:60",
+        "relation": "unrelated",
+        "context": [
+          "9:58",
+          "9:59",
+          "9:61",
+          "9:62"
+        ]
+      }
+    ],
+    "usage": [
+      {
+        "input_tokens": 264,
+        "output_tokens": 95,
+        "estimated_cost_usd": 0.00018,
+        "reservation_id": "932b554d-347d-461c-b221-f90f8b83968f"
+      },
+      {
+        "input_tokens": 10044,
+        "output_tokens": 532,
+        "estimated_cost_usd": 0.0031494,
+        "reservation_id": "a36c71ba-5b1a-42c3-b36b-5ed017c2b0b5"
+      },
+      {
+        "input_tokens": 3173,
+        "output_tokens": 70,
+        "estimated_cost_usd": 0.00087725,
+        "reservation_id": "9f27e0d0-1129-4801-b857-e575e3ff533e"
+      }
+    ]
+  },
+  "all_passed": true,
+  "report_sha256": "db8ae6973ac517ba7a8c02dcf254eddf8c34cc0f86a36a9af4bbfabc06ee06cc"
+}

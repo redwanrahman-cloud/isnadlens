@@ -2,17 +2,20 @@ import { mkdirSync, openSync, closeSync, readFileSync, writeFileSync, renameSync
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
+import { MODEL_IDS } from './model-config';
 
-const entrySchema = z.object({ id: z.string(), model: z.enum(['gpt-5.4-mini', 'gpt-5.4']), reserved_usd: z.number().nonnegative(), actual_usd: z.number().nonnegative().nullable(), status: z.enum(['reserved', 'settled']), created_at: z.string(), input_tokens: z.number().int().nonnegative().nullable(), output_tokens: z.number().int().nonnegative().nullable() });
+const entrySchema = z.object({ id: z.string(), model: z.enum(MODEL_IDS), reserved_usd: z.number().nonnegative(), actual_usd: z.number().nonnegative().nullable(), status: z.enum(['reserved', 'settled']), created_at: z.string(), input_tokens: z.number().int().nonnegative().nullable(), output_tokens: z.number().int().nonnegative().nullable() });
 const ledgerSchema = z.object({ version: z.literal(1), entries: z.array(entrySchema) });
 type Ledger = z.infer<typeof ledgerSchema>;
-const rates = { 'gpt-5.4-mini': { input: .75, output: 4.5 }, 'gpt-5.4': { input: 2.5, output: 15 } } as const;
+const rates = { 'gpt-5.4-mini': { input: .75, output: 4.5 }, 'gpt-5.4': { input: 2.5, output: 15 }, 'gpt-5.6-luna': { input: .20, output: 1.20 }, 'gpt-5.6-terra': { input: 2, output: 12 } } as const;
 export function authorizedBudget(): number {
   const cap = Number(process.env.ISNADLENS_MAX_SPEND_USD ?? '0');
   return process.env.ISNADLENS_PAID_CALLS_AUTHORIZED === 'true' && Number.isFinite(cap) && cap > 0 ? cap : 0;
 }
 export function priceUsage(model: keyof typeof rates, input: number, output: number): number {
-  return (input * rates[model].input + output * rates[model].output) / 1_000_000;
+  // Conservatively cover possible 5.6 cache-write billing on every input token.
+  // Ledger estimates can exceed invoices; cache discounts never expand the authorization cap.
+  return (input * rates[model].input * (model.startsWith('gpt-5.6-') ? 1.25 : 1) + output * rates[model].output) / 1_000_000;
 }
 const defaultDirectory = () => join(process.cwd(), 'artifacts', 'private');
 function updateLedger<T>(directory: string, mutate: (ledger: Ledger) => T): T {

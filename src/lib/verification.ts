@@ -1,8 +1,9 @@
+import { assessmentModels, isFirstTier, primaryModel } from './model-config';
 import { CLAIM_LANGUAGES, type ClaimLanguage } from './claim-language';
 import { randomUUID } from 'node:crypto';
 import { loadCorpus, sha256, type Corpus, type Verse } from './corpus';
 import { recordSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
-import { scopeGate, decideVerdict, nativeSafetyGate } from './policy';
+import { scopeGate, decideVerdict, nativeSafetyGate, publicEvidenceRequest } from './policy';
 import { retrieve, retrieveWithPublishedEnglishAid } from './retrieval';
 import { assessClaim, reviewPositiveEntailment, ENTAILMENT_VERSION, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure, type EntailmentReview } from './provider';
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation, type HadithCorpus } from './hadith';
@@ -10,7 +11,7 @@ import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './ci
 import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlannerFailure, type QueryOverrides } from './query-planner';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'reference-or-conflict-plus-positive-review-and-supplied-context-v4';
+export const ROUTER_VERSION = 'luna-terra-low-source-hierarchy-v6';
 export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
   const atoms = assessment.atomic_claims.filter(a => a.material);
   if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
@@ -47,11 +48,12 @@ export function authenticateEvidence(corpus: Corpus, verse: Verse): EvidenceItem
     { id: 'quotation_sha256', passed: sha256(verse.display) === verse.display_sha256, reason: 'UTF-8 quotation SHA-256 matches the admitted record.' },
     { id: 'corpus_sha256', passed: sha256(JSON.stringify(corpus.verses)) === corpus.manifest.sha256, reason: 'Complete joined corpus matches its manifest hash.' },
   ];
-  const source_context = (['preceding', 'following'] as const).flatMap(position => {
-    const neighbor = corpus.verses.find(v => v.surah === verse.surah && v.ayah === verse.ayah + (position === 'preceding' ? -1 : 1));
+  const source_context = ([-2, -1, 1, 2] as const).flatMap(offset => {
+    const position = offset < 0 ? 'preceding' as const : 'following' as const;
+    const neighbor = corpus.verses.find(v => v.surah === verse.surah && v.ayah === verse.ayah + offset);
     return neighbor ? [{ position, locator: neighbor.id, quotation: neighbor.display, quotation_sha256: neighbor.display_sha256, integrity_passed: sha256(neighbor.display) === neighbor.display_sha256 }] : [];
   });
-  checks.push({ id: 'neighbor_context', passed: source_context.every(c => c.integrity_passed), reason: 'Immediate same-surah context matches admitted exact display hashes.' });
+  checks.push({ id: 'neighbor_context', passed: source_context.every(c => c.integrity_passed), reason: 'Bounded two-verse same-surah context matches admitted exact display hashes.' });
   return { evidence_id: `${corpus.manifest.id}:${verse.id}`, source_id: source.id, title: 'Quran — Tanzil Uthmani', version: source.version,
     locator: verse.id, quotation: verse.display, quotation_sha256: verse.display_sha256,
     source_url: `https://tanzil.net/#${verse.surah}:${verse.ayah}`, attribution: source.attribution,
@@ -194,9 +196,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   if (!base.evidence_items.length) return sealRecord({ ...base, verdict: 'insufficient_within_selected_corpus', reason_codes: ['NO_RETRIEVED_EVIDENCE'], summary_ar: 'لم يسترجع البحث أدلة كافية من المجموعة المحددة.', summary_en: 'The search retrieved no evidence from the selected corpus. This does not establish that evidence does not exist.' });
   try {
     let result: Awaited<ReturnType<typeof assessClaim>> | null = null;
-    const configuredModel = process.env.OPENAI_MODEL ?? 'gpt-5.4-mini';
-    if (!['gpt-5.4-mini', 'gpt-5.4'].includes(configuredModel)) return fail('MODEL_NOT_ALLOWLISTED');
-    const models: ('gpt-5.4-mini' | 'gpt-5.4')[] = configuredModel === 'gpt-5.4' ? ['gpt-5.4'] : ['gpt-5.4-mini', 'gpt-5.4'];
+    const models = assessmentModels();
     for (const requestedModel of models) {
       try { result = await assessClaim(claim, inputLanguage, base.evidence_items, requestedModel); }
       catch (error) {
@@ -213,12 +213,16 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         }
       }
       const invalid = semanticReferenceError(result.assessment, base.evidence_items);
-      const conflictNeedsConfirmation = requestedModel === 'gpt-5.4-mini' && !invalid && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'conflicting_within_selected_corpus';
-      base.assessment_attempts!.push({ model: result.model, reason: invalid ?? (conflictNeedsConfirmation ? 'CONTRADICTION_CONFIRMATION_REQUIRED' : 'SEMANTIC_VALIDATION_PASSED'), raw_assessment: result.assessment, usage: result.usage });
-      if (!invalid && !conflictNeedsConfirmation) break;
+      const conflictNeedsConfirmation = isFirstTier(requestedModel) && !invalid && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'conflicting_within_selected_corpus';
+      const scopeNeedsConfirmation = isFirstTier(requestedModel) && !result.assessment.in_scope && publicEvidenceRequest(searchClaim);
+      const atoms = result.assessment.atomic_claims.filter(a => a.material);
+      const supportFlagsNeedConfirmation = isFirstTier(requestedModel) && !invalid && result.assessment.in_scope && result.assessment.original_meaning_preserved && result.assessment.all_material_claims_covered && atoms.length > 0 && atoms.every(a => a.relation === 'supports') && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'insufficient_within_selected_corpus';
+      base.assessment_attempts!.push({ model: result.model, reason: invalid ?? (scopeNeedsConfirmation ? 'PUBLIC_SOURCE_SCOPE_CONFIRMATION_REQUIRED' : supportFlagsNeedConfirmation ? 'SUPPORT_FLAGS_CONFIRMATION_REQUIRED' : conflictNeedsConfirmation ? 'CONTRADICTION_CONFIRMATION_REQUIRED' : 'SEMANTIC_VALIDATION_PASSED'), raw_assessment: result.assessment, usage: result.usage });
+      if (!invalid && !conflictNeedsConfirmation && !scopeNeedsConfirmation && !supportFlagsNeedConfirmation) break;
       // Exactly one strong reassessment for invalid semantic references or a proposed mini contradiction.
-      // Scope refusals, ordinary insufficiency, provider errors and source corruption never trigger it.
-      if (requestedModel === 'gpt-5.4' || !result.assessment.in_scope || !result.assessment.original_meaning_preserved) return fail(invalid ?? 'CONTRADICTION_UNCONFIRMED');
+      // A screened public source question gets one scope reassessment; private/sensitive gates remain pre-provider.
+      // Ordinary insufficiency, provider errors and source corruption never trigger it.
+      if (!isFirstTier(requestedModel) || (!result.assessment.in_scope && !scopeNeedsConfirmation) || !result.assessment.original_meaning_preserved) return fail(invalid ?? 'CONTRADICTION_UNCONFIRMED');
     }
     if (!result) return fail('SEMANTIC_SCHEMA_OR_PROVIDER_FAILURE');
     const assessment = result.assessment;
@@ -232,7 +236,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         base.entailment_review = { version: ENTAILMENT_VERSION, model: checked.model, status: passed ? 'passed' : 'rejected', raw_review: checked.review, raw_provider_review: checked.raw_provider_review, unit_provenance: checked.unit_provenance, derivation: 'whole_immutable_selected_source_unit', usage: checked.usage, reason: passed ? 'SOURCE_ENTAILMENT_CONFIRMED' : 'SOURCE_ENTAILMENT_UNCONFIRMED' };
         if (!passed) { base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNCONFIRMED'); }
       } catch (error) {
-        base.entailment_review = { version: ENTAILMENT_VERSION, model: error instanceof ProviderFailure ? error.model : 'gpt-5.4-mini', status: 'unavailable', raw_review: null, usage: error instanceof ProviderFailure ? error.usage : null, reason: error instanceof Error ? error.message : 'PROVIDER_UNAVAILABLE' };
+        base.entailment_review = { version: ENTAILMENT_VERSION, model: error instanceof ProviderFailure ? error.model : primaryModel(), status: 'unavailable', raw_review: null, usage: error instanceof ProviderFailure ? error.usage : null, reason: error instanceof Error ? error.message : 'PROVIDER_UNAVAILABLE' };
         base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNAVAILABLE');
       }
     }

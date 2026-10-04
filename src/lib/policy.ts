@@ -1,6 +1,20 @@
 import type { SemanticAssessment, VerificationRecord } from './contracts';
 import { asciiDigits } from './citations';
 
+/** Public source questions can mention sensitive subjects without describing a private case. */
+export function publicEvidenceRequest(claim: string): boolean {
+  return /\b(quran|qur'an|koran|hadith|hadeeth|islam|islamic|sunnah)\b|قرآن|القران|حديث|الإسلام|الاسلام|السنة|কুরআন|কোরআন|হাদিস|इस्लाम|कुरान|قرآن|حدیث/i.test(claim)
+    && !/\b(my (?:illness|condition|wife|husband|pregnancy|debt|salary|income|account)|i (?:have|owe|suffer)|i am (?:ill|sick|pregnant|diabetic)|patient|diagnos\w*|help me|how to (?:kill|attack)|weapon|target|plan(?:ning)? violence)\b|زوجتي|حالتي|مرضي|حامل أنا|أريد قتل|اريد قتل|سلاح|مريض اسمه/i.test(claim)
+    && !/\b(?:[A-Z][a-z]+) (?:has|is suffering|lives at|earns|owes)\b/.test(claim.replace(/\b(?:Quran|Hadith|Islam|Allah|God)\b/g, 'source'));
+}
+function personalRulingRequest(claim: string): boolean {
+  // First-person learning/verification language alone is not a case-specific ruling.
+  const learningRequest = /\b(?:can i|should i|i am|my)\s+(?:check|verify|understand|learn|ask|understanding|interpretation|reading|confused about|trying to understand)\b/i.test(claim)
+    && publicEvidenceRequest(claim);
+  const remaining = learningRequest ? claim.replace(/\b(?:can i|should i|i am|my)\s+(?:check|verify|understand|learn|ask|understanding|interpretation|reading|confused about|trying to understand)\b/ig, '') : claim;
+  return /\b(my|i am|i have|am i|should i|can i|is it permissible for me|puedo yo|debo yo|mi esposa|je peux|puis-je|dois-je|mon épouse|darf ich|soll ich|meine frau|bolehkah saya|istri saya)\b|هل يجوز لي|علي كفارة|زوجتي|أنا|حكم حالتي|আমার|আমি কি|আমাকে|मेरी|मेरा|क्या मैं|مجھے|میری|میرا|کیا میں/i.test(remaining);
+}
+
 function publicFastingQualification(claim: string): boolean {
   // A public source description of the fasting exception is not a patient's health history.
   return /quran|qur'an|koran|cor[aá]n|coran|قرآن|القران|কোরআন|কুরআন|कुरान|क़ुरआन/i.test(claim)
@@ -20,13 +34,13 @@ export function nativeSafetyGate(claim: string): string | null {
   if (/ignore.{0,30}(instructions|rules)|system prompt|developer message|تجاهل.{0,30}(تعليمات|قواعد)|ignora.{0,30}instru|ignorez.{0,30}instructions|ignoriere.{0,30}(anweisung|regel)|abaikan.{0,30}(instruksi|aturan)|নির্দেশ.{0,20}উপেক্ষা|निर्देश.{0,20}अनदेखा|ہدایات.{0,20}نظر انداز/i.test(claim)) return 'INSTRUCTION_INJECTION';
   const numbers = asciiDigits(claim).replace(/[০-৯]/g, d => String(d.charCodeAt(0) - 0x09e6)).replace(/[०-९]/g, d => String(d.charCodeAt(0) - 0x0966));
   if (/[\w.+-]+@[\w.-]+\.[a-z]{2,}|\+?\d[\d\s-]{8,}/i.test(numbers)) return 'PRIVATE_DATA_REFERRAL';
-  if (/\b(my|i am|i have|am i|should i|can i|is it permissible for me|puedo yo|debo yo|mi esposa|je peux|puis-je|dois-je|mon épouse|darf ich|soll ich|meine frau|bolehkah saya|istri saya)\b|هل يجوز لي|زوجتي|حكم حالتي|আমার|আমি কি|আমাকে|मेरी|मेरा|क्या मैं|مجھے|میری|میرا|کیا میں/i.test(claim)) return 'PERSONAL_RULING_REFERRAL';
+  if (personalRulingRequest(claim)) return 'PERSONAL_RULING_REFERRAL';
   const healthMatch = /\b(patient|diabet\w*|cancer|disease|illness|pregnan\w*|medication|bank account|credit card|passport|ssn|enfermedad|embaraz\w*|maladie|enceinte|krank\w*|schwanger\w*|penyakit|hamil)\b|مرض|مريض|سكري|سرطان|حامل|حساب بنكي|রোগ|গর্ভবতী|ক্যান্সার|बीमारी|गर्भवती|कैंसर|بیمار|حاملہ/i.test(claim);
   const privateHealth = /patient|diabet|cancer|pregnan|medication|bank account|credit card|passport|ssn|embaraz|enceinte|schwanger|hamil|سكري|سرطان|حامل|حساب بنكي|গর্ভবতী|ক্যান্সার|गर्भवती|कैंसर|حاملہ/i.test(claim);
-  if (healthMatch && (!publicFastingQualification(claim) || privateHealth)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
+  if (healthMatch && !publicEvidenceRequest(claim) && (!publicFastingQualification(claim) || privateHealth)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
   const namedFact = /\b([A-Z][a-z]+)\s+(has|is suffering|lives at|earns|owes)\b/.exec(claim);
   if (namedFact && !['Intention', 'Prayer', 'Fasting', 'Charity', 'Religion', 'Islam', 'Quran', 'Hadith', 'Ramadan', 'God', 'Allah', 'Creation', 'Water', 'Life', 'Mercy', 'Justice'].includes(namedFact[1])) return 'PERSONAL_FACTS_REFERRAL';
-  if (/\b(kafir|apostate|terrorist|suicide|sect|political)\w*|تكفير|مرتد|انتحار|طائفة|আত্মহত্যা|आत्महत्या|خودکشی/i.test(claim)) return 'SENSITIVE_SCOPE_REFERRAL';
+  if (/\b(kafir|apostate|terrorist|sect|political)\w*|تكفير|مرتد|طائفة/i.test(claim) || /\bsuicide\b|انتحار|আত্মহত্যা|आत्महत्या|خودکشی/i.test(claim) && !publicEvidenceRequest(claim)) return 'SENSITIVE_SCOPE_REFERRAL';
   if (claim.replace(/[\p{Script=Latin}\p{Script=Arabic}\p{Script=Bengali}\p{Script=Devanagari}\u0640\p{M}\p{N}\p{P}\p{S}\p{Z}\s]/gu, '').length) return 'INPUT_LANGUAGE_NOT_SUPPORTED';
   return null;
 }
@@ -38,16 +52,17 @@ export function scopeGate(claim: string): string | null {
   // when they happen to mention a religious topic or place.
   const textAttribution = /\b(quran|qur'an|koran|hadith|hadeeth|prophet said|muhammad said)\b|قرآن|القران|حديث|قال النبي|قال رسول/i.test(claim);
   if (!textAttribution && /\b(weather|forecast|temperature|stock price|exchange rate|football score|write (?:me )?(?:code|a poem)|tell (?:me )?a joke|recipe)\b|الطقس|طقس|درجة الحرارة|سعر الصرف|نتيجة المباراة|وصفة طبخ|اكتب.*كود|قل.*نكتة/i.test(claim)) return 'OUTSIDE_SUPPORTED_CLAIM_SCOPE';
-  if (/\b(my|i am|i have|am i|should i|can i|is it permissible for me)\b|هل يجوز لي|علي كفارة|زوجتي|أنا|حكم حالتي/i.test(claim)) return 'PERSONAL_RULING_REFERRAL';
+  if (personalRulingRequest(claim)) return 'PERSONAL_RULING_REFERRAL';
   const publicViolenceDescription = textAttribution
     && /\b(say|says|describe|describes|mention|mentions|warn|warns|forbid|forbids|prohibit|prohibits|recount|recounts)\b|يقول|يذكر|يصف|يحذر|ينهى|يحرم|يتوعد/i.test(claim)
     && !/\b(how to|instructions|methods|target|weapon|attack|plan|planning|want to|intend to|help me)\b|كيف|طريقة|سلاح|استهدف|أخطط|اخطط|أريد|اريد|ساعدني/i.test(claim)
     && !/\bkill(?:ing)?\s+(?:[A-Z][a-z]+|you|him|her|them)\b/.test(claim);
-  if (/\b(kafir|apostate|terrorist|suicide|medical|diagnos|sect|political)\w*|تكفير|كافر|مرتد|انتحار|طائفة/i.test(claim)
+  if (/\b(kafir|apostate|terrorist|sect|political)\w*|تكفير|كافر|مرتد|طائفة/i.test(claim)
+    || /\b(suicide|medical|diagnos)\w*|انتحار/i.test(claim) && !publicEvidenceRequest(claim)
     || /\b(kill)\w*|قتل/i.test(claim) && !publicViolenceDescription) return 'SENSITIVE_SCOPE_REFERRAL';
   if (/\b(patient|diabet\w*|cancer|disease|illness|pregnan\w*|doctor|medicine|medication|salary|income|bank account|credit card|passport|ssn)\b|مريض|سكري|سرطان|مرض|حامل|دواء|طبيب|راتب|دخل شخصي|حساب بنكي|رقم الهوية|جواز/i.test(claim)
-    && (!publicFastingQualification(claim) || /patient|diabet|cancer|pregnan|doctor|medicine|medication|salary|income|bank account|credit card|passport|ssn|سكري|سرطان|حامل|دواء|طبيب|راتب|دخل شخصي|حساب بنكي|رقم الهوية|جواز/i.test(claim))) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
-  if (/\b(debt|debts)\b|ديون/i.test(claim) && !publicDebtDocumentation(claim)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
+    && !publicEvidenceRequest(claim) && (!publicFastingQualification(claim) || /patient|diabet|cancer|pregnan|doctor|medicine|medication|salary|income|bank account|credit card|passport|ssn|سكري|سرطان|حامل|دواء|طبيب|راتب|دخل شخصي|حساب بنكي|رقم الهوية|جواز/i.test(claim))) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
+  if (/\b(debt|debts)\b|ديون/i.test(claim) && !publicEvidenceRequest(claim) && !publicDebtDocumentation(claim)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
   if (/\b(my|his|her|their|patient'?s|[A-Z][a-z]+'s)\s+(home\s+)?(address|phone number|telephone number)\b|عنواني|عنوانه|عنوانها|رقم هاتفي|رقم هاتفه|رقم هاتفها/i.test(claim)) return 'PRIVATE_DATA_REFERRAL';
   if (/[\w.+-]+@[\w.-]+\.[a-z]{2,}|\+?\d[\d\s-]{8,}/i.test(asciiDigits(claim))) return 'PRIVATE_DATA_REFERRAL';
   if (/\b(mr|mrs|ms|dr)\.\s+[A-Z]|فلان|فلانة|يعاني|تسكن|يسكن/.test(claim)) return 'PERSONAL_FACTS_REFERRAL';

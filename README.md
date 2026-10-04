@@ -2,6 +2,8 @@
 
 A source-first workbench for examining bounded Islamic claims in nine languages. Citation integrity and model-assisted interpretation are separate. This is not a fatwa or scholarly approval.
 
+The current app checks people's interpretations and general source questions against immutable Quran/Hadith evidence. It defaults to GPT-5.6 Luna with low reasoning and one bounded Terra reassessment for specified ambiguous/inconsistent cases. See [interpretation and model policy](docs/INTERPRETATION-AND-MODEL-POLICY.md) for the researched evidence hierarchy, source boundaries, spending controls and targeted validation.
+
 ## Current increment
 
 Nine selectable input/display languages (Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French, German), automatic language detection, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in nine languages, bounded AI-assisted bilingual search expansion, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment and translations of project explanations were tested within the authorized persistent development spending cap. Explanations are labelled unreviewed; original source quotations are never overwritten by language switching; separate published translations are identified alongside them. Detection and routing do not establish independent linguistic or religious approval. Further untouched evaluation, live hosting and the pilgrimage guide remain open.

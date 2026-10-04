@@ -1,4 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+// Preserve the captured 5.4 adapter/router contract; the 5.6 suite tests the new default.
+beforeEach(() => vi.stubEnv('OPENAI_MODEL', 'gpt-5.4-mini'));
+afterEach(() => vi.unstubAllEnvs());
 import { detectAndRouteClaim, verifyMultilingualClaim, filterIntakeHints } from '../src/lib/multilingual-intake';
 import { nativeSafetyGate } from '../src/lib/policy';
 import { verifySeal } from '../src/lib/verification';

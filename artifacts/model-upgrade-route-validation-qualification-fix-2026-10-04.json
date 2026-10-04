@@ -1,0 +1,77 @@
+{
+  "kind": "targeted_live_production_route_check_not_accuracy_benchmark",
+  "claim": "My understanding is that the Quran prohibits pork. Is that correct?",
+  "http_status": 200,
+  "passed": true,
+  "verdict": "supported_within_selected_corpus",
+  "model": "gpt-5.6-luna",
+  "reason_codes": [
+    "COMPLETE_DIRECT_COVERAGE"
+  ],
+  "seal_valid": true,
+  "summary_en": "Yes. The selected source collection supports the understanding that the Quran prohibits consuming pork. The cited passages also state a narrowly qualified exception for genuine necessity, so this is the general rule rather than an unrestricted absolute.",
+  "summary_ar": "نعم، تدعم مجموعة المصادر المحددة فهمك بأن القرآن يحرّم استهلاك لحم الخنزير. وتذكر الآيات استثناء الاضطرار بشروطه المقيِّدة، لذلك فالحكم المعروض هنا هو القاعدة العامة لا حالة الضرورة.",
+  "source_check": "passed",
+  "evidence": [
+    {
+      "locator": "6:145",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "5:60",
+      "relation": "unrelated",
+      "integrity": true
+    },
+    {
+      "locator": "5:3",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "2:173",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "16:115",
+      "relation": "supports",
+      "integrity": true
+    },
+    {
+      "locator": "5:87",
+      "relation": "unrelated",
+      "integrity": true
+    },
+    {
+      "locator": "6:140",
+      "relation": "unrelated",
+      "integrity": true
+    },
+    {
+      "locator": "66:1",
+      "relation": "unrelated",
+      "integrity": true
+    }
+  ],
+  "usage": [
+    {
+      "input_tokens": 259,
+      "output_tokens": 88,
+      "estimated_cost_usd": 0.00017035,
+      "reservation_id": "ac3845ad-796a-4c08-8443-ed8076a63d65"
+    },
+    {
+      "input_tokens": 10537,
+      "output_tokens": 518,
+      "estimated_cost_usd": 0.00325585,
+      "reservation_id": "bcda6e66-0723-44cd-be4f-78ca4e2d4cb6"
+    },
+    {
+      "input_tokens": 7135,
+      "output_tokens": 66,
+      "estimated_cost_usd": 0.0018629500000000002,
+      "reservation_id": "dcf69b95-ede7-42f2-baa4-b65e04a22ea1"
+    }
+  ]
+}

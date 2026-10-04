@@ -1,0 +1,16 @@
+import {writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+if(!process.argv.includes('--live'))throw new Error('EXPLICIT_LIVE_FLAG_REQUIRED');
+const claim='My understanding is that the Quran prohibits pork. Is that correct?';
+const suffix=process.argv.includes('--qualification-fix')?'-qualification-fix':'';
+const response=await fetch('http://127.0.0.1:3100/api/verify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({claim,inputLanguage:'en',corpusSelection:'quran'}),signal:AbortSignal.timeout(90000)});
+const record=await response.json();
+await writeFile(`artifacts/private/model-upgrade-live-route${suffix}.json`,JSON.stringify(record,null,2)+'\n',{flag:'wx'});
+const {audit_hash,...payload}=record;
+const sealValid=audit_hash===createHash('sha256').update(JSON.stringify(payload)).digest('hex');
+const expectedSources=['2:173','5:3','6:145','16:115'];
+const passed=record.verdict==='supported_within_selected_corpus'&&record.model?.startsWith('gpt-5.6-luna')&&sealValid&&record.original_claim===claim&&record.entailment_review?.status==='passed'&&record.evidence_items?.some(e=>expectedSources.includes(e.locator)&&e.semantic_relation==='supports');
+const result={kind:'targeted_live_production_route_check_not_accuracy_benchmark',claim,http_status:response.status,passed,verdict:record.verdict,model:record.model,reason_codes:record.reason_codes,seal_valid:sealValid,summary_en:record.summary_en,summary_ar:record.summary_ar,source_check:record.entailment_review?.status,evidence:record.evidence_items?.map(e=>({locator:e.locator,relation:e.semantic_relation,integrity:e.integrity.passed})),usage:[record.retrieval_plan?.usage,...(record.assessment_attempts??[]).map(a=>a.usage),record.entailment_review?.usage].filter(Boolean)};
+await writeFile(`artifacts/model-upgrade-route-validation${suffix}-2026-10-04.json`,JSON.stringify(result,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({passed,verdict:record.verdict,model:record.model,summary:record.summary_en,reason_codes:record.reason_codes}));
+if(!passed)process.exitCode=1;
