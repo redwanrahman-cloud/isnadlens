@@ -1,0 +1,49 @@
+{
+  "kind": "five_question_pilot_mechanical_audit_not_scholarly_certification",
+  "total": 3,
+  "answer_label_matches": 2,
+  "wrong_decisive_answer_labels": 0,
+  "abstentions": 1,
+  "source_and_seal_checks_passed": 3,
+  "run_settled_sar": 0.289726875,
+  "development_sar": 37.47809081250004,
+  "development_cap_sar": 39,
+  "cases": [
+    {
+      "id": "P1",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "P2",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "P3",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "SPEND_BUDGET_STOP"
+      ]
+    }
+  ]
+}

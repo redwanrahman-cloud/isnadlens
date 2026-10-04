@@ -1,0 +1,49 @@
+{
+  "kind": "incomplete_five_question_pilot_principal_review_not_accuracy_certification",
+  "created_at": "2026-10-04T23:48:29.849Z",
+  "planned": 5,
+  "attempted": 3,
+  "completed_answers": 2,
+  "satisfactory_completed_answers": 2,
+  "untested": [
+    "P4",
+    "P5"
+  ],
+  "operational_stop": "P3",
+  "reason": "SPEND_BUDGET_STOP",
+  "full_pilot_gate_passed": false,
+  "benchmark_score": null,
+  "source_and_seal_checks_passed": 3,
+  "pilot_commitment_sar": 0.2897268750000066,
+  "maximum_pilot_sar": 0.75,
+  "final_development_sar": 37.47809081250004,
+  "development_cap_sar": 39,
+  "limits": [
+    "Two completed answers cannot establish five-question success, a 90% release target, general accuracy or native-language certification.",
+    "Budget reservation uses a conservative UTF-8-byte input-token upper bound plus maximum output; it can stop calls even when settled cost is below the pilot cap.",
+    "No retry, production edit or larger run after the pilot budget guard. Original frozen benchmarks unchanged."
+  ],
+  "cases": [
+    {
+      "id": "P1",
+      "completed_answer": true,
+      "satisfactory": true,
+      "note": "2:280 supports respite for a debtor in hardship until ease; English/Arabic preserve that condition, without compulsory forgiveness or an individual debt judgment.",
+      "source_bytes_and_nested_seals_passed": true
+    },
+    {
+      "id": "P2",
+      "completed_answer": true,
+      "satisfactory": true,
+      "note": "6:59 explicitly includes falling leaves in Allah’s knowledge; English/Arabic preserve the statement without adding separate doctrinal conclusions.",
+      "source_bytes_and_nested_seals_passed": true
+    },
+    {
+      "id": "P3",
+      "completed_answer": false,
+      "satisfactory": false,
+      "note": "Operational stop. Correct ridicule passage 49:11 was retrieved, but SPEND_BUDGET_STOP prevented a complete assessment/review. Not a wrong religious answer and not a satisfactory answer.",
+      "source_bytes_and_nested_seals_passed": true
+    }
+  ]
+}

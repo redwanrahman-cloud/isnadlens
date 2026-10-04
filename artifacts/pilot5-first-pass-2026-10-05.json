@@ -1,0 +1,172 @@
+{
+  "threshold": {
+    "total": 5,
+    "minimum_satisfactory_responses": 5,
+    "maximum_wrong_decisive_answers": 0
+  },
+  "kind": "fresh_five_question_pilot_frozen_first_pass",
+  "freeze": {
+    "application_tree_sha256": "5118ffc539d2fcc78a588d0083bd8f2f72a7cfc3f3368998e91a42addfb56270",
+    "dataset_sha256": "55b4aa8fb7c5c19def84ab75277fddf8830f860e95f74609bc99190794ac9a9b",
+    "build": "SVEvOLRtbYnGREzY_lq7L",
+    "development_cap_sar": 39,
+    "pilot_limit_sar": 0.75,
+    "effective_cap_sar": 37.938363937500036
+  },
+  "started_at": "2026-10-04T23:45:25.795Z",
+  "starting_development_sar": 37.188363937500036,
+  "cases": [
+    {
+      "id": "P1",
+      "claim": "Does the Quran ask us to give someone struggling with a debt more time to repay?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 2:280 supports this understanding by addressing a debtor in hardship and providing for postponing repayment until improved financial ability. This assessment is limited to the selected source collection and does not resolve every broader jurisprudential detail.",
+      "summary_ar": "نعم، تدعم الآية 2:280 هذا الفهم؛ فهي تتناول المدين الواقع في عُسرة وتقرر إمهاله إلى أن تتحسن قدرته على السداد. وهذا التقييم مبني على مجموعة المصادر المحددة، ولا يحسم كل التفاصيل الفقهية خارجها.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:282",
+        "2:280",
+        "3:144",
+        "3:143",
+        "2:281",
+        "2:284",
+        "4:9",
+        "4:10"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 862,
+          "output_tokens": 126,
+          "estimated_cost_usd": 0.00036669999999999997,
+          "reservation_id": "0007dece-6eaf-4deb-b78a-34ce36fcaa70"
+        },
+        {
+          "input_tokens": 14867,
+          "output_tokens": 178,
+          "estimated_cost_usd": 0.0393035,
+          "reservation_id": "9c906eb2-c01d-4084-b54b-01813667ea74"
+        },
+        {
+          "input_tokens": 14145,
+          "output_tokens": 395,
+          "estimated_cost_usd": 0.00401025,
+          "reservation_id": "99df6022-618e-42aa-950c-49f885f3631a"
+        }
+      ],
+      "explanation_diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "review": "pending"
+    },
+    {
+      "id": "P2",
+      "claim": "هل يذكر القرآن أن الله يعلم ما تسقط من ورقة؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The Quran explicitly states this meaning in Al-An'am 6:59, in the context of God's comprehensive knowledge of what is in the land and sea. This assessment is limited to the selected source collection; detailed contextual interpretation remains subject to qualified scholarly review.",
+      "summary_ar": "نعم، يذكر القرآن هذا المعنى صراحةً في سورة الأنعام، الآية 59، ضمن بيان إحاطة علم الله بما في البر والبحر، وأن ما يسقط من ورقة لا يخفى عليه. ويقتصر هذا التقييم على مجموعة المصادر المحددة، مع بقاء التفسير التفصيلي للسياق من اختصاص المراجعة العلمية المتخصصة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "6:59",
+        "6:60",
+        "13:8",
+        "6:58",
+        "6:57",
+        "2:75",
+        "6:61",
+        "4:176"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 859,
+          "output_tokens": 169,
+          "estimated_cost_usd": 0.00041754999999999993,
+          "reservation_id": "d87a4a27-8ba6-488b-95e6-a067219eda80"
+        },
+        {
+          "input_tokens": 10023,
+          "output_tokens": 100,
+          "estimated_cost_usd": 0.0262575,
+          "reservation_id": "55f05a4c-e524-442f-9107-656f6ed952e8"
+        },
+        {
+          "input_tokens": 9839,
+          "output_tokens": 331,
+          "estimated_cost_usd": 0.00285695,
+          "reservation_id": "3bfaf35a-0f4d-4826-941f-77b3b8b8d606"
+        }
+      ],
+      "explanation_diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "review": "pending"
+    },
+    {
+      "id": "P3",
+      "claim": "Sagt der Koran, dass wir andere Menschen verspotten dürfen, weil wir besser sind?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "SPEND_BUDGET_STOP"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "49:11",
+        "49:13",
+        "2:61",
+        "5:58",
+        "18:106",
+        "30:10",
+        "45:35",
+        "49:9"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 865,
+          "output_tokens": 170,
+          "estimated_cost_usd": 0.00042025,
+          "reservation_id": "b087df18-0073-4c51-9358-42ee4ab56c93"
+        },
+        {
+          "input_tokens": 10844,
+          "output_tokens": 764,
+          "estimated_cost_usd": 0.0036278,
+          "reservation_id": "614c03d2-2d75-42d2-9ec1-b6b2b57f820f"
+        }
+      ],
+      "explanation_diagnostic": null,
+      "review": "pending"
+    }
+  ],
+  "operational_stop": "P3",
+  "completed_at": "2026-10-04T23:46:18.179Z",
+  "final_development_sar": 37.47809081250004,
+  "pilot_commitment_sar": 0.2897268750000066
+}

@@ -1,0 +1,89 @@
+{
+  "kind": "five_new_questions_key_locked_before_requests",
+  "created_at": "2026-10-04T23:44:00.459Z",
+  "novelty": "No exact normalized duplicates among the previous 290 benchmark questions; themes/sources may recur. No retrieval pre-screening or popularity-ranking claim.",
+  "protocol": "Five questions only. Automatic source/language selection. No answer key or expected locators in requests. No production edits or manual answer-failure retries during the run. Stop at the 0.75 SAR pilot budget guard.",
+  "threshold": {
+    "total": 5,
+    "minimum_satisfactory_responses": 5,
+    "maximum_wrong_decisive_answers": 0
+  },
+  "maximum_spend_sar": 0.75,
+  "cases": [
+    {
+      "id": "P1",
+      "language": "en",
+      "claim": "Does the Quran ask us to give someone struggling with a debt more time to repay?",
+      "family": "quran",
+      "rationale": "Debtor hardship is the condition for respite until ease. No individual debt judgment or compulsory forgiveness asserted.",
+      "expected_verdict": "supported_within_selected_corpus",
+      "references": [
+        {
+          "locator": "2:280",
+          "sha256": "32cc4f84fd8caab4c9434d4bb10ea6c77a9632e671fbe9c615648ee91ad7ed66",
+          "url": "https://tanzil.net/#2:280"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "language": "ar",
+      "claim": "هل يذكر القرآن أن الله يعلم ما تسقط من ورقة؟",
+      "family": "quran",
+      "rationale": "Not a leaf falls without His knowledge. No claims about separate doctrinal controversies.",
+      "expected_verdict": "supported_within_selected_corpus",
+      "references": [
+        {
+          "locator": "6:59",
+          "sha256": "8d634e840853e69a059a9994d917f21cf6ce23367627d53cec09d28ccaaa0d7d",
+          "url": "https://tanzil.net/#6:59"
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "language": "de",
+      "claim": "Sagt der Koran, dass wir andere Menschen verspotten dürfen, weil wir besser sind?",
+      "family": "quran",
+      "rationale": "Prohibits ridicule; those mocked may be better. Believing audience and both group comparisons retained; no contemporary group judgment.",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "references": [
+        {
+          "locator": "49:11",
+          "sha256": "ba3e734607df1a6482717f96734e1a67f17d9aa956db231274df0612adad2483",
+          "url": "https://tanzil.net/#49:11"
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "language": "fr",
+      "claim": "Le hadith dit-il qu’Allah aime la douceur plutôt que la violence?",
+      "family": "hadith",
+      "rationale": "Allah loves gentleness and gives for it what He does not give for violence. No universal prohibition of every use of force inferred.",
+      "expected_verdict": "supported_within_selected_corpus",
+      "references": [
+        {
+          "locator": "en:5797",
+          "sha256": "0b034b164da6ff9d95ecdf70fe360a2507fb9e9c5d4dbc4c01c709322436d325",
+          "url": "https://hadeethenc.com/en/browse/hadith/5797"
+        }
+      ]
+    },
+    {
+      "id": "P5",
+      "language": "id",
+      "claim": "Apakah hadis menyebut menjenguk orang sakit sebagai salah satu hak sesama Muslim?",
+      "family": "hadith",
+      "rationale": "Visiting the sick appears among a Muslim’s rights over another Muslim; no individual medical instruction.",
+      "expected_verdict": "supported_within_selected_corpus",
+      "references": [
+        {
+          "locator": "en:3706",
+          "sha256": "1e148b3a8fa700980505048c338eaf6f023f87265bc461aea19aca9ee4e15c14",
+          "url": "https://hadeethenc.com/en/browse/hadith/3706"
+        }
+      ]
+    }
+  ]
+}
