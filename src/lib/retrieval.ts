@@ -6,7 +6,7 @@ export function normalizeQuery(query: string): string {
   return query.toLowerCase().normalize('NFKC').replace(/[\u064b-\u065f\u0670]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
 }
 export type QuranReadingAid = { source: 'QuranEnc'; key: 'english_rwwad'; version: string; language: 'en'; role: 'query_retrieval_only'; sha256:string; source_url:string };
-const englishStop = new Set('a an the does do did is are was were has have had what which who when where how why quran koran allah god say says describe describes tell tells teach teaches command commands instruct instructs forbid forbids forbidden prohibited permitted permissible lawful warn warns require requires state states mention mentions one another people believers of to for and or in on at as by with from that this it its be before after while until not no never please kindly check verify'.split(' '));
+const englishStop = new Set('a an the does do did is are was were has have had what which who when where how why quran koran allah god say says describe describes tell tells teach teaches command commands instruct instructs forbid forbids forbidden prohibited permitted permissible lawful warn warns require requires state states mention mentions one another people believers of to for and or in on at as by with from that this it its be before after while until not no never please kindly check verify user ask asks asking whether question according describe describes call calls appropriate visiting provided automatically during rather something humans'.split(' '));
 export function englishWords(text: string): string[] {
   // Derived search tokens only; publisher strings and original negation remain intact.
   // Latin transliteration macrons (e.g. ā) are folded in the derived index only.
@@ -14,13 +14,15 @@ export function englishWords(text: string): string[] {
   const latinFolded = text.replace(/\p{Script=Latin}/gu, char=>char.normalize('NFD').replace(/\p{M}/gu,''));
   return normalizeQuery(latinFolded).split(' ').filter(word => /^[a-z]{3,}$/.test(word) && !englishStop.has(word)).map(word => {
     const synonyms: Record<string,string> = {home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything',enslaved:'slave',slaves:'slave',strength:'strong',angry:'anger'};
+    const irregular:Record<string,string>={saw:'see',seen:'see',children:'child',men:'man',women:'woman',feet:'foot',took:'take',taken:'take',gave:'give',given:'give',ate:'eat',eaten:'eat',drank:'drink',drunk:'drink'};
+    if (irregular[word]) return irregular[word];
     if (synonyms[word]) return synonyms[word];
     return word.replace(/ying$/, 'y').replace(/ies$/, 'y').replace(/([a-z])\1ing$/, '$1').replace(/ing$/, '').replace(/ed$/, '').replace(/ly$/, '').replace(/(?<!s)s$/, '');
   }).filter(word => word.length >= 3);
 }
 type EnglishIndex = {rows: {id:string;words:Set<string>}[];frequency:Map<string,number>};
 const englishIndices = new WeakMap<object, EnglishIndex>();
-export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: string, limit = 8, additionalQueries: readonly string[] = []): {verses:Verse[];reading_aid:QuranReadingAid} {
+export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: string, limit = 8, additionalQueries: readonly string[] = [], englishSearchClaim = originalClaim): {verses:Verse[];reading_aid:QuranReadingAid} {
   // Admission is checked on every call before the derived cache is consulted.
   // The edition loader enforces immutable pin/raw/JSON hashes and locator identity.
   const edition = loadQuranTranslation('en');
@@ -32,8 +34,10 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
     for (const row of rows) for (const word of row.words) frequency.set(word,(frequency.get(word)??0)+1);
     index = {rows,frequency}; englishIndices.set(edition,index);
   }
-  const originalWords = [...new Set(englishWords(originalClaim))];
-  const hints = additionalQueries.slice(0,8).filter(value => typeof value==='string' && value.length<=160);
+  // The server routing gloss is a retrieval aid only. Native text still controls
+  // original references, safety checks and the final model assessment.
+  const originalWords = [...new Set(englishWords(englishSearchClaim))];
+  const hints = additionalQueries.slice(0,20).filter(value => typeof value==='string' && value.length<=160);
   const hintedWords = [...new Set(hints.flatMap(hint=>englishWords(queryTerms(hint).join(' '))))].slice(0,48);
   const primaryWords = originalWords.length ? originalWords : hintedWords;
   const secondaryWords = originalWords.length ? hintedWords.filter(word=>!originalWords.includes(word)) : [];
@@ -50,8 +54,13 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   const lexical = retrieve(corpus,originalClaim,corpus.verses.length,hints);
   const lexicalRanks = new Map(lexical.map((verse,position)=>[verse.id,position]));
   const explicit = new Set(parseQuranReferences(originalClaim).references);
+  const englishRanks = new Map([...englishScores].filter(([,score])=>score>0).sort((a,b)=>b[1]-a[1]).map(([id],rank)=>[id,rank]));
+  // Fuse independent Arabic and English rankings rather than allowing a
+  // dictionary subject or foreign Latin token to veto the other channel.
+  const phrases = hints.map(normalizeQuery).filter(s=>/\p{Script=Arabic}/u.test(s)&&s.split(' ').length>=3);
+  const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
   const verses = corpus.verses.filter(verse=>explicit.has(verse.id)||(englishScores.get(verse.id)??0)>0||lexicalRanks.has(verse.id))
-    .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
+    .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || (englishSearchClaim===originalClaim ? Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) : rankScore(b)-rankScore(a)) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
   const pin=getQuranTranslationAdmission().sources.find(source=>source.key==='english_rwwad');
   if(!pin) throw new Error('QURAN_ENGLISH_READING_AID_PIN_MISSING');
   return {verses,reading_aid:{source:'QuranEnc',key:'english_rwwad',version:edition.metadata.version,language:'en',role:'query_retrieval_only',sha256:pin.json_sha256,source_url:'https://quranenc.com/en/browse/english_rwwad'}};
@@ -101,7 +110,7 @@ export function queryTerms(query: string): string[] {
 export function retrieve(corpus: Corpus, query: string, limit = 8, additionalQueries: readonly string[] = []): Verse[] {
   // Optional model-planned terms are retrieval hints only; the original claim and references remain intact.
   const originalTerms = queryTerms(query);
-  const boundedHints = additionalQueries.slice(0, 8).filter(term => typeof term === 'string' && term.length <= 160);
+  const boundedHints = additionalQueries.slice(0, 20).filter(term => typeof term === 'string' && term.length <= 160);
   const terms = [...new Set([...originalTerms, ...boundedHints.flatMap(queryTerms)])].slice(0, 48);
   // Corpus-relative rarity distinguishes subject anchors from common words.
   // A broad expansion cannot displace an original distinctive subject match.

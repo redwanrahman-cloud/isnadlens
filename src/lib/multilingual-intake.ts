@@ -5,15 +5,15 @@ import { nativeSafetyGate, scopeGate } from './policy';
 import { reserveSpend, settleSpend } from './budget';
 import { providerReady } from './provider';
 import { validateQueryTerms } from './query-planner';
-import { verifyClaim, sealRecord, checkExplicitCitation } from './verification';
-import { verifyAutoClaim } from './auto-verification';
+import { verifyClaim, verifyClaimWithRecovery, sealRecord, checkExplicitCitation } from './verification';
+import { verifyAutoClaim, requestedSourceFamily } from './auto-verification';
 import { parseQuranReferences, parseHadithLinks } from './citations';
 import { loadCorpus } from './corpus';
 import { loadHadith, checkHadithCitation } from './hadith';
 import type { VerificationRecord } from './contracts';
 import { identifySource } from './source-identification';
 
-export const INTAKE_VERSION = 'nine-language-routing-v1.4-general-source-questions';
+export const INTAKE_VERSION = 'nine-language-routing-v1.5-source-family-search';
 type Intake = NonNullable<VerificationRecord['language_intake']>;
 const outputSchema = z.object({ detected_language: z.enum(CLAIM_LANGUAGES).nullable(), confidence: z.enum(['high', 'medium', 'low']), scope_category: z.enum(['textual', 'general', 'personal', 'sensitive', 'injection', 'unsupported']), english_gloss: z.string().min(1).max(1400), arabic_terms: z.unknown(), english_terms: z.unknown() }).strict();
 export function filterIntakeHints(arabic: unknown, english: unknown): Pick<Intake, 'arabic_terms' | 'english_terms' | 'rejected_search_term_count' | 'search_terms_status'> {
@@ -96,7 +96,7 @@ export async function verifyMultilingualClaim({ claim, inputLanguage = 'auto', c
   } catch { return refuse('CORPUS_INTEGRITY_OR_AVAILABILITY_FAILURE'); }
   // Explicit AR/EN needs no new paid detection; preserve exact-quote identification paths.
   if (requested === 'ar' || requested === 'en') {
-    const record = corpusSelection === 'auto' ? await verifyAutoClaim({ claim, inputLanguage: requested }) : await verifyClaim({ claim, inputLanguage: requested, corpusSelection, useQueryPlanner: true });
+    const record = corpusSelection === 'auto' ? await verifyAutoClaim({ claim, inputLanguage: requested }) : await verifyClaimWithRecovery({ claim, inputLanguage: requested, corpusSelection, useQueryPlanner: true });
     const { audit_hash: omitted, ...payload } = record; void omitted;
     return sealRecord({ ...payload, language_intake: { requested_language: requested, detected_language: requested, confidence: 'high', scope_category: record.reason_codes.some(reason => /REFERRAL|INJECTION/.test(reason)) ? 'personal' : record.reason_codes.includes('OUTSIDE_SUPPORTED_CLAIM_SCOPE') ? 'general' : 'textual', english_gloss: '', arabic_terms: [], english_terms: [], model: 'none', usage: null, status: record.verdict === 'not_evaluated' ? 'referred' : 'accepted', version: INTAKE_VERSION } });
   }
@@ -122,7 +122,7 @@ export async function verifyMultilingualClaim({ claim, inputLanguage = 'auto', c
   if (intake.scope_category !== 'textual') return refuse(intake.scope_category === 'personal' ? 'PERSONAL_RULING_REFERRAL' : intake.scope_category === 'sensitive' ? 'SENSITIVE_SCOPE_REFERRAL' : intake.scope_category === 'injection' ? 'INSTRUCTION_INJECTION' : 'OUTSIDE_SUPPORTED_CLAIM_SCOPE', intake);
   const glossBlocked = scopeGate(intake.english_gloss);
   if (glossBlocked) return refuse(glossBlocked, intake);
-  const record = await verifyClaim({ claim, inputLanguage: intake.detected_language, scopeClaim: intake.english_gloss, corpusSelection: corpusSelection === 'auto' ? 'both' : corpusSelection, ...(intake.arabic_terms.length || intake.english_terms.length ? { queryOverrides: { arabic_terms: intake.arabic_terms, english_terms: intake.english_terms } } : {}) });
+  const record = await verifyClaimWithRecovery({ claim, inputLanguage: intake.detected_language, scopeClaim: intake.english_gloss, corpusSelection: corpusSelection === 'auto' ? requestedSourceFamily(claim, intake.english_gloss) : corpusSelection, ...(intake.arabic_terms.length || intake.english_terms.length ? { queryOverrides: { arabic_terms: intake.arabic_terms, english_terms: intake.english_terms } } : {}) });
   const { audit_hash: omitted, ...payload } = record; void omitted;
   return sealRecord({ ...payload, language_intake: intake, limitations: [...record.limitations, 'Multilingual routing used a model-generated English gloss for screening and Arabic/English terms for retrieval; assessment examined the original input. Verification searches Arabic Quran and Arabic/English Hadith evidence, not nine independent Hadith language editions.'] });
 }

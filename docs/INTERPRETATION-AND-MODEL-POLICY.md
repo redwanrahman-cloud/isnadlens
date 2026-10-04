@@ -24,7 +24,7 @@ References read online on 4 October 2026, used for methodology research only; th
 
 Public source questions about illness, pregnancy or debt no longer receive automatic private-case refusals solely because those topics appear. English learning phrases such as "my understanding", "can I check" and "I am trying to understand" are allowed when attached to a public source question and without personal-case circumstances. Multilingual intake instructions apply the same distinction; native screening still protects identifiable private facts, personal rulings, harmful methods and unrelated requests.
 
-A first-tier semantic scope refusal on a screened public source question receives exactly one stronger reassessment. A response claiming complete positive support while returning incomplete support flags also gets one stronger reassessment; the app never flips those flags itself. Both attempts remain sealed. Ordinary missing evidence does not automatically cause repeated paid calls. No stronger retry for provider failures or source corruption.
+A first-tier semantic scope refusal on a screened public source question receives exactly one stronger reassessment. A response claiming complete positive support while returning incomplete support flags also gets one stronger reassessment; the app never flips those flags itself. Both attempts remain sealed. An evidence gap can now trigger one bounded alternative retrieval plan, followed by a new assessment of its actual source packet; it cannot recurse. The complete first sealed result and all added usage are retained. No stronger retry for provider failures or source corruption.
 
 Quran context is now bounded to two preceding and two following verses within the same surah. At most eight source cards and forty immutable source units reach the positive checker; the 48,000-character packet bound remains enforced. This covers a governing phrase two verses before a retrieved example without altering any original source text.
 
@@ -35,7 +35,7 @@ Quran context is now bounded to two preceding and two following verses within th
 - Both use explicit `reasoning.effort: low`; `minimal` is not a supported 5.6 effort.
 - Standard mode, not the separately billed Pro mode. Legacy 5.4 models remain allowlisted for historical ledgers and controlled comparisons.
 - Output ceilings include reasoning tokens: routing 3,200; planning 2,400; Luna assessment 8,000; Terra assessment 4,000; source checker 5,000; translation 5,000. Incomplete responses fail closed.
-- Current short-context standard rates per million tokens: Luna $0.20 input/$1.20 output; Terra $2 input/$12 output. Ledger estimates conservatively add the potential 25% cache-write input uplift to all 5.6 input tokens. Cached discounts never enlarge the spending authorization. The existing USD 3.46 cap and unknown reservations remain intact.
+- Current short-context standard rates per million tokens: Luna $0.20 input/$1.20 output; Terra $2 input/$12 output. Ledger estimates conservatively add the potential 25% cache-write input uplift to all 5.6 input tokens. Cached discounts never enlarge the spending authorization. Redwan subsequently approved an18SAR development cap (USD4.80), preserving15SAR for judging; all unknown reservations remain held.
 
 Official documentation: [Luna](https://developers.openai.com/api/docs/models/gpt-5.6-luna), [Terra](https://developers.openai.com/api/docs/models/gpt-5.6-terra), [pricing](https://developers.openai.com/api/docs/pricing).
 

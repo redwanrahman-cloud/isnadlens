@@ -77,11 +77,11 @@ export function loadHadith(): HadithCorpus {
   return frozen;
 }
 const escapeRegex = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'ar' | 'en', limit = 8, additionalQueries: readonly string[] = []): HadithRecord[] {
-  const explicit = parseHadithLinks(query).links;
+export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'ar' | 'en', limit = 8, additionalQueries: readonly string[] = [], originalClaim = query): HadithRecord[] {
+  const explicit = parseHadithLinks(originalClaim).links;
   const boilerplate = new Set(['prophet', 'messenger', 'muhammad', 'said', 'says', 'hadith', 'hadeeth', 'that', 'have', 'has', 'no', 'not', 'explicitly', 'نبي', 'النبي', 'رسول', 'الرسول', 'قال', 'حديث']);
   const lexicalSynonyms: Record<string, string[]> = { actions: ['deeds'], action: ['deed'], deeds: ['actions'], deed: ['action'], judged: ['rewarded', 'considered'] };
-  const searchForms = [query, ...additionalQueries.slice(0, 8).filter(term => typeof term === 'string' && term.length <= 160)];
+  const searchForms = [query, ...additionalQueries.slice(0, 20).filter(term => typeof term === 'string' && term.length <= 160)];
   const originalTerms = [...new Set(searchForms.flatMap(form => language==='en' ? [...englishWords(form),...englishWords(queryTerms(form).join(' '))] : queryTerms(form)))].filter(t => !boilerplate.has(t) && (language === 'ar' ? /\p{Script=Arabic}/u.test(t) : /\p{Script=Latin}/u.test(t)));
   const expandedTerms=[...originalTerms,...originalTerms.flatMap(term => lexicalSynonyms[term]??[])];
   const terms = [...new Set(language==='en'?expandedTerms.flatMap(englishWords):expandedTerms)].slice(0, 48);

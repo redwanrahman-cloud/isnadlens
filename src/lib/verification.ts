@@ -11,7 +11,7 @@ import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './ci
 import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlannerFailure, type QueryOverrides } from './query-planner';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'luna-terra-low-source-hierarchy-v6';
+export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v7';
 export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
   const atoms = assessment.atomic_claims.filter(a => a.material);
   if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
@@ -166,11 +166,11 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   const quranHints = overrides.arabic_terms.flatMap((term, index) => [term, ...(overrides.english_terms[index] ? [overrides.english_terms[index]] : [])]);
   for (let index = overrides.arabic_terms.length; index < overrides.english_terms.length; index++) quranHints.push(overrides.english_terms[index]);
   if (quran) {
-    const queries = [...quranHints, ...fallbackQueries].slice(0, 8);
+    const queries = [...quranHints, ...fallbackQueries].slice(0, 20);
     let verses: Verse[];
     const plan = base.retrieval_plan ?? { status: 'provided' as const, reason: 'PUBLISHED_ENGLISH_QUERY_READING_AID', model: 'none', arabic_terms: [], english_terms: [], usage: null, planner_version: QUERY_PLANNER_VERSION };
     try {
-      const result = retrieveWithPublishedEnglishAid(quran, claim, hadith ? 4 : 8, queries);
+      const result = retrieveWithPublishedEnglishAid(quran, claim, hadith ? 4 : 8, queries, scopeClaim ?? claim);
       verses = result.verses;
       base.retrieval_plan = { ...plan, reading_aid: result.reading_aid, reading_aid_status: 'used' };
       base.limitations.push('The admitted QuranEnc English edition was used only to locate Arabic Quran passages. Its version/hash is recorded as a query reading aid; only immutable Arabic primary quotations entered the evidence assessment.');
@@ -183,11 +183,11 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   }
   if (hadith) {
       const perLanguage = quran ? 2 : 4; const hadithLimit = quran ? 4 : 8;
-      const preferred = retrieveHadith(hadith, claim, retrievalLanguage, perLanguage, [...(retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries]);
+      const preferred = retrieveHadith(hadith, retrievalLanguage === 'en' ? searchClaim : claim, retrievalLanguage, perLanguage, [...(retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries], claim);
       const otherLanguage = retrievalLanguage === 'ar' ? 'en' : 'ar';
-      const other = retrieveHadith(hadith, claim, otherLanguage, perLanguage, [...(otherLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries]);
+      const other = retrieveHadith(hadith, otherLanguage === 'en' ? searchClaim : claim, otherLanguage, perLanguage, [...(otherLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries], claim);
       const chosen = [...preferred, ...other];
-      if (chosen.length < hadithLimit) for (const record of retrieveHadith(hadith, claim, retrievalLanguage, hadithLimit, [...(retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries])) if (chosen.length < hadithLimit && !chosen.some(item => item.language === record.language && item.id === record.id)) chosen.push(record);
+      if (chosen.length < hadithLimit) for (const record of retrieveHadith(hadith, retrievalLanguage === 'en' ? searchClaim : claim, retrievalLanguage, hadithLimit, [...(retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries], claim)) if (chosen.length < hadithLimit && !chosen.some(item => item.language === record.language && item.id === record.id)) chosen.push(record);
       base.evidence_items.push(...chosen.map(record => authenticateHadith(hadith!, record)));
   }
   base.retrieval_ids = base.evidence_items.map(e => e.evidence_id);
@@ -213,7 +213,9 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         }
       }
       const invalid = semanticReferenceError(result.assessment, base.evidence_items);
-      const conflictNeedsConfirmation = isFirstTier(requestedModel) && !invalid && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'conflicting_within_selected_corpus';
+      // A proposed explicit contradiction needs confirmation even if the first
+      // model marked a qualification false. Never flip those flags by code.
+      const conflictNeedsConfirmation = isFirstTier(requestedModel) && !invalid && result.assessment.in_scope && result.assessment.original_meaning_preserved && result.assessment.atomic_claims.some(a => a.material && a.relation === 'contradicts' && a.contradiction_basis === 'explicit_negation_or_incompatible_statement' && a.basis_evidence_id && a.basis_quotation);
       const scopeNeedsConfirmation = isFirstTier(requestedModel) && !result.assessment.in_scope && publicEvidenceRequest(searchClaim);
       const atoms = result.assessment.atomic_claims.filter(a => a.material);
       const supportFlagsNeedConfirmation = isFirstTier(requestedModel) && !invalid && result.assessment.in_scope && result.assessment.original_meaning_preserved && result.assessment.all_material_claims_covered && atoms.length > 0 && atoms.every(a => a.relation === 'supports') && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'insufficient_within_selected_corpus';
@@ -258,4 +260,23 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     const allowed = ['PROVIDER_UNAVAILABLE', 'PROVIDER_RATE_LIMIT', 'PROVIDER_INCOMPLETE', 'PROVIDER_REFUSAL', 'SPEND_OR_CONCURRENCY_STOP', 'MODEL_NOT_ALLOWLISTED', 'PACKET_LIMIT', 'PACKET_INTEGRITY_FAILURE', 'SPEND_BUDGET_STOP', 'SPEND_BUDGET_UNAUTHORIZED', 'BUDGET_LEDGER_LOCKED', 'BUDGET_LEDGER_INVALID'];
     return fail(error instanceof Error && allowed.includes(error.message) ? error.message : 'SEMANTIC_SCHEMA_OR_PROVIDER_FAILURE');
   }
+}
+
+/** One additional search plan for an evidence gap, never a recursive retry or a verdict override. */
+export async function verifyClaimWithRecovery(options: Parameters<typeof verifyClaim>[0]): Promise<VerificationRecord> {
+  const first = await verifyClaim(options);
+  const assessment = first.semantic_assessment as SemanticAssessment | null;
+  const missing = first.verdict === 'insufficient_within_selected_corpus' &&
+    (first.reason_codes.includes('NO_RETRIEVED_EVIDENCE') || assessment?.in_scope && assessment.original_meaning_preserved && assessment.atomic_claims.filter(a=>a.material).every(a=>['partial','unrelated'].includes(a.relation)));
+  const uncertainSupport = first.reason_codes.includes('SOURCE_ENTAILMENT_UNCONFIRMED');
+  if (!missing && !uncertainSupport || !providerReady()) return first;
+  const {audit_hash: omitted,...initialPayload} = first; void omitted;
+  let plan: Awaited<ReturnType<typeof planClaimQueries>>;
+  try { plan = await planClaimQueries({claim:options.scopeClaim ?? options.claim,inputLanguage:options.scopeClaim?'en':options.inputLanguage==='ar'?'ar':'en'}); }
+  catch (error) {
+    return sealRecord({...initialPayload,retrieval_recovery:{version:'bounded-retrieval-recovery-v1',status:'unavailable',reason:error instanceof QueryPlannerFailure?error.message:'QUERY_PLAN_UNAVAILABLE',first_record:first,usage:error instanceof QueryPlannerFailure?error.usage:null}});
+  }
+  const second = await verifyClaim({...options,useQueryPlanner:false,queryOverrides:{arabic_terms:plan.arabic_terms,english_terms:plan.english_terms}});
+  const {audit_hash: discarded,...payload} = second; void discarded;
+  return sealRecord({...payload,retrieval_recovery:{version:'bounded-retrieval-recovery-v1',status:'completed',reason:'ONE_ALTERNATIVE_SEARCH_FOR_EVIDENCE_GAP',first_record:first,usage:plan.usage,rejected_search_term_count:plan.rejected_search_term_count},limitations:[...second.limitations,'One bounded alternative search was attempted after incomplete evidence. The complete first sealed result and extra planning usage are retained; no original verdict was rewritten.']});
 }

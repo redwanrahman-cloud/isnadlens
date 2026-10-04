@@ -1,0 +1,45 @@
+{
+  "kind": "mechanical_not_semantic",
+  "cases": [
+    {
+      "id": "N19",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    },
+    {
+      "id": "N20",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    },
+    {
+      "id": "N28",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    },
+    {
+      "id": "N29",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    },
+    {
+      "id": "N36",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    },
+    {
+      "id": "N38",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    },
+    {
+      "id": "N01",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    },
+    {
+      "id": "N41",
+      "source_bytes_original_and_nested_seals_passed": true,
+      "principal_review": "pending"
+    }
+  ]
+}

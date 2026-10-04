@@ -1,7 +1,15 @@
 import {identifySource} from './source-identification';
 import {scopeGate} from './policy';
-import {verifyClaim} from './verification';
+import {verifyClaimWithRecovery as verifyClaim} from './verification';
 import type {VerificationRecord} from './contracts';
+
+/** Source preference is a search constraint, never a truth or authenticity judgment. */
+export function requestedSourceFamily(original: string, gloss = ''): 'quran' | 'hadith' | 'both' {
+  const text = `${original} ${gloss}`;
+  const q = /\b(quran|qur'an|koran)\b|قرآن|القران/i.test(text);
+  const h = /\b(hadith|hadeeth)\b|حديث/i.test(text);
+  return q && !h ? 'quran' : h && !q ? 'hadith' : 'both';
+}
 
 /** Identify quotations when possible; ordinary claims search both source families. */
 export async function verifyAutoClaim({claim,inputLanguage}:{claim:string;inputLanguage:'ar'|'en'}):Promise<VerificationRecord> {
@@ -15,6 +23,6 @@ export async function verifyAutoClaim({claim,inputLanguage}:{claim:string;inputL
     return verifyClaim({claim,inputLanguage,corpusSelection:identification.corpus,sourceIdentification:identification,useQueryPlanner:!directMatch});
   }
   // Missing literal matches do not establish absence or falsity of a paraphrase.
-  return verifyClaim({claim,inputLanguage,corpusSelection:'both',useQueryPlanner:!directMatch,
+  return verifyClaim({claim,inputLanguage,corpusSelection:identification.status==='ambiguous'?'both':requestedSourceFamily(claim),useQueryPlanner:!directMatch,
     ...(identification.status==='ambiguous'?{sourceIdentification:identification}:{})});
 }

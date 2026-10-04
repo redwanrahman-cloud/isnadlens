@@ -1,0 +1,17 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {evaluationUsage} from './lib/evaluation-usage.mjs';
+const read=async path=>JSON.parse(await readFile(path,'utf8'));
+const before=await read('artifacts/fresh50-first-pass-results-2026-10-04.json');
+const rounds=await Promise.all([1,2,3,4].map(n=>read(`artifacts/fresh50-repairs-round${n}-2026-10-04.json`)));
+const latest=new Map();for(const r of rounds)for(const c of r.cases)latest.set(c.id,{...c,round:r.round});
+const missed=before.cases.filter(c=>!c.verdict_agreement).map(c=>latest.get(c.id));
+const controls=['N01','N27','N41','N50'].map(id=>latest.get(id));
+// Principal decisions recorded by the main developer after reading each returned answer and proof.
+const approved=new Set(['N01','N06','N10','N14','N16','N18','N19','N20','N21','N25','N27','N28','N29','N31','N32','N33','N34','N35','N36','N37','N38','N40','N41','N42','N47','N48','N50']);
+const review=[...latest.values()].map(c=>({id:c.id,round:c.round,principal_grounding_approved:approved.has(c.id)&&c.label_match,finding:c.id==='N29'?'Generic source question answered negatively with explicit group/context qualifications; shown 2:48 additionally denies ransom. Do not universalize narrower 5:36 or silently convert this into an existential/personal case.':c.id==='N19'?'Ordinary adornment/clothing paraphrase supported by 7:31; no detailed legal dress standard claimed.':'Principal native assertion and EN/AR answer compared with original source and relevant context.'}));
+const ledger=await read('artifacts/private/api-spend.json');
+const budget=ledger.entries.reduce((s,e)=>s+(e.status==='settled'?e.actual_usd:e.reserved_usd),0)*3.75;
+const usage=new Map();for(const r of rounds)for(const c of r.cases){const raw=await read(`artifacts/private/fresh50-repairs-round${r.round}/${c.id}.json`);for(const u of evaluationUsage(raw))usage.set(u.reservation_id,u);}
+const summary={kind:'targeted_repair_results_not_untouched_accuracy',original_first_pass:{completed:50,grounded_matches:27,unchanged:true},latest_targeted_misses:{tested:missed.length,label_matches:missed.filter(c=>c.label_match).length,developer_principal_grounded_matches:missed.filter(c=>c.label_match&&approved.has(c.id)).length},controls:{tested:4,label_matches:controls.filter(c=>c.label_match).length},rounds:rounds.map(r=>({round:r.round,records:r.cases.length,matches:r.cases.filter(c=>c.label_match).length,operational_stop:r.operational_stop??null,application_tree_sha256:r.application_tree_sha256})),observed_settled_usage_usd:[...usage.values()].reduce((s,u)=>s+u.estimated_cost_usd,0),conservative_total_development_sar:budget,development_cap_sar:18,judging_reserve_sar:15,review_status:'developer_primary_source_review_not_scholar_or_independent_certification',cases:review,limits:['23/23 combines targeted development rounds, not one fresh final-build benchmark.','Four existing working questions are controls; other prior successful questions were not all rerun live.','No perfect accuracy or immunity to future errors is established.','Two initial connectivity-blocked N06 attempts remain recorded and their unknown reservations remain held.','Next untouched fifty has not been started.']};
+await writeFile('artifacts/fresh50-repair-summary-2026-10-04.json',JSON.stringify(summary,null,2)+'\n');
+console.log(JSON.stringify({repaired:summary.latest_targeted_misses,controls:summary.controls,settled_run_sar:summary.observed_settled_usage_usd*3.75,development_sar:budget}));

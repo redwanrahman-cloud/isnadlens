@@ -1,0 +1,755 @@
+{
+  "kind": "offline_frozen_hint_retrieval_only_not_model_accuracy",
+  "cases": [
+    {
+      "id": "N01",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:5:6",
+        "quran:2:124",
+        "quran:3:7",
+        "quran:4:162",
+        "quran:5:84",
+        "quran:4:43",
+        "quran:23:94",
+        "quran:2:196"
+      ]
+    },
+    {
+      "id": "N02",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:4:43",
+        "quran:5:6",
+        "quran:11:7",
+        "quran:11:44",
+        "quran:21:30",
+        "quran:2:74",
+        "quran:7:50",
+        "quran:54:12"
+      ]
+    },
+    {
+      "id": "N03",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:62:9",
+        "quran:2:45",
+        "quran:2:153",
+        "quran:13:22",
+        "quran:19:59",
+        "quran:62:10",
+        "quran:4:142",
+        "quran:4:101"
+      ]
+    },
+    {
+      "id": "N04",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:4:103",
+        "quran:2:177",
+        "quran:20:132",
+        "quran:24:37",
+        "quran:10:87",
+        "quran:2:3",
+        "quran:2:43",
+        "quran:2:45"
+      ]
+    },
+    {
+      "id": "N05",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:20:132",
+        "quran:73:20",
+        "quran:11:114",
+        "quran:17:78",
+        "quran:2:177",
+        "quran:17:79",
+        "quran:24:37",
+        "quran:19:31"
+      ]
+    },
+    {
+      "id": "N06",
+      "family": "both",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:2:185",
+        "quran:34:18",
+        "quran:2:222",
+        "quran:2:226",
+        "hadith:en:2977",
+        "hadith:en:4459",
+        "hadith:ar:3441",
+        "hadith:ar:5355"
+      ]
+    },
+    {
+      "id": "N07",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:158",
+        "quran:2:85",
+        "quran:2:259",
+        "quran:2:50",
+        "quran:5:2",
+        "quran:2:282",
+        "quran:22:32",
+        "quran:3:78"
+      ]
+    },
+    {
+      "id": "N08",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:173",
+        "quran:5:3",
+        "quran:16:115",
+        "quran:2:30",
+        "quran:7:133",
+        "quran:22:37",
+        "quran:2:196",
+        "quran:5:83"
+      ]
+    },
+    {
+      "id": "N09",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:4:4",
+        "quran:2:236",
+        "quran:4:24",
+        "quran:2:231",
+        "quran:4:127",
+        "quran:2:232",
+        "quran:4:19",
+        "quran:2:222"
+      ]
+    },
+    {
+      "id": "N10",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:233",
+        "quran:4:23",
+        "quran:2:231",
+        "quran:2:234",
+        "quran:22:5",
+        "quran:2:282",
+        "quran:27:88",
+        "quran:65:2"
+      ]
+    },
+    {
+      "id": "N11",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:33:49",
+        "quran:65:1",
+        "quran:2:184",
+        "quran:51:2",
+        "quran:65:4",
+        "quran:2:228",
+        "quran:2:185",
+        "quran:65:6"
+      ]
+    },
+    {
+      "id": "N12",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:232",
+        "quran:2:228",
+        "quran:2:234",
+        "quran:65:1",
+        "quran:2:233",
+        "quran:4:25",
+        "quran:4:24",
+        "quran:2:241"
+      ]
+    },
+    {
+      "id": "N13",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:185",
+        "quran:94:5",
+        "quran:94:6",
+        "quran:9:117",
+        "quran:7:95",
+        "quran:65:7",
+        "quran:50:17",
+        "quran:7:189"
+      ]
+    },
+    {
+      "id": "N14",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:114",
+        "quran:2:228",
+        "quran:2:286",
+        "quran:2:217",
+        "quran:1:1",
+        "quran:2:219",
+        "quran:2:7",
+        "quran:2:1"
+      ]
+    },
+    {
+      "id": "N15",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:13:28",
+        "quran:24:37",
+        "quran:2:200",
+        "quran:39:23",
+        "quran:57:16",
+        "quran:22:32",
+        "quran:18:28",
+        "quran:33:10"
+      ]
+    },
+    {
+      "id": "N16",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:143",
+        "quran:49:13",
+        "quran:2:8",
+        "quran:2:13",
+        "quran:6:91",
+        "quran:2:21",
+        "quran:25:54",
+        "quran:2:24"
+      ]
+    },
+    {
+      "id": "N17",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:39:42",
+        "quran:6:93",
+        "quran:2:19",
+        "quran:2:94",
+        "quran:6:61",
+        "quran:2:243",
+        "quran:3:185",
+        "quran:32:11"
+      ]
+    },
+    {
+      "id": "N18",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:4:102",
+        "quran:4:162",
+        "quran:2:177",
+        "quran:33:56",
+        "quran:19:55",
+        "quran:3:39",
+        "quran:7:29",
+        "quran:9:71"
+      ]
+    },
+    {
+      "id": "N19",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:2:144",
+        "quran:2:196",
+        "quran:48:25",
+        "quran:2:149",
+        "quran:2:150",
+        "quran:18:31",
+        "quran:2:191",
+        "quran:4:43"
+      ]
+    },
+    {
+      "id": "N20",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:6:108",
+        "quran:6:140",
+        "quran:4:46",
+        "quran:18:16",
+        "quran:9:5",
+        "quran:4:17",
+        "quran:9:36",
+        "quran:13:33"
+      ]
+    },
+    {
+      "id": "N21",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:191",
+        "quran:32:16",
+        "quran:17:31",
+        "quran:6:140",
+        "quran:2:268",
+        "quran:6:151",
+        "quran:3:154",
+        "quran:6:137"
+      ]
+    },
+    {
+      "id": "N22",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:83",
+        "quran:2:186",
+        "quran:2:177",
+        "quran:18:52",
+        "quran:3:45",
+        "quran:5:106",
+        "quran:4:43",
+        "quran:4:36"
+      ]
+    },
+    {
+      "id": "N23",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:7:54",
+        "quran:10:3",
+        "quran:11:7",
+        "quran:25:59",
+        "quran:32:4",
+        "quran:57:4",
+        "quran:6:73",
+        "quran:3:191"
+      ]
+    },
+    {
+      "id": "N24",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:6:112",
+        "quran:6:100",
+        "quran:51:56",
+        "quran:11:119",
+        "quran:49:13",
+        "quran:10:3",
+        "quran:2:143",
+        "quran:39:6"
+      ]
+    },
+    {
+      "id": "N25",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:42:51",
+        "quran:12:31",
+        "quran:16:103",
+        "quran:2:285",
+        "quran:19:17",
+        "quran:41:6",
+        "quran:5:18",
+        "quran:25:7"
+      ]
+    },
+    {
+      "id": "N26",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:255",
+        "quran:2:62",
+        "quran:21:8",
+        "quran:2:76",
+        "quran:25:47",
+        "quran:2:79",
+        "quran:18:11",
+        "quran:2:80"
+      ]
+    },
+    {
+      "id": "N27",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:4:11",
+        "quran:3:180",
+        "quran:4:127",
+        "quran:2:231",
+        "quran:4:75",
+        "quran:2:232",
+        "quran:2:102",
+        "quran:2:236"
+      ]
+    },
+    {
+      "id": "N28",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:35:18",
+        "quran:6:164",
+        "quran:17:15",
+        "quran:39:7",
+        "quran:53:38",
+        "quran:2:83",
+        "quran:4:36",
+        "quran:4:135"
+      ]
+    },
+    {
+      "id": "N29",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:2:85",
+        "quran:5:36",
+        "quran:57:15",
+        "quran:2:113",
+        "quran:2:174",
+        "quran:39:47",
+        "quran:2:212",
+        "quran:3:55"
+      ]
+    },
+    {
+      "id": "N30",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:3:10",
+        "quran:3:116",
+        "quran:5:73",
+        "quran:57:20",
+        "quran:8:52",
+        "quran:9:90",
+        "quran:48:25",
+        "quran:9:34"
+      ]
+    },
+    {
+      "id": "N31",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:7:172",
+        "quran:10:60",
+        "quran:18:105",
+        "quran:45:26",
+        "quran:24:24",
+        "quran:36:65",
+        "quran:99:6",
+        "quran:4:87"
+      ]
+    },
+    {
+      "id": "N32",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:2:185",
+        "quran:2:198",
+        "quran:5:18",
+        "quran:4:75",
+        "quran:4:127",
+        "quran:4:11",
+        "quran:3:86",
+        "quran:2:248"
+      ]
+    },
+    {
+      "id": "N33",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:24:12",
+        "quran:33:35",
+        "quran:9:71",
+        "quran:33:58",
+        "quran:24:31",
+        "quran:33:73",
+        "quran:47:19",
+        "quran:4:75"
+      ]
+    },
+    {
+      "id": "N34",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:2:268",
+        "quran:6:68",
+        "quran:3:175",
+        "quran:17:53",
+        "quran:4:76",
+        "quran:4:119",
+        "quran:7:175",
+        "quran:2:36"
+      ]
+    },
+    {
+      "id": "N35",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:15:85",
+        "quran:30:8",
+        "quran:46:3",
+        "quran:5:18",
+        "quran:25:59",
+        "quran:32:4",
+        "quran:44:38",
+        "quran:5:17"
+      ]
+    },
+    {
+      "id": "N36",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:6:160",
+        "quran:10:27",
+        "quran:13:22",
+        "quran:23:96",
+        "quran:11:15",
+        "quran:2:191",
+        "quran:7:95",
+        "quran:27:90"
+      ]
+    },
+    {
+      "id": "N37",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:42:36",
+        "quran:3:169",
+        "quran:2:154",
+        "quran:4:94",
+        "quran:7:152",
+        "quran:22:54",
+        "quran:4:74",
+        "quran:14:1"
+      ]
+    },
+    {
+      "id": "N38",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:2:196",
+        "quran:5:89",
+        "quran:5:2",
+        "quran:9:3",
+        "quran:5:95",
+        "quran:2:189",
+        "quran:2:197",
+        "quran:18:22"
+      ]
+    },
+    {
+      "id": "N39",
+      "family": "quran",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:36:38",
+        "quran:13:2",
+        "quran:14:33",
+        "quran:21:33",
+        "quran:55:5",
+        "quran:36:40",
+        "quran:31:29",
+        "quran:35:13"
+      ]
+    },
+    {
+      "id": "N40",
+      "family": "quran",
+      "witness_retrieved": false,
+      "locators": [
+        "quran:2:120",
+        "quran:2:247",
+        "quran:3:7",
+        "quran:2:145",
+        "quran:13:37",
+        "quran:3:18",
+        "quran:22:54",
+        "quran:3:19"
+      ]
+    },
+    {
+      "id": "N41",
+      "family": "hadith",
+      "witness_retrieved": true,
+      "locators": [
+        "hadith:en:58120",
+        "hadith:en:3507",
+        "hadith:en:58251",
+        "hadith:en:2935",
+        "hadith:ar:3507",
+        "hadith:ar:8346",
+        "hadith:ar:4820",
+        "hadith:ar:6613"
+      ]
+    },
+    {
+      "id": "N42",
+      "family": "hadith",
+      "witness_retrieved": true,
+      "locators": [
+        "hadith:en:4525",
+        "hadith:en:4531",
+        "hadith:en:6380",
+        "hadith:en:8346",
+        "hadith:ar:5798",
+        "hadith:ar:65898",
+        "hadith:ar:4525",
+        "hadith:ar:5450"
+      ]
+    },
+    {
+      "id": "N43",
+      "family": "hadith",
+      "witness_retrieved": true,
+      "locators": [
+        "hadith:en:5797",
+        "hadith:en:3339",
+        "hadith:en:3563",
+        "hadith:en:4820",
+        "hadith:ar:5797",
+        "hadith:ar:3293",
+        "hadith:ar:65760",
+        "hadith:ar:4939"
+      ]
+    },
+    {
+      "id": "N44",
+      "family": "hadith",
+      "witness_retrieved": true,
+      "locators": [
+        "hadith:en:3276",
+        "hadith:en:6468",
+        "hadith:en:8287",
+        "hadith:en:6469",
+        "hadith:ar:3276",
+        "hadith:ar:6468",
+        "hadith:ar:4813",
+        "hadith:ar:5501"
+      ]
+    },
+    {
+      "id": "N45",
+      "family": "hadith",
+      "witness_retrieved": true,
+      "locators": [
+        "hadith:en:4291",
+        "hadith:en:6405",
+        "hadith:en:3707",
+        "hadith:en:10095",
+        "hadith:ar:6405",
+        "hadith:ar:3290",
+        "hadith:ar:65005",
+        "hadith:ar:65760"
+      ]
+    },
+    {
+      "id": "N46",
+      "family": "both",
+      "witness_retrieved": true,
+      "locators": [
+        "quran:6:160",
+        "quran:28:54",
+        "quran:16:41",
+        "quran:57:18",
+        "hadith:en:6275",
+        "hadith:en:65014",
+        "hadith:ar:6275",
+        "hadith:ar:65927"
+      ]
+    },
+    {
+      "id": "N47",
+      "family": "hadith",
+      "witness_retrieved": false,
+      "locators": [
+        "hadith:en:10016",
+        "hadith:en:58155",
+        "hadith:en:8367",
+        "hadith:en:3012",
+        "hadith:ar:65005",
+        "hadith:ar:5332",
+        "hadith:ar:65760",
+        "hadith:ar:66258"
+      ]
+    },
+    {
+      "id": "N48",
+      "family": "hadith",
+      "witness_retrieved": false,
+      "locators": [
+        "hadith:en:3039",
+        "hadith:en:3051",
+        "hadith:en:3333",
+        "hadith:en:3769",
+        "hadith:ar:8367",
+        "hadith:ar:7041",
+        "hadith:ar:66354",
+        "hadith:ar:4820"
+      ]
+    },
+    {
+      "id": "N49",
+      "family": "hadith",
+      "witness_retrieved": true,
+      "locators": [
+        "hadith:en:5365",
+        "hadith:en:4820",
+        "hadith:en:8882",
+        "hadith:en:6604",
+        "hadith:ar:65801",
+        "hadith:ar:4820",
+        "hadith:ar:65784",
+        "hadith:ar:66390"
+      ]
+    },
+    {
+      "id": "N50",
+      "family": "hadith",
+      "witness_retrieved": true,
+      "locators": [
+        "hadith:en:5798",
+        "hadith:en:10622",
+        "hadith:en:6407",
+        "hadith:en:6076",
+        "hadith:ar:5798",
+        "hadith:ar:65784",
+        "hadith:ar:5450",
+        "hadith:ar:5882"
+      ]
+    }
+  ]
+}

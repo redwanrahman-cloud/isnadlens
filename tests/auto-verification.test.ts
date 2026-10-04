@@ -19,7 +19,7 @@ describe('automatic source routing boundary',()=>{
  it.each(['ambiguous','not_identified'] as const)('searches both source families for a scoped %s paraphrase',async status=>{
   const baseline=await verifyAutoClaim({claim:"What's the weather today?",inputLanguage:'en'});
   const find=vi.spyOn(identification,'identifySource').mockReturnValue({status,corpus:null,method:'none',candidate_locators:[],note:'Development-only routing fixture'});
-  const verify=vi.spyOn(verification,'verifyClaim').mockResolvedValue(baseline);
+  const verify=vi.spyOn(verification,'verifyClaimWithRecovery').mockResolvedValue(baseline);
   try{
    const claim='Eating pork is haram in Islam.';
    await verifyAutoClaim({claim,inputLanguage:'en'});

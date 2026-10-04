@@ -1,0 +1,223 @@
+{
+  "kind": "targeted_repair_results_not_untouched_accuracy",
+  "original_first_pass": {
+    "completed": 50,
+    "grounded_matches": 27,
+    "unchanged": true
+  },
+  "latest_targeted_misses": {
+    "tested": 23,
+    "label_matches": 23,
+    "developer_principal_grounded_matches": 23
+  },
+  "controls": {
+    "tested": 4,
+    "label_matches": 4
+  },
+  "rounds": [
+    {
+      "round": "1",
+      "records": 1,
+      "matches": 0,
+      "operational_stop": "N06",
+      "application_tree_sha256": "12227a7410a1969d7d42fa56f30f6b7c9ebf925fd0baa49126976b45b62c9cb6"
+    },
+    {
+      "round": "2",
+      "records": 1,
+      "matches": 0,
+      "operational_stop": "N06",
+      "application_tree_sha256": "12227a7410a1969d7d42fa56f30f6b7c9ebf925fd0baa49126976b45b62c9cb6"
+    },
+    {
+      "round": "3",
+      "records": 27,
+      "matches": 21,
+      "operational_stop": null,
+      "application_tree_sha256": "12227a7410a1969d7d42fa56f30f6b7c9ebf925fd0baa49126976b45b62c9cb6"
+    },
+    {
+      "round": "4",
+      "records": 8,
+      "matches": 8,
+      "operational_stop": null,
+      "application_tree_sha256": "01454fd935136c1d29855f1e0b55ee32da565214a3b0b472d87369bdc5525027"
+    }
+  ],
+  "observed_settled_usage_usd": 0.6447106000000001,
+  "conservative_total_development_sar": 16.317892875,
+  "development_cap_sar": 18,
+  "judging_reserve_sar": 15,
+  "review_status": "developer_primary_source_review_not_scholar_or_independent_certification",
+  "cases": [
+    {
+      "id": "N06",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N10",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N14",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N16",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N18",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N19",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Ordinary adornment/clothing paraphrase supported by 7:31; no detailed legal dress standard claimed."
+    },
+    {
+      "id": "N20",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N21",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N25",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N28",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N29",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Generic source question answered negatively with explicit group/context qualifications; shown 2:48 additionally denies ransom. Do not universalize narrower 5:36 or silently convert this into an existential/personal case."
+    },
+    {
+      "id": "N31",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N32",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N33",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N34",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N35",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N36",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N37",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N38",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N40",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N42",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N47",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N48",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N01",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N27",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N41",
+      "round": "4",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    },
+    {
+      "id": "N50",
+      "round": "3",
+      "principal_grounding_approved": true,
+      "finding": "Principal native assertion and EN/AR answer compared with original source and relevant context."
+    }
+  ],
+  "limits": [
+    "23/23 combines targeted development rounds, not one fresh final-build benchmark.",
+    "Four existing working questions are controls; other prior successful questions were not all rerun live.",
+    "No perfect accuracy or immunity to future errors is established.",
+    "Two initial connectivity-blocked N06 attempts remain recorded and their unknown reservations remain held.",
+    "Next untouched fifty has not been started."
+  ]
+}

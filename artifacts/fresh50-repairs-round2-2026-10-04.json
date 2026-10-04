@@ -1,0 +1,32 @@
+{
+  "kind": "targeted_development_retests_not_fresh_accuracy",
+  "round": "2",
+  "application_tree_sha256": "12227a7410a1969d7d42fa56f30f6b7c9ebf925fd0baa49126976b45b62c9cb6",
+  "build": "B4nfvaWtrQZvUHOkpU13T",
+  "started_at": "2026-10-04T16:15:50.232Z",
+  "cases": [
+    {
+      "id": "N06",
+      "claim": "کیا رمضان کی راتوں میں میاں بیوی کا تعلق جائز ہے، بشرطیکہ اعتکاف میں نہ ہوں؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "model": "none",
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "both",
+      "language": null,
+      "reason_codes": [
+        "PROVIDER_UNAVAILABLE"
+      ],
+      "recovery": null,
+      "locators": [],
+      "usage": [],
+      "principal_review": "pending"
+    }
+  ],
+  "operational_stop": "N06",
+  "completed_at": "2026-10-04T16:15:50.333Z"
+}

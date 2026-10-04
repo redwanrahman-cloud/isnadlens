@@ -81,7 +81,7 @@ describe('nine-language routing without altering source text or user claim', () 
     const assessed = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment, model: 'mock-semantic', usage: null });
     const claim = 'Le jeûne est prescrit pendant le Ramadan.';
     const record = await verifyMultilingualClaim({ claim, inputLanguage: 'fr' });
-    expect(record.verdict).toBe('insufficient_within_selected_corpus'); expect(assessed).toHaveBeenCalledOnce(); expect(fetchMock).toHaveBeenCalledOnce();
+    expect(record.verdict).toBe('insufficient_within_selected_corpus'); expect(assessed).toHaveBeenCalledOnce(); expect(fetchMock).toHaveBeenCalledTimes(2); expect(record.retrieval_recovery?.status).toBe('unavailable');
     expect(record.language_intake?.search_terms_status).toBe(status); expect(record.language_intake?.rejected_search_term_count).toBeGreaterThan(0);
     expect(record.language_intake?.arabic_terms).not.toContain('2:185'); expect(record.original_claim).toBe(claim);
     expect(record.retrieval_plan?.status).toBe(status === 'lexical_fallback' ? 'lexical_fallback' : 'provided');

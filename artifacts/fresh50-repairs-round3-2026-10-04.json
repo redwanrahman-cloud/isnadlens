@@ -1,0 +1,2269 @@
+{
+  "kind": "targeted_development_retests_not_fresh_accuracy",
+  "round": "3",
+  "application_tree_sha256": "12227a7410a1969d7d42fa56f30f6b7c9ebf925fd0baa49126976b45b62c9cb6",
+  "build": "B4nfvaWtrQZvUHOkpU13T",
+  "started_at": "2026-10-04T16:16:17.500Z",
+  "cases": [
+    {
+      "id": "N06",
+      "claim": "کیا رمضان کی راتوں میں میاں بیوی کا تعلق جائز ہے، بشرطیکہ اعتکاف میں نہ ہوں؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Qur’an 2:187 supports the proposition within the selected source collection: marital relations are permitted during the nights of fasting, with an explicit exception for those observing i‘tikāf in mosques. This assessment is limited to the supplied textual evidence.",
+      "summary_ar": "تدعم آية البقرة 2:187 هذا الحكم ضمن مجموعة المصادر المحددة: أُبيح قربان الزوجات في ليالي الصيام، مع استثناء حال الاعتكاف في المساجد. ويظل هذا التقييم محصورًا في النص المصدر المحدد.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "both",
+      "language": "ur",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "2:185",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:222",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "34:18",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:187",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "en:4459",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:4534",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:3441",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:5355",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 703,
+          "output_tokens": 163,
+          "estimated_cost_usd": 0.00037135,
+          "reservation_id": "d741d0f4-b31d-413f-a5fa-cc28b163a4ee"
+        },
+        {
+          "input_tokens": 9106,
+          "output_tokens": 517,
+          "estimated_cost_usd": 0.0028969,
+          "reservation_id": "6ac8a4b3-92a0-4b37-846f-8c6db8475780"
+        },
+        {
+          "input_tokens": 2497,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00070345,
+          "reservation_id": "26c59b74-55d0-4071-8f51-d302b4104dab"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N10",
+      "claim": "Nennt der Koran zwei volle Jahre für das Stillen, wenn die Stillzeit vollendet werden soll?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection supports the proposition: Quran 2:233 specifies two full years for whoever wishes to complete breastfeeding. The statement retains its condition concerning completion of breastfeeding, while the same verse also mentions weaning by mutual consent and consultation.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا السؤال: يذكر القرآن في الآية 2:233 عامين كاملين لمن أراد إتمام الرضاعة. وتبقى العبارة مرتبطة بشرط إرادة إتمام الرضاعة، مع ورود أحكام أخرى في الآية نفسها بشأن الفصال بالتراضي والتشاور.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "de",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "2:233",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "31:14",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:23",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:231",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:234",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "28:27",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:282",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "65:2",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 147,
+          "estimated_cost_usd": 0.00035089999999999996,
+          "reservation_id": "039d0821-8371-45b1-8a17-aa31d6492e4b"
+        },
+        {
+          "input_tokens": 13789,
+          "output_tokens": 507,
+          "estimated_cost_usd": 0.00405565,
+          "reservation_id": "8bd33369-27f1-4ee1-9100-53a341607295"
+        },
+        {
+          "input_tokens": 2765,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00077045,
+          "reservation_id": "8ee96225-0805-4c9e-9ba7-bde1d6088d69"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N14",
+      "claim": "क्या कुरान कहता है कि अल्लाह किसी व्यक्ति पर उसकी क्षमता से अधिक जिम्मेदारी नहीं डालता?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection supports this Quranic proposition, particularly in 2:233. The statement appears within the context of breastfeeding and financial responsibility, so that context should be retained when considering its scope.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى في القرآن، ولا سيما الآية 2:233. وتأتي العبارة ضمن سياق أحكام الرضاعة والنفقة، لذلك ينبغي مراعاة هذا السياق عند تفسير نطاقها.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "hi",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "2:228",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:7",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:233",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "1:1",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "13:17",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:1",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:10",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:15",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 699,
+          "output_tokens": 156,
+          "estimated_cost_usd": 0.00036195,
+          "reservation_id": "957f8265-b7c2-482e-affc-cc2e7ed85465"
+        },
+        {
+          "input_tokens": 9449,
+          "output_tokens": 531,
+          "estimated_cost_usd": 0.00299945,
+          "reservation_id": "b3e67823-f136-4d3a-b1e1-8f75788991fa"
+        },
+        {
+          "input_tokens": 2768,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0007712000000000001,
+          "reservation_id": "b4c22b8c-d270-4920-9226-572a8a5acb13"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N16",
+      "claim": "Menurut Al-Qur’an, apakah manusia dijadikan berbangsa dan bersuku agar saling mengenal?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection directly supports this Quranic proposition in 49:13, while the same verse also states that honor before God is based on piety.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى في القرآن، في الآية 49:13. وتذكر الآية أيضًا أن معيار الكرامة عند الله هو التقوى.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "id",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "49:13",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "7:160",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:25",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "48:4",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:187",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:233",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "5:97",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "33:50",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 151,
+          "estimated_cost_usd": 0.00035569999999999997,
+          "reservation_id": "512f0ecb-97fe-420d-a8fa-abafc496f0d2"
+        },
+        {
+          "input_tokens": 12784,
+          "output_tokens": 457,
+          "estimated_cost_usd": 0.0037444,
+          "reservation_id": "3bef1eca-20c0-43b9-96da-497279f89dce"
+        },
+        {
+          "input_tokens": 2232,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0006372000000000001,
+          "reservation_id": "a400c552-0791-4f95-ac55-32806357f889"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N18",
+      "claim": "Le Coran demande-t-il aux croyants de prier pour le Prophète et de le saluer?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. Quran 33:56 in the selected source collection directly supports that the Quran instructs believers to pray for the Prophet and greet him with peace. This conclusion does not determine the specific wording or manner of doing so.",
+      "summary_ar": "نعم، تدعم الآية 33:56 في مجموعة المصادر المحددة أن القرآن يأمر المؤمنين بالصلاة على النبي والسلام عليه. لا تتناول هذه النتيجة تفاصيل الصيغة أو الكيفية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "fr",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "19:55",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:102",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "33:56",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "20:132",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:177",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "19:31",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "33:44",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "10:10",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 699,
+          "output_tokens": 184,
+          "estimated_cost_usd": 0.00039554999999999994,
+          "reservation_id": "25d10f53-9bbd-43a0-b8de-278c4b58c613"
+        },
+        {
+          "input_tokens": 9417,
+          "output_tokens": 431,
+          "estimated_cost_usd": 0.00287145,
+          "reservation_id": "c0992e62-31e2-4101-9e93-5e16ab370d38"
+        },
+        {
+          "input_tokens": 1849,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0005414500000000001,
+          "reservation_id": "6e71fd5f-c8d7-488f-b380-325f73b81f5a"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N19",
+      "claim": "Fordert der Koran dazu auf, beim Besuch der Gebetsstätte angemessenen Schmuck beziehungsweise Kleidung zu tragen?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "model": "gpt-5.6-luna",
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "de",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "recovery": {
+        "status": "completed",
+        "first_verdict": "insufficient_within_selected_corpus"
+      },
+      "locators": [
+        {
+          "locator": "7:31",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "locator": "4:102",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:83",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:125",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:43",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "14:37",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:110",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:277",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 699,
+          "output_tokens": 152,
+          "estimated_cost_usd": 0.00035715,
+          "reservation_id": "3af268fd-6029-4a90-92c5-c6b9bb01cf38"
+        },
+        {
+          "input_tokens": 10670,
+          "output_tokens": 562,
+          "estimated_cost_usd": 0.0033419,
+          "reservation_id": "7a5a86bb-e317-40e0-b867-ac35bb1f79b7"
+        },
+        {
+          "input_tokens": 333,
+          "output_tokens": 143,
+          "estimated_cost_usd": 0.00025485000000000004,
+          "reservation_id": "909e8ebf-44b6-424a-937b-179e67365ff7"
+        },
+        {
+          "input_tokens": 9463,
+          "output_tokens": 723,
+          "estimated_cost_usd": 0.00323335,
+          "reservation_id": "864182ee-d4fc-4116-b275-baafe035b84b"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N20",
+      "claim": "Does the Quran forbid insulting what other people worship so that they do not insult Allah in ignorance?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "model": "gpt-5.6-luna",
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "en",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "recovery": {
+        "status": "unavailable",
+        "first_verdict": "insufficient_within_selected_corpus"
+      },
+      "locators": [
+        {
+          "locator": "4:46",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "18:16",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "22:71",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "39:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "13:30",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "3:154",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:17",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "5:50",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 695,
+          "output_tokens": 192,
+          "estimated_cost_usd": 0.00040415,
+          "reservation_id": "08012244-4eeb-4899-8c79-e93c9035fb1a"
+        },
+        {
+          "input_tokens": 11200,
+          "output_tokens": 528,
+          "estimated_cost_usd": 0.0034335999999999998,
+          "reservation_id": "5202f516-0477-4f2f-a292-6f58c330e5d6"
+        },
+        {
+          "input_tokens": 334,
+          "output_tokens": 147,
+          "estimated_cost_usd": 0.0002599,
+          "reservation_id": "b54e437c-462e-4154-814a-b46f2b7826d3"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N21",
+      "claim": "هل ينهى القرآن عن قتل الأولاد خوفا من الفقر؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection directly supports that the Quran prohibits killing children because of fear of poverty or poverty itself, in 17:31 and 6:151; 6:151 presents this prohibition among what God has forbidden.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن ينهى عن قتل الأولاد بسبب خشية الفقر أو وجوده، في الآيتين 17:31 و6:151. وتعرض الآية 6:151 هذا النهي ضمن ما حرّمه الله، مع ذكر رزق الآباء والأولاد.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "ar",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "2:191",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "32:16",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:268",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "17:31",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "6:140",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "6:151",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "3:154",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "6:137",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 99,
+          "estimated_cost_usd": 0.00029155,
+          "reservation_id": "3fd17f27-3acf-461c-8fb1-4cc089a9a084"
+        },
+        {
+          "input_tokens": 10809,
+          "output_tokens": 469,
+          "estimated_cost_usd": 0.0032650500000000002,
+          "reservation_id": "c056fff3-66be-4e58-9d9a-c4127fbb7947"
+        },
+        {
+          "input_tokens": 3495,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00095295,
+          "reservation_id": "6b3d2492-60bb-485b-a0db-f596d22c640d"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N25",
+      "claim": "هل يصف القرآن الرسول بأنه بشر يوحى إليه؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. Quran 41:6 in the selected source collection supports describing the Messenger as human and receiving revelation. The statement remains within the verse’s stated context concerning his reception of revelation.",
+      "summary_ar": "نعم، تدعم الآية 41:6 من مجموعة المصادر المحددة وصف الرسول بأنه بشر يوحى إليه. ويظل الوصف مرتبطًا بسياق الآية الذي يقرر تلقيه الوحي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "ar",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "42:51",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "12:31",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "16:103",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:285",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "19:17",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "41:6",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "5:18",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "25:7",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 688,
+          "output_tokens": 142,
+          "estimated_cost_usd": 0.0003424,
+          "reservation_id": "6496ab9a-3d0a-4f56-bcae-d0e4009dba5a"
+        },
+        {
+          "input_tokens": 9398,
+          "output_tokens": 426,
+          "estimated_cost_usd": 0.0028607,
+          "reservation_id": "0dc5f63d-4f39-49cd-8b5e-ae01017e0208"
+        },
+        {
+          "input_tokens": 1693,
+          "output_tokens": 85,
+          "estimated_cost_usd": 0.00052525,
+          "reservation_id": "b7a9320d-f995-464a-b4f7-c6a7d5786430"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N28",
+      "claim": "Does the Quran say people automatically bear guilt for their parents’ sins?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "model": "gpt-5.6-luna",
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "en",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "recovery": {
+        "status": "unavailable",
+        "first_verdict": "insufficient_within_selected_corpus"
+      },
+      "locators": [
+        {
+          "locator": "46:15",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "17:23",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:83",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "locator": "3:11",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:233",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:36",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:135",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "locator": "6:151",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 690,
+          "output_tokens": 109,
+          "estimated_cost_usd": 0.00030329999999999995,
+          "reservation_id": "9b0b5b8f-cdf9-4c42-a0a3-472668fc3c74"
+        },
+        {
+          "input_tokens": 11530,
+          "output_tokens": 806,
+          "estimated_cost_usd": 0.0038496999999999997,
+          "reservation_id": "8230758a-2f68-4ab8-9a97-7162fd9feb1e"
+        },
+        {
+          "input_tokens": 333,
+          "output_tokens": 134,
+          "estimated_cost_usd": 0.00024405000000000002,
+          "reservation_id": "0b2ec152-2bd0-4d0a-8a46-f4cef973ee28"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N29",
+      "claim": "Does the Quran say a ransom will be accepted on the Day of Judgment?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "model": "gpt-5.6-luna",
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "en",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "recovery": {
+        "status": "unavailable",
+        "first_verdict": "insufficient_within_selected_corpus"
+      },
+      "locators": [
+        {
+          "locator": "2:85",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "5:36",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "locator": "2:113",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:174",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "39:47",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:212",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "57:15",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "locator": "3:55",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 153,
+          "estimated_cost_usd": 0.00035635,
+          "reservation_id": "7a8e2712-8cf4-42d4-9c8c-3c86fc0a8e60"
+        },
+        {
+          "input_tokens": 10363,
+          "output_tokens": 629,
+          "estimated_cost_usd": 0.00334555,
+          "reservation_id": "f87bb154-25b0-4a82-84f2-4c2b5ac3fbee"
+        },
+        {
+          "input_tokens": 333,
+          "output_tokens": 198,
+          "estimated_cost_usd": 0.00032085,
+          "reservation_id": "19169725-e42c-43c2-983b-f621cc7c75fe"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N31",
+      "claim": "Does the Quran say hands and feet will never testify about people’s deeds on Judgment Day?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No. The claim that the Quran says hands and feet will never testify on the Day of Judgment is contradicted by the explicit supplied passage at Quran 24:24, with further direct support at Quran 36:65. The absolute qualifier “never” is incompatible with these passages, which connect their testimony to what people used to do.",
+      "summary_ar": "لا؛ الادعاء بأن القرآن ينفي شهادة الأيدي والأرجل يوم القيامة يناقضه نص صريح في سورة النور 24:24، ويؤيده أيضًا النص المعروض في سورة يس 36:65. العبارة المطلقة «لن تشهد أبدًا» لا تبقى مع هذين النصين، اللذين يربطان الشهادة بما كان الناس يعملون.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "en",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "7:172",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "24:24",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "10:60",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "18:105",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "45:26",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "36:65",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "2:85",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:109",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 150,
+          "estimated_cost_usd": 0.0003535,
+          "reservation_id": "d6d9f85f-6380-4c3c-bc03-de002ceff826"
+        },
+        {
+          "input_tokens": 9194,
+          "output_tokens": 548,
+          "estimated_cost_usd": 0.0029560999999999997,
+          "reservation_id": "5a257a1b-7f6b-4fb3-9225-16bbf0d49e67"
+        },
+        {
+          "input_tokens": 9194,
+          "output_tokens": 487,
+          "estimated_cost_usd": 0.028829,
+          "reservation_id": "d590e26b-d8f3-4bb0-a3a3-7148146928c5"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N32",
+      "claim": "Does the Quran describe Allah as having a child?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No. Quran 112:3 directly negates that Allah has a child; 18:4 and 10:68 present the claim as something said by others, rather than as a Quranic description affirming it.",
+      "summary_ar": "لا؛ تدل الآية القرآنية 112:3 في مجموعة المصادر المحددة دلالة مباشرة على نفي أن يكون لله ولد. كما تعرض الآيتان 18:4 و10:68 هذا القول بوصفه قولًا منسوبًا إلى آخرين، لا وصفًا يثبته القرآن لله.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "en",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": {
+        "status": "completed",
+        "first_verdict": "insufficient_within_selected_corpus"
+      },
+      "locators": [
+        {
+          "locator": "18:4",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "112:3",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "6:31",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:75",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "6:70",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:185",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "10:68",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:198",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 686,
+          "output_tokens": 89,
+          "estimated_cost_usd": 0.0002783,
+          "reservation_id": "1641aead-f8da-4f60-be4e-bf213f227ad3"
+        },
+        {
+          "input_tokens": 10294,
+          "output_tokens": 536,
+          "estimated_cost_usd": 0.0032167,
+          "reservation_id": "2891561b-1213-43ac-99cc-6f10789f1dfc"
+        },
+        {
+          "input_tokens": 10294,
+          "output_tokens": 573,
+          "estimated_cost_usd": 0.032611,
+          "reservation_id": "11cf2812-6c6d-4da6-8c76-8d3f2afdbde0"
+        },
+        {
+          "input_tokens": 327,
+          "output_tokens": 115,
+          "estimated_cost_usd": 0.00021975,
+          "reservation_id": "f3c94460-fe4d-4ac3-8e00-665ca1f7b685"
+        },
+        {
+          "input_tokens": 12575,
+          "output_tokens": 697,
+          "estimated_cost_usd": 0.00398015,
+          "reservation_id": "f1bd0147-bf90-4744-9f78-b83fb3426c02"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N33",
+      "claim": "কোরআন কি বলে যে সৎকর্মের পুরস্কার শুধু পুরুষদের জন্য, বিশ্বাসী নারীদের জন্য নয়?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No. The displayed Quran passage at Al-Ahzab 33:35 directly contradicts the claim by pairing believing men and women across listed righteous qualities and assigning them forgiveness and reward. This is Quran-supported within the selected source collection.",
+      "summary_ar": "لا، هذا الادعاء يخالف الآية القرآنية المعروضة في سورة الأحزاب 33:35؛ فهي تذكر الرجال والنساء المؤمنين معًا في أصناف الأعمال وتقرر لهم المغفرة والأجر. يدعم ذلك نص القرآن ضمن مجموعة المصادر المحددة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "bn",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "33:35",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "24:12",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "33:58",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "33:73",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "47:19",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:32",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "18:46",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "48:5",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 704,
+          "output_tokens": 188,
+          "estimated_cost_usd": 0.0004016,
+          "reservation_id": "43dc4690-e2ef-4f65-96f0-baa3176a5c62"
+        },
+        {
+          "input_tokens": 9630,
+          "output_tokens": 1081,
+          "estimated_cost_usd": 0.0037047,
+          "reservation_id": "e7405279-6c8e-44ea-9d19-b5e1c7f4b7a4"
+        },
+        {
+          "input_tokens": 9630,
+          "output_tokens": 923,
+          "estimated_cost_usd": 0.035151,
+          "reservation_id": "9a19e2f7-6c46-47ca-bd73-61bd0915a891"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N34",
+      "claim": "क्या कुरान कहता है कि शैतान इंसानों का मित्र है और उसे मित्र मानना चाहिए?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No. The supplied Quran passages in the selected source collection describe Satan as a clear enemy of humankind, prohibit following his footsteps, and state loss for taking him as a protector; see Quran 2:168, 2:208, 4:119, and 17:53.",
+      "summary_ar": "لا، الادعاء يناقض ما تدعمه آيات القرآن في مجموعة المصادر المحددة: فالشيطان موصوف بأنه عدوّ للإنسان، وتنهى الآيات عن اتباع خطواته، كما تذكر الخسران في اتخاذه وليًّا. انظر البقرة 2:168 و2:208، والنساء 4:119، والإسراء 17:53.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "hi",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "6:68",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "3:175",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:76",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "17:53",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "2:36",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:119",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "2:168",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "2:208",
+          "relation": "contradicts",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 165,
+          "estimated_cost_usd": 0.0003725,
+          "reservation_id": "64ce2870-ab31-42f6-b85c-8f10ad8290e9"
+        },
+        {
+          "input_tokens": 9441,
+          "output_tokens": 1063,
+          "estimated_cost_usd": 0.00363585,
+          "reservation_id": "d8f840a0-c714-48a7-8fec-dc1777f895b6"
+        },
+        {
+          "input_tokens": 9441,
+          "output_tokens": 562,
+          "estimated_cost_usd": 0.0303465,
+          "reservation_id": "a143be37-88ea-47d5-bee0-15c05e03ef50"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N35",
+      "claim": "کیا قرآن کہتا ہے کہ آسمان، زمین اور ان کے درمیان کی چیزیں بے مقصد پیدا کی گئی ہیں؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No; the claim conflicts with the supplied Quran passages in the selected source collection. Quran 15:85 explicitly rejects purposeless creation of the heavens, the earth, and what is between them; Quran 30:8 and 46:3 reinforce this and state that their creation has an appointed term.",
+      "summary_ar": "لا؛ الادعاء يخالف ما تدعمه الآيات القرآنية المعروضة في مجموعة المصادر المحددة. فالآية 15:85 تنفي أن تكون السماوات والأرض وما بينهما مخلوقة بلا حق، وتربطها بذكر الساعة، وتؤكد الآيتان 30:8 و46:3 هذا المعنى مع ذكر أجلٍ مسمّى في كلٍّ منهما.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "ur",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "6:73",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "14:19",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "16:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "39:5",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "64:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "15:85",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "46:3",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "30:8",
+          "relation": "contradicts",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 702,
+          "output_tokens": 212,
+          "estimated_cost_usd": 0.0004299,
+          "reservation_id": "a9039809-b60b-4bd3-b7c4-5a4ffed8a8a4"
+        },
+        {
+          "input_tokens": 9203,
+          "output_tokens": 651,
+          "estimated_cost_usd": 0.00308195,
+          "reservation_id": "67c630d4-2a5b-4359-b4b2-e2de6c4954b5"
+        },
+        {
+          "input_tokens": 9203,
+          "output_tokens": 509,
+          "estimated_cost_usd": 0.0291155,
+          "reservation_id": "b69431b7-f01f-4855-9bf1-d2cd3b8c6d3f"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N36",
+      "claim": "Apakah Al-Qur’an memerintahkan membalas keburukan dengan yang lebih buruk?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "model": "gpt-5.6-luna",
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "id",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "recovery": {
+        "status": "completed",
+        "first_verdict": "insufficient_within_selected_corpus"
+      },
+      "locators": [
+        {
+          "locator": "2:191",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "locator": "73:20",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:23",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "28:50",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "5:60",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:25",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:217",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:190",
+          "relation": "partial",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 185,
+          "estimated_cost_usd": 0.000396,
+          "reservation_id": "15af0fdf-c553-45c4-b191-bda6703bae43"
+        },
+        {
+          "input_tokens": 11304,
+          "output_tokens": 622,
+          "estimated_cost_usd": 0.0035724,
+          "reservation_id": "dc90e48a-a1d7-48ea-83b1-f8e119e56ba2"
+        },
+        {
+          "input_tokens": 326,
+          "output_tokens": 86,
+          "estimated_cost_usd": 0.0001847,
+          "reservation_id": "ce4b840f-e0f9-431e-a0b1-29897ac11a6e"
+        },
+        {
+          "input_tokens": 9901,
+          "output_tokens": 778,
+          "estimated_cost_usd": 0.0034088499999999997,
+          "reservation_id": "64248bd8-1da0-4770-811c-4f1a306e718d"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N37",
+      "claim": "¿Dice el Corán que quienes murieron en el camino de Allah no están vivos junto a su Señor?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No; the claim contradicts the Quranic statement in Surah Al Imran 3:169 concerning those killed in the path of Allah, with related support in 2:154. This assessment is limited to the selected source collection and the displayed textual wording.",
+      "summary_ar": "لا؛ هذا القول يناقض ما يقرره القرآن في سورة آل عمران 3:169 عن الذين قُتلوا في سبيل الله، كما تؤيده الآية 2:154. التقييم مقصور على مجموعة المصادر المحددة وعلى دلالة النص المعروض.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "es",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "3:169",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "47:4",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "3:195",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:262",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:154",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "40:25",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:62",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "22:54",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 166,
+          "estimated_cost_usd": 0.0003737,
+          "reservation_id": "6d3ed9da-5e6e-4a30-900c-53555f9d3789"
+        },
+        {
+          "input_tokens": 9918,
+          "output_tokens": 602,
+          "estimated_cost_usd": 0.0032019,
+          "reservation_id": "7b7796ef-3446-44bb-965b-4cb7291a5f42"
+        },
+        {
+          "input_tokens": 9918,
+          "output_tokens": 601,
+          "estimated_cost_usd": 0.032007,
+          "reservation_id": "9a3dad07-dbad-46f2-9096-cb7274e17219"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N38",
+      "claim": "Pour le pèlerinage tamattu sans offrande disponible, le Coran indique-t-il sept jours de jeûne pendant le Hajj et trois après le retour?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "model": "gpt-5.6-terra",
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "fr",
+      "reason_codes": [
+        "SOURCE_ENTAILMENT_UNCONFIRMED"
+      ],
+      "recovery": {
+        "status": "unavailable",
+        "first_verdict": "not_evaluated"
+      },
+      "locators": [
+        {
+          "locator": "2:196",
+          "relation": "not_assessed",
+          "integrity": true
+        },
+        {
+          "locator": "5:89",
+          "relation": "not_assessed",
+          "integrity": true
+        },
+        {
+          "locator": "9:3",
+          "relation": "not_assessed",
+          "integrity": true
+        },
+        {
+          "locator": "5:2",
+          "relation": "not_assessed",
+          "integrity": true
+        },
+        {
+          "locator": "5:95",
+          "relation": "not_assessed",
+          "integrity": true
+        },
+        {
+          "locator": "2:189",
+          "relation": "not_assessed",
+          "integrity": true
+        },
+        {
+          "locator": "2:197",
+          "relation": "not_assessed",
+          "integrity": true
+        },
+        {
+          "locator": "22:28",
+          "relation": "not_assessed",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 710,
+          "output_tokens": 217,
+          "estimated_cost_usd": 0.00043789999999999996,
+          "reservation_id": "7d4ef762-7b4a-4407-8b17-332320a078e7"
+        },
+        {
+          "input_tokens": 12336,
+          "output_tokens": 868,
+          "estimated_cost_usd": 0.0041256,
+          "reservation_id": "6c107fc2-c14e-4e95-9330-c2c2c67c2279"
+        },
+        {
+          "input_tokens": 12336,
+          "output_tokens": 399,
+          "estimated_cost_usd": 0.035628,
+          "reservation_id": "ec3c2b41-0ad9-4c2b-89ba-7e58fe1a3416"
+        },
+        {
+          "input_tokens": 2464,
+          "output_tokens": 217,
+          "estimated_cost_usd": 0.0008763999999999999,
+          "reservation_id": "0edc8ca7-17d4-4ff5-82bc-7a4a15dbcf40"
+        },
+        {
+          "input_tokens": 344,
+          "output_tokens": 156,
+          "estimated_cost_usd": 0.00027319999999999997,
+          "reservation_id": "8fd1e59e-42ef-4a09-ac6c-1b82cb6df212"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N40",
+      "claim": "Does the Quran instruct asking Allah to decrease one’s knowledge?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No. The displayed Quran passage at 20:114 supports the opposite direction concerning knowledge.",
+      "summary_ar": "لا. تدل آية القرآن 20:114 المعروضة على اتجاهٍ معاكسٍ لطلب إنقاص المعرفة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "en",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": {
+        "status": "completed",
+        "first_verdict": "insufficient_within_selected_corpus"
+      },
+      "locators": [
+        {
+          "locator": "20:114",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "4:162",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:247",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "3:7",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:145",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "40:7",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:120",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "73:20",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 688,
+          "output_tokens": 167,
+          "estimated_cost_usd": 0.0003724,
+          "reservation_id": "b8142e63-8156-444f-b084-a5c5be8224a6"
+        },
+        {
+          "input_tokens": 10414,
+          "output_tokens": 552,
+          "estimated_cost_usd": 0.0032659,
+          "reservation_id": "0aa5b705-fd9b-42df-b603-4c9f21ac422c"
+        },
+        {
+          "input_tokens": 10414,
+          "output_tokens": 429,
+          "estimated_cost_usd": 0.031183,
+          "reservation_id": "cc699d31-f09f-4fe7-bb60-527ddb3741a9"
+        },
+        {
+          "input_tokens": 328,
+          "output_tokens": 125,
+          "estimated_cost_usd": 0.000232,
+          "reservation_id": "1b16de12-f5be-41c2-9a1e-738015e21560"
+        },
+        {
+          "input_tokens": 10356,
+          "output_tokens": 465,
+          "estimated_cost_usd": 0.0031470000000000005,
+          "reservation_id": "e3bc7a50-d9f5-4b7c-9d05-d1e29ef5d102"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N42",
+      "claim": "من أكل أو شرب ناسيا وهو صائم، هل يقول الحديث أن يكمل صومه؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection directly supports this meaning: the hadith at ar:4525 states that a person who forgetfully eats or drinks while fasting should complete the fast. The supplied material addresses eating or drinking forgetfully during the fast and does not establish additional details beyond that statement.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرة؛ فالحديث الوارد في الموضع ar:4525 يذكر إتمام الصوم لمن أكل أو شرب ناسيًا وهو صائم. ويشمل النص حالة الأكل أو الشرب مع النسيان أثناء الصيام، دون أن يقرر هنا تفاصيل إضافية خارج هذا الحكم.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "hadith",
+      "language": "ar",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "ar:5798",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65898",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:4525",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "ar:5450",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:4525",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:5450",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:11232",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:8346",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 196,
+          "estimated_cost_usd": 0.0004097,
+          "reservation_id": "f974d735-dca1-415a-bab8-b592edb6c951"
+        },
+        {
+          "input_tokens": 10119,
+          "output_tokens": 503,
+          "estimated_cost_usd": 0.00313335,
+          "reservation_id": "657cee52-04f2-460a-bec5-d884e686df11"
+        },
+        {
+          "input_tokens": 773,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00027245000000000004,
+          "reservation_id": "ad12cfbd-bfe7-44e3-8587-96f186a66675"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N47",
+      "claim": "Does the Hadith encourage prompt iftar rather than needless delay?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected hadith supports encouraging prompt iftar when its time begins rather than delaying it; the evidence establishes this preference without defining every possible form or reason for delay.",
+      "summary_ar": "نعم، يدعم الحديث المحدد أن المبادرة إلى الإفطار عند حلول وقته هي الهدي النبوي، وأن تأخير الإفطار ليس هو الأفضل. ويقتصر الدليل على تفضيل التعجيل بالإفطار، دون تفصيل جميع صور التأخير أو أسبابه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "hadith",
+      "language": "en",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "en:10016",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:6013",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "en:58155",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:3546",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65480",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:4507",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:3546",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:4541",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 689,
+          "output_tokens": 158,
+          "estimated_cost_usd": 0.00036185000000000004,
+          "reservation_id": "6859503e-5fb4-461c-8698-7c2b5b4cfd7e"
+        },
+        {
+          "input_tokens": 8846,
+          "output_tokens": 520,
+          "estimated_cost_usd": 0.0028355,
+          "reservation_id": "bc620acf-a966-407a-935c-c0362c4d61b5"
+        },
+        {
+          "input_tokens": 784,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00027519999999999997,
+          "reservation_id": "f1a785a0-5f5e-4ad2-865f-908859b42270"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N48",
+      "claim": "هل أمر النبي في الحديث بأن نصلي كما رأيناه يصلي؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection supports that the Prophet instructed people to pray according to how they had seen him pray, in the hadith at ar:3059. The instruction appears within his guidance to the visiting group regarding learning and performing prayer according to his practical example.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن النبي صلى الله عليه وسلم أمر بالصلاة على الهيئة التي شوهد يصلي بها، وذلك في الحديث الوارد في المصدر ar:3059. ويرد الأمر ضمن توجيهه للوفد بتعليم الصلاة وأدائها وفق هديه العملي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "hadith",
+      "language": "ar",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "ar:4820",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:7041",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:3059",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "ar:5391",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:3051",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:10648",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:5828",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:10880",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 214,
+          "estimated_cost_usd": 0.00042955000000000006,
+          "reservation_id": "55755e7a-92c5-4123-bed2-b102f5db15aa"
+        },
+        {
+          "input_tokens": 16496,
+          "output_tokens": 492,
+          "estimated_cost_usd": 0.0047144,
+          "reservation_id": "831d6f5a-3d75-476f-8cdf-385facc640f5"
+        },
+        {
+          "input_tokens": 968,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00032120000000000006,
+          "reservation_id": "4cb189e5-5d58-41e9-83c2-efd61497d110"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N01",
+      "claim": "Does wudu include wiping the head according to the Quran?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. Quran 5:6 supports that wudu includes wiping the head. This instruction appears in the context of preparing for prayer, while the verse also specifies ritual bathing for janabah and tayammum in the stated circumstances when water is unavailable.",
+      "summary_ar": "نعم، تدعم الآية 5:6 من مجموعة المصادر المحددة أن الوضوء يتضمن مسح الرأس. ويرد ذلك ضمن توجيه الوضوء عند القيام إلى الصلاة، مع ذكر الغُسل للجنابة والتيمم عند تعذر الماء في الحالات المذكورة في الآية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "en",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "5:6",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "2:124",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "3:7",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:162",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "5:84",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:43",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "23:94",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:196",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 688,
+          "output_tokens": 89,
+          "estimated_cost_usd": 0.0002788,
+          "reservation_id": "1fee1aba-a20d-40ff-8cc5-1af321c3c4ae"
+        },
+        {
+          "input_tokens": 10686,
+          "output_tokens": 426,
+          "estimated_cost_usd": 0.0031827,
+          "reservation_id": "0031b98f-4fca-4eaf-ab75-67e0211cd56c"
+        },
+        {
+          "input_tokens": 2543,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00071495,
+          "reservation_id": "6d0bef08-726e-443d-a409-bc473bf6924a"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N27",
+      "claim": "هل يقول القرآن إن النساء لا نصيب لهن في الميراث؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-terra",
+      "summary": "No. Quran 4:11 in the selected source collection assigns specified inheritance shares to daughters, contradicting the claim that women receive no share; the stated shares apply within particular inheritance cases.",
+      "summary_ar": "لا؛ فالآية 4:11 في مجموعة المصادر المحددة تنصّ على أن للبنات أنصبةً محددة من التركة، وهو يناقض نفيَ أي نصيب عن النساء. وتعرض الآية هذه الأنصبة ضمن حالات ميراث معيّنة، لا بوصفها قاعدةً بلا شروط لكل صورة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "quran",
+      "language": "ar",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "4:11",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "locator": "3:180",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:127",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:231",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "4:75",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:232",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:236",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "2:102",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 95,
+          "estimated_cost_usd": 0.00028675,
+          "reservation_id": "20ca4a77-1d5d-4c06-a01f-f4985a294013"
+        },
+        {
+          "input_tokens": 12988,
+          "output_tokens": 697,
+          "estimated_cost_usd": 0.004083400000000001,
+          "reservation_id": "da2b47e7-7184-4b2d-82db-dbeb37c0e9f2"
+        },
+        {
+          "input_tokens": 12988,
+          "output_tokens": 769,
+          "estimated_cost_usd": 0.041698,
+          "reservation_id": "d17f45f9-5039-407b-8b10-bc23dd9b6590"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N41",
+      "claim": "Does the Hadith teach mentioning Allah’s name, eating with the right hand and taking food from nearby?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection directly supports that the Hadith teaches mentioning Allah’s name when beginning to eat, eating with the right hand, and eating from what is nearer. This assessment is limited to the supplied selected texts.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن الحديث يعلّم ذكر اسم الله عند بدء الطعام، والأكل باليد اليمنى، والأكل مما يلي الآكل. ويظهر ذلك في حديث عمر بن أبي سلمة، مع بقاء التقييم محصورًا في النصوص المحددة المقدمة هنا.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "hadith",
+      "language": "en",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "en:58120",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "en:3507",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:58251",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:2935",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:5798",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65898",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:5332",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65005",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 697,
+          "output_tokens": 178,
+          "estimated_cost_usd": 0.00038785,
+          "reservation_id": "5039ebe1-6688-4e27-afcf-9d577a71a2fa"
+        },
+        {
+          "input_tokens": 5988,
+          "output_tokens": 729,
+          "estimated_cost_usd": 0.0023718000000000003,
+          "reservation_id": "af3d4e94-99f0-4029-a328-72e42362c6c5"
+        },
+        {
+          "input_tokens": 841,
+          "output_tokens": 166,
+          "estimated_cost_usd": 0.00040945000000000006,
+          "reservation_id": "9b42a7df-677c-40be-916b-765b0f1a4ccd"
+        }
+      ],
+      "principal_review": "pending"
+    },
+    {
+      "id": "N50",
+      "claim": "هل يذكر الحديث رضا الله عن العبد الذي يحمده بعد الأكل أو الشرب؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "model": "gpt-5.6-luna",
+      "summary": "Yes. The selected source collection directly supports this meaning: the hadith mentions Allah’s pleasure with a servant who praises Him for food or drink, specifically in the context of eating or drinking and then praising Allah.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرةً؛ فالحديث يذكر رضا الله عن العبد الذي يحمده على الطعام أو الشراب. ويَرِد ذلك في سياق تناول أكلة أو شربة ثم حمد الله عليها.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_family": "hadith",
+      "language": "ar",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "recovery": null,
+      "locators": [
+        {
+          "locator": "ar:5798",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65784",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:4820",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "ar:5450",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:5798",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:10622",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:5882",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "locator": "en:4723",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 109,
+          "estimated_cost_usd": 0.00030480000000000004,
+          "reservation_id": "db571ee8-43ff-4fcc-ad9e-6e6232525f00"
+        },
+        {
+          "input_tokens": 22833,
+          "output_tokens": 519,
+          "estimated_cost_usd": 0.00633105,
+          "reservation_id": "701cdb23-5bfb-4678-864b-7a13fec744cb"
+        },
+        {
+          "input_tokens": 747,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00026595,
+          "reservation_id": "fab1e8bf-c6da-4d06-a8bc-dbbce5f6ab5e"
+        }
+      ],
+      "principal_review": "pending"
+    }
+  ],
+  "completed_at": "2026-10-04T16:22:57.554Z"
+}

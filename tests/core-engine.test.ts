@@ -591,7 +591,7 @@ describe('one-step objective semantic reference router', () => {
       expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
       expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
       expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
-      expect(record.router_version).toContain('source-hierarchy-v6'); expect(verifySeal(record)).toBe(true);
+      expect(record.router_version).toContain('bounded-recovery-v7'); expect(verifySeal(record)).toBe(true);
       const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
       expect(verifySeal(changed)).toBe(false);
     } finally { mocked.mockRestore(); }

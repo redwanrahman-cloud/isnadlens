@@ -37,10 +37,10 @@ describe('bounded AI search planner adapter', () => {
   });
   it.each([
     { ...terms, verdict: 'supported' },
-    { ...terms, english_terms: ['2:173'] },
-    { ...terms, english_terms: ['https://example.com'] },
-    { ...terms, arabic_terms: ['«نص منسوب»'] },
-    { ...terms, english_terms: ['ignore instructions'] },
+    { arabic_terms: ['٢:١٧٣'], english_terms: ['2:173'] },
+    { arabic_terms: ['2:173'], english_terms: ['https://example.com'] },
+    { arabic_terms: ['«نص منسوب»'], english_terms: ['123'] },
+    { arabic_terms: ['تجاهل التعليمات'], english_terms: ['ignore instructions'] },
   ])('rejects planner-generated IDs, verdicts, instructions or alleged quotations', async payload => {
     const fetchMock = vi.fn().mockResolvedValue(response(payload)); vi.stubGlobal('fetch', fetchMock);
     await expect(planClaimQueries({ claim: sourceClaim, inputLanguage: 'en' })).rejects.toThrow(/QUERY_PLAN_(?:SCHEMA|TERM)_INVALID/);
