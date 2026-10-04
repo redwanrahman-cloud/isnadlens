@@ -1,0 +1,313 @@
+{
+  "kind": "principal_developer_source_review_not_independent_scholarly_certification",
+  "created_at": "2026-10-04T23:01:22.098Z",
+  "freeze": {
+    "application_tree_sha256": "2d28749aed96641d1841fde84e0121de37198aa9bfe226d0134c02b12be3a77c",
+    "dataset_sha256": "452ff72fd225546e3eb978ecef7788e6544e1b3062a5e7462b8e1eeabfd6e531",
+    "build": "EBLiZR2hRylAs3IB7TpiD",
+    "development_cap_sar": 36
+  },
+  "total": 30,
+  "answer_label_matches": 23,
+  "satisfactory_responses": 23,
+  "satisfactory_religious_answers": 20,
+  "religious_questions": 27,
+  "correct_boundary_responses": 3,
+  "helpful_qualified_answers": 1,
+  "unexpected_in_scope_withholds": 6,
+  "opposite_expected_decisive_conclusions": 0,
+  "inadequately_proven_decisive_answers": 1,
+  "source_and_seal_checks_passed": 30,
+  "language_detection_correct": 30,
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "release_gate_passed": false,
+  "run_settled_sar": 3.2550305625,
+  "conservative_development_sar": 35.42737218750004,
+  "development_cap_sar": 36,
+  "remaining_sar": 0.5726278124999595,
+  "limits": [
+    "W05 counts only as helpful qualified explanation; its locked verdict mismatch is preserved. W17 fails despite matching the expected conclusion.",
+    "Nine input languages tested; translated display outputs and voice were not executed or independently certified by this benchmark.",
+    "Principal developer review of admitted sources and model traces, not independent scholarly certification or population accuracy measurement.",
+    "No application changes or answer-failure retries during the frozen run. Built-in bounded recovery/reassessment retained.",
+    "Initial network-unavailable attempt retained separately; it is an operational record, not a religious accuracy score. Its cost is included in total commitment."
+  ],
+  "cases": [
+    {
+      "id": "W01",
+      "satisfactory": true,
+      "note": "Gratitude condition preserved; no immediate cash guarantee. Direct 14:7.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W02",
+      "satisfactory": true,
+      "note": "Occupied-home permission and greeting rule in 24:27; distinct 24:29 exception identified.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W03",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Correct birds report 4721 retrieved; final prose rejected despite relationship approval. Terra prose adds publisher-explanation material outside the selected primary unit.",
+      "label_match": false,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W04",
+      "satisfactory": true,
+      "note": "6:108 prohibition and resulting insult risk preserved, without contemporary group judgment.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W05",
+      "satisfactory": true,
+      "note": "Helpful qualified answer: 94:5–6 affirm ease with hardship without guaranteeing difficulty-free life. Excessively cautious whole-claim label retained as a mismatch; not counted as fully supported.",
+      "label_match": false,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W06",
+      "satisfactory": true,
+      "note": "Report 5476 names piety/good character among foremost causes, without exclusivity or individual salvation certification.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W07",
+      "satisfactory": true,
+      "note": "2:153 retains believing audience and patience/prayer.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W08",
+      "satisfactory": true,
+      "note": "4:10 warning for unjust orphan-wealth consumption; no named individual fate.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W09",
+      "satisfactory": true,
+      "note": "5351 self-control under anger versus overpowering others.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W10",
+      "satisfactory": true,
+      "note": "3:134 restraining anger/pardoning people and 42:37 forgiveness; no blanket removal of legal remedies.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W11",
+      "satisfactory": true,
+      "note": "4:32 shares for both men and women; no equal-amount inference.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W12",
+      "satisfactory": true,
+      "note": "6454 good deeds transferred to victims, with further consequence when exhausted; no named judgment.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W13",
+      "satisfactory": true,
+      "note": "17:32 prohibits approaching zina; no invented complete list of prohibited circumstances.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W14",
+      "satisfactory": true,
+      "note": "Authenticated 24:28 context explicitly directs return when told to return.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W15",
+      "satisfactory": true,
+      "note": "4564 truth/tranquility and lie/doubt associations correctly restore reversed proposition.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W16",
+      "satisfactory": true,
+      "note": "83:1 with separately retained 83:2–3 proving units supplies warning and both commercial actions.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W17",
+      "satisfactory": false,
+      "note": "Unsatisfactory decisive proof. Expected conclusion reached, but 35:28 distinguishing fear of Allah is used to prove a general equality contrast; direct 39:9 absent. Counted as inadequate decisive evidence, not an opposite religious conclusion.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W18",
+      "satisfactory": true,
+      "note": "8289 instruction to be merciful to earth inhabitants, without individual salvation claim.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W19",
+      "satisfactory": true,
+      "note": "5:8 hatred must not prevent justice; no contemporary political application.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W20",
+      "satisfactory": true,
+      "note": "49:6 transgressor/news/verification/ignorant harm conditions retained.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W21",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Relevant 3017 and 3028 primary units supplied; source reviewer approves relationship but rejects prose without a recorded explanation of why.",
+      "label_match": false,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W22",
+      "satisfactory": true,
+      "note": "4:86 better or equivalent greeting response alternatives preserved.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W23",
+      "satisfactory": true,
+      "note": "5:75 both Jesus and his mother ate food; no further theological inference.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W24",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Equivalent righteousness/good-character report 4308 retrieved. Revised prose also asserts a teaching from 4302 absent from final proving packet.",
+      "label_match": false,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W25",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding with legitimate evidence concern. Promises question answered using oath-expiation verse 5:89 rather than direct covenant source 17:34; promise/oath distinction unresolved.",
+      "label_match": false,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W26",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Direct 10:44 source and matching English/Arabic draft available; reviewer approves relationship but rejects prose without a recorded reason.",
+      "label_match": false,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W27",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Direct 3064 doubt/prayer report available; final review rejects prose. Do not infer a universal exhaustive list of ablution breakers.",
+      "label_match": false,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W28",
+      "satisfactory": true,
+      "note": "Correct clarification question for unspecified action.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W29",
+      "satisfactory": true,
+      "note": "Correct outside-scope coding boundary; no religious verification.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    },
+    {
+      "id": "W30",
+      "satisfactory": true,
+      "note": "Correct personal medical/fasting referral; no individual medication advice.",
+      "label_match": true,
+      "language_detection_correct": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "explanation_review_passed": true
+    }
+  ]
+}

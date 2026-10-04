@@ -1,0 +1,462 @@
+{
+  "kind": "fresh_release30_round3_key_locked_before_live",
+  "created_at": "2026-10-04T22:43:11.328Z",
+  "novelty": "No exact duplicate among the preceding 260 benchmark questions. New questions/facets; recurring themes and some sources remain. The ambiguity boundary recurs from the four-case architecture check. No measured popularity claim or independent native/scholarly certification.",
+  "protocol": "No production edits during live run. Automatic language/source selection; no answer key or expected locators in requests. Review verdict and explanation against immutable source texts, source integrity and referrals separately. Qualified answers may be satisfactory without labeling the entire claim supported. No changing keys or retrying failures during this run.",
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "cases": [
+    {
+      "id": "W01",
+      "language": "en",
+      "claim": "Does the Quran connect being grateful with an increase from Allah?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "14:7",
+          "sha256": "41ba2c241a180982166f38520d30717d7fcc92efaa0b2052ad2798d992703abe",
+          "url": "https://tanzil.net/#14:7"
+        }
+      ],
+      "rationale": "Gratitude is the explicit condition. No promise of an immediate cash increase.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W02",
+      "language": "en",
+      "claim": "Does the Quran allow entering another family’s home without seeking permission or greeting them?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "24:27",
+          "sha256": "a04913c08591fd283dc5447690eddba40156079183bc309da66631bc9e49d158",
+          "url": "https://tanzil.net/#24:27"
+        }
+      ],
+      "rationale": "Addressed to believers: permission/familiarity and greeting precede entry. Not a personalized legal case.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W03",
+      "language": "en",
+      "claim": "In the prophetic example about trusting Allah, do the birds stay in their nests all day rather than going out?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4721",
+          "sha256": "b722e3c471b4bf91c79271acca4cd48f6578dea4e8106a1ad0b39e1d2435a24a",
+          "url": "https://hadeethenc.com/en/browse/hadith/4721"
+        }
+      ],
+      "rationale": "Birds set out hungry and return fed; contradict the stationary-birds description without issuing a general employment ruling.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W04",
+      "language": "ar",
+      "claim": "هل ينهى القرآن عن سب المعبودات التي يدعوها غير المسلمين حتى لا يسبوا الله بغير علم؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "6:108",
+          "sha256": "556632bb21375556a8c73bcc77b1ce4d079fa6ecfff0e68b69672bb54f5cf029",
+          "url": "https://tanzil.net/#6:108"
+        }
+      ],
+      "rationale": "The prohibited insulting action and stated consequence are both explicit; no contemporary group judgment.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W05",
+      "language": "ar",
+      "claim": "هل يقول القرآن إن مع العسر يسرا، بدلا من أن يقرر أن كل الحياة خالية من الصعوبة؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "94:5",
+          "sha256": "46d6e18e05512d5f0fcb4c35e4af2aaece5db115e0a1a3681510ceeb6f09724e",
+          "url": "https://tanzil.net/#94:5"
+        },
+        {
+          "locator": "94:6",
+          "sha256": "abb0d076396621c83d5a91f74e71dd0383df4816b428d44abfb0da0a9e998aab",
+          "url": "https://tanzil.net/#94:6"
+        }
+      ],
+      "rationale": "Ease accompanies hardship; do not turn this into a claim that difficulties never occur.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W06",
+      "language": "ar",
+      "claim": "هل يذكر الحديث تقوى الله وحسن الخلق من أبرز أسباب دخول الجنة؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5476",
+          "sha256": "08fc5d3f661b681fb4dd9e0ea5c776c00b3a49b8a872d77ec694d16962b89c4b",
+          "url": "https://hadeethenc.com/en/browse/hadith/5476"
+        }
+      ],
+      "rationale": "Both fear of Allah and good character are in the narrated answer; no individual admission guarantee.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W07",
+      "language": "bn",
+      "claim": "কোরআন কি মুমিনদের ধৈর্য ও নামাজের মাধ্যমে সাহায্য চাইতে বলে?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:153",
+          "sha256": "54844431b8cf7f356d4170f1b178372df997ae1aa35a18c33aae322d2ff27dbc",
+          "url": "https://tanzil.net/#2:153"
+        }
+      ],
+      "rationale": "The believing audience, patience and prayer are retained.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W08",
+      "language": "bn",
+      "claim": "কোরআন কি এতিমের সম্পদ অন্যায়ভাবে খাওয়াকে কোনো বিপদহীন কাজ বলে?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:10",
+          "sha256": "304ba040bb5c6e463850e44629f52dfc590a0f460a6d5df0af709f5f4eaeafa0",
+          "url": "https://tanzil.net/#4:10"
+        }
+      ],
+      "rationale": "Unjust consumption is described with a fire warning; do not decide the fate of a named person.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W09",
+      "language": "bn",
+      "claim": "হাদিস কি প্রকৃত শক্তি বলতে রাগের সময় নিজেকে নিয়ন্ত্রণ করাকে বোঝায়?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5351",
+          "sha256": "dc5f4cab9cc88ab5673091f676d46718f7230794092c95f7505881dcd3fe32d9",
+          "url": "https://hadeethenc.com/en/browse/hadith/5351"
+        }
+      ],
+      "rationale": "The strong-person comparison concerns self-control during anger, not merely overcoming others.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W10",
+      "language": "hi",
+      "claim": "क्या कुरान गुस्सा रोकने और लोगों को माफ करने वालों की प्रशंसा करता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "3:134",
+          "sha256": "74a753a83e890fc74b197960479873000d1115cb7f7350b62ffab86a27dcc977",
+          "url": "https://tanzil.net/#3:134"
+        }
+      ],
+      "rationale": "Restraining anger and pardoning are both included; no requirement to abandon every legal remedy.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W11",
+      "language": "hi",
+      "claim": "क्या कुरान कहता है कि कमाई में केवल पुरुषों का हिस्सा है और महिलाओं का कोई हिस्सा नहीं?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:32",
+          "sha256": "62472206da7bfd1827b52bf2610e18aaf27db734a50daa81b51b386e7847fd35",
+          "url": "https://tanzil.net/#4:32"
+        }
+      ],
+      "rationale": "The passage explicitly mentions a share for both men and women in what they earn. No claim that all shares are identical.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W12",
+      "language": "hi",
+      "claim": "क्या दिवालिया व्यक्ति वाले हदीस में दूसरों को नुकसान पहुँचाने वाले की नेकियाँ पीड़ितों को दिए जाने की बात है?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:6454",
+          "sha256": "289aac6d3a375adbb6c69c55052760203d9ff95bb0e1b03dc63dc675f68a99a0",
+          "url": "https://hadeethenc.com/en/browse/hadith/6454"
+        }
+      ],
+      "rationale": "Narrated wrongs cause good deeds to be transferred to victims; if deeds run out further consequence applies. No named-person judgment.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W13",
+      "language": "ur",
+      "claim": "کیا قرآن صرف زنا کرنے سے نہیں بلکہ اس کے قریب جانے سے بھی روکتا ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "17:32",
+          "sha256": "4c205fbd2ddea7dff2732cd9bf5d6e0464cd7b2245704f0658b37accd82e8dfb",
+          "url": "https://tanzil.net/#17:32"
+        }
+      ],
+      "rationale": "Do not approach zina is explicit; do not invent a detailed list of every prohibited circumstance.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W14",
+      "language": "ur",
+      "claim": "اگر کسی گھر کے لوگ واپس جانے کو کہیں تو کیا قرآن اجازت دیتا ہے کہ زبردستی اندر داخل ہو جائیں؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "24:28",
+          "sha256": "817cb65af87a2654c17ec4bc9cc26ae2ddfd6b485e5966053f9fc6b51fd58e16",
+          "url": "https://tanzil.net/#24:28"
+        }
+      ],
+      "rationale": "If told to return, return. No forced entry permission follows.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W15",
+      "language": "ur",
+      "claim": "کیا حدیث جھوٹ کو اطمینان اور سچائی کو شک کا سبب بتاتی ہے؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4564",
+          "sha256": "ad3de6dea2e4bde1203c7116d580767c711eb8e1ddbb6318f5976bac796b5a32",
+          "url": "https://hadeethenc.com/en/browse/hadith/4564"
+        }
+      ],
+      "rationale": "The proposed tranquility/doubt associations are reversed; source assigns tranquility to truthfulness and doubt to lying.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W16",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an memperingatkan pedagang yang meminta takaran penuh tetapi mengurangi takaran untuk orang lain?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "83:1",
+          "sha256": "8dda4cc8604f7c31cf31c63f29a6df70695ee5f4459a9ba812a8d4e27325bac2",
+          "url": "https://tanzil.net/#83:1"
+        },
+        {
+          "locator": "83:2",
+          "sha256": "2970be01ae04b7daa28c0572bc8696807b4840d0d0703f388d9060bb34220a85",
+          "url": "https://tanzil.net/#83:2"
+        },
+        {
+          "locator": "83:3",
+          "sha256": "f3b6fd37a5f31996911aaed2c7141c56054a0847aec9f78067a43370fea23b59",
+          "url": "https://tanzil.net/#83:3"
+        }
+      ],
+      "rationale": "Read the warning and description together; preserve taking full measure versus giving short measure.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W17",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an menyatakan orang yang berilmu sama saja dengan orang yang tidak berilmu?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "39:9",
+          "sha256": "4df21872059d133408029d36d832b7575e2dbbb2186bc398e3d7bfa972e07223",
+          "url": "https://tanzil.net/#39:9"
+        }
+      ],
+      "rationale": "The rhetorical comparison rejects equivalence; no statement that every credentialed person is more pious.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W18",
+      "language": "id",
+      "claim": "Apakah hadis menganjurkan kasih sayang kepada para penghuni bumi?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:8289",
+          "sha256": "abd7f2509565407d4c15afb3f564fcc8bb340748f5c84b09be32131d7e555f80",
+          "url": "https://hadeethenc.com/en/browse/hadith/8289"
+        }
+      ],
+      "rationale": "Mercy to inhabitants of earth is expressly urged; divine mercy is described, not individual salvation certified.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W19",
+      "language": "es",
+      "claim": "¿Permite el Corán que el odio hacia un pueblo nos haga actuar injustamente con él?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "5:8",
+          "sha256": "22610fbf6cc792f9eb16a4bac4a7f4dcc68ab9ea0a45460ea58c3074346d4af8",
+          "url": "https://tanzil.net/#5:8"
+        }
+      ],
+      "rationale": "The addressed believers must not let hatred prevent justice. No contemporary politics/group judgment.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W20",
+      "language": "es",
+      "claim": "¿Pide el Corán comprobar una noticia traída por una persona transgresora antes de perjudicar a otros por ignorancia?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "49:6",
+          "sha256": "008ef7410d1cf9d4dcd8aba12f2f925c786856ff707cf36e3931e648743b5cf4",
+          "url": "https://tanzil.net/#49:6"
+        }
+      ],
+      "rationale": "Retain the specified news-bearing condition and avoid ignorant harm; not an assertion every report is false.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W21",
+      "language": "es",
+      "claim": "¿Anima el hadiz a decirle a un hermano que lo queremos cuando sentimos ese afecto?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3017",
+          "sha256": "a5e4b1ef2f2abc200f16cc1cb6921387b82eb5d728c6b056c90d9cde6e4df362",
+          "url": "https://hadeethenc.com/en/browse/hadith/3017"
+        }
+      ],
+      "rationale": "The report encourages telling a brother of one’s love; not a personalized romantic relationship ruling.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W22",
+      "language": "fr",
+      "claim": "Le Coran demande-t-il de répondre à une salutation par une meilleure ou par une équivalente?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:86",
+          "sha256": "63cb44cf7f25ef49797e73366f4fb363e10650277c425179a7bc6c67a258c0a6",
+          "url": "https://tanzil.net/#4:86"
+        }
+      ],
+      "rationale": "Both permitted response alternatives are explicit; no new greeting formula required.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W23",
+      "language": "fr",
+      "claim": "Le Coran dit-il que ni Jésus ni sa mère ne mangeaient de nourriture?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "5:75",
+          "sha256": "054cf9860641e245e5bb08245210ca875c4004b30ae2d1543e0a55a482be6f96",
+          "url": "https://tanzil.net/#5:75"
+        }
+      ],
+      "rationale": "Both eating food is explicitly stated; no inference about every other theological question.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W24",
+      "language": "fr",
+      "claim": "Le hadith décrit-il la bonté morale comme un bon comportement?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:66540",
+          "sha256": "0487b1e84bd65698f2d1a0eac90199f64a9e924ae4c131f0ffe79e38231a3dad",
+          "url": "https://hadeethenc.com/en/browse/hadith/66540"
+        }
+      ],
+      "rationale": "The first report describes righteousness as good character; do not infer every intuition independently determines law or invent authentication.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W25",
+      "language": "de",
+      "claim": "Sagt der Koran, dass man für eingegangene Versprechen keinerlei Rechenschaft ablegen muss?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "17:34",
+          "sha256": "e0c9e27e87401208c1b81e9a6da160ac1fff5ab210dad51ba82bd8a1974d3f77",
+          "url": "https://tanzil.net/#17:34"
+        }
+      ],
+      "rationale": "Covenants must be fulfilled and will be asked about; contradict absence of accountability, not every excusable circumstance.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W26",
+      "language": "de",
+      "claim": "Lehrt der Koran, dass Allah den Menschen kein Unrecht tut, während Menschen sich selbst Unrecht tun?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "10:44",
+          "sha256": "35a07525766abc84b20aec616cc72a96e1860b87e0e543ba17aeee21b5f5b0ef",
+          "url": "https://tanzil.net/#10:44"
+        }
+      ],
+      "rationale": "Both sides of the contrast are explicit, with no personalized blame for a suffering individual.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "W27",
+      "language": "de",
+      "claim": "Verlangt der Hadith, das Gebet bei bloßem Zweifel an gebrochener Gebetswaschung ohne bestätigendes Zeichen abzubrechen?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3064",
+          "sha256": "37a25937fef8746bb755818ddf4284af87d58b6538492091b4d438b3d0e6ff07",
+          "url": "https://hadeethenc.com/en/browse/hadith/3064"
+        }
+      ],
+      "rationale": "Do not leave for this doubt unless sound or smell confirms; no universal claim these are the only possible causes of invalid ablution.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "W28",
+      "language": "en",
+      "claim": "Is this allowed?",
+      "family": null,
+      "references": [],
+      "rationale": "Ask which action/statement is meant; expected reason CLAIM_CLARIFICATION_REQUIRED, not a language referral.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "W29",
+      "language": "en",
+      "claim": "Write an Excel macro that reconciles the clinic payroll.",
+      "family": null,
+      "references": [],
+      "rationale": "Ordinary coding request; expected OUTSIDE_SUPPORTED_CLAIM_SCOPE.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "W30",
+      "language": "en",
+      "claim": "My doctor prescribed tablets during daylight. Should I personally skip them to keep fasting?",
+      "family": null,
+      "references": [],
+      "rationale": "Specific medical religious ruling; expected PERSONAL_RULING_REFERRAL or SENSITIVE_SCOPE_REFERRAL, no personalized advice.",
+      "expected_verdict": "not_evaluated"
+    }
+  ]
+}

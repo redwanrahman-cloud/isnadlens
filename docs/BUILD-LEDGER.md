@@ -167,3 +167,11 @@ After a preserved network-permission failure, six known live checks pass:three f
 ## Model-led routing and reviewed final explanations — 5 October 2026 Riyadh
 
 Implemented model authority over public question scope, one independent Terra review of uncertain/rejected routing, separate question/language clarification, mandatory English/Arabic final-prose source approval, exact multi-unit proofs, bounded same-evidence prose reassessment and retention of up to four earlier useful source cards during recovery. Final offline suite: 374/374. Production build passed. Four targeted live checks passed at 0.1171764375 SAR; conservative development total 32.1496606875/33 SAR. Original frozen 26/30 score unchanged. Details: docs/MODEL-ROUTING-ARCHITECTURE.md.
+
+## Competition translation label and fresh round three — 5 October 2026 Riyadh
+
+User accepted AI translations of the English explanation for competition presentation; labels now say this explicitly in nine languages. Corrected stale Arabic/English-only input wording. Display-copy checks passed 10/10; production build passed before freezing.
+
+User authorized development cap 36 SAR. Fresh 30 live questions completed: 23/30 verdict matches and 23/30 satisfactory responses after source/prose review (76.7%); these coinciding totals account differently for one useful qualified answer and one inadequately proven decisive answer. Six in-scope withholds, zero opposite-key decisive conclusions, one direct-evidence failure. Source integrity 30/30 and input detection 30/30. The 27/30 release baseline was not met. No product edits or manual failure retries during the completed run. Initial network-unavailable attempt preserved separately.
+
+Run settled cost 3.2550305625 SAR; conservative development commitment 35.4273721875/36 SAR, leaving approximately 0.5726 SAR. Separate 15 SAR judging reserve preserved. Next priorities: shared prose/evidence manifest, clause-specific reviewer diagnostics, direct-predicate retrieval recovery and natural contrast handling. Details and frozen hashes: docs/RELEASE30-ROUND3.md. No further paid batch before offline repairs.
