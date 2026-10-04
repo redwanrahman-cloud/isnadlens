@@ -4,6 +4,10 @@ import { asciiDigits } from './citations';
 export function scopeGate(claim: string): string | null {
   if (claim.trim().length < 5 || claim.length > 1200) return 'INPUT_INVALID';
   if (/ignore.{0,30}(instructions|rules)|system prompt|developer message|تجاهل.{0,30}(تعليمات|قواعد)/i.test(claim)) return 'INSTRUCTION_INJECTION';
+  // Everyday/live-information requests stay outside textual verification even
+  // when they happen to mention a religious topic or place.
+  const textAttribution = /\b(quran|qur'an|koran|hadith|hadeeth|prophet said|muhammad said)\b|قرآن|القران|حديث|قال النبي|قال رسول/i.test(claim);
+  if (!textAttribution && /\b(weather|forecast|temperature|stock price|exchange rate|football score|write (?:me )?(?:code|a poem)|tell (?:me )?a joke|recipe)\b|الطقس|طقس|درجة الحرارة|سعر الصرف|نتيجة المباراة|وصفة طبخ|اكتب.*كود|قل.*نكتة/i.test(claim)) return 'OUTSIDE_SUPPORTED_CLAIM_SCOPE';
   if (/\b(my|i am|i have|am i|should i|can i|is it permissible for me)\b|هل يجوز لي|علي كفارة|زوجتي|أنا|حكم حالتي/i.test(claim)) return 'PERSONAL_RULING_REFERRAL';
   if (/\b(kafir|apostate|kill|terrorist|suicide|medical|diagnos|sect|political)\w*|تكفير|كافر|مرتد|انتحار|قتل|طائفة/i.test(claim)) return 'SENSITIVE_SCOPE_REFERRAL';
   if (/\b(patient|diabet\w*|cancer|disease|illness|pregnan\w*|doctor|medicine|medication|salary|income|debt|bank account|credit card|passport|ssn)\b|مريض|سكري|سرطان|مرض|حامل|دواء|طبيب|راتب|دخل شخصي|ديون|حساب بنكي|رقم الهوية|جواز/i.test(claim)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';

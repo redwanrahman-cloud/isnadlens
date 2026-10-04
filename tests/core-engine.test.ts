@@ -51,6 +51,23 @@ describe('scope and spend controls', () => {
   });
 });
 describe('source integrity and query processing', () => {
+  it('returns a clear scope explanation for everyday questions without source retrieval or paid assessment', async () => {
+    const mocked = vi.spyOn(provider, 'assessClaim');
+    try {
+      for (const claim of ["What's the weather today?", 'How are you doing?', 'What is the weather in Makkah before prayer?', 'Give me a recipe with water.', 'كيف الطقس اليوم؟', 'كيف حالك؟', 'ما درجة الحرارة قبل الصلاة؟']) {
+        const record = await verifyClaim({claim,inputLanguage:/\p{Script=Arabic}/u.test(claim)?'ar':'en'});
+        expect(record.verdict).toBe('not_evaluated');
+        expect(record.reason_codes).toContain('OUTSIDE_SUPPORTED_CLAIM_SCOPE');
+        expect(record.summary_en).toContain('does not answer general questions');
+        expect(record.summary_ar).toContain('لا تجيب عن الأسئلة العامة');
+        expect(record.evidence_items).toEqual([]); expect(record.usage).toBeNull();
+        expect(record.semantic_assessment).toBeNull(); expect(verifySeal(record)).toBe(true);
+      }
+      expect(mocked).not.toHaveBeenCalled();
+      expect(scopeGate('The Quran mentions water.')).toBeNull();
+      expect(scopeGate('A hadith mentions rain and weather.')).toBeNull();
+    } finally { mocked.mockRestore(); }
+  });
   it('validates acquired publisher bytes and detects raw tampering without changing source files', () => {
     const corpus = loadCorpus();
     expect(corpus.verses).toHaveLength(6236);
