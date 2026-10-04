@@ -4,7 +4,7 @@ A source-first workbench for examining bounded Arabic and English Islamic claims
 
 ## Current increment
 
-Arabic/English responsive workbench, admitted immutable Tanzil Arabic Quran editions, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Fresh AI assessment remains disabled pending API access and explicit paid-call authorization. Four additional output languages, model comparison, final evaluation, live hosting and the pilgrimage guide are not complete.
+Arabic/English responsive workbench, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in six languages, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment was successfully tested after funding and authorization under a persistent development spending cap. Four additional interface/output languages, model comparison, final evaluation, live hosting and the pilgrimage guide are not complete.
 
 The first repository commit was created during the authorized event window. See PRE_CHALLENGE_DISCLOSURE.md and docs/BUILD-LEDGER.md for the research disclosure and starting-state record. The GitHub repository is private during development.
 
@@ -27,14 +27,16 @@ Open http://127.0.0.1:3100. Corpus preparation downloads only the two authorized
 
 Copy .env.example to .env.local for local configuration. Never paste API keys into chat or commit secrets. Paid requests require both an API key and explicit authorization; disabling authorization leaves a useful authentic passage search with a truthful not-evaluated state. It never substitutes canned successful verdicts.
 
-The interface and mechanical tests can run without an API key. OpenAI model availability, billing and account rate limits must be verified before inference. No paid API call, deployment or public publication occurred in this first increment.
+The interface and mechanical tests can run without an API key. OpenAI model availability, billing and account rate limits must be verified before inference. Paid development calls are authorized up to 10 SAR, while at least 15 SAR is reserved for judging. There is no deployment or public publication yet. The local spending ledger requires durable shared atomic storage before enabling calls on multiple hosted instances.
 
 ## Sources and trust
 
-Source: [Tanzil Project](https://tanzil.net). Arabic display: Uthmani v1.1. Exact search: the separate official Simple Clean v1.1 edition. Text is unchanged; editions join only by surah:ayah. [Licence and admission](docs/source-rights/TANZIL-ADMISSION.md). The application does not independently authenticate Hadith. No Hadith, Quran translation or pilgrimage corpus is admitted.
+Source: [Tanzil Project](https://tanzil.net). Arabic display: Uthmani v1.1. Exact search: the separate official Simple Clean v1.1 edition. Text is unchanged; editions join only by surah:ayah. [Licence and admission](docs/source-rights/TANZIL-ADMISSION.md).
+
+Hadith: [HadeethEnc.com](https://hadeethenc.com/en/home), official unchanged Arabic, English, Bangla, Hindi, Urdu and Indonesian workbooks acquired 4 October 2026. [Source conditions and admission](docs/source-rights/HADEETHENC-ADMISSION.md). Publisher grades are attributed, never independently assigned. To reproduce, run `node scripts/download-hadeethenc.mjs`, then `python scripts/prepare-hadeethenc.py` with openpyxl installed. Different acquisitions can change hashes and require deliberate re-admission of pins. No Quran translations or pilgrimage corpus is admitted.
 
 Lexical retrieval has limited English vocabulary and can miss relevant passages. A retrieved verse is not by itself proof of a claim. AI judgments are provisional and require qualified human review. Mechanical test results do not measure religious correctness.
 
 ## Release gates still open
 
-Real authorized semantic assessment; controlled model comparison; six-language semantic and immutable-field checks; untouched final evaluation after freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission. Source permissions remain independent of technical progress.
+Controlled model comparison; six-language semantic and immutable-field checks; untouched final evaluation after freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission.

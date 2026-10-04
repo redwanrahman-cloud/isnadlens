@@ -1,0 +1,35 @@
+[
+  {
+    "case": "intentions-support",
+    "verdict": "supported_within_selected_corpus",
+    "reason": [
+      "COMPLETE_DIRECT_COVERAGE"
+    ],
+    "usage": 0.00552975,
+    "locators": "en:4560,en:4234,en:66511,en:5885,en:2756,en:65014,en:10105,en:65015",
+    "summary": "The claim that the Prophet said actions are judged by intentions is directly supported by the supplied hadith quotations stating that the reward of deeds depends on intentions and that each person is rewarded according to what he intended.",
+    "prompt_version": "claim-assessment-v1.3-meaning-and-absence"
+  },
+  {
+    "case": "intentions-conflict",
+    "verdict": "conflicting_within_selected_corpus",
+    "reason": [
+      "DIRECT_MATERIAL_CONTRADICTION"
+    ],
+    "usage": 0.0138825,
+    "locators": "en:4560,en:66511,en:2756,en:65014,en:4234,en:4820,en:10622,en:65037",
+    "summary": "The claim is contradicted by the supplied hadiths. The texts explicitly state that deeds depend on intentions and that a person is rewarded according to what he intended, rather than saying intentions have no importance. Other supplied reports about judging by outward appearance or the counting of deeds do not support the denial of intention’s importance.",
+    "prompt_version": "claim-assessment-v1.3-meaning-and-absence"
+  },
+  {
+    "case": "mobile-app-insufficient",
+    "verdict": "insufficient_within_selected_corpus",
+    "reason": [
+      "INCOMPLETE_OR_INDIRECT_COVERAGE"
+    ],
+    "usage": 0.0078195,
+    "locators": "en:10883,en:3059,en:3154,en:8374,en:10008,en:10022,en:5212,en:3079",
+    "summary": "The claim is not supported by the supplied hadith texts and imports a meaning not present in them. The provided narrations mention prayer, teaching, the adhān, the tooth-stick, and certain prayer remembrances, but none explicitly commands using a smartphone app for prayer.",
+    "prompt_version": "claim-assessment-v1.3-meaning-and-absence"
+  }
+]

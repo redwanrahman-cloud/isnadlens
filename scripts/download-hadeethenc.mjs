@@ -1,0 +1,22 @@
+import {mkdir,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const dir = new URL('../data/raw/hadeethenc/',import.meta.url);
+await mkdir(dir,{recursive:true});
+const home = await fetch('https://hadeethenc.com/en/home');
+if (!home.ok) throw new Error(`Terms HTTP ${home.status}`);
+await writeFile(new URL('terms-home.html',dir),await home.text());
+const files = await Promise.all(['ar','en','bn','hi','ur','id'].map(async language=>{
+ const url=`https://hadeethenc.com/browse/download/${language}`;
+ const response=await fetch(url,{signal:AbortSignal.timeout(120000)});
+ if(!response.ok)throw new Error(`${language}: HTTP ${response.status}`);
+ const bytes=Buffer.from(await response.arrayBuffer());
+ const disposition=response.headers.get('content-disposition');
+ const xlsx=bytes[0]===0x50&&bytes[1]===0x4b;
+ const xls=bytes[0]===0xd0&&bytes[1]===0xcf;
+ if(!xlsx&&!xls)throw new Error(`${language}: unexpected workbook signature`);
+ const filename=`hadeethenc-${language}.${xlsx?'xlsx':'xls'}`;
+ await writeFile(new URL(filename,dir),bytes);
+ return {language,url,final_url:response.url,filename,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),content_type:response.headers.get('content-type'),content_disposition:disposition,retrieved_at:new Date().toISOString()};
+}));
+await writeFile(new URL('../hadeethenc-acquisition.json',dir),JSON.stringify({publisher:'HadeethEnc.com',terms_url:'https://hadeethenc.com/en/home',files},null,2));
+console.log(JSON.stringify(files.map(({language,filename,bytes,sha256})=>({language,filename,bytes,sha256})),null,2));

@@ -1,0 +1,50 @@
+{
+  "id": "hadeethenc-official-2026-10-04",
+  "sha256": "4b8dcc11ef25e42c44b1333eaed643adfb752d6868513f6b98465513d465e17d",
+  "sources": [
+    {
+      "language": "ar",
+      "raw_sha256": "088f818de5131fb91ddee5778665d4a324608bd2afd5ac01b98fc9687852b2ee",
+      "filename": "hadeethenc-ar.xlsx",
+      "version": "v1.7.0"
+    },
+    {
+      "language": "en",
+      "raw_sha256": "339d148eb7425b7f2d48dd7521a969e4aa4a35b5d35a7c4a1c1b67043b5ee218",
+      "filename": "hadeethenc-en.xlsx",
+      "version": "v1.25.0"
+    },
+    {
+      "language": "bn",
+      "raw_sha256": "f593d5a5707f6b39f43431db9263100a7032b8dd1775c17b4e7fde201e4864c4",
+      "filename": "hadeethenc-bn.xlsx",
+      "version": "v1.56.0"
+    },
+    {
+      "language": "hi",
+      "raw_sha256": "2058c3866f607e3d6ac1ea432a3abddb9de294cc414a2aa47ce8f54eacfaefc5",
+      "filename": "hadeethenc-hi.xlsx",
+      "version": "v1.59.0"
+    },
+    {
+      "language": "ur",
+      "raw_sha256": "0f5afc97215b14563134c9ef67f3d146a5395d5d90bfb5bec95e9220fa072041",
+      "filename": "hadeethenc-ur.xlsx",
+      "version": "v1.36.0"
+    },
+    {
+      "language": "id",
+      "raw_sha256": "f266f1dd4f60a1512717afa162ec657da42b2282f930dd189110f13fa319dd06",
+      "filename": "hadeethenc-id.xlsx",
+      "version": "v1.22.0"
+    }
+  ],
+  "counts": {
+    "ar": 3582,
+    "en": 2328,
+    "bn": 1925,
+    "hi": 2314,
+    "ur": 2220,
+    "id": 2260
+  }
+}

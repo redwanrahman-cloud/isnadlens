@@ -1,0 +1,597 @@
+{
+  "record_id": "86fb264d-7954-47d1-8a6a-3973934ebe78",
+  "original_claim": "The Quran states that every living thing was made from water.",
+  "verdict": "supported_within_selected_corpus",
+  "reason_codes": [
+    "COMPLETE_DIRECT_COVERAGE"
+  ],
+  "summary_ar": "الآية المقتبسة تدعم المعنى المقصود: أنها تنسب خلق كل كائن حيّ إلى الماء بصيغة عامة. الآيات الأخرى المرفقة تتحدث عن الماء في سياقات مختلفة لكنها ليست اللازمة لدعم هذا الادعاء تحديدًا.",
+  "summary_en": "The supplied verse directly supports the intended claim: it attributes the creation of every living thing to water in a universal form. The other supplied verses mention water in different contexts but are not needed to support this specific claim.",
+  "evidence_items": [
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:21:30",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "21:30",
+      "quotation": "أَوَلَمْ يَرَ ٱلَّذِينَ كَفَرُوٓا۟ أَنَّ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضَ كَانَتَا رَتْقًا فَفَتَقْنَـٰهُمَا ۖ وَجَعَلْنَا مِنَ ٱلْمَآءِ كُلَّ شَىْءٍ حَىٍّ ۖ أَفَلَا يُؤْمِنُونَ",
+      "quotation_sha256": "8324195d45cd00f849929273f733cd51eaea74e6a4aeab4d933a1d28c223ec6e",
+      "source_url": "https://tanzil.net/#21:30",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "supports",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "21:29",
+          "quotation": "وَمَن يَقُلْ مِنْهُمْ إِنِّىٓ إِلَـٰهٌ مِّن دُونِهِۦ فَذَٰلِكَ نَجْزِيهِ جَهَنَّمَ ۚ كَذَٰلِكَ نَجْزِى ٱلظَّـٰلِمِينَ",
+          "quotation_sha256": "5a6574837bdad6deab14bc258223a0e095462851e4b6cd1565c36fed426a76aa",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "21:31",
+          "quotation": "وَجَعَلْنَا فِى ٱلْأَرْضِ رَوَٰسِىَ أَن تَمِيدَ بِهِمْ وَجَعَلْنَا فِيهَا فِجَاجًا سُبُلًا لَّعَلَّهُمْ يَهْتَدُونَ",
+          "quotation_sha256": "46f6fe486cabcdfb109a0d507468bf5b38378c208ee036367c08d19efaa5c4d3",
+          "integrity_passed": true
+        }
+      ]
+    },
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:41:39",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "41:39",
+      "quotation": "وَمِنْ ءَايَـٰتِهِۦٓ أَنَّكَ تَرَى ٱلْأَرْضَ خَـٰشِعَةً فَإِذَآ أَنزَلْنَا عَلَيْهَا ٱلْمَآءَ ٱهْتَزَّتْ وَرَبَتْ ۚ إِنَّ ٱلَّذِىٓ أَحْيَاهَا لَمُحْىِ ٱلْمَوْتَىٰٓ ۚ إِنَّهُۥ عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ",
+      "quotation_sha256": "da0a73b2426d108fdeeb4ef011987f6f86ed5a3114bb271eb4e43d3a6bcd0d8c",
+      "source_url": "https://tanzil.net/#41:39",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "unrelated",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "41:38",
+          "quotation": "فَإِنِ ٱسْتَكْبَرُوا۟ فَٱلَّذِينَ عِندَ رَبِّكَ يُسَبِّحُونَ لَهُۥ بِٱلَّيْلِ وَٱلنَّهَارِ وَهُمْ لَا يَسْـَٔمُونَ ۩",
+          "quotation_sha256": "72bd6682a0103bff2b17053ea6a837ff6dfa5af08d5d05945714eb5409a73a78",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "41:40",
+          "quotation": "إِنَّ ٱلَّذِينَ يُلْحِدُونَ فِىٓ ءَايَـٰتِنَا لَا يَخْفَوْنَ عَلَيْنَآ ۗ أَفَمَن يُلْقَىٰ فِى ٱلنَّارِ خَيْرٌ أَم مَّن يَأْتِىٓ ءَامِنًا يَوْمَ ٱلْقِيَـٰمَةِ ۚ ٱعْمَلُوا۟ مَا شِئْتُمْ ۖ إِنَّهُۥ بِمَا تَعْمَلُونَ بَصِيرٌ",
+          "quotation_sha256": "79983a1bb51e40c922b5f97c90d915ae0d66c611dc6bf472951083365cce28cb",
+          "integrity_passed": true
+        }
+      ]
+    },
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:2:74",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "2:74",
+      "quotation": "ثُمَّ قَسَتْ قُلُوبُكُم مِّنۢ بَعْدِ ذَٰلِكَ فَهِىَ كَٱلْحِجَارَةِ أَوْ أَشَدُّ قَسْوَةً ۚ وَإِنَّ مِنَ ٱلْحِجَارَةِ لَمَا يَتَفَجَّرُ مِنْهُ ٱلْأَنْهَـٰرُ ۚ وَإِنَّ مِنْهَا لَمَا يَشَّقَّقُ فَيَخْرُجُ مِنْهُ ٱلْمَآءُ ۚ وَإِنَّ مِنْهَا لَمَا يَهْبِطُ مِنْ خَشْيَةِ ٱللَّهِ ۗ وَمَا ٱللَّهُ بِغَـٰفِلٍ عَمَّا تَعْمَلُونَ",
+      "quotation_sha256": "df70716abea42aabbd95f67ee8d6eb8e5bc816a4ecd0edfb36518262338b4f5a",
+      "source_url": "https://tanzil.net/#2:74",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "unrelated",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "2:73",
+          "quotation": "فَقُلْنَا ٱضْرِبُوهُ بِبَعْضِهَا ۚ كَذَٰلِكَ يُحْىِ ٱللَّهُ ٱلْمَوْتَىٰ وَيُرِيكُمْ ءَايَـٰتِهِۦ لَعَلَّكُمْ تَعْقِلُونَ",
+          "quotation_sha256": "e142d0f32fc549b55300750aba6aa830e7a145524bf82d45b477a8f0b3a631cb",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "2:75",
+          "quotation": "أَفَتَطْمَعُونَ أَن يُؤْمِنُوا۟ لَكُمْ وَقَدْ كَانَ فَرِيقٌ مِّنْهُمْ يَسْمَعُونَ كَلَـٰمَ ٱللَّهِ ثُمَّ يُحَرِّفُونَهُۥ مِنۢ بَعْدِ مَا عَقَلُوهُ وَهُمْ يَعْلَمُونَ",
+          "quotation_sha256": "b7d29d64fa1fa1a182ee91ee8d2280534ab627a1059fd2e91fef4854bca95a10",
+          "integrity_passed": true
+        }
+      ]
+    },
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:7:50",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "7:50",
+      "quotation": "وَنَادَىٰٓ أَصْحَـٰبُ ٱلنَّارِ أَصْحَـٰبَ ٱلْجَنَّةِ أَنْ أَفِيضُوا۟ عَلَيْنَا مِنَ ٱلْمَآءِ أَوْ مِمَّا رَزَقَكُمُ ٱللَّهُ ۚ قَالُوٓا۟ إِنَّ ٱللَّهَ حَرَّمَهُمَا عَلَى ٱلْكَـٰفِرِينَ",
+      "quotation_sha256": "9c2bca34b802d1b6b7f1530238540d6c8d4d94258705286e1464b61cb6137406",
+      "source_url": "https://tanzil.net/#7:50",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "unrelated",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "7:49",
+          "quotation": "أَهَـٰٓؤُلَآءِ ٱلَّذِينَ أَقْسَمْتُمْ لَا يَنَالُهُمُ ٱللَّهُ بِرَحْمَةٍ ۚ ٱدْخُلُوا۟ ٱلْجَنَّةَ لَا خَوْفٌ عَلَيْكُمْ وَلَآ أَنتُمْ تَحْزَنُونَ",
+          "quotation_sha256": "791d082fcd581ceffad6a6ca5f143f2f54e5f92b706d3f95ed86663297f30f2e",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "7:51",
+          "quotation": "ٱلَّذِينَ ٱتَّخَذُوا۟ دِينَهُمْ لَهْوًا وَلَعِبًا وَغَرَّتْهُمُ ٱلْحَيَوٰةُ ٱلدُّنْيَا ۚ فَٱلْيَوْمَ نَنسَىٰهُمْ كَمَا نَسُوا۟ لِقَآءَ يَوْمِهِمْ هَـٰذَا وَمَا كَانُوا۟ بِـَٔايَـٰتِنَا يَجْحَدُونَ",
+          "quotation_sha256": "f2cad8cd58f3404b8d9349be946cdba64d8b4de01503de0aca18b049baaaccf6",
+          "integrity_passed": true
+        }
+      ]
+    },
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:7:57",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "7:57",
+      "quotation": "وَهُوَ ٱلَّذِى يُرْسِلُ ٱلرِّيَـٰحَ بُشْرًۢا بَيْنَ يَدَىْ رَحْمَتِهِۦ ۖ حَتَّىٰٓ إِذَآ أَقَلَّتْ سَحَابًا ثِقَالًا سُقْنَـٰهُ لِبَلَدٍ مَّيِّتٍ فَأَنزَلْنَا بِهِ ٱلْمَآءَ فَأَخْرَجْنَا بِهِۦ مِن كُلِّ ٱلثَّمَرَٰتِ ۚ كَذَٰلِكَ نُخْرِجُ ٱلْمَوْتَىٰ لَعَلَّكُمْ تَذَكَّرُونَ",
+      "quotation_sha256": "b3c310ed79ef2b3272feb6d4d9978e32164d821b822fa3fb734f9d7296829c4d",
+      "source_url": "https://tanzil.net/#7:57",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "unrelated",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "7:56",
+          "quotation": "وَلَا تُفْسِدُوا۟ فِى ٱلْأَرْضِ بَعْدَ إِصْلَـٰحِهَا وَٱدْعُوهُ خَوْفًا وَطَمَعًا ۚ إِنَّ رَحْمَتَ ٱللَّهِ قَرِيبٌ مِّنَ ٱلْمُحْسِنِينَ",
+          "quotation_sha256": "de50eb0982f475a878cb2aa4dc3e31b094513288a29b0e683a084e0a2b47e099",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "7:58",
+          "quotation": "وَٱلْبَلَدُ ٱلطَّيِّبُ يَخْرُجُ نَبَاتُهُۥ بِإِذْنِ رَبِّهِۦ ۖ وَٱلَّذِى خَبُثَ لَا يَخْرُجُ إِلَّا نَكِدًا ۚ كَذَٰلِكَ نُصَرِّفُ ٱلْـَٔايَـٰتِ لِقَوْمٍ يَشْكُرُونَ",
+          "quotation_sha256": "518c9973a3883f1738669a24dc3abe8e81d09a6941bdfe259eb37b321b42715d",
+          "integrity_passed": true
+        }
+      ]
+    },
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:11:7",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "11:7",
+      "quotation": "وَهُوَ ٱلَّذِى خَلَقَ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضَ فِى سِتَّةِ أَيَّامٍ وَكَانَ عَرْشُهُۥ عَلَى ٱلْمَآءِ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا ۗ وَلَئِن قُلْتَ إِنَّكُم مَّبْعُوثُونَ مِنۢ بَعْدِ ٱلْمَوْتِ لَيَقُولَنَّ ٱلَّذِينَ كَفَرُوٓا۟ إِنْ هَـٰذَآ إِلَّا سِحْرٌ مُّبِينٌ",
+      "quotation_sha256": "562c4922fde72d74b82735a95b601e13e812bea5a900afde40cdbedd140b839f",
+      "source_url": "https://tanzil.net/#11:7",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "unrelated",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "11:6",
+          "quotation": "وَمَا مِن دَآبَّةٍ فِى ٱلْأَرْضِ إِلَّا عَلَى ٱللَّهِ رِزْقُهَا وَيَعْلَمُ مُسْتَقَرَّهَا وَمُسْتَوْدَعَهَا ۚ كُلٌّ فِى كِتَـٰبٍ مُّبِينٍ",
+          "quotation_sha256": "c0e4d51771e8e2781fa3331b1e35300092f3d449b294499e489eddba74671f43",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "11:8",
+          "quotation": "وَلَئِنْ أَخَّرْنَا عَنْهُمُ ٱلْعَذَابَ إِلَىٰٓ أُمَّةٍ مَّعْدُودَةٍ لَّيَقُولُنَّ مَا يَحْبِسُهُۥٓ ۗ أَلَا يَوْمَ يَأْتِيهِمْ لَيْسَ مَصْرُوفًا عَنْهُمْ وَحَاقَ بِهِم مَّا كَانُوا۟ بِهِۦ يَسْتَهْزِءُونَ",
+          "quotation_sha256": "24bfefa42ede0d873aaa6a2b7f59c26cca389ac68a7eda2bc3e9ed5bbe3eb64d",
+          "integrity_passed": true
+        }
+      ]
+    },
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:11:43",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "11:43",
+      "quotation": "قَالَ سَـَٔاوِىٓ إِلَىٰ جَبَلٍ يَعْصِمُنِى مِنَ ٱلْمَآءِ ۚ قَالَ لَا عَاصِمَ ٱلْيَوْمَ مِنْ أَمْرِ ٱللَّهِ إِلَّا مَن رَّحِمَ ۚ وَحَالَ بَيْنَهُمَا ٱلْمَوْجُ فَكَانَ مِنَ ٱلْمُغْرَقِينَ",
+      "quotation_sha256": "3d62d2b601257cb173fe01026fce5bc5bc5c75e8dd9f5f29d5a28134d9e61164",
+      "source_url": "https://tanzil.net/#11:43",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "unrelated",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "11:42",
+          "quotation": "وَهِىَ تَجْرِى بِهِمْ فِى مَوْجٍ كَٱلْجِبَالِ وَنَادَىٰ نُوحٌ ٱبْنَهُۥ وَكَانَ فِى مَعْزِلٍ يَـٰبُنَىَّ ٱرْكَب مَّعَنَا وَلَا تَكُن مَّعَ ٱلْكَـٰفِرِينَ",
+          "quotation_sha256": "4b06382a7fbb39332dc55413c00d8fbb412adc98118ff4853200e932341fbe85",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "11:44",
+          "quotation": "وَقِيلَ يَـٰٓأَرْضُ ٱبْلَعِى مَآءَكِ وَيَـٰسَمَآءُ أَقْلِعِى وَغِيضَ ٱلْمَآءُ وَقُضِىَ ٱلْأَمْرُ وَٱسْتَوَتْ عَلَى ٱلْجُودِىِّ ۖ وَقِيلَ بُعْدًا لِّلْقَوْمِ ٱلظَّـٰلِمِينَ",
+          "quotation_sha256": "7dbe31b636ec0e8fd19bb9480f353009a447a049af83862457929b3acd7c66d5",
+          "integrity_passed": true
+        }
+      ]
+    },
+    {
+      "evidence_id": "tanzil-1.1-2026-10-04:11:44",
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "title": "Quran — Tanzil Uthmani",
+      "version": "1.1",
+      "locator": "11:44",
+      "quotation": "وَقِيلَ يَـٰٓأَرْضُ ٱبْلَعِى مَآءَكِ وَيَـٰسَمَآءُ أَقْلِعِى وَغِيضَ ٱلْمَآءُ وَقُضِىَ ٱلْأَمْرُ وَٱسْتَوَتْ عَلَى ٱلْجُودِىِّ ۖ وَقِيلَ بُعْدًا لِّلْقَوْمِ ٱلظَّـٰلِمِينَ",
+      "quotation_sha256": "7dbe31b636ec0e8fd19bb9480f353009a447a049af83862457929b3acd7c66d5",
+      "source_url": "https://tanzil.net/#11:44",
+      "attribution": "Source: Tanzil Project",
+      "integrity": {
+        "passed": true,
+        "checks": [
+          {
+            "id": "locator",
+            "passed": true,
+            "reason": "Locator belongs to the admitted complete edition."
+          },
+          {
+            "id": "exact_quotation",
+            "passed": true,
+            "reason": "Quotation matches immutable publisher display text exactly."
+          },
+          {
+            "id": "quotation_sha256",
+            "passed": true,
+            "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+          },
+          {
+            "id": "corpus_sha256",
+            "passed": true,
+            "reason": "Complete joined corpus matches its manifest hash."
+          },
+          {
+            "id": "neighbor_context",
+            "passed": true,
+            "reason": "Immediate same-surah context matches admitted exact display hashes."
+          }
+        ]
+      },
+      "semantic_relation": "unrelated",
+      "source_context": [
+        {
+          "position": "preceding",
+          "locator": "11:43",
+          "quotation": "قَالَ سَـَٔاوِىٓ إِلَىٰ جَبَلٍ يَعْصِمُنِى مِنَ ٱلْمَآءِ ۚ قَالَ لَا عَاصِمَ ٱلْيَوْمَ مِنْ أَمْرِ ٱللَّهِ إِلَّا مَن رَّحِمَ ۚ وَحَالَ بَيْنَهُمَا ٱلْمَوْجُ فَكَانَ مِنَ ٱلْمُغْرَقِينَ",
+          "quotation_sha256": "3d62d2b601257cb173fe01026fce5bc5bc5c75e8dd9f5f29d5a28134d9e61164",
+          "integrity_passed": true
+        },
+        {
+          "position": "following",
+          "locator": "11:45",
+          "quotation": "وَنَادَىٰ نُوحٌ رَّبَّهُۥ فَقَالَ رَبِّ إِنَّ ٱبْنِى مِنْ أَهْلِى وَإِنَّ وَعْدَكَ ٱلْحَقُّ وَأَنتَ أَحْكَمُ ٱلْحَـٰكِمِينَ",
+          "quotation_sha256": "2a200a71e9350ad93725db91b25fde12ade368cc0dbef213055e29a3d9c34195",
+          "integrity_passed": true
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Results apply only to retrieved evidence in the admitted Arabic Quran edition.",
+    "Model-assisted interpretation requires qualified human review; this is not a fatwa.",
+    "English explanations are not authoritative Quran translations.",
+    "Assessment is limited to the exact supplied Arabic quotations and their neighboring context; no outside Quranic evidence was used.",
+    "This is a corpus-bounded textual assessment, not a scholarly review of broader interpretive debates.",
+    "Selected-corpus limitation: only the provided evidence was considered, so compatibility with other passages or interpretations was not evaluated."
+  ],
+  "created_at": "2026-10-04T08:43:47.472Z",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "technical_verification_status": "passed",
+  "human_scholarly_status": "not_reviewed",
+  "linguistic_review_status": "not_reviewed",
+  "input_language": "en",
+  "corpus_manifest": {
+    "id": "tanzil-1.1-2026-10-04",
+    "version": "1.1",
+    "sha256": "b38d2ff661bd43dc3d57194cf10427856e2423594541f48c46b1f20e826e1dad",
+    "sources": [
+      {
+        "id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+        "type": "uthmani",
+        "version": "1.1",
+        "raw_sha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+        "attribution": "Source: Tanzil Project",
+        "url": "https://tanzil.net",
+        "licence_url": "https://tanzil.net/docs/Text_License"
+      },
+      {
+        "id": "QURAN-AR-TANZIL-SIMPLE-CLEAN-V1.1",
+        "type": "simple-clean",
+        "version": "1.1",
+        "raw_sha256": "228df2a717671aeb9d2ff573002bd28d6b3f973f4bc7153554e3a81663d67610",
+        "attribution": "Source: Tanzil Project",
+        "url": "https://tanzil.net",
+        "licence_url": "https://tanzil.net/docs/Text_License"
+      }
+    ]
+  },
+  "corpus_sha256": "b38d2ff661bd43dc3d57194cf10427856e2423594541f48c46b1f20e826e1dad",
+  "retrieval_ids": [
+    "tanzil-1.1-2026-10-04:21:30",
+    "tanzil-1.1-2026-10-04:41:39",
+    "tanzil-1.1-2026-10-04:2:74",
+    "tanzil-1.1-2026-10-04:7:50",
+    "tanzil-1.1-2026-10-04:7:57",
+    "tanzil-1.1-2026-10-04:11:7",
+    "tanzil-1.1-2026-10-04:11:43",
+    "tanzil-1.1-2026-10-04:11:44"
+  ],
+  "semantic_assessment": {
+    "in_scope": true,
+    "original_meaning_preserved": true,
+    "atomic_claims": [
+      {
+        "id": "c1",
+        "text": "The Quran states that every living thing was made from water.",
+        "material": true,
+        "relation": "supports",
+        "evidence_ids": [
+          "tanzil-1.1-2026-10-04:21:30"
+        ],
+        "direct": true,
+        "context_fit": true,
+        "negation_checked": true,
+        "modality_checked": true,
+        "qualifications_preserved": true,
+        "attribution_matched": true,
+        "scope_matched": true
+      },
+      {
+        "id": "c2",
+        "text": "The statement is universal in scope, applying to every living thing.",
+        "material": true,
+        "relation": "supports",
+        "evidence_ids": [
+          "tanzil-1.1-2026-10-04:21:30"
+        ],
+        "direct": true,
+        "context_fit": true,
+        "negation_checked": true,
+        "modality_checked": true,
+        "qualifications_preserved": true,
+        "attribution_matched": true,
+        "scope_matched": true
+      },
+      {
+        "id": "c3",
+        "text": "The statement says living things were made from water, not merely associated with water or sustained by it.",
+        "material": true,
+        "relation": "supports",
+        "evidence_ids": [
+          "tanzil-1.1-2026-10-04:21:30"
+        ],
+        "direct": true,
+        "context_fit": true,
+        "negation_checked": true,
+        "modality_checked": true,
+        "qualifications_preserved": true,
+        "attribution_matched": true,
+        "scope_matched": true
+      }
+    ],
+    "all_material_claims_covered": true,
+    "summary_ar": "الآية المقتبسة تدعم المعنى المقصود: أنها تنسب خلق كل كائن حيّ إلى الماء بصيغة عامة. الآيات الأخرى المرفقة تتحدث عن الماء في سياقات مختلفة لكنها ليست اللازمة لدعم هذا الادعاء تحديدًا.",
+    "summary_en": "The supplied verse directly supports the intended claim: it attributes the creation of every living thing to water in a universal form. The other supplied verses mention water in different contexts but are not needed to support this specific claim.",
+    "limitations": [
+      "Assessment is limited to the exact supplied Arabic quotations and their neighboring context; no outside Quranic evidence was used.",
+      "This is a corpus-bounded textual assessment, not a scholarly review of broader interpretive debates.",
+      "Selected-corpus limitation: only the provided evidence was considered, so compatibility with other passages or interpretations was not evaluated."
+    ]
+  },
+  "prompt_version": "claim-assessment-v1.1-context",
+  "schema_version": "atomic-semantic-v1",
+  "usage": {
+    "input_tokens": 4649,
+    "output_tokens": 497,
+    "estimated_cost_usd": 0.00572325,
+    "reservation_id": "66fa0b87-c2e5-48c0-8f88-16461b4213c8"
+  },
+  "audit_hash": "aba910ad32b00e58e7914eb948067604bbca819f37d29fd63d1f9eca279fad21"
+}

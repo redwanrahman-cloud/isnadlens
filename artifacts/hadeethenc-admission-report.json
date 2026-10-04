@@ -1,0 +1,38 @@
+[
+  {
+    "language": "ar",
+    "records": 3582,
+    "version": "v1.7.0",
+    "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "en",
+    "records": 2328,
+    "version": "v1.25.0",
+    "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "bn",
+    "records": 1925,
+    "version": "v1.56.0",
+    "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "hi",
+    "records": 2314,
+    "version": "v1.59.0",
+    "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "ur",
+    "records": 2220,
+    "version": "v1.36.0",
+    "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "id",
+    "records": 2260,
+    "version": "v1.22.0",
+    "ids_outside_arabic_edition": 0
+  }
+]

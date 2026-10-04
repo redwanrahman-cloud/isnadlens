@@ -7,10 +7,12 @@ import { decideVerdict, scopeGate } from '../src/lib/policy';
 import { normalizeQuery, queryTerms, retrieve } from '../src/lib/retrieval';
 import { assessClaim, structuredOutputSchema } from '../src/lib/provider';
 import { reserveSpend, settleSpend, priceUsage } from '../src/lib/budget';
-import { sealRecord, verifySeal, checkExplicitCitation, authenticateEvidence } from '../src/lib/verification';
+import { sealRecord, verifySeal, checkExplicitCitation, authenticateEvidence, verifyClaim } from '../src/lib/verification';
+import * as provider from '../src/lib/provider';
 import type { SemanticAssessment, VerificationRecord } from '../src/lib/contracts';
+import { loadHadith, retrieveHadith, authenticateHadith, validateHadith, checkHadithCitation } from '../src/lib/hadith';
 
-const atom = { id: 'a1', text: 'A material assertion', material: true, relation: 'supports' as const, evidence_ids: ['e1'], direct: true, context_fit: true, negation_checked: true, modality_checked: true, qualifications_preserved: true, attribution_matched: true, scope_matched: true };
+const atom = { id: 'a1', text: 'A material assertion', material: true, relation: 'supports' as const, evidence_ids: ['e1'], direct: true, context_fit: true, negation_checked: true, modality_checked: true, qualifications_preserved: true, attribution_matched: true, scope_matched: true, contradiction_basis: 'none' as const, basis_evidence_id: null, basis_quotation: null };
 const assessment: SemanticAssessment = { in_scope: true, original_meaning_preserved: true, atomic_claims: [atom], all_material_claims_covered: true, summary_ar: 'تفسير', summary_en: 'Explanation', limitations: [] };
 describe('complete semantic coverage policy', () => {
   it('allows support only when every material atom is directly covered', () => {
@@ -22,10 +24,11 @@ describe('complete semantic coverage policy', () => {
     expect(decideVerdict({ ...assessment, atomic_claims: [{ ...atom, [field]: false }] }, new Set(['e1']))).toBe('insufficient_within_selected_corpus');
   });
   it('requires authenticated references for contradiction and rejects invented evidence', () => {
-    const contradictory = { ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts' as const }] };
+    const contradictory = { ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts' as const, contradiction_basis: 'explicit_negation_or_incompatible_statement' as const, basis_evidence_id: 'e1', basis_quotation: 'Exact synthetic source span' }] };
     expect(decideVerdict(contradictory, new Set(['e1']))).toBe('conflicting_within_selected_corpus');
     expect(decideVerdict(contradictory, new Set(['other']))).toBe('insufficient_within_selected_corpus');
     expect(decideVerdict({ ...assessment, original_meaning_preserved: false }, new Set(['e1']))).toBe('not_evaluated');
+    expect(decideVerdict({ ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts', contradiction_basis: 'absence_only' }] }, new Set(['e1']))).toBe('insufficient_within_selected_corpus');
   });
 });
 describe('scope and spend controls', () => {
@@ -103,7 +106,7 @@ describe('source integrity and query processing', () => {
     expect(JSON.stringify(corpus)).toBe(before);
   });
   it('detects a changed verdict in a sealed audit record', () => {
-    const payload: Omit<VerificationRecord, 'audit_hash'> = { record_id: 'fixture', original_claim: 'Synthetic claim', verdict: 'not_evaluated', reason_codes: ['FIXTURE'], summary_ar: '', summary_en: '', evidence_items: [], limitations: [], created_at: '2026-10-04T00:00:00Z', model: 'none', technical_verification_status: 'not_run', human_scholarly_status: 'not_reviewed', linguistic_review_status: 'not_reviewed', input_language: 'en', corpus_manifest: null, corpus_sha256: null, retrieval_ids: [], semantic_assessment: null, prompt_version: 'test', schema_version: 'test', usage: null };
+    const payload: Omit<VerificationRecord, 'audit_hash'> = { record_id: 'fixture', original_claim: 'Synthetic claim', verdict: 'not_evaluated', reason_codes: ['FIXTURE'], summary_ar: '', summary_en: '', evidence_items: [], limitations: [], created_at: '2026-10-04T00:00:00Z', model: 'none', technical_verification_status: 'not_run', human_scholarly_status: 'not_reviewed', linguistic_review_status: 'not_reviewed', input_language: 'en', corpus_manifest: null, corpus_sha256: null, retrieval_ids: [], semantic_assessment: null, prompt_version: 'test', schema_version: 'test', usage: null, corpus_selection: 'quran' };
     const sealed = sealRecord(payload);
     expect(verifySeal(sealed)).toBe(true);
     expect(verifySeal({ ...sealed, verdict: 'supported_within_selected_corpus' })).toBe(false);
@@ -159,5 +162,67 @@ describe('persistent spending controls and provider schema', () => {
     const json = JSON.stringify(schema);
     expect(json).not.toContain('$schema'); expect(json).not.toContain('maxLength'); expect(json).not.toContain('maxItems');
     expect((schema.required as string[])).toContain('atomic_claims');
+  });
+});
+describe('admitted multilingual Hadith records', () => {
+  it('keeps a faithful but unsupported modern textual claim in scope and returns insufficient with a sealed record', async () => {
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: { ...assessment, atomic_claims: [{ ...atom, text: 'A hadith explicitly commands using a smartphone app for prayer.', relation: 'unrelated', direct: false, evidence_ids: [] }], all_material_claims_covered: false }, model: 'mock-only', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'A hadith explicitly commands using a smartphone app for prayer.', inputLanguage: 'en', corpusSelection: 'hadith' });
+      expect(record.verdict).toBe('insufficient_within_selected_corpus');
+      expect(record.semantic_assessment).toMatchObject({ in_scope: true, original_meaning_preserved: true });
+      expect(verifySeal(record)).toBe(true); expect(record.corpus_selection).toBe('hadith');
+      expect(mocked).toHaveBeenCalledOnce();
+    } finally { mocked.mockRestore(); }
+  });
+  it('fails closed when a mock model invents a contradiction basis source span', async () => {
+    const corpus = loadHadith(); const candidate = retrieveHadith(corpus, 'The Prophet said that intentions have no importance in actions.', 'en')[0];
+    const id = `${corpus.manifest.id}:en:${candidate.id}`;
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: { ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts', contradiction_basis: 'explicit_negation_or_incompatible_statement', evidence_ids: [id], basis_evidence_id: id, basis_quotation: 'Invented source statement absent from every publisher record.' }] }, model: 'mock-only', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'The Prophet said that intentions have no importance in actions.', inputLanguage: 'en', corpusSelection: 'hadith' });
+      expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toContain('SEMANTIC_BASIS_QUOTATION_INVALID');
+    } finally { mocked.mockRestore(); }
+  });
+  it('validates all six publisher editions and retrieves genuine Arabic/English intentions passages', () => {
+    const corpus = loadHadith();
+    expect(corpus.records).toHaveLength(14629);
+    expect(new Set(corpus.records.map(record => record.language)).size).toBe(6);
+    const english = retrieveHadith(corpus, 'Actions are judged by intentions.', 'en');
+    expect(english.length).toBeGreaterThan(0);
+    expect(english.every(record => record.language === 'en')).toBe(true);
+    expect(english.some(record => /intentions/i.test(record.fields.hadith_text!))).toBe(true);
+    expect(retrieveHadith(corpus, 'The Prophet said that actions are judged by intentions.', 'en').map(record => record.id)).toContain('4560');
+    expect(retrieveHadith(corpus, 'The Prophet said that intentions have no importance in actions.', 'en').map(record => record.id)).toContain('4560');
+    expect(retrieveHadith(corpus, 'Intention has no importance in actions.', 'en').some(record => /intentions/i.test(record.fields.hadith_text!))).toBe(true);
+    const arabic = retrieveHadith(corpus, 'الأعمال بالنيات', 'ar');
+    expect(arabic.length).toBeGreaterThan(0);
+    expect(arabic.every(record => record.language === 'ar')).toBe(true);
+    expect(scopeGate('Actions are judged by intentions.')).toBeNull();
+    expect(scopeGate('Intention has no importance in actions.')).toBeNull();
+  });
+  it('preserves publisher fields, grade, reference, notice and quotation bytes without independent grading', () => {
+    const corpus = loadHadith(); const record = retrieveHadith(corpus, 'intentions', 'en')[0];
+    const evidence = authenticateHadith(corpus, record);
+    expect(evidence.quotation).toBe(record.fields.hadith_text);
+    expect(evidence.publisher_fields).toEqual(record.fields);
+    expect(evidence.publisher_grade_status).toBe('publisher_supplied_not_independently_graded');
+    expect(evidence.publisher_notice).toContain("PLEASE DON'T REMOVE");
+    expect(evidence.integrity.passed).toBe(true); expect(evidence.source_context).toEqual([]);
+    expect(evidence.version).toBe('v1.25.0');
+  });
+  it('rejects coherently rehashed altered publisher rows against the admitted snapshot', () => {
+    const corpus = loadHadith(); const pins = JSON.parse(readFileSync(join(process.cwd(), 'docs/source-rights/hadeethenc-pins.json'), 'utf8'));
+    const records = corpus.records.map((record, index) => index === 0 ? { ...record, fields: { ...record.fields, hadith_text: 'modified publisher text' }, quotation_sha256: sha256('modified publisher text') } : record);
+    const altered = { ...corpus, records, manifest: { ...corpus.manifest, sha256: sha256(JSON.stringify(records)) } };
+    expect(() => validateHadith(altered, { ...pins, sha256: altered.manifest.sha256 })).toThrow('HADITH_ADMISSION_HASH_MISMATCH');
+  }, 15000); // Whole-corpus rehashing can exceed the default timeout during live validation.
+  it('pins explicit Hadith citations to their actual language, record, and exact quotation', () => {
+    const corpus = loadHadith(); const record = retrieveHadith(corpus, 'intentions', 'en')[0];
+    expect(retrieveHadith(corpus, `A hadith at ${record.fields.link}`, 'en')[0].id).toBe(record.id);
+    expect(checkHadithCitation(corpus, `${record.fields.link} "${record.fields.hadith_text}"`, 'en')).toBeNull();
+    expect(checkHadithCitation(corpus, `${record.fields.link} "invented quotation"`, 'en')).toBe('HADITH_EXPLICIT_QUOTATION_MISMATCH');
+    expect(checkHadithCitation(corpus, record.fields.link!, 'ar')).toBe('HADITH_CITATION_LANGUAGE_MISMATCH');
+    expect(checkHadithCitation(corpus, 'https://hadeethenc.com/en/browse/hadith/999999999', 'en')).toBe('HADITH_EXPLICIT_LOCATOR_INVALID');
   });
 });

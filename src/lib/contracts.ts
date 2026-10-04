@@ -8,6 +8,8 @@ export const evidenceSchema = z.object({
   quotation: z.string(), quotation_sha256: z.string(), source_url: z.string(), attribution: z.string(),
   integrity: z.object({ passed: z.boolean(), checks: z.array(integrityCheckSchema) }), semantic_relation: relationSchema,
   source_context: z.array(z.object({ position: z.enum(['preceding', 'following']), locator: z.string(), quotation: z.string(), quotation_sha256: z.string(), integrity_passed: z.boolean() })),
+  source_language: z.string().optional(), publisher_fields: z.record(z.string(), z.string().nullable()).optional(),
+  publisher_grade_status: z.literal('publisher_supplied_not_independently_graded').optional(), publisher_notice: z.string().optional(),
 });
 export const usageSchema = z.object({ input_tokens: z.number().int().nonnegative(), output_tokens: z.number().int().nonnegative(), estimated_cost_usd: z.number().nonnegative(), reservation_id: z.string() });
 export const recordSchema = z.object({
@@ -18,6 +20,7 @@ export const recordSchema = z.object({
   input_language: z.enum(['ar', 'en']), corpus_manifest: z.unknown().nullable(), corpus_sha256: z.string().nullable(),
   retrieval_ids: z.array(z.string()), semantic_assessment: z.unknown().nullable(),
   prompt_version: z.string(), schema_version: z.string(), usage: usageSchema.nullable(),
+  corpus_selection: z.enum(['quran', 'hadith']),
 });
 export type VerificationRecord = z.infer<typeof recordSchema>;
 export type EvidenceItem = z.infer<typeof evidenceSchema>;
@@ -27,6 +30,8 @@ export const semanticSchema = z.object({
     relation: z.enum(['supports', 'contradicts', 'partial', 'unrelated']), evidence_ids: z.array(z.string()),
     direct: z.boolean(), context_fit: z.boolean(), negation_checked: z.boolean(), modality_checked: z.boolean(),
     qualifications_preserved: z.boolean(), attribution_matched: z.boolean(), scope_matched: z.boolean(),
+    contradiction_basis: z.enum(['explicit_negation_or_incompatible_statement', 'absence_only', 'none']),
+    basis_evidence_id: z.string().nullable(), basis_quotation: z.string().nullable(),
   })).min(1).max(12),
   all_material_claims_covered: z.boolean(), summary_ar: z.string().max(2000), summary_en: z.string().max(2000),
   limitations: z.array(z.string()).max(12),

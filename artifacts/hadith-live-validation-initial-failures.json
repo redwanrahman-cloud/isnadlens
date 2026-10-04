@@ -1,0 +1,32 @@
+[
+  {
+    "case": "intentions-support",
+    "verdict": "not_evaluated",
+    "reason": [
+      "SEMANTIC_SCOPE_REFERRAL"
+    ],
+    "usage": 0.00486225,
+    "locators": "en:58148,en:4812,en:3300,en:2756,en:4234,en:3020,en:3261,en:3450",
+    "summary": "The selected evidence supports the general idea that the Prophet spoke about judgment according to intentions, but the quoted record itself states that people will be resurrected and judged according to their intentions, not the exact formula “actions are judged by intentions.” So the broad meaning is close, but the original claim is not preserved verbatim."
+  },
+  {
+    "case": "intentions-conflict",
+    "verdict": "not_evaluated",
+    "reason": [
+      "SEMANTIC_SCOPE_REFERRAL"
+    ],
+    "usage": 0.0076185,
+    "locators": "en:5205,en:6025,en:6380,en:58230,en:3752,en:5775,en:11294,en:3300",
+    "summary": "The claim is not preserved in meaning: the supplied quotations do not support that the Prophet said intentions have no importance in actions. The selected records instead show command, verification, and religious significance attached to conduct, while none directly states the opposite of intention's importance."
+  },
+  {
+    "case": "mobile-app-insufficient",
+    "verdict": "not_evaluated",
+    "reason": [
+      "SEMANTIC_SCOPE_REFERRAL"
+    ],
+    "usage": 0.01638825,
+    "locators": "en:10008,en:10883,en:4820,en:10016,en:10022,en:8346,en:10048,en:11300",
+    "summary": "The supplied quotations discuss prayer and related rulings in historical contexts; they do not mention smartphones or apps, and they do not explicitly command using a smartphone app for prayer. So the claim is not supported and is contradicted by the corpus provided."
+  }
+]
