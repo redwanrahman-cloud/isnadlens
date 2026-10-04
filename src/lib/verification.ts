@@ -2,7 +2,7 @@ import { assessmentModels, isFirstTier, primaryModel } from './model-config';
 import { CLAIM_LANGUAGES, type ClaimLanguage } from './claim-language';
 import { randomUUID } from 'node:crypto';
 import { loadCorpus, sha256, type Corpus, type Verse } from './corpus';
-import { recordSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
+import { recordSchema, semanticSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
 import { scopeGate, decideVerdict, nativeSafetyGate, publicEvidenceRequest } from './policy';
 import { retrieve, retrieveWithPublishedEnglishAid } from './retrieval';
 import { assessClaim, reviewPositiveEntailment, ENTAILMENT_VERSION, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure, type EntailmentReview } from './provider';
@@ -12,7 +12,7 @@ import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlann
 import { discoverWebReferences } from './web-discovery';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v7';
+export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v8-meaning-recovery';
 export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
   const atoms = assessment.atomic_claims.filter(a => a.material);
   if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
@@ -27,7 +27,14 @@ export function validPositiveReview(review: EntailmentReview, assessment: Semant
 function semanticReferenceError(assessment: SemanticAssessment, evidence: EvidenceItem[]): string | null {
   const ids = new Set(evidence.map(item => item.evidence_id));
   if (assessment.atomic_claims.some(atom => atom.evidence_ids.some(id => !ids.has(id)))) return 'SEMANTIC_REFERENCE_INVALID';
-  if (assessment.atomic_claims.some(atom => atom.contradiction_basis === 'explicit_negation_or_incompatible_statement' && (!atom.basis_evidence_id || !atom.basis_quotation?.trim() || !evidence.some(item => item.evidence_id === atom.basis_evidence_id && item.quotation.includes(atom.basis_quotation!))))) return 'SEMANTIC_BASIS_QUOTATION_INVALID';
+  const invalidBasis=assessment.atomic_claims.some(atom=>{
+    if(atom.contradiction_basis!=='explicit_negation_or_incompatible_statement')return false;
+    const quote=atom.basis_quotation;
+    if(!atom.basis_evidence_id||!quote?.trim())return true;
+    return !evidence.some(item=>item.evidence_id===atom.basis_evidence_id && item.integrity.passed &&
+      (item.quotation.includes(quote)||item.source_context.some(c=>c.integrity_passed&&sha256(c.quotation)===c.quotation_sha256&&c.quotation.includes(quote))));
+  });
+  if(invalidBasis)return 'SEMANTIC_BASIS_QUOTATION_INVALID';
   return null;
 }
 export function sealRecord(record: Omit<VerificationRecord, 'audit_hash'>): VerificationRecord {
@@ -236,14 +243,43 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       if (!isFirstTier(requestedModel) || (!result.assessment.in_scope && !scopeNeedsConfirmation) || !result.assessment.original_meaning_preserved) return fail(invalid ?? 'CONTRADICTION_UNCONFIRMED');
     }
     if (!result) return fail('SEMANTIC_SCHEMA_OR_PROVIDER_FAILURE');
-    const assessment = result.assessment;
+    let assessment = result.assessment;
     const ids = new Set(base.evidence_items.map(e => e.evidence_id));
     base.verdict = decideVerdict(assessment, ids);
+    let restoredFirstCandidate=false;
+    if(base.verdict==='insufficient_within_selected_corpus' && assessment.in_scope && assessment.original_meaning_preserved && assessment.all_material_claims_covered && assessment.atomic_claims.some(a=>a.material&&a.relation==='contradicts') && base.assessment_attempts?.length===2){
+      const first=base.assessment_attempts[0];const parsed=semanticSchema.safeParse(first.raw_assessment);
+      if(parsed.success && !semanticReferenceError(parsed.data,base.evidence_items) && decideVerdict(parsed.data,ids)==='conflicting_within_selected_corpus'){
+        // Preserve the failed stronger assessment unchanged. The earlier candidate
+        // still needs a source-blind meaning check AND independent source confirmation.
+        assessment=parsed.data;base.semantic_assessment=assessment;base.model=first.model;base.usage=first.usage;
+        base.verdict='conflicting_within_selected_corpus';restoredFirstCandidate=true;
+        base.assessment_selection_reason='previous_contradiction_after_flag_disagreement';
+      }
+    }
     if (base.verdict === 'supported_within_selected_corpus' || base.verdict === 'conflicting_within_selected_corpus') {
-      const decisionMode=base.verdict==='conflicting_within_selected_corpus'?'decision':'support';
+      let decisionMode:'decision'|'support'=base.verdict==='conflicting_within_selected_corpus'?'decision':'support';
       base.limitations.push('A separate source-focused model check evaluates proposed support or contradiction and preservation of the original question; it is not independent scholarly review and can still err. Its additional usage is sealed separately.');
       try {
-        const checked = await reviewPositiveEntailment(claim, assessment, base.evidence_items, decisionMode);
+        let checked = await reviewPositiveEntailment(claim, assessment, base.evidence_items, decisionMode);
+        const recordMeaning = () => { if(checked.meaning_check)base.meaning_review_attempts=[...(base.meaning_review_attempts??[]),{assessment_model:base.model, ...checked.meaning_check}]; };
+        recordMeaning();
+        // A reassessment can accidentally answer instead of representing the question.
+        // Reuse only an already recorded, structurally valid first candidate; it must
+        // independently pass both meaning and source checks. No forced verdict or new loop.
+        if(!restoredFirstCandidate && checked.meaning_check?.review.faithful==='no' && base.assessment_attempts?.length===2){
+          const first=base.assessment_attempts[0];
+          const parsed=semanticSchema.safeParse(first.raw_assessment);
+          if(parsed.success && !semanticReferenceError(parsed.data,base.evidence_items)){
+            const candidateVerdict=decideVerdict(parsed.data,ids);
+            if(candidateVerdict==='supported_within_selected_corpus'||candidateVerdict==='conflicting_within_selected_corpus'){
+              assessment=parsed.data;base.semantic_assessment=assessment;base.model=first.model;base.usage=first.usage;base.verdict=candidateVerdict;
+              restoredFirstCandidate=true;base.assessment_selection_reason='previous_candidate_after_meaning_rejection';
+              decisionMode=candidateVerdict==='conflicting_within_selected_corpus'?'decision':'support';
+              checked=await reviewPositiveEntailment(claim,assessment,base.evidence_items,decisionMode);recordMeaning();
+            }
+          }
+        }
         const passed = validPositiveReview(checked.review, assessment, base.evidence_items);
         base.entailment_review = { version: ENTAILMENT_VERSION, model: checked.model, status: passed ? 'passed' : 'rejected', raw_review: checked.review, raw_provider_review: checked.raw_provider_review, unit_provenance: checked.unit_provenance, derivation: 'whole_immutable_selected_source_unit', usage: checked.usage, reason: passed ? 'SOURCE_ENTAILMENT_CONFIRMED' : 'SOURCE_ENTAILMENT_UNCONFIRMED' };
         if (!passed) { base.verdict = 'not_evaluated'; return fail(decisionMode==='decision'?'CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED':'SOURCE_ENTAILMENT_UNCONFIRMED'); }

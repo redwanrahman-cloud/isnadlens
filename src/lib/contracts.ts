@@ -26,6 +26,8 @@ export const recordSchema = z.object({
   prompt_version: z.string(), schema_version: z.string(), usage: usageSchema.nullable(),
   corpus_selection: z.enum(['quran', 'hadith', 'both']),
   router_version: z.string().optional(),
+  assessment_selection_reason: z.enum(['previous_candidate_after_meaning_rejection','previous_contradiction_after_flag_disagreement']).optional(),
+  meaning_review_attempts: z.array(z.object({assessment_model:z.string(), review:z.unknown(), model:z.string(), usage:usageSchema.nullable()})).max(2).optional(),
   web_discovery: webDiscoverySchema.extend({previous_record:z.unknown(),verification_attempted:z.boolean()}).optional(),
   retrieval_recovery: z.object({ version: z.literal('bounded-retrieval-recovery-v1'), status: z.enum(['completed', 'unavailable']), reason: z.string(), first_record: z.unknown(), usage: usageSchema.nullable(), rejected_search_term_count: z.number().int().nonnegative().optional() }).optional(),
   assessment_attempts: z.array(z.object({ model: z.string(), reason: z.string(), raw_assessment: z.unknown().nullable(), usage: usageSchema.nullable() })).max(2).optional(),

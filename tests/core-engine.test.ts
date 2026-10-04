@@ -91,11 +91,12 @@ describe('mandatory independent positive source check', () => {
       vi.stubEnv('ISNADLENS_PAID_CALLS_AUTHORIZED', 'true'); vi.stubEnv('ISNADLENS_MAX_SPEND_USD', '.2'); vi.stubEnv('ISNADLENS_MAX_CALLS', '1000'); vi.stubEnv('OPENAI_API_KEY', 'mock-key');
       const review = { atoms: [{ atom_id: 'a1', entails: 'yes', attribution_preserved: true, qualifications_preserved: true, basis_unit_id: `${card.evidence_id}:primary` }] };
       const response = (text: string) => new Response(JSON.stringify({ status: 'completed', usage: { input_tokens: 100, output_tokens: 40 }, output: [{ content: [{ type: 'output_text', text }] }] }), { status: 200 });
-      fetchMock.mockResolvedValueOnce(response(JSON.stringify(review))).mockResolvedValueOnce(response('{malformed'));
+      fetchMock.mockResolvedValueOnce(response('{"faithful":"yes"}')).mockResolvedValueOnce(response(JSON.stringify(review))).mockResolvedValueOnce(response('{malformed'));
       const result = await provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card]); expect(result.usage?.reservation_id).toBeTruthy();
       await expect(provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card])).rejects.toBeInstanceOf(provider.ProviderFailure);
-      expect(fetchMock).toHaveBeenCalledTimes(2);
-      const body = JSON.parse(fetchMock.mock.calls[0][1].body); const input = JSON.parse(body.input);
+      expect(fetchMock).toHaveBeenCalledTimes(3);
+      const meaningInput=JSON.parse(JSON.parse(fetchMock.mock.calls[0][1].body).input);expect(meaningInput).not.toHaveProperty('source_units');
+      const body = JSON.parse(fetchMock.mock.calls[1][1].body); const input = JSON.parse(body.input);
       expect(body.store).toBe(false); expect(body.text.format.strict).toBe(true);
       const atomArray = body.text.format.schema.properties.atoms;
       expect(atomArray.minItems).toBe(1); expect(atomArray.maxItems).toBe(1);
@@ -104,7 +105,7 @@ describe('mandatory independent positive source check', () => {
       expect(atomArray.items.properties).not.toHaveProperty('context_locator'); expect(atomArray.items.properties).not.toHaveProperty('basis_quotation');
       expect(input.source_units[0].text).toBe(card.quotation); expect(input).not.toHaveProperty('summary'); expect(input.source_units[0]).not.toHaveProperty('publisher_explanation');
       expect(result.raw_provider_review).toEqual(review); expect(result.review.atoms[0].basis_quotation).toBe(card.quotation); expect(result.unit_provenance?.[0].quotation_sha256).toBe(card.quotation_sha256);
-      const ledger = JSON.parse(readFileSync(join(directory, 'artifacts/private/api-spend.json'), 'utf8')); expect(ledger.entries.map((e: { status: string }) => e.status)).toEqual(['settled', 'settled']);
+      const ledger = JSON.parse(readFileSync(join(directory, 'artifacts/private/api-spend.json'), 'utf8')); expect(ledger.entries.map((e: { status: string }) => e.status)).toEqual(['settled', 'settled', 'settled']);
     } finally { cwd.mockRestore(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); rmSync(directory, { recursive: true, force: true }); }
   });
   it('rejects unrelated-source assessment when independent source check denies entailment', async () => {
@@ -600,7 +601,7 @@ describe('one-step objective semantic reference router', () => {
       expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
       expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
       expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
-      expect(record.router_version).toContain('bounded-recovery-v7'); expect(verifySeal(record)).toBe(true);
+      expect(record.router_version).toContain('bounded-recovery-v8'); expect(verifySeal(record)).toBe(true);
       const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
       expect(verifySeal(changed)).toBe(false);
     } finally { mocked.mockRestore(); }

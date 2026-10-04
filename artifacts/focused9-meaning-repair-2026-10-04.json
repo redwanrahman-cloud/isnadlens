@@ -1,0 +1,535 @@
+{
+  "kind": "focused_nine_meaning_repair_regression_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "86be7dd13513900c964808c30b5891c1feca9f5ae5768fc9774a6e7806546293",
+    "dataset_sha256": "a4978393a474eb18e076352837ed88413c222ffef9e261df1da9f2231025ec83",
+    "build": "w_5FR_O6ubhaCDCZoh0c4",
+    "development_cap_sar": 33
+  },
+  "started_at": "2026-10-04T19:37:14.232Z",
+  "starting_development_sar": 22.646504999999976,
+  "cases": [
+    {
+      "id": "T36",
+      "claim": "Is liking nice clothes automatically arrogance in Islam?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "3:152",
+        "9:29",
+        "49:17",
+        "4:5",
+        "en:5363",
+        "en:6209",
+        "ar:4302",
+        "ar:6275"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 716,
+          "output_tokens": 185,
+          "estimated_cost_usd": 0.000401,
+          "reservation_id": "263e6028-32df-4610-b231-78410bc4dccf"
+        },
+        {
+          "input_tokens": 224,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.000752,
+          "reservation_id": "e337350b-a39c-433d-bcf4-a3dbef228a5a"
+        },
+        {
+          "input_tokens": 218,
+          "output_tokens": 75,
+          "estimated_cost_usd": 0.001445,
+          "reservation_id": "49612e24-ad85-44fa-92a4-94b363eb0f30"
+        },
+        {
+          "input_tokens": 8227,
+          "output_tokens": 641,
+          "estimated_cost_usd": 0.00282595,
+          "reservation_id": "332461de-f8e8-4f86-a9ac-b53a76d72470"
+        },
+        {
+          "input_tokens": 8227,
+          "output_tokens": 413,
+          "estimated_cost_usd": 0.0255235,
+          "reservation_id": "dbc629b0-c010-463e-8288-416bd6a14abd"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T19",
+      "claim": "Est-il permis de retenir une épouse après le divorce dans le but de lui faire du mal?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "2:229",
+        "2:231",
+        "2:227",
+        "2:230",
+        "en:5826",
+        "en:5822",
+        "ar:58142",
+        "ar:58151"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 726,
+          "output_tokens": 184,
+          "estimated_cost_usd": 0.0004023,
+          "reservation_id": "fd94319c-2432-44c1-8481-bf5560f1336e"
+        },
+        {
+          "input_tokens": 240,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.000792,
+          "reservation_id": "7cb20e1b-351d-47d2-aa3c-45bb403a3891"
+        },
+        {
+          "input_tokens": 237,
+          "output_tokens": 98,
+          "estimated_cost_usd": 0.0017685,
+          "reservation_id": "fedd1a20-a93a-4d30-a411-c9df0b6a826b"
+        },
+        {
+          "input_tokens": 9347,
+          "output_tokens": 739,
+          "estimated_cost_usd": 0.0032235500000000004,
+          "reservation_id": "0ce5a76b-2ecc-4e29-bdcb-738af56b1328"
+        },
+        {
+          "input_tokens": 9347,
+          "output_tokens": 385,
+          "estimated_cost_usd": 0.0279875,
+          "reservation_id": "9c87cf4d-eafe-441c-b119-70e9d7348c76"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T09",
+      "claim": "هل يبيح القرآن الجدال والفسوق أثناء الحج؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "The selected source collection contradicts the proposition that the Quran permits argument or fisq during Hajj: Quran 2:197 explicitly excludes both for one who has undertaken Hajj. This assessment is limited to the supplied texts and does not replace qualified scholarly review of interpretive details.",
+      "summary_ar": "لا يثبت من مجموعة المصادر المحددة أن القرآن يبيح الجدال أو الفسوق أثناء الحج؛ بل إن الآية 2:197 تنص على نفيهما عمّن فرض الحج. وهذا التقييم محصور في النصوص المقدمة ولا يغني عن مراجعة علمية متخصصة عند بحث التفصيلات التفسيرية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "2:189",
+        "2:197",
+        "2:282",
+        "9:3",
+        "22:27",
+        "4:29",
+        "2:258",
+        "6:25"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 720,
+          "output_tokens": 160,
+          "estimated_cost_usd": 0.000372,
+          "reservation_id": "42aedcf6-560c-480e-9172-0ed1a50d1032"
+        },
+        {
+          "input_tokens": 227,
+          "output_tokens": 51,
+          "estimated_cost_usd": 0.0011795,
+          "reservation_id": "1ae34052-f514-4e2e-9446-d300d2c23492"
+        },
+        {
+          "input_tokens": 239,
+          "output_tokens": 107,
+          "estimated_cost_usd": 0.0018815,
+          "reservation_id": "8253e445-972d-4734-b86e-584b315364f3"
+        },
+        {
+          "input_tokens": 11970,
+          "output_tokens": 1122,
+          "estimated_cost_usd": 0.0043389,
+          "reservation_id": "ef768cf4-8399-4cf5-b7fb-01838e7885b1"
+        },
+        {
+          "input_tokens": 11970,
+          "output_tokens": 396,
+          "estimated_cost_usd": 0.034677,
+          "reservation_id": "39b0d307-6516-4913-b826-a361c22e89a2"
+        },
+        {
+          "input_tokens": 2638,
+          "output_tokens": 116,
+          "estimated_cost_usd": 0.007987,
+          "reservation_id": "4ff1e507-3818-4604-8a63-c1f0fc72a972"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T01",
+      "claim": "Can I earn money through trade during Hajj, or is that forbidden?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "SOURCE_ENTAILMENT_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:198",
+        "en:2755",
+        "2:275",
+        "2:282",
+        "2:196",
+        "4:29",
+        "en:6036",
+        "ar:65277"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 1,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 722,
+          "output_tokens": 164,
+          "estimated_cost_usd": 0.00037729999999999996,
+          "reservation_id": "697b006c-d61d-43c8-a9f0-aa099f47d02c"
+        },
+        {
+          "input_tokens": 229,
+          "output_tokens": 62,
+          "estimated_cost_usd": 0.0013165,
+          "reservation_id": "eb18779c-3c4a-4a69-864d-7b2fe69d5fe5"
+        },
+        {
+          "input_tokens": 10003,
+          "output_tokens": 583,
+          "estimated_cost_usd": 0.00320035,
+          "reservation_id": "47b6f739-908d-4d03-b005-2d63799dfd65"
+        },
+        {
+          "input_tokens": 8791,
+          "output_tokens": 357,
+          "estimated_cost_usd": 0.012626150000000001,
+          "reservation_id": "70eb9a50-d9e0-4294-b971-5411981633d7"
+        },
+        {
+          "input_tokens": 228,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.000762,
+          "reservation_id": "3fee27ee-e7f6-4610-af06-964106ef8885"
+        },
+        {
+          "input_tokens": 8593,
+          "output_tokens": 598,
+          "estimated_cost_usd": 0.00286585,
+          "reservation_id": "fff51d73-b505-407c-90a7-32fc20d6c2f6"
+        },
+        {
+          "input_tokens": 330,
+          "output_tokens": 179,
+          "estimated_cost_usd": 0.00029729999999999996,
+          "reservation_id": "a6c9d1b8-0bf3-40b6-b8b0-f399ec72ef17"
+        },
+        {
+          "input_tokens": 234,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.000777,
+          "reservation_id": "aa296c2a-55ad-45b9-947f-69affc14ac03"
+        },
+        {
+          "input_tokens": 8879,
+          "output_tokens": 709,
+          "estimated_cost_usd": 0.00307055,
+          "reservation_id": "62b6930d-77d8-48b1-b319-aeedef53bddb"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T45",
+      "claim": "کیا صفا اور مروہ کے درمیان سعی صرف تین چکر ہے؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected source collection contradicts the claim that Sa‘i between Safa and Marwah is only three rounds: the displayed HadithEnc card en:3309 states seven rounds for Sa‘i. Its mention of three rounds concerns brisk walking during Tawaf around the Ka‘bah, not the number of Sa‘i rounds.",
+      "summary_ar": "لا، لا تؤيد مجموعة المصادر المحددة أن السعي بين الصفا والمروة ثلاثة أشواط فقط؛ فالحديث المعروض في بطاقة HadeethEnc en:3309 يذكر سبعة أشواط للسعي. أما ذكر ثلاثة أشواط في البطاقة نفسها فهو متعلق بالمشي السريع في طواف الكعبة، لا بعدد أشواط السعي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "2:158",
+        "55:44",
+        "2:196",
+        "58:7",
+        "en:3020",
+        "en:3309",
+        "ar:65270",
+        "ar:65649"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 725,
+          "output_tokens": 174,
+          "estimated_cost_usd": 0.00039004999999999997,
+          "reservation_id": "fabadd56-70b3-4160-ab1f-96012c2a0a97"
+        },
+        {
+          "input_tokens": 234,
+          "output_tokens": 45,
+          "estimated_cost_usd": 0.001125,
+          "reservation_id": "0ff9b08a-be87-4109-8756-009530a0f07d"
+        },
+        {
+          "input_tokens": 8984,
+          "output_tokens": 640,
+          "estimated_cost_usd": 0.003014,
+          "reservation_id": "253cb657-a9fe-46b2-bb7a-0f5445f3a647"
+        },
+        {
+          "input_tokens": 8984,
+          "output_tokens": 490,
+          "estimated_cost_usd": 0.02834,
+          "reservation_id": "e1ebb8e6-07fb-4f8b-b467-90fe8eb86d6f"
+        },
+        {
+          "input_tokens": 1359,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0042015,
+          "reservation_id": "ded563a5-e163-4e6b-88e5-7b6a1111e6c3"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T04",
+      "claim": "Apakah berburu binatang darat diperbolehkan ketika sedang ihram?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "5:96",
+        "5:2",
+        "5:1",
+        "5:4",
+        "en:3496",
+        "en:2956",
+        "ar:66297",
+        "ar:65868"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 724,
+          "output_tokens": 149,
+          "estimated_cost_usd": 0.00035979999999999996,
+          "reservation_id": "fba33cfe-1467-4ef8-ba64-ebc413d5ed93"
+        },
+        {
+          "input_tokens": 233,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0007745,
+          "reservation_id": "e9908857-22f1-4c4a-b227-5c27e1426970"
+        },
+        {
+          "input_tokens": 232,
+          "output_tokens": 98,
+          "estimated_cost_usd": 0.001756,
+          "reservation_id": "59065aee-fbf8-4e86-b4cc-925c8d37dc05"
+        },
+        {
+          "input_tokens": 10348,
+          "output_tokens": 692,
+          "estimated_cost_usd": 0.0034174,
+          "reservation_id": "29dfc6cf-11eb-4801-a8fe-5cdaa6435555"
+        },
+        {
+          "input_tokens": 10348,
+          "output_tokens": 423,
+          "estimated_cost_usd": 0.030946,
+          "reservation_id": "a0cbf117-cd8e-4028-bd83-eb0eb59761e8"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T38",
+      "claim": "When putting shoes on, should I start with the left foot according to the prophetic instruction?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "6:65",
+        "11:74",
+        "29:2",
+        "4:12",
+        "en:5357",
+        "en:11263",
+        "ar:65460",
+        "ar:65529"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 725,
+          "output_tokens": 201,
+          "estimated_cost_usd": 0.00042245,
+          "reservation_id": "2f103df7-2d5a-4983-9796-cc666d4bac4b"
+        },
+        {
+          "input_tokens": 233,
+          "output_tokens": 74,
+          "estimated_cost_usd": 0.0014705,
+          "reservation_id": "409ea7ae-772c-4581-9aa2-379568416ed3"
+        },
+        {
+          "input_tokens": 235,
+          "output_tokens": 74,
+          "estimated_cost_usd": 0.0014755,
+          "reservation_id": "1c39768f-667c-4a8d-a0aa-fd3ad688b17b"
+        },
+        {
+          "input_tokens": 6961,
+          "output_tokens": 636,
+          "estimated_cost_usd": 0.00250345,
+          "reservation_id": "e65ee475-ea63-4a65-a452-8647cc9e3bde"
+        },
+        {
+          "input_tokens": 6961,
+          "output_tokens": 408,
+          "estimated_cost_usd": 0.0222985,
+          "reservation_id": "d7585143-3e51-461e-a599-eae662432eda"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T34",
+      "claim": "هل يجب الإنفاق على المطلقة الحامل حتى تضع حملها؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Within the selected source collection, Qur’an 65:6 directly supports spending on a pregnant divorced woman until delivery; Qur’an 65:7 qualifies the amount according to the payer’s means.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة وجوب الإنفاق على المطلقة الحامل إلى أن تضع حملها، استنادًا إلى القرآن في 65:6. ويُراعى في مقدار النفقة حال المنفق وقدر استطاعته وفق 65:7.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "22:2",
+        "4:127",
+        "65:6",
+        "2:229",
+        "ar:66140",
+        "ar:65678",
+        "en:8286",
+        "65:7"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 722,
+          "output_tokens": 99,
+          "estimated_cost_usd": 0.0002993,
+          "reservation_id": "7c115a85-b39f-4dd2-b0ad-b0e3e909ee99"
+        },
+        {
+          "input_tokens": 229,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0007645,
+          "reservation_id": "ea71b888-a57e-455d-8a82-95b6770da5ad"
+        },
+        {
+          "input_tokens": 8374,
+          "output_tokens": 485,
+          "estimated_cost_usd": 0.0026755,
+          "reservation_id": "63d074e2-b86a-41d1-842f-4288aaff7853"
+        },
+        {
+          "input_tokens": 3581,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0009744500000000001,
+          "reservation_id": "f37f356b-390c-4390-a5ac-ec4fc1777099"
+        },
+        {
+          "input_tokens": 332,
+          "output_tokens": 147,
+          "estimated_cost_usd": 0.00025939999999999996,
+          "reservation_id": "fb90df64-0495-4361-a5ac-cf3e4e19db4a"
+        },
+        {
+          "input_tokens": 234,
+          "output_tokens": 125,
+          "estimated_cost_usd": 0.002085,
+          "reservation_id": "f6331ac7-ed55-48c7-a1a7-27d5eafc04ff"
+        },
+        {
+          "input_tokens": 8790,
+          "output_tokens": 636,
+          "estimated_cost_usd": 0.0029606999999999997,
+          "reservation_id": "14003ebb-2961-42db-9bb7-f77776cb8867"
+        }
+      ],
+      "review": "pending"
+    }
+  ],
+  "completed_at": "2026-10-04T19:40:30.915Z",
+  "operational_stop": "PRINCIPAL_STOP_FALSE_MEANING_REJECTIONS",
+  "final_development_sar": 23.624426624999977
+}

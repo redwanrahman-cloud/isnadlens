@@ -1,0 +1,74 @@
+{
+  "kind": "live_saved_bad_atom_and_faithful_control_not_new_holdout",
+  "version": "source-focused-decision-v7-separate-relations",
+  "cases": [
+    {
+      "id": "silently_corrected_atom",
+      "expected": "no",
+      "actual": "no",
+      "passed": true,
+      "review": {
+        "atoms": [
+          {
+            "atom_id": "claim_1",
+            "entails": "no",
+            "attribution_preserved": true,
+            "qualifications_preserved": true,
+            "evidence_id": null,
+            "context_locator": null,
+            "basis_quotation": null
+          }
+        ]
+      },
+      "model": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 2096,
+        "input_tokens_details": {
+          "cache_write_tokens": 2093,
+          "cached_tokens": 0
+        },
+        "output_tokens": 286,
+        "output_tokens_details": {
+          "reasoning_tokens": 236
+        },
+        "total_tokens": 2382,
+        "estimated_cost_usd": 0.008672,
+        "reservation_id": "e1de870f-965d-4ea0-a986-de26fda14bb5"
+      }
+    },
+    {
+      "id": "faithful_original_proposition",
+      "expected": "yes",
+      "actual": "yes",
+      "passed": true,
+      "review": {
+        "atoms": [
+          {
+            "atom_id": "claim_1",
+            "entails": "yes",
+            "attribution_preserved": true,
+            "qualifications_preserved": true,
+            "evidence_id": "tanzil-1.1-2026-10-04:18:23",
+            "context_locator": null,
+            "basis_quotation": "وَلَا تَقُولَنَّ لِشَا۟ىْءٍ إِنِّى فَاعِلٌ ذَٰلِكَ غَدًا"
+          }
+        ]
+      },
+      "model": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 2087,
+        "input_tokens_details": {
+          "cache_write_tokens": 2084,
+          "cached_tokens": 0
+        },
+        "output_tokens": 67,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2154,
+        "estimated_cost_usd": 0.0060215,
+        "reservation_id": "9d2afcd0-75d0-4f56-a542-87d707a8f87d"
+      }
+    }
+  ]
+}

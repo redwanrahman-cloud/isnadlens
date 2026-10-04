@@ -1,0 +1,533 @@
+{
+  "kind": "focused_nine_final_polarity_regression_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "8ec354e8e32d2507350c1b2284e04d2abdf7bfdda68a83e2535395c1a74c96bb",
+    "dataset_sha256": "a4978393a474eb18e076352837ed88413c222ffef9e261df1da9f2231025ec83",
+    "build": "iqkbPgCBtYqWBVYeur3j7",
+    "development_cap_sar": 33
+  },
+  "started_at": "2026-10-04T19:46:55.496Z",
+  "starting_development_sar": 24.878856749999983,
+  "cases": [
+    {
+      "id": "T36",
+      "claim": "Is liking nice clothes automatically arrogance in Islam?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "9:29",
+        "49:17",
+        "3:152",
+        "4:5",
+        "en:6209",
+        "en:65849",
+        "ar:6107",
+        "ar:5432"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "NO_ADMITTED_REFERENCE_DISCOVERED",
+        "search_calls": 1,
+        "verification_attempted": false
+      },
+      "usage": [
+        {
+          "input_tokens": 716,
+          "output_tokens": 180,
+          "estimated_cost_usd": 0.000395,
+          "reservation_id": "b1ac428f-f24e-43ea-98d7-84daf5e74887"
+        },
+        {
+          "input_tokens": 8033,
+          "output_tokens": 519,
+          "estimated_cost_usd": 0.0026310500000000002,
+          "reservation_id": "0a4c91bd-1ef1-406c-97a8-51abb19a59ca"
+        },
+        {
+          "input_tokens": 8033,
+          "output_tokens": 570,
+          "estimated_cost_usd": 0.0269225,
+          "reservation_id": "222646f0-706b-4e63-b17b-f819f71bf00f"
+        },
+        {
+          "input_tokens": 7859,
+          "output_tokens": 380,
+          "estimated_cost_usd": 0.012420750000000001,
+          "reservation_id": "876dade1-64c9-41ea-b386-9bfe79a30bd6"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T19",
+      "claim": "Est-il permis de retenir une épouse après le divorce dans le but de lui faire du mal?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "The proposition that retaining a wife after divorce in order to harm her is permitted is directly contradicted by Qur’an 2:231 in the selected source collection, which prohibits retaining women for harm. The passage frames retention or release within recognized good conduct; practical application and wider jurisprudential differences are outside this selected-text assessment.",
+      "summary_ar": "القول بأن إبقاء الزوجة بعد الطلاق بقصد إضرارها مسموح به يتعارض مباشرة مع الآية 2:231 في مجموعة المصادر المحددة، التي تنهى عن إمساكهن إضرارًا. وتعرض الآية الإمساك أو التسريح في إطار المعروف، ولا تتناول هنا تفاصيل تطبيقية أو اختلافات فقهية خارج النص المحدد.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "2:229",
+        "2:227",
+        "2:231",
+        "2:279",
+        "en:3853",
+        "en:5822",
+        "ar:58142",
+        "ar:64620"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 726,
+          "output_tokens": 252,
+          "estimated_cost_usd": 0.0004839,
+          "reservation_id": "1a514267-a39e-4525-8503-d286ae07511a"
+        },
+        {
+          "input_tokens": 371,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0011195,
+          "reservation_id": "0ddc36dc-d24a-46c3-b298-fcf0df086a9a"
+        },
+        {
+          "input_tokens": 9333,
+          "output_tokens": 627,
+          "estimated_cost_usd": 0.00308565,
+          "reservation_id": "4fc54e9d-b00b-490b-9c1d-55ec6816a942"
+        },
+        {
+          "input_tokens": 9333,
+          "output_tokens": 371,
+          "estimated_cost_usd": 0.0277845,
+          "reservation_id": "9e60ab30-def8-4829-96cc-dbbd4d33052b"
+        },
+        {
+          "input_tokens": 2883,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0079995,
+          "reservation_id": "a3785753-8bc0-4b3f-8775-1d7cb13dfe23"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T09",
+      "claim": "هل يبيح القرآن الجدال والفسوق أثناء الحج؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The claim conflicts with the displayed Quran passage in the selected source collection: Quran 2:197 negates permissibility of misconduct and disputation in Hajj for one who undertakes it. This is a textual assessment within the supplied sources, not a personal fatwa.",
+      "summary_ar": "لا؛ الادعاء يخالف ما تدعمه الآية القرآنية المعروضة في مجموعة المصادر المحددة: البقرة 2:197 تنفي إباحة الفسوق والجدال في الحج لمن فرض الحج. وهذا تقييم نصي للادعاء ضمن المصادر المقدمة، لا فتوى شخصية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "2:189",
+        "2:197",
+        "9:3",
+        "22:27",
+        "2:258",
+        "6:25",
+        "6:80",
+        "11:32"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 720,
+          "output_tokens": 168,
+          "estimated_cost_usd": 0.0003816,
+          "reservation_id": "f4f0f8cd-1982-4e1e-83fd-0d9017bb6d3c"
+        },
+        {
+          "input_tokens": 361,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0010945,
+          "reservation_id": "02fe97ea-aed1-488c-93b4-ebdf529671a0"
+        },
+        {
+          "input_tokens": 11170,
+          "output_tokens": 871,
+          "estimated_cost_usd": 0.0038377,
+          "reservation_id": "f984e6bb-d99a-40e0-bbf6-44ee7cd84761"
+        },
+        {
+          "input_tokens": 11170,
+          "output_tokens": 414,
+          "estimated_cost_usd": 0.032893,
+          "reservation_id": "8ef1ad08-6ef0-484d-bc99-9467f0284af7"
+        },
+        {
+          "input_tokens": 2488,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.007024,
+          "reservation_id": "de31faf8-5f4a-450d-b632-3f9b49f651ac"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T01",
+      "claim": "Can I earn money through trade during Hajj, or is that forbidden?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Qur’an 2:198 in the selected source collection supports earning through trade during Hajj and does not present such trading as forbidden. This assessment is limited to the supplied text and does not determine the rules for particular transactions or other conditions.",
+      "summary_ar": "تدعم آية البقرة 2:198 في مجموعة المصادر المحددة جواز طلب الكسب بالتجارة أثناء الحج، فلا يظهر من هذا الدليل أن التجارة في موسم الحج محرّمة. ويظل هذا التقييم محصورًا في النص المحدد ولا يفصل في تفاصيل المعاملات الأخرى أو شروطها.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:275",
+        "2:79",
+        "2:282",
+        "2:196",
+        "en:2755",
+        "en:65620",
+        "ar:65277",
+        "2:198"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 722,
+          "output_tokens": 147,
+          "estimated_cost_usd": 0.0003569,
+          "reservation_id": "f9d1babe-7d15-4df6-98cf-9f4411d244af"
+        },
+        {
+          "input_tokens": 362,
+          "output_tokens": 95,
+          "estimated_cost_usd": 0.002045,
+          "reservation_id": "7953fd01-dc86-442f-bb11-dee4f0115187"
+        },
+        {
+          "input_tokens": 8742,
+          "output_tokens": 478,
+          "estimated_cost_usd": 0.0027591,
+          "reservation_id": "95e2b9a8-b067-439e-a7c3-80abec59cfe4"
+        },
+        {
+          "input_tokens": 2471,
+          "output_tokens": 119,
+          "estimated_cost_usd": 0.0007605499999999999,
+          "reservation_id": "e9ce81f0-85dd-44fe-ba69-f842ae399a90"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T45",
+      "claim": "کیا صفا اور مروہ کے درمیان سعی صرف تین چکر ہے؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected source collection contradicts the claim that Sa‘i between Safa and Marwah is only three rounds: the displayed hadith card states seven rounds. The reference to three rounds in the materials concerns brisk walking in Tawaf around the Ka‘bah, not the number of Sa‘i rounds.",
+      "summary_ar": "لا، لا تدعم مجموعة المصادر المحددة أن السعي بين الصفا والمروة ثلاثة أشواط فقط؛ فالحديث المعروض في بطاقة المصدر يذكر سبعة أشواط للسعي بينهما. أمّا «الثلاثة» الواردة في المادة فتتعلق بالمشي السريع في طواف الكعبة، لا بعدد أشواط السعي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "2:158",
+        "2:196",
+        "58:7",
+        "55:44",
+        "en:3020",
+        "en:3309",
+        "ar:65270",
+        "ar:65649"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 725,
+          "output_tokens": 212,
+          "estimated_cost_usd": 0.00043565,
+          "reservation_id": "e0263d30-fd65-4234-9928-063033f54a3d"
+        },
+        {
+          "input_tokens": 368,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.001112,
+          "reservation_id": "24da04f2-6f79-4ffb-951b-8cc0370ef272"
+        },
+        {
+          "input_tokens": 8984,
+          "output_tokens": 539,
+          "estimated_cost_usd": 0.0028928,
+          "reservation_id": "875d6279-17b5-4ab2-aeec-ac9425db404b"
+        },
+        {
+          "input_tokens": 8984,
+          "output_tokens": 470,
+          "estimated_cost_usd": 0.0281,
+          "reservation_id": "6d09f082-fd29-4062-a525-29be1303609c"
+        },
+        {
+          "input_tokens": 1359,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0042015,
+          "reservation_id": "cb52812f-3964-4673-979f-043ca8125ef9"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T04",
+      "claim": "Apakah berburu binatang darat diperbolehkan ketika sedang ihram?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied Quran passage at 5:96 directly states that land game is prohibited while a person is in ihram, and the preceding passage at 5:95 also prohibits killing game in that state within the selected source collection.",
+      "summary_ar": "لا، هذا غير مؤيَّد؛ فالمقطع القرآني المعروض في سورة المائدة 5:96 يقرر تحريم صيد البر أثناء الإحرام. وتؤكد الآية السابقة 5:95 النهي عن قتل الصيد في هذه الحالة ضمن مجموعة المصادر المحددة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "5:96",
+        "5:1",
+        "5:2",
+        "5:4",
+        "en:3496",
+        "en:2956",
+        "ar:65633",
+        "ar:66297"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 724,
+          "output_tokens": 149,
+          "estimated_cost_usd": 0.00035979999999999996,
+          "reservation_id": "921834d9-492b-4e6e-b78d-2692dd2dadee"
+        },
+        {
+          "input_tokens": 369,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0011145,
+          "reservation_id": "727594c6-7bdb-45da-be06-18f769ad88dc"
+        },
+        {
+          "input_tokens": 9956,
+          "output_tokens": 622,
+          "estimated_cost_usd": 0.0032354000000000003,
+          "reservation_id": "b627e632-c961-4b71-a37b-6ebd2df3e504"
+        },
+        {
+          "input_tokens": 9956,
+          "output_tokens": 383,
+          "estimated_cost_usd": 0.029486,
+          "reservation_id": "512ba920-50d8-4c50-b26d-99d5eb6d00a7"
+        },
+        {
+          "input_tokens": 2315,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0065915,
+          "reservation_id": "10fe5d2c-4d3e-4352-8b61-f7c4fde65de8"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T38",
+      "claim": "When putting shoes on, should I start with the left foot according to the prophetic instruction?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The claim conflicts with the supplied hadith card at en:5357, which directly addresses the order of putting on and taking off shoes.",
+      "summary_ar": "لا؛ الادعاء يخالف بطاقة الحديث المعروضة في en:5357، التي تتناول مباشرة ترتيب الانتعال والخلع.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "6:65",
+        "29:2",
+        "4:12",
+        "20:12",
+        "en:5357",
+        "en:3356",
+        "ar:65460",
+        "ar:65529"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 725,
+          "output_tokens": 191,
+          "estimated_cost_usd": 0.00041045,
+          "reservation_id": "09f52fc0-ead4-406a-b33c-939a8e744224"
+        },
+        {
+          "input_tokens": 369,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0011145,
+          "reservation_id": "b0a4dcb2-11b3-4b20-86a4-249074def835"
+        },
+        {
+          "input_tokens": 6913,
+          "output_tokens": 607,
+          "estimated_cost_usd": 0.00245665,
+          "reservation_id": "2484813f-8ab1-4d59-8192-d1dcf128597d"
+        },
+        {
+          "input_tokens": 6913,
+          "output_tokens": 745,
+          "estimated_cost_usd": 0.0262225,
+          "reservation_id": "0c5cd7f0-a450-4f1d-980c-3de55196b5f3"
+        },
+        {
+          "input_tokens": 869,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0029765,
+          "reservation_id": "6bb3cf9a-fe2a-4ca9-8dd5-bd4ceaff1f83"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T34",
+      "claim": "هل يجب الإنفاق على المطلقة الحامل حتى تضع حملها؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Qur’an 65:6 supports providing financial support for a divorced pregnant woman until she gives birth. The passage places this within rules concerning residence and support, states that spending is according to ability, and separately addresses payment for breastfeeding after delivery.",
+      "summary_ar": "نعم، تدعم الآية 65:6 من القرآن الإنفاق على المطلقة الحامل حتى تضع حملها. ويعرض النص ذلك ضمن أحكام السكنى والإنفاق، ويذكر أن النفقة تكون بحسب القدرة، كما يذكر حكمًا لاحقًا مستقلًا يتعلق بأجرة الرضاعة بعد الوضع.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "22:2",
+        "33:49",
+        "65:6",
+        "4:127",
+        "ar:65965",
+        "ar:6020",
+        "en:58173",
+        "en:58187"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 722,
+          "output_tokens": 114,
+          "estimated_cost_usd": 0.00031729999999999996,
+          "reservation_id": "cfed36cc-46c0-4319-ad4c-d6c841d1e3e8"
+        },
+        {
+          "input_tokens": 363,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0010995,
+          "reservation_id": "f8bb8de0-bf56-4543-bbf6-27c29400c91e"
+        },
+        {
+          "input_tokens": 8557,
+          "output_tokens": 406,
+          "estimated_cost_usd": 0.00262645,
+          "reservation_id": "57fd9ea3-000d-43a3-89ad-b69560659b10"
+        },
+        {
+          "input_tokens": 2147,
+          "output_tokens": 133,
+          "estimated_cost_usd": 0.00069635,
+          "reservation_id": "34c0ef7a-0213-44e0-becc-855e60f93618"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T46",
+      "claim": "Should Muslims greet only people they already know?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied hadith at en:5808 explicitly conflicts with limiting greetings to acquaintances, extending them to both known and unknown people; Quran 4:86 addresses responding when greeted and does not impose an acquaintance condition.",
+      "summary_ar": "لا، لا تؤيد مجموعة المصادر المحددة قصر السلام على من يعرفهم المسلم؛ فالحديث المعروض في en:5808 يجعل السلام شاملاً للمعروف وغير المعروف. وتتعلق الآية 4:86 برد التحية عند تلقيها، ولا تضع قيد المعرفة على السلام.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "11:14",
+        "4:86",
+        "73:20",
+        "2:65",
+        "en:5808",
+        "en:3706",
+        "ar:6222",
+        "ar:3754"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 716,
+          "output_tokens": 91,
+          "estimated_cost_usd": 0.00028820000000000007,
+          "reservation_id": "cc384d91-cd4a-44e6-b1e1-7e2c9d258bca"
+        },
+        {
+          "input_tokens": 353,
+          "output_tokens": 16,
+          "estimated_cost_usd": 0.0010745,
+          "reservation_id": "61effc6c-2ab6-49b3-8c13-e43ca35d79a7"
+        },
+        {
+          "input_tokens": 6808,
+          "output_tokens": 552,
+          "estimated_cost_usd": 0.0023644,
+          "reservation_id": "1bce3b93-1511-43c8-a66a-75620c6bfce6"
+        },
+        {
+          "input_tokens": 6808,
+          "output_tokens": 653,
+          "estimated_cost_usd": 0.024856,
+          "reservation_id": "83bbcea3-3b36-41d9-bdff-b3a693f45cc5"
+        },
+        {
+          "input_tokens": 837,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0028965,
+          "reservation_id": "22c7957a-aacc-4703-92c6-0cd04b0408a5"
+        }
+      ],
+      "review": "pending"
+    }
+  ],
+  "completed_at": "2026-10-04T19:49:43.104Z",
+  "final_development_sar": 25.932320437499982
+}

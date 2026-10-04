@@ -1,0 +1,2657 @@
+{
+  "kind": "known_fifty_post_repair_regression_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "9e2ff888881e3eaeda3f251435628c5fc355b817cb9b38e61a37bc39a7a0edde",
+    "dataset_sha256": "a4978393a474eb18e076352837ed88413c222ffef9e261df1da9f2231025ec83",
+    "build": "whvSfqI4O3iSjA5LKxLCB",
+    "development_cap_sar": 33
+  },
+  "started_at": "2026-10-04T19:11:55.886Z",
+  "starting_development_sar": 19.362556874999985,
+  "cases": [
+    {
+      "id": "T04",
+      "claim": "Apakah berburu binatang darat diperbolehkan ketika sedang ihram?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The claim is contradicted by the Quranic evidence at Al-Ma'idah 5:96 in the selected source collection: land game is prohibited while a person is in ihram, while the same passage separately addresses sea game and its food.",
+      "summary_ar": "لا، هذا الادعاء يخالف الدليل القرآني في سورة المائدة 5:96 ضمن مجموعة المصادر المحددة؛ فالمنع متعلق بصيد البر ما دام الشخص مُحرِمًا، مع بيان حكم منفصل لصيد البحر وطعامه في الآية نفسها.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "5:96",
+        "5:2",
+        "5:1",
+        "5:4",
+        "en:3496",
+        "en:2956",
+        "ar:65633",
+        "ar:4544"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 693,
+          "output_tokens": 149,
+          "estimated_cost_usd": 0.00035204999999999996,
+          "reservation_id": "42cf38be-4ad9-416a-8ff7-ba7e09103085"
+        },
+        {
+          "input_tokens": 10414,
+          "output_tokens": 568,
+          "estimated_cost_usd": 0.0032851,
+          "reservation_id": "c7aef6f8-6939-4254-9cde-39a1e2eaa19d"
+        },
+        {
+          "input_tokens": 10414,
+          "output_tokens": 633,
+          "estimated_cost_usd": 0.033631,
+          "reservation_id": "7347df3b-4b4c-4703-9a97-6a2f562ae908"
+        },
+        {
+          "input_tokens": 2313,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0065865,
+          "reservation_id": "627b5727-1ded-423a-9a5c-c11ef7662055"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T38",
+      "claim": "When putting shoes on, should I start with the left foot according to the prophetic instruction?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected source collection supports starting with the right foot when putting shoes on and with the left when taking them off, as displayed in the HadeethEnc card en:5357; starting with the left for putting them on conflicts with that instruction.",
+      "summary_ar": "لا؛ تدعم مجموعة المصادر المحددة البدء بالقدم اليمنى عند لبس الحذاء، والبدء باليسرى عند خلعه، في الحديث المعروض في HadeethEnc en:5357. لذلك فقول البدء باليسرى عند اللبس يخالف هذا النص المنسوب إلى النبي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "6:65",
+        "29:2",
+        "4:12",
+        "20:12",
+        "en:5357",
+        "en:3356",
+        "ar:65460",
+        "ar:65529"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 170,
+          "estimated_cost_usd": 0.0003775,
+          "reservation_id": "125f2b3d-2ac2-4a81-91c0-850a2a086fe9"
+        },
+        {
+          "input_tokens": 6904,
+          "output_tokens": 499,
+          "estimated_cost_usd": 0.0023248,
+          "reservation_id": "fffbd4ae-324b-439a-ba9d-d8d6046ded11"
+        },
+        {
+          "input_tokens": 6904,
+          "output_tokens": 406,
+          "estimated_cost_usd": 0.022132,
+          "reservation_id": "f46866b2-408f-4668-ae69-af4626d670ae"
+        },
+        {
+          "input_tokens": 867,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0029715,
+          "reservation_id": "61b85ab2-1680-4f0c-ae6f-e8edb4a3d181"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T34",
+      "claim": "هل يجب الإنفاق على المطلقة الحامل حتى تضع حملها؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports providing maintenance for a pregnant divorced woman until she gives birth, based on Qur’an 65:6. The amount is conditioned by the provider’s means in the surrounding passage, while details of differing legal cases are not resolved here.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة وجوب الإنفاق على المطلقة الحامل إلى أن تضع حملها، كما في سورة الطلاق 65:6. ويُراعى في مقدار الإنفاق حال المنفِق وقدرته وفق السياق اللاحق في الآية، ولا تتناول هذه النتيجة تفاصيل الحالات الفقهية المختلفة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "22:2",
+        "4:127",
+        "65:6",
+        "2:229",
+        "ar:65965",
+        "ar:6020",
+        "en:58173",
+        "en:58187"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 102,
+          "estimated_cost_usd": 0.00029515000000000005,
+          "reservation_id": "f5c36b0a-42a5-4ac9-89a5-98552a4ddf81"
+        },
+        {
+          "input_tokens": 8781,
+          "output_tokens": 503,
+          "estimated_cost_usd": 0.00279885,
+          "reservation_id": "d73df3df-b65f-40bf-bad1-138f2b97fb92"
+        },
+        {
+          "input_tokens": 2147,
+          "output_tokens": 214,
+          "estimated_cost_usd": 0.00079355,
+          "reservation_id": "51d29203-75d6-453e-be1a-1338429abb6f"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T46",
+      "claim": "Should Muslims greet only people they already know?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied hadith card en:5808 contradicts limiting greetings of peace to people already known, because it includes both known and unknown people. This is a text-based assessment within the selected source collection, not a personal fatwa.",
+      "summary_ar": "لا، لا تؤيد مجموعة المصادر المحددة قصر السلام على من تعرفهم؛ فالحديث المعروض في بطاقة المصدر en:5808 يذكر السلام على المعروف وغير المعروف. وهذا تقييم للنص المعروض ضمن مجموعة المصادر المحددة، لا فتوى شخصية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "11:14",
+        "73:20",
+        "2:224",
+        "2:273",
+        "en:5808",
+        "en:3706",
+        "ar:5808",
+        "ar:3621"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 685,
+          "output_tokens": 159,
+          "estimated_cost_usd": 0.00036204999999999994,
+          "reservation_id": "c3f051b5-1971-457e-840e-c4acf211504e"
+        },
+        {
+          "input_tokens": 7479,
+          "output_tokens": 603,
+          "estimated_cost_usd": 0.0025933500000000003,
+          "reservation_id": "1234dc42-bfd0-4415-a73b-47b659284179"
+        },
+        {
+          "input_tokens": 7479,
+          "output_tokens": 432,
+          "estimated_cost_usd": 0.0238815,
+          "reservation_id": "31b32457-b76a-419f-97cd-b50dddf9ab80"
+        },
+        {
+          "input_tokens": 841,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0029065,
+          "reservation_id": "0d69ab0c-d334-4c4e-8a4f-33056af5970a"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T01",
+      "claim": "Can I earn money through trade during Hajj, or is that forbidden?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 235,
+          "estimated_cost_usd": 0.00045475,
+          "reservation_id": "fd173278-9d01-44dc-a672-fc3f9d631d69"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T02",
+      "claim": "هل التقوى هي خير زاد للحج؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that piety is the best provision for Hajj, based on Quran 2:197. The verse also presents this within the context of taking provisions and avoiding obscenity, sin, and disputation during Hajj.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن التقوى هي خير زاد للحج، استنادًا إلى القرآن في البقرة 2:197. وتذكر الآية أيضًا سياقًا متعلقًا بالتزوّد والنهي عن الرفث والفسوق والجدال في الحج.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "2:197",
+        "2:196",
+        "7:26",
+        "5:114",
+        "ar:65627",
+        "ar:65276",
+        "en:3492",
+        "en:2759"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 686,
+          "output_tokens": 126,
+          "estimated_cost_usd": 0.00032270000000000004,
+          "reservation_id": "04e58a76-fa6b-443e-b4e1-7b48777ede7f"
+        },
+        {
+          "input_tokens": 8594,
+          "output_tokens": 353,
+          "estimated_cost_usd": 0.0025721,
+          "reservation_id": "3663a598-9def-4404-8364-2095fae0c7d2"
+        },
+        {
+          "input_tokens": 2407,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00068095,
+          "reservation_id": "1b4f070d-e19c-4134-bf49-046937f4621e"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T03",
+      "claim": "After finishing the pilgrimage rites, should people remember Allah?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Qur’an 2:200 supports that people should remember Allah after completing the pilgrimage rites. This instruction appears in the context of pilgrimage practices and remembrance after the rites.",
+      "summary_ar": "نعم، تدعم الآية 2:200 من مجموعة المصادر المحددة أن يذكر الناس الله بعد إتمام مناسك الحج. وتأتي هذه التوجيهات في سياق أحكام الحج والذكر عقب قضاء المناسك.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:200",
+        "2:231",
+        "2:189",
+        "2:197",
+        "en:4716",
+        "en:64598",
+        "ar:65398",
+        "ar:64598"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 687,
+          "output_tokens": 161,
+          "estimated_cost_usd": 0.00036495,
+          "reservation_id": "9c1cf74c-75f9-4743-ac1e-51c745eff125"
+        },
+        {
+          "input_tokens": 9218,
+          "output_tokens": 406,
+          "estimated_cost_usd": 0.0027917,
+          "reservation_id": "6e55f2de-18e2-4073-95c8-b839a00d90bb"
+        },
+        {
+          "input_tokens": 1934,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0005639,
+          "reservation_id": "34476f10-5ab9-486d-ae18-36a41b5f41dc"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T05",
+      "claim": "¿Está permitido cazar después de salir del estado de ihram?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "The selected source collection supports that hunting is permitted after leaving ihram; land hunting is prohibited while one remains in ihram, according to Qur’an 5:2 and 5:96.",
+      "summary_ar": "تدعم مجموعة المصادر المحددة أن الصيد مسموح بعد التحلل من الإحرام، بينما يكون صيد البر محرّمًا ما دام الشخص مُحرِمًا، وفقًا لسورة المائدة 5:2 و5:96.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "5:1",
+        "5:2",
+        "5:4",
+        "5:96",
+        "en:65255",
+        "en:5830",
+        "ar:65633",
+        "ar:3080"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 690,
+          "output_tokens": 158,
+          "estimated_cost_usd": 0.0003621,
+          "reservation_id": "b7d73929-5b9f-412b-8ae1-e295ba1a691b"
+        },
+        {
+          "input_tokens": 9657,
+          "output_tokens": 462,
+          "estimated_cost_usd": 0.00296865,
+          "reservation_id": "302daadf-1f25-4838-a7fa-2fe72137f528"
+        },
+        {
+          "input_tokens": 2399,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00067895,
+          "reservation_id": "535e9d90-ccbd-4a97-95b0-6817f0a2694a"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T06",
+      "claim": "Is praying at the Station of Abraham mentioned as part of the sacred-house guidance?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 2:125 in the selected source collection supports that praying at the Station of Abraham is mentioned within guidance concerning the House, alongside guidance about preparing the House for those who perform worship there.",
+      "summary_ar": "نعم، تدعم الآية 2:125 من مجموعة المصادر المحددة أن اتخاذ مقام إبراهيم مُصلّى مذكور ضمن الهداية المتعلقة بالبيت. وتعرض الآية ذلك مع توجيه إبراهيم وإسماعيل إلى تطهير البيت للطائفين والعاكفين والركع السجود.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "5:2",
+        "5:97",
+        "2:125",
+        "2:196",
+        "en:65255",
+        "en:65090",
+        "ar:65404",
+        "ar:11188"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 692,
+          "output_tokens": 166,
+          "estimated_cost_usd": 0.0003722,
+          "reservation_id": "bbc57fc6-3ef6-4785-a437-c57b66d64408"
+        },
+        {
+          "input_tokens": 8711,
+          "output_tokens": 504,
+          "estimated_cost_usd": 0.0027825500000000004,
+          "reservation_id": "a2ad7ed2-49c0-45fb-8836-f19fac2099bf"
+        },
+        {
+          "input_tokens": 2090,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0006017,
+          "reservation_id": "0d02d132-85a9-48ff-bd1e-0455a0f74ae6"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T07",
+      "claim": "Le pèlerinage peut-il être accompli en venant à pied, et pas seulement sur une monture?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Within the selected source collection, Quran 22:27 directly supports that people may come for pilgrimage on foot as well as on riding animals; riding is therefore not presented there as the sole means of arrival.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن الحج يمكن الوصول إليه مشيًا، كما يمكن الوصول إليه على الدواب. وتعرض الآية 22:27 الصورتين معًا في سياق النداء إلى الحج، من دون أن تجعل الركوب شرطًا وحيدًا.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "2:197",
+        "22:27",
+        "9:3",
+        "2:189",
+        "en:10643",
+        "en:2750",
+        "ar:66115",
+        "ar:64656"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 155,
+          "estimated_cost_usd": 0.0003605,
+          "reservation_id": "94ec690d-c7ad-48fc-a058-db76c191b7cd"
+        },
+        {
+          "input_tokens": 8500,
+          "output_tokens": 439,
+          "estimated_cost_usd": 0.0026518,
+          "reservation_id": "86b0e137-57cb-4a0c-910a-6fce466f71fc"
+        },
+        {
+          "input_tokens": 1974,
+          "output_tokens": 143,
+          "estimated_cost_usd": 0.0006651000000000001,
+          "reservation_id": "4328a006-ebaa-4b2c-b0f0-c460a64dabe2"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T08",
+      "claim": "Does the Quran tell pilgrims to circumambulate the Ancient House?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 22:29 in the selected source collection supports the claim that pilgrims are told to circumambulate the Ancient House, with the preceding context in 22:27 linking the instruction to pilgrimage. This assessment is limited to the supplied Quranic text and does not establish additional legal details.",
+      "summary_ar": "نعم، تدعم الآية 22:29 من مجموعة المصادر المحددة القول بأن الحجاج يُؤمرون بالطواف بالبيت العتيق، ويؤيد السياق السابق في 22:27 ارتباط ذلك بالحج. يقتصر هذا التقييم على النصوص القرآنية المقدمة، ولا يستخلص تفاصيل فقهية إضافية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "22:29",
+        "22:33",
+        "5:2",
+        "22:26",
+        "2:125",
+        "2:127",
+        "3:97",
+        "5:97"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 689,
+          "output_tokens": 159,
+          "estimated_cost_usd": 0.00036304999999999996,
+          "reservation_id": "4781560b-3451-4aaa-8b65-f04fdf927e13"
+        },
+        {
+          "input_tokens": 10458,
+          "output_tokens": 430,
+          "estimated_cost_usd": 0.0031305,
+          "reservation_id": "36a6ec0a-1027-476b-805d-4137b7cb9578"
+        },
+        {
+          "input_tokens": 1964,
+          "output_tokens": 329,
+          "estimated_cost_usd": 0.0008858,
+          "reservation_id": "011e30a2-5440-4a9d-a5fd-6a98cf78f641"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T09",
+      "claim": "هل يبيح القرآن الجدال والفسوق أثناء الحج؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "SEMANTIC_BASIS_QUOTATION_INVALID"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "2:196",
+        "2:258",
+        "6:25",
+        "6:80",
+        "11:32",
+        "40:5",
+        "58:1",
+        "2:24"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 689,
+          "output_tokens": 153,
+          "estimated_cost_usd": 0.00035585,
+          "reservation_id": "840e26d4-9b8a-48e2-bbed-9d1fb07bff6a"
+        },
+        {
+          "input_tokens": 10595,
+          "output_tokens": 1163,
+          "estimated_cost_usd": 0.0040443499999999995,
+          "reservation_id": "f3ea1325-6a8c-486c-946a-ec52aed4e0f4"
+        },
+        {
+          "input_tokens": 10595,
+          "output_tokens": 410,
+          "estimated_cost_usd": 0.0314075,
+          "reservation_id": "a9a36387-c3f8-4fb0-9003-a36b27bbb9d4"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T10",
+      "claim": "Ist die Abreise nach zwei Tagen während der genannten Pilgertage grundsätzlich sündhaft?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The claim is contradicted by Quran 2:203 in the selected source collection: leaving after two days is stated not to incur sin. The verse also addresses delaying, with piety included in its wording.",
+      "summary_ar": "لا، هذا الادعاء يخالف ما تدعمه الآية 2:203 من القرآن في مجموعة المصادر المحددة: التعجل في يومين لا يُنسب إليه إثم. وتذكر الآية أيضًا عدم الإثم لمن تأخر، مع اقتران ذلك بالتقوى في نص الآية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "2:203",
+        "2:173",
+        "2:182",
+        "9:3",
+        "en:3528",
+        "en:6013",
+        "ar:65519",
+        "ar:65518"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 198,
+          "estimated_cost_usd": 0.0004111,
+          "reservation_id": "5dac03f1-850d-4c2a-815e-6e96789213ca"
+        },
+        {
+          "input_tokens": 7573,
+          "output_tokens": 691,
+          "estimated_cost_usd": 0.0027224500000000004,
+          "reservation_id": "69d5ca84-7eb5-4eb9-9f38-a5301c9edc62"
+        },
+        {
+          "input_tokens": 7573,
+          "output_tokens": 418,
+          "estimated_cost_usd": 0.0239485,
+          "reservation_id": "3b92897d-bd09-4eca-8936-8bb253b9bcbd"
+        },
+        {
+          "input_tokens": 1966,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.005719,
+          "reservation_id": "02a0259d-1fc9-4982-b17a-e81d4b4afc5c"
+        },
+        {
+          "input_tokens": 331,
+          "output_tokens": 203,
+          "estimated_cost_usd": 0.00032635000000000005,
+          "reservation_id": "0f1b6d34-2f3c-40b6-a559-c00661bda680"
+        },
+        {
+          "input_tokens": 8479,
+          "output_tokens": 645,
+          "estimated_cost_usd": 0.00289375,
+          "reservation_id": "a9028ad7-c251-476f-bd86-d6b2c31b6b9e"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T11",
+      "claim": "Can someone shave their head before the sacrificial offering reaches its appointed place, without the stated illness exception?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied Quran passage at 2:196 contradicts permission to shave the head before the offering reaches its appointed place; it states the prohibition directly. It separately addresses illness or harm to the head with a fidyah, so the displayed text does not support early shaving outside that stated case.",
+      "summary_ar": "لا، تخالف هذه العبارة النص القرآني المعروض في البقرة 2:196 ضمن مجموعة المصادر المحددة؛ فهو يمنع حلق الرأس إلى أن يبلغ الهدي محلَّه. ويعرض النص حالة المرض أو أذى الرأس مع الفدية، فلا يثبت منه جواز الحلق المبكر خارج تلك الحالة المذكورة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:196",
+        "48:25",
+        "22:33",
+        "5:2",
+        "en:8906",
+        "en:8914",
+        "ar:66173",
+        "ar:64681"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 697,
+          "output_tokens": 103,
+          "estimated_cost_usd": 0.00029785,
+          "reservation_id": "a3236261-305d-4776-ad80-f9bb5f6238a2"
+        },
+        {
+          "input_tokens": 8248,
+          "output_tokens": 817,
+          "estimated_cost_usd": 0.0030424000000000002,
+          "reservation_id": "eac5be32-5cac-4c2b-8063-9ec4de15f20a"
+        },
+        {
+          "input_tokens": 8248,
+          "output_tokens": 432,
+          "estimated_cost_usd": 0.025804,
+          "reservation_id": "7f5229ba-696e-466c-a5e9-a1d9652a2136"
+        },
+        {
+          "input_tokens": 2593,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0072865,
+          "reservation_id": "e03d7fa5-4db5-4d25-adea-34bd87124d0a"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T12",
+      "claim": "শপথ ভাঙার কাফফারার একটি উপায় কি দশজন দরিদ্রকে খাবার দেওয়া?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that feeding ten poor people is one form of expiation for breaking an oath; the cited passage also specifies the food standard, lists alternatives, and mentions fasting when the alternatives cannot be found.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن إطعام عشرة مساكين أحد أوجه كفارة اليمين. ويذكر المصدر شروطًا وتفاصيل مرتبطة بذلك، منها أن يكون الطعام من المستوى المعتاد لطعام الأهل، مع ذكر بدائل أخرى وحالة العجز.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "5:89",
+        "18:79",
+        "2:196",
+        "38:44",
+        "en:8963",
+        "en:64675",
+        "ar:64675",
+        "ar:65931"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 702,
+          "output_tokens": 142,
+          "estimated_cost_usd": 0.00034589999999999995,
+          "reservation_id": "1aeeba9b-f690-441b-8a87-a746f131a2c2"
+        },
+        {
+          "input_tokens": 7957,
+          "output_tokens": 458,
+          "estimated_cost_usd": 0.00253885,
+          "reservation_id": "db6e2975-4608-4d0a-b402-b88de8e217e1"
+        },
+        {
+          "input_tokens": 2209,
+          "output_tokens": 152,
+          "estimated_cost_usd": 0.00073465,
+          "reservation_id": "a1b7d007-7fbf-49cf-a323-da2fffc9b2ae"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T13",
+      "claim": "क्या सच्चे मन से तौबा करने का निर्देश इस्लाम में मिलता है?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Qur’an 66:8 in the selected source collection directly supports that Islam includes an instruction to make sincere repentance. This is a selected-text assessment; the passage uses the qualification “tawbah nasūḥ,” while this assessment does not independently define its full legal or theological implications.",
+      "summary_ar": "نعم، تدعم الآية 66:8 من مجموعة المصادر المحددة وجود توجيه إلى التوبة النصوح. ويظل هذا التقييم محصورًا في النص القرآني المعروض، مع ملاحظة أن الآية تذكر التوبة بصيغة «نصوحًا» دون أن يقدّم هذا التقييم شرحًا فقهيًا مستقلًا لمعناها.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "66:8",
+        "4:17",
+        "4:18",
+        "25:71",
+        "9:74",
+        "en:4797",
+        "en:3512",
+        "ar:65208"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 1,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 695,
+          "output_tokens": 145,
+          "estimated_cost_usd": 0.00034775,
+          "reservation_id": "fe378e96-eaf5-4e71-a4f4-38783a0a2d16"
+        },
+        {
+          "input_tokens": 8520,
+          "output_tokens": 375,
+          "estimated_cost_usd": 0.00258,
+          "reservation_id": "cdb97369-1c52-42b2-8ac4-4b7341255b1c"
+        },
+        {
+          "input_tokens": 2166,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0006207000000000001,
+          "reservation_id": "4f7bd7b2-76e2-43cd-9a98-bc0044983e99"
+        },
+        {
+          "input_tokens": 8676,
+          "output_tokens": 450,
+          "estimated_cost_usd": 0.012709,
+          "reservation_id": "1c846820-bf14-45d7-81f9-543e1d0b9316"
+        },
+        {
+          "input_tokens": 8393,
+          "output_tokens": 734,
+          "estimated_cost_usd": 0.00297905,
+          "reservation_id": "e6a427c2-7b30-476d-bd74-c60417ca24ec"
+        },
+        {
+          "input_tokens": 3356,
+          "output_tokens": 461,
+          "estimated_cost_usd": 0.0013922,
+          "reservation_id": "596fcc35-6c85-45fa-8e97-1833aba53fdf"
+        },
+        {
+          "input_tokens": 325,
+          "output_tokens": 135,
+          "estimated_cost_usd": 0.00024325,
+          "reservation_id": "44ca7592-d7df-4a51-bb0e-08c655a5b0f2"
+        },
+        {
+          "input_tokens": 8067,
+          "output_tokens": 609,
+          "estimated_cost_usd": 0.00274755,
+          "reservation_id": "ceabfe2f-4bd5-4efa-ad99-c7e2d4fda180"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T14",
+      "claim": "کیا توبہ، ایمان اور نیک عمل کے بعد اللہ برائیوں کو نیکیوں میں بدل سکتا ہے؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 25:70 directly supports this proposition: following repentance, faith, and righteous action, Allah changes evil deeds into good deeds. The proposition retains these stated conditions together.",
+      "summary_ar": "نعم، تدعم الآية 25:70 من مجموعة المصادر المحددة هذا المعنى مباشرة: بعد التوبة والإيمان والعمل الصالح يبدّل الله السيئات حسنات. وهذا الحكم مرتبط بهذه الشروط المذكورة مجتمعة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "25:70",
+        "24:55",
+        "35:10",
+        "65:11",
+        "en:10576",
+        "en:3300",
+        "ar:3656",
+        "ar:3121"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 702,
+          "output_tokens": 180,
+          "estimated_cost_usd": 0.0003915,
+          "reservation_id": "aec8c371-b3da-40dc-b795-298abbc9b5e0"
+        },
+        {
+          "input_tokens": 7488,
+          "output_tokens": 420,
+          "estimated_cost_usd": 0.002376,
+          "reservation_id": "20027d66-2ce4-4864-9280-4f4caef840e2"
+        },
+        {
+          "input_tokens": 1824,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0005364,
+          "reservation_id": "6ef01020-03cb-477a-a782-de93a811c9a6"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T15",
+      "claim": "If someone offended me, does the Quran encourage forgiveness rather than cutting off charitable help to needy relatives?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 24:22 supports forgiving and not withholding charitable help from needy relatives in response to an offense. This assessment is limited to the selected source collection and does not resolve every jurisprudential detail or personal circumstance.",
+      "summary_ar": "نعم، تدعم الآية 24:22 من القرآن هذا المعنى: الحث على العفو والصفح مع عدم الامتناع عن إعانة الأقارب المحتاجين. ويظل هذا التقييم محصورًا في مجموعة المصادر المحددة ولا يحسم كل التفاصيل الفقهية أو الظروف الشخصية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "24:22",
+        "8:70",
+        "5:3",
+        "3:31",
+        "2:173",
+        "3:129",
+        "22:60",
+        "9:99"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 193,
+          "estimated_cost_usd": 0.00040560000000000005,
+          "reservation_id": "7c33a438-92c7-473a-a011-9e2fb893c362"
+        },
+        {
+          "input_tokens": 10511,
+          "output_tokens": 605,
+          "estimated_cost_usd": 0.0033537500000000004,
+          "reservation_id": "8d473778-f2b2-445e-8299-fb15937b9f3e"
+        },
+        {
+          "input_tokens": 2067,
+          "output_tokens": 330,
+          "estimated_cost_usd": 0.00091275,
+          "reservation_id": "24090360-f73c-4f9c-98be-62f93bd397d9"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T16",
+      "claim": "هل المودة والرحمة بين الزوجين من آيات الله؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The supplied Qur'an passage at 30:21 supports that affection and mercy between spouses are among Allah’s signs, in the context of creating spouses for tranquility and placing affection and mercy between them. This conclusion is limited to the displayed selected-source evidence and is not an independent religious ruling.",
+      "summary_ar": "نعم، تدعم الآية 30:21 من مجموعة المصادر المحددة أن المودة والرحمة بين الزوجين من آيات الله، في سياق خلق الأزواج لتحقيق السكن وجعل المودة والرحمة بينهم. يقتصر ذلك على دلالة النص المعروض دون إصدار فتوى أو استكمال بحث تفسيري خارج مجموعة المصادر المحددة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "30:21",
+        "57:13",
+        "4:73",
+        "7:72",
+        "ar:65448",
+        "ar:65299",
+        "en:11214",
+        "en:10930"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 690,
+          "output_tokens": 156,
+          "estimated_cost_usd": 0.0003597,
+          "reservation_id": "72ef2b5f-8121-4111-bfb4-51000f034bbf"
+        },
+        {
+          "input_tokens": 7669,
+          "output_tokens": 458,
+          "estimated_cost_usd": 0.0024668500000000005,
+          "reservation_id": "92a75125-663b-41d1-92a2-99558f17886b"
+        },
+        {
+          "input_tokens": 1911,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0005569500000000001,
+          "reservation_id": "ea672952-f2d4-47e4-856b-91a748839f5d"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T17",
+      "claim": "Bolehkah orang tua menyapih anak berdasarkan persetujuan dan musyawarah bersama?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports weaning a child when both parents mutually agree and consult one another, in the context of breastfeeding and weaning.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة جواز فطام الطفل إذا كان بتراضي الوالدين وتشاورِهما. ويتعلق النص بسياق الرضاعة والفطام، مع بقاء سائر القيود الواردة في الآية معتبرة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "2:233",
+        "6:151",
+        "2:83",
+        "65:6",
+        "en:4936",
+        "en:6023",
+        "ar:58177",
+        "ar:3044"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 165,
+          "estimated_cost_usd": 0.000372,
+          "reservation_id": "b6c2b30e-f321-4dd5-8baf-bd5be52a2d6b"
+        },
+        {
+          "input_tokens": 9134,
+          "output_tokens": 456,
+          "estimated_cost_usd": 0.0028307,
+          "reservation_id": "cce56d3a-e566-4b8a-bae7-17a2d0d1371f"
+        },
+        {
+          "input_tokens": 2837,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00078845,
+          "reservation_id": "afdd5f7d-aa2a-4678-b17b-60c1b1db95e6"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T18",
+      "claim": "¿Debe una persona gastar en manutención según los medios que Allah le ha dado?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Quran 65:7 in the selected source collection supports spending on maintenance according to the means Allah has provided. The passage addresses maintenance in the context of divorced women and distinguishes between the financially ample and the financially constrained, without imposing beyond what has been provided.",
+      "summary_ar": "تدعم الآية 65:7 من مجموعة المصادر المحددة أن النفقة تكون بحسب ما آتى الله الشخص من القدرة والرزق. وتتناول الآية سياق النفقة المرتبطة بالمطلّقات، مع التفريق بين ذي السعة ومن قُدِر عليه رزقه، فلا يُكلَّف بما يتجاوز ما آتاه الله.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "65:7",
+        "2:236",
+        "16:75",
+        "2:229",
+        "en:58187",
+        "en:5363",
+        "ar:6328",
+        "ar:66140"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 693,
+          "output_tokens": 156,
+          "estimated_cost_usd": 0.00036045,
+          "reservation_id": "81a01c45-23d8-491a-b25e-ddb388734d2c"
+        },
+        {
+          "input_tokens": 8587,
+          "output_tokens": 550,
+          "estimated_cost_usd": 0.00280675,
+          "reservation_id": "381a2a97-21b2-431f-ba3d-79dc96db06ea"
+        },
+        {
+          "input_tokens": 1995,
+          "output_tokens": 169,
+          "estimated_cost_usd": 0.00070155,
+          "reservation_id": "8df60bb3-d387-4684-b6ac-d64758495565"
+        },
+        {
+          "input_tokens": 330,
+          "output_tokens": 220,
+          "estimated_cost_usd": 0.0003465,
+          "reservation_id": "dd36d6f8-c23c-49b3-9e71-17dacb073ac6"
+        },
+        {
+          "input_tokens": 7895,
+          "output_tokens": 606,
+          "estimated_cost_usd": 0.0027009499999999997,
+          "reservation_id": "ffd0c6d5-0101-4bc6-b063-865f31c83c50"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T19",
+      "claim": "Est-il permis de retenir une épouse après le divorce dans le but de lui faire du mal?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "2:229",
+        "2:230",
+        "2:227",
+        "2:231",
+        "en:5822",
+        "en:58158",
+        "ar:58142",
+        "ar:58151"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 695,
+          "output_tokens": 167,
+          "estimated_cost_usd": 0.00037414999999999996,
+          "reservation_id": "85692908-aed3-4cac-8970-3a4ec1c12603"
+        },
+        {
+          "input_tokens": 9636,
+          "output_tokens": 637,
+          "estimated_cost_usd": 0.0031734000000000003,
+          "reservation_id": "491e686c-5734-443b-ae56-44a47de193f7"
+        },
+        {
+          "input_tokens": 9636,
+          "output_tokens": 371,
+          "estimated_cost_usd": 0.028542,
+          "reservation_id": "64ad1eed-3eb8-492c-834b-113abae10de2"
+        },
+        {
+          "input_tokens": 2887,
+          "output_tokens": 82,
+          "estimated_cost_usd": 0.0082015,
+          "reservation_id": "f47b5832-291f-450c-9d1f-b152b4a658cd"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T20",
+      "claim": "Darf ein Mann mehrere Frauen heiraten, obwohl er fürchtet, sie nicht gerecht behandeln zu können?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 4:3 in the selected source collection directly conflicts with the proposition: where there is fear of failing to deal justly, it directs to one rather than multiple wives; Quran 4:129 also prohibits complete partiality that leaves a wife suspended.",
+      "summary_ar": "لا؛ تدعم الآية 4:3 من القرآن في مجموعة المصادر المحددة خلاف هذا الادعاء: عند الخوف من عدم العدل تُذكر الواحدة بدل تعدد الزوجات. والآية 4:129 تنهى عن الميل الكامل الذي يترك الزوجة كالمعلّقة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "4:129",
+        "4:3",
+        "4:127",
+        "2:282",
+        "2:221",
+        "33:52",
+        "en:6145",
+        "en:4228"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 1,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 176,
+          "estimated_cost_usd": 0.0003857,
+          "reservation_id": "b8e66d81-463c-4e65-bdd4-cdd2522cb3cd"
+        },
+        {
+          "input_tokens": 10904,
+          "output_tokens": 698,
+          "estimated_cost_usd": 0.0035636,
+          "reservation_id": "036b7967-79f1-4602-a655-dc23a52afe73"
+        },
+        {
+          "input_tokens": 10904,
+          "output_tokens": 555,
+          "estimated_cost_usd": 0.03392,
+          "reservation_id": "7798c1c2-5d5f-4120-94df-6e8d9edfb7ad"
+        },
+        {
+          "input_tokens": 2204,
+          "output_tokens": 112,
+          "estimated_cost_usd": 0.006854,
+          "reservation_id": "1057de91-4d32-4b12-969e-815e5f55e1a1"
+        },
+        {
+          "input_tokens": 12877,
+          "output_tokens": 358,
+          "estimated_cost_usd": 0.01364885,
+          "reservation_id": "587d2168-51db-4bf8-9406-7b5ad159443b"
+        },
+        {
+          "input_tokens": 8913,
+          "output_tokens": 763,
+          "estimated_cost_usd": 0.00314385,
+          "reservation_id": "13b713e4-88f9-44b6-836f-a7941e04d14d"
+        },
+        {
+          "input_tokens": 337,
+          "output_tokens": 155,
+          "estimated_cost_usd": 0.00027025,
+          "reservation_id": "1827aa4b-9ddb-4103-a2e0-2925c01c75f7"
+        },
+        {
+          "input_tokens": 9218,
+          "output_tokens": 602,
+          "estimated_cost_usd": 0.0030269,
+          "reservation_id": "6f3d9184-b1e2-4ea2-8afe-e979cf817fe8"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T21",
+      "claim": "স্ত্রীর সঙ্গে ভালোভাবে জীবনযাপন করার নির্দেশ কি কোরআনে আছে?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports that the Quran instructs believers to treat their wives well, in Quran 4:19. The passage presents this within a context prohibiting harm and also mentions a qualification concerning dislike of one’s wife.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة وجود توجيه قرآني إلى معاملة الزوجات بالمعروف في سورة النساء 4:19. ويعرض النص ذلك ضمن سياق النهي عن الإضرار بهن، مع ذكر قيدٍ متعلق بحالة كراهتهن.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "2:229",
+        "3:37",
+        "16:125",
+        "7:161",
+        "2:228",
+        "9:120",
+        "4:19",
+        "2:234"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 181,
+          "estimated_cost_usd": 0.0003907,
+          "reservation_id": "de290d43-7306-431d-b857-96575b23c018"
+        },
+        {
+          "input_tokens": 11720,
+          "output_tokens": 556,
+          "estimated_cost_usd": 0.0035971999999999996,
+          "reservation_id": "ada18dee-cc5f-4d93-90e7-4eadf40ade67"
+        },
+        {
+          "input_tokens": 2101,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0006044500000000001,
+          "reservation_id": "6c99aaa5-e1f5-40ab-acc9-4851c3aeb519"
+        },
+        {
+          "input_tokens": 331,
+          "output_tokens": 103,
+          "estimated_cost_usd": 0.00020635,
+          "reservation_id": "dc59ca56-1891-49f2-a8bd-f9c863143c97"
+        },
+        {
+          "input_tokens": 9979,
+          "output_tokens": 466,
+          "estimated_cost_usd": 0.0030539499999999997,
+          "reservation_id": "1a0daa63-effa-4e79-b9e0-0aa305c6e067"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T22",
+      "claim": "क्या किसी समुदाय से नफरत हमें उसके साथ अन्याय करने की अनुमति देती है?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No; the claim is contradicted by the direct Quranic evidence in Surah al-Ma'idah 5:8 in the selected source collection, which forbids hatred of a people from leading to injustice. The displayed text does not permit injustice on that basis.",
+      "summary_ar": "لا؛ هذا الادعاء يناقض الدليل القرآني المباشر في سورة المائدة 5:8 ضمن مجموعة المصادر المحددة، إذ ينهى عن أن يحمل بغض قوم على ترك العدل. ولا يبيح النص المعروض الظلم بسبب الكراهية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "4:127",
+        "5:8",
+        "3:21",
+        "4:19",
+        "en:4938",
+        "en:5328",
+        "ar:5328",
+        "ar:5787"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 182,
+          "estimated_cost_usd": 0.0003919,
+          "reservation_id": "758facc5-78ce-4442-82a8-3ae1e942ba80"
+        },
+        {
+          "input_tokens": 8143,
+          "output_tokens": 746,
+          "estimated_cost_usd": 0.0029309500000000003,
+          "reservation_id": "1ab7b1bd-68cf-48b4-ac0b-9e6ecbd03545"
+        },
+        {
+          "input_tokens": 8143,
+          "output_tokens": 658,
+          "estimated_cost_usd": 0.0282535,
+          "reservation_id": "b4bed9fb-26cd-4f1a-8817-23b6e32edfcf"
+        },
+        {
+          "input_tokens": 2348,
+          "output_tokens": 135,
+          "estimated_cost_usd": 0.00749,
+          "reservation_id": "b1060f81-3654-4ec8-9890-a0db15092cda"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T23",
+      "claim": "کیا بغیر علم کے افواہ کو زبان سے آگے پھیلانا قرآن کے مطابق معمولی بات ہے؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The claim is contradicted by the selected source collection: Quran 24:15 addresses passing on speech without knowledge and treating it as trivial, while stating that it is grave before God. The displayed neighboring context also calls for refraining from such speech.",
+      "summary_ar": "لا، هذا الادعاء يخالف مجموعة المصادر المحددة؛ فالآية 24:15 تصف نقل ما لا علم به باللسان مع عَدِّه هيِّنًا، وتقرر أنه عظيم عند الله. ويؤكد السياق المعروض في الآيات المجاورة وجوب عدم الخوض في هذا النوع من الكلام.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "24:15",
+        "6:100",
+        "6:119",
+        "6:144",
+        "16:25",
+        "22:3",
+        "22:8",
+        "30:29"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 1,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 700,
+          "output_tokens": 205,
+          "estimated_cost_usd": 0.000421,
+          "reservation_id": "6ab5e02d-d12f-4291-baf9-6797f69adae4"
+        },
+        {
+          "input_tokens": 9878,
+          "output_tokens": 695,
+          "estimated_cost_usd": 0.0033035,
+          "reservation_id": "aa762534-d491-4ca8-b5f2-c0eee4e90361"
+        },
+        {
+          "input_tokens": 9878,
+          "output_tokens": 628,
+          "estimated_cost_usd": 0.032231,
+          "reservation_id": "3e0b53ab-2e24-4aae-9258-07dbf1152126"
+        },
+        {
+          "input_tokens": 1935,
+          "output_tokens": 223,
+          "estimated_cost_usd": 0.0075135,
+          "reservation_id": "12f3d1ed-f0e8-49d5-bef2-da12d8e1c00b"
+        },
+        {
+          "input_tokens": 8546,
+          "output_tokens": 243,
+          "estimated_cost_usd": 0.012428100000000001,
+          "reservation_id": "ee4afcc3-563b-4f62-b45f-93f88afde8ea"
+        },
+        {
+          "input_tokens": 10000,
+          "output_tokens": 604,
+          "estimated_cost_usd": 0.0032248000000000003,
+          "reservation_id": "f1fe4327-cc67-4c51-ac5b-eb8dfe9188c2"
+        },
+        {
+          "input_tokens": 331,
+          "output_tokens": 198,
+          "estimated_cost_usd": 0.00032035,
+          "reservation_id": "574e5469-ab19-459b-a642-b2ebc2e6415e"
+        },
+        {
+          "input_tokens": 9841,
+          "output_tokens": 762,
+          "estimated_cost_usd": 0.0033746500000000003,
+          "reservation_id": "485b130a-32c6-48dc-b0d6-5a145642c02d"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T24",
+      "claim": "Are some suspicions sinful, so I should avoid making lots of suspicious assumptions?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The supplied Quran passage at 49:12 supports both propositions: that some suspicions are sinful and that one should avoid making many suspicious assumptions. Its wording concerns avoiding much suspicion, not treating every suspicion as sinful.",
+      "summary_ar": "نعم، تدعم الآية في سورة الحجرات 49:12 كلا proposition: أن بعض الظن إثم، وأنه ينبغي اجتناب كثير من الظن. وتبقى العبارة عامة في تجنب كثرة الظنون، لا حكماً بأن كل ظن sinful.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "49:12",
+        "6:116",
+        "6:148",
+        "10:36",
+        "en:8395",
+        "en:5971",
+        "ar:3779",
+        "ar:5332"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 692,
+          "output_tokens": 160,
+          "estimated_cost_usd": 0.000365,
+          "reservation_id": "8e8a6f83-98ba-4cb2-9b0a-f8ebe3891fe9"
+        },
+        {
+          "input_tokens": 7831,
+          "output_tokens": 608,
+          "estimated_cost_usd": 0.00268735,
+          "reservation_id": "0a576b9b-708b-4ffb-bcc6-1733de5a7667"
+        },
+        {
+          "input_tokens": 2381,
+          "output_tokens": 199,
+          "estimated_cost_usd": 0.0008340499999999999,
+          "reservation_id": "e1df8a17-201e-4838-8e34-cc0111cdccb2"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T25",
+      "claim": "هل يعد الله بزيادة النعمة مع الشكر؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The passage in Qur’an 14:7 supports that Allah promises increase in response to gratitude; the promise is stated conditionally upon gratitude.",
+      "summary_ar": "نعم، تدعم الآية في سورة إبراهيم 14:7 أن الله وعد بالزيادة عند الشكر. والآية تجعل هذا الوعد مرتبطًا بتحقق الشكر، كما تذكر في السياق وعيدًا مقابل كفر النعمة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "14:7",
+        "2:268",
+        "34:13",
+        "76:9",
+        "ar:58081",
+        "ar:4535",
+        "en:11244",
+        "en:6007"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 688,
+          "output_tokens": 161,
+          "estimated_cost_usd": 0.0003652,
+          "reservation_id": "bbd03237-4aad-4b63-9d2d-f2ab9cb9a16f"
+        },
+        {
+          "input_tokens": 7664,
+          "output_tokens": 467,
+          "estimated_cost_usd": 0.0024764,
+          "reservation_id": "003c0399-6736-49fd-9810-6fd3431e56c9"
+        },
+        {
+          "input_tokens": 2071,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0005969500000000001,
+          "reservation_id": "88212a56-87d5-4b5a-82ce-5af577c2ddb2"
+        },
+        {
+          "input_tokens": 327,
+          "output_tokens": 137,
+          "estimated_cost_usd": 0.00024615,
+          "reservation_id": "2e0205b0-8edd-443c-b0e0-93864a0209b9"
+        },
+        {
+          "input_tokens": 7634,
+          "output_tokens": 591,
+          "estimated_cost_usd": 0.0026177,
+          "reservation_id": "dd5f8afb-5e32-4045-8437-90ea86e7df20"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T26",
+      "claim": "Apakah berdakwah seharusnya dengan hikmah dan nasihat yang baik?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "The selected source collection supports the proposition that preaching should be conducted with wisdom and good counsel, based on Qur’an 16:125. The verse also adds that disputation should be conducted in the best manner, which is an additional contextual qualification.",
+      "summary_ar": "تدعم مجموعة المصادر المحددة أن الدعوة تكون بالحكمة والموعظة الحسنة، استنادًا إلى القرآن الكريم في سورة النحل 16:125. وتذكر الآية أيضًا أن المجادلة تكون بالتي هي أحسن، وهو قيد سياقي إضافي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "16:125",
+        "45:16",
+        "43:63",
+        "61:7",
+        "en:65884",
+        "en:10035",
+        "ar:4302",
+        "ar:6275"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 148,
+          "estimated_cost_usd": 0.0003511,
+          "reservation_id": "2c5ec5ec-6eb2-4bda-91fc-a798784e18fe"
+        },
+        {
+          "input_tokens": 6871,
+          "output_tokens": 438,
+          "estimated_cost_usd": 0.00224335,
+          "reservation_id": "52f980ad-991b-429d-8be5-f8268b689016"
+        },
+        {
+          "input_tokens": 1881,
+          "output_tokens": 130,
+          "estimated_cost_usd": 0.00062625,
+          "reservation_id": "3921c69c-6b3a-430c-82f7-f3eac46f9262"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T27",
+      "claim": "¿Se permite discutir con la Gente del Libro de cualquier manera, incluso de forma ofensiva?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected source collection contradicts the claim that debating the People of the Book is permitted in any manner, including offensively: Quran 29:46 restricts the discussion to the best manner. The verse contains an exception concerning those among them who commit wrongdoing, but this does not establish a blanket permission for offensive conduct.",
+      "summary_ar": "لا، لا تدعم مجموعة المصادر المحددة جواز مجادلة أهل الكتاب بأي أسلوب أو بأسلوب مسيء؛ فالآية 29:46 تقيد المجادلة بالأسلوب الأحسن. وتذكر الآية استثناءً متعلقًا بالذين ظلموا منهم، لكنه لا يثبت إباحة الإهانة على الإطلاق.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "29:46",
+        "6:108",
+        "2:105",
+        "4:123",
+        "3:110",
+        "en:3697",
+        "en:10573",
+        "ar:6105"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 2,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 165,
+          "estimated_cost_usd": 0.000372,
+          "reservation_id": "bde864a7-db5b-4c2f-a314-91a020f04639"
+        },
+        {
+          "input_tokens": 8250,
+          "output_tokens": 872,
+          "estimated_cost_usd": 0.0031088999999999995,
+          "reservation_id": "492439be-fc2f-4d5c-b509-256d54abb5ab"
+        },
+        {
+          "input_tokens": 8250,
+          "output_tokens": 700,
+          "estimated_cost_usd": 0.029025,
+          "reservation_id": "604056f8-036c-44e1-bf73-427bd2b40daf"
+        },
+        {
+          "input_tokens": 2097,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0060465,
+          "reservation_id": "aebff83a-659f-4ba5-90de-60eacaa18ad4"
+        },
+        {
+          "input_tokens": 21004,
+          "output_tokens": 692,
+          "estimated_cost_usd": 0.0260814,
+          "reservation_id": "04850886-2a4c-4412-ad3a-9c9c3a15c2dd"
+        },
+        {
+          "input_tokens": 8024,
+          "output_tokens": 725,
+          "estimated_cost_usd": 0.002876,
+          "reservation_id": "af5c8689-2923-46cf-8a6d-a2623f88fcd2"
+        },
+        {
+          "input_tokens": 8024,
+          "output_tokens": 528,
+          "estimated_cost_usd": 0.026396,
+          "reservation_id": "c097aa2d-238b-463d-a8bd-f0cb81874a6e"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T28",
+      "claim": "La douceur du Prophète a-t-elle aidé les gens à rester autour de lui?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports this claim through Qur’an 3:159, which links the Prophet’s gentleness with people remaining around him. The passage presents this in contrast to harshness and a hard heart, which would cause them to disperse, and also mentions forgiveness, seeking forgiveness, and consultation.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى في القرآن، إذ يربط المقطع بين لين النبي وبقاء الناس حوله. ويعرض النص ذلك ضمن مقابلة مع القسوة وغلظة القلب، التي تؤدي إلى تفرّقهم، مع توجيهات أخرى بالعفو والاستغفار والمشاورة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "3:159",
+        "40:7",
+        "22:15",
+        "36:8",
+        "en:4938",
+        "en:6761",
+        "ar:66238",
+        "ar:66226"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 695,
+          "output_tokens": 166,
+          "estimated_cost_usd": 0.00037295,
+          "reservation_id": "1c3a3e33-3f20-43d4-8171-f9c386011f5e"
+        },
+        {
+          "input_tokens": 7073,
+          "output_tokens": 488,
+          "estimated_cost_usd": 0.00235385,
+          "reservation_id": "2ccb7f71-a55b-4277-b96b-f5feebfefedc"
+        },
+        {
+          "input_tokens": 1926,
+          "output_tokens": 139,
+          "estimated_cost_usd": 0.0006483000000000001,
+          "reservation_id": "d1f3421b-cc6b-4185-a1fb-315a1b30c6d5"
+        },
+        {
+          "input_tokens": 327,
+          "output_tokens": 100,
+          "estimated_cost_usd": 0.00020175,
+          "reservation_id": "d52d6cf3-f06a-4b68-ad1c-eef87f877960"
+        },
+        {
+          "input_tokens": 6265,
+          "output_tokens": 494,
+          "estimated_cost_usd": 0.00215905,
+          "reservation_id": "ba6c819e-3838-4774-816a-67c9bad2875c"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T29",
+      "claim": "Lehrt der Koran, dass die Suche nach dem Jenseits bedeutet, jeden Anteil am weltlichen Leben zu vergessen?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected source collection directly conflicts with the claim: Quran 28:77 joins seeking the Hereafter with not forgetting one’s share of worldly life, alongside doing good and avoiding corruption.",
+      "summary_ar": "لا؛ لا تؤيد مجموعة المصادر المحددة أن طلب الآخرة يعني نسيان كل نصيب من الدنيا. فالآية 28:77 تجمع بين ابتغاء الدار الآخرة وعدم نسيان النصيب من الدنيا، مع الأمر بالإحسان والنهي عن الفساد.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "2:86",
+        "28:77",
+        "14:3",
+        "4:74",
+        "6:32",
+        "42:20",
+        "9:38",
+        "3:185"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 701,
+          "output_tokens": 150,
+          "estimated_cost_usd": 0.00035525,
+          "reservation_id": "49729b69-a381-4eb1-8f3c-7fd564ac24ce"
+        },
+        {
+          "input_tokens": 10870,
+          "output_tokens": 581,
+          "estimated_cost_usd": 0.0034146999999999997,
+          "reservation_id": "7ae99db0-69d1-4d1d-a5d1-d8ca4e0944ad"
+        },
+        {
+          "input_tokens": 10870,
+          "output_tokens": 380,
+          "estimated_cost_usd": 0.031735,
+          "reservation_id": "732afc28-4173-43b8-ab1c-56c4babaae6e"
+        },
+        {
+          "input_tokens": 2201,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0063065,
+          "reservation_id": "eec9b51e-fdb8-4bf8-bfbc-ac39ee1180a3"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T30",
+      "claim": "অভিভাবকের কাছে এতিমের সম্পদ থাকলে, বুঝশক্তি যাচাই করে তা ফিরিয়ে দেওয়ার নির্দেশ আছে কি?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports an instruction to hand over an orphan’s property after verifying the orphan’s maturity, with Qur’an 4:6 also specifying reaching marriageable age and being found mature.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة وجود توجيه بتسليم مال اليتيم بعد التحقق من رشده. وتحدد الآية في 4:6 أن ذلك يكون بعد بلوغه سنّ النكاح مع تحقق الرشد، ولذلك ينبغي إبقاء هذين القيدين في فهم النص.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "6:152",
+        "17:34",
+        "4:6",
+        "5:48",
+        "en:3159",
+        "en:3311",
+        "ar:66269",
+        "ar:65290"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 706,
+          "output_tokens": 190,
+          "estimated_cost_usd": 0.0004045,
+          "reservation_id": "de273a55-4925-4a84-a288-c333562a1904"
+        },
+        {
+          "input_tokens": 8397,
+          "output_tokens": 653,
+          "estimated_cost_usd": 0.0028828499999999997,
+          "reservation_id": "513f14e4-a438-45ea-a505-f6642d40732e"
+        },
+        {
+          "input_tokens": 2153,
+          "output_tokens": 444,
+          "estimated_cost_usd": 0.00107105,
+          "reservation_id": "b588bdcc-8ca8-4e9d-93c7-2bf3037ecfff"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T31",
+      "claim": "क्या विरासत बाँटते समय उपस्थित गरीबों और अनाथों को कुछ देने की बात कही गई है?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Qur’an 4:8 in the selected source collection supports the claim that poor people and orphans who are present at the division of an inheritance are to be given something from it. The passage also mentions near relatives and includes the conditions of being present at the division and addressing them appropriately.",
+      "summary_ar": "نعم، تدعم الآية 4:8 من مجموعة المصادر المحددة القولَ بأن الحاضرين من المساكين واليتامى عند قسمة التركة يُعطَون منها. كما تذكر الآية أولي القربى، وتربط ذلك بحضورهم وقت القسمة وبالقول المعروف لهم.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "4:8",
+        "2:177",
+        "2:83",
+        "59:7",
+        "en:5887",
+        "en:5882",
+        "ar:65291",
+        "ar:65172"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 699,
+          "output_tokens": 175,
+          "estimated_cost_usd": 0.00038475,
+          "reservation_id": "aa800d71-11ed-490e-bbcd-602d05dea423"
+        },
+        {
+          "input_tokens": 8434,
+          "output_tokens": 540,
+          "estimated_cost_usd": 0.0027565,
+          "reservation_id": "fc6284a4-83fa-497b-a0b4-c97bd4f02eb3"
+        },
+        {
+          "input_tokens": 2134,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0006127000000000001,
+          "reservation_id": "95e1d343-f9e3-48e8-a6c9-789abfe370a6"
+        },
+        {
+          "input_tokens": 338,
+          "output_tokens": 210,
+          "estimated_cost_usd": 0.0003365,
+          "reservation_id": "0af67bab-2727-4d66-9e23-b25ab5fc7efb"
+        },
+        {
+          "input_tokens": 9009,
+          "output_tokens": 664,
+          "estimated_cost_usd": 0.00304905,
+          "reservation_id": "8f36a45a-a97f-4b7d-9b25-b289ba9e2756"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T32",
+      "claim": "کیا بیوی اپنی خوشی سے مہر کا کچھ حصہ واپس دے تو اسے قبول کرنا جائز ہے؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Qur’an 4:4 directly supports the proposition within the selected source collection: if the wife willingly gives back some of her mahr, the husband may accept and use it. The essential qualification is that the transfer must be made with her genuine consent.",
+      "summary_ar": "تدعم الآية القرآنية في سورة النساء 4:4 هذه proposition ضمن مجموعة المصادر المحددة: إذا وهبت الزوجة شيئًا من مهرها عن طيب نفس، جاز للزوج قبوله والانتفاع به. والقيد الأساسي هو أن يكون العطاء صادرًا عن رضاها الحقيقي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "4:4",
+        "3:37",
+        "66:3",
+        "2:282",
+        "2:85",
+        "en:58133",
+        "en:58069",
+        "ar:58067"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 1,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 290,
+          "estimated_cost_usd": 0.0005225,
+          "reservation_id": "9250ef7a-c40c-4d65-a9c6-eff64ac0ad2a"
+        },
+        {
+          "input_tokens": 9776,
+          "output_tokens": 526,
+          "estimated_cost_usd": 0.0030751999999999997,
+          "reservation_id": "ac7911f8-453c-4406-a96d-c4390bdd0c2f"
+        },
+        {
+          "input_tokens": 2195,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0006279500000000001,
+          "reservation_id": "62244064-1272-41c9-a942-54ef875aa996"
+        },
+        {
+          "input_tokens": 8563,
+          "output_tokens": 270,
+          "estimated_cost_usd": 0.01246475,
+          "reservation_id": "d8612c09-36ff-4ca1-a5a0-25c159e345be"
+        },
+        {
+          "input_tokens": 9790,
+          "output_tokens": 637,
+          "estimated_cost_usd": 0.0032119,
+          "reservation_id": "3f9e1105-e839-4fda-86fc-02d7a49ebbcb"
+        },
+        {
+          "input_tokens": 337,
+          "output_tokens": 226,
+          "estimated_cost_usd": 0.00035545,
+          "reservation_id": "bb833f20-b87c-47d8-a985-0cbb0f48302c"
+        },
+        {
+          "input_tokens": 11035,
+          "output_tokens": 558,
+          "estimated_cost_usd": 0.0034283499999999997,
+          "reservation_id": "8f239344-47f0-4f03-8079-4dcd81b183ce"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T33",
+      "claim": "Before consummation, if a dowry was already fixed, is the usual divorce entitlement half of it unless the stated waiver applies?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 2:237 in the selected source collection supports this general rule for divorce before consummation when the dowry was fixed, while retaining the stated waiver exception. This assessment is limited to the supplied text and does not replace qualified review of applied details.",
+      "summary_ar": "نعم، تدعم الآية 2:237 من مجموعة المصادر المحددة هذا الحكم العام في حالة الطلاق قبل المسيس مع تسمية الفريضة، مع بيان الاستثناء المتعلق بالعفو. وتقييم هذه النتيجة محصور في النص القرآني المحدد هنا ولا يغني عن المراجعة العلمية في التفاصيل التطبيقية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:229",
+        "2:237",
+        "2:227",
+        "2:282",
+        "en:58151",
+        "en:58103",
+        "ar:58142",
+        "ar:58151"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 702,
+          "output_tokens": 184,
+          "estimated_cost_usd": 0.00039629999999999993,
+          "reservation_id": "c6df68e3-e383-4523-aada-e99ab79f066c"
+        },
+        {
+          "input_tokens": 9092,
+          "output_tokens": 476,
+          "estimated_cost_usd": 0.0028442,
+          "reservation_id": "e4620c50-d6fd-452f-8102-56c943702c75"
+        },
+        {
+          "input_tokens": 2265,
+          "output_tokens": 135,
+          "estimated_cost_usd": 0.00072825,
+          "reservation_id": "f96e79ae-8af2-449d-8774-53ed2b9b38f5"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T35",
+      "claim": "Can people burdened by debt be among the Quran’s listed zakat recipients?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 9:60 in the selected source collection lists people burdened by debt among the recipients of zakat. This passage alone does not specify every eligibility condition or determine how it applies to individual cases.",
+      "summary_ar": "نعم، تدعم الآية 9:60 من مجموعة المصادر المحددة إدراج المدينين ضمن مصارف الصدقات المذكورة في القرآن. ولا تحدد هذه الآية وحدها جميع شروط الاستحقاق أو كيفية تطبيق ذلك على الحالات الفردية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:282",
+        "2:286",
+        "9:60",
+        "6:152",
+        "7:42",
+        "23:62",
+        "35:18",
+        "2:217"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 692,
+          "output_tokens": 174,
+          "estimated_cost_usd": 0.00038179999999999996,
+          "reservation_id": "adaf21db-0971-4eb3-8b60-32af8c776f9a"
+        },
+        {
+          "input_tokens": 10856,
+          "output_tokens": 406,
+          "estimated_cost_usd": 0.0032012000000000004,
+          "reservation_id": "057a275b-d56d-45ac-8540-923d817e9048"
+        },
+        {
+          "input_tokens": 2012,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0005822000000000001,
+          "reservation_id": "57091060-95a6-46df-b387-6f48719d20e3"
+        },
+        {
+          "input_tokens": 335,
+          "output_tokens": 184,
+          "estimated_cost_usd": 0.00030454999999999995,
+          "reservation_id": "7c2a996b-0279-4b53-b231-4c4f32d7dd49"
+        },
+        {
+          "input_tokens": 10812,
+          "output_tokens": 490,
+          "estimated_cost_usd": 0.003291,
+          "reservation_id": "6efb2ffd-2fd2-47a6-b1ff-73fcfc603c85"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T36",
+      "claim": "Is liking nice clothes automatically arrogance in Islam?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": false,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "No. Within the selected source collection, liking nice clothes is not automatically arrogance: the displayed Hadith card at en:6209 distinguishes arrogance from merely liking good-looking clothing and links it to rejecting truth and looking down on people. Card en:5363 also conditions wearing clothes on avoiding extravagance and pride.",
+      "summary_ar": "لا، وفق مجموعة المصادر المحددة، الإعجاب بحسن الملابس ليس كِبرًا تلقائيًا؛ فالبطاقة المعروضة في حديث en:6209 تميّز الكبر عن مجرد محبة المظهر الحسن، وتربطه بردّ الحق واحتقار الناس. وتنبّه بطاقة en:5363 إلى تجنب الإسراف والكِبر عند اللباس.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "9:29",
+        "49:17",
+        "3:152",
+        "4:5",
+        "en:5363",
+        "en:6209",
+        "ar:6107",
+        "ar:5432"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 685,
+          "output_tokens": 140,
+          "estimated_cost_usd": 0.00033925,
+          "reservation_id": "8353c543-e6af-4b47-8419-11bf3c7608ea"
+        },
+        {
+          "input_tokens": 8150,
+          "output_tokens": 646,
+          "estimated_cost_usd": 0.0028127,
+          "reservation_id": "ec49f4eb-996e-4fb1-aa13-986b97699b68"
+        },
+        {
+          "input_tokens": 8150,
+          "output_tokens": 351,
+          "estimated_cost_usd": 0.024587,
+          "reservation_id": "943afa07-ccf2-4433-9e50-2e45c2674cbd"
+        },
+        {
+          "input_tokens": 797,
+          "output_tokens": 139,
+          "estimated_cost_usd": 0.00036605,
+          "reservation_id": "292428c7-9fa6-44f5-a0ee-588b5b989912"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T37",
+      "claim": "هل الدعاء عبادة في الحديث؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that supplication is worship, based on the specified Arabic hadith. This conclusion is limited to the supplied evidence and preserves the hadith attribution.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن الدعاء عبادة، وذلك في الحديث الوارد في المصدر العربي المحدد. وتبقى هذه النتيجة محصورة في الأدلة المقدمة هنا، مع نسبة الحكم إلى الحديث كما ورد في المصدر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "ar:5496",
+        "ar:10634",
+        "ar:5479",
+        "ar:5509",
+        "en:5496",
+        "en:5509",
+        "en:5886",
+        "en:5382"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 684,
+          "output_tokens": 87,
+          "estimated_cost_usd": 0.00027539999999999997,
+          "reservation_id": "7aea50ba-a9a7-43e4-bcfc-cce847582592"
+        },
+        {
+          "input_tokens": 4438,
+          "output_tokens": 448,
+          "estimated_cost_usd": 0.0016470999999999999,
+          "reservation_id": "7a8403c2-bb90-4b36-86f8-0dd3ba108f91"
+        },
+        {
+          "input_tokens": 839,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00028895,
+          "reservation_id": "08933be1-dfaf-461d-a1b9-86d942ec21bf"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T39",
+      "claim": "Apakah kesehatan dan waktu luang termasuk dua nikmat yang sering disia-siakan manusia?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "The selected source collection supports the claim: the specified hadith identifies health and free time as two blessings in which many people incur loss. This supports “many people,” not a claim that everyone neglects them.",
+      "summary_ar": "تدعم مجموعة المصادر المحددة هذا المعنى؛ فالحديث المحدد يذكر الصحة والفراغ بوصفهما نعمتين يخسر فيهما كثير من الناس. وهذا يثبت معنى «كثير من الناس»، لا حكمًا بأن جميع الناس يضيّعونهما.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "24:58",
+        "28:27",
+        "2:282",
+        "2:143",
+        "en:5449",
+        "en:4200",
+        "ar:5449",
+        "ar:66065"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 695,
+          "output_tokens": 159,
+          "estimated_cost_usd": 0.00036454999999999994,
+          "reservation_id": "a61b7d28-d936-4d2e-a162-3e66023d96ca"
+        },
+        {
+          "input_tokens": 9163,
+          "output_tokens": 510,
+          "estimated_cost_usd": 0.00290275,
+          "reservation_id": "fd1ab4c8-22b6-4857-947a-5dbec281a729"
+        },
+        {
+          "input_tokens": 821,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00028445000000000006,
+          "reservation_id": "d8bcca84-89c7-44f6-bec0-5dd80b8920ae"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T40",
+      "claim": "¿Debo taparme la boca con la mano cuando bostezo, según el hadiz?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports the hadith-based proposition that a person should place a hand over the mouth when yawning; another supplied record gives additional guidance specifically for yawning during prayer.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا proposition المنسوب إلى الحديث: عند التثاؤب تُوضَع اليد على الفم. وتعرض بطاقة الحديث هذه التوجيه بصورة عامة، بينما تذكر بطاقة أخرى حالة التثاؤب أثناء الصلاة مع توجيهٍ إضافي بكظمه ما استطاع.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "en:5280",
+        "en:3317",
+        "en:10884",
+        "en:10982",
+        "ar:10884",
+        "ar:5812",
+        "ar:66258",
+        "ar:5332"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 695,
+          "output_tokens": 119,
+          "estimated_cost_usd": 0.00031654999999999997,
+          "reservation_id": "bcd41029-4d1c-4d5d-9e03-795078deb40c"
+        },
+        {
+          "input_tokens": 4960,
+          "output_tokens": 532,
+          "estimated_cost_usd": 0.0018784000000000001,
+          "reservation_id": "8fe41cb2-b8fe-475a-a77c-0ec803d34b2a"
+        },
+        {
+          "input_tokens": 773,
+          "output_tokens": 158,
+          "estimated_cost_usd": 0.00038285,
+          "reservation_id": "da4558e2-e4af-4b8c-8243-3d9666b27f76"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T41",
+      "claim": "Le Prophète baissait-il la voix et couvrait-il sa bouche lorsqu’il éternuait?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports the proposition that the Prophet lowered his voice and covered his mouth when sneezing, with the supplied hadith specifying a hand or garment. The direct evidence is an English hadith record; its publisher-assigned grade is reported separately and is not independently authenticated here.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا proposition المنسوب إلى النبي: عند العطاس كان يخفض صوته ويضع يده أو ثوبه على فمه. الدليل المباشر هنا حديث باللغة الإنجليزية، وتقييمه المنشور من الناشر مذكور بصورة منفصلة ولا يُعدّ مصادقة مستقلة مني.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "49:2",
+        "49:3",
+        "31:19",
+        "2:61",
+        "en:3317",
+        "en:66304",
+        "ar:6218",
+        "ar:65464"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 698,
+          "output_tokens": 139,
+          "estimated_cost_usd": 0.00034129999999999995,
+          "reservation_id": "67a8d290-0ae5-41b2-8f6e-dda7cfeb7dac"
+        },
+        {
+          "input_tokens": 7388,
+          "output_tokens": 496,
+          "estimated_cost_usd": 0.0024422000000000003,
+          "reservation_id": "ef1729e0-9cee-445a-a9b4-a5c21b863379"
+        },
+        {
+          "input_tokens": 776,
+          "output_tokens": 135,
+          "estimated_cost_usd": 0.000356,
+          "reservation_id": "7c7e6098-9570-4860-b774-5d432b29c812"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T42",
+      "claim": "Hat der Prophet im Fall des Beduinen in der Moschee dazu aufgefordert, die Dinge schwer statt leicht zu machen?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied hadith card in the selected source collection directly contradicts the claim: in the Bedouin incident, it attributes a direction toward ease rather than difficulty to the Prophet. This assessment is limited to the displayed hadith text and its stated setting.",
+      "summary_ar": "لا، هذا الادعاء يناقض الحديث المعروض في مجموعة المصادر المحددة عن واقعة البدوي في المسجد؛ إذ ينسب إلى النبي توجيهًا بالتيسير لا بالتعسير. والتقييم مقصور على نص بطاقة الحديث المعروضة وسياقها المحدد.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "2:196",
+        "2:144",
+        "2:191",
+        "2:217",
+        "en:5806",
+        "en:10979",
+        "ar:4939",
+        "ar:5796"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 701,
+          "output_tokens": 214,
+          "estimated_cost_usd": 0.00043205000000000007,
+          "reservation_id": "17d0ef3b-ae2d-4306-ab3d-2d1e9aec2227"
+        },
+        {
+          "input_tokens": 8492,
+          "output_tokens": 599,
+          "estimated_cost_usd": 0.0028418000000000002,
+          "reservation_id": "0fefa9e3-0acf-49e3-95bb-a9a212501adb"
+        },
+        {
+          "input_tokens": 8492,
+          "output_tokens": 531,
+          "estimated_cost_usd": 0.027602,
+          "reservation_id": "e5fc1927-2c95-4ea6-846f-8cbde470da57"
+        },
+        {
+          "input_tokens": 894,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.003039,
+          "reservation_id": "b707d289-5aef-4eb1-acbf-273fea814b10"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T43",
+      "claim": "আল্লাহর সন্তুষ্টির জন্য অসুস্থ কাউকে দেখতে যাওয়ার পুরস্কার কি হাদিসে আছে?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that a hadith mentions reward for visiting a sick person for Allah’s sake, including glad tidings, blessed footsteps, and a home in Paradise; the displayed grade is attributed to the publisher.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة وجود ثواب لزيارة المريض من أجل الله، كما يوضحه الحديث المحدد في البطاقة الإنجليزية. ويُذكر في المصدر وعدٌ بالخير والبركة وبيت في الجنة، مع نسبة درجة الحديث إلى الناشر لا باعتبارها حكماً مستقلاً هنا.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "en:3442",
+        "en:6011",
+        "en:65015",
+        "en:3339",
+        "ar:3706",
+        "ar:6103",
+        "ar:66002",
+        "ar:11295"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 702,
+          "output_tokens": 112,
+          "estimated_cost_usd": 0.0003099,
+          "reservation_id": "aa0fbfad-cbf4-4afc-b012-bc62411fb2f2"
+        },
+        {
+          "input_tokens": 5505,
+          "output_tokens": 513,
+          "estimated_cost_usd": 0.00199185,
+          "reservation_id": "049cdcf8-8734-4362-96d3-82e936958e9d"
+        },
+        {
+          "input_tokens": 803,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00027995000000000006,
+          "reservation_id": "6a6bbcad-8139-4e0d-a339-40ce2c3e1ada"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T44",
+      "claim": "क्या स्वीकार किए गए हज का प्रतिफल जन्नत बताया गया है?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that the reward of an accepted or righteous Hajj is Paradise, based on the supplied hadith records; the supplied Quran passages do not state this specific reward explicitly.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن ثواب الحج المقبول هو الجنة. وهذا الدعم وارد في أحاديث محددة، بينما لا يقرر نصا القرآن المرفقان هذا الثواب الخاص بالحج صراحةً.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "2:196",
+        "3:185",
+        "46:14",
+        "46:16",
+        "en:65627",
+        "en:3072",
+        "ar:65627",
+        "ar:65626"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 693,
+          "output_tokens": 175,
+          "estimated_cost_usd": 0.00038325,
+          "reservation_id": "5ecbca40-4622-415d-ad46-cabc7edd2a89"
+        },
+        {
+          "input_tokens": 8465,
+          "output_tokens": 602,
+          "estimated_cost_usd": 0.0028386500000000003,
+          "reservation_id": "1acc66f1-174a-4343-a807-b943431b86cf"
+        },
+        {
+          "input_tokens": 1311,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00040695,
+          "reservation_id": "a67b374b-d8e0-4785-b647-9919d2cc27c0"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T45",
+      "claim": "کیا صفا اور مروہ کے درمیان سعی صرف تین چکر ہے؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "SEMANTIC_BASIS_QUOTATION_INVALID"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "2:158",
+        "55:44",
+        "2:196",
+        "58:7",
+        "en:3020",
+        "en:3309",
+        "ar:65270",
+        "ar:65649"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 209,
+          "estimated_cost_usd": 0.00042429999999999996,
+          "reservation_id": "a78f24d8-3c79-4519-a1f1-8f942c5576fb"
+        },
+        {
+          "input_tokens": 8975,
+          "output_tokens": 590,
+          "estimated_cost_usd": 0.00295175,
+          "reservation_id": "c2ed3d1c-33cb-488c-80b7-e6fbe40d2ccb"
+        },
+        {
+          "input_tokens": 8975,
+          "output_tokens": 435,
+          "estimated_cost_usd": 0.0276575,
+          "reservation_id": "cf1d03fa-5a64-42f5-ae77-35b78b742486"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T47",
+      "claim": "هل يذكر الحديث أن موضع البركة في الطعام قد لا نعرفه ولذلك لا نهمل بقيته؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports the meaning that the blessing’s location in food is unknown and that the remaining food should not be neglected; the directly matching records are supplied in English, while the Arabic record about blessing descending in the middle does not by itself establish the claim about not knowing its location.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى: لا يُعرف موضع البركة في الطعام، ولذلك يوجّه الحديث إلى عدم ترك ما بقي منه أو ما يمكن الانتفاع به. والأدلة المباشرة هنا معروضة بالإنجليزية، مع وجود حديث عربي آخر يذكر نزول البركة في وسط الطعام لكنه لا يثبت وحده عبارة عدم معرفة موضعها.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "ar:58121",
+        "ar:66366",
+        "ar:3088",
+        "ar:10963",
+        "en:58121",
+        "en:10103",
+        "en:3046",
+        "en:5653"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 699,
+          "output_tokens": 164,
+          "estimated_cost_usd": 0.00037154999999999995,
+          "reservation_id": "56a27559-2e23-4cbf-911d-79f791d77bb1"
+        },
+        {
+          "input_tokens": 5662,
+          "output_tokens": 811,
+          "estimated_cost_usd": 0.0023886999999999997,
+          "reservation_id": "01c53cbe-11ea-4ab6-97ba-ff93f24454a1"
+        },
+        {
+          "input_tokens": 1369,
+          "output_tokens": 237,
+          "estimated_cost_usd": 0.00062665,
+          "reservation_id": "69301789-aa20-43c0-a7fb-ca31720286e9"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T48",
+      "claim": "Are regular good deeds within a person’s capacity valued in the prophetic teaching?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "The selected source collection supports that good deeds performed regularly within a person’s capacity are valued in the prophetic teaching. The supplied hadith record links this guidance to consistency and avoiding self-imposed exhaustion.",
+      "summary_ar": "تدعم مجموعة المصادر المحددة أن الأعمال الصالحة التي تُؤدَّى بانتظام وفق قدرة الشخص موضع تقدير في التعليم النبوي. ويؤكد السجل الحديثي أن الاستمرار والاعتدال، لا إرهاق النفس، هما القيدان المرتبطان بهذا التوجيه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "24:39",
+        "16:75",
+        "2:151",
+        "35:10",
+        "en:5845",
+        "en:64706",
+        "ar:5794",
+        "ar:65130"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 154,
+          "estimated_cost_usd": 0.00035755,
+          "reservation_id": "86dbccf6-dad8-41be-b2f7-73a8a9e67229"
+        },
+        {
+          "input_tokens": 7822,
+          "output_tokens": 463,
+          "estimated_cost_usd": 0.0025111,
+          "reservation_id": "4ea8f1f5-1a48-4bef-840f-8f69885a9f52"
+        },
+        {
+          "input_tokens": 838,
+          "output_tokens": 145,
+          "estimated_cost_usd": 0.0003835,
+          "reservation_id": "42637c46-f516-468a-bea3-15e6aaee88e0"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T49",
+      "claim": "Does Islamic teaching warn that bad companionship can harm a person, like a blacksmith’s bellows?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected evidence directly supports the claim through the hadith comparing bad companionship with a blower of bellows, describing possible direct harm or a foul effect from proximity. The statement is attributed to the Prophet in the hadith card; its displayed grade is a publisher attribution, not independently authenticated here.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرةً بحديث أبي موسى عن تشبيه الجليس السوء بنافخ الكير، مع بيان أن الضرر قد يكون أذىً مباشرًا أو أثرًا سيئًا من الصحبة. وتُنسب العبارة إلى النبي ﷺ في بطاقة الحديث، بينما درجة الحديث المذكورة هي تقييم الناشر وليست حكمًا مستقلاً هنا.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "13:16",
+        "2:102",
+        "2:282",
+        "6:71",
+        "en:10868",
+        "en:3127",
+        "ar:3127",
+        "ar:4182"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 173,
+          "estimated_cost_usd": 0.0003816,
+          "reservation_id": "3be34d2e-48f2-419e-bc36-f63617768b05"
+        },
+        {
+          "input_tokens": 9841,
+          "output_tokens": 421,
+          "estimated_cost_usd": 0.0029654499999999997,
+          "reservation_id": "0b4551d9-dbaa-45ca-947b-11b98c528c29"
+        },
+        {
+          "input_tokens": 1217,
+          "output_tokens": 186,
+          "estimated_cost_usd": 0.0005274500000000001,
+          "reservation_id": "8d4924ac-8cc5-4a35-89a8-77f7bee05274"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "T50",
+      "claim": "Is chicken meat categorically forbidden in Islam?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected sources contradict the claim that chicken meat is categorically forbidden: the hadith card at en:2975 describes the Prophet eating chicken, which is incompatible with that absolute prohibition. Rules concerning slaughter and the conditions of meat remain relevant to particular cases.",
+      "summary_ar": "لا، لا تدعم مجموعة المصادر المحددة القول بأن لحم الدجاج محرّم تحريمًا مطلقًا؛ فالحديث المعروض في en:2975 يذكر أكل النبي للدجاج، وهو منافٍ لهذا التعميم. تظل أحكام الذكاة وشروط اللحم الواردة في النصوص ذات صلة بتفاصيل الحالات.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "5:3",
+        "16:14",
+        "6:121",
+        "35:12",
+        "en:2975",
+        "en:64653",
+        "ar:8918",
+        "ar:66015"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 685,
+          "output_tokens": 171,
+          "estimated_cost_usd": 0.00037644999999999996,
+          "reservation_id": "5e5d54e3-23ab-4261-bf10-884c3afb08fc"
+        },
+        {
+          "input_tokens": 8758,
+          "output_tokens": 748,
+          "estimated_cost_usd": 0.0030870999999999997,
+          "reservation_id": "0d6019c6-cf47-4648-b422-0f46cb7e028e"
+        },
+        {
+          "input_tokens": 8758,
+          "output_tokens": 678,
+          "estimated_cost_usd": 0.030031,
+          "reservation_id": "1a2a2add-28a0-4fd7-b390-132c679c0ec8"
+        },
+        {
+          "input_tokens": 889,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0030265,
+          "reservation_id": "7e3e65f5-4a76-419c-9cbd-2e9a920d21c1"
+        }
+      ],
+      "review": "pending"
+    }
+  ],
+  "completed_at": "2026-10-04T19:28:55.827Z",
+  "final_development_sar": 22.646504999999976
+}

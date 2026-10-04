@@ -1,0 +1,102 @@
+{
+  "kind": "live_question_content_controls_not_answer_accuracy",
+  "version": "source-focused-decision-v9-question-content",
+  "cases": [
+    {
+      "id": "clothes_faithful",
+      "expected": "yes",
+      "actual": "yes",
+      "passed": true,
+      "review": {
+        "faithful": "yes"
+      },
+      "model": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 352,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 16,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 368,
+        "estimated_cost_usd": 0.001072,
+        "reservation_id": "876fb363-3e4e-488e-b6d7-2a2a8bc5ce4f"
+      }
+    },
+    {
+      "id": "clothes_silently_corrected",
+      "expected": "no",
+      "actual": "no",
+      "passed": true,
+      "review": {
+        "faithful": "no"
+      },
+      "model": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 354,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 16,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 370,
+        "estimated_cost_usd": 0.001077,
+        "reservation_id": "5f3396ce-6701-491a-8755-f11025f02e82"
+      }
+    },
+    {
+      "id": "french_faithful",
+      "expected": "yes",
+      "actual": "yes",
+      "passed": true,
+      "review": {
+        "faithful": "yes"
+      },
+      "model": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 371,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 16,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 387,
+        "estimated_cost_usd": 0.0011195,
+        "reservation_id": "508f9d5d-e6ad-406c-b151-d82dfc1581e2"
+      }
+    },
+    {
+      "id": "french_silently_corrected",
+      "expected": "no",
+      "actual": "yes",
+      "passed": false,
+      "review": {
+        "faithful": "yes"
+      },
+      "model": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 374,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 16,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 390,
+        "estimated_cost_usd": 0.001127,
+        "reservation_id": "52ece835-a65a-47ab-ad35-5fbbfa04a206"
+      }
+    }
+  ]
+}

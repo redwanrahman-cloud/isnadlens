@@ -25,3 +25,29 @@ Two initial new tests failed: an overly narrow two-English-card expectation for 
 The complete existing fifty-question set is rerun with original questions only and automatic language/source selection. No expected answer, source locator or rationale enters app requests. The four diagnosed cases run first. The production application tree and build are frozen for the run; no fixes are made while it runs. This is a known-case regression, not a new holdout or independent scholarly/native-language certification. The original 22/50 first pass and the six-case scope replay remain unchanged.
 
 Run artifacts and source-byte audits are stored separately under `final50-*`. Any operational stop, abstention or wrong decisive label must be reported explicitly; matching labels alone do not establish fully grounded reasoning.
+
+## Completed fifty-case regression
+
+The frozen post-repair fifty completed: 45/50 answer labels matched, four safely withheld (T01, T09, T19, T45), one wrong decisive label (T36). All 50 original/nested seals and admitted source bytes passed. Principal source/meaning review accepted the 45 matching decisive results, with a wording caveat on T21; this is not independent scholarly/native-language certification. Settled run usage was 3.2288475 SAR; aggregate development commitment at its completion was 22.646505 SAR. The four original repair targets T04, T38, T34 and T46 all passed. The wrong T36 badge is retained as a failure in the original report.
+
+## Original-proposition repair and measured limits
+
+The stronger reassessment sometimes silently replaced the proposition asked by its correct answer. A source checker could then support that corrected proposition, producing a wrong badge despite a correct headline. A separate source-blind meaning check now sees only original input and material propositions under test, without quotations, answer summaries or religious source relationships. A narrow deterministic screen rejects near-identical explicit polarity reversals; it cannot confirm truth or semantic equivalence. The independent immutable-unit source check remains mandatory. Both meaning checks and costs are sealed in the record, and evaluation usage includes each reservation once.
+
+Question grammar is explicitly distinct from the proposition under test. A first version over-rejected affirmative propositions converted from questions; its stopped eight-case run is retained as focused9-meaning-repair. A corrected contract subsequently passed all nine focused questions, but one separate French reversed-atom control still failed. That failed control remains question-content-controls; the polarity screen then passed all four faithful/reversed controls in polarity-controls, with no API call for clearly reversed cases.
+
+An earlier recorded candidate can be reused only after an explicit meaning rejection or a contradiction qualification disagreement, with a bounded independent meaning and source review. No raw assessment, false flag or source text is rewritten. The failed stronger assessment and selection reason stay sealed. Failure of either check withholds the answer; there is no new assessment loop. Budget/concurrency checks also apply between the additional meaning and source calls.
+
+Exact contradiction spans may come from authenticated supplied Quran context under its existing parent card. This preserves exact-byte validation and records the selected context unit in independent review; it does not admit generated quotations or fabricate primary IDs. General first-person rule questions are distinguished from concrete personal circumstances at intake.
+
+After the polarity screen, the frozen nine-case run matched eight labels, safely withholding T36 on a inconsistent qualification flag. All nine source/seal audits passed and no wrong decisive label appeared. Its 8/9 result remains immutable rather than being replaced by later targeted repairs.
+
+## Offline validation after candidate recovery
+
+The final full suite passed 329/329 tests with two workers, TypeScript and the production build passed, and the isolated replay lab passed 2,924/2,924 checks over 150 captured records plus 36 targeted retrieval probes with zero API calls and unchanged ledger. The preceding complete retrieval lab ran 432 probes. One earlier edit had a syntax error caught and repaired before live testing; two stale router-version assertions were updated. An unrestricted parallel full-suite run had four 5-second corpus-loading timeouts; reducing concurrency made the unchanged tests pass. Neither offline replay nor mocked model controls measure unseen semantic accuracy.
+
+## Final frozen application retest
+
+The final candidate completed nine known questions: 8/9 matching decisive results, zero wrong decisive labels and one safe abstention (T45). The four original repair targets all passed. All nine admitted source-byte and original/nested seal audits passed. Principal source/meaning review confirmed the eight matching results with scope qualifications retained. T45 failed bounded retrieval in this run: the relevant admitted Hadith 3309 was absent from the packet, and the available Quran 2:158 / Hadith 65649 did not establish the number of circuits. Its unavailable complete answer is reported, not forced. Previous targeted runs did retrieve it, so this remains an unstable retrieval boundary.
+
+Final reports: focused9-final-candidate, focused9-final-candidate-mechanical-audit and final-candidate-principal-review. The production preview runs the final build. Aggregate conservative development commitment is 26.929903 SAR / 33 SAR (25.515455 settled plus 1.414448 held uncertain reservations); the separate 15 SAR judging allocation was not used for development. This final known-case focused retest must not be presented as a 49/50 single frozen-build score or an untouched new holdout. No public deployment or visual redesign was performed.
