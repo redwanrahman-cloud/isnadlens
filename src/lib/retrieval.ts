@@ -6,14 +6,14 @@ export function normalizeQuery(query: string): string {
   return query.toLowerCase().normalize('NFKC').replace(/[\u064b-\u065f\u0670]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
 }
 export type QuranReadingAid = { source: 'QuranEnc'; key: 'english_rwwad'; version: string; language: 'en'; role: 'query_retrieval_only'; sha256:string; source_url:string };
-const englishStop = new Set('a an the does do did is are was were has have had what which who when where how why quran koran allah god say says describe describes tell tells teach teaches command commands instruct instructs forbid forbids forbidden prohibited permitted permissible lawful warn warns require requires state states mention mentions one another people believers of to for and or in on at as by with from that this it its be before after while until not no never please kindly check verify user ask asks asking whether question according describe describes call calls appropriate visiting provided automatically during rather something humans'.split(' '));
+const englishStop = new Set('a an the does do did is are was were has have had what which who when where how why quran koran allah god say says describe describes tell tells teach teaches command commands instruct instructs forbid forbids forbidden prohibited permitted permissible lawful warn warns require requires state states mention mentions one another people believers of to for and or in on at as by with from that this it its be before after while until not no never please kindly check verify user ask asks asking whether question according describe describes call calls appropriate visiting provided automatically during rather something humans should already only someone somebody anybody everyone anyone she he they them their'.split(' '));
 export function englishWords(text: string): string[] {
   // Derived search tokens only; publisher strings and original negation remain intact.
   // Latin transliteration macrons (e.g. ā) are folded in the derived index only.
   // Otherwise the strict Latin token filter silently loses publisher spellings.
   const latinFolded = text.replace(/\p{Script=Latin}/gu, char=>char.normalize('NFD').replace(/\p{M}/gu,''));
   return normalizeQuery(latinFolded).split(' ').filter(word => /^[a-z]{3,}$/.test(word) && !englishStop.has(word)).map(word => {
-    const synonyms: Record<string,string> = {home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything',enslaved:'slave',slaves:'slave',strength:'strong',angry:'anger'};
+    const synonyms: Record<string,string> = {maintain:'support',maintenance:'support',childbirth:'birth',deliver:'birth',delivery:'birth',pregnancy:'pregnant',divorcee:'divorce',divorced:'divorce',known:'know',home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything',enslaved:'slave',slaves:'slave',strength:'strong',angry:'anger'};
     const irregular:Record<string,string>={saw:'see',seen:'see',children:'child',men:'man',women:'woman',feet:'foot',took:'take',taken:'take',gave:'give',given:'give',ate:'eat',eaten:'eat',drank:'drink',drunk:'drink'};
     if (irregular[word]) return irregular[word];
     if (synonyms[word]) return synonyms[word];
@@ -43,6 +43,9 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   const secondaryWords = originalWords.length ? hintedWords.filter(word=>!originalWords.includes(word)) : [];
   const score = (words:Set<string>, queries:string[]) => queries.reduce((total,word)=>total+(words.has(word)?Math.log(1+index!.rows.length/(index!.frequency.get(word)??index!.rows.length)):0),0);
   const englishScores = new Map(index.rows.map(row=>[row.id,score(row.words,primaryWords)+.15*score(row.words,secondaryWords)]));
+  // Reward joint coverage of the original question's concepts, rather than
+  // letting an Arabic rank for one incidental word dominate a routed question.
+  const conceptCoverage = new Map(index.rows.map(row=>[row.id,primaryWords.filter(word=>row.words.has(word)).length/Math.max(1,primaryWords.length)]));
   // A known original subject can be expressed differently by the translation
   // (e.g. an ordinary English noun versus its formal synonym). Preserve its
   // Arabic/English dictionary matches ahead of incidental question qualifiers.
@@ -58,7 +61,7 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   // Fuse independent Arabic and English rankings rather than allowing a
   // dictionary subject or foreign Latin token to veto the other channel.
   const phrases = hints.map(normalizeQuery).filter(s=>/\p{Script=Arabic}/u.test(s)&&s.split(' ').length>=3);
-  const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
+  const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + .06*(conceptCoverage.get(verse.id)??0) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
   const verses = corpus.verses.filter(verse=>explicit.has(verse.id)||(englishScores.get(verse.id)??0)>0||lexicalRanks.has(verse.id))
     .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || (englishSearchClaim===originalClaim ? Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) : rankScore(b)-rankScore(a)) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
   const pin=getQuranTranslationAdmission().sources.find(source=>source.key==='english_rwwad');

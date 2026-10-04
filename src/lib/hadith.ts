@@ -87,6 +87,14 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   const terms = [...new Set(language==='en'?expandedTerms.flatMap(englishWords):expandedTerms)].slice(0, 48);
   const patterns = terms.map(term => language === 'ar' ? new RegExp([...term].map(char => /[اأإآٱ]/.test(char) ? '[اأإآٱ]' : escapeRegex(char)).join('[\u064b-\u065f\u0670]*'), 'u') : new RegExp(`\\b${escapeRegex(term.length > 3 && term.endsWith('s') ? term.slice(0, -1) : term)}s?\\b`, 'i'));
   const selected = corpus.records.filter(record => record.language === language);
+  const lengths = new Map(selected.map(record => [record, {
+    text: (record.fields.hadith_text ?? '').split(/\s+/).length,
+    title: (record.fields.title ?? '').split(/\s+/).length,
+  }]));
+  const averages = { text: selected.reduce((n,r)=>n+lengths.get(r)!.text,0)/Math.max(1,selected.length), title: selected.reduce((n,r)=>n+lengths.get(r)!.title,0)/Math.max(1,selected.length) };
+  // BM25-style length normalization prevents long narratives winning merely
+  // because they contain many scattered query words. Publisher bytes stay intact.
+  const lengthWeight = (record: HadithRecord, field: 'text' | 'title') => 2.2 / (1 + 1.2 * (.25 + .75 * lengths.get(record)![field] / Math.max(1,averages[field])));
   // English derived tokens handle inflection and ordinary paraphrases, while
   // the retained publisher strings remain the authenticated quotation bytes.
   const englishSets = new Map(language === 'en' ? selected.map(record => [record, {text:new Set(englishWords(record.fields.hadith_text??'')),title:new Set(englishWords(record.fields.title??''))}] as const) : []);
@@ -98,7 +106,7 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   return selected.map(record => {
     // Publisher title/text remain unchanged. Explanations are not promoted into primary quotation support.
     const title = record.fields.title ?? ''; const text = record.fields.hadith_text ?? '';
-    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((matches(record,index) ? 1 : 0) + (matches(record,index,true) ? .5 : 0)), 0);
+    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((matches(record,index) ? lengthWeight(record,'text') : 0) + (matches(record,index,true) ? .5 * lengthWeight(record,'title') : 0)), 0);
     return { record, score };
   }).filter(hit => hit.score > 0).sort((a, b) => b.score - a.score || Number(a.record.id) - Number(b.record.id)).slice(0, limit).map(hit => hit.record);
 }

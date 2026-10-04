@@ -5,7 +5,7 @@ import { reserveSpend, settleSpend } from './budget';
 import { scopeGate } from './policy';
 import type { VerificationRecord } from './contracts';
 
-export const QUERY_PLANNER_VERSION = 'bounded-search-terms-v3-contrastive-concepts';
+export const QUERY_PLANNER_VERSION = 'bounded-search-terms-v4-semantic-admission';
 export const queryTermsSchema = z.object({ arabic_terms: z.array(z.string().trim().min(1).max(80)).min(1).max(10), english_terms: z.array(z.string().trim().min(1).max(80)).min(1).max(10) }).strict();
 export type QueryOverrides = z.infer<typeof queryTermsSchema>;
 type Usage = NonNullable<VerificationRecord['usage']>;
@@ -43,9 +43,9 @@ export function filterPlannedQueries(raw: unknown): QueryOverrides & {rejected_s
   if(!retained.arabic_terms.length&&!retained.english_terms.length)throw new QueryPlannerFailure('QUERY_PLAN_TERM_INVALID');
   return {...retained,rejected_search_term_count:rejected};
 }
-export async function planClaimQueries({ claim, inputLanguage }: { claim: string; inputLanguage: 'ar' | 'en' }): Promise<QueryPlan> {
+export async function planClaimQueries({ claim, inputLanguage, admittedTextual = false }: { claim: string; inputLanguage: 'ar' | 'en'; admittedTextual?: boolean }): Promise<QueryPlan> {
   if (typeof claim !== 'string' || !['ar', 'en'].includes(inputLanguage) || claim.length > 1200) throw new QueryPlannerFailure('QUERY_PLAN_INPUT_INVALID');
-  const blocked = scopeGate(claim); if (blocked) throw new QueryPlannerFailure(blocked);
+  const blocked = scopeGate(claim, admittedTextual); if (blocked) throw new QueryPlannerFailure(blocked);
   if (!providerReady()) throw new QueryPlannerFailure('PROVIDER_UNAVAILABLE');
   const cap = Math.min(1000, Math.max(0, Number(process.env.ISNADLENS_MAX_CALLS ?? 20)));
   if (!Number.isFinite(cap) || calls >= cap || inFlight >= 2) throw new QueryPlannerFailure('QUERY_PLAN_CALL_OR_CONCURRENCY_STOP');

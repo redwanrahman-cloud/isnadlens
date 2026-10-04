@@ -36,7 +36,7 @@ async function openPage(url:string):Promise<string>{
 type SearchOutput = {type?:string;action?:{type?:string;sources?:{url:string;title?:string}[]};content?:{type?:string;text?:string;annotations?:{type?:string;url?:string;title?:string}[]}[]};
 export async function authenticateQuranReference(locator:string,pageUrl:string):Promise<boolean>{
   const u=trustedUrl(pageUrl);if(!u||u.hostname.replace(/^www\./,'')!=='quranenc.com'||!/^\d{1,3}:\d{1,3}$/.test(locator))return false;
-  const path=/^\/(?:ar|en|bn|hi|ur|id|es|fr|de)\/browse\/[^/]+\/(\d{1,3})(?:\/(\d{1,3}))?(?:\/|$)/.exec(u.pathname);
+  const path=/^\/[a-z]{2,3}(?:-[a-z0-9]+)?\/browse\/[^/]+\/(\d{1,3})(?:\/(\d{1,3}))?(?:\/|$)/.exec(u.pathname);
   const [s,a]=locator.split(':');if(!path||Number(path[1])!==Number(s)||path[2]&&Number(path[2])!==Number(a))return false;
   const verse=loadCorpus().verses.find(v=>v.id===locator);if(!verse)return false;
   const raw=await openPage(`https://quranenc.com/api/v1/translation/aya/english_rwwad/${s}/${a}`),published=JSON.parse(raw).result;
@@ -84,7 +84,7 @@ export async function discoverWebReferences(claim:string, searchClaim=claim, sel
         }
         // Quran locators must belong to the cited surah page, then pass a separate publisher verse fetch.
         if(q&&u.hostname.replace(/^www\./,'')==='quranenc.com'){
-          const path=/^\/(?:ar|en|bn|hi|ur|id|es|fr|de)\/browse\/[^/]+\/(\d{1,3})(?:\/(\d{1,3}))?(?:\/|$)/.exec(u.pathname);
+          const path=/^\/[a-z]{2,3}(?:-[a-z0-9]+)?\/browse\/[^/]+\/(\d{1,3})(?:\/(\d{1,3}))?(?:\/|$)/.exec(u.pathname);
           const candidates=[...(path?.[2]?[`${Number(path[1])}:${Number(path[2])}`]:[]),...(!proposed.error?proposed.references:[])];
           for(const locator of [...new Set(candidates)].slice(0,4)){
             if(verseFetches>=4||base.quran_locators.includes(locator))continue;

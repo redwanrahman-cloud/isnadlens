@@ -153,7 +153,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     base.retrieval_plan = { ...overrides, status: 'provided', reason: 'SERVER_PROVIDED_SEARCH_TERMS', model: 'none', usage: null, planner_version: QUERY_PLANNER_VERSION };
   } else if (useQueryPlanner) {
     try {
-      const plan = await planClaimQueries({ claim: searchClaim, inputLanguage: retrievalLanguage }); overrides = { arabic_terms: plan.arabic_terms, english_terms: plan.english_terms };
+      const plan = await planClaimQueries({ claim: searchClaim, inputLanguage: retrievalLanguage, admittedTextual }); overrides = { arabic_terms: plan.arabic_terms, english_terms: plan.english_terms };
       base.retrieval_plan = { ...plan, status: 'planned', reason: 'BOUNDED_AI_SEARCH_EXPANSION' };
     } catch (error) {
       base.retrieval_plan = { ...overrides, status: 'lexical_fallback', reason: error instanceof Error ? error.message : 'QUERY_PLAN_UNAVAILABLE', model: error instanceof QueryPlannerFailure ? error.model : 'none', usage: error instanceof QueryPlannerFailure ? error.usage : null, planner_version: QUERY_PLANNER_VERSION };
@@ -282,7 +282,7 @@ async function verifyClaimWithLocalRecovery(options: Parameters<typeof verifyCla
   if (!missing && !uncertainSupport || !providerReady()) return first;
   const {audit_hash: omitted,...initialPayload} = first; void omitted;
   let plan: Awaited<ReturnType<typeof planClaimQueries>>;
-  try { plan = await planClaimQueries({claim:options.scopeClaim ?? options.claim,inputLanguage:options.scopeClaim?'en':options.inputLanguage==='ar'?'ar':'en'}); }
+  try { plan = await planClaimQueries({claim:options.scopeClaim ?? options.claim,inputLanguage:options.scopeClaim?'en':options.inputLanguage==='ar'?'ar':'en',admittedTextual:options.admittedTextual}); }
   catch (error) {
     return sealRecord({...initialPayload,retrieval_recovery:{version:'bounded-retrieval-recovery-v1',status:'unavailable',reason:error instanceof QueryPlannerFailure?error.message:'QUERY_PLAN_UNAVAILABLE',first_record:first,usage:error instanceof QueryPlannerFailure?error.usage:null}});
   }
@@ -297,7 +297,7 @@ export async function verifyClaimWithRecovery(options:Parameters<typeof verifyCl
   if(process.env.ISNADLENS_WEB_SEARCH_ENABLED!=='true'||!providerReady())return previous;
   const a=previous.semantic_assessment as SemanticAssessment|null;
   const eligible=previous.verdict==='insufficient_within_selected_corpus'&&(!a||a.in_scope&&a.original_meaning_preserved)||previous.reason_codes.includes('SOURCE_ENTAILMENT_UNCONFIRMED');
-  const operational=previous.reason_codes.some(r=>/BUDGET|SPEND|PROVIDER|INTEGRITY|REFERRAL|INPUT|MALFORMED|MISMATCH/.test(r))||previous.retrieval_recovery?.status==='unavailable';
+  const operational=previous.reason_codes.some(r=>/BUDGET|SPEND|PROVIDER|INTEGRITY|REFERRAL|INPUT|MALFORMED|MISMATCH/.test(r))||previous.retrieval_recovery?.status==='unavailable'&&!['QUERY_PLAN_TERM_INVALID','QUERY_PLAN_SCHEMA_INVALID'].includes(previous.retrieval_recovery.reason);
   if(!eligible||operational)return previous;
   const discovery=await discoverWebReferences(options.claim,options.scopeClaim??options.claim,options.corpusSelection??'quran',options.admittedTextual);
   const attempted=discovery.status==='completed'&&(discovery.quran_locators.length>0||discovery.hadith_locators.length>0);

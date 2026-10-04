@@ -25,6 +25,16 @@ describe('bounded AI search planner adapter', () => {
   });
   afterEach(() => { rmSync(directory, { recursive: true, force: true }); });
   function response(payload: unknown) { return new Response(JSON.stringify({ status: 'completed', model: 'gpt-5.4-mini', usage: { input_tokens: 100, output_tokens: 50 }, output: [{ content: [{ type: 'output_text', text: JSON.stringify(payload) }] }] }), { status: 200 }); }
+  it.each(['Should Muslims greet only people they already know?', 'Is financial support required for a divorced pregnant woman until childbirth?'])('uses server textual admission without a second domain refusal: %s',async claim=>{
+    const fetchMock=vi.fn().mockResolvedValue(response({arabic_terms:['السلام'],english_terms:['greeting']}));vi.stubGlobal('fetch',fetchMock);
+    await expect(planClaimQueries({claim,inputLanguage:'en',admittedTextual:true})).resolves.toHaveProperty('arabic_terms');
+    expect(fetchMock).toHaveBeenCalledOnce();
+  });
+  it('retains personal screening even after server textual admission',async()=>{
+    const fetchMock=vi.fn();vi.stubGlobal('fetch',fetchMock);
+    await expect(planClaimQueries({claim:'Can I stop fasting because of my illness?',inputLanguage:'en',admittedTextual:true})).rejects.toThrow('PERSONAL_RULING_REFERRAL');
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
   it('returns only bounded search terms and settles known usage in the existing ledger', async () => {
     const fetchMock = vi.fn().mockResolvedValue(response(terms)); vi.stubGlobal('fetch', fetchMock);
     const result = await planClaimQueries({ claim: sourceClaim, inputLanguage: 'en' });

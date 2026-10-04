@@ -4,6 +4,13 @@ import {loadCorpus} from '../src/lib/corpus';
 import {reserveSpend,settleSpend} from '../src/lib/budget';
 vi.mock('../src/lib/budget',()=>({reserveSpend:vi.fn(()=> 'web-reservation'),settleSpend:vi.fn(()=>.012)}));
 afterEach(()=>{vi.unstubAllGlobals();vi.clearAllMocks();clearWebDiscoveryCache();});
+it.each(['fa','as'])('authenticates exact verse pages independently of publisher UI locale: %s',async locale=>{
+ const verse=loadCorpus().verses.find(v=>v.id==='24:15')!;
+ const fetcher=vi.fn().mockResolvedValue(Response.json({result:{sura:'24',aya:'15',arabic_text:verse.display}}));vi.stubGlobal('fetch',fetcher);
+ expect(await authenticateQuranReference('24:15',`https://quranenc.com/${locale}/browse/urdu_junagarhi/24/15`)).toBe(true);
+ expect(await authenticateQuranReference('24:16',`https://quranenc.com/${locale}/browse/urdu_junagarhi/24/15`)).toBe(false);
+ expect(fetcher).toHaveBeenCalledOnce();
+});
 it('rejects redirects to arbitrary hosts, credentials, ports and lookalike domains',()=>{
  for(const u of ['http://quranenc.com/en','https://quranenc.com.evil.test/','https://quranenc.com:8443/','https://user@quranenc.com/','https://127.0.0.1/','https://evil.quranenc.com/'])expect(trustedUrl(u)).toBeNull();
  expect(trustedUrl('https://quranenc.com/en/browse/english_rwwad/2')).not.toBeNull();
