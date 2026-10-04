@@ -1,0 +1,826 @@
+{
+  "kind": "fresh50_after_trusted_search_and_decision_guard",
+  "created_at": "2026-10-04T18:23:12.459Z",
+  "counts": {
+    "total": 50,
+    "quran": 35,
+    "hadith": 15,
+    "supported": 34,
+    "contradicted": 16,
+    "languages": {
+      "en": 15,
+      "ar": 7,
+      "id": 4,
+      "es": 4,
+      "fr": 4,
+      "de": 4,
+      "bn": 4,
+      "hi": 4,
+      "ur": 4
+    }
+  },
+  "novelty": "No exact duplicates of prior165. New propositions/facets; familiar sources and categories recur. Not a measured popularity ranking. Includes specific new facets of already-covered topics, explicitly disclosed.",
+  "execution": "Send only original question, automatic language/source selection. Expected answers, rationales and reference locators never enter requests. First pass immutable; no repairs during run. Score labels, complete reasoning, abstentions, unavailable calls, language handling and actual web use separately.",
+  "cases": [
+    {
+      "id": "T01",
+      "language": "en",
+      "claim": "Can I earn money through trade during Hajj, or is that forbidden?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Seeking livelihood during pilgrimage is allowed; not every trade is thereby lawful.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:198",
+        "quotation": "لَيْسَ عَلَيْكُمْ جُنَاحٌ أَن تَبْتَغُوا۟ فَضْلًا مِّن رَّبِّكُمْ ۚ فَإِذَآ أَفَضْتُم مِّنْ عَرَفَـٰتٍ فَٱذْكُرُوا۟ ٱللَّهَ عِندَ ٱلْمَشْعَرِ ٱلْحَرَامِ ۖ وَٱذْكُرُوهُ كَمَا هَدَىٰكُمْ وَإِن كُنتُم مِّن قَبْلِهِۦ لَمِنَ ٱلضَّآلِّينَ",
+        "sha256": "5e710da504b7daa69710eaf64b9a51cb401186df8d158c2f45d82663c17c7f0c",
+        "source_url": "https://tanzil.net/#2:198",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T02",
+      "language": "ar",
+      "claim": "هل التقوى هي خير زاد للحج؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The verse explicitly identifies piety as the best provision.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:197",
+        "quotation": "ٱلْحَجُّ أَشْهُرٌ مَّعْلُومَـٰتٌ ۚ فَمَن فَرَضَ فِيهِنَّ ٱلْحَجَّ فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِى ٱلْحَجِّ ۗ وَمَا تَفْعَلُوا۟ مِنْ خَيْرٍ يَعْلَمْهُ ٱللَّهُ ۗ وَتَزَوَّدُوا۟ فَإِنَّ خَيْرَ ٱلزَّادِ ٱلتَّقْوَىٰ ۚ وَٱتَّقُونِ يَـٰٓأُو۟لِى ٱلْأَلْبَـٰبِ",
+        "sha256": "ff9debd484ccfac1fe6ef5c95a30b9c9a875c16c219229031812a8a4d1691463",
+        "source_url": "https://tanzil.net/#2:197",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T03",
+      "language": "en",
+      "claim": "After finishing the pilgrimage rites, should people remember Allah?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Remembrance follows completion of the rites.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:200",
+        "quotation": "فَإِذَا قَضَيْتُم مَّنَـٰسِكَكُمْ فَٱذْكُرُوا۟ ٱللَّهَ كَذِكْرِكُمْ ءَابَآءَكُمْ أَوْ أَشَدَّ ذِكْرًا ۗ فَمِنَ ٱلنَّاسِ مَن يَقُولُ رَبَّنَآ ءَاتِنَا فِى ٱلدُّنْيَا وَمَا لَهُۥ فِى ٱلْـَٔاخِرَةِ مِنْ خَلَـٰقٍ",
+        "sha256": "79e6b02b3d55e3ef4d35285f10f2f046e7cc1a99ac7042df4186663e443c51a6",
+        "source_url": "https://tanzil.net/#2:200",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T04",
+      "language": "id",
+      "claim": "Apakah berburu binatang darat diperbolehkan ketika sedang ihram?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "Killing game while in ihram is prohibited; do not confuse this with fishing.",
+      "reference": {
+        "kind": "quran",
+        "locator": "5:95",
+        "quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَقْتُلُوا۟ ٱلصَّيْدَ وَأَنتُمْ حُرُمٌ ۚ وَمَن قَتَلَهُۥ مِنكُم مُّتَعَمِّدًا فَجَزَآءٌ مِّثْلُ مَا قَتَلَ مِنَ ٱلنَّعَمِ يَحْكُمُ بِهِۦ ذَوَا عَدْلٍ مِّنكُمْ هَدْيًۢا بَـٰلِغَ ٱلْكَعْبَةِ أَوْ كَفَّـٰرَةٌ طَعَامُ مَسَـٰكِينَ أَوْ عَدْلُ ذَٰلِكَ صِيَامًا لِّيَذُوقَ وَبَالَ أَمْرِهِۦ ۗ عَفَا ٱللَّهُ عَمَّا سَلَفَ ۚ وَمَنْ عَادَ فَيَنتَقِمُ ٱللَّهُ مِنْهُ ۗ وَٱللَّهُ عَزِيزٌ ذُو ٱنتِقَامٍ",
+        "sha256": "c03bc11d6a024ae68c0848213409348c70e0e1806ca2ee45163c90070d82d1c5",
+        "source_url": "https://tanzil.net/#5:95",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T05",
+      "language": "es",
+      "claim": "¿Está permitido cazar después de salir del estado de ihram?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Permission follows release from ihram; other restrictions still apply.",
+      "reference": {
+        "kind": "quran",
+        "locator": "5:2",
+        "quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تُحِلُّوا۟ شَعَـٰٓئِرَ ٱللَّهِ وَلَا ٱلشَّهْرَ ٱلْحَرَامَ وَلَا ٱلْهَدْىَ وَلَا ٱلْقَلَـٰٓئِدَ وَلَآ ءَآمِّينَ ٱلْبَيْتَ ٱلْحَرَامَ يَبْتَغُونَ فَضْلًا مِّن رَّبِّهِمْ وَرِضْوَٰنًا ۚ وَإِذَا حَلَلْتُمْ فَٱصْطَادُوا۟ ۚ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ أَن صَدُّوكُمْ عَنِ ٱلْمَسْجِدِ ٱلْحَرَامِ أَن تَعْتَدُوا۟ ۘ وَتَعَاوَنُوا۟ عَلَى ٱلْبِرِّ وَٱلتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا۟ عَلَى ٱلْإِثْمِ وَٱلْعُدْوَٰنِ ۚ وَٱتَّقُوا۟ ٱللَّهَ ۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
+        "sha256": "5d8114e51d011892f69405d2db76a42d16d41266a1b1b122497f689e5547e146",
+        "source_url": "https://tanzil.net/#5:2",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T06",
+      "language": "en",
+      "claim": "Is praying at the Station of Abraham mentioned as part of the sacred-house guidance?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The station is designated as a place of prayer.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:125",
+        "quotation": "وَإِذْ جَعَلْنَا ٱلْبَيْتَ مَثَابَةً لِّلنَّاسِ وَأَمْنًا وَٱتَّخِذُوا۟ مِن مَّقَامِ إِبْرَٰهِـۧمَ مُصَلًّى ۖ وَعَهِدْنَآ إِلَىٰٓ إِبْرَٰهِـۧمَ وَإِسْمَـٰعِيلَ أَن طَهِّرَا بَيْتِىَ لِلطَّآئِفِينَ وَٱلْعَـٰكِفِينَ وَٱلرُّكَّعِ ٱلسُّجُودِ",
+        "sha256": "efdf484781c7f22935432130860195184e32b10b7779531cbb0ae56f27e4f607",
+        "source_url": "https://tanzil.net/#2:125",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T07",
+      "language": "fr",
+      "claim": "Le pèlerinage peut-il être accompli en venant à pied, et pas seulement sur une monture?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The call includes pilgrims arriving on foot and on lean camels.",
+      "reference": {
+        "kind": "quran",
+        "locator": "22:27",
+        "quotation": "وَأَذِّن فِى ٱلنَّاسِ بِٱلْحَجِّ يَأْتُوكَ رِجَالًا وَعَلَىٰ كُلِّ ضَامِرٍ يَأْتِينَ مِن كُلِّ فَجٍّ عَمِيقٍ",
+        "sha256": "26fa004dd7b9d0bde8940693eaba88abad35ad1a848ae12c44ff2b06921cf287",
+        "source_url": "https://tanzil.net/#22:27",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T08",
+      "language": "en",
+      "claim": "Does the Quran tell pilgrims to circumambulate the Ancient House?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Circumambulation is explicitly commanded.",
+      "reference": {
+        "kind": "quran",
+        "locator": "22:29",
+        "quotation": "ثُمَّ لْيَقْضُوا۟ تَفَثَهُمْ وَلْيُوفُوا۟ نُذُورَهُمْ وَلْيَطَّوَّفُوا۟ بِٱلْبَيْتِ ٱلْعَتِيقِ",
+        "sha256": "3d1c532ded1aa83e00849675c5c6800658bcdaae30d7d7369805a36acfa45e5a",
+        "source_url": "https://tanzil.net/#22:29",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T09",
+      "language": "ar",
+      "claim": "هل يبيح القرآن الجدال والفسوق أثناء الحج؟",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The pilgrimage passage excludes wrongdoing and disputation.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:197",
+        "quotation": "ٱلْحَجُّ أَشْهُرٌ مَّعْلُومَـٰتٌ ۚ فَمَن فَرَضَ فِيهِنَّ ٱلْحَجَّ فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِى ٱلْحَجِّ ۗ وَمَا تَفْعَلُوا۟ مِنْ خَيْرٍ يَعْلَمْهُ ٱللَّهُ ۗ وَتَزَوَّدُوا۟ فَإِنَّ خَيْرَ ٱلزَّادِ ٱلتَّقْوَىٰ ۚ وَٱتَّقُونِ يَـٰٓأُو۟لِى ٱلْأَلْبَـٰبِ",
+        "sha256": "ff9debd484ccfac1fe6ef5c95a30b9c9a875c16c219229031812a8a4d1691463",
+        "source_url": "https://tanzil.net/#2:197",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T10",
+      "language": "de",
+      "claim": "Ist die Abreise nach zwei Tagen während der genannten Pilgertage grundsätzlich sündhaft?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The verse states no sin for leaving in two days or delaying, with the piety qualification.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:203",
+        "quotation": "وَٱذْكُرُوا۟ ٱللَّهَ فِىٓ أَيَّامٍ مَّعْدُودَٰتٍ ۚ فَمَن تَعَجَّلَ فِى يَوْمَيْنِ فَلَآ إِثْمَ عَلَيْهِ وَمَن تَأَخَّرَ فَلَآ إِثْمَ عَلَيْهِ ۚ لِمَنِ ٱتَّقَىٰ ۗ وَٱتَّقُوا۟ ٱللَّهَ وَٱعْلَمُوٓا۟ أَنَّكُمْ إِلَيْهِ تُحْشَرُونَ",
+        "sha256": "58d0a3a7fc5200770e71a7c6a3d6ff69951e94d369cdfd0f6ad4237505a5c866",
+        "source_url": "https://tanzil.net/#2:203",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T11",
+      "language": "en",
+      "claim": "Can someone shave their head before the sacrificial offering reaches its appointed place, without the stated illness exception?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The prohibition and illness/head-ailment concession must both be preserved.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:196",
+        "quotation": "وَأَتِمُّوا۟ ٱلْحَجَّ وَٱلْعُمْرَةَ لِلَّهِ ۚ فَإِنْ أُحْصِرْتُمْ فَمَا ٱسْتَيْسَرَ مِنَ ٱلْهَدْىِ ۖ وَلَا تَحْلِقُوا۟ رُءُوسَكُمْ حَتَّىٰ يَبْلُغَ ٱلْهَدْىُ مَحِلَّهُۥ ۚ فَمَن كَانَ مِنكُم مَّرِيضًا أَوْ بِهِۦٓ أَذًى مِّن رَّأْسِهِۦ فَفِدْيَةٌ مِّن صِيَامٍ أَوْ صَدَقَةٍ أَوْ نُسُكٍ ۚ فَإِذَآ أَمِنتُمْ فَمَن تَمَتَّعَ بِٱلْعُمْرَةِ إِلَى ٱلْحَجِّ فَمَا ٱسْتَيْسَرَ مِنَ ٱلْهَدْىِ ۚ فَمَن لَّمْ يَجِدْ فَصِيَامُ ثَلَـٰثَةِ أَيَّامٍ فِى ٱلْحَجِّ وَسَبْعَةٍ إِذَا رَجَعْتُمْ ۗ تِلْكَ عَشَرَةٌ كَامِلَةٌ ۗ ذَٰلِكَ لِمَن لَّمْ يَكُنْ أَهْلُهُۥ حَاضِرِى ٱلْمَسْجِدِ ٱلْحَرَامِ ۚ وَٱتَّقُوا۟ ٱللَّهَ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
+        "sha256": "b2ed5f74970bd1688e71f4d25856c7e8daaa4e650e8a1a03a1239e620906cb6c",
+        "source_url": "https://tanzil.net/#2:196",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T12",
+      "language": "bn",
+      "claim": "শপথ ভাঙার কাফফারার একটি উপায় কি দশজন দরিদ্রকে খাবার দেওয়া?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Feeding ten poor people is one option, not the only option.",
+      "reference": {
+        "kind": "quran",
+        "locator": "5:89",
+        "quotation": "لَا يُؤَاخِذُكُمُ ٱللَّهُ بِٱللَّغْوِ فِىٓ أَيْمَـٰنِكُمْ وَلَـٰكِن يُؤَاخِذُكُم بِمَا عَقَّدتُّمُ ٱلْأَيْمَـٰنَ ۖ فَكَفَّـٰرَتُهُۥٓ إِطْعَامُ عَشَرَةِ مَسَـٰكِينَ مِنْ أَوْسَطِ مَا تُطْعِمُونَ أَهْلِيكُمْ أَوْ كِسْوَتُهُمْ أَوْ تَحْرِيرُ رَقَبَةٍ ۖ فَمَن لَّمْ يَجِدْ فَصِيَامُ ثَلَـٰثَةِ أَيَّامٍ ۚ ذَٰلِكَ كَفَّـٰرَةُ أَيْمَـٰنِكُمْ إِذَا حَلَفْتُمْ ۚ وَٱحْفَظُوٓا۟ أَيْمَـٰنَكُمْ ۚ كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمْ ءَايَـٰتِهِۦ لَعَلَّكُمْ تَشْكُرُونَ",
+        "sha256": "efd5966cb920fec23f3cbd3dfe3484952a57fb37e76a1fc566b0b452b20990f9",
+        "source_url": "https://tanzil.net/#5:89",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T13",
+      "language": "hi",
+      "claim": "क्या सच्चे मन से तौबा करने का निर्देश इस्लाम में मिलता है?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Sincere repentance is explicitly commanded.",
+      "reference": {
+        "kind": "quran",
+        "locator": "66:8",
+        "quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ تُوبُوٓا۟ إِلَى ٱللَّهِ تَوْبَةً نَّصُوحًا عَسَىٰ رَبُّكُمْ أَن يُكَفِّرَ عَنكُمْ سَيِّـَٔاتِكُمْ وَيُدْخِلَكُمْ جَنَّـٰتٍ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَـٰرُ يَوْمَ لَا يُخْزِى ٱللَّهُ ٱلنَّبِىَّ وَٱلَّذِينَ ءَامَنُوا۟ مَعَهُۥ ۖ نُورُهُمْ يَسْعَىٰ بَيْنَ أَيْدِيهِمْ وَبِأَيْمَـٰنِهِمْ يَقُولُونَ رَبَّنَآ أَتْمِمْ لَنَا نُورَنَا وَٱغْفِرْ لَنَآ ۖ إِنَّكَ عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ",
+        "sha256": "d93f0a166a447542a5e6e51e150378caad518cbb9c5692e206c331b0e962a46c",
+        "source_url": "https://tanzil.net/#66:8",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T14",
+      "language": "ur",
+      "claim": "کیا توبہ، ایمان اور نیک عمل کے بعد اللہ برائیوں کو نیکیوں میں بدل سکتا ہے؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Repentance, belief and righteous action are stated conditions.",
+      "reference": {
+        "kind": "quran",
+        "locator": "25:70",
+        "quotation": "إِلَّا مَن تَابَ وَءَامَنَ وَعَمِلَ عَمَلًا صَـٰلِحًا فَأُو۟لَـٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمْ حَسَنَـٰتٍ ۗ وَكَانَ ٱللَّهُ غَفُورًا رَّحِيمًا",
+        "sha256": "6c2e854236f5d8d928afe97f445db26d2b707efaeb09a6287a1a376661804519",
+        "source_url": "https://tanzil.net/#25:70",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T15",
+      "language": "en",
+      "claim": "If someone offended me, does the Quran encourage forgiveness rather than cutting off charitable help to needy relatives?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Forgiveness accompanies the instruction not to swear off such assistance.",
+      "reference": {
+        "kind": "quran",
+        "locator": "24:22",
+        "quotation": "وَلَا يَأْتَلِ أُو۟لُوا۟ ٱلْفَضْلِ مِنكُمْ وَٱلسَّعَةِ أَن يُؤْتُوٓا۟ أُو۟لِى ٱلْقُرْبَىٰ وَٱلْمَسَـٰكِينَ وَٱلْمُهَـٰجِرِينَ فِى سَبِيلِ ٱللَّهِ ۖ وَلْيَعْفُوا۟ وَلْيَصْفَحُوٓا۟ ۗ أَلَا تُحِبُّونَ أَن يَغْفِرَ ٱللَّهُ لَكُمْ ۗ وَٱللَّهُ غَفُورٌ رَّحِيمٌ",
+        "sha256": "bd24658ca3383154fa060c976f3e57379d78036ef21615ee457d02c9db6e5477",
+        "source_url": "https://tanzil.net/#24:22",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T16",
+      "language": "ar",
+      "claim": "هل المودة والرحمة بين الزوجين من آيات الله؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Affection and mercy between spouses are described among divine signs.",
+      "reference": {
+        "kind": "quran",
+        "locator": "30:21",
+        "quotation": "وَمِنْ ءَايَـٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
+        "sha256": "da25ba087b47cfafa3bf840944645d72ed54a5acf1c0bad0b633aab109328991",
+        "source_url": "https://tanzil.net/#30:21",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T17",
+      "language": "id",
+      "claim": "Bolehkah orang tua menyapih anak berdasarkan persetujuan dan musyawarah bersama?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Mutual consent and consultation qualify the permission.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:233",
+        "quotation": "وَٱلْوَٰلِدَٰتُ يُرْضِعْنَ أَوْلَـٰدَهُنَّ حَوْلَيْنِ كَامِلَيْنِ ۖ لِمَنْ أَرَادَ أَن يُتِمَّ ٱلرَّضَاعَةَ ۚ وَعَلَى ٱلْمَوْلُودِ لَهُۥ رِزْقُهُنَّ وَكِسْوَتُهُنَّ بِٱلْمَعْرُوفِ ۚ لَا تُكَلَّفُ نَفْسٌ إِلَّا وُسْعَهَا ۚ لَا تُضَآرَّ وَٰلِدَةٌۢ بِوَلَدِهَا وَلَا مَوْلُودٌ لَّهُۥ بِوَلَدِهِۦ ۚ وَعَلَى ٱلْوَارِثِ مِثْلُ ذَٰلِكَ ۗ فَإِنْ أَرَادَا فِصَالًا عَن تَرَاضٍ مِّنْهُمَا وَتَشَاوُرٍ فَلَا جُنَاحَ عَلَيْهِمَا ۗ وَإِنْ أَرَدتُّمْ أَن تَسْتَرْضِعُوٓا۟ أَوْلَـٰدَكُمْ فَلَا جُنَاحَ عَلَيْكُمْ إِذَا سَلَّمْتُم مَّآ ءَاتَيْتُم بِٱلْمَعْرُوفِ ۗ وَٱتَّقُوا۟ ٱللَّهَ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ بِمَا تَعْمَلُونَ بَصِيرٌ",
+        "sha256": "1ec93c345fbd25dbef820c35af4d4bf374ea24678855cb70e7b2a1e0141293c7",
+        "source_url": "https://tanzil.net/#2:233",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T18",
+      "language": "es",
+      "claim": "¿Debe una persona gastar en manutención según los medios que Allah le ha dado?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Maintenance is according to means, without a personal amount calculation.",
+      "reference": {
+        "kind": "quran",
+        "locator": "65:7",
+        "quotation": "لِيُنفِقْ ذُو سَعَةٍ مِّن سَعَتِهِۦ ۖ وَمَن قُدِرَ عَلَيْهِ رِزْقُهُۥ فَلْيُنفِقْ مِمَّآ ءَاتَىٰهُ ٱللَّهُ ۚ لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا مَآ ءَاتَىٰهَا ۚ سَيَجْعَلُ ٱللَّهُ بَعْدَ عُسْرٍ يُسْرًا",
+        "sha256": "f7b091c8399f92253d58aec5bd77590e8a82fe736c805c191d9fe844bd7599ef",
+        "source_url": "https://tanzil.net/#65:7",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T19",
+      "language": "fr",
+      "claim": "Est-il permis de retenir une épouse après le divorce dans le but de lui faire du mal?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "Harmful retention is expressly forbidden.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:231",
+        "quotation": "وَإِذَا طَلَّقْتُمُ ٱلنِّسَآءَ فَبَلَغْنَ أَجَلَهُنَّ فَأَمْسِكُوهُنَّ بِمَعْرُوفٍ أَوْ سَرِّحُوهُنَّ بِمَعْرُوفٍ ۚ وَلَا تُمْسِكُوهُنَّ ضِرَارًا لِّتَعْتَدُوا۟ ۚ وَمَن يَفْعَلْ ذَٰلِكَ فَقَدْ ظَلَمَ نَفْسَهُۥ ۚ وَلَا تَتَّخِذُوٓا۟ ءَايَـٰتِ ٱللَّهِ هُزُوًا ۚ وَٱذْكُرُوا۟ نِعْمَتَ ٱللَّهِ عَلَيْكُمْ وَمَآ أَنزَلَ عَلَيْكُم مِّنَ ٱلْكِتَـٰبِ وَٱلْحِكْمَةِ يَعِظُكُم بِهِۦ ۚ وَٱتَّقُوا۟ ٱللَّهَ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ بِكُلِّ شَىْءٍ عَلِيمٌ",
+        "sha256": "8855da399fe93d2b6eca40c2ef7b0a2b0fa52759266a863a22fde438cb7cf544",
+        "source_url": "https://tanzil.net/#2:231",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T20",
+      "language": "de",
+      "claim": "Darf ein Mann mehrere Frauen heiraten, obwohl er fürchtet, sie nicht gerecht behandeln zu können?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The stated fear of injustice directs him to one; this is not an individual marriage ruling.",
+      "reference": {
+        "kind": "quran",
+        "locator": "4:3",
+        "quotation": "وَإِنْ خِفْتُمْ أَلَّا تُقْسِطُوا۟ فِى ٱلْيَتَـٰمَىٰ فَٱنكِحُوا۟ مَا طَابَ لَكُم مِّنَ ٱلنِّسَآءِ مَثْنَىٰ وَثُلَـٰثَ وَرُبَـٰعَ ۖ فَإِنْ خِفْتُمْ أَلَّا تَعْدِلُوا۟ فَوَٰحِدَةً أَوْ مَا مَلَكَتْ أَيْمَـٰنُكُمْ ۚ ذَٰلِكَ أَدْنَىٰٓ أَلَّا تَعُولُوا۟",
+        "sha256": "a0eff2c77a12f921896256ec993e69cc0b90db008a4de9848dc9ecac09511ee6",
+        "source_url": "https://tanzil.net/#4:3",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T21",
+      "language": "bn",
+      "claim": "স্ত্রীর সঙ্গে ভালোভাবে জীবনযাপন করার নির্দেশ কি কোরআনে আছে?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Living with wives honorably is explicit, a distinct facet from forced inheritance.",
+      "reference": {
+        "kind": "quran",
+        "locator": "4:19",
+        "quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا يَحِلُّ لَكُمْ أَن تَرِثُوا۟ ٱلنِّسَآءَ كَرْهًا ۖ وَلَا تَعْضُلُوهُنَّ لِتَذْهَبُوا۟ بِبَعْضِ مَآ ءَاتَيْتُمُوهُنَّ إِلَّآ أَن يَأْتِينَ بِفَـٰحِشَةٍ مُّبَيِّنَةٍ ۚ وَعَاشِرُوهُنَّ بِٱلْمَعْرُوفِ ۚ فَإِن كَرِهْتُمُوهُنَّ فَعَسَىٰٓ أَن تَكْرَهُوا۟ شَيْـًٔا وَيَجْعَلَ ٱللَّهُ فِيهِ خَيْرًا كَثِيرًا",
+        "sha256": "a8f501b7e65d50e1be37b1edd5638d6071a73f477f208767bfd9b3a38ee16d76",
+        "source_url": "https://tanzil.net/#4:19",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T22",
+      "language": "hi",
+      "claim": "क्या किसी समुदाय से नफरत हमें उसके साथ अन्याय करने की अनुमति देती है?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "Hatred must not cause departure from justice.",
+      "reference": {
+        "kind": "quran",
+        "locator": "5:8",
+        "quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ كُونُوا۟ قَوَّٰمِينَ لِلَّهِ شُهَدَآءَ بِٱلْقِسْطِ ۖ وَلَا يَجْرِمَنَّكُمْ شَنَـَٔانُ قَوْمٍ عَلَىٰٓ أَلَّا تَعْدِلُوا۟ ۚ ٱعْدِلُوا۟ هُوَ أَقْرَبُ لِلتَّقْوَىٰ ۖ وَٱتَّقُوا۟ ٱللَّهَ ۚ إِنَّ ٱللَّهَ خَبِيرٌۢ بِمَا تَعْمَلُونَ",
+        "sha256": "22610fbf6cc792f9eb16a4bac4a7f4dcc68ab9ea0a45460ea58c3074346d4af8",
+        "source_url": "https://tanzil.net/#5:8",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T23",
+      "language": "ur",
+      "claim": "کیا بغیر علم کے افواہ کو زبان سے آگے پھیلانا قرآن کے مطابق معمولی بات ہے؟",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The false-accusation context treats this as grave, not trivial.",
+      "reference": {
+        "kind": "quran",
+        "locator": "24:15",
+        "quotation": "إِذْ تَلَقَّوْنَهُۥ بِأَلْسِنَتِكُمْ وَتَقُولُونَ بِأَفْوَاهِكُم مَّا لَيْسَ لَكُم بِهِۦ عِلْمٌ وَتَحْسَبُونَهُۥ هَيِّنًا وَهُوَ عِندَ ٱللَّهِ عَظِيمٌ",
+        "sha256": "ed9960e7c83d8f1fde3c047903056ea5af8ed76484cacb4d679a3a1dd5eb6f32",
+        "source_url": "https://tanzil.net/#24:15",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T24",
+      "language": "en",
+      "claim": "Are some suspicions sinful, so I should avoid making lots of suspicious assumptions?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The passage says some suspicion is sin; it does not forbid every evidence-based concern.",
+      "reference": {
+        "kind": "quran",
+        "locator": "49:12",
+        "quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱجْتَنِبُوا۟ كَثِيرًا مِّنَ ٱلظَّنِّ إِنَّ بَعْضَ ٱلظَّنِّ إِثْمٌ ۖ وَلَا تَجَسَّسُوا۟ وَلَا يَغْتَب بَّعْضُكُم بَعْضًا ۚ أَيُحِبُّ أَحَدُكُمْ أَن يَأْكُلَ لَحْمَ أَخِيهِ مَيْتًا فَكَرِهْتُمُوهُ ۚ وَٱتَّقُوا۟ ٱللَّهَ ۚ إِنَّ ٱللَّهَ تَوَّابٌ رَّحِيمٌ",
+        "sha256": "6a3472196fd9cbc525e9e7b84aca3c99ec0ad1f1ce849087980a8f0b767fe004",
+        "source_url": "https://tanzil.net/#49:12",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T25",
+      "language": "ar",
+      "claim": "هل يعد الله بزيادة النعمة مع الشكر؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The promise of increase follows gratitude.",
+      "reference": {
+        "kind": "quran",
+        "locator": "14:7",
+        "quotation": "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِى لَشَدِيدٌ",
+        "sha256": "41ba2c241a180982166f38520d30717d7fcc92efaa0b2052ad2798d992703abe",
+        "source_url": "https://tanzil.net/#14:7",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T26",
+      "language": "id",
+      "claim": "Apakah berdakwah seharusnya dengan hikmah dan nasihat yang baik?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Wisdom and good instruction qualify invitation.",
+      "reference": {
+        "kind": "quran",
+        "locator": "16:125",
+        "quotation": "ٱدْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلْحِكْمَةِ وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ ۖ وَجَـٰدِلْهُم بِٱلَّتِى هِىَ أَحْسَنُ ۚ إِنَّ رَبَّكَ هُوَ أَعْلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ ۖ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ",
+        "sha256": "ca9159ffd89024c0274fe88aed64b2ee41d28975b124e55c51aaeb32ce16892e",
+        "source_url": "https://tanzil.net/#16:125",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T27",
+      "language": "es",
+      "claim": "¿Se permite discutir con la Gente del Libro de cualquier manera, incluso de forma ofensiva?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "Discussion is in the best manner, with the specified wrongdoing exception.",
+      "reference": {
+        "kind": "quran",
+        "locator": "29:46",
+        "quotation": "وَلَا تُجَـٰدِلُوٓا۟ أَهْلَ ٱلْكِتَـٰبِ إِلَّا بِٱلَّتِى هِىَ أَحْسَنُ إِلَّا ٱلَّذِينَ ظَلَمُوا۟ مِنْهُمْ ۖ وَقُولُوٓا۟ ءَامَنَّا بِٱلَّذِىٓ أُنزِلَ إِلَيْنَا وَأُنزِلَ إِلَيْكُمْ وَإِلَـٰهُنَا وَإِلَـٰهُكُمْ وَٰحِدٌ وَنَحْنُ لَهُۥ مُسْلِمُونَ",
+        "sha256": "95d29614b8e0d465001fa25d8093d6f8081292bb7d05e2854fa8a3d137298af1",
+        "source_url": "https://tanzil.net/#29:46",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T28",
+      "language": "fr",
+      "claim": "La douceur du Prophète a-t-elle aidé les gens à rester autour de lui?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Harshness would have caused dispersion; gentleness is described.",
+      "reference": {
+        "kind": "quran",
+        "locator": "3:159",
+        "quotation": "فَبِمَا رَحْمَةٍ مِّنَ ٱللَّهِ لِنتَ لَهُمْ ۖ وَلَوْ كُنتَ فَظًّا غَلِيظَ ٱلْقَلْبِ لَٱنفَضُّوا۟ مِنْ حَوْلِكَ ۖ فَٱعْفُ عَنْهُمْ وَٱسْتَغْفِرْ لَهُمْ وَشَاوِرْهُمْ فِى ٱلْأَمْرِ ۖ فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى ٱللَّهِ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُتَوَكِّلِينَ",
+        "sha256": "ee8242de033279250083431f82e4b63da8a00066a723e409574404f6e64dfa27",
+        "source_url": "https://tanzil.net/#3:159",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T29",
+      "language": "de",
+      "claim": "Lehrt der Koran, dass die Suche nach dem Jenseits bedeutet, jeden Anteil am weltlichen Leben zu vergessen?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The instruction explicitly says not to forget the worldly share.",
+      "reference": {
+        "kind": "quran",
+        "locator": "28:77",
+        "quotation": "وَٱبْتَغِ فِيمَآ ءَاتَىٰكَ ٱللَّهُ ٱلدَّارَ ٱلْـَٔاخِرَةَ ۖ وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنْيَا ۖ وَأَحْسِن كَمَآ أَحْسَنَ ٱللَّهُ إِلَيْكَ ۖ وَلَا تَبْغِ ٱلْفَسَادَ فِى ٱلْأَرْضِ ۖ إِنَّ ٱللَّهَ لَا يُحِبُّ ٱلْمُفْسِدِينَ",
+        "sha256": "1c34dd7ec37327e46de2a71b9264f2584af4bda338749f784351e35713a7148d",
+        "source_url": "https://tanzil.net/#28:77",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T30",
+      "language": "bn",
+      "claim": "অভিভাবকের কাছে এতিমের সম্পদ থাকলে, বুঝশক্তি যাচাই করে তা ফিরিয়ে দেওয়ার নির্দেশ আছে কি?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Testing maturity and sound judgment precedes returning the property.",
+      "reference": {
+        "kind": "quran",
+        "locator": "4:6",
+        "quotation": "وَٱبْتَلُوا۟ ٱلْيَتَـٰمَىٰ حَتَّىٰٓ إِذَا بَلَغُوا۟ ٱلنِّكَاحَ فَإِنْ ءَانَسْتُم مِّنْهُمْ رُشْدًا فَٱدْفَعُوٓا۟ إِلَيْهِمْ أَمْوَٰلَهُمْ ۖ وَلَا تَأْكُلُوهَآ إِسْرَافًا وَبِدَارًا أَن يَكْبَرُوا۟ ۚ وَمَن كَانَ غَنِيًّا فَلْيَسْتَعْفِفْ ۖ وَمَن كَانَ فَقِيرًا فَلْيَأْكُلْ بِٱلْمَعْرُوفِ ۚ فَإِذَا دَفَعْتُمْ إِلَيْهِمْ أَمْوَٰلَهُمْ فَأَشْهِدُوا۟ عَلَيْهِمْ ۚ وَكَفَىٰ بِٱللَّهِ حَسِيبًا",
+        "sha256": "d74f08227917b731723b12a025f675040a2df04ea6ebead9ba078c77cab32619",
+        "source_url": "https://tanzil.net/#4:6",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T31",
+      "language": "hi",
+      "claim": "क्या विरासत बाँटते समय उपस्थित गरीबों और अनाथों को कुछ देने की बात कही गई है?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The verse names those present and instructs provision and kind words.",
+      "reference": {
+        "kind": "quran",
+        "locator": "4:8",
+        "quotation": "وَإِذَا حَضَرَ ٱلْقِسْمَةَ أُو۟لُوا۟ ٱلْقُرْبَىٰ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينُ فَٱرْزُقُوهُم مِّنْهُ وَقُولُوا۟ لَهُمْ قَوْلًا مَّعْرُوفًا",
+        "sha256": "507e0b3df5e55e79506b694fa7e8187e1e5247fbac10bf4c5c7e8c8d2a7aff4c",
+        "source_url": "https://tanzil.net/#4:8",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T32",
+      "language": "ur",
+      "claim": "کیا بیوی اپنی خوشی سے مہر کا کچھ حصہ واپس دے تو اسے قبول کرنا جائز ہے؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Only voluntary relinquishment qualifies the permission.",
+      "reference": {
+        "kind": "quran",
+        "locator": "4:4",
+        "quotation": "وَءَاتُوا۟ ٱلنِّسَآءَ صَدُقَـٰتِهِنَّ نِحْلَةً ۚ فَإِن طِبْنَ لَكُمْ عَن شَىْءٍ مِّنْهُ نَفْسًا فَكُلُوهُ هَنِيٓـًٔا مَّرِيٓـًٔا",
+        "sha256": "f183907c0e189a32bd885ba5dcdb8e07b8878d94ced914cca23a36246468b405",
+        "source_url": "https://tanzil.net/#4:4",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T33",
+      "language": "en",
+      "claim": "Before consummation, if a dowry was already fixed, is the usual divorce entitlement half of it unless the stated waiver applies?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Half the fixed dowry is the rule in this specified situation, with waiver exceptions.",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:237",
+        "quotation": "وَإِن طَلَّقْتُمُوهُنَّ مِن قَبْلِ أَن تَمَسُّوهُنَّ وَقَدْ فَرَضْتُمْ لَهُنَّ فَرِيضَةً فَنِصْفُ مَا فَرَضْتُمْ إِلَّآ أَن يَعْفُونَ أَوْ يَعْفُوَا۟ ٱلَّذِى بِيَدِهِۦ عُقْدَةُ ٱلنِّكَاحِ ۚ وَأَن تَعْفُوٓا۟ أَقْرَبُ لِلتَّقْوَىٰ ۚ وَلَا تَنسَوُا۟ ٱلْفَضْلَ بَيْنَكُمْ ۚ إِنَّ ٱللَّهَ بِمَا تَعْمَلُونَ بَصِيرٌ",
+        "sha256": "ed8e6adf38f9a128b5db39d7726e8276804faa95f8b632b42e8e7c82dcf3d0fc",
+        "source_url": "https://tanzil.net/#2:237",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T34",
+      "language": "ar",
+      "claim": "هل يجب الإنفاق على المطلقة الحامل حتى تضع حملها؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The verse requires provision until delivery.",
+      "reference": {
+        "kind": "quran",
+        "locator": "65:6",
+        "quotation": "أَسْكِنُوهُنَّ مِنْ حَيْثُ سَكَنتُم مِّن وُجْدِكُمْ وَلَا تُضَآرُّوهُنَّ لِتُضَيِّقُوا۟ عَلَيْهِنَّ ۚ وَإِن كُنَّ أُو۟لَـٰتِ حَمْلٍ فَأَنفِقُوا۟ عَلَيْهِنَّ حَتَّىٰ يَضَعْنَ حَمْلَهُنَّ ۚ فَإِنْ أَرْضَعْنَ لَكُمْ فَـَٔاتُوهُنَّ أُجُورَهُنَّ ۖ وَأْتَمِرُوا۟ بَيْنَكُم بِمَعْرُوفٍ ۖ وَإِن تَعَاسَرْتُمْ فَسَتُرْضِعُ لَهُۥٓ أُخْرَىٰ",
+        "sha256": "f423f29168f505496eba4aca61671a3a2d525ccb083e309692e4da9086bc81b2",
+        "source_url": "https://tanzil.net/#65:6",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T35",
+      "language": "en",
+      "claim": "Can people burdened by debt be among the Quran’s listed zakat recipients?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Debtors are a listed category; individual eligibility requires further facts.",
+      "reference": {
+        "kind": "quran",
+        "locator": "9:60",
+        "quotation": "إِنَّمَا ٱلصَّدَقَـٰتُ لِلْفُقَرَآءِ وَٱلْمَسَـٰكِينِ وَٱلْعَـٰمِلِينَ عَلَيْهَا وَٱلْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى ٱلرِّقَابِ وَٱلْغَـٰرِمِينَ وَفِى سَبِيلِ ٱللَّهِ وَٱبْنِ ٱلسَّبِيلِ ۖ فَرِيضَةً مِّنَ ٱللَّهِ ۗ وَٱللَّهُ عَلِيمٌ حَكِيمٌ",
+        "sha256": "538abcd0925580a4927c824316d17d968a3d101e86fb8bfadf59f36caa230e0f",
+        "source_url": "https://tanzil.net/#9:60",
+        "publisher_grade": null
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T36",
+      "language": "en",
+      "claim": "Is liking nice clothes automatically arrogance in Islam?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "Arrogance is rejecting truth and looking down on people; liking beauty alone is not the definition.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:6209",
+        "quotation": "‘Abdullāh ibn Mas‘ūd (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"Anyone has an atom's weight of arrogance in his heart will not enter Paradise.\" A man said:\" What if one likes his clothes and shoes to look good?\" He said: \"Verily, Allah is beautiful and He loves beauty. Arrogance is to reject the truth and look down on people.\"",
+        "sha256": "40d3e54f44eaaf8b0bf57cc8126efb0cce47950471c18059e96881307ba3bda4",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/6209",
+        "publisher_grade": "[Authentic hadith]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T37",
+      "language": "ar",
+      "claim": "هل الدعاء عبادة في الحديث؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Supplication is explicitly identified as worship.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5496",
+        "quotation": "An-Nu‘mān ibn Bashīr (may Allah be pleased with him) reported: I heard the Prophet (may Allah's peace and blessings be upon him) say: \"Supplication is worship.\" Then, he recited: {Your Lord says: \"Call upon Me; I will respond to you. Those who are too proud to worship Me will enter Hell, utterly debased.\"} [Surat Ghāfir: 60]",
+        "sha256": "78c90806ecee01ab33deb4d6db88885bf646c2b619c42290050911800b73e229",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5496",
+        "publisher_grade": "[Authentic]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T38",
+      "language": "en",
+      "claim": "When putting shoes on, should I start with the left foot according to the prophetic instruction?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The right is first when putting on, the left first when removing.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5357",
+        "quotation": "‘Ali ibn Abi Tālib (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"When any of you is putting on his shoes, let him start with the right foot; and when he is taking them off, let him start with the left foot. Let the right foot be the first when putting on the shoes and the last when taking them off.\"",
+        "sha256": "8eda7d618dd54577eb2649d5acdc9863fd321d7cd4401240f61e249ecdcf9604",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5357",
+        "publisher_grade": "[Authentic hadith]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T39",
+      "language": "id",
+      "claim": "Apakah kesehatan dan waktu luang termasuk dua nikmat yang sering disia-siakan manusia?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Health and free time are the two named blessings.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5449",
+        "quotation": "Ibn ‘Abbās (may Allah be pleased with him and his father) reported: The Prophet (may Allah's peace and blessings be upon him) said: \"There are two blessings in which many people incur loss: health and free time.\"",
+        "sha256": "774398135d6690c3c5648cfbc0c356c4817655c5261658e3b9c64faa06d67660",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5449",
+        "publisher_grade": "[Authentic]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T40",
+      "language": "es",
+      "claim": "¿Debo taparme la boca con la mano cuando bostezo, según el hadiz?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The hadith instructs covering the mouth during yawning.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5280",
+        "quotation": "Abu Sa‘īd al-Khudri (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"When any of you yawns, let him put his hand over his mouth, for indeed, the devil enters.\"",
+        "sha256": "531863bf9075399b906f112d7ced3d41dd92918679b48eea3f0faf3e41aa9a48",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5280",
+        "publisher_grade": "[Authentic]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T41",
+      "language": "fr",
+      "claim": "Le Prophète baissait-il la voix et couvrait-il sa bouche lorsqu’il éternuait?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Both covering and lowering the voice are reported.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:3317",
+        "quotation": "Abu Hurayrah (may Allah be pleased with him) reported: Whenever the Messenger of Allah (may Allah's peace and blessings be upon him) sneezed, he would put his hand—or his garment—over his mouth and lower—or drop—his voice therewith.",
+        "sha256": "e0b34b177eacd109380d5266e78428f01b70e6dfc9325370df04bc29762b3f52",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/3317",
+        "publisher_grade": "[Authentic]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T42",
+      "language": "de",
+      "claim": "Hat der Prophet im Fall des Beduinen in der Moschee dazu aufgefordert, die Dinge schwer statt leicht zu machen?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The instruction in that incident is to make things easy, not difficult.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5806",
+        "quotation": "Abu Hurayrah (may Allah be pleased with him) reported: A Bedouin man urinated in the mosque, so the people got up and moved towards him to scorn him. So the Prophet (may Allah's peace and blessings be upon him) said: \"Let him and pour a bucket or pail of water onto his urine. You were sent to make things easy and not to make them difficult.\"",
+        "sha256": "ce7f2ff6b9cc84440185eef3bc0fd6f11fd161e17e3509230fbe2d4dd11d601e",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5806",
+        "publisher_grade": "[Authentic hadith]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T43",
+      "language": "bn",
+      "claim": "আল্লাহর সন্তুষ্টির জন্য অসুস্থ কাউকে দেখতে যাওয়ার পুরস্কার কি হাদিসে আছে?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "A reward for visiting the sick for Allah is reported.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:3442",
+        "quotation": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"Whoever visits a sick person or a brother of his for Allah's sake, a caller calls out: 'May you be glad, may your footsteps be blessed, and may you dwell a home in Paradise!'\"",
+        "sha256": "12e9456d92ad5375c8859f24c3e78356b9fd73b18584bfd1300788f9fc91783e",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/3442",
+        "publisher_grade": "[Good hadith]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T44",
+      "language": "hi",
+      "claim": "क्या स्वीकार किए गए हज का प्रतिफल जन्नत बताया गया है?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Paradise is the stated reward for accepted Hajj; acceptance is not individually certified.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:65627",
+        "quotation": "‘Abdullah ibn Mas‘ūd (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Perform Hajj and ‘Umrah in succession, for they expel poverty and sins just as the bellows expels impurities from iron, gold, and silver. There is no reward for an accepted Hajj except Paradise.\"",
+        "sha256": "72d867d4895305f2532465ea6eeeb1f1e250344ad76a10490c296027132a5044",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/65627",
+        "publisher_grade": "[Authentic]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T45",
+      "language": "ur",
+      "claim": "کیا صفا اور مروہ کے درمیان سعی صرف تین چکر ہے؟",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The report describes seven rounds of Sa’i; do not confuse three brisk Tawaf rounds with Sa’i.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:3309",
+        "quotation": "‘Abdullāh ibn ‘Umar (may Allah be pleased with him) reported that the Messenger of Allah (may Allah’s peace and blessings be upon him) performed both ‘Umrah and Hajj in his Farewell Hajj, performing ‘Umrah first and then Hajj, and offered a sacrificial animal. He drove his sacrificial animals with him from Dhu al-Hulayfah. The Messenger of Allah (may Allah's peace and blessings be upon him) started by assuming Ihrām for ‘Umrah, and after that, he assumed Ihrām for Hajj. And the people too performed ‘Umrah and Hajj with him. So he assumed Ihrām for ‘Umrah first and stayed in Makkah until Hajj. There were some people who brought sacrificial animals and drove them from Dhu al-Hulayfah, while others did not. When the Messenger of Allah (may Allah's peace and blessings be upon him) arrived, he said to the people: \"Whoever among you has brought the sacrificial animal should not do anything prohibited on account of Ihrām until he ends his Hajj. And whoever among you has not brought the sacrificial animal should make Tawāf around the Ka‘bah, make Sa‘i between Safa and Marwah, shorten his hair, and end his Ihrām. Thereafter, he must offer a sacrificial animal. If anyone cannot afford a sacrificial animal, he should fast three days during Hajj and seven days when he returns home.\" The Prophet (may Allah's peace and blessings be upon him) performed Tawāf around the Ka‘bah on his arrival (at Makkah). He touched the corner (the Black Stone) first of all and then walked briskly during the first three rounds and normally during the last four ones. Then, he offered a two-Rak‘ah prayer at the Station of Ibrahīm, after which he went to Safa and Marwah and performed seven rounds of Sa‘ibetween them. He did not do anything prohibited on account of Ihrām till he finished all the rituals of Hajj and slaughtered his sacrificial animal on the Day of Nahr (sacrifice). He then hastened (to Makkah) and performed Tawāf around the Ka‘bah. Upon doing this, everything that had been forbidden because of Ihrām became permissible for him. Those who took and drove the sacrificial animals with them did the same as the Messenger of Allah (may Allah's peace and blessings be upon him).\nIbn ‘Umar said: \"I saw that when the Messenger of Allah (may Allah's peace and blessings be upon him) arrived in Makkah, he would touch the Black Corner in the beginning of his Tawāf and walk briskly for three rounds.\"",
+        "sha256": "8c3f8c026f30983b342a7e41b196a0864b5983abc832ffa75afed65794838236",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/3309",
+        "publisher_grade": "[Authentic hadith]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T46",
+      "language": "en",
+      "claim": "Should Muslims greet only people they already know?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The report includes people known and unknown.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5808",
+        "quotation": "‘Abdullah ibn ‘Amr (may Allah be pleased with him and his father) reported: A man asked the Prophet (may Allah's peace and blessings be upon him): Which deed in Islam is the best? He said: \"Feeding people and extending the greeting of peace to those you know and those you do not know.\"",
+        "sha256": "c51734961da36225bfed76ff5a603fa2c8a61edc6c532cd3b6b03908786545ff",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5808",
+        "publisher_grade": "[Authentic]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T47",
+      "language": "ar",
+      "claim": "هل يذكر الحديث أن موضع البركة في الطعام قد لا نعرفه ولذلك لا نهمل بقيته؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The report states we do not know where its blessing lies; this is not unsafe-food advice.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5653",
+        "quotation": "Anas ibn Mālik and Jābir ibn ‘Abdullāh (may Allah be pleased with both of them) reported that whenever the Messenger of Allah (may Allah's peace and blessings be upon him) ate food, he would lick his three fingers and he said: “If any of you drops a morsel of food, he should remove the dirt from it and eat it and not leave it to the devil.\" He ordered that the bowl should be scraped off, saying: \"You do not know which part of your food contains the blessing.” The Messenger of Allah (may Allah's peace and blessings be upon him) said: “Indeed, the devil is present with you in all of your affairs; he is even present with you when you are eating. So if any of you drops a morsel of food, he should remove the dirt from it and eat it and not leave it to the devil. When he finishes, he should lick his fingers, for he does not know which part of the food contains the blessing.”",
+        "sha256": "bfb7f7076d78bea78acaa2484c1e1f01bb56985d679b571d5aad07903630718f",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5653",
+        "publisher_grade": "[Sahih/Authentic with its two versions]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T48",
+      "language": "en",
+      "claim": "Are regular good deeds within a person’s capacity valued in the prophetic teaching?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "Regularity and capacity are both present.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:5845",
+        "quotation": "‘Ā'ishah (may Allah be pleased with her) reported that the Prophet (may Allah's peace and blessings be upon him) came in while a woman was sitting with her. He said: \"Who is she?\" ‘Ā'ishah replied: \"She is so-and-so,\" and told him about her (excessive) praying. He said disapprovingly: \"Do (good) deeds according to your capacity, for by Allah, Allah never grows weary (of giving rewards) unless you grow weary (of doing good deeds), and the best deed in His sight is that which is done regularly.”",
+        "sha256": "5325dd72a11717c5a94b5cba6aa93f92ad41f41f177be53d95242c26e50cd957",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/5845",
+        "publisher_grade": "[Authentic hadith]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T49",
+      "language": "en",
+      "claim": "Does Islamic teaching warn that bad companionship can harm a person, like a blacksmith’s bellows?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_rationale": "The companion metaphor explicitly includes harmful effects.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:3127",
+        "quotation": "Abu Mūsa (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"Verily, the example of the righteous companion and the evil companion is like that of the carrier of the musk and the blower of the bellows. The carrier of the musk will either give you, or you will buy from him, or you will get a pleasant smell from him, and the blower of the bellows will either burn your clothes or you will get an offensive smell.\"",
+        "sha256": "896107bbe807ee59e015c2dc8807d5ec9e10d01ebf054881ebf39612b0cca979",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/3127",
+        "publisher_grade": "[Authentic]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    },
+    {
+      "id": "T50",
+      "language": "en",
+      "claim": "Is chicken meat categorically forbidden in Islam?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_rationale": "The report describes the Prophet eating chicken.",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:2975",
+        "quotation": "Zahdam ibn Mudarrib al-Jarmi reported: We were hosted by Abu Mūsa al-Ash‘ari (may Allah be pleased with him) and he asked for the food to be served and it had chicken meat in it. A man from Banu Taymullāh entered. His complexion was red and he looked like the non-Arabs. He said to him: \"Come and join us.\" The man, however, showed reluctance. Abu Mūsa said: \"Come on, for I saw the Messenger of Allah (may Allah's peace and blessings be upon him) eating it.\"",
+        "sha256": "61567df2d7cf07525a6155d682f82bd0812276fe05608bf871263413627687f3",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/2975",
+        "publisher_grade": "[Authentic hadith]"
+      },
+      "review": "Prepared for principal source review before freeze; not independent scholar or native-language expert certification."
+    }
+  ]
+}
