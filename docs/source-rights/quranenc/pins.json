@@ -1,0 +1,102 @@
+{
+  "id": "quranenc-display-2026-10-04",
+  "terms_url": "https://quranenc.com/en/home/api/",
+  "notice": "Contents of the translations can be downloaded and re-published, with the following terms and conditions:\n1. No modification, addition, or deletion of the content.\n2. Clearly referring to the publisher and the source (QuranEnc.com).\n3. Mentioning the version number when re-publishing the translation.\n4. Keeping the transcript information inside the document.\n5. Notifying the source (QuranEnc.com) of any note on the translation.\n6. Updating the translation according to the latest version issued from the source (QuranEnc.com).\n7. Inappropriate advertisements must not be included when displaying translations of the meanings of the Noble Quran.",
+  "sources": [
+    {
+      "language": "de",
+      "key": "german_rwwad",
+      "version": "1.0.15",
+      "filename": "de.json",
+      "json_sha256": "2622706595c96e790beb39cc9ed0ba9fff970325ecba3ad6b5ad9ee18d448ded",
+      "raw_sha256": "32c6a6e0e45b4ece65f3b85094fa6f4c0a9b9bdc5c94a7933e8fe711efb5125e",
+      "raw_bytes": 1179648,
+      "json_bytes": 1388442,
+      "record_count": 6236,
+      "acquired_at": "2026-10-04T10:46:00.199Z",
+      "source_url": "https://quranenc.com/downloads/sqlite/german_rwwad.sqlite"
+    },
+    {
+      "language": "en",
+      "key": "english_rwwad",
+      "version": "1.0.19",
+      "filename": "en.json",
+      "json_sha256": "e23dec2efd635ff0351baff96a863a231a5a0a7a748b7586e7b477681379a04b",
+      "raw_sha256": "77e2ede3d8e6d6b5c6e16ff78eda2d2b6cc0a6b7489c94a5dde4f7481f5fdee8",
+      "raw_bytes": 1245184,
+      "json_bytes": 1473105,
+      "record_count": 6236,
+      "acquired_at": "2026-10-04T10:45:58.726Z",
+      "source_url": "https://quranenc.com/downloads/sqlite/english_rwwad.sqlite"
+    },
+    {
+      "language": "es",
+      "key": "spanish_garcia",
+      "version": "1.0.2",
+      "filename": "es.json",
+      "json_sha256": "e0c8391df900c84dc9d677f915f97da42670bbd8214112865ac59dc1e075e09f",
+      "raw_sha256": "63fb0541378f48feb7e9bde6216c85f36a50bda73d0082d21a18a3289bc1aa10",
+      "raw_bytes": 1310720,
+      "json_bytes": 1536386,
+      "record_count": 6236,
+      "acquired_at": "2026-10-04T10:46:00.266Z",
+      "source_url": "https://quranenc.com/downloads/sqlite/spanish_garcia.sqlite"
+    },
+    {
+      "language": "fr",
+      "key": "french_rashid",
+      "version": "1.0.3",
+      "filename": "fr.json",
+      "json_sha256": "fa9a6a0baf06956131c2682934e0408d6b8fb92b484b0ad7d95b1177ca7c00d4",
+      "raw_sha256": "1c8d1f66f3ab8d708ba84db79b8c069dede23a3e40fff253d3ca14deafba87bf",
+      "raw_bytes": 1376256,
+      "json_bytes": 1572783,
+      "record_count": 6236,
+      "acquired_at": "2026-10-04T10:45:59.312Z",
+      "source_url": "https://quranenc.com/downloads/sqlite/french_rashid.sqlite"
+    },
+    {
+      "language": "hi",
+      "key": "hindi_omari",
+      "version": "1.1.5",
+      "filename": "hi.json",
+      "json_sha256": "3ecbcb0f78160b520e6e7b092c0bd495326cdf860665e09f5d85c485bb633210",
+      "raw_sha256": "9f5208ae22da5b6af4a9be95438cf5f35e0e195a91f217aa26b336f58efed31b",
+      "raw_bytes": 3407872,
+      "json_bytes": 3554213,
+      "record_count": 6236,
+      "acquired_at": "2026-10-04T10:46:05.313Z",
+      "source_url": "https://quranenc.com/downloads/sqlite/hindi_omari.sqlite"
+    },
+    {
+      "language": "id",
+      "key": "indonesian_sabiq",
+      "version": "1.1.3",
+      "filename": "id.json",
+      "json_sha256": "92552ef7d836bc7f7eede2e871de0ab69b5aa7c805b3859c164a9daaf2a595b7",
+      "raw_sha256": "589f39e8e61ef0bd828ca1323d5ee77ef3db53554230ae5018a3cd4775b5ad50",
+      "raw_bytes": 1441792,
+      "json_bytes": 1652935,
+      "record_count": 6236,
+      "acquired_at": "2026-10-04T10:46:01.515Z",
+      "source_url": "https://quranenc.com/downloads/sqlite/indonesian_sabiq.sqlite"
+    },
+    {
+      "language": "ur",
+      "key": "urdu_junagarhi",
+      "version": "1.1.3",
+      "filename": "ur.json",
+      "json_sha256": "181114065444806e86a1ef36cd4929a4e56908e7340946a5c3577d4e8e23a04c",
+      "raw_sha256": "20ccc96bd25e481ca248e8a02d354a316bda2b6fc325fd2aeb5cdd26f7fb11bb",
+      "raw_bytes": 6160384,
+      "json_bytes": 6186572,
+      "record_count": 6236,
+      "acquired_at": "2026-10-04T10:46:03.837Z",
+      "source_url": "https://quranenc.com/downloads/sqlite/urdu_junagarhi.sqlite"
+    }
+  ],
+  "unavailable": {
+    "bn": "Official catalog omits Bengali editions; publisher version could not be verified. No edition admitted.",
+    "ar": "Arabic original comes from admitted Tanzil, not a QuranEnc translation."
+  }
+}

@@ -1,3 +1,4 @@
 *.json text eol=lf
+docs/source-rights/quranenc/api-and-terms.html -text -whitespace
 *.mjs text eol=lf
 *.py text eol=lf

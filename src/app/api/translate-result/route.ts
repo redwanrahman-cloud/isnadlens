@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { translateResultExplanation } from '@/lib/result-translation';
+import { translateResultExplanation, resultTranslationLanguageSchema } from '@/lib/result-translation';
 import { recordSchema } from '@/lib/contracts';
 import { verifySeal } from '@/lib/verification';
 
@@ -29,7 +29,7 @@ export async function POST(request:NextRequest) {
     }
     body=JSON.parse(Buffer.concat(chunks).toString('utf8'));
   } catch {return NextResponse.json({error:'INVALID_INPUT'},{status:400,headers});}
-  if(!body||!['bn','hi','ur','id'].includes(body.language)) return NextResponse.json({error:'INVALID_LANGUAGE'},{status:400,headers});
+  if(!body||!resultTranslationLanguageSchema.safeParse(body.language).success) return NextResponse.json({error:'INVALID_LANGUAGE'},{status:400,headers});
   const parsed=recordSchema.safeParse(body.record);
   if(!parsed.success||!verifySeal(parsed.data)) return NextResponse.json({error:'INVALID_RECORD'},{status:400,headers});
   const key=`${parsed.data.audit_hash}:${body.language}`;

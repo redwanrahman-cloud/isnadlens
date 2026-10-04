@@ -19,7 +19,7 @@ export function parseHadithLinks(claim: string): { links: { language: string; id
   for (const match of matches) {
     try {
       const url = new URL(match[0].replace(/[.,;!?،؛۔)\]}]+$/u, ''));
-      const path = /^\/(ar|en|bn|hi|ur|id)\/browse\/hadith\/([1-9]\d*)\/?$/.exec(url.pathname);
+      const path = /^\/(ar|en|bn|hi|ur|id|es|fr|de)\/browse\/hadith\/([1-9]\d*)\/?$/.exec(url.pathname);
       if (url.protocol !== 'https:' || url.hostname !== 'hadeethenc.com' || url.port || url.username || url.password || url.search || url.hash || !path) return { links: [], error: 'HADITH_EXPLICIT_URL_MALFORMED' };
       links.push({ language: path[1], id: path[2] });
     } catch { return { links: [], error: 'HADITH_EXPLICIT_URL_MALFORMED' }; }

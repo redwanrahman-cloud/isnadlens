@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "language": "es",
+      "summaryPresent": true,
+      "originalClaimUnchanged": true,
+      "originalQuotesUnchanged": true,
+      "sealUnchanged": true,
+      "passageLanguage": "es"
+    },
+    {
+      "language": "fr",
+      "summaryPresent": true,
+      "originalClaimUnchanged": true,
+      "originalQuotesUnchanged": true,
+      "sealUnchanged": true,
+      "passageLanguage": "fr"
+    },
+    {
+      "language": "de",
+      "summaryPresent": true,
+      "originalClaimUnchanged": true,
+      "originalQuotesUnchanged": true,
+      "sealUnchanged": true,
+      "passageLanguage": "de"
+    }
+  ],
+  "purpose": "Browser display/passage language changes preserve original claim, quotations and seal; not independent linguistic review."
+}

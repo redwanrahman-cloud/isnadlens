@@ -1,0 +1,16 @@
+{
+  "purpose": "Browser layout and reader controls; mobile viewport emulation, not a physical phone or acoustic/recitation-quality review.",
+  "mobile": {
+    "horizontal_overflow": false,
+    "page_width": 341,
+    "viewport_width": 355
+  },
+  "desktop": {
+    "horizontal_overflow": false,
+    "page_width": 717,
+    "viewport_width": 731
+  },
+  "english_start_stop_verified": true,
+  "arabic_bangla_voice_unavailable_state_verified": true,
+  "proof_screenshot": "isnadlens-passage-translations-voice-2026-10-04.jpg"
+}

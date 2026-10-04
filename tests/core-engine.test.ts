@@ -197,7 +197,7 @@ describe('admitted multilingual Hadith records', () => {
       expect(verifySeal(record)).toBe(true); expect(record.corpus_selection).toBe('hadith');
       expect(mocked).toHaveBeenCalledOnce();
     } finally { mocked.mockRestore(); }
-  });
+  }, 15000); // Initial full nine-edition validation can be slower under parallel test load.
   it('fails closed when a mock model invents a contradiction basis source span', async () => {
     const corpus = loadHadith(); const candidate = retrieveHadith(corpus, 'The Prophet said that intentions have no importance in actions.', 'en')[0];
     const id = `${corpus.manifest.id}:en:${candidate.id}`;
@@ -207,10 +207,10 @@ describe('admitted multilingual Hadith records', () => {
       expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toContain('SEMANTIC_BASIS_QUOTATION_INVALID');
     } finally { mocked.mockRestore(); }
   });
-  it('validates all six publisher editions and retrieves genuine Arabic/English intentions passages', () => {
+  it('validates all nine publisher editions and retrieves genuine Arabic/English intentions passages', () => {
     const corpus = loadHadith();
-    expect(corpus.records).toHaveLength(14629);
-    expect(new Set(corpus.records.map(record => record.language)).size).toBe(6);
+    expect(corpus.records).toHaveLength(18996);
+    expect(new Set(corpus.records.map(record => record.language)).size).toBe(9);
     const english = retrieveHadith(corpus, 'Actions are judged by intentions.', 'en');
     expect(english.length).toBeGreaterThan(0);
     expect(english.every(record => record.language === 'en')).toBe(true);
@@ -223,6 +223,24 @@ describe('admitted multilingual Hadith records', () => {
     expect(arabic.every(record => record.language === 'ar')).toBe(true);
     expect(scopeGate('Actions are judged by intentions.')).toBeNull();
     expect(scopeGate('Intention has no importance in actions.')).toBeNull();
+  });
+  it('admits Spanish/French/German publisher passages without changing any originally admitted six-language record', () => {
+    const corpus = loadHadith();
+    const original = corpus.records.filter(record => ['ar', 'en', 'bn', 'hi', 'ur', 'id'].includes(record.language));
+    expect(original).toHaveLength(14629);
+    expect(sha256(JSON.stringify(original))).toBe('4b8dcc11ef25e42c44b1333eaed643adfb752d6868513f6b98465513d465e17d');
+    const expected = { es: { count: 1955, version: 'v1.23.0' }, fr: { count: 1790, version: 'v1.17.0' }, de: { count: 622, version: 'v1.58.0' } };
+    for (const [language, metadata] of Object.entries(expected)) {
+      expect(corpus.records.filter(record => record.language === language)).toHaveLength(metadata.count);
+      const record = corpus.records.find(item => item.language === language && item.id === '4560')!;
+      expect(record).toBeDefined();
+      const evidence = authenticateHadith(corpus, record);
+      expect(evidence.source_language).toBe(language); expect(evidence.version).toBe(metadata.version);
+      expect(evidence.quotation).toBe(record.fields.hadith_text); expect(sha256(evidence.quotation)).toBe(evidence.quotation_sha256);
+      expect(evidence.publisher_fields).toEqual(record.fields); expect(evidence.publisher_notice).toContain(`https://hadeethenc.com/${language}`);
+      expect(evidence.source_url).toBe(`https://hadeethenc.com/${language}/browse/hadith/4560`);
+      expect(evidence.integrity.passed).toBe(true);
+    }
   });
   it('preserves publisher fields, grade, reference, notice and quotation bytes without independent grading', () => {
     const corpus = loadHadith(); const record = retrieveHadith(corpus, 'intentions', 'en')[0];

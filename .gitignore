@@ -8,6 +8,7 @@ artifacts/private/
 *.log
 *.tsbuildinfo
 data/hadeethenc.json
+data/quranenc/
 artifacts/hadeethenc-workbook-inspection.json
 artifacts/hadeethenc-validation.json
 artifacts/live-hadith-*.json

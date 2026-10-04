@@ -1,6 +1,6 @@
 {
   "id": "hadeethenc-official-2026-10-04",
-  "sha256": "4b8dcc11ef25e42c44b1333eaed643adfb752d6868513f6b98465513d465e17d",
+  "sha256": "1fa8f74db69b4bcdf7fe0db1e9f2c72dceb090da5ed58d67119ef6d0e014a7b8",
   "sources": [
     {
       "language": "ar",
@@ -37,6 +37,24 @@
       "raw_sha256": "f266f1dd4f60a1512717afa162ec657da42b2282f930dd189110f13fa319dd06",
       "filename": "hadeethenc-id.xlsx",
       "version": "v1.22.0"
+    },
+    {
+      "language": "es",
+      "raw_sha256": "acf1212e7ceb02ceb7fd77d634fade2f8fe812fca0fd27c8983c8f040dfe5050",
+      "filename": "hadeethenc-es.xlsx",
+      "version": "v1.23.0"
+    },
+    {
+      "language": "fr",
+      "raw_sha256": "d532a5f1c9e1746554e232c41fbc3df3ceec32382827e3ec89dd892233f15144",
+      "filename": "hadeethenc-fr.xlsx",
+      "version": "v1.17.0"
+    },
+    {
+      "language": "de",
+      "raw_sha256": "db6d94156bde20343fcc257adbf97c3f213ef72a3645b2657dc6b45e0c7fc4f3",
+      "filename": "hadeethenc-de.xlsx",
+      "version": "v1.58.0"
     }
   ],
   "counts": {
@@ -45,6 +63,9 @@
     "bn": 1925,
     "hi": 2314,
     "ur": 2220,
-    "id": 2260
+    "id": 2260,
+    "es": 1955,
+    "fr": 1790,
+    "de": 622
   }
 }

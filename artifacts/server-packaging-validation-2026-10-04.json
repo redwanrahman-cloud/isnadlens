@@ -1,0 +1,56 @@
+[
+  {
+    "route": ".next\\server\\app\\page.js.nft.json",
+    "files": 128,
+    "private_or_research_files": 0,
+    "bytes": 1905565
+  },
+  {
+    "route": ".next\\server\\app\\api\\coverage\\route.js.nft.json",
+    "files": 135,
+    "private_or_research_files": 0,
+    "bytes": 132693080
+  },
+  {
+    "route": ".next\\server\\app\\api\\passage-translations\\route.js.nft.json",
+    "files": 150,
+    "private_or_research_files": 0,
+    "bytes": 166165929
+  },
+  {
+    "route": ".next\\server\\app\\api\\translate-result\\route.js.nft.json",
+    "files": 136,
+    "private_or_research_files": 0,
+    "bytes": 132699743
+  },
+  {
+    "route": ".next\\server\\app\\api\\verify\\route.js.nft.json",
+    "files": 136,
+    "private_or_research_files": 0,
+    "bytes": 132700820
+  },
+  {
+    "route": ".next\\server\\app\\method\\page.js.nft.json",
+    "files": 127,
+    "private_or_research_files": 0,
+    "bytes": 1810718
+  },
+  {
+    "route": ".next\\server\\app\\sources\\page.js.nft.json",
+    "files": 161,
+    "private_or_research_files": 0,
+    "bytes": 166103940
+  },
+  {
+    "route": ".next\\server\\app\\_global-error\\page.js.nft.json",
+    "files": 122,
+    "private_or_research_files": 0,
+    "bytes": 1806556
+  },
+  {
+    "route": ".next\\server\\app\\_not-found\\page.js.nft.json",
+    "files": 126,
+    "private_or_research_files": 0,
+    "bytes": 1806566
+  }
+]

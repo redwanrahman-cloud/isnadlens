@@ -20,6 +20,21 @@ beforeEach(() => {
 });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); rmSync(directory, { recursive: true, force: true }); });
 describe('sealed result explanation translation', () => {
+  it.each([
+    {language:'es' as const,summary:'Solo se evaluaron 2 pasajes recuperados; la evidencia está incompleta.',limitations:['Esto no es una fetua.','Se requiere revisión humana.']},
+    {language:'fr' as const,summary:'Seuls 2 passages retrouvés ont été évalués ; les preuves sont incomplètes.',limitations:['Ceci n’est pas une fatwa.','Une révision humaine est nécessaire.']},
+    {language:'de' as const,summary:'Nur 2 gefundene Textstellen wurden bewertet; die Belege sind unvollständig.',limitations:['Dies ist keine Fatwa.','Eine menschliche Prüfung ist erforderlich.']}
+  ])('translates the project explanation to $language without changing record or source evidence',async ({language,summary,limitations})=>{
+    const original=fixture();const before=JSON.stringify(original);
+    const fetchMock=vi.fn().mockResolvedValue(response({summary,limitations}));vi.stubGlobal('fetch',fetchMock);
+    const translated=await translateResultExplanation(original,language);
+    expect(translated).toEqual({language,summary,limitations,review_status:'not_independently_reviewed',source_kind:'project_explanation_translation',record_id:original.record_id,audit_hash:original.audit_hash});
+    expect(JSON.stringify(original)).toBe(before);
+    const request=JSON.parse(fetchMock.mock.calls[0][1].body);
+    expect(JSON.parse(request.input).target_language).toBe(language);
+    expect(request.input).not.toContain(original.original_claim);
+    expect(request.input).not.toContain('evidence_items');
+  });
   it('translates only project explanations and preserves linkage/review labels and source record', async () => {
     const original = fixture(); const before = JSON.stringify(original);
     const fetchMock = vi.fn().mockResolvedValue(response(valid)); vi.stubGlobal('fetch', fetchMock);

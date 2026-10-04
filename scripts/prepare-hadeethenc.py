@@ -3,7 +3,7 @@ import openpyxl
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 records, sources, report = [], [], []
-for language in ['ar', 'en', 'bn', 'hi', 'ur', 'id']:
+for language in ['ar', 'en', 'bn', 'hi', 'ur', 'id', 'es', 'fr', 'de']:
     path = ROOT / 'data' / 'raw' / 'hadeethenc' / f'hadeethenc-{language}.xlsx'
     raw_hash = hashlib.sha256(path.read_bytes()).hexdigest()
     workbook = openpyxl.load_workbook(path, read_only=True, data_only=False)
@@ -41,6 +41,11 @@ for language in ['ar', 'en', 'bn', 'hi', 'ur', 'id']:
 
 # This serialization matches JSON.stringify for this string/null-only corpus.
 serialized = json.dumps(records, ensure_ascii=False, separators=(',', ':'))
+original_languages = {'ar', 'en', 'bn', 'hi', 'ur', 'id'}
+original_serialized = json.dumps([record for record in records if record['language'] in original_languages], ensure_ascii=False, separators=(',', ':'))
+original_hash = hashlib.sha256(original_serialized.encode('utf-8')).hexdigest()
+if original_hash != '4b8dcc11ef25e42c44b1333eaed643adfb752d6868513f6b98465513d465e17d':
+    raise ValueError('Existing six-language admission changed; refuse extension')
 corpus_hash = hashlib.sha256(serialized.encode('utf-8')).hexdigest()
 manifest = {'id': 'hadeethenc-official-2026-10-04', 'version': '2026-10-04 acquisition', 'sha256': corpus_hash, 'sources': sources}
 (ROOT / 'data' / 'hadeethenc.json').write_text(json.dumps({'manifest': manifest, 'records': records}, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
@@ -51,3 +56,4 @@ for row in report:
     row['ids_outside_arabic_edition'] = sum(record['id'] not in arabic_ids for record in records if record['language'] == row['language'])
 (ROOT / 'artifacts' / 'hadeethenc-admission-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps({'sha256': corpus_hash, 'languages': report}, ensure_ascii=False))
+(ROOT / 'artifacts' / 'hadeethenc-extension-preservation.json').write_text(json.dumps({'original_six_records': 14629, 'original_six_records_sha256': original_hash, 'new_records_sha256': corpus_hash, 'unchanged_original_six': True}, indent=2), encoding='utf-8')

@@ -34,5 +34,23 @@
     "records": 2260,
     "version": "v1.22.0",
     "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "es",
+    "records": 1955,
+    "version": "v1.23.0",
+    "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "fr",
+    "records": 1790,
+    "version": "v1.17.0",
+    "ids_outside_arabic_edition": 0
+  },
+  {
+    "language": "de",
+    "records": 622,
+    "version": "v1.58.0",
+    "ids_outside_arabic_edition": 0
   }
 ]

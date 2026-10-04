@@ -4,13 +4,13 @@ A source-first workbench for examining bounded Arabic and English Islamic claims
 
 ## Current increment
 
-Six selectable display languages (Arabic, English, Bangla, Hindi, Urdu, Indonesian), Arabic/English fresh claim input, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in six languages, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment and on-demand translations of project explanations were tested within the authorized persistent development spending cap. Explanations are labelled unreviewed; source quotations are never translated or overwritten by language switching. Model comparison, final evaluation, live hosting and the pilgrimage guide are not complete.
+Nine selectable display languages (Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French, German), Arabic/English fresh claim input, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in nine languages, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment and on-demand translations of project explanations were tested within the authorized persistent development spending cap. Explanations are labelled unreviewed; original source quotations are never overwritten by language switching; separate published translations are identified alongside them. A four-case provisional model comparison is complete; final evaluation, live hosting and the pilgrimage guide remain open.
 
 The first repository commit was created during the authorized event window. See PRE_CHALLENGE_DISCLOSURE.md and docs/BUILD-LEDGER.md for the research disclosure and starting-state record. The GitHub repository is private during development.
 
 ## Local setup
 
-Requires Node.js 20.9 or later and npm.
+Requires Node.js 24 LTS and npm for the complete source-preparation workflow (QuranEnc uses node:sqlite).
 
 ```sh
 npm ci
@@ -33,7 +33,7 @@ The interface and mechanical tests can run without an API key. OpenAI model avai
 
 Source: [Tanzil Project](https://tanzil.net). Arabic display: Uthmani v1.1. Exact search: the separate official Simple Clean v1.1 edition. Text is unchanged; editions join only by surah:ayah. [Licence and admission](docs/source-rights/TANZIL-ADMISSION.md).
 
-Hadith: [HadeethEnc.com](https://hadeethenc.com/en/home), official unchanged Arabic, English, Bangla, Hindi, Urdu and Indonesian workbooks acquired 4 October 2026. [Source conditions and admission](docs/source-rights/HADEETHENC-ADMISSION.md). Publisher grades are attributed, never independently assigned. To reproduce, run `node scripts/download-hadeethenc.mjs`, then `python scripts/prepare-hadeethenc.py` with openpyxl installed. Different acquisitions can change hashes and require deliberate re-admission of pins. No Quran translations or pilgrimage corpus is admitted.
+Hadith: [HadeethEnc.com](https://hadeethenc.com/en/home), official unchanged Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French and German workbooks acquired 4 October 2026. [Source conditions and admission](docs/source-rights/HADEETHENC-ADMISSION.md). Publisher grades are attributed, never independently assigned. To reproduce, run `node scripts/download-hadeethenc.mjs`, then `python scripts/prepare-hadeethenc.py` with openpyxl installed. Different acquisitions can change hashes and require deliberate re-admission of pins. Seven QuranEnc translations of meanings are admitted for separate passage display, with exact footnotes, metadata, versions and notices; they do not extend the semantic-verification corpus. [Admission](docs/source-rights/quranenc/ADMISSION.md). Reproduce with `node scripts/prepare-quranenc.mjs` after preparing the Arabic Quran. Bangla Quran translations remain direct publisher links until their required version is verified. No pilgrimage corpus is admitted.
 
 Lexical retrieval has limited English vocabulary and can miss relevant passages. A retrieved verse is not by itself proof of a claim. AI judgments are provisional and require qualified human review. Mechanical test results do not measure religious correctness.
 
@@ -44,3 +44,7 @@ Independent linguistic review; untouched final evaluation after freeze; durable 
 ## Development probes
 
 With the local server running, `node scripts/validate-development.mjs` examines six Arabic/English development claims. This uses the configured paid provider only after existing authorization and budget checks; it is not an independent religious benchmark. Run a single case by adding its ID, for example `node scripts/validate-development.mjs fabricated-arabic-quote`. Full source-bearing records stay in ignored `artifacts/private`; commit-safe summaries contain verdicts, reasons, source locators, integrity checks and usage. A correct refusal must use the intended reason, not merely return the expected verdict.
+
+## Passage translations and read-aloud
+
+Nine display languages are selectable. Published passage translations appear separately alongside the unchanged original. Explanation translations remain unreviewed project text. Browser Listen/Stop controls use matching available device voices; no paid speech service is called. Voice availability differs by device, and synthesis is assistive reading rather than recorded Quran recitation. [Read-aloud boundary](docs/READ-ALOUD.md).

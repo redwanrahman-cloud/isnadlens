@@ -7,20 +7,20 @@ import { queryTerms } from './retrieval';
 import type { EvidenceItem } from './contracts';
 import { parseHadithLinks, extractClaimQuotes } from './citations';
 
-const languages = z.enum(['ar', 'en', 'bn', 'hi', 'ur', 'id']);
+const languages = z.enum(['ar', 'en', 'bn', 'hi', 'ur', 'id', 'es', 'fr', 'de']);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const sourceSchema = z.object({ language: languages, raw_sha256: hash, version: z.string(), filename: z.string() });
 const pinSchema = z.object({ id: z.string(), sha256: hash, sources: z.array(sourceSchema), counts: z.record(z.string(), z.number().int().positive()) });
 export const hadithSchema = z.object({ manifest: z.object({ id: z.string(), version: z.string(), sha256: hash, sources: z.array(sourceSchema.extend({ notice: z.string() })) }), records: z.array(z.object({ id: z.string().regex(/^\d+$/), language: languages, fields: z.record(z.string(), z.string().nullable()), quotation_sha256: hash })) });
 export type HadithCorpus = z.infer<typeof hadithSchema>;
 export type HadithRecord = HadithCorpus['records'][number];
-const ADMITTED_RECORDS_HASH = '4b8dcc11ef25e42c44b1333eaed643adfb752d6868513f6b98465513d465e17d';
+const ADMITTED_RECORDS_HASH = '1fa8f74db69b4bcdf7fe0db1e9f2c72dceb090da5ed58d67119ef6d0e014a7b8';
 // This pin is updated only when the committed admission artifact changes after source review.
-const ADMITTED_PIN_FILE_HASH = 'c419ec4106b358d8ca409f1f537acfbf91f1ba572d0f37887c89bcb319309a33';
+const ADMITTED_PIN_FILE_HASH = 'bddd2f61e35c440b4f61ac0f69bc289bcd268aebe94fe087ec78a3c79c5f9bfd';
 export function validateHadith(raw: unknown, pins: z.infer<typeof pinSchema>): HadithCorpus {
   const corpus = hadithSchema.parse(raw);
   if (corpus.manifest.id !== pins.id || corpus.manifest.sha256 !== pins.sha256 || pins.sha256 !== ADMITTED_RECORDS_HASH || sha256(JSON.stringify(corpus.records)) !== ADMITTED_RECORDS_HASH) throw new Error('HADITH_ADMISSION_HASH_MISMATCH');
-  if (corpus.manifest.sources.length !== 6 || pins.sources.length !== 6) throw new Error('HADITH_SOURCE_INCOMPLETE');
+  if (corpus.manifest.sources.length !== languages.options.length || pins.sources.length !== languages.options.length) throw new Error('HADITH_SOURCE_INCOMPLETE');
   const counts: Record<string, number> = {}; const keys = new Set<string>();
   for (const record of corpus.records) {
     const key = `${record.language}:${record.id}`;
@@ -115,6 +115,6 @@ export function authenticateHadith(corpus: HadithCorpus, record: HadithRecord): 
   return { evidence_id: `${corpus.manifest.id}:${record.language}:${record.id}`, source_id: `HADEETHENC-${record.language.toUpperCase()}`, title: record.fields.title ?? 'HadeethEnc publisher record', version: source.version, locator: `${record.language}:${record.id}`, quotation: record.fields.hadith_text!, quotation_sha256: record.quotation_sha256, source_url: record.fields.link!, attribution: 'Source: HadeethEnc.com — publisher text and grading preserved unchanged', integrity: { passed, checks: [{ id: 'hadith_exact_record_hash', passed, reason: 'Quotation and publisher fields match the admitted language edition; this is citation integrity, not independent hadith authentication.' }] }, semantic_relation: 'not_assessed', source_context: [], source_language: record.language, publisher_fields: record.fields, publisher_grade_status: 'publisher_supplied_not_independently_graded', publisher_notice: source.notice };
 }
 export function getHadithCoverage() {
-  try { const corpus = loadHadith(); return { approved: true, record_count: corpus.records.length, languages: languages.options, version: corpus.manifest.version, counts_by_language: Object.fromEntries(languages.options.map(language => [language, corpus.records.filter(r => r.language === language).length])), limitations: ['Arabic and English fresh claim retrieval only; six unchanged publisher language editions admitted.', 'Publisher grades and references are preserved, not independently authenticated.', 'Language editions differ in coverage; text is never merged or overwritten.'] }; }
+  try { const corpus = loadHadith(); return { approved: true, record_count: corpus.records.length, languages: languages.options, version: corpus.manifest.version, counts_by_language: Object.fromEntries(languages.options.map(language => [language, corpus.records.filter(r => r.language === language).length])), limitations: ['Arabic and English fresh claim retrieval only; nine unchanged publisher language editions admitted.', 'Publisher grades and references are preserved, not independently authenticated.', 'Language editions differ in coverage; text is never merged or overwritten.'] }; }
   catch { return { approved: false, record_count: 0, languages: [] as string[], version: 'not_admitted', limitations: ['Hadith source files are missing or failed admission/integrity checks.'] }; }
 }
