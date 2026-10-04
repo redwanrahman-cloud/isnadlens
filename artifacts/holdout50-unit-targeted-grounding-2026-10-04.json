@@ -1,0 +1,25 @@
+{
+  "review": "independent_v3_unit_targeted_audit",
+  "case_id": "B46",
+  "record_id": "66c70e96-c34a-42fe-9b0e-f3d8db63c741",
+  "audit_hash": "d3c04781f869e86f088bde7930ee63d1129301ccaa31aa10dc3c8b9c24941b96",
+  "seal_valid": true,
+  "independent_grounding_approved": true,
+  "principal_assertion": "Pork prohibited under ordinary conditions; selected5:3 directly supports source attribution and contains necessity qualification.",
+  "selected_unit": {
+    "unit_id": "tanzil-1.1-2026-10-04:5:3:primary",
+    "evidence_id": "tanzil-1.1-2026-10-04:5:3",
+    "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+    "context_locator": null,
+    "quotation_sha256": "719d586cab5c12d7d12c8f5ed2ab7ead4b5791cc2d33956e759034c86d33b8ba"
+  },
+  "raw_provider_review_preserved": true,
+  "canonical_derivation_exact": true,
+  "source_cards_checked": 8,
+  "source_units_checked": 12,
+  "source_integrity_errors": [],
+  "summary_qualification_wording_caveat": "English OR and Arabic أو wording awkwardly separate necessity and nontransgression qualifiers. They must not be read as nontransgression alone permitting pork; exact source and limitations retain necessity. Principal ordinary-condition claim is grounded; this is not a personal ruling.",
+  "unrelated_unit_live_probe_rejected": true,
+  "prior_rounds_untouched": true,
+  "not_an_untouched_holdout_score": true
+}

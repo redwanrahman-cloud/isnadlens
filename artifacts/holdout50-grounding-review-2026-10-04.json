@@ -1,0 +1,1434 @@
+{
+  "dataset_sha256": "02d2408c7d9836a016f9c30ee297581ca2e5d026802cdd72a71661caea06a539",
+  "review_status": "complete_independent_first_pass_review",
+  "reviewed": 50,
+  "method": "Independent actual summary/atomic/evidence review; exact quotes previously admitted; no source/prompt/label/record changes. Approval requires grounded principal answer; supplementary overlabelled cards explicitly noted.",
+  "cases": [
+    {
+      "id": "H01",
+      "record_id": "e9e8c796-8c00-419d-8e11-a5b392b1fc6e",
+      "record_audit_hash": "87a43aaf3c6ab24b15b50f108a46fb2cf622b2f4ffbc30af20b5e968718055ea",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:29",
+          "quotation_sha256": "5c37355033d17cca9bd8c4079d8f239503be4e3462a564c71a2f622ac641f79c",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H02",
+      "record_id": "691075f8-1169-4a28-9c01-1f6921dd4149",
+      "record_audit_hash": "f0c99d1346d1366a5741f3ac9cfd307ea8e3d9a4eb06baee8a1de69727653106",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:188",
+          "quotation_sha256": "93000f9eab17e21eabaa0e19202c6e48222f5a02e292e65dfa759d269db8e491",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H03",
+      "record_id": "3c9995ed-6b5f-4bfa-923e-300cc21bf21f",
+      "record_audit_hash": "79040f0a3d3b1856f45ed22d16e88f6e6184b0fe408d794d0049916e394cab37",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": true,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "11:84 supplies warning concerning short measure in Shuayb context; valid alternative to83:1-3. Supplementary7:85 and55:9 command fairness but do not individually state threatened punishment."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "7:85",
+          "quotation_sha256": "2e6f329c82bb3264d4a678a05399ceaa622321c69c2622ae1d1a9296a5d41da6",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "11:84",
+          "quotation_sha256": "6165840f0a2e0c09146cd699692211882038c648d220b01cde32e76e6ff4e2a0",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "55:9",
+          "quotation_sha256": "14e45c0bcd42e5e9a0736c52728b5637789bbbec1f8bd4bb0e5c82bddea3ef53",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H04",
+      "record_id": "8dc0bda8-0b8a-4735-9a67-e452a563d579",
+      "record_audit_hash": "58b76225ba4538f03cb8305c226cc918a102b789ad463131ee7564e683a70bd9",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "17:35",
+          "quotation_sha256": "c0627a68bf7bcbd676f5c500f524479b05b82be55635a07b59f369c81fce56db",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "26:182",
+          "quotation_sha256": "dc15c07b64835dbc204d3602c9af312f2f393f065dfbc01606b578856f15c92e",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H05",
+      "record_id": "2c59631f-9528-42f5-ad0b-8e0c0d01b1b8",
+      "record_audit_hash": "caee06f54100cb01f0b30ef648982160ea4fe771b783c5f96a570b10bc3da680",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:19",
+          "quotation_sha256": "a8f501b7e65d50e1be37b1edd5638d6071a73f477f208767bfd9b3a38ee16d76",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H06",
+      "record_id": "89c055fb-5828-4835-9918-184cb93fe780",
+      "record_audit_hash": "ae90a5251c68e3e5e4c737cd70c0ba32e6759b02cd8082c4bb89e6da75f7a539",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "24:32 directly supports encouragement.24:33 concerns those unable to marry rather than independent encouragement; nonmaterial extra atom is not user asserted."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:32",
+          "quotation_sha256": "84da9f5393e0cc851802cd127baf7a50971632aa6aba88f41f67e0d9e04732be",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:33",
+          "quotation_sha256": "580096df454575683248c64196ae5d77cfa70a75cf5465bab55875b1abf7c3bb",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H07",
+      "record_id": "e727a1a5-0a69-433d-8dfb-86a3abe8c72c",
+      "record_audit_hash": "0226c6723f459f78034744bd02f782133f24ffffabf7d13db611d13b1480cedb",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "24:30 directly covers both duties;33:35 praises chastity but does not independently command lowering gaze."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:30",
+          "quotation_sha256": "3b1e8c985960b0774d1079e4ccd51bbae1c9bb4d391506fae7ff2fda7b45971b",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "33:35",
+          "quotation_sha256": "34ee702b99583111bf5ee2d2998887e2a7344c664a188e100d130eab2b7cdcfa",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H08",
+      "record_id": "830e174a-171a-4082-8b23-fe66e5dee370",
+      "record_audit_hash": "1c1af7f0e8f81d47b0ae33a574060d9d3f59cf9dc3cb389155f0c55a5b8cc476",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:31",
+          "quotation_sha256": "7b0be52c006a24af8e29e61c3a2568d61ee89b274ffa338df6248096bc973d87",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H09",
+      "record_id": "cfb67ed6-39bb-49cf-b24e-19cf5f291cec",
+      "record_audit_hash": "bc898577236b96d29d91110194e5f8a354d2cc9a3facedf67ce2285904fe5820",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "24:58 preserves three times/prepuberty qualification.24:59 is contrasting postpuberty context rather than independent proof."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:58",
+          "quotation_sha256": "388e283294598acb082567efd0396e8c0dcda7055a5bddef6fa9bd03dd51c9f3",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:59",
+          "quotation_sha256": "a2206be77939462599dbd48fcd56dfb3da5b76372673f7afd6c44f1d5733b0da",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H10",
+      "record_id": "cc44c634-c159-44c3-83c9-1d022ea7e732",
+      "record_audit_hash": "c31efb6ef1a71fd7ba6be367ce0f2b03a2c9f354fea497e9a21acefac830a56f",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:61",
+          "quotation_sha256": "384de2efa83c116edc737b66657ddc2ecc74e537c0a8444189c63fb1ab742dd1",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H11",
+      "record_id": "8d704fe8-b052-4ca5-86a4-716a4f876264",
+      "record_audit_hash": "a44a3d2a7168abf762a770884a4a23849dbe9da8c736cf0f4590a7e920563ab3",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:215",
+          "quotation_sha256": "d9840b5180169f8461380783db257dee9f33730d44ce34ad213994823fa143ce",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:177",
+          "quotation_sha256": "ec19c5d930af74c6e1725061355dfec1b27da8ecabcf5718b8846fc9e25b6079",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:36",
+          "quotation_sha256": "b7d2a454a6f882f14d6428ee1bbe6b02488a7b236fc5f4120aa1c26c1d7fc3dc",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "30:38",
+          "quotation_sha256": "2397d6d9e8c2e6024c92477c1dcebf8060d1fc5b0f3e468de5939923bcb579ec",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "59:7",
+          "quotation_sha256": "f60448e1365775ea9c61c97fa00b3d90742815a6883e1f0b93125c337c495ca5",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H12",
+      "record_id": "651f13a7-6513-453d-9458-49db0f1ecb47",
+      "record_audit_hash": "a184a816e0a320cb84aaae2acb0cb83f2e694ba64ac47af20b53087293c448ec",
+      "independent_grounding_approved": false,
+      "accepted_alternative_evidence": false,
+      "audit_status": "grounding_rejected",
+      "qualifications_preserved": false,
+      "attribution_preserved": true,
+      "caveats": [
+        "Verdict correctly abstains as partial; summary incorrectly says direct yes.2:177 supports emancipation/righteousness but not difficult-path predicate90:11-13."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:177",
+          "quotation_sha256": "ec19c5d930af74c6e1725061355dfec1b27da8ecabcf5718b8846fc9e25b6079",
+          "semantic_relation": "partial"
+        }
+      ]
+    },
+    {
+      "id": "H13",
+      "record_id": "1abcad2f-8393-4e44-8774-df4a63a22162",
+      "record_audit_hash": "5248b18c64c2ed9f952e4e9adccf36b6f238a02f8718e629469ce942c46bb981",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Children-of-Israel attribution explicitly preserved; unnecessary killing clause added to atom is present in same5:32 and does not broaden answer."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "5:32",
+          "quotation_sha256": "4650c4e13ce232d936eda38ca03d650f11d951836cf73baf50e477c99055282f",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H14",
+      "record_id": "4ab26873-6ac8-408e-a15d-02d49a26c72a",
+      "record_audit_hash": "ab7388c8742ba53770509bcde538d1557b135a396ea44b6fb6619a1e3935aa68",
+      "independent_grounding_approved": false,
+      "accepted_alternative_evidence": false,
+      "audit_status": "abstention_no_source_answer",
+      "qualifications_preserved": false,
+      "attribution_preserved": false,
+      "caveats": [
+        "No source verification; abstention is not grounded answer success."
+      ],
+      "source_evidence": []
+    },
+    {
+      "id": "H15",
+      "record_id": "9dbe451c-f571-4205-97fd-9ce8d11eb9b2",
+      "record_audit_hash": "e8afc84383e876879a1df35d42de7f86672bb89348fc19e7482405cd0b6e1e6e",
+      "independent_grounding_approved": false,
+      "accepted_alternative_evidence": false,
+      "audit_status": "abstention_no_source_answer",
+      "qualifications_preserved": false,
+      "attribution_preserved": false,
+      "caveats": [
+        "No source verification; abstention is not grounded answer success."
+      ],
+      "source_evidence": []
+    },
+    {
+      "id": "H16",
+      "record_id": "d1970950-5de1-4e73-a90a-eaadf4b0ed9e",
+      "record_audit_hash": "d9609f86b986e2b889af0c1785d59e1e68058a5563713017149231dab0e3655a",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": true,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Immediate authenticated6:151 context of6:152 prohibits approaching sexual immoralities, encompassing adultery. Main6:152 quote concerns orphan property, not sexual immorality;4:19 does not itself prohibit approaching adultery. Valid conclusion relies on displayed neighbor6:151, not the overlabelled main quotations."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "6:152",
+          "quotation_sha256": "cb24204b4e3b77d1f392c5b10f7fceaa36d34873240b5528f783d361fa4ad1b5",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:19",
+          "quotation_sha256": "a8f501b7e65d50e1be37b1edd5638d6071a73f477f208767bfd9b3a38ee16d76",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H17",
+      "record_id": "f08e6bb7-23be-4e46-b8a6-a21d4b53dba0",
+      "record_audit_hash": "cfdaa6620d600661cc261a12fd30d4a6d97d494854536039d83feae248f45920",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:4",
+          "quotation_sha256": "6d2fcdab410bd4c3199147234e2951824063adf76c22a78e30ad736deef68f84",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:15",
+          "quotation_sha256": "441702b32a976e6fe2eb676e4cc41a292086257189f509d8fed26bb4f57462be",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H18",
+      "record_id": "2629ef84-2c33-406a-81af-1a668ec6b7fb",
+      "record_audit_hash": "86ddd796ce4e79a9db24d10aba842d0564d179d4fbfc4a1a7af92cd4651b8742",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "49:9",
+          "quotation_sha256": "db44ecb288212a8e81afee995adbddd55c1f8f9407c7a3b64042ae12cbef4e6e",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H19",
+      "record_id": "7a174b90-d251-44b1-969f-123535ce9d71",
+      "record_audit_hash": "27cff0a842bc60beca186ce5b52ffda50bc4edf54ef9667a2cf9c38ac4a2f6d1",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "49:10",
+          "quotation_sha256": "bc9063abe975f25fbc6d9c31cdce0ee70cc17dc014ecadc7562ca84fd1ce1373",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H20",
+      "record_id": "d8f0bbe3-715e-4316-b4c2-ea121307b469",
+      "record_audit_hash": "6157444ebdd74c79b8491170cf44e7189a3f0a3d55ff254b1d5e154d08d09226",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Non-fighting/non-expulsion qualifications preserved;60:8 direct.16:90 broad justice is supplementary, not independently specific non-hostile group proof."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "60:8",
+          "quotation_sha256": "ca4a51a3796e9ea3de89f074f274fd2a59e4363518058a5e131d53baef388e4c",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "16:90",
+          "quotation_sha256": "903d2ef408dfcc29a437dae30f5980a593128ec192c8826ae60c49e49de59429",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H21",
+      "record_id": "3b0a1c85-4051-448e-a945-7de5c809a8f7",
+      "record_audit_hash": "49335b6c9d6614c6b34478d900feb9f3fea13ccb29d3c841e57ba12285b9ef3f",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "31:19",
+          "quotation_sha256": "4c1ceac437395551a02ea59a361d1d9fbc5589ceaaa41dc86b829b22a6dc574e",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H22",
+      "record_id": "a2580ad0-87f3-4034-a147-ef668814bf2f",
+      "record_audit_hash": "e974124b40854f99c9f3b772bddb28231a81a37d5fe73001e77ff18bf0865a06",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "25:63",
+          "quotation_sha256": "145e8078d4910f7e0c5ca06cc0e470ff8ffd185d3bf42b3637e4cad1b1d88e84",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H23",
+      "record_id": "81f902ed-200d-4ff2-ad57-e8ea5b40f7ea",
+      "record_audit_hash": "6bb41e364c2b84ca483420cf873ca2ae37330873017bc67b296764b7a5c1d092",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "24:22",
+          "quotation_sha256": "bd24658ca3383154fa060c976f3e57379d78036ef21615ee457d02c9db6e5477",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "64:14",
+          "quotation_sha256": "fd034b7b29da73b73f72b9c58c96d8cb868933dd8783964ac2c1f6c3db485c8a",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:109",
+          "quotation_sha256": "28cf53165b25daad699f77eefbccbfc8afa777079f1c54688e31176e22339303",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "5:13",
+          "quotation_sha256": "8b67bdc17a944f571f3a9fda0d7c72ad6800b4f67d7a1444af2cce8096921fa5",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H24",
+      "record_id": "28ba1ef8-064f-4ef6-bc99-1c1372301739",
+      "record_audit_hash": "7e40ac3fbb5e5adaf1f3b250e49d38a617075780d2c1321039f131a5483f6b4a",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "42:38",
+          "quotation_sha256": "ddfa5f1ef510f4f733558eb3d74995a93e29639617bb611b5ecb6d50a1f92094",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:233",
+          "quotation_sha256": "1ec93c345fbd25dbef820c35af4d4bf374ea24678855cb70e7b2a1e0141293c7",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H25",
+      "record_id": "a6598828-8c61-4e06-9ad9-a6a6b3233ff6",
+      "record_audit_hash": "023d701477d55e5ccbf0923ea378074611f95fa02bb75a2edd63ffb1b92a1e56",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:32",
+          "quotation_sha256": "62472206da7bfd1827b52bf2610e18aaf27db734a50daa81b51b386e7847fd35",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H26",
+      "record_id": "047a92cf-9de0-45d0-b1df-9ff118b435c1",
+      "record_audit_hash": "46e9fb0ddc05aca016a5837167a0f9dca5661a461a6598a28cc6d7617acce073",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "16:90 directly forbids baghy/oppression; statements about divine absence of injustice are related but not independently human prohibitions."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "16:90",
+          "quotation_sha256": "903d2ef408dfcc29a437dae30f5980a593128ec192c8826ae60c49e49de59429",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "3:108",
+          "quotation_sha256": "edbb6a5c49a3058e55a533f0b0f648ef776f3767b9e50584892bd77abfc46442",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:30",
+          "quotation_sha256": "f99633294e5c3aed2d6478e246e21605ae56fcf6de7f525c83ee58e8e589c6b5",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:40",
+          "quotation_sha256": "56a1fcd42c366e756855101e2d143b8d112c3f323237bf3a26b86ea45601eaae",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "40:17",
+          "quotation_sha256": "b7e62c00b73814807a84355e4497be9e963aa2c95acde26bef49e68ee6d8080a",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "40:31",
+          "quotation_sha256": "c33597c5c16b2c6267f29ddb7d6c3784fa704db19679ed9f13408e21274cf496",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H27",
+      "record_id": "44a896dd-5134-430f-a174-5c2664ae8295",
+      "record_audit_hash": "2a9db0a2b511c5fd6b3d121768ff2dd9b1dc6934748cad912824c8a083fc9f78",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "9:60",
+          "quotation_sha256": "538abcd0925580a4927c824316d17d968a3d101e86fb8bfadf59f36caa230e0f",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H28",
+      "record_id": "6536070e-7d21-440c-b584-de43798725f5",
+      "record_audit_hash": "ba3ca54e884c3b37359273bb407cb1046c7938fa9e993e0a1b45e3987f480f0f",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct proposition, objects/conditions and attribution preserved."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:219",
+          "quotation_sha256": "e78a306453521df52f46bf9496fd5a79fb7b19756498cf43b111047b7cbac3a2",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H29",
+      "record_id": "9e8bbf5a-d79c-4e09-9448-6c0a4698f8c8",
+      "record_audit_hash": "e8596b49564f104b2e948b1d4a41012ab54928315353ed81de48251d43f2fe5b",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Journey/no-scribe and mutual-trust preserved, no unconditional mandate."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:283",
+          "quotation_sha256": "84edc2f7c70be0afd3a97dfba209a6510c38f67f6017916e278ff7490e8928eb",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H30",
+      "record_id": "3bbc6b21-38fa-48fe-b312-88ca241fd651",
+      "record_audit_hash": "0eef6e807fb944397a5866d8eefd6c890466f95f463531d22bfe7ae214e8fde0",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Known-father and unknown-father exception preserved;33:5 direct,33:4 context."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "33:5",
+          "quotation_sha256": "51a84e1d0b50a34b19c9f627ac0d61bdc8d3667f46649424277ae110171b8692",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "33:4",
+          "quotation_sha256": "b2e186a8d12f381dcd7dd1e78041ce7a07da00c7faf75539dc8e12c9b93bed0c",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H31",
+      "record_id": "6e5893ca-6671-4668-addf-82ca88262427",
+      "record_audit_hash": "187228700fcd99ec125b7ea6647925c9b0bf85f21b962240b10ebee4e64aabf2",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "17:85",
+          "quotation_sha256": "d70bb95cf18c7531ae6f34cfb525fd4d2aa986a1e16c46373b66ac1a8368bca4",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H32",
+      "record_id": "2ba87e97-f818-4836-9e02-6c350f457b4d",
+      "record_audit_hash": "cdc8c5397c76801fc2d2b02f485f31f13977964b254a85ff1cd0c4d0b47cb1bb",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "50:18 attentive watcher for every utterance supplies counterexample to no watcher knowing acts;82:10-11 alone does not explicitly state knowledge.82:12 absent from packet, so quotation basis82:10 is weaker than summary."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "50:18",
+          "quotation_sha256": "9cac4976deaec6f797e50e36e76dbbc92c4a1bdd330080446bf45942dcca42c4",
+          "semantic_relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "82:10",
+          "quotation_sha256": "4a8523b85fd718553bce78104e5e1f523cf5a6623e4be66365f3e4f39ed3c6be",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H33",
+      "record_id": "9d0091bc-fee2-4f21-97e2-64e81034a6ae",
+      "record_audit_hash": "183dcc7033232bb3887014c10e71aa5773b74000244b99e77b03424686e9d18c",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "41:12",
+          "quotation_sha256": "620fe3364a04442bee508f18900dbb7755a19f97dd231048a3f546d04f4502e3",
+          "semantic_relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "67:5",
+          "quotation_sha256": "7aba2ec0e58d0b25d9a6a76c6c969647308ac6cd9c5cd895bc4d5beb567416f7",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H34",
+      "record_id": "451ed793-dfa7-41e6-836c-ed6fb435719b",
+      "record_audit_hash": "28313fd1510397db1bb7abb9136b9223f42a797413af2110cac49f2c7abd3097",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "6:14",
+          "quotation_sha256": "2143f01964204719daab562b4cf7641a16d6340908f1e936fab87c89e8ed4434",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H35",
+      "record_id": "75ac0c05-ede6-44f5-9060-a66f9055705c",
+      "record_audit_hash": "4fde586656ab70aa4822bbb3906c59bdc0621c44f03ae87663cc8491e216c5c9",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Primary proposition, source attribution and stated conditions preserved; reviewed summaries and atomic assessments against admitted primary text."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "36:79",
+          "quotation_sha256": "67a0ece312c2c2adf1185ba32c88852c1e87bcf7650ca7183f2b0f6065c86bbb",
+          "semantic_relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "75:3",
+          "quotation_sha256": "d7763b50e4350a4e1c4a8805183469e55822b9006ced82a6c9ba514af4bdbf5b",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H36",
+      "record_id": "3b684ad3-5674-4a61-bf42-029dc60f4358",
+      "record_audit_hash": "b82d7159b4a72f3e046ab8288d80a1261411998e885cca6a9cbe6fef73e17da1",
+      "independent_grounding_approved": false,
+      "accepted_alternative_evidence": false,
+      "audit_status": "abstention_or_inconsistent_headline",
+      "qualifications_preserved": false,
+      "attribution_preserved": true,
+      "caveats": [
+        "Summary gives correct directly sourced no, but insufficient verdict/partial atoms contradict that decisive headline; not approved as a coherent decisive verification."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "35:12",
+          "quotation_sha256": "399734d144e6bc86888ba6435ec87ccdce88f57ac1e13e31341ad1f72506d8f2",
+          "semantic_relation": "partial"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "25:53",
+          "quotation_sha256": "50cf98db1c0f58f6866bd721845be2426e92b57279092ab742608639ad996336",
+          "semantic_relation": "partial"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "77:27",
+          "quotation_sha256": "d01ef4787f85a427f0163b37762764645ba3cd85f8304ff24258bfeb4b302630",
+          "semantic_relation": "partial"
+        }
+      ]
+    },
+    {
+      "id": "H37",
+      "record_id": "f45eeedf-2b57-4c0c-9699-f5ae8db4c35a",
+      "record_audit_hash": "fad5290da1054f76e0f77e4539495ed6dfddbc2e14bfc6610fb4126eb9513d04",
+      "independent_grounding_approved": false,
+      "accepted_alternative_evidence": false,
+      "audit_status": "abstention_or_inconsistent_headline",
+      "qualifications_preserved": false,
+      "attribution_preserved": true,
+      "caveats": [
+        "Failed closed to not_evaluated; no final verified answer. Raw model assessment retained but cannot be promoted into final grounded success."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "5:116",
+          "quotation_sha256": "e80592e9b33ed242b84499cfef60c92a327c7cdeafe5c5766a2f0feb658cd763",
+          "semantic_relation": "not_assessed"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "19:36",
+          "quotation_sha256": "cbbb1f0e2e723be76fa7e3a5f737cab2c7c42d498ed703c73ce0d792e6337f6d",
+          "semantic_relation": "not_assessed"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "39:6",
+          "quotation_sha256": "fb6cc0abb02e5b9bad1166570b319e74ee48781c5e9eebe0b0585c7bfbc697ff",
+          "semantic_relation": "not_assessed"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "5:110",
+          "quotation_sha256": "9fc3eeeb3ece64dc5cdbaf27697f6d4053fad0566ba83aaba77baaf52e1e161f",
+          "semantic_relation": "not_assessed"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "9:31",
+          "quotation_sha256": "b5ec44adc5995af5fe0bfd9edc9b7bd4c6817f66990b2cc94ad9aa18de6bb799",
+          "semantic_relation": "not_assessed"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "3:64",
+          "quotation_sha256": "4e1c0759eb8bd67f7e151c315196e91d27120a751f905e26c6afcaae54b4b7ec",
+          "semantic_relation": "not_assessed"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "10:18",
+          "quotation_sha256": "8d71790ccc37d1fe21798fb39456c074c8914976f2447e618167687e7674a217",
+          "semantic_relation": "not_assessed"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "11:84",
+          "quotation_sha256": "6165840f0a2e0c09146cd699692211882038c648d220b01cde32e76e6ff4e2a0",
+          "semantic_relation": "not_assessed"
+        }
+      ]
+    },
+    {
+      "id": "H38",
+      "record_id": "c797e627-5197-4dbb-bbcb-e6cc26ed27a3",
+      "record_audit_hash": "8a301052930198d91d3c92beeeb4bcf26c9094bef43586aed1af26837c8013f7",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "3:67",
+          "quotation_sha256": "96bdd86382bbfed1da6cf4ba1865fd69b77ed1faeb1bac07ba878aaea14a0c52",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H39",
+      "record_id": "9c77e16c-6c06-4799-9369-42b359de89ff",
+      "record_audit_hash": "1a349801b873f107e93aeb2b98dc173bdeb6d498ceb495d2f102902a5f67d49b",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "33:40",
+          "quotation_sha256": "e55b78c55ff8a2f92cd3e505106607332242dc8519a57f120a0d038da5e894e8",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H40",
+      "record_id": "e3de7267-d742-4b16-b8f6-ee40166b7496",
+      "record_audit_hash": "0896de563c5936711a3d1b4322dff1d25858325746e904b4718b11f8b7bd807e",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Encompassing vision negated; not broadened into denial of any seeing."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "6:103",
+          "quotation_sha256": "f5a2d43483fc39c9070ffb1d885e9f1d92e15883dfe167189a2f831b22117bd5",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H41",
+      "record_id": "d7ba1e77-201c-4c28-9bd8-4a674cfcc1da",
+      "record_audit_hash": "e5f1b07f4ba5edbd69c6c2efc206fa2b5278441b038630ef799d977d8e49a481",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Original expected EN2988 appears with matching publisher version/hash. This is reference metadata mismatch (reference source_id omitted), not different source proof. AR2988 also directly supports anger condition."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:2988",
+          "quotation_sha256": "803d77ff442b1592868c47cb4ab748c245793334d1d8d4fd72a5d44660c80cc3",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:2988",
+          "quotation_sha256": "25340243e815100e180d94bd852b81d106b525ee2037399e7390ba02b016eca8",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H42",
+      "record_id": "260d9cdd-7607-4f85-96b2-f90164b6a591",
+      "record_audit_hash": "36d0abdca9db19dcb8cd742f0d1084faeb1583d68b634e468f3f4d1acaaba26e",
+      "independent_grounding_approved": false,
+      "accepted_alternative_evidence": false,
+      "audit_status": "grounding_rejected",
+      "qualifications_preserved": false,
+      "attribution_preserved": true,
+      "caveats": [
+        "Sole supporting atom/card EN5979 concerns predestination/creation of Pen, not strength or anger. This is unsupported decisive yes, not accepted alternative evidence."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:5979",
+          "quotation_sha256": "c342a9a5dca07138c7026fc751e1bca80213cdbaa9ae2fb656c23e3a3ffcea8b",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H43",
+      "record_id": "8749935b-9841-4a34-ab2d-77e632a062b2",
+      "record_audit_hash": "8bb3cc9158ec84acc01bee84c596f0422be94da9de7f9692398aaef1c9fd48d5",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "EN4717 and66520 directly support reciprocal love. AR65115 speaks of loving someone for Allah/sweetness of faith; supplementary supports label overstates same-predicate entailment; headline principal conclusion remains proved."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:4717",
+          "quotation_sha256": "68dd7649da4af9680e7d34c21d3a0f71dd0ab977afcc84edeb8ad0116e72ce39",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:66520",
+          "quotation_sha256": "952f59316f2b58a53aa2918fe9e352e81efaa96fa8a80018e709306344ef96e5",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:65115",
+          "quotation_sha256": "49d9f44d9ce41e3f6e2e4182a9df3775639efd18314d8b58b05a0991e4ba62ad",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H44",
+      "record_id": "77447055-81ba-44e7-bb7b-08fc3c5cf84c",
+      "record_audit_hash": "d70a2d34509bd74add2a1a32ca9d79eb46af261f21e347c7159e7a2812a2bbbf",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Knowledge-seeking condition preserved in EN6267/4801 and AR6267."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:6267",
+          "quotation_sha256": "12b5128f3ef31eaafce14655b30df8ffd0b382b85247f15ecd22ce619371e624",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:4801",
+          "quotation_sha256": "28ca0b0c1da71a1b9a0d436f761ee5eab00f2e5761009c86decca17043456151",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:6267",
+          "quotation_sha256": "69bc3ac26acb0c0402fdc46c82e1e7292f1574bc0ab256f068da6d56f2a7b10b",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H45",
+      "record_id": "f6ce02e8-d480-4e39-b496-4e187a019b5b",
+      "record_audit_hash": "1acd6acf98206fe0aa699501d3343440ebcbc79d7082b2e70be31d45d66f35f7",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Aid to brother condition explicitly preserved in EN/AR4801."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:4801",
+          "quotation_sha256": "28ca0b0c1da71a1b9a0d436f761ee5eab00f2e5761009c86decca17043456151",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:4801",
+          "quotation_sha256": "94acfc5816063a3bd3bfbfeb8b7a71bb5e3bedd42e382fc3b0d2d0b989505202",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H46",
+      "record_id": "0b98ca22-0b79-4604-853f-23c50360b5b1",
+      "record_audit_hash": "eccd702ee3b876487703ee4de2c2633b87675f77b9b51b475d1c60e055583f79",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:65004",
+          "quotation_sha256": "485ce48c069386e21c276261e7206152151375c8fb6f362a27ebd1e26358233c",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:66526",
+          "quotation_sha256": "05fba5f71df68fbc3da6b6225458b1a6cccd4f18cf7a105e94bee87bdf06290e",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:65004",
+          "quotation_sha256": "b0530eeaf152e71f2c82523593a6f282f95dbe254c36809ce1afbffaa26a7b22",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:66526",
+          "quotation_sha256": "f4e256c29931767a9f5eed826b35dbb2bf64a74bb9852138e5e695dd9e236137",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H47",
+      "record_id": "5a11364e-0070-4b4b-a5f6-ce2168a68f19",
+      "record_audit_hash": "07125fc607f1e851e994770dd003a038ebd4f808a015cc3421cda4441e9cc22d",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:3055",
+          "quotation_sha256": "c8494300c3e4dd98eb3a9d786ad8b99e811219f04c7fe50a969e03f6c1b6cb1a",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:3055",
+          "quotation_sha256": "b98c43205dcf030a8d872a68649a6a7900d36b2fc6b0a953c99c9a3cd9c01336",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H48",
+      "record_id": "48e760f0-bf4c-4da9-98f1-f9236a53295e",
+      "record_audit_hash": "3387f8bc77620a6af6dd7b6917b96de9fd2f4a3b34e09828a62b14fee533003e",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved_with_caveats",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct primary support/negation, attribution and material qualifications preserved in summary and atoms."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:4709",
+          "quotation_sha256": "83c7872e2ac66b0bf306b531a841e5daaf44006a571524141db1df31b8f965ad",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:4709",
+          "quotation_sha256": "332f88466d3ec85e240850272a34f4cf76453c348887a9439334ae4fe89747b0",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H49",
+      "record_id": "b5df1830-761c-4c83-9f33-576b22fcbc18",
+      "record_audit_hash": "eb1f20be37fc3970ccd03dfee212b1827f35f729d8c2ec13607183b5cca0504d",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct proposition, objects/conditions and attribution preserved."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:10101",
+          "quotation_sha256": "bfcbc944feb01567d217c2eabdb01459a6edde7dfb23033383b676a171be36b2",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H50",
+      "record_id": "6ea8bfbc-a0e5-4356-9197-aa26dd98d2c1",
+      "record_audit_hash": "f2cfbec6640ebc4be0638450b857fdc0d61a1a00fef7de1534fe9d702ed5481c",
+      "independent_grounding_approved": true,
+      "accepted_alternative_evidence": false,
+      "audit_status": "approved",
+      "qualifications_preserved": true,
+      "attribution_preserved": true,
+      "caveats": [
+        "Direct proposition, objects/conditions and attribution preserved."
+      ],
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:4309",
+          "quotation_sha256": "886c213c654052721b998bfb4bdaeac4eaaf12ccc74538bb107f9c3c2a1128e0",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:4309",
+          "quotation_sha256": "9b11e86260b3c2d7480e00a9af0bb634c5c2d5046d58d12e7f7cc8e763743273",
+          "semantic_relation": "supports"
+        }
+      ]
+    }
+  ],
+  "independent_approved_count": 44,
+  "rejected_case_ids": [
+    "H12",
+    "H14",
+    "H15",
+    "H42",
+    "H36",
+    "H37"
+  ],
+  "mechanical_source_checks": {
+    "evidence_cards_checked": 384,
+    "errors": []
+  }
+}

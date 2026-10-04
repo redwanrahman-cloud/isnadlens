@@ -121,3 +121,18 @@ test('published transliteration accents do not erase a negated original Ramadan 
   expect(queryTerms(claim)).toContain('never');
   expect(sha256(JSON.stringify(corpus.verses))).toBe(before);
 });
+test('ordinary inflections and paraphrases retrieve emancipation and self-control without source-specific rules', () => {
+  const q=loadCorpus(),h=loadHadith();
+  expect(retrieveWithPublishedEnglishAid(q,'Does the Quran describe freeing an enslaved person as part of the difficult path of righteousness?',8,['Quran','freeing enslaved person','path of righteousness']).verses.some(v=>v.id==='90:13')).toBe(true);
+  expect(retrieveHadith(h,'Does the Hadith describe true strength as controlling oneself during anger?','en',4,['hadith','true strength','control oneself','anger']).some(r=>r.id==='5351')).toBe(true);
+  expect(retrieveHadith(h,'Does the Hadith prohibit a judge from judging between people while angry?','en',4).some(r=>r.id==='2988')).toBe(true);
+  expect(retrieveHadith(h,'Does the Hadith describe modesty as bringing good?','en',4).some(r=>r.id==='3055')).toBe(true);
+},20000);
+test('published English formal synonyms retain original subject over generic qualifiers and unrelated planner hints', () => {
+  const corpus=loadCorpus();
+  const claim='Does the Quran forbid pork under ordinary conditions?';
+  const result=retrieveWithPublishedEnglishAid(corpus,claim,8,['خنزير','pork','حرام','forbid','قرآن','Quran','water conditions']);
+  expect(result.verses.some(verse=>verse.id==='2:173')).toBe(true);
+  expect(result.verses.filter(verse=>['2:173','5:3','6:145','16:115'].includes(verse.id)).length).toBe(4);
+  expect(retrieveWithPublishedEnglishAid(corpus,'Does the Quran discuss gambling under ordinary conditions?',8,['water','conditions']).verses.some(verse=>verse.id==='5:90')).toBe(true);
+});

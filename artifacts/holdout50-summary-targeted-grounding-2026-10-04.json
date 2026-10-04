@@ -1,0 +1,30 @@
+{
+  "review": "independent_final_qualified_summary_targeted_audit",
+  "case_id": "B46",
+  "record_id": "e8fd6d8e-5d4e-4cda-86cc-7008ee9deb6b",
+  "audit_hash": "2e5ed35dc818bdb148c662d543e5b3ca4fb79cc17e74103c71fad04e58f7c0f2",
+  "prompt_version": "claim-assessment-v2.3-qualified-exception-conjunctions",
+  "verdict": "supported_within_selected_corpus",
+  "independent_grounding_approved": true,
+  "qualifications_preserved_in_english_summary": true,
+  "qualifications_preserved_in_arabic_summary": true,
+  "attribution_preserved": true,
+  "seal_valid": true,
+  "selected_unit": {
+    "unit_id": "tanzil-1.1-2026-10-04:2:173:primary",
+    "evidence_id": "tanzil-1.1-2026-10-04:2:173",
+    "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+    "context_locator": null,
+    "quotation_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69"
+  },
+  "canonical_derivation_exact": true,
+  "source_cards_checked": 8,
+  "source_units_checked": 12,
+  "source_integrity_errors": [],
+  "summary_en": "Yes, the selected sources support that the Quran forbids pork under ordinary conditions, with a clear exception for necessity when a person is not seeking excess or transgressing as stated in the cited verses.",
+  "summary_ar": "نعم، مجموعة المصادر المحددة تدعم أن القرآن يحرّم لحم الخنزير في الظروف العادية، مع استثناء واضح عند الاضطرار غير الباغي ولا العادي كما في الآيات المذكورة.",
+  "conclusion": "2:173 primary directly forbids pork and explicitly limits the necessity exception to not seeking excess/transgressing. Both summaries now attach the limits to necessity rather than create independent alternative permissions. Ordinary-condition claim and Quran attribution are preserved. Arabic grammar is somewhat compressed but the prerequisite is intact.",
+  "prior_rounds_untouched": true,
+  "not_an_untouched_holdout_score": true,
+  "scholarly_certification": false
+}

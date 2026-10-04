@@ -4,7 +4,7 @@ A source-first workbench for examining bounded Islamic claims in nine languages.
 
 ## Current increment
 
-Nine selectable input/display languages (Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French, German), automatic language detection, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in nine languages, bounded AI-assisted bilingual search expansion, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment and translations of project explanations were tested within the authorized persistent development spending cap. Explanations are labelled unreviewed; original source quotations are never overwritten by language switching; separate published translations are identified alongside them. Detection and routing do not establish independent linguistic or religious approval. Final evaluation, live hosting and the pilgrimage guide remain open.
+Nine selectable input/display languages (Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French, German), automatic language detection, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in nine languages, bounded AI-assisted bilingual search expansion, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment and translations of project explanations were tested within the authorized persistent development spending cap. Explanations are labelled unreviewed; original source quotations are never overwritten by language switching; separate published translations are identified alongside them. Detection and routing do not establish independent linguistic or religious approval. Further untouched evaluation, live hosting and the pilgrimage guide remain open.
 
 The first repository commit was created during the authorized event window. See PRE_CHALLENGE_DISCLOSURE.md and docs/BUILD-LEDGER.md for the research disclosure and starting-state record. The GitHub repository is private during development.
 
@@ -27,7 +27,7 @@ Open http://127.0.0.1:3100. Corpus preparation downloads only the two authorized
 
 Copy .env.example to .env.local for local configuration. Never paste API keys into chat or commit secrets. Paid requests require both an API key and explicit authorization; disabling authorization leaves a useful authentic passage search with a truthful not-evaluated state. It never substitutes canned successful verdicts.
 
-The interface and mechanical tests can run without an API key. OpenAI model availability, billing and account rate limits must be verified before inference. Paid development calls are authorized up to 10 SAR, while at least 15 SAR is reserved for judging. There is no deployment or public publication yet. The local spending ledger requires durable shared atomic storage before enabling calls on multiple hosted instances.
+The interface and mechanical tests can run without an API key. OpenAI model availability, billing and account rate limits must be verified before inference. Paid development calls are authorized up to 13 SAR (including the explicitly approved additional 3 SAR), while at least 15 SAR is reserved for judging. There is no deployment or public publication yet. The local spending ledger requires durable shared atomic storage before enabling calls on multiple hosted instances.
 
 ## Sources and trust
 
@@ -39,7 +39,7 @@ Auto examines ordinary claims and general source questions across Quran and Hadi
 
 ## Release gates still open
 
-Independent linguistic review; untouched final evaluation after freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission.
+Independent linguistic review; broader untouched evaluation after the recorded new50 freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission.
 
 ## Development probes
 
@@ -55,3 +55,8 @@ Voice input supports nine language settings and automatic recognition, with loca
 The 50 distinct-question development baseline compares app answers with separately reviewed, linked primary-source answers. Missing an established answer is a coverage failure, never a correct answer. Six unresolved or outside-scope cases are excluded from factual accuracy. [Results and initial failures](docs/BASELINE50-RESULTS.md), [reference witnesses](docs/COMMON50-SOURCES.md); the local /evaluation page exposes every question and comparison. These are representative topics, not a measured top-search list or scholarly approval.
 
 Published English Quran translation now also supplies hash-checked query-ranking assistance, mapped back to immutable Arabic evidence. Hadith ordinary search includes both admitted Arabic and English records where appropriate; grades remain publisher-attributed.
+
+## New fifty-question frozen evaluation
+A second, non-duplicate set was frozen with primary-source witnesses and a separate source review before any app calls. All 50 completed against unchanged application code: 44/50 principal answers were independently source-grounded, five abstained and one reached the correct yes label using unrelated evidence. The 40-yes/10-no distribution and 80% always-yes baseline are disclosed. These findings are not scholarly certification or proof of general accuracy. The original first-pass records remain immutable, with subsequent repairs reported separately. Together the two sets contain 100 distinct questions, not 100 flawless answers. [New50 results](docs/HOLDOUT50-RESULTS.md), [source audit](docs/HOLDOUT50-GROUNDING.md), local `/evaluation/holdout`.
+
+Every proposed supported verdict now requires a separate source-focused entailment review of its material assertions and cited primary text. A missing, inconclusive or mechanically invalid review prevents publication of a supported verdict. It uses the same spending ledger and adds a bounded paid call; its real unrelated-evidence probe rejected the original wrong-source packet. This is an additional model-based check, not a correctness guarantee. Insufficient/not-evaluated summaries now agree with the sealed final status.

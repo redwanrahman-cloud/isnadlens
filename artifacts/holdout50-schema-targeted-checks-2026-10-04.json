@@ -1,0 +1,102 @@
+{
+  "purpose": "Targeted post-repair checks. Separate from immutable new50 first-pass results; not a fresh benchmark.",
+  "application_tree_sha256": "759bf7bd626e5e70acf77ab21f46affa2933993aba141156b0a6f454b4a25d6b",
+  "cases": [
+    {
+      "id": "B46",
+      "claim": "Does the Quran forbid pork under ordinary conditions?",
+      "actual": "not_evaluated",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": false,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:60",
+          "relation": "not_assessed",
+          "quotation_sha256": "8e5d3c462ca634a8ca7e6b435f22198a427abb994d50213166f24b0afd06b82e"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "not_assessed",
+          "quotation_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "not_assessed",
+          "quotation_sha256": "719d586cab5c12d7d12c8f5ed2ab7ead4b5791cc2d33956e759034c86d33b8ba"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "not_assessed",
+          "quotation_sha256": "c3dc01e86aae4112e87329916b4514b1350253adaf483db70722663ebbb9bf62"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "not_assessed",
+          "quotation_sha256": "d07959963857e1bed569dfdb268738512063763998b41781385f3587fa020604"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "13:11",
+          "relation": "not_assessed",
+          "quotation_sha256": "b441096c5dd699644ffa2a117a36500af227333c434b84be18f18976ea469062"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:2",
+          "relation": "not_assessed",
+          "quotation_sha256": "7f2c76e371ff6b6b09eb58c2541e0c5c7209471c1aa315cc52663cd655dfe010"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:5",
+          "relation": "not_assessed",
+          "quotation_sha256": "e5e561944351613e369e0a79c9dd7b53eb6bbef216b6dc1910c2b5e6b8f2fc94"
+        }
+      ],
+      "summary": "This claim has not been evaluated.",
+      "reason_codes": [
+        "SOURCE_ENTAILMENT_UNCONFIRMED"
+      ],
+      "entailment_status": "rejected",
+      "entailment_version": "source-focused-positive-entailment-v2-bounded-ids",
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-or-conflict-plus-positive-review-and-supplied-context-v4",
+      "usage": [
+        {
+          "input_tokens": 621,
+          "output_tokens": 74,
+          "estimated_cost_usd": 0.00079875,
+          "reservation_id": "4e458a7b-1012-4c8b-b790-8e9c9ec754d1"
+        },
+        {
+          "input_tokens": 7321,
+          "output_tokens": 368,
+          "estimated_cost_usd": 0.00714675,
+          "reservation_id": "2a03d75f-da20-4cab-8810-5bd6a6e1b6e5"
+        },
+        {
+          "input_tokens": 7321,
+          "output_tokens": 368,
+          "estimated_cost_usd": 0.00714675,
+          "reservation_id": "2a03d75f-da20-4cab-8810-5bd6a6e1b6e5"
+        },
+        {
+          "input_tokens": 3751,
+          "output_tokens": 122,
+          "estimated_cost_usd": 0.00336225,
+          "reservation_id": "2dc3328f-32e0-4e3a-87b7-73e7d2b6a69c"
+        }
+      ],
+      "latency_ms": 6341
+    }
+  ]
+}

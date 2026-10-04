@@ -1,0 +1,146 @@
+{
+  "review": "independent_first_targeted_repair_round",
+  "reviewed": 8,
+  "grounded": 5,
+  "abstentions": 3,
+  "source_cards_checked": 64,
+  "exact_source_errors": [],
+  "first_pass_untouched": true,
+  "not_an_untouched_holdout_score": true,
+  "cases": [
+    {
+      "id": "H12",
+      "record_id": "2cdccfee-d872-474b-9596-3c3841a08f09",
+      "audit_hash": "7d16bc238a9f4ca6a22ccb5b465eb96e24c5ee70c7b9571d6530faee73587622",
+      "verdict": "not_evaluated",
+      "independent_grounding_approved": false,
+      "audit_status": "abstention_no_grounded_answer",
+      "note": "Conservative abstention:90:13 primary plus90:12 question context retrieved; reviewer entails yes but qualifications false.90:11 absent; cannot certify reason for flag or relax it. Not a successful source answer.",
+      "source_evidence": []
+    },
+    {
+      "id": "H14",
+      "record_id": "adde5114-bf6f-4ca3-8806-5859bfe66c08",
+      "audit_hash": "9675ca93f05e1fea9eced03bdb1f744ca022e310ea93d27c2cc97994873fe96d",
+      "verdict": "supported_within_selected_corpus",
+      "independent_grounding_approved": true,
+      "audit_status": "grounded_conclusion",
+      "note": "17:33 directly states prohibition with except-with-right qualification retained. Positive exact basis and independent audit justified.",
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "17:33",
+          "quotation_sha256": "34870479cb3d46bd1b74ab39e43843fd7c9615d38a6aa26dae9d3f6aefe664ff",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H15",
+      "record_id": "b2a79df3-cd2e-438b-9811-199c8ecae133",
+      "audit_hash": "970cae6c71cc160a0021b6bdc6792d31accb954f656dd40b4da4b572179a91c9",
+      "verdict": "supported_within_selected_corpus",
+      "independent_grounding_approved": true,
+      "audit_status": "grounded_conclusion",
+      "note": "4:93 directly covers intentional killing of believer and severe warning. Condition preserved. English summary has Arabic adjective leakage/style issue, not predicate error.",
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "4:93",
+          "quotation_sha256": "e8ebe5465e6624abeabf67ff400938fabf39b32e26cd731ea4b0a215f55d5f43",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "H36",
+      "record_id": "669c77a9-b0db-4aa3-8f73-8fa5a1795b10",
+      "audit_hash": "cebd35a3f8bf3520ba6011cf9736acac794c155403863890c6b80e2d1a8bb6b0",
+      "verdict": "conflicting_within_selected_corpus",
+      "independent_grounding_approved": true,
+      "audit_status": "grounded_conclusion",
+      "note": "35:12/25:53 explicitly fresh versus salty, contradicting same conjunction; summary/verdict now coherent.",
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "35:12",
+          "quotation_sha256": "399734d144e6bc86888ba6435ec87ccdce88f57ac1e13e31341ad1f72506d8f2",
+          "semantic_relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "25:53",
+          "quotation_sha256": "50cf98db1c0f58f6866bd721845be2426e92b57279092ab742608639ad996336",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "H37",
+      "record_id": "46aed4a8-339d-4718-96fa-683cae08a646",
+      "audit_hash": "1c7ed09ec5e69e069babf63da3b6a86f35993cec92fe4df50fe8c57ee6eb1177",
+      "verdict": "not_evaluated",
+      "independent_grounding_approved": false,
+      "audit_status": "abstention_no_grounded_answer",
+      "note": "Safe abstention: raw model cited5:117 as primary ID although only neighbor context supplied. Cannot promote raw unvalidated conclusion; frozen first repair retained.",
+      "source_evidence": []
+    },
+    {
+      "id": "H42",
+      "record_id": "2cc71154-0e37-4d3b-b9f4-6e0447065bd7",
+      "audit_hash": "edad84028ebf047ca0f083bf9b8cfffb9918c27b8e3662ddddfe5097535fdf55",
+      "verdict": "supported_within_selected_corpus",
+      "independent_grounding_approved": true,
+      "audit_status": "grounded_conclusion",
+      "note": "EN/AR5351 actually states strength as self-control in anger; validator basis literal and complete; independent primary audit approves. Earlier unrelated5979 probe rejected.",
+      "source_evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "version": "v1.25.0",
+          "locator": "en:5351",
+          "quotation_sha256": "dc5f4cab9cc88ab5673091f676d46718f7230794092c95f7505881dcd3fe32d9",
+          "semantic_relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "version": "v1.7.0",
+          "locator": "ar:5351",
+          "quotation_sha256": "9c04aaed5d7ba98624f7777fa0c48360b0d0a46e6aaa37651377565f4993a2b8",
+          "semantic_relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "B19",
+      "record_id": "1db3c7d0-7be3-4d4c-a0cb-3bbf5221d31b",
+      "audit_hash": "2bd255fbbc5039dcc9090edad9bb7f4ba46fa3a3123bb2e320b080a27f2bc710",
+      "verdict": "conflicting_within_selected_corpus",
+      "independent_grounding_approved": true,
+      "audit_status": "grounded_conclusion",
+      "note": "2:275 explicitly prohibits riba; exact strong contradiction basis valid. Reinforcing references2:278/3:130 relevant.",
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "2:275",
+          "quotation_sha256": "e3daaaad119e8d53c1fb0161d6e9b0c79ca5cf7ef14475803fd59b13009eddde",
+          "semantic_relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "B46",
+      "record_id": "172b65ab-7ba1-48a7-b987-3440f8cb23e0",
+      "audit_hash": "57b4f60742cfd7e1b643b912f760d6da500a3c85b914ceba0c9fc389097635f0",
+      "verdict": "insufficient_within_selected_corpus",
+      "independent_grounding_approved": false,
+      "audit_status": "abstention_no_grounded_answer",
+      "note": "Honest insufficient result: retrieved pool lacks pork prohibitions and ranks unrelated ordinary-condition vocabulary. Not proof absence; no optimistic headline.",
+      "source_evidence": []
+    }
+  ]
+}

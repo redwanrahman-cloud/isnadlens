@@ -1,0 +1,56 @@
+{
+  "review": "independent_v4_final_two_targeted_round",
+  "reviewed": 2,
+  "grounded": 1,
+  "abstentions": 1,
+  "source_cards_checked": 16,
+  "exact_source_errors": [],
+  "prior_firstpass_and_repair_rounds_untouched": true,
+  "not_an_untouched_holdout_score": true,
+  "cases": [
+    {
+      "id": "H37",
+      "record_id": "cd3a2850-f29a-497e-ab0b-0ad0f5232575",
+      "audit_hash": "49a1b6ad6fd22606750eaf03e4cab80139e989ae47696fa63a772bef2d81f8bb",
+      "verdict": "conflicting_within_selected_corpus",
+      "independent_grounding_approved": true,
+      "note": "5:117 authenticated from already-supplied exact neighbor; exclusive worship instruction directly contradicts alleged admission. Parent context promotion/drop disclosed and raw assessment retained.",
+      "source_evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "5:116",
+          "quotation_sha256": "e80592e9b33ed242b84499cfef60c92a327c7cdeafe5c5766a2f0feb658cd763",
+          "semantic_relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "version": "1.1",
+          "locator": "5:117",
+          "quotation_sha256": "413e0074019746f938fbbd5c437627e0e691289c2cdb4e5df165d55d2438651e",
+          "semantic_relation": "contradicts"
+        }
+      ],
+      "context_promotions": [
+        {
+          "parent_evidence_id": "tanzil-1.1-2026-10-04:5:116",
+          "context_locator": "5:117",
+          "added_evidence_id": "tanzil-1.1-2026-10-04:5:117",
+          "quotation_sha256": "413e0074019746f938fbbd5c437627e0e691289c2cdb4e5df165d55d2438651e",
+          "dropped_evidence_id": "tanzil-1.1-2026-10-04:20:40",
+          "method": "supplied_exact_context_authenticated_as_primary"
+        }
+      ]
+    },
+    {
+      "id": "B46",
+      "record_id": "0a8bf000-0797-408f-b738-53e6c6c9c586",
+      "audit_hash": "749682c3fdabb2f849db828a143afd5d8bdaf1aeef8fdbaaeeaf606975be6c36",
+      "verdict": "not_evaluated",
+      "independent_grounding_approved": false,
+      "note": "Pork passages correctly retrieved; validator returned four duplicate c1 rows plus typo2.173. Strict shape/reference gate correctly abstains; source is not absent. No grounded final answer.",
+      "source_evidence": [],
+      "context_promotions": null
+    }
+  ]
+}

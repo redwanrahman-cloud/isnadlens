@@ -7,15 +7,15 @@ export function normalizeQuery(query: string): string {
 }
 export type QuranReadingAid = { source: 'QuranEnc'; key: 'english_rwwad'; version: string; language: 'en'; role: 'query_retrieval_only'; sha256:string; source_url:string };
 const englishStop = new Set('a an the does do did is are was were has have had what which who when where how why quran koran allah god say says describe describes tell tells teach teaches command commands instruct instructs forbid forbids forbidden prohibited permitted permissible lawful warn warns require requires state states mention mentions one another people believers of to for and or in on at as by with from that this it its be before after while until not no never'.split(' '));
-function englishWords(text: string): string[] {
+export function englishWords(text: string): string[] {
   // Derived search tokens only; publisher strings and original negation remain intact.
   // Latin transliteration macrons (e.g. ā) are folded in the derived index only.
   // Otherwise the strict Latin token filter silently loses publisher spellings.
   const latinFolded = text.replace(/\p{Script=Latin}/gu, char=>char.normalize('NFD').replace(/\p{M}/gu,''));
   return normalizeQuery(latinFolded).split(' ').filter(word => /^[a-z]{3,}$/.test(word) && !englishStop.has(word)).map(word => {
-    const synonyms: Record<string,string> = {home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything'};
+    const synonyms: Record<string,string> = {home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything',enslaved:'slave',slaves:'slave',strength:'strong',angry:'anger'};
     if (synonyms[word]) return synonyms[word];
-    return word.replace(/ying$/, 'y').replace(/ies$/, 'y').replace(/ing$/, '').replace(/ed$/, '').replace(/ly$/, '').replace(/s$/, '');
+    return word.replace(/ying$/, 'y').replace(/ies$/, 'y').replace(/([a-z])\1ing$/, '$1').replace(/ing$/, '').replace(/ed$/, '').replace(/ly$/, '').replace(/(?<!s)s$/, '');
   }).filter(word => word.length >= 3);
 }
 type EnglishIndex = {rows: {id:string;words:Set<string>}[];frequency:Map<string,number>};
@@ -34,16 +34,24 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   }
   const originalWords = [...new Set(englishWords(originalClaim))];
   const hints = additionalQueries.slice(0,8).filter(value => typeof value==='string' && value.length<=160);
-  const hintedWords = [...new Set(hints.flatMap(englishWords))].slice(0,48);
+  const hintedWords = [...new Set(hints.flatMap(hint=>englishWords(queryTerms(hint).join(' '))))].slice(0,48);
   const primaryWords = originalWords.length ? originalWords : hintedWords;
   const secondaryWords = originalWords.length ? hintedWords.filter(word=>!originalWords.includes(word)) : [];
   const score = (words:Set<string>, queries:string[]) => queries.reduce((total,word)=>total+(words.has(word)?Math.log(1+index!.rows.length/(index!.frequency.get(word)??index!.rows.length)):0),0);
   const englishScores = new Map(index.rows.map(row=>[row.id,score(row.words,primaryWords)+.15*score(row.words,secondaryWords)]));
+  // A known original subject can be expressed differently by the translation
+  // (e.g. an ordinary English noun versus its formal synonym). Preserve its
+  // Arabic/English dictionary matches ahead of incidental question qualifiers.
+  const normativeSubjects=new Set(['haram','halal','forbidden','prohibited']);
+  const subjectTerms=normalizeQuery(originalClaim).split(' ').filter(term=>!normativeSubjects.has(term)).flatMap(topicTerms);
+  const englishSubjects=new Set(englishWords(subjectTerms.join(' ')));
+  const englishSubjectMatches=new Set(index.rows.filter(row=>[...englishSubjects].some(term=>row.words.has(term))).map(row=>row.id));
+  const subjectMatches=(verse:Verse)=>englishSubjectMatches.has(verse.id)||subjectTerms.some(term=>verse.search.includes(term));
   const lexical = retrieve(corpus,originalClaim,corpus.verses.length,hints);
   const lexicalRanks = new Map(lexical.map((verse,position)=>[verse.id,position]));
   const explicit = new Set(parseQuranReferences(originalClaim).references);
   const verses = corpus.verses.filter(verse=>explicit.has(verse.id)||(englishScores.get(verse.id)??0)>0||lexicalRanks.has(verse.id))
-    .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
+    .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
   const pin=getQuranTranslationAdmission().sources.find(source=>source.key==='english_rwwad');
   if(!pin) throw new Error('QURAN_ENGLISH_READING_AID_PIN_MISSING');
   return {verses,reading_aid:{source:'QuranEnc',key:'english_rwwad',version:edition.metadata.version,language:'en',role:'query_retrieval_only',sha256:pin.json_sha256,source_url:'https://quranenc.com/en/browse/english_rwwad'}};

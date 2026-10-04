@@ -3,7 +3,7 @@ import { readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 import { sha256 } from './corpus';
-import { queryTerms } from './retrieval';
+import { queryTerms, englishWords } from './retrieval';
 import type { EvidenceItem } from './contracts';
 import { parseHadithLinks, extractClaimQuotes } from './citations';
 
@@ -82,18 +82,23 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   const boilerplate = new Set(['prophet', 'messenger', 'muhammad', 'said', 'says', 'hadith', 'hadeeth', 'that', 'have', 'has', 'no', 'not', 'explicitly', 'نبي', 'النبي', 'رسول', 'الرسول', 'قال', 'حديث']);
   const lexicalSynonyms: Record<string, string[]> = { actions: ['deeds'], action: ['deed'], deeds: ['actions'], deed: ['action'], judged: ['rewarded', 'considered'] };
   const searchForms = [query, ...additionalQueries.slice(0, 8).filter(term => typeof term === 'string' && term.length <= 160)];
-  const originalTerms = [...new Set(searchForms.flatMap(queryTerms))].filter(t => !boilerplate.has(t) && (language === 'ar' ? /\p{Script=Arabic}/u.test(t) : /\p{Script=Latin}/u.test(t)));
-  const terms = [...new Set([...originalTerms, ...originalTerms.flatMap(term => lexicalSynonyms[term] ?? [])])].slice(0, 48);
+  const originalTerms = [...new Set(searchForms.flatMap(form => language==='en' ? [...englishWords(form),...englishWords(queryTerms(form).join(' '))] : queryTerms(form)))].filter(t => !boilerplate.has(t) && (language === 'ar' ? /\p{Script=Arabic}/u.test(t) : /\p{Script=Latin}/u.test(t)));
+  const expandedTerms=[...originalTerms,...originalTerms.flatMap(term => lexicalSynonyms[term]??[])];
+  const terms = [...new Set(language==='en'?expandedTerms.flatMap(englishWords):expandedTerms)].slice(0, 48);
   const patterns = terms.map(term => language === 'ar' ? new RegExp([...term].map(char => /[اأإآٱ]/.test(char) ? '[اأإآٱ]' : escapeRegex(char)).join('[\u064b-\u065f\u0670]*'), 'u') : new RegExp(`\\b${escapeRegex(term.length > 3 && term.endsWith('s') ? term.slice(0, -1) : term)}s?\\b`, 'i'));
   const selected = corpus.records.filter(record => record.language === language);
-  const weights = patterns.map(pattern => {
-    const frequency = selected.filter(record => pattern.test(record.fields.hadith_text ?? '') || pattern.test(record.fields.title ?? '')).length;
+  // English derived tokens handle inflection and ordinary paraphrases, while
+  // the retained publisher strings remain the authenticated quotation bytes.
+  const englishSets = new Map(language === 'en' ? selected.map(record => [record, {text:new Set(englishWords(record.fields.hadith_text??'')),title:new Set(englishWords(record.fields.title??''))}] as const) : []);
+  const matches = (record: HadithRecord, index:number, title=false) => language==='en' ? Boolean(englishSets.get(record)?.[title?'title':'text'].has(terms[index])) : patterns[index].test(record.fields[title?'title':'hadith_text']??'');
+  const weights = patterns.map((pattern,index) => {
+    const frequency = selected.filter(record => matches(record,index) || matches(record,index,true)).length;
     return 1 + Math.log((selected.length + 1) / (frequency + 1));
   });
   return selected.map(record => {
     // Publisher title/text remain unchanged. Explanations are not promoted into primary quotation support.
     const title = record.fields.title ?? ''; const text = record.fields.hadith_text ?? '';
-    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((pattern.test(text) ? 1 : 0) + (pattern.test(title) ? .5 : 0)), 0);
+    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((matches(record,index) ? 1 : 0) + (matches(record,index,true) ? .5 : 0)), 0);
     return { record, score };
   }).filter(hit => hit.score > 0).sort((a, b) => b.score - a.score || Number(a.record.id) - Number(b.record.id)).slice(0, limit).map(hit => hit.record);
 }

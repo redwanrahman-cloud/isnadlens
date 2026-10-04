@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { sha256, validateCorpus, loadCorpus, validateRawSources, validateAdmissionPins } from '../src/lib/corpus';
 import { readFileSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -7,7 +7,7 @@ import { decideVerdict, scopeGate } from '../src/lib/policy';
 import { normalizeQuery, queryTerms, retrieve } from '../src/lib/retrieval';
 import { assessClaim, structuredOutputSchema } from '../src/lib/provider';
 import { reserveSpend, settleSpend, priceUsage } from '../src/lib/budget';
-import { sealRecord, verifySeal, checkExplicitCitation, authenticateEvidence, verifyClaim } from '../src/lib/verification';
+import { sealRecord, verifySeal, checkExplicitCitation, authenticateEvidence, verifyClaim, validPositiveReview, promoteSuppliedContext } from '../src/lib/verification';
 import * as provider from '../src/lib/provider';
 import * as retrievalModule from '../src/lib/retrieval';
 import type { SemanticAssessment, VerificationRecord } from '../src/lib/contracts';
@@ -16,6 +16,114 @@ import { parseQuranReferences, parseHadithLinks } from '../src/lib/citations';
 
 const atom = { id: 'a1', text: 'A material assertion', material: true, relation: 'supports' as const, evidence_ids: ['e1'], direct: true, context_fit: true, negation_checked: true, modality_checked: true, qualifications_preserved: true, attribution_matched: true, scope_matched: true, contradiction_basis: 'none' as const, basis_evidence_id: null, basis_quotation: null };
 const assessment: SemanticAssessment = { in_scope: true, original_meaning_preserved: true, atomic_claims: [atom], all_material_claims_covered: true, summary_ar: 'تفسير', summary_en: 'Explanation', limitations: [] };
+beforeEach(() => { vi.spyOn(provider, 'reviewPositiveEntailment').mockImplementation(async (_claim, assessed, cards) => ({ model: 'gpt-5.4-mini', usage: null, review: { atoms: assessed.atomic_claims.filter(a => a.material).map(a => ({ atom_id: a.id, entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, evidence_id: a.evidence_ids[0] ?? null, context_locator: null, basis_quotation: cards.find(e => e.evidence_id === a.evidence_ids[0])?.quotation ?? null })) } })); });
+afterEach(() => { vi.restoreAllMocks(); });
+describe('mandatory independent positive source check', () => {
+  it('resolves only immutable selected units, binding exact context and refusing arbitrary or ambiguous IDs', () => {
+    const corpus = loadCorpus(); const card = authenticateEvidence(corpus, corpus.verses.find(v => v.id === '2:173')!);
+    const units = provider.buildSourceUnits([card]);
+    const assessed = { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [card.evidence_id] }] };
+    const decision = { atom_id: 'a1', entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, basis_unit_id: units[0].unit_id };
+    const raw = { atoms: [decision] };
+    expect(provider.resolveUnitReview(raw, units).atoms[0]).toMatchObject({ evidence_id: card.evidence_id, context_locator: null, basis_quotation: card.quotation });
+    const context = units[1];
+    expect(provider.resolveUnitReview({ atoms: [{ ...decision, basis_unit_id: context.unit_id }] }, units).atoms[0]).toMatchObject({ context_locator: context.context_locator, basis_quotation: context.text });
+    expect(raw).toEqual({ atoms: [decision] });
+    expect(validPositiveReview(provider.resolveUnitReview({ atoms: [{ ...decision, basis_unit_id: 'unsupplied-unit' }] }, units), assessed, [card])).toBe(false);
+    expect(() => provider.resolveUnitReview(raw, [units[0], units[0]])).toThrow('SOURCE_UNIT_INVALID');
+    expect(() => provider.resolveUnitReview(raw, [{ ...units[0], text: 'forged text' }])).toThrow('SOURCE_UNIT_INVALID');
+    expect(() => provider.buildSourceUnits([{ ...card, quotation: 'forged text' }])).toThrow('PACKET_INTEGRITY_FAILURE');
+    expect(() => provider.buildSourceUnits(Array(9).fill(card))).toThrow('PACKET_INTEGRITY_FAILURE');
+    expect(validPositiveReview(provider.resolveUnitReview({ atoms: [decision, decision] }, units), assessed, [card])).toBe(false);
+  });
+  it('promotes only exact already-supplied Quran neighbors, keeping bounded authenticated cards', () => {
+    const corpus = loadCorpus(); const parent = authenticateEvidence(corpus, corpus.verses.find(v => v.id === '5:116')!);
+    const id = `${corpus.manifest.id}:5:117`;
+    const assessed = { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [parent.evidence_id, id] }] };
+    const result = promoteSuppliedContext(corpus, assessed, [parent]);
+    expect(result?.evidence.map(e => e.locator)).toEqual(['5:116', '5:117']);
+    expect(result?.promotions[0].quotation_sha256).toBe(corpus.verses.find(v => v.id === '5:117')!.display_sha256);
+    expect(promoteSuppliedContext(corpus, assessed, [{ ...parent, source_context: parent.source_context.map(c => c.locator === '5:117' ? { ...c, quotation_sha256: 'wronghash' } : c) }])).toBeNull();
+    expect(promoteSuppliedContext(corpus, { ...assessed, atomic_claims: [{ ...atom, evidence_ids: [`${corpus.manifest.id}:2:185`] }] }, [parent])).toBeNull();
+    const cards = [parent, ...corpus.verses.filter(v => v.surah === 2).slice(0, 7).map(v => authenticateEvidence(corpus, v))];
+    const occupied = { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [...cards.map(e => e.evidence_id), id] }] };
+    expect(promoteSuppliedContext(corpus, occupied, cards)).toBeNull();
+    expect(promoteSuppliedContext(corpus, assessed, [...cards, cards[1]])).toBeNull();
+    const bounded = promoteSuppliedContext(corpus, assessed, cards)!;
+    expect(bounded.evidence).toHaveLength(8); expect(bounded.promotions[0].dropped_evidence_id).toBe(cards[7].evidence_id);
+    expect(bounded.evidence.find(e => e.locator === '5:117')?.quotation).toBe(parent.source_context.find(c => c.locator === '5:117')?.quotation);
+  });
+  it('seals genuine neighbor promotion without rewriting raw assessment or accepting invented basis', async () => {
+    const corpus = loadCorpus(); const parent = authenticateEvidence(corpus, corpus.verses.find(v => v.id === '5:116')!);
+    const id = `${corpus.manifest.id}:5:117`; const text = corpus.verses.find(v => v.id === '5:117')!.display;
+    const raw = { ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts' as const, evidence_ids: [parent.evidence_id, id], contradiction_basis: 'explicit_negation_or_incompatible_statement' as const, basis_evidence_id: id, basis_quotation: text }] };
+    vi.spyOn(retrievalModule, 'retrieveWithPublishedEnglishAid').mockReturnValue({ verses: [corpus.verses.find(v => v.id === '5:116')!], reading_aid: { source: 'QuranEnc', key: 'english_rwwad', version: '1.0.19', language: 'en', role: 'query_retrieval_only', sha256: 'fixture', source_url: 'https://quranenc.com/en/browse/english_rwwad' } });
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: raw, model: 'gpt-5.4-mini', usage: null });
+    const record = await verifyClaim({ claim: 'The Quran says Jesus commanded worship of himself and his mother.', inputLanguage: 'en' });
+    expect(record.verdict).toBe('conflicting_within_selected_corpus'); expect(record.context_promotions).toHaveLength(1); expect(record.semantic_assessment).toEqual(raw); expect(verifySeal(record)).toBe(true);
+    expect(verifySeal({ ...record, context_promotions: [] })).toBe(false);
+    mocked.mockResolvedValue({ assessment: { ...raw, atomic_claims: [{ ...raw.atomic_claims[0], basis_quotation: 'invented negative phrase' }] }, model: 'gpt-5.4-mini', usage: null });
+    const rejected = await verifyClaim({ claim: 'The Quran says Jesus commanded worship of himself and his mother.', inputLanguage: 'en' });
+    expect(rejected.verdict).toBe('not_evaluated'); expect(rejected.reason_codes).toContain('SEMANTIC_BASIS_QUOTATION_INVALID');
+  });
+  it('uses strict source-only network mocks, settles malformed usage and never retries', async () => {
+    vi.mocked(provider.reviewPositiveEntailment).mockRestore();
+    const card = authenticateEvidence(loadCorpus(), loadCorpus().verses.find(v => v.id === '2:185')!);
+    const assessed = { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [card.evidence_id] }] };
+    const directory = mkdtempSync(join(tmpdir(), 'isnadlens-entailment-'));
+    const cwd = vi.spyOn(process, 'cwd').mockReturnValue(directory);
+    try {
+      vi.stubEnv('ISNADLENS_PAID_CALLS_AUTHORIZED', 'false');
+      const fetchMock = vi.fn(); vi.stubGlobal('fetch', fetchMock);
+      await expect(provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card])).rejects.toThrow('PROVIDER_UNAVAILABLE'); expect(fetchMock).not.toHaveBeenCalled();
+      vi.stubEnv('ISNADLENS_PAID_CALLS_AUTHORIZED', 'true'); vi.stubEnv('ISNADLENS_MAX_SPEND_USD', '.2'); vi.stubEnv('ISNADLENS_MAX_CALLS', '1000'); vi.stubEnv('OPENAI_API_KEY', 'mock-key');
+      const review = { atoms: [{ atom_id: 'a1', entails: 'yes', attribution_preserved: true, qualifications_preserved: true, basis_unit_id: `${card.evidence_id}:primary` }] };
+      const response = (text: string) => new Response(JSON.stringify({ status: 'completed', usage: { input_tokens: 100, output_tokens: 40 }, output: [{ content: [{ type: 'output_text', text }] }] }), { status: 200 });
+      fetchMock.mockResolvedValueOnce(response(JSON.stringify(review))).mockResolvedValueOnce(response('{malformed'));
+      const result = await provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card]); expect(result.usage?.reservation_id).toBeTruthy();
+      await expect(provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card])).rejects.toBeInstanceOf(provider.ProviderFailure);
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      const body = JSON.parse(fetchMock.mock.calls[0][1].body); const input = JSON.parse(body.input);
+      expect(body.store).toBe(false); expect(body.text.format.strict).toBe(true);
+      const atomArray = body.text.format.schema.properties.atoms;
+      expect(atomArray.minItems).toBe(1); expect(atomArray.maxItems).toBe(1);
+      expect(atomArray.items.properties.atom_id.enum).toEqual(['a1']);
+      expect(atomArray.items.properties.basis_unit_id.anyOf[0].enum).toEqual(provider.buildSourceUnits([card]).map(u => u.unit_id));
+      expect(atomArray.items.properties).not.toHaveProperty('context_locator'); expect(atomArray.items.properties).not.toHaveProperty('basis_quotation');
+      expect(input.source_units[0].text).toBe(card.quotation); expect(input).not.toHaveProperty('summary'); expect(input.source_units[0]).not.toHaveProperty('publisher_explanation');
+      expect(result.raw_provider_review).toEqual(review); expect(result.review.atoms[0].basis_quotation).toBe(card.quotation); expect(result.unit_provenance?.[0].quotation_sha256).toBe(card.quotation_sha256);
+      const ledger = JSON.parse(readFileSync(join(directory, 'artifacts/private/api-spend.json'), 'utf8')); expect(ledger.entries.map((e: { status: string }) => e.status)).toEqual(['settled', 'settled']);
+    } finally { cwd.mockRestore(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); rmSync(directory, { recursive: true, force: true }); }
+  });
+  it('rejects unrelated-source assessment when independent source check denies entailment', async () => {
+    const model = vi.spyOn(provider, 'assessClaim').mockImplementation(async (_claim, _language, cards) => ({ assessment: { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [cards[0].evidence_id] }] }, model: 'gpt-5.4-mini', usage: null }));
+    const raw = { atoms: [{ atom_id: 'a1', entails: 'no' as const, attribution_preserved: true, qualifications_preserved: true, basis_unit_id: null }] };
+    vi.mocked(provider.reviewPositiveEntailment).mockResolvedValue({ review: { atoms: [{ atom_id: 'a1', entails: 'no', attribution_preserved: true, qualifications_preserved: true, evidence_id: null, context_locator: null, basis_quotation: null }] }, raw_provider_review: raw, unit_provenance: [], model: 'gpt-5.4-mini', usage: { input_tokens: 10, output_tokens: 20, estimated_cost_usd: 0.001, reservation_id: 'review-cost' } });
+    const record = await verifyClaim({ claim: 'The Quran prescribes prayer.', inputLanguage: 'en' });
+    expect(model).toHaveBeenCalledTimes(1); expect(record.verdict).toBe('not_evaluated');
+    expect(record.reason_codes).toEqual(['SOURCE_ENTAILMENT_UNCONFIRMED']); expect(record.entailment_review?.usage?.reservation_id).toBe('review-cost'); expect(verifySeal(record)).toBe(true);
+    expect(record.entailment_review?.raw_provider_review).toEqual(raw); expect(record.entailment_review?.derivation).toBe('whole_immutable_selected_source_unit');
+    expect(verifySeal({ ...record, entailment_review: { ...record.entailment_review!, raw_provider_review: {} } })).toBe(false);
+  });
+  it('never publishes optimistic support when validator is unavailable or budget-stopped', async () => {
+    vi.spyOn(provider, 'assessClaim').mockImplementation(async (_claim, _language, cards) => ({ assessment: { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [cards[0].evidence_id] }] }, model: 'gpt-5.4-mini', usage: null }));
+    vi.mocked(provider.reviewPositiveEntailment).mockRejectedValue(new provider.ProviderFailure('SPEND_BUDGET_STOP', 'gpt-5.4-mini', null));
+    const record = await verifyClaim({ claim: 'The Quran prescribes prayer.', inputLanguage: 'en' });
+    expect(record.verdict).toBe('not_evaluated'); expect(record.entailment_review?.reason).toBe('SPEND_BUDGET_STOP'); expect(record.summary_en).not.toContain('Yes'); expect(verifySeal(record)).toBe(true);
+  });
+  it('requires every atom exactly once, its cited parent ID, immutable span and preserved qualifications', () => {
+    const card = authenticateEvidence(loadCorpus(), loadCorpus().verses.find(v => v.id === '2:185')!);
+    const assessed = { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [card.evidence_id] }] };
+    const check = { atom_id: 'a1', entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, evidence_id: card.evidence_id, context_locator: null, basis_quotation: card.quotation };
+    expect(validPositiveReview({ atoms: [check] }, assessed, [card])).toBe(true);
+    expect(validPositiveReview({ atoms: [{ ...check, basis_quotation: 'invented words' }] }, assessed, [card])).toBe(false);
+    expect(validPositiveReview({ atoms: [{ ...check, qualifications_preserved: false }] }, assessed, [card])).toBe(false);
+    expect(validPositiveReview({ atoms: [check, check] }, assessed, [card])).toBe(false);
+    expect(validPositiveReview({ atoms: [{ ...check, evidence_id: 'invented-context-id' }] }, assessed, [card])).toBe(false);
+    const context = card.source_context[0];
+    expect(validPositiveReview({ atoms: [{ ...check, context_locator: context.locator, basis_quotation: context.quotation }] }, assessed, [card])).toBe(true);
+  });
+});
 describe('complete semantic coverage policy', () => {
   it('allows support only when every material atom is directly covered', () => {
     expect(decideVerdict(assessment, new Set(['e1']))).toBe('supported_within_selected_corpus');
@@ -34,6 +142,24 @@ describe('complete semantic coverage policy', () => {
   });
 });
 describe('scope and spend controls', () => {
+  it('allows public source descriptions of killing while retaining personal/planning referrals', () => {
+    expect(scopeGate('Does the Quran forbid unjust killing except with right?')).toBeNull();
+    expect(scopeGate('Does the Quran warn severely against deliberately killing a believer?')).toBeNull();
+    expect(scopeGate('هل يتوعد القرآن من يقتل مؤمنا عمدا؟')).toBeNull();
+    expect(scopeGate('Can I kill someone according to the Quran?')).toBe('PERSONAL_RULING_REFERRAL');
+    expect(scopeGate('The Quran describes how to kill someone with a weapon.')).toBe('SENSITIVE_SCOPE_REFERRAL');
+  });
+  it('derives an insufficient headline from the sealed verdict while preserving raw optimistic prose', async () => {
+    const mock = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: { ...assessment, atomic_claims: [{ ...atom, relation: 'partial', evidence_ids: [] }], summary_en: 'Yes, direct support.', summary_ar: 'نعم، دليل مباشر.' }, model: 'gpt-5.4-mini', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'The Quran prescribes prayer using a modern app.', inputLanguage: 'en' });
+      expect(record.verdict).toBe('insufficient_within_selected_corpus');
+      expect(record.summary_en).toContain('insufficient'); expect(record.summary_en).not.toContain('Yes');
+      expect(record.summary_ar).toContain('لا تكفي');
+      expect((record.semantic_assessment as SemanticAssessment)?.summary_en).toBe('Yes, direct support.');
+      expect(verifySeal(record)).toBe(true);
+    } finally { mock.mockRestore(); }
+  });
   it('refers personal rulings and stops instruction injection before a provider call', () => {
     expect(scopeGate('Can I stop fasting because of my condition?')).toBe('PERSONAL_RULING_REFERRAL');
     expect(scopeGate('هل يجوز لي ترك الصيام؟')).toBe('PERSONAL_RULING_REFERRAL');
@@ -152,6 +278,8 @@ describe('persistent spending controls and provider schema', () => {
       expect(posted.instructions).toContain('including an English rendering of Arabic Quran text');
       expect(posted.instructions).toContain('explicitly attribute it to the publisher');
       expect(posted.instructions).toContain('Never include process boilerplate');
+      expect(posted.instructions).toContain('State an exceptional permission with its prerequisite AND every stated limiting condition together');
+      expect(posted.instructions).toContain('never replace the conjunction by OR');
       expect(posted.instructions).toContain('atomic_claims contains ONLY assertions made by the USER');
       expect(posted.instructions).toContain('Source qualifications absent from the user claim belong in summaries, limitations and qualification/context checks');
       expect(posted.instructions).toContain('An explicit user universal such as always, never, without exceptions');
@@ -460,7 +588,7 @@ describe('one-step objective semantic reference router', () => {
       expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
       expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
       expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
-      expect(record.router_version).toContain('reference-failure-or-contradiction'); expect(verifySeal(record)).toBe(true);
+      expect(record.router_version).toContain('supplied-context-v4'); expect(verifySeal(record)).toBe(true);
       const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
       expect(verifySeal(changed)).toBe(false);
     } finally { mocked.mockRestore(); }

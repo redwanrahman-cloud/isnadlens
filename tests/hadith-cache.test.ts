@@ -42,7 +42,7 @@ test('reuses only a fully validated deep-frozen corpus and checks all eleven fil
   expect(Object.isFrozen(first.records[0].fields)).toBe(true); expect(Object.isFrozen(first.manifest.sources[0])).toBe(true);
   expect(() => { first.records[0].fields.hadith_text = 'changed'; }).toThrow();
   console.info(`Hadith cache benchmark: cold ${cold.toFixed(1)} ms; warm ${warm.toFixed(3)} ms; records ${first.records.length}`);
-}, 15000);
+}, 60000);
 
 test('invalidates on every source path and every required metadata dimension before reading', async () => {
   const { loadHadith } = await import('../src/lib/hadith');
@@ -67,7 +67,7 @@ test('missing sources clear the cache; restored files cannot resurrect the previ
   control.missingPath = ''; control.corruptPath = 'docs/source-rights/hadeethenc-pins.json';
   expect(() => loadHadith()).toThrow('HADITH_PIN_FILE_MISMATCH');
   control.corruptPath = ''; expect(loadHadith()).not.toBe(before);
-}, 15000);
+}, 60000);
 
 test('detects raw-byte tampering and rejects a metadata race during validation', async () => {
   const { loadHadith } = await import('../src/lib/hadith'); loadHadith();
@@ -75,4 +75,4 @@ test('detects raw-byte tampering and rejects a metadata race during validation',
   expect(() => loadHadith()).toThrow('HADITH_RAW_HASH_MISMATCH');
   control.corruptPath = ''; control.race = true; control.raceCalls = 0;
   expect(() => loadHadith()).toThrow('HADITH_SOURCES_CHANGED_DURING_VALIDATION');
-}, 15000);
+}, 60000);

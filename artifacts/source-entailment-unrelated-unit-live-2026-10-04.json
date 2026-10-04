@@ -1,0 +1,26 @@
+{
+  "purpose": "Real source-focused validator probe: known true strength/anger proposition paired with the actual unrelated first-pass predestination evidence, without injecting expected answers.",
+  "model": "gpt-5.4-mini",
+  "version": "source-focused-positive-entailment-v3-immutable-unit-selection",
+  "rejected_unrelated_evidence": true,
+  "atom_decisions": [
+    {
+      "atom_id": "C1",
+      "entails": "no"
+    }
+  ],
+  "usage": {
+    "input_tokens": 833,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 47,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 880,
+    "estimated_cost_usd": 0.00083625,
+    "reservation_id": "7c10af67-2802-433d-89e6-86c1427a88d5"
+  }
+}

@@ -1,0 +1,1790 @@
+{
+  "dataset_id": "holdout-question-set-50-2026-10-04-v1",
+  "purpose": "50 fresh source-reviewed propositions; practical textual questions plus ten explicit contradictions. Representative topics, not popularity analytics.",
+  "freeze_status": "prepared_for_independent_review_before_parent_freeze",
+  "app_evaluation_status": "not_run",
+  "execution_rule": "Submit only claim, input_language, corpus_selection. Never supply reference locators, witnesses, expected answers or rationale to application or model. First pass is untouched; freeze before calling app. No repairs before reporting initial results.",
+  "reference_authority": "Immutable admitted primary Quran/Hadith publications; identified EN Rowwad translation used only as reading aid. Agent review is not scholar certification.",
+  "counts": {
+    "total": 50,
+    "quran": 40,
+    "hadith": 10,
+    "supported": 40,
+    "contradicted": 10
+  },
+  "cases": [
+    {
+      "id": "H01",
+      "topic": "consensual trade",
+      "claim": "Does the Quran describe lawful trade as involving mutual consent?",
+      "question": "Does the Quran describe lawful trade as involving mutual consent?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:29"
+      ],
+      "reviewer_locators": [
+        "quran:4:29"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:29",
+          "quotation_sha256": "5c37355033d17cca9bd8c4079d8f239503be4e3462a564c71a2f622ac641f79c",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:29",
+        "https://quranenc.com/en/browse/english_rwwad/4/29"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H02",
+      "topic": "bribing authorities",
+      "claim": "Does the Quran forbid using payments to authorities to wrongfully obtain other people’s property?",
+      "question": "Does the Quran forbid using payments to authorities to wrongfully obtain other people’s property?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:188"
+      ],
+      "reviewer_locators": [
+        "quran:2:188"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:188",
+          "quotation_sha256": "93000f9eab17e21eabaa0e19202c6e48222f5a02e292e65dfa759d269db8e491",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:188",
+        "https://quranenc.com/en/browse/english_rwwad/2/188"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H03",
+      "topic": "short measure",
+      "claim": "هل يتوعد القرآن المطففين في الكيل والميزان؟",
+      "question": "هل يتوعد القرآن المطففين في الكيل والميزان؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:83:1",
+        "quran:83:2",
+        "quran:83:3"
+      ],
+      "reviewer_locators": [
+        "quran:83:1",
+        "quran:83:2",
+        "quran:83:3"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:83:1",
+          "quotation_sha256": "8dda4cc8604f7c31cf31c63f29a6df70695ee5f4459a9ba812a8d4e27325bac2",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:83:2",
+          "quotation_sha256": "2970be01ae04b7daa28c0572bc8696807b4840d0d0703f388d9060bb34220a85",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:83:3",
+          "quotation_sha256": "f3b6fd37a5f31996911aaed2c7141c56054a0847aec9f78067a43370fea23b59",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#83:1",
+        "https://quranenc.com/en/browse/english_rwwad/83/1",
+        "https://tanzil.net/#83:2",
+        "https://quranenc.com/en/browse/english_rwwad/83/2",
+        "https://tanzil.net/#83:3",
+        "https://quranenc.com/en/browse/english_rwwad/83/3"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H04",
+      "topic": "accurate scales",
+      "claim": "Does the Quran instruct using accurate scales when weighing goods?",
+      "question": "Does the Quran instruct using accurate scales when weighing goods?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:17:35"
+      ],
+      "reviewer_locators": [
+        "quran:17:35"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:35",
+          "quotation_sha256": "c0627a68bf7bcbd676f5c500f524479b05b82be55635a07b59f369c81fce56db",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#17:35",
+        "https://quranenc.com/en/browse/english_rwwad/17/35"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H05",
+      "topic": "inheriting women by force",
+      "claim": "Does the Quran say that forcibly inheriting women is unlawful?",
+      "question": "Does the Quran say that forcibly inheriting women is unlawful?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:19"
+      ],
+      "reviewer_locators": [
+        "quran:4:19"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:19",
+          "quotation_sha256": "a8f501b7e65d50e1be37b1edd5638d6071a73f477f208767bfd9b3a38ee16d76",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:19",
+        "https://quranenc.com/en/browse/english_rwwad/4/19"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The first clause directly prohibits forcibly inheriting women. The later adultery exception belongs to the adjoining restraint/gift-recovery clause, not permission for coerced inheritance.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H06",
+      "topic": "unmarried people",
+      "claim": "Does the Quran encourage arranging marriages for unmarried people?",
+      "question": "Does the Quran encourage arranging marriages for unmarried people?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:32"
+      ],
+      "reviewer_locators": [
+        "quran:24:32"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:32",
+          "quotation_sha256": "84da9f5393e0cc851802cd127baf7a50971632aa6aba88f41f67e0d9e04732be",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:32",
+        "https://quranenc.com/en/browse/english_rwwad/24/32"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H07",
+      "topic": "men lowering gaze",
+      "claim": "هل يأمر القرآن المؤمنين بغض البصر وحفظ الفروج؟",
+      "question": "هل يأمر القرآن المؤمنين بغض البصر وحفظ الفروج؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:30"
+      ],
+      "reviewer_locators": [
+        "quran:24:30"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:30",
+          "quotation_sha256": "3b1e8c985960b0774d1079e4ccd51bbae1c9bb4d391506fae7ff2fda7b45971b",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:30",
+        "https://quranenc.com/en/browse/english_rwwad/24/30"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H08",
+      "topic": "women lowering gaze",
+      "claim": "Does the Quran also instruct believing women to lower their gaze?",
+      "question": "Does the Quran also instruct believing women to lower their gaze?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:31"
+      ],
+      "reviewer_locators": [
+        "quran:24:31"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:31",
+          "quotation_sha256": "7b0be52c006a24af8e29e61c3a2568d61ee89b274ffa338df6248096bc973d87",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:31",
+        "https://quranenc.com/en/browse/english_rwwad/24/31"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H09",
+      "topic": "children privacy times",
+      "claim": "Does the Quran require children below puberty to seek permission at three private times in the home?",
+      "question": "Does the Quran require children below puberty to seek permission at three private times in the home?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:58"
+      ],
+      "reviewer_locators": [
+        "quran:24:58"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:58",
+          "quotation_sha256": "388e283294598acb082567efd0396e8c0dcda7055a5bddef6fa9bd03dd51c9f3",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:58",
+        "https://quranenc.com/en/browse/english_rwwad/24/58"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H10",
+      "topic": "eating together or apart",
+      "claim": "Does the Quran allow eating together or separately?",
+      "question": "Does the Quran allow eating together or separately?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:61"
+      ],
+      "reviewer_locators": [
+        "quran:24:61"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:61",
+          "quotation_sha256": "384de2efa83c116edc737b66657ddc2ecc74e537c0a8444189c63fb1ab742dd1",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:61",
+        "https://quranenc.com/en/browse/english_rwwad/24/61"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H11",
+      "topic": "wayfarer kindness",
+      "claim": "Does the Quran command kindness to wayfarers?",
+      "question": "Does the Quran command kindness to wayfarers?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:36"
+      ],
+      "reviewer_locators": [
+        "quran:4:36"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:36",
+          "quotation_sha256": "b7d2a454a6f882f14d6428ee1bbe6b02488a7b236fc5f4120aa1c26c1d7fc3dc",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:36",
+        "https://quranenc.com/en/browse/english_rwwad/4/36"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H12",
+      "topic": "emancipation",
+      "claim": "Does the Quran describe freeing an enslaved person as part of the difficult path of righteousness?",
+      "question": "Does the Quran describe freeing an enslaved person as part of the difficult path of righteousness?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:90:11",
+        "quran:90:12",
+        "quran:90:13"
+      ],
+      "reviewer_locators": [
+        "quran:90:11",
+        "quran:90:12",
+        "quran:90:13"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:90:11",
+          "quotation_sha256": "b477665761218de747c4112c4cbe342ef53fa7752f93c6497d1eaa7732f40701",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:90:12",
+          "quotation_sha256": "c2d30948edfd38c2c8ff985e8a7eb36a74050d87c7d8e4d7de7d96ec53e9445e",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:90:13",
+          "quotation_sha256": "aaa08ef1f34ff7b2c90207bd22e0ba26bb0a1f1cce5a87252f3ba4fb4cb4c3bf",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#90:11",
+        "https://quranenc.com/en/browse/english_rwwad/90/11",
+        "https://tanzil.net/#90:12",
+        "https://quranenc.com/en/browse/english_rwwad/90/12",
+        "https://tanzil.net/#90:13",
+        "https://quranenc.com/en/browse/english_rwwad/90/13"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H13",
+      "topic": "saving life",
+      "claim": "Does the Quran recount a rule for the Children of Israel comparing saving one life to saving all humanity?",
+      "question": "Does the Quran recount a rule for the Children of Israel comparing saving one life to saving all humanity?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:5:32"
+      ],
+      "reviewer_locators": [
+        "quran:5:32"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:32",
+          "quotation_sha256": "4650c4e13ce232d936eda38ca03d650f11d951836cf73baf50e477c99055282f",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#5:32",
+        "https://quranenc.com/en/browse/english_rwwad/5/32"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H14",
+      "topic": "unjust killing",
+      "claim": "هل ينهى القرآن عن قتل النفس المحرمة إلا بالحق؟",
+      "question": "هل ينهى القرآن عن قتل النفس المحرمة إلا بالحق؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:17:33"
+      ],
+      "reviewer_locators": [
+        "quran:17:33"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:33",
+          "quotation_sha256": "34870479cb3d46bd1b74ab39e43843fd7c9615d38a6aa26dae9d3f6aefe664ff",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#17:33",
+        "https://quranenc.com/en/browse/english_rwwad/17/33"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H15",
+      "topic": "intentional killing of believer",
+      "claim": "Does the Quran warn of severe punishment for deliberately killing a believer?",
+      "question": "Does the Quran warn of severe punishment for deliberately killing a believer?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:93"
+      ],
+      "reviewer_locators": [
+        "quran:4:93"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:93",
+          "quotation_sha256": "e8ebe5465e6624abeabf67ff400938fabf39b32e26cd731ea4b0a215f55d5f43",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:93",
+        "https://quranenc.com/en/browse/english_rwwad/4/93"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H16",
+      "topic": "avoiding adultery",
+      "claim": "Does the Quran warn against even approaching adultery?",
+      "question": "Does the Quran warn against even approaching adultery?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:17:32"
+      ],
+      "reviewer_locators": [
+        "quran:17:32"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:32",
+          "quotation_sha256": "4c205fbd2ddea7dff2732cd9bf5d6e0464cd7b2245704f0658b37accd82e8dfb",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#17:32",
+        "https://quranenc.com/en/browse/english_rwwad/17/32"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H17",
+      "topic": "accusation witnesses",
+      "claim": "Does the Quran set a four-witness standard for accusations against chaste women?",
+      "question": "Does the Quran set a four-witness standard for accusations against chaste women?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:4"
+      ],
+      "reviewer_locators": [
+        "quran:24:4"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:4",
+          "quotation_sha256": "6d2fcdab410bd4c3199147234e2951824063adf76c22a78e30ad736deef68f84",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:4",
+        "https://quranenc.com/en/browse/english_rwwad/24/4"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "General accusation standard in 24:4. This does not universalize all procedures: the separate spousal procedure in 24:6 onward must not be erased.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H18",
+      "topic": "reconciling fighting believers",
+      "claim": "Does the Quran instruct making peace when two groups of believers fight?",
+      "question": "Does the Quran instruct making peace when two groups of believers fight?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:49:9"
+      ],
+      "reviewer_locators": [
+        "quran:49:9"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:49:9",
+          "quotation_sha256": "db44ecb288212a8e81afee995adbddd55c1f8f9407c7a3b64042ae12cbef4e6e",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#49:9",
+        "https://quranenc.com/en/browse/english_rwwad/49/9"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H19",
+      "topic": "believers brotherhood",
+      "claim": "هل يصف القرآن المؤمنين بأنهم إخوة؟",
+      "question": "هل يصف القرآن المؤمنين بأنهم إخوة؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:49:10"
+      ],
+      "reviewer_locators": [
+        "quran:49:10"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:49:10",
+          "quotation_sha256": "bc9063abe975f25fbc6d9c31cdce0ee70cc17dc014ecadc7562ca84fd1ce1373",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#49:10",
+        "https://quranenc.com/en/browse/english_rwwad/49/10"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H20",
+      "topic": "peaceful non-Muslims",
+      "claim": "Does the Quran allow kindness and justice toward those who neither fight Muslims nor expel them from their homes?",
+      "question": "Does the Quran allow kindness and justice toward those who neither fight Muslims nor expel them from their homes?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:60:8"
+      ],
+      "reviewer_locators": [
+        "quran:60:8"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:60:8",
+          "quotation_sha256": "ca4a51a3796e9ea3de89f074f274fd2a59e4363518058a5e131d53baef388e4c",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#60:8",
+        "https://quranenc.com/en/browse/english_rwwad/60/8"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H21",
+      "topic": "moderate voice",
+      "claim": "Does the Quran advise moderating one’s pace and lowering one’s voice?",
+      "question": "Does the Quran advise moderating one’s pace and lowering one’s voice?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:31:19"
+      ],
+      "reviewer_locators": [
+        "quran:31:19"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:31:19",
+          "quotation_sha256": "4c1ceac437395551a02ea59a361d1d9fbc5589ceaaa41dc86b829b22a6dc574e",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#31:19",
+        "https://quranenc.com/en/browse/english_rwwad/31/19"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H22",
+      "topic": "humble conduct",
+      "claim": "Does the Quran describe servants of the Most Compassionate as walking humbly?",
+      "question": "Does the Quran describe servants of the Most Compassionate as walking humbly?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:25:63"
+      ],
+      "reviewer_locators": [
+        "quran:25:63"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:25:63",
+          "quotation_sha256": "145e8078d4910f7e0c5ca06cc0e470ff8ffd185d3bf42b3637e4cad1b1d88e84",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#25:63",
+        "https://quranenc.com/en/browse/english_rwwad/25/63"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H23",
+      "topic": "pardoning others",
+      "claim": "Does the Quran encourage pardoning and overlooking others’ faults?",
+      "question": "Does the Quran encourage pardoning and overlooking others’ faults?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:24:22"
+      ],
+      "reviewer_locators": [
+        "quran:24:22"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:22",
+          "quotation_sha256": "bd24658ca3383154fa060c976f3e57379d78036ef21615ee457d02c9db6e5477",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:22",
+        "https://quranenc.com/en/browse/english_rwwad/24/22"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H24",
+      "topic": "consultation",
+      "claim": "هل يمدح القرآن التشاور في تدبير الأمور؟",
+      "question": "هل يمدح القرآن التشاور في تدبير الأمور؟",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:42:38"
+      ],
+      "reviewer_locators": [
+        "quran:42:38"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:42:38",
+          "quotation_sha256": "ddfa5f1ef510f4f733558eb3d74995a93e29639617bb611b5ecb6d50a1f92094",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#42:38",
+        "https://quranenc.com/en/browse/english_rwwad/42/38"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H25",
+      "topic": "envy",
+      "claim": "Does the Quran warn against wishing for advantages Allah has given others?",
+      "question": "Does the Quran warn against wishing for advantages Allah has given others?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:4:32"
+      ],
+      "reviewer_locators": [
+        "quran:4:32"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:32",
+          "quotation_sha256": "62472206da7bfd1827b52bf2610e18aaf27db734a50daa81b51b386e7847fd35",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:32",
+        "https://quranenc.com/en/browse/english_rwwad/4/32"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H26",
+      "topic": "oppression",
+      "claim": "Does the Quran explicitly forbid oppression?",
+      "question": "Does the Quran explicitly forbid oppression?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:16:90"
+      ],
+      "reviewer_locators": [
+        "quran:16:90"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:16:90",
+          "quotation_sha256": "903d2ef408dfcc29a437dae30f5980a593128ec192c8826ae60c49e49de59429",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#16:90",
+        "https://quranenc.com/en/browse/english_rwwad/16/90"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H27",
+      "topic": "zakah for stranded traveler",
+      "claim": "Does the Quran list stranded travelers among zakah recipients?",
+      "question": "Does the Quran list stranded travelers among zakah recipients?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:9:60"
+      ],
+      "reviewer_locators": [
+        "quran:9:60"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:9:60",
+          "quotation_sha256": "538abcd0925580a4927c824316d17d968a3d101e86fb8bfadf59f36caa230e0f",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#9:60",
+        "https://quranenc.com/en/browse/english_rwwad/9/60"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H28",
+      "topic": "spending surplus",
+      "claim": "Does the Quran answer a question about what to spend by referring to the surplus?",
+      "question": "Does the Quran answer a question about what to spend by referring to the surplus?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:219"
+      ],
+      "reviewer_locators": [
+        "quran:2:219"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:219",
+          "quotation_sha256": "e78a306453521df52f46bf9496fd5a79fb7b19756498cf43b111047b7cbac3a2",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:219",
+        "https://quranenc.com/en/browse/english_rwwad/2/219"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H29",
+      "topic": "journey collateral",
+      "claim": "Does the Quran mention taking collateral on a journey when no scribe is available?",
+      "question": "Does the Quran mention taking collateral on a journey when no scribe is available?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:2:283"
+      ],
+      "reviewer_locators": [
+        "quran:2:283"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:283",
+          "quotation_sha256": "84edc2f7c70be0afd3a97dfba209a6510c38f67f6017916e278ff7490e8928eb",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:283",
+        "https://quranenc.com/en/browse/english_rwwad/2/283"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H30",
+      "topic": "adoptive parentage",
+      "claim": "Does the Quran instruct naming adopted sons after their actual fathers when known?",
+      "question": "Does the Quran instruct naming adopted sons after their actual fathers when known?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:33:5"
+      ],
+      "reviewer_locators": [
+        "quran:33:5"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:33:5",
+          "quotation_sha256": "51a84e1d0b50a34b19c9f627ac0d61bdc8d3667f46649424277ae110171b8692",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#33:5",
+        "https://quranenc.com/en/browse/english_rwwad/33/5"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Direct primary-source proposition with the question’s stated conditions retained.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H31",
+      "topic": "human knowledge unlimited",
+      "claim": "Does the Quran say humans have been given unlimited knowledge about the spirit?",
+      "question": "Does the Quran say humans have been given unlimited knowledge about the spirit?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:17:85"
+      ],
+      "reviewer_locators": [
+        "quran:17:85"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:85",
+          "quotation_sha256": "d70bb95cf18c7531ae6f34cfb525fd4d2aa986a1e16c46373b66ac1a8368bca4",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#17:85",
+        "https://quranenc.com/en/browse/english_rwwad/17/85"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The cited primary passage directly states the opposite; this is not an absence-only inference.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H32",
+      "topic": "recording deeds denied",
+      "claim": "Does the Quran say that no watchers or scribes know what people do?",
+      "question": "Does the Quran say that no watchers or scribes know what people do?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:82:10",
+        "quran:82:11",
+        "quran:82:12"
+      ],
+      "reviewer_locators": [
+        "quran:82:10",
+        "quran:82:11",
+        "quran:82:12"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:82:10",
+          "quotation_sha256": "4a8523b85fd718553bce78104e5e1f523cf5a6623e4be66365f3e4f39ed3c6be",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:82:11",
+          "quotation_sha256": "e018ac50658cf2e9aa0c13d587dd911adf81469aaa19584711a38ac0395b4216",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:82:12",
+          "quotation_sha256": "75be90ca1936ee943dbff4dcb0ae6309546d635b6caeef0b5c9c348afc5b32d9",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#82:10",
+        "https://quranenc.com/en/browse/english_rwwad/82/10",
+        "https://tanzil.net/#82:11",
+        "https://quranenc.com/en/browse/english_rwwad/82/11",
+        "https://tanzil.net/#82:12",
+        "https://quranenc.com/en/browse/english_rwwad/82/12"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The cited primary passage directly states the opposite; this is not an absence-only inference.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H33",
+      "topic": "heaven adornment denied",
+      "claim": "Does the Quran deny that lamps adorn the lowest heaven?",
+      "question": "Does the Quran deny that lamps adorn the lowest heaven?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:67:5"
+      ],
+      "reviewer_locators": [
+        "quran:67:5"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:67:5",
+          "quotation_sha256": "7aba2ec0e58d0b25d9a6a76c6c969647308ac6cd9c5cd895bc4d5beb567416f7",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#67:5",
+        "https://quranenc.com/en/browse/english_rwwad/67/5"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The cited primary passage directly states the opposite; this is not an absence-only inference.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H34",
+      "topic": "God needs feeding",
+      "claim": "Does the Quran describe Allah as being fed?",
+      "question": "Does the Quran describe Allah as being fed?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:6:14"
+      ],
+      "reviewer_locators": [
+        "quran:6:14"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:6:14",
+          "quotation_sha256": "2143f01964204719daab562b4cf7641a16d6340908f1e936fab87c89e8ed4434",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#6:14",
+        "https://quranenc.com/en/browse/english_rwwad/6/14"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The primary passage says He feeds and is not fed. The question tests that exact passive predicate, without an inference about needing food.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H35",
+      "topic": "resurrection denied",
+      "claim": "Does the Quran say the One who first created bones cannot bring them back to life?",
+      "question": "Does the Quran say the One who first created bones cannot bring them back to life?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:36:78",
+        "quran:36:79"
+      ],
+      "reviewer_locators": [
+        "quran:36:78",
+        "quran:36:79"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:36:78",
+          "quotation_sha256": "98fbe95a590fc9d38c05b1d7eeff7d9f7ef9c2c90b23bad94389bde507e36b09",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:36:79",
+          "quotation_sha256": "67a0ece312c2c2adf1185ba32c88852c1e87bcf7650ca7183f2b0f6065c86bbb",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#36:78",
+        "https://quranenc.com/en/browse/english_rwwad/36/78",
+        "https://tanzil.net/#36:79",
+        "https://quranenc.com/en/browse/english_rwwad/36/79"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The cited primary passage directly states the opposite; this is not an absence-only inference.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H36",
+      "topic": "all bodies of water fresh",
+      "claim": "Does the Quran say both bodies of water are fresh and neither is salty?",
+      "question": "Does the Quran say both bodies of water are fresh and neither is salty?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:25:53"
+      ],
+      "reviewer_locators": [
+        "quran:25:53"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:25:53",
+          "quotation_sha256": "50cf98db1c0f58f6866bd721845be2426e92b57279092ab742608639ad996336",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#25:53",
+        "https://quranenc.com/en/browse/english_rwwad/25/53"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The cited primary passage directly states the opposite; this is not an absence-only inference.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H37",
+      "topic": "Jesus commanded worship of Mary",
+      "claim": "Does the Quran portray Jesus as admitting that he told people to worship him and his mother besides Allah?",
+      "question": "Does the Quran portray Jesus as admitting that he told people to worship him and his mother besides Allah?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:5:116",
+        "quran:5:117"
+      ],
+      "reviewer_locators": [
+        "quran:5:116",
+        "quran:5:117"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:116",
+          "quotation_sha256": "e80592e9b33ed242b84499cfef60c92a327c7cdeafe5c5766a2f0feb658cd763",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        },
+        {
+          "locator": "quran:5:117",
+          "quotation_sha256": "413e0074019746f938fbbd5c437627e0e691289c2cdb4e5df165d55d2438651e",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#5:116",
+        "https://quranenc.com/en/browse/english_rwwad/5/116",
+        "https://tanzil.net/#5:117",
+        "https://quranenc.com/en/browse/english_rwwad/5/117"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "5:116 contains Jesus’s denial and 5:117 expressly says he taught worship of Allah, his Lord and their Lord. These directly contradict the alleged admission.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H38",
+      "topic": "Abraham described as Jew",
+      "claim": "Does the Quran identify Abraham as a Jew?",
+      "question": "Does the Quran identify Abraham as a Jew?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:3:67"
+      ],
+      "reviewer_locators": [
+        "quran:3:67"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:3:67",
+          "quotation_sha256": "96bdd86382bbfed1da6cf4ba1865fd69b77ed1faeb1bac07ba878aaea14a0c52",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#3:67",
+        "https://quranenc.com/en/browse/english_rwwad/3/67"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The cited primary passage directly states the opposite; this is not an absence-only inference.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H39",
+      "topic": "Muhammad father of all men",
+      "claim": "Does the Quran describe Muhammad as the father of every man in his community?",
+      "question": "Does the Quran describe Muhammad as the father of every man in his community?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:33:40"
+      ],
+      "reviewer_locators": [
+        "quran:33:40"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:33:40",
+          "quotation_sha256": "e55b78c55ff8a2f92cd3e505106607332242dc8519a57f120a0d038da5e894e8",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#33:40",
+        "https://quranenc.com/en/browse/english_rwwad/33/40"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The cited primary passage directly states the opposite; this is not an absence-only inference.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H40",
+      "topic": "vision encompasses God",
+      "claim": "Does the Quran state that human vision encompasses Allah?",
+      "question": "Does the Quran state that human vision encompasses Allah?",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reference_answer": "no",
+      "reference_status": "primary_text_contradicted",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "quran:6:103"
+      ],
+      "reviewer_locators": [
+        "quran:6:103"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "quran:6:103",
+          "quotation_sha256": "f5a2d43483fc39c9070ffb1d885e9f1d92e15883dfe167189a2f831b22117bd5",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#6:103",
+        "https://quranenc.com/en/browse/english_rwwad/6/103"
+      ],
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "The proposition is about encompassing Allah by vision, explicitly denied in 6:103. It does not assert that Allah can never be seen: the publisher footnote discusses the distinct Paradise-vision question.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H41",
+      "topic": "judging while angry",
+      "claim": "Does the Hadith prohibit a judge from judging between people while angry?",
+      "question": "Does the Hadith prohibit a judge from judging between people while angry?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:2988"
+      ],
+      "reviewer_locators": [
+        "hadith:en:2988"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:2988",
+          "quotation_sha256": "803d77ff442b1592868c47cb4ab748c245793334d1d8d4fd72a5d44660c80cc3",
+          "publisher_grade": "[Authentic hadith]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/2988"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H42",
+      "topic": "self-control",
+      "claim": "Does the Hadith describe true strength as controlling oneself during anger?",
+      "question": "Does the Hadith describe true strength as controlling oneself during anger?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:5351"
+      ],
+      "reviewer_locators": [
+        "hadith:en:5351"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:5351",
+          "quotation_sha256": "dc5f4cab9cc88ab5673091f676d46718f7230794092c95f7505881dcd3fe32d9",
+          "publisher_grade": "[Authentic]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/5351"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H43",
+      "topic": "loving good for brother",
+      "claim": "Does the Hadith connect faith with loving for one’s brother what one loves for oneself?",
+      "question": "Does the Hadith connect faith with loving for one’s brother what one loves for oneself?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:4717"
+      ],
+      "reviewer_locators": [
+        "hadith:en:4717"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:4717",
+          "quotation_sha256": "68dd7649da4af9680e7d34c21d3a0f71dd0ab977afcc84edeb8ad0116e72ce39",
+          "publisher_grade": "[Authentic]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4717"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H44",
+      "topic": "seeking knowledge",
+      "claim": "Does the Hadith say that taking a path to seek knowledge makes a path to Paradise easier?",
+      "question": "Does the Hadith say that taking a path to seek knowledge makes a path to Paradise easier?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:4801"
+      ],
+      "reviewer_locators": [
+        "hadith:en:4801"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:4801",
+          "quotation_sha256": "28ca0b0c1da71a1b9a0d436f761ee5eab00f2e5761009c86decca17043456151",
+          "publisher_grade": "[Authentic]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4801"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H45",
+      "topic": "helping others",
+      "claim": "Does the Hadith say Allah aids a servant while that servant aids his brother?",
+      "question": "Does the Hadith say Allah aids a servant while that servant aids his brother?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:4801"
+      ],
+      "reviewer_locators": [
+        "hadith:en:4801"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:4801",
+          "quotation_sha256": "28ca0b0c1da71a1b9a0d436f761ee5eab00f2e5761009c86decca17043456151",
+          "publisher_grade": "[Authentic]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4801"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H46",
+      "topic": "purity half faith",
+      "claim": "هل يصف الحديث الطهور بأنه شطر الإيمان؟",
+      "question": "هل يصف الحديث الطهور بأنه شطر الإيمان؟",
+      "input_language": "ar",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:ar:65004"
+      ],
+      "reviewer_locators": [
+        "hadith:ar:65004"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:65004",
+          "quotation_sha256": "485ce48c069386e21c276261e7206152151375c8fb6f362a27ebd1e26358233c",
+          "publisher_grade": "صحيح",
+          "source_version": "v1.7.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/65004"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H47",
+      "topic": "modesty goodness",
+      "claim": "Does the Hadith describe modesty as bringing good?",
+      "question": "Does the Hadith describe modesty as bringing good?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:3055"
+      ],
+      "reviewer_locators": [
+        "hadith:en:3055"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:3055",
+          "quotation_sha256": "c8494300c3e4dd98eb3a9d786ad8b99e811219f04c7fe50a969e03f6c1b6cb1a",
+          "publisher_grade": "[Authentic hadith]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/3055"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H48",
+      "topic": "avoiding anger",
+      "claim": "Did the Prophet repeatedly advise a man not to become angry?",
+      "question": "Did the Prophet repeatedly advise a man not to become angry?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:4709"
+      ],
+      "reviewer_locators": [
+        "hadith:en:4709"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:4709",
+          "quotation_sha256": "83c7872e2ac66b0bf306b531a841e5daaf44006a571524141db1df31b8f965ad",
+          "publisher_grade": "[Authentic]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4709"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H49",
+      "topic": "Muslims safe from harm",
+      "claim": "Does the Hadith describe a Muslim as someone from whose tongue and hand Muslims are safe?",
+      "question": "Does the Hadith describe a Muslim as someone from whose tongue and hand Muslims are safe?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:10101"
+      ],
+      "reviewer_locators": [
+        "hadith:en:10101"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:10101",
+          "quotation_sha256": "bfcbc944feb01567d217c2eabdb01459a6edde7dfb23033383b676a171be36b2",
+          "publisher_grade": "[Authentic]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/10101"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    },
+    {
+      "id": "H50",
+      "topic": "sincere counsel",
+      "claim": "Does the Hadith describe religion as sincerity toward Allah, His Book, His Messenger, Muslim leaders and ordinary Muslims?",
+      "question": "Does the Hadith describe religion as sincerity toward Allah, His Book, His Messenger, Muslim leaders and ordinary Muslims?",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "reference_answer": "yes",
+      "reference_status": "primary_text_supported",
+      "reference_accuracy_eligible": true,
+      "reference_evidence_locators": [
+        "hadith:en:4309"
+      ],
+      "reviewer_locators": [
+        "hadith:en:4309"
+      ],
+      "reference_witnesses": [
+        {
+          "locator": "hadith:en:4309",
+          "quotation_sha256": "886c213c654052721b998bfb4bdaeac4eaaf12ccc74538bb107f9c3c2a1128e0",
+          "publisher_grade": "[Authentic]",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/en/browse/hadith/4309"
+      ],
+      "expected_verdict": "supported_within_selected_corpus",
+      "expected_reason": null,
+      "rationale": "Primary Hadith wording directly supports this particular proposition; publisher grade preserved, not independently regraded.",
+      "review_status": "provisional_agent_primary_review_not_scholar_certified"
+    }
+  ],
+  "ordering_rule": "execution_order preserves balanced ten-case blocks: six supported Quran, two contradicted Quran, two supported Hadith. Stable authoring IDs are unchanged.",
+  "execution_order": [
+    "H01",
+    "H31",
+    "H02",
+    "H41",
+    "H03",
+    "H04",
+    "H32",
+    "H05",
+    "H42",
+    "H06",
+    "H07",
+    "H33",
+    "H08",
+    "H43",
+    "H09",
+    "H10",
+    "H34",
+    "H11",
+    "H44",
+    "H12",
+    "H13",
+    "H35",
+    "H14",
+    "H45",
+    "H15",
+    "H16",
+    "H36",
+    "H17",
+    "H46",
+    "H18",
+    "H19",
+    "H37",
+    "H20",
+    "H47",
+    "H21",
+    "H22",
+    "H38",
+    "H23",
+    "H48",
+    "H24",
+    "H25",
+    "H39",
+    "H26",
+    "H49",
+    "H27",
+    "H28",
+    "H40",
+    "H29",
+    "H50",
+    "H30"
+  ]
+}

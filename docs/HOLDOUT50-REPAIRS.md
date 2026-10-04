@@ -1,0 +1,15 @@
+# New50 targeted repair history — 4 October 2026
+
+This is post-repair evidence, not an untouched benchmark. The immutable new50 first pass remains44/50 principal source-grounded answers,5 abstentions and1 expected label backed by unrelated evidence.
+
+The first targeted round covered six new50 misses plus prior pork and riba controls:5/8 independently source-grounded,3 abstentions. After authenticating an already-supplied exact Quran neighbor as a primary card, H37 gave a source-grounded negative answer. Five of the original six misses now have separately audited targeted answers; H12 still abstains because the second checker has not confirmed its contextual qualifications.
+
+The pork control initially exposed a retrieval regression: unrelated generic qualifiers outranked its ordinary noun and formal publisher synonym. General query-side subject weighting repaired retrieval; primary publisher text remained unchanged. Two subsequent checker-format failures were retained: duplicate assertion entries/a malformed source ID, then a valid primary quotation assigned to the wrong neighbor locator. The app abstained in both cases. A stronger structured citation mechanism is being validated; no incorrect IDs or generated quotation bytes are silently accepted.
+
+The real original wrong-source strength/anger packet was independently rejected by the source-focused checker. That confirms this specific failure mode, not general religious correctness. Subsequent model checks add cost within the approved13SAR development cap; unknown reservations remain held and the15SAR judging reserve is preserved.
+
+## Immutable-unit citation repair
+V3 replaced generated quotation/independent-locator output with a bounded choice among supplied immutable source units. The provider selects one unit ID per original material assertion; the server resolves its whole exact primary/context text and seals raw selections, unit provenance and derivation. Existing literal span, attribution and cited-parent gates remain active. B46 now returned a source-grounded ordinary-condition prohibition with5:3 as its exact proof. Independent audit approved its principal assertion but identified awkward exception wording separating limiting qualifications; the wording issue remains disclosed in that audit and is being repaired generally in the assessment prompt. A real V3 rerun still rejected the original unrelated predestination packet. No failed trial was removed.
+
+## Final qualification wording check
+Prompt2.3 explicitly keeps an exceptional permission's prerequisite AND its limiting conditions together. The final B46 live check returned supported with unchanged2:173 primary proof; independent audit approved both English and Arabic explanations, which now attach the non-excess/nontransgression limits to necessity. The prior awkward wording record remains unchanged. This final check, the5/6 repaired new50 misses and the real unrelated-packet rejection are targeted development evidence, not an untouched rerun of all50.

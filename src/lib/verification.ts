@@ -4,13 +4,24 @@ import { loadCorpus, sha256, type Corpus, type Verse } from './corpus';
 import { recordSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
 import { scopeGate, decideVerdict, nativeSafetyGate } from './policy';
 import { retrieve, retrieveWithPublishedEnglishAid } from './retrieval';
-import { assessClaim, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure } from './provider';
+import { assessClaim, reviewPositiveEntailment, ENTAILMENT_VERSION, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure, type EntailmentReview } from './provider';
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation, type HadithCorpus } from './hadith';
 import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './citations';
 import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlannerFailure, type QueryOverrides } from './query-planner';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'mini-default-strong-on-reference-failure-or-contradiction-v2';
+export const ROUTER_VERSION = 'reference-or-conflict-plus-positive-review-and-supplied-context-v4';
+export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
+  const atoms = assessment.atomic_claims.filter(a => a.material);
+  if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
+  return atoms.every(atom => {
+    const check = review.atoms.find(a => a.atom_id === atom.id);
+    if (!check || check.entails !== 'yes' || !check.attribution_preserved || !check.qualifications_preserved || !check.evidence_id || !atom.evidence_ids.includes(check.evidence_id) || !check.basis_quotation?.trim()) return false;
+    const card = evidence.find(e => e.evidence_id === check.evidence_id);
+    const text = check.context_locator === null ? card?.quotation : card?.source_context.find(c => c.locator === check.context_locator && c.integrity_passed)?.quotation;
+    return Boolean(card?.integrity.passed && text?.includes(check.basis_quotation));
+  });
+}
 function semanticReferenceError(assessment: SemanticAssessment, evidence: EvidenceItem[]): string | null {
   const ids = new Set(evidence.map(item => item.evidence_id));
   if (assessment.atomic_claims.some(atom => atom.evidence_ids.some(id => !ids.has(id)))) return 'SEMANTIC_REFERENCE_INVALID';
@@ -45,6 +56,33 @@ export function authenticateEvidence(corpus: Corpus, verse: Verse): EvidenceItem
     locator: verse.id, quotation: verse.display, quotation_sha256: verse.display_sha256,
     source_url: `https://tanzil.net/#${verse.surah}:${verse.ayah}`, attribution: source.attribution,
     integrity: { passed: checks.every(c => c.passed), checks }, semantic_relation: 'not_assessed', source_context };
+}
+export function promoteSuppliedContext(corpus: Corpus, assessment: SemanticAssessment, evidence: EvidenceItem[]): { evidence: EvidenceItem[]; promotions: NonNullable<VerificationRecord['context_promotions']> } | null {
+  if (evidence.length > 8) return null;
+  const referenced = new Set(assessment.atomic_claims.flatMap(a => [...a.evidence_ids, ...(a.basis_evidence_id ? [a.basis_evidence_id] : [])]));
+  const missing = [...referenced].filter(id => !evidence.some(e => e.evidence_id === id));
+  if (!missing.length) return { evidence, promotions: [] };
+  const additions: { card: EvidenceItem; parent: EvidenceItem }[] = [];
+  for (const id of missing) {
+    const parent = evidence.find(e => e.integrity.passed && e.source_context.some(c => `${corpus.manifest.id}:${c.locator}` === id));
+    const ctx = parent?.source_context.find(c => `${corpus.manifest.id}:${c.locator}` === id);
+    const verse = ctx && corpus.verses.find(v => v.id === ctx.locator);
+    if (!parent || !ctx || !verse || !ctx.integrity_passed || ctx.quotation !== verse.display || ctx.quotation_sha256 !== verse.display_sha256 || sha256(ctx.quotation) !== ctx.quotation_sha256) return null;
+    const card = authenticateEvidence(corpus, verse);
+    if (!card.integrity.passed || card.evidence_id !== id || card.quotation !== ctx.quotation) return null;
+    additions.push({ card, parent });
+  }
+  const next = [...evidence]; const promotions: NonNullable<VerificationRecord['context_promotions']> = [];
+  for (const { card, parent } of additions) {
+    let dropped: string | null = null;
+    if (next.length >= 8) {
+      const index = next.findLastIndex(e => !referenced.has(e.evidence_id) && !additions.some(a => a.parent.evidence_id === e.evidence_id));
+      if (index < 0) return null;
+      dropped = next.splice(index, 1)[0].evidence_id;
+    }
+    next.push(card); promotions.push({ parent_evidence_id: parent.evidence_id, context_locator: card.locator, added_evidence_id: card.evidence_id, quotation_sha256: card.quotation_sha256, dropped_evidence_id: dropped, method: 'supplied_exact_context_authenticated_as_primary' });
+  }
+  return { evidence: next, promotions };
 }
 export function getCoverage() {
   const hadith = getHadithCoverage();
@@ -166,6 +204,14 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         throw error;
       }
       base.model = result.model; base.usage = result.usage; base.semantic_assessment = result.assessment;
+      if (quran) {
+        const promoted = promoteSuppliedContext(quran, result.assessment, base.evidence_items);
+        if (promoted?.promotions.length && (base.context_promotions?.length ?? 0) + promoted.promotions.length <= 8) {
+          base.evidence_items = promoted.evidence; base.retrieval_ids = promoted.evidence.map(e => e.evidence_id);
+          base.context_promotions = [...(base.context_promotions ?? []), ...promoted.promotions];
+          base.limitations.push('An already-supplied exact Quran neighbor was authenticated as a primary card to resolve its cited ID. The promotion and any removed unreferenced card are sealed; raw model assessments remain unchanged.');
+        }
+      }
       const invalid = semanticReferenceError(result.assessment, base.evidence_items);
       const conflictNeedsConfirmation = requestedModel === 'gpt-5.4-mini' && !invalid && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'conflicting_within_selected_corpus';
       base.assessment_attempts!.push({ model: result.model, reason: invalid ?? (conflictNeedsConfirmation ? 'CONTRADICTION_CONFIRMATION_REQUIRED' : 'SEMANTIC_VALIDATION_PASSED'), raw_assessment: result.assessment, usage: result.usage });
@@ -178,7 +224,27 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     const assessment = result.assessment;
     const ids = new Set(base.evidence_items.map(e => e.evidence_id));
     base.verdict = decideVerdict(assessment, ids);
+    if (base.verdict === 'supported_within_selected_corpus') {
+      base.limitations.push('A separate source-focused model check evaluates proposed positive support; it is not independent scholarly review and can still err. Its additional usage is sealed separately.');
+      try {
+        const checked = await reviewPositiveEntailment(claim, assessment, base.evidence_items);
+        const passed = validPositiveReview(checked.review, assessment, base.evidence_items);
+        base.entailment_review = { version: ENTAILMENT_VERSION, model: checked.model, status: passed ? 'passed' : 'rejected', raw_review: checked.review, raw_provider_review: checked.raw_provider_review, unit_provenance: checked.unit_provenance, derivation: 'whole_immutable_selected_source_unit', usage: checked.usage, reason: passed ? 'SOURCE_ENTAILMENT_CONFIRMED' : 'SOURCE_ENTAILMENT_UNCONFIRMED' };
+        if (!passed) { base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNCONFIRMED'); }
+      } catch (error) {
+        base.entailment_review = { version: ENTAILMENT_VERSION, model: error instanceof ProviderFailure ? error.model : 'gpt-5.4-mini', status: 'unavailable', raw_review: null, usage: error instanceof ProviderFailure ? error.usage : null, reason: error instanceof Error ? error.message : 'PROVIDER_UNAVAILABLE' };
+        base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNAVAILABLE');
+      }
+    }
     base.summary_ar = assessment.summary_ar; base.summary_en = assessment.summary_en;
+    // The sealed final decision controls the headline; retain the raw model prose in semantic_assessment.
+    if (base.verdict === 'insufficient_within_selected_corpus') {
+      base.summary_ar = 'الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.';
+      base.summary_en = 'The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.';
+    } else if (base.verdict === 'not_evaluated') {
+      base.summary_ar = 'لم يتم التحقق من هذا الادعاء؛ يلزم الرجوع إلى سبب التوقف المعروض.';
+      base.summary_en = 'This claim has not been verified; see the displayed reason for the stop.';
+    }
     base.reason_codes = [base.verdict === 'supported_within_selected_corpus' ? 'COMPLETE_DIRECT_COVERAGE' : base.verdict === 'conflicting_within_selected_corpus' ? 'DIRECT_MATERIAL_CONTRADICTION' : base.verdict === 'not_evaluated' ? 'SEMANTIC_SCOPE_REFERRAL' : 'INCOMPLETE_OR_INDIRECT_COVERAGE'];
     base.limitations.push(...assessment.limitations);
     base.evidence_items = base.evidence_items.map(e => ({ ...e, semantic_relation: assessment.atomic_claims.find(a => a.evidence_ids.includes(e.evidence_id))?.relation ?? 'unrelated' }));

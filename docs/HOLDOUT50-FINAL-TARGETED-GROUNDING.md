@@ -1,0 +1,3 @@
+# Final targeted grounding audit
+
+Two v4 repair records independently reviewed: H37 is grounded; B46 abstains. H37 actual5:117 primary quotation, authenticated from supplied5:116neighbor, proves exclusive worship instruction rather than alleged admission; summary/source attribution preserved. B46 correctly retrieves pork prohibitions, but malformed duplicate validator rows and a wrongID prevent verification. The abstention is honest; it is not missing-source evidence. All16primarycards match admitted exacttext/hash. No first-pass/previous repair records or labels were rewritten. This targeted result is not a new untouched holdoutscore. Further schema repair, if tested, must be kept as another separate round.

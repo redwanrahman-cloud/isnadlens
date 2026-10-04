@@ -39,7 +39,12 @@ export function scopeGate(claim: string): string | null {
   const textAttribution = /\b(quran|qur'an|koran|hadith|hadeeth|prophet said|muhammad said)\b|قرآن|القران|حديث|قال النبي|قال رسول/i.test(claim);
   if (!textAttribution && /\b(weather|forecast|temperature|stock price|exchange rate|football score|write (?:me )?(?:code|a poem)|tell (?:me )?a joke|recipe)\b|الطقس|طقس|درجة الحرارة|سعر الصرف|نتيجة المباراة|وصفة طبخ|اكتب.*كود|قل.*نكتة/i.test(claim)) return 'OUTSIDE_SUPPORTED_CLAIM_SCOPE';
   if (/\b(my|i am|i have|am i|should i|can i|is it permissible for me)\b|هل يجوز لي|علي كفارة|زوجتي|أنا|حكم حالتي/i.test(claim)) return 'PERSONAL_RULING_REFERRAL';
-  if (/\b(kafir|apostate|kill|terrorist|suicide|medical|diagnos|sect|political)\w*|تكفير|كافر|مرتد|انتحار|قتل|طائفة/i.test(claim)) return 'SENSITIVE_SCOPE_REFERRAL';
+  const publicViolenceDescription = textAttribution
+    && /\b(say|says|describe|describes|mention|mentions|warn|warns|forbid|forbids|prohibit|prohibits|recount|recounts)\b|يقول|يذكر|يصف|يحذر|ينهى|يحرم|يتوعد/i.test(claim)
+    && !/\b(how to|instructions|methods|target|weapon|attack|plan|planning|want to|intend to|help me)\b|كيف|طريقة|سلاح|استهدف|أخطط|اخطط|أريد|اريد|ساعدني/i.test(claim)
+    && !/\bkill(?:ing)?\s+(?:[A-Z][a-z]+|you|him|her|them)\b/.test(claim);
+  if (/\b(kafir|apostate|terrorist|suicide|medical|diagnos|sect|political)\w*|تكفير|كافر|مرتد|انتحار|طائفة/i.test(claim)
+    || /\b(kill)\w*|قتل/i.test(claim) && !publicViolenceDescription) return 'SENSITIVE_SCOPE_REFERRAL';
   if (/\b(patient|diabet\w*|cancer|disease|illness|pregnan\w*|doctor|medicine|medication|salary|income|bank account|credit card|passport|ssn)\b|مريض|سكري|سرطان|مرض|حامل|دواء|طبيب|راتب|دخل شخصي|حساب بنكي|رقم الهوية|جواز/i.test(claim)
     && (!publicFastingQualification(claim) || /patient|diabet|cancer|pregnan|doctor|medicine|medication|salary|income|bank account|credit card|passport|ssn|سكري|سرطان|حامل|دواء|طبيب|راتب|دخل شخصي|حساب بنكي|رقم الهوية|جواز/i.test(claim))) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';
   if (/\b(debt|debts)\b|ديون/i.test(claim) && !publicDebtDocumentation(claim)) return 'PRIVATE_OR_SENSITIVE_FACTS_REFERRAL';

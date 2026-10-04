@@ -1,0 +1,766 @@
+{
+  "purpose": "Targeted post-repair checks. Separate from immutable new50 first-pass results; not a fresh benchmark.",
+  "application_tree_sha256": "31dda1e94c31695daf013446d950b5b8e54478c0dd5bfcf83e1944e95c8af1c3",
+  "cases": [
+    {
+      "id": "H12",
+      "claim": "Does the Quran describe freeing an enslaved person as part of the difficult path of righteousness?",
+      "actual": "not_evaluated",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": false,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:92",
+          "relation": "not_assessed",
+          "quotation_sha256": "84561d849497480d6db40d1b6a8cbff0032fd49900bcdb13fffea1f530f66d48"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "90:13",
+          "relation": "not_assessed",
+          "quotation_sha256": "aaa08ef1f34ff7b2c90207bd22e0ba26bb0a1f1cce5a87252f3ba4fb4cb4c3bf"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:177",
+          "relation": "not_assessed",
+          "quotation_sha256": "ec19c5d930af74c6e1725061355dfec1b27da8ecabcf5718b8846fc9e25b6079"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:75",
+          "relation": "not_assessed",
+          "quotation_sha256": "0ecb64c945a4b932695c424332e8872712ba49395d0a5f1205a973864814c65c"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:31",
+          "relation": "not_assessed",
+          "quotation_sha256": "7b0be52c006a24af8e29e61c3a2568d61ee89b274ffa338df6248096bc973d87"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "20:77",
+          "relation": "not_assessed",
+          "quotation_sha256": "247ab710bad78ef43818713c5f65e36d299d3e99289b110cac9a52e7b4154757"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "42:52",
+          "relation": "not_assessed",
+          "quotation_sha256": "81ad4a780381d345d0253b0f1b46662d9cc5d244b389d612a82c4831b7c79169"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "9:60",
+          "relation": "not_assessed",
+          "quotation_sha256": "538abcd0925580a4927c824316d17d968a3d101e86fb8bfadf59f36caa230e0f"
+        }
+      ],
+      "summary": "This claim has not been evaluated.",
+      "reason_codes": [
+        "SOURCE_ENTAILMENT_UNCONFIRMED"
+      ],
+      "entailment_status": "rejected",
+      "entailment_version": "source-focused-positive-entailment-v1",
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 630,
+          "output_tokens": 90,
+          "estimated_cost_usd": 0.0008775,
+          "reservation_id": "4ca45e44-fd1a-4cab-993b-fe5b9c72add6"
+        },
+        {
+          "input_tokens": 7332,
+          "output_tokens": 372,
+          "estimated_cost_usd": 0.007173,
+          "reservation_id": "e7289efd-2219-48fc-91d1-12f1f4f4c7c2"
+        },
+        {
+          "input_tokens": 7332,
+          "output_tokens": 372,
+          "estimated_cost_usd": 0.007173,
+          "reservation_id": "e7289efd-2219-48fc-91d1-12f1f4f4c7c2"
+        },
+        {
+          "input_tokens": 1724,
+          "output_tokens": 83,
+          "estimated_cost_usd": 0.0016665,
+          "reservation_id": "9d74b17b-fa0a-4386-b476-99496cf33d0f"
+        }
+      ],
+      "latency_ms": 8519
+    },
+    {
+      "id": "H14",
+      "claim": "هل ينهى القرآن عن قتل النفس المحرمة إلا بالحق؟",
+      "actual": "supported_within_selected_corpus",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": true,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:85",
+          "relation": "unrelated",
+          "quotation_sha256": "9b4c90bd9711b138fd97d19eb16686012e51c6b5e4db0fd5501437af2deeed8a"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "33:16",
+          "relation": "unrelated",
+          "quotation_sha256": "c37bea5c68c13079e41cf13b8041b96482de121ecb33ae50d215ba4b739ffda6"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:191",
+          "relation": "unrelated",
+          "quotation_sha256": "9eb7c1efc53f3a71cac5f1462f7b4e53ee1411c5adbf1c4a3473fcf60bd172ee"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "7:158",
+          "relation": "unrelated",
+          "quotation_sha256": "7f809130911c084036f1c92b5a3ef120adb908a6f38ecfd5246418b0c2b26d47"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "44:8",
+          "relation": "unrelated",
+          "quotation_sha256": "f72c441d804bf0655d9e2e0021420146b6600cc01e1aa9a20086f907df62990f"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "28:70",
+          "relation": "unrelated",
+          "quotation_sha256": "66d67fa0c694e39fc8ec411df4b27b7c1872d13ed842b37b38dc992106957c11"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:110",
+          "relation": "unrelated",
+          "quotation_sha256": "9fc3eeeb3ece64dc5cdbaf27697f6d4053fad0566ba83aaba77baaf52e1e161f"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "17:33",
+          "relation": "supports",
+          "quotation_sha256": "34870479cb3d46bd1b74ab39e43843fd7c9615d38a6aa26dae9d3f6aefe664ff"
+        }
+      ],
+      "summary": "Yes, the selected sources directly support this meaning; passage 17:33 prohibits killing the soul that God has forbidden, with the explicit exception of killing in truth/right. The statement remains limited to that stated exception, and the displayed sources do not add further details about its conditions.",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "entailment_status": "passed",
+      "entailment_version": "source-focused-positive-entailment-v1",
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 627,
+          "output_tokens": 84,
+          "estimated_cost_usd": 0.00084825,
+          "reservation_id": "a211ca22-3030-4872-a42f-9ac0b1bef012"
+        },
+        {
+          "input_tokens": 6687,
+          "output_tokens": 321,
+          "estimated_cost_usd": 0.00645975,
+          "reservation_id": "82c57f8b-bb29-4a36-854f-eb506f9d722a"
+        },
+        {
+          "input_tokens": 6687,
+          "output_tokens": 321,
+          "estimated_cost_usd": 0.00645975,
+          "reservation_id": "82c57f8b-bb29-4a36-854f-eb506f9d722a"
+        },
+        {
+          "input_tokens": 980,
+          "output_tokens": 121,
+          "estimated_cost_usd": 0.0012795,
+          "reservation_id": "7207be18-6ea1-4a0c-99b1-1a2ad5a1b7db"
+        }
+      ],
+      "latency_ms": 5907
+    },
+    {
+      "id": "H15",
+      "claim": "Does the Quran warn of severe punishment for deliberately killing a believer?",
+      "actual": "supported_within_selected_corpus",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": true,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:93",
+          "relation": "supports",
+          "quotation_sha256": "e8ebe5465e6624abeabf67ff400938fabf39b32e26cd731ea4b0a215f55d5f43"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:181",
+          "relation": "unrelated",
+          "quotation_sha256": "07dcad1e3383d35e312338c1d78d2c3c5cd25181396d1dbeabd04db35b4b31b4"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "7:141",
+          "relation": "unrelated",
+          "quotation_sha256": "27c12de61eba6ad588394fb0f8fb94ee634efee832c3c5b8d43baad219e75cbf"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:89",
+          "relation": "unrelated",
+          "quotation_sha256": "efd5966cb920fec23f3cbd3dfe3484952a57fb37e76a1fc566b0b452b20990f9"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:95",
+          "relation": "unrelated",
+          "quotation_sha256": "c03bc11d6a024ae68c0848213409348c70e0e1806ca2ee45163c90070d82d1c5"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:165",
+          "relation": "unrelated",
+          "quotation_sha256": "4df801b60dfb40fb522ecbef83ea5fa27349e31af70118458358d2e3f586cedb"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:211",
+          "relation": "unrelated",
+          "quotation_sha256": "9203b8d0dfea5e0f47d8b37dbd139b8ed7ffbc42e7a6d961379d3b343f3029fc"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:4",
+          "relation": "unrelated",
+          "quotation_sha256": "f9181091009e1a894b133d7fc3cca99ad7a69f79470be0530ed5d548b752c9a4"
+        }
+      ],
+      "summary": "Yes, the selected sources directly support this conclusion from 4:93, with the explicit condition that it concerns intentionally killing a believer and mentions punishment, abiding punishment, wrath, curse, and a عظيماً punishment. Other selected passages speak of severe punishment in different contexts, but they do not change this direct support.",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "entailment_status": "passed",
+      "entailment_version": "source-focused-positive-entailment-v1",
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 625,
+          "output_tokens": 80,
+          "estimated_cost_usd": 0.00082875,
+          "reservation_id": "338874fd-9b72-42a9-821f-e3a6edabc11f"
+        },
+        {
+          "input_tokens": 7346,
+          "output_tokens": 344,
+          "estimated_cost_usd": 0.0070575,
+          "reservation_id": "6b98b6fa-2715-4a08-9527-1e6b3afe44d4"
+        },
+        {
+          "input_tokens": 7346,
+          "output_tokens": 344,
+          "estimated_cost_usd": 0.0070575,
+          "reservation_id": "6b98b6fa-2715-4a08-9527-1e6b3afe44d4"
+        },
+        {
+          "input_tokens": 1357,
+          "output_tokens": 171,
+          "estimated_cost_usd": 0.00178725,
+          "reservation_id": "ec19d35e-6810-4a8f-80ec-84d711b171c3"
+        }
+      ],
+      "latency_ms": 5628
+    },
+    {
+      "id": "H36",
+      "claim": "Does the Quran say both bodies of water are fresh and neither is salty?",
+      "actual": "conflicting_within_selected_corpus",
+      "expected": "conflicting_within_selected_corpus",
+      "verdict_agreement": true,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "35:12",
+          "relation": "contradicts",
+          "quotation_sha256": "399734d144e6bc86888ba6435ec87ccdce88f57ac1e13e31341ad1f72506d8f2"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "25:53",
+          "relation": "contradicts",
+          "quotation_sha256": "50cf98db1c0f58f6866bd721845be2426e92b57279092ab742608639ad996336"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:15",
+          "relation": "unrelated",
+          "quotation_sha256": "762eb63a417b45dc20c39909854df9c5afb05c70bbe7a8e5430cdc26e20fbb4e"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "77:27",
+          "relation": "unrelated",
+          "quotation_sha256": "d01ef4787f85a427f0163b37762764645ba3cd85f8304ff24258bfeb4b302630"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "18:86",
+          "relation": "unrelated",
+          "quotation_sha256": "69a7e4a11c65c8151dce2a3e60bb361a58fc1ea2e58e73ca32dd9b2aa88d91dd"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "27:44",
+          "relation": "unrelated",
+          "quotation_sha256": "ae3fb1ad2b2759216f9c096629f415792d08d0eb18a3551a55cbb50c69ebfd3e"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "27:61",
+          "relation": "unrelated",
+          "quotation_sha256": "db8dae479f2008fd50801222671916bd37f11d5ca80b6c81386290ba57153070"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "7:50",
+          "relation": "unrelated",
+          "quotation_sha256": "9c2bca34b802d1b6b7f1530238540d6c8d4d94258705286e1464b61cb6137406"
+        }
+      ],
+      "summary": "Direct conclusion: No, the selected source collection contradicts that description. In 35:12 and 25:53, the Quran describes one body of water as fresh and the other as salty/bitter, so it does not say both are fresh or that neither is salty.",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 627,
+          "output_tokens": 84,
+          "estimated_cost_usd": 0.00084825,
+          "reservation_id": "239d681d-3fed-435a-af2e-7d35afd5344f"
+        },
+        {
+          "input_tokens": 6294,
+          "output_tokens": 653,
+          "estimated_cost_usd": 0.007659,
+          "reservation_id": "36397e6f-48ee-4ba7-a2ee-b9ed3a0b84ae"
+        },
+        {
+          "input_tokens": 6294,
+          "output_tokens": 447,
+          "estimated_cost_usd": 0.02244,
+          "reservation_id": "775ecb83-2f3f-48e4-85de-b518b209fe78"
+        },
+        {
+          "input_tokens": 6294,
+          "output_tokens": 447,
+          "estimated_cost_usd": 0.02244,
+          "reservation_id": "775ecb83-2f3f-48e4-85de-b518b209fe78"
+        }
+      ],
+      "latency_ms": 13848
+    },
+    {
+      "id": "H37",
+      "claim": "Does the Quran portray Jesus as admitting that he told people to worship him and his mother besides Allah?",
+      "actual": "not_evaluated",
+      "expected": "conflicting_within_selected_corpus",
+      "verdict_agreement": false,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:116",
+          "relation": "not_assessed",
+          "quotation_sha256": "e80592e9b33ed242b84499cfef60c92a327c7cdeafe5c5766a2f0feb658cd763"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "19:36",
+          "relation": "not_assessed",
+          "quotation_sha256": "cbbb1f0e2e723be76fa7e3a5f737cab2c7c42d498ed703c73ce0d792e6337f6d"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "39:6",
+          "relation": "not_assessed",
+          "quotation_sha256": "fb6cc0abb02e5b9bad1166570b319e74ee48781c5e9eebe0b0585c7bfbc697ff"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:110",
+          "relation": "not_assessed",
+          "quotation_sha256": "9fc3eeeb3ece64dc5cdbaf27697f6d4053fad0566ba83aaba77baaf52e1e161f"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "9:31",
+          "relation": "not_assessed",
+          "quotation_sha256": "b5ec44adc5995af5fe0bfd9edc9b7bd4c6817f66990b2cc94ad9aa18de6bb799"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:64",
+          "relation": "not_assessed",
+          "quotation_sha256": "4e1c0759eb8bd67f7e151c315196e91d27120a751f905e26c6afcaae54b4b7ec"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "10:18",
+          "relation": "not_assessed",
+          "quotation_sha256": "8d71790ccc37d1fe21798fb39456c074c8914976f2447e618167687e7674a217"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "11:84",
+          "relation": "not_assessed",
+          "quotation_sha256": "6165840f0a2e0c09146cd699692211882038c648d220b01cde32e76e6ff4e2a0"
+        }
+      ],
+      "summary": "This claim has not been evaluated.",
+      "reason_codes": [
+        "SEMANTIC_REFERENCE_INVALID"
+      ],
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 632,
+          "output_tokens": 83,
+          "estimated_cost_usd": 0.0008475,
+          "reservation_id": "95ff7545-7b82-4049-ac20-ee07c4090d57"
+        },
+        {
+          "input_tokens": 7012,
+          "output_tokens": 693,
+          "estimated_cost_usd": 0.0083775,
+          "reservation_id": "d0a7aaaf-1ba7-4d4f-a307-aa29b6d6d8da"
+        },
+        {
+          "input_tokens": 7012,
+          "output_tokens": 498,
+          "estimated_cost_usd": 0.025,
+          "reservation_id": "fc05e3f7-872a-4ce2-bd48-946d335e5cab"
+        },
+        {
+          "input_tokens": 7012,
+          "output_tokens": 498,
+          "estimated_cost_usd": 0.025,
+          "reservation_id": "fc05e3f7-872a-4ce2-bd48-946d335e5cab"
+        }
+      ],
+      "latency_ms": 15855
+    },
+    {
+      "id": "H42",
+      "claim": "Does the Hadith describe true strength as controlling oneself during anger?",
+      "actual": "supported_within_selected_corpus",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": true,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5351",
+          "relation": "supports",
+          "quotation_sha256": "dc5f4cab9cc88ab5673091f676d46718f7230794092c95f7505881dcd3fe32d9"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4820",
+          "relation": "unrelated",
+          "quotation_sha256": "ed99e6e29b4bc4cfb8833d1e4003b8b58aa8616c8ea2fc4587c1375332ef1a15"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65620",
+          "relation": "unrelated",
+          "quotation_sha256": "8538c42176eaf80197b03681aef82294c47cb4e36520c943bca523e0f5ef4b37"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:8346",
+          "relation": "unrelated",
+          "quotation_sha256": "dde716c789569c84c18224d39e06f5ffa5f6f2b08c80327ab204bbbbc343ca87"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:64642",
+          "relation": "unrelated",
+          "quotation_sha256": "a4136b0c0cd9c6d2540910ba7ba0ba67792c954317063f4e4f2638bea39cce29"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:5351",
+          "relation": "supports",
+          "quotation_sha256": "9c04aaed5d7ba98624f7777fa0c48360b0d0a46e6aaa37651377565f4993a2b8"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:3044",
+          "relation": "unrelated",
+          "quotation_sha256": "7bca6be4c93f726402f29fd630ec6a03c1fe8f6ee42df702a58c49de96cd4bbb"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4714",
+          "relation": "unrelated",
+          "quotation_sha256": "e42d563b6cd07079606ef8d63597f872c9321f8aeeb07f080a7fcf01da4c979d"
+        }
+      ],
+      "summary": "Yes—the selected sources support that the Hadith describes the truly strong person as the one who controls himself when angry, not merely the one who overpowers others. No additional qualifiers or exceptions in the user claim change that meaning.",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "entailment_status": "passed",
+      "entailment_version": "source-focused-positive-entailment-v1",
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 625,
+          "output_tokens": 87,
+          "estimated_cost_usd": 0.00086025,
+          "reservation_id": "7f7c3d48-3859-41ae-adbe-63c12f0f966d"
+        },
+        {
+          "input_tokens": 16936,
+          "output_tokens": 307,
+          "estimated_cost_usd": 0.0140835,
+          "reservation_id": "8c4549ca-b0fa-414a-87b4-bde4666984bb"
+        },
+        {
+          "input_tokens": 16936,
+          "output_tokens": 307,
+          "estimated_cost_usd": 0.0140835,
+          "reservation_id": "8c4549ca-b0fa-414a-87b4-bde4666984bb"
+        },
+        {
+          "input_tokens": 737,
+          "output_tokens": 102,
+          "estimated_cost_usd": 0.00101175,
+          "reservation_id": "705d557b-9ac0-4064-ae6a-a3ba57873c86"
+        }
+      ],
+      "latency_ms": 13688
+    },
+    {
+      "id": "B46",
+      "claim": "Does the Quran forbid pork under ordinary conditions?",
+      "actual": "insufficient_within_selected_corpus",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": false,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "13:11",
+          "relation": "unrelated",
+          "quotation_sha256": "b441096c5dd699644ffa2a117a36500af227333c434b84be18f18976ea469062"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:2",
+          "relation": "unrelated",
+          "quotation_sha256": "7f2c76e371ff6b6b09eb58c2541e0c5c7209471c1aa315cc52663cd655dfe010"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:5",
+          "relation": "unrelated",
+          "quotation_sha256": "e5e561944351613e369e0a79c9dd7b53eb6bbef216b6dc1910c2b5e6b8f2fc94"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "73:20",
+          "relation": "unrelated",
+          "quotation_sha256": "881ccd04dcb49d6ae01d0887e0c549bbd0fe1536b76d6019c86b1923fd1a2055"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:25",
+          "relation": "unrelated",
+          "quotation_sha256": "9270642e6dfdaa543dc8a53073381ff8eebc63db7bd4344590286ef4668ff0b3"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:266",
+          "relation": "unrelated",
+          "quotation_sha256": "67a9ce387934b7899b99932a1da175cc9a959f88bea1b7cfd2fd5378c1c95117"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:15",
+          "relation": "unrelated",
+          "quotation_sha256": "02cda5bebe78ad900a66684b35b45c553aec73084e1682331a5ea5529efaa829"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:75",
+          "relation": "unrelated",
+          "quotation_sha256": "ce89666b1bb11f0c74f6434dd544aa036aa5746601cefd771607774117230580"
+        }
+      ],
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 621,
+          "output_tokens": 71,
+          "estimated_cost_usd": 0.00078525,
+          "reservation_id": "28819aa0-284b-451e-adf9-6a437981efd3"
+        },
+        {
+          "input_tokens": 6961,
+          "output_tokens": 354,
+          "estimated_cost_usd": 0.00681375,
+          "reservation_id": "24941fc6-99c7-419d-9ade-f7073447e99c"
+        },
+        {
+          "input_tokens": 6961,
+          "output_tokens": 336,
+          "estimated_cost_usd": 0.0224425,
+          "reservation_id": "7ead190d-3e15-499f-9d69-fa485ed96d85"
+        },
+        {
+          "input_tokens": 6961,
+          "output_tokens": 336,
+          "estimated_cost_usd": 0.0224425,
+          "reservation_id": "7ead190d-3e15-499f-9d69-fa485ed96d85"
+        }
+      ],
+      "latency_ms": 11813
+    },
+    {
+      "id": "B19",
+      "claim": "Does the Quran permit riba?",
+      "actual": "conflicting_within_selected_corpus",
+      "expected": "conflicting_within_selected_corpus",
+      "verdict_agreement": true,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:220",
+          "relation": "unrelated",
+          "quotation_sha256": "cd24d8c9dbcd04681005cadee72a76e5d1d9ab626e4dd28dbd264b8cf79aea34"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:60",
+          "relation": "unrelated",
+          "quotation_sha256": "5c4a13779dd3893ffcf869b49598b7461e3ad6cc378d01e4461207ee555954b8"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:275",
+          "relation": "contradicts",
+          "quotation_sha256": "e3daaaad119e8d53c1fb0161d6e9b0c79ca5cf7ef14475803fd59b13009eddde"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:276",
+          "relation": "unrelated",
+          "quotation_sha256": "4c26bd836f4dacc6d7e4304eebd15326f3e412019b56912c86f5ad0ecdec4fdc"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:278",
+          "relation": "unrelated",
+          "quotation_sha256": "31326d97c1dcd1570fd9d970da60bd06b47c1cd5342b5e02235bd7a820d8c39d"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:130",
+          "relation": "unrelated",
+          "quotation_sha256": "1687309fdf959e14f8e3b9d45d21191318b6e6503c37169fbe7075d6b918d699"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:161",
+          "relation": "unrelated",
+          "quotation_sha256": "ad485b6cce6f0554f029c808b4ec090f6e914ccb469e86178f0f359b4f0e79e2"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "30:39",
+          "relation": "unrelated",
+          "quotation_sha256": "4731f92aa999aaf798c216898750929b94546c29293a5489c0fdb91ff2ed4a41"
+        }
+      ],
+      "summary": "Direct conclusion: No, the selected corpus does not support that the Quran permits riba; it directly indicates the opposite in 2:275, with further reinforcement in 2:278 and 3:130. This assessment is limited to the displayed Quran passages in the selected corpus and does not replace qualified scholarly review if detailed applications of riba are intended.",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-failure-or-contradiction-plus-source-positive-review-v3",
+      "usage": [
+        {
+          "input_tokens": 619,
+          "output_tokens": 73,
+          "estimated_cost_usd": 0.00079275,
+          "reservation_id": "8e571161-6c3c-4639-b810-98e583f7810c"
+        },
+        {
+          "input_tokens": 7342,
+          "output_tokens": 527,
+          "estimated_cost_usd": 0.007878,
+          "reservation_id": "83a86760-a25f-439a-b4f3-7afcf24e6fe6"
+        },
+        {
+          "input_tokens": 7342,
+          "output_tokens": 449,
+          "estimated_cost_usd": 0.02509,
+          "reservation_id": "ccc31fdd-ee60-40a2-9efa-e27894aca008"
+        },
+        {
+          "input_tokens": 7342,
+          "output_tokens": 449,
+          "estimated_cost_usd": 0.02509,
+          "reservation_id": "ccc31fdd-ee60-40a2-9efa-e27894aca008"
+        }
+      ],
+      "latency_ms": 12594
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "purpose": "Targeted post-repair checks. Separate from immutable new50 first-pass results; not a fresh benchmark.",
+  "application_tree_sha256": "41d0d7f385e4649a01da589e41526a8fee590a0778b2658a6b892e9f271d63cb",
+  "cases": [
+    {
+      "id": "B46",
+      "claim": "Does the Quran forbid pork under ordinary conditions?",
+      "actual": "supported_within_selected_corpus",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": true,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:60",
+          "relation": "unrelated",
+          "quotation_sha256": "8e5d3c462ca634a8ca7e6b435f22198a427abb994d50213166f24b0afd06b82e"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "quotation_sha256": "719d586cab5c12d7d12c8f5ed2ab7ead4b5791cc2d33956e759034c86d33b8ba"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "quotation_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "quotation_sha256": "c3dc01e86aae4112e87329916b4514b1350253adaf483db70722663ebbb9bf62"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "quotation_sha256": "d07959963857e1bed569dfdb268738512063763998b41781385f3587fa020604"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "13:11",
+          "relation": "unrelated",
+          "quotation_sha256": "b441096c5dd699644ffa2a117a36500af227333c434b84be18f18976ea469062"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:2",
+          "relation": "unrelated",
+          "quotation_sha256": "7f2c76e371ff6b6b09eb58c2541e0c5c7209471c1aa315cc52663cd655dfe010"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:5",
+          "relation": "unrelated",
+          "quotation_sha256": "e5e561944351613e369e0a79c9dd7b53eb6bbef216b6dc1910c2b5e6b8f2fc94"
+        }
+      ],
+      "summary": "Yes, the selected sources support that the Quran forbids pork under ordinary conditions. The cited verses also preserve an exception for necessity in hardship, or for one who is not transgressing or exceeding limits.",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "entailment_status": "passed",
+      "entailment_version": "source-focused-positive-entailment-v3-immutable-unit-selection",
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-or-conflict-plus-positive-review-and-supplied-context-v4",
+      "usage": [
+        {
+          "input_tokens": 621,
+          "output_tokens": 84,
+          "estimated_cost_usd": 0.00084375,
+          "reservation_id": "ece99591-f2dd-403e-a908-3191cc571fa0"
+        },
+        {
+          "input_tokens": 7321,
+          "output_tokens": 360,
+          "estimated_cost_usd": 0.00711075,
+          "reservation_id": "26f475a7-6f48-46b5-82da-a47d97c5fed3"
+        },
+        {
+          "input_tokens": 7321,
+          "output_tokens": 360,
+          "estimated_cost_usd": 0.00711075,
+          "reservation_id": "26f475a7-6f48-46b5-82da-a47d97c5fed3"
+        },
+        {
+          "input_tokens": 4753,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00386175,
+          "reservation_id": "06b454ed-bff9-4efe-adc9-01e76bd0fa88"
+        }
+      ],
+      "latency_ms": 5742
+    }
+  ]
+}

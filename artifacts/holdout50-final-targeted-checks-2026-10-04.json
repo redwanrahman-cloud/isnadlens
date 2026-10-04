@@ -1,0 +1,196 @@
+{
+  "purpose": "Targeted post-repair checks. Separate from immutable new50 first-pass results; not a fresh benchmark.",
+  "application_tree_sha256": "f5702d0e030462ee674658ef3c9f7c48f4b6ed1455a849831bf1a5c3d6a007c4",
+  "cases": [
+    {
+      "id": "H37",
+      "claim": "Does the Quran portray Jesus as admitting that he told people to worship him and his mother besides Allah?",
+      "actual": "conflicting_within_selected_corpus",
+      "expected": "conflicting_within_selected_corpus",
+      "verdict_agreement": true,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:116",
+          "relation": "contradicts",
+          "quotation_sha256": "e80592e9b33ed242b84499cfef60c92a327c7cdeafe5c5766a2f0feb658cd763"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "39:6",
+          "relation": "unrelated",
+          "quotation_sha256": "fb6cc0abb02e5b9bad1166570b319e74ee48781c5e9eebe0b0585c7bfbc697ff"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:110",
+          "relation": "unrelated",
+          "quotation_sha256": "9fc3eeeb3ece64dc5cdbaf27697f6d4053fad0566ba83aaba77baaf52e1e161f"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:75",
+          "relation": "unrelated",
+          "quotation_sha256": "054cf9860641e245e5bb08245210ca875c4004b30ae2d1543e0a55a482be6f96"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "28:13",
+          "relation": "unrelated",
+          "quotation_sha256": "cb458059d40cd4cf5e3a3f2183d31319db6aeb4ae7cf9aa2999fead5c1a52671"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "33:4",
+          "relation": "unrelated",
+          "quotation_sha256": "b2e186a8d12f381dcd7dd1e78041ce7a07da00c7faf75539dc8e12c9b93bed0c"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "7:150",
+          "relation": "unrelated",
+          "quotation_sha256": "ef5918cc62774a21d8e3ec2accc3b4d06ddef1ecb10b5d037e4ff7b931a1af6c"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:117",
+          "relation": "contradicts",
+          "quotation_sha256": "413e0074019746f938fbbd5c437627e0e691289c2cdb4e5df165d55d2438651e"
+        }
+      ],
+      "summary": "Conclusion: No, the selected source collection does not portray Jesus as admitting that he told people to worship him and his mother besides Allah. In the passages shown at 5:116–117, the Quran presents a divine question followed by Jesus’ denial and his statement that he told them only to worship Allah.",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-or-conflict-plus-positive-review-and-supplied-context-v4",
+      "usage": [
+        {
+          "input_tokens": 632,
+          "output_tokens": 105,
+          "estimated_cost_usd": 0.0009465,
+          "reservation_id": "ee094a51-92e2-419d-8425-04888dd2b3c1"
+        },
+        {
+          "input_tokens": 7123,
+          "output_tokens": 523,
+          "estimated_cost_usd": 0.00769575,
+          "reservation_id": "9ba0689e-4c7e-4f43-a6bc-413cc6c5aaac"
+        },
+        {
+          "input_tokens": 7216,
+          "output_tokens": 455,
+          "estimated_cost_usd": 0.024865,
+          "reservation_id": "0108ce24-1656-4910-a887-501d823d0e99"
+        },
+        {
+          "input_tokens": 7216,
+          "output_tokens": 455,
+          "estimated_cost_usd": 0.024865,
+          "reservation_id": "0108ce24-1656-4910-a887-501d823d0e99"
+        }
+      ],
+      "latency_ms": 17085
+    },
+    {
+      "id": "B46",
+      "claim": "Does the Quran forbid pork under ordinary conditions?",
+      "actual": "not_evaluated",
+      "expected": "supported_within_selected_corpus",
+      "verdict_agreement": false,
+      "http_status": 200,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:60",
+          "relation": "not_assessed",
+          "quotation_sha256": "8e5d3c462ca634a8ca7e6b435f22198a427abb994d50213166f24b0afd06b82e"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "not_assessed",
+          "quotation_sha256": "ebdaa101915dd8f3e864e53caf75d3902bf0c51886ba8ab7c8d503b9b4edec69"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "not_assessed",
+          "quotation_sha256": "719d586cab5c12d7d12c8f5ed2ab7ead4b5791cc2d33956e759034c86d33b8ba"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "not_assessed",
+          "quotation_sha256": "c3dc01e86aae4112e87329916b4514b1350253adaf483db70722663ebbb9bf62"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "not_assessed",
+          "quotation_sha256": "d07959963857e1bed569dfdb268738512063763998b41781385f3587fa020604"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "13:11",
+          "relation": "not_assessed",
+          "quotation_sha256": "b441096c5dd699644ffa2a117a36500af227333c434b84be18f18976ea469062"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:2",
+          "relation": "not_assessed",
+          "quotation_sha256": "7f2c76e371ff6b6b09eb58c2541e0c5c7209471c1aa315cc52663cd655dfe010"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "47:5",
+          "relation": "not_assessed",
+          "quotation_sha256": "e5e561944351613e369e0a79c9dd7b53eb6bbef216b6dc1910c2b5e6b8f2fc94"
+        }
+      ],
+      "summary": "This claim has not been evaluated.",
+      "reason_codes": [
+        "SOURCE_ENTAILMENT_UNCONFIRMED"
+      ],
+      "entailment_status": "rejected",
+      "entailment_version": "source-focused-positive-entailment-v1",
+      "prompt_version": "claim-assessment-v2.2-context-parent-citations",
+      "router_version": "reference-or-conflict-plus-positive-review-and-supplied-context-v4",
+      "usage": [
+        {
+          "input_tokens": 621,
+          "output_tokens": 76,
+          "estimated_cost_usd": 0.00080775,
+          "reservation_id": "90ae637f-6876-4526-8810-62a83a063d15"
+        },
+        {
+          "input_tokens": 7321,
+          "output_tokens": 385,
+          "estimated_cost_usd": 0.00722325,
+          "reservation_id": "29a9aa94-1ec5-49e7-b4af-e3308ff57ec6"
+        },
+        {
+          "input_tokens": 7321,
+          "output_tokens": 385,
+          "estimated_cost_usd": 0.00722325,
+          "reservation_id": "29a9aa94-1ec5-49e7-b4af-e3308ff57ec6"
+        },
+        {
+          "input_tokens": 3592,
+          "output_tokens": 487,
+          "estimated_cost_usd": 0.0048855,
+          "reservation_id": "b48c6326-79c6-4973-a0d8-b64b041b5ba2"
+        }
+      ],
+      "latency_ms": 6557
+    }
+  ]
+}
