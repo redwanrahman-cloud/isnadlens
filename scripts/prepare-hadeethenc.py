@@ -45,7 +45,7 @@ corpus_hash = hashlib.sha256(serialized.encode('utf-8')).hexdigest()
 manifest = {'id': 'hadeethenc-official-2026-10-04', 'version': '2026-10-04 acquisition', 'sha256': corpus_hash, 'sources': sources}
 (ROOT / 'data' / 'hadeethenc.json').write_text(json.dumps({'manifest': manifest, 'records': records}, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 pins = {'id': manifest['id'], 'sha256': corpus_hash, 'sources': [{key: source[key] for key in ['language', 'raw_sha256', 'filename', 'version']} for source in sources], 'counts': {row['language']: row['records'] for row in report}}
-(ROOT / 'docs' / 'source-rights' / 'hadeethenc-pins.json').write_text(json.dumps(pins, ensure_ascii=False, indent=2), encoding='utf-8')
+(ROOT / 'docs' / 'source-rights' / 'hadeethenc-pins.json').write_text(json.dumps(pins, ensure_ascii=False, indent=2), encoding='utf-8', newline='\n')
 arabic_ids = {record['id'] for record in records if record['language'] == 'ar'}
 for row in report:
     row['ids_outside_arabic_edition'] = sum(record['id'] not in arabic_ids for record in records if record['language'] == row['language'])

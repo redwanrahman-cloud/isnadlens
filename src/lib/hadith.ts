@@ -15,7 +15,7 @@ export type HadithCorpus = z.infer<typeof hadithSchema>;
 export type HadithRecord = HadithCorpus['records'][number];
 const ADMITTED_RECORDS_HASH = '4b8dcc11ef25e42c44b1333eaed643adfb752d6868513f6b98465513d465e17d';
 // This pin is updated only when the committed admission artifact changes after source review.
-const ADMITTED_PIN_FILE_HASH = 'e53350a009ea1abdd0712692b242a3fd62561c67fdcab1e774cd6aadabb9a48f';
+const ADMITTED_PIN_FILE_HASH = 'c419ec4106b358d8ca409f1f537acfbf91f1ba572d0f37887c89bcb319309a33';
 export function validateHadith(raw: unknown, pins: z.infer<typeof pinSchema>): HadithCorpus {
   const corpus = hadithSchema.parse(raw);
   if (corpus.manifest.id !== pins.id || corpus.manifest.sha256 !== pins.sha256 || pins.sha256 !== ADMITTED_RECORDS_HASH || sha256(JSON.stringify(corpus.records)) !== ADMITTED_RECORDS_HASH) throw new Error('HADITH_ADMISSION_HASH_MISMATCH');
