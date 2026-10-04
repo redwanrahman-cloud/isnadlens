@@ -1,0 +1,17 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {hash,applicationTreeHash} from './holdout-protocol.mjs';
+process.loadEnvFile('.env.local');
+const raw=await readFile('artifacts/fresh50-question-set-2026-10-04.json','utf8'),data=JSON.parse(raw);
+const review=await readFile('docs/FRESH50-SOURCE-REVIEW.md','utf8');
+if(!review.includes('PRE_FREEZE_DEVELOPER_SOURCE_REVIEW_COMPLETE')||data.cases.length!==50)throw new Error('REVIEW_OR_COUNT_INVALID');
+if(process.env.OPENAI_MODEL!=='gpt-5.6-luna'||Number(process.env.ISNADLENS_MAX_SPEND_USD)!==4.8)throw new Error('APP_MODEL_OR_AUTHORIZATION_MISMATCH');
+const yesQ=data.cases.filter(c=>c.reference_family==='quran'&&c.reference_answer==='yes');
+const noQ=data.cases.filter(c=>c.reference_answer==='no');const yesH=data.cases.filter(c=>c.reference_family==='hadith');
+if(yesQ.length!==25||noQ.length!==15||yesH.length!==10)throw new Error('PREDECLARED_SPLIT_CHANGED');
+const execution_order=[];
+for(let block=0;block<5;block++)execution_order.push(...yesQ.splice(0,5).map(c=>c.id),...noQ.splice(0,3).map(c=>c.id),...yesH.splice(0,2).map(c=>c.id));
+const args=['-c',`safe.directory=${process.cwd().replaceAll('\\','/')}`,'rev-parse','HEAD'];
+const freeze={dataset_id:data.dataset_id,frozen_at:new Date().toISOString(),dataset_sha256:hash(raw),review_sha256:hash(review),application_commit:execFileSync('git',args,{encoding:'utf8'}).trim(),application_tree_sha256:await applicationTreeHash(),production_build_id:(await readFile('.next/BUILD_ID','utf8')).trim(),execution_order,request_policy:{inputLanguage:'auto',corpusSelection:'auto',reference_information_sent:false},model_policy:{primary:'gpt-5.6-luna',strong:'gpt-5.6-terra',reasoning:'low'},planned:50,expected_yes:35,expected_no:15,authorized_development_max_usd:4.8,budget_authorization:'Redwan approved5SAR extra for this new50 run;18SAR total development; preserve15SAR judging reserve. Unknown prior reservations retained.'};
+await writeFile('artifacts/fresh50-freeze-2026-10-04.json',JSON.stringify(freeze,null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({frozen:50,application_commit:freeze.application_commit,dataset_sha256:freeze.dataset_sha256}));

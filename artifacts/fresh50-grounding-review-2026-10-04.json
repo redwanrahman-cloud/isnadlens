@@ -1,0 +1,431 @@
+{
+  "review_kind": "developer_primary_source_review_not_independent_or_scholar_certification",
+  "reviewed_at": "2026-10-04T15:55:26.929Z",
+  "scope": "Principal native proposition, EN/AR summaries, supplied primary source and relevant context; ancillary language defects recorded separately. Mechanical audit validates every returned quotation against admitted corpus.",
+  "cases": [
+    {
+      "id": "N01",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "5:6"
+      ]
+    },
+    {
+      "id": "N02",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "4:43",
+        "5:6"
+      ]
+    },
+    {
+      "id": "N03",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "62:10 correctly promoted from neighboring 62:9 context; work occurs after prayer.",
+      "actual_source_locators": [
+        "62:9",
+        "62:10"
+      ]
+    },
+    {
+      "id": "N04",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "4:103"
+      ]
+    },
+    {
+      "id": "N05",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "17:79"
+      ]
+    },
+    {
+      "id": "N06",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Missing 2:187; unrelated night worship and itikaf records cannot establish permission.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N07",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "2:158"
+      ]
+    },
+    {
+      "id": "N08",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "22:37"
+      ]
+    },
+    {
+      "id": "N09",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "4:4"
+      ]
+    },
+    {
+      "id": "N10",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Missing 2:233; search hint dual morphology does not match the primary wording.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N11",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "65:4"
+      ]
+    },
+    {
+      "id": "N12",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal answer grounded in 2:232; Arabic limitation includes untranslated English corroboration.",
+      "actual_source_locators": [
+        "2:232"
+      ]
+    },
+    {
+      "id": "N13",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal answer grounded in 94:5-6; Arabic summary incorrectly calls these two verses two surahs.",
+      "actual_source_locators": [
+        "94:5",
+        "94:6"
+      ]
+    },
+    {
+      "id": "N14",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N15",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "13:28"
+      ]
+    },
+    {
+      "id": "N16",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N17",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "39:42"
+      ]
+    },
+    {
+      "id": "N18",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N19",
+      "developer_grounding_approved": false,
+      "category": "positive_source_checker_withheld",
+      "finding": "7:31 is present in context, but the positive checker returns uncertain; investigate cross-language/context checking.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N20",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N21",
+      "developer_grounding_approved": false,
+      "category": "positive_source_checker_withheld",
+      "finding": "17:31 directly supplies the prohibition, but positive checker returns uncertain.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N22",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "2:186"
+      ]
+    },
+    {
+      "id": "N23",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "7:54",
+        "10:3"
+      ]
+    },
+    {
+      "id": "N24",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "51:56"
+      ]
+    },
+    {
+      "id": "N25",
+      "developer_grounding_approved": false,
+      "category": "positive_source_checker_withheld",
+      "finding": "18:110 and 41:6 missing; source checker correctly blocks an overclaim from indirect 42:51-52.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N26",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "2:255"
+      ]
+    },
+    {
+      "id": "N27",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "4:7"
+      ]
+    },
+    {
+      "id": "N28",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Quran 6:164 missing as a Quran card despite a retrieved Hadith quoting it; retrieve and authenticate the Quran unit.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N29",
+      "developer_grounding_approved": false,
+      "category": "semantic_scope_or_qualification_withheld",
+      "finding": "Relevant negative ransom verses retrieved; semantic assessment withholds on group/scope flags. Frozen question also needs explicit group/quantifier clarification before a universal verdict is forced.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N30",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Alternative 9:55/85 directly counters generic protection from punishment, with worldly-life scope preserved. This does not independently establish every disbeliever/afterlife proposition; frozen 3:10 was not retrieved.",
+      "actual_source_locators": [
+        "9:55",
+        "9:85"
+      ]
+    },
+    {
+      "id": "N31",
+      "developer_grounding_approved": false,
+      "category": "semantic_scope_or_qualification_withheld",
+      "finding": "24:24 and 36:65 explicitly contradict never-testify; false qualification flag withholds the verdict.",
+      "actual_source_locators": [
+        "24:24",
+        "36:65"
+      ]
+    },
+    {
+      "id": "N32",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N33",
+      "developer_grounding_approved": false,
+      "category": "semantic_scope_or_qualification_withheld",
+      "finding": "33:35 is a valid alternative contradiction to women receiving no reward; false qualification flag withholds it.",
+      "actual_source_locators": [
+        "33:35"
+      ]
+    },
+    {
+      "id": "N34",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N35",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N36",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N37",
+      "developer_grounding_approved": false,
+      "category": "semantic_scope_or_qualification_withheld",
+      "finding": "3:169 explicitly contradicts the claim; false qualification flag withholds it.",
+      "actual_source_locators": [
+        "3:169"
+      ]
+    },
+    {
+      "id": "N38",
+      "developer_grounding_approved": false,
+      "category": "semantic_scope_or_qualification_withheld",
+      "finding": "2:196 directly states three during Hajj and seven on return; qualification/scope flags incorrectly withhold the reversal verdict.",
+      "actual_source_locators": [
+        "2:196"
+      ]
+    },
+    {
+      "id": "N39",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "13:2",
+        "36:38",
+        "36:40"
+      ]
+    },
+    {
+      "id": "N40",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N41",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "en:58120"
+      ]
+    },
+    {
+      "id": "N42",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N43",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "en:5797",
+        "ar:5797"
+      ]
+    },
+    {
+      "id": "N44",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "en:3276",
+        "en:6468",
+        "ar:3276",
+        "ar:6468"
+      ]
+    },
+    {
+      "id": "N45",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "ar:6405"
+      ]
+    },
+    {
+      "id": "N46",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "en:6275"
+      ]
+    },
+    {
+      "id": "N47",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N48",
+      "developer_grounding_approved": false,
+      "category": "retrieval_coverage_gap",
+      "finding": "Frozen witness not retrieved; abstention is honest for this packet but fails answer coverage.",
+      "actual_source_locators": []
+    },
+    {
+      "id": "N49",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal general rule supported by en:5365; additional qualification explicitly attributed to supplied publisher explanation.",
+      "actual_source_locators": [
+        "en:5365"
+      ]
+    },
+    {
+      "id": "N50",
+      "developer_grounding_approved": true,
+      "category": "grounded_principal_match",
+      "finding": "Principal EN/AR answer agrees with original primary text and preserved qualifications.",
+      "actual_source_locators": [
+        "ar:5798"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1449 @@
+{
+  "dataset_id": "fresh50-luna-terra-2026-10-04-v1",
+  "created_at": "2026-10-04T15:39:46.910Z",
+  "purpose": "Fifty new project-authored propositions across online Islamic question categories; not a measured popularity ranking or verbatim search-log sample.",
+  "selection_sources": [
+    "https://www.dar-alifta.org/en/fatwa/category/126/prayer",
+    "https://www.dar-alifta.org/en/fatwa/category/127/zakat",
+    "https://hadeethenc.com/en/browse/category/267"
+  ],
+  "novelty": {
+    "prior_sets": [
+      "artifacts/common-question-baseline-50-2026-10-04.json",
+      "artifacts/holdout-question-set-50-2026-10-04.json"
+    ],
+    "exact_question_duplicates": 0,
+    "semantic_review": "Manual comparison against earlier 100 questions. New propositions/facets; some familiar categories and primary passages recur. No paraphrase or negation of an earlier tested proposition selected."
+  },
+  "counts": {
+    "total": 50,
+    "quran": 40,
+    "hadith": 10,
+    "supported": 35,
+    "contradicted": 15,
+    "languages": {
+      "en": 20,
+      "ar": 10,
+      "bn": 3,
+      "hi": 3,
+      "ur": 3,
+      "id": 3,
+      "es": 3,
+      "fr": 3,
+      "de": 2
+    }
+  },
+  "protocol": "Freeze before app calls. Send only claim, auto input language and auto source selection. Reviewer gloss, expected label, reference links and witnesses never reach the app. No application repair or replay during first pass.",
+  "cases": [
+    {
+      "id": "N01",
+      "topic": "head wiping in wudu",
+      "claim": "Does wudu include wiping the head according to the Quran?",
+      "reviewer_english_gloss": "Does wudu include wiping the head according to the Quran?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:5:6",
+          "quotation_sha256": "e15d6d5aaf6c25e876f3c9fab64f29d7a25546cd792960beebd7d5cbd0099dde",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#5:6",
+        "https://quranenc.com/en/browse/english_rwwad/5/6"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N02",
+      "topic": "tayammum without water",
+      "claim": "هل يذكر القرآن التيمم بصعيد طيب عند عدم وجود الماء وفق الشروط المذكورة؟",
+      "reviewer_english_gloss": "Does the Quran mention tayammum with clean earth when water is unavailable under its stated conditions?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:43",
+          "quotation_sha256": "98f99545a53e158243de36001dcdc93922e768532e1501d06440346e3be0ff9f",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:43",
+        "https://quranenc.com/en/browse/english_rwwad/4/43"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N03",
+      "topic": "work after Friday prayer",
+      "claim": "Can people seek their livelihood after Friday prayer according to the Quran?",
+      "reviewer_english_gloss": "Can people seek their livelihood after Friday prayer according to the Quran?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:62:10",
+          "quotation_sha256": "9c2dd9d3b734506a0803e798ce478cf38e6f2e6af110f95137ecbb3adf042f23",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#62:10",
+        "https://quranenc.com/en/browse/english_rwwad/62/10"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N04",
+      "topic": "prescribed prayer times",
+      "claim": "কোরআন কি বলে যে মুমিনদের নামাজ নির্দিষ্ট সময়ে আদায় করার বিধান রয়েছে?",
+      "reviewer_english_gloss": "Does the Quran describe prayer for believers as prescribed at fixed times?",
+      "input_language": "bn",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:103",
+          "quotation_sha256": "c6a016c1dbd89db8404f672c9acc98e3c0437bff99b0aafa1d11402a0944764a",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:103",
+        "https://quranenc.com/en/browse/english_rwwad/4/103"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N05",
+      "topic": "additional night prayer",
+      "claim": "क्या कुरान में पैगंबर को रात में अतिरिक्त नमाज़ पढ़ने का निर्देश दिया गया है?",
+      "reviewer_english_gloss": "Does the Quran instruct the Prophet to perform additional night prayer?",
+      "input_language": "hi",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:79",
+          "quotation_sha256": "0fa8722cd721722e90c39ead83dc4055261fd44508c14d0eb719053773d1df55",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#17:79",
+        "https://quranenc.com/en/browse/english_rwwad/17/79"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N06",
+      "topic": "Ramadan intimacy outside itikaf",
+      "claim": "کیا رمضان کی راتوں میں میاں بیوی کا تعلق جائز ہے، بشرطیکہ اعتکاف میں نہ ہوں؟",
+      "reviewer_english_gloss": "Is marital intimacy permitted on Ramadan nights outside itikaf?",
+      "input_language": "ur",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:187",
+          "quotation_sha256": "b8cc1604cff8690d60e2e7771ff6d18a81065a4f0f780a445a69b391735dfd21",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:187",
+        "https://quranenc.com/en/browse/english_rwwad/2/187"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N07",
+      "topic": "Safa and Marwah",
+      "claim": "Apakah Al-Qur’an menyebut Safa dan Marwah sebagai bagian dari syiar Allah?",
+      "reviewer_english_gloss": "Does the Quran identify Safa and Marwah as symbols of Allah?",
+      "input_language": "id",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:158",
+          "quotation_sha256": "340bd77a9de55ad973483e8ed72b8aad4c7c8894f5bca8b3a1e2dd86d662705d",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:158",
+        "https://quranenc.com/en/browse/english_rwwad/2/158"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N08",
+      "topic": "purpose of sacrifice",
+      "claim": "¿Dice el Corán que en el sacrificio lo que llega a Allah es la piedad, no la carne ni la sangre?",
+      "reviewer_english_gloss": "Does the Quran say piety, rather than sacrificial flesh or blood, reaches Allah?",
+      "input_language": "es",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:22:37",
+          "quotation_sha256": "e5380ef9f8f0bebbad8ba7ba4765be5388e65c0fd7eec4d91a34eeedb380dea2",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#22:37",
+        "https://quranenc.com/en/browse/english_rwwad/22/37"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N09",
+      "topic": "women marriage gifts",
+      "claim": "Le Coran demande-t-il de donner leur dot aux femmes?",
+      "reviewer_english_gloss": "Does the Quran instruct giving women their marriage gifts?",
+      "input_language": "fr",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:4",
+          "quotation_sha256": "f183907c0e189a32bd885ba5dcdb8e07b8878d94ced914cca23a36246468b405",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:4",
+        "https://quranenc.com/en/browse/english_rwwad/4/4"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N10",
+      "topic": "complete breastfeeding term",
+      "claim": "Nennt der Koran zwei volle Jahre für das Stillen, wenn die Stillzeit vollendet werden soll?",
+      "reviewer_english_gloss": "Does the Quran mention two full years for those wishing to complete breastfeeding?",
+      "input_language": "de",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:233",
+          "quotation_sha256": "1ec93c345fbd25dbef820c35af4d4bf374ea24678855cb70e7b2a1e0141293c7",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:233",
+        "https://quranenc.com/en/browse/english_rwwad/2/233"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N11",
+      "topic": "pregnant divorce waiting period",
+      "claim": "Does the Quran say a pregnant divorced woman’s waiting period ends when she gives birth?",
+      "reviewer_english_gloss": "Does the Quran say a pregnant divorced woman’s waiting period ends when she gives birth?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:65:4",
+          "quotation_sha256": "9f9c5f540c7ececcbd6486c61993619a0700542cdde4f6903d99dd576ecb9481",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#65:4",
+        "https://quranenc.com/en/browse/english_rwwad/65/4"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N12",
+      "topic": "remarriage after waiting period",
+      "claim": "هل ينهى القرآن عن منع المطلقات من العودة إلى أزواجهن بعد انتهاء العدة إذا تراضوا بالمعروف؟",
+      "reviewer_english_gloss": "Does the Quran forbid preventing divorced women from remarrying their husbands after the waiting period when they mutually agree appropriately?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:232",
+          "quotation_sha256": "ae705afd540c29df63d65ea4edfcfa7192832f601409f82e2e8ee41262ecec7e",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:232",
+        "https://quranenc.com/en/browse/english_rwwad/2/232"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N13",
+      "topic": "ease alongside hardship",
+      "claim": "কোরআন কি বলে যে কষ্টের সঙ্গে স্বস্তিও রয়েছে?",
+      "reviewer_english_gloss": "Does the Quran say ease accompanies hardship?",
+      "input_language": "bn",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:94:5",
+          "quotation_sha256": "46d6e18e05512d5f0fcb4c35e4af2aaece5db115e0a1a3681510ceeb6f09724e",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#94:5",
+        "https://quranenc.com/en/browse/english_rwwad/94/5"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N14",
+      "topic": "responsibility and capacity",
+      "claim": "क्या कुरान कहता है कि अल्लाह किसी व्यक्ति पर उसकी क्षमता से अधिक जिम्मेदारी नहीं डालता?",
+      "reviewer_english_gloss": "Does the Quran say Allah does not charge a soul beyond its capacity?",
+      "input_language": "hi",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:286",
+          "quotation_sha256": "7c05269f8e0e98a6b2a2f3ee43745b895ed4ae225a1ed6d2e567c0c3c6d88ec1",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:286",
+        "https://quranenc.com/en/browse/english_rwwad/2/286"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N15",
+      "topic": "remembrance and reassurance",
+      "claim": "کیا قرآن کہتا ہے کہ اللہ کے ذکر سے دلوں کو اطمینان ملتا ہے؟",
+      "reviewer_english_gloss": "Does the Quran say hearts find reassurance through remembrance of Allah?",
+      "input_language": "ur",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:13:28",
+          "quotation_sha256": "20aacc0eaaf3ca321a74f0e8fb28f18d32c351281e0f89af711a6807fa825906",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#13:28",
+        "https://quranenc.com/en/browse/english_rwwad/13/28"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N16",
+      "topic": "peoples knowing one another",
+      "claim": "Menurut Al-Qur’an, apakah manusia dijadikan berbangsa dan bersuku agar saling mengenal?",
+      "reviewer_english_gloss": "Does the Quran describe peoples and tribes as formed so that people know one another?",
+      "input_language": "id",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:49:13",
+          "quotation_sha256": "f2bac1388976aea218d38975297ee34955efd3785ddd0bb6d761c2b37710eb13",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#49:13",
+        "https://quranenc.com/en/browse/english_rwwad/49/13"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N17",
+      "topic": "souls during sleep",
+      "claim": "¿Dice el Corán que Allah toma las almas durante el sueño además de la muerte?",
+      "reviewer_english_gloss": "Does the Quran describe Allah taking souls during sleep as well as death?",
+      "input_language": "es",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:39:42",
+          "quotation_sha256": "938a2948a07f08a042a42bfe725f57468124d9c8f86d1b60f3ab2bf8ec0e3ee7",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#39:42",
+        "https://quranenc.com/en/browse/english_rwwad/39/42"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N18",
+      "topic": "blessings upon Prophet",
+      "claim": "Le Coran demande-t-il aux croyants de prier pour le Prophète et de le saluer?",
+      "reviewer_english_gloss": "Does the Quran instruct believers to invoke blessings and greetings upon the Prophet?",
+      "input_language": "fr",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:33:56",
+          "quotation_sha256": "488ba06dc2f2ab40d993d2d676f1a9da04622cd2baf7e69ed967f4a78dbabfde",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#33:56",
+        "https://quranenc.com/en/browse/english_rwwad/33/56"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N19",
+      "topic": "adornment at worship",
+      "claim": "Fordert der Koran dazu auf, beim Besuch der Gebetsstätte angemessenen Schmuck beziehungsweise Kleidung zu tragen?",
+      "reviewer_english_gloss": "Does the Quran instruct taking adornment at each place of worship?",
+      "input_language": "de",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:7:31",
+          "quotation_sha256": "8ea30463dc91283278ec73559a8fc3726267e338cf94eed50b402a8eff6f0c07",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#7:31",
+        "https://quranenc.com/en/browse/english_rwwad/7/31"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N20",
+      "topic": "insulting others objects of worship",
+      "claim": "Does the Quran forbid insulting what other people worship so that they do not insult Allah in ignorance?",
+      "reviewer_english_gloss": "Does the Quran forbid insulting what other people worship so that they do not insult Allah in ignorance?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:6:108",
+          "quotation_sha256": "556632bb21375556a8c73bcc77b1ce4d079fa6ecfff0e68b69672bb54f5cf029",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#6:108",
+        "https://quranenc.com/en/browse/english_rwwad/6/108"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N21",
+      "topic": "children and fear of poverty",
+      "claim": "هل ينهى القرآن عن قتل الأولاد خوفا من الفقر؟",
+      "reviewer_english_gloss": "Does the Quran forbid killing children out of fear of poverty?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:17:31",
+          "quotation_sha256": "902b999c786744e3a8f7cc4e4ccad776446ef40ed8305aa5d0b9412e16fa1c32",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#17:31",
+        "https://quranenc.com/en/browse/english_rwwad/17/31"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N22",
+      "topic": "nearness and supplication",
+      "claim": "Does the Quran describe Allah as near and responding to those who call upon Him?",
+      "reviewer_english_gloss": "Does the Quran describe Allah as near and responding to those who call upon Him?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:186",
+          "quotation_sha256": "08f48bf5d734289af7929d5541ad745e7c2e457b306f26557a53ed5fdff8d3fb",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:186",
+        "https://quranenc.com/en/browse/english_rwwad/2/186"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N23",
+      "topic": "creation in six days",
+      "claim": "Does the Quran describe the heavens and earth as created in six days?",
+      "reviewer_english_gloss": "Does the Quran describe the heavens and earth as created in six days?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:7:54",
+          "quotation_sha256": "5e6df242aa74d21c9a14f0346796f2517a97fdb632ea71fb4da438a323d9708d",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#7:54",
+        "https://quranenc.com/en/browse/english_rwwad/7/54"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N24",
+      "topic": "purpose of jinn and humans",
+      "claim": "Does the Quran say jinn and humans were created to worship Allah?",
+      "reviewer_english_gloss": "Does the Quran say jinn and humans were created to worship Allah?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:51:56",
+          "quotation_sha256": "246fcc183c9be1b33941d76c7673d2307e018a7e1d5a208c7d5c6a123527eaaa",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#51:56",
+        "https://quranenc.com/en/browse/english_rwwad/51/56"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N25",
+      "topic": "humanity of the Messenger",
+      "claim": "هل يصف القرآن الرسول بأنه بشر يوحى إليه؟",
+      "reviewer_english_gloss": "Does the Quran describe the Messenger as a human receiving revelation?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:18:110",
+          "quotation_sha256": "d320e1bf100179792d66adcd67e5b92a343f71e74bd68baeb658e637960e1bdc",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#18:110",
+        "https://quranenc.com/en/browse/english_rwwad/18/110"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N26",
+      "topic": "sleep attributed to Allah",
+      "claim": "Does the Quran say Allah needs sleep?",
+      "reviewer_english_gloss": "Does the Quran say Allah needs sleep?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:255",
+          "quotation_sha256": "f1f9b8cd879ba4b078e1dada34552c927339009c5b2551ec287c7ee261d17e3a",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:255",
+        "https://quranenc.com/en/browse/english_rwwad/2/255"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N27",
+      "topic": "women excluded from inheritance",
+      "claim": "هل يقول القرآن إن النساء لا نصيب لهن في الميراث؟",
+      "reviewer_english_gloss": "Does the Quran say women have no share in inheritance?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:4:7",
+          "quotation_sha256": "2e45bc45a3aee7fed4038959a07d4de8449edae7c5806a6aacc13b03f4eec216",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#4:7",
+        "https://quranenc.com/en/browse/english_rwwad/4/7"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N28",
+      "topic": "inherited guilt",
+      "claim": "Does the Quran say people automatically bear guilt for their parents’ sins?",
+      "reviewer_english_gloss": "Does the Quran say people automatically bear guilt for their parents’ sins?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:6:164",
+          "quotation_sha256": "5852927be5572c74c804ceb1894af96648b3171a43556915d33ea857e9eae40a",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#6:164",
+        "https://quranenc.com/en/browse/english_rwwad/6/164"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N29",
+      "topic": "ransom on Judgment Day",
+      "claim": "Does the Quran say a ransom will be accepted on the Day of Judgment?",
+      "reviewer_english_gloss": "Does the Quran say a ransom will be accepted on the Day of Judgment?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:48",
+          "quotation_sha256": "7eac7b9e3c4281f0f5a7e495d9e87364a74acf85e79bcb179b36c78db3f58ae0",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:48",
+        "https://quranenc.com/en/browse/english_rwwad/2/48"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N30",
+      "topic": "wealth shielding disbelievers",
+      "claim": "هل يقول القرآن إن أموال من كفروا وأولادهم تحميهم من عقاب الله؟",
+      "reviewer_english_gloss": "Does the Quran say the wealth and children of disbelievers shield them from Allah?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:3:10",
+          "quotation_sha256": "b3aef7ed9116038c981ef79f95255229a119ea6c13e147e8e0f31a38e317a5bf",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#3:10",
+        "https://quranenc.com/en/browse/english_rwwad/3/10"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N31",
+      "topic": "body parts never testify",
+      "claim": "Does the Quran say hands and feet will never testify about people’s deeds on Judgment Day?",
+      "reviewer_english_gloss": "Does the Quran say hands and feet will never testify about people’s deeds on Judgment Day?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:24:24",
+          "quotation_sha256": "133be420a497c2c61ac40d2326cc83d5ea95825d13390bad27d6bfebffbe917f",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#24:24",
+        "https://quranenc.com/en/browse/english_rwwad/24/24"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N32",
+      "topic": "offspring attributed to Allah",
+      "claim": "Does the Quran describe Allah as having a child?",
+      "reviewer_english_gloss": "Does the Quran describe Allah as having a child?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:112:3",
+          "quotation_sha256": "fe38e7c9006a6b6032988cba2fbf80978274b83513edc6338bd33cdf8cda5e30",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#112:3",
+        "https://quranenc.com/en/browse/english_rwwad/112/3"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N33",
+      "topic": "women denied good-deed reward",
+      "claim": "কোরআন কি বলে যে সৎকর্মের পুরস্কার শুধু পুরুষদের জন্য, বিশ্বাসী নারীদের জন্য নয়?",
+      "reviewer_english_gloss": "Does the Quran say good-deed reward is only for men and not believing women?",
+      "input_language": "bn",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:16:97",
+          "quotation_sha256": "a6e513f20f81a07175f78872fa16757315690ef7ff83efe0fc894ec3a7436258",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#16:97",
+        "https://quranenc.com/en/browse/english_rwwad/16/97"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N34",
+      "topic": "Satan treated as friend",
+      "claim": "क्या कुरान कहता है कि शैतान इंसानों का मित्र है और उसे मित्र मानना चाहिए?",
+      "reviewer_english_gloss": "Does the Quran say Satan is humanity’s friend and should be treated as a friend?",
+      "input_language": "hi",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:35:6",
+          "quotation_sha256": "5ab513f6aef0e5f4d9e655c63beaa2024d925e5b24dc9411dae9bf46029e1d86",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#35:6",
+        "https://quranenc.com/en/browse/english_rwwad/35/6"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N35",
+      "topic": "purposeless creation",
+      "claim": "کیا قرآن کہتا ہے کہ آسمان، زمین اور ان کے درمیان کی چیزیں بے مقصد پیدا کی گئی ہیں؟",
+      "reviewer_english_gloss": "Does the Quran say heavens, earth and what is between them were created without purpose?",
+      "input_language": "ur",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:38:27",
+          "quotation_sha256": "3199a3ceef1401fabadc40f3ec07609a3b1477dbc29fbe3db49a94ff4609d0cc",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#38:27",
+        "https://quranenc.com/en/browse/english_rwwad/38/27"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N36",
+      "topic": "responding with worse evil",
+      "claim": "Apakah Al-Qur’an memerintahkan membalas keburukan dengan yang lebih buruk?",
+      "reviewer_english_gloss": "Does the Quran command responding to evil with something worse?",
+      "input_language": "id",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:41:34",
+          "quotation_sha256": "8fc7c65a33b2d2c223ed483635454afecaf16772a530022afca61f7ca2c03ca3",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#41:34",
+        "https://quranenc.com/en/browse/english_rwwad/41/34"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N37",
+      "topic": "martyrs not alive with Lord",
+      "claim": "¿Dice el Corán que quienes murieron en el camino de Allah no están vivos junto a su Señor?",
+      "reviewer_english_gloss": "Does the Quran say those killed in Allah’s way are not alive with their Lord?",
+      "input_language": "es",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:3:169",
+          "quotation_sha256": "772657ac4ef428cf709676432d6a4f0e50b6295e97e42d117bea166554e00be9",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#3:169",
+        "https://quranenc.com/en/browse/english_rwwad/3/169"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N38",
+      "topic": "reversed tamattu fasting days",
+      "claim": "Pour le pèlerinage tamattu sans offrande disponible, le Coran indique-t-il sept jours de jeûne pendant le Hajj et trois après le retour?",
+      "reviewer_english_gloss": "For tamattu when no offering is available, does the Quran prescribe seven fasting days during Hajj and three after return?",
+      "input_language": "fr",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:2:196",
+          "quotation_sha256": "b2ed5f74970bd1688e71f4d25856c7e8daaa4e650e8a1a03a1239e620906cb6c",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#2:196",
+        "https://quranenc.com/en/browse/english_rwwad/2/196"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N39",
+      "topic": "sun without a course",
+      "claim": "Does the Quran say the sun does not follow any course?",
+      "reviewer_english_gloss": "Does the Quran say the sun does not follow any course?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:36:38",
+          "quotation_sha256": "3940034c0a322687ab6200f8266c6cc922823459337a9acf3d5002727ab75ab3",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#36:38",
+        "https://quranenc.com/en/browse/english_rwwad/36/38"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N40",
+      "topic": "asking for less knowledge",
+      "claim": "Does the Quran instruct asking Allah to decrease one’s knowledge?",
+      "reviewer_english_gloss": "Does the Quran instruct asking Allah to decrease one’s knowledge?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "quran",
+      "reference_answer": "no",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "quran:20:114",
+          "quotation_sha256": "ce7dc8a4bfbc0d1eac27e9187c29016c46223a0d1a076540663fa1b1e4512616",
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "source_version": "1.1"
+        }
+      ],
+      "reference_links": [
+        "https://tanzil.net/#20:114",
+        "https://quranenc.com/en/browse/english_rwwad/20/114"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N41",
+      "topic": "eating manners",
+      "claim": "Does the Hadith teach mentioning Allah’s name, eating with the right hand and taking food from nearby?",
+      "reviewer_english_gloss": "Does the Hadith teach mentioning Allah’s name, eating with the right hand and taking food from nearby?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:58120",
+          "quotation_sha256": "53b8866cf1fea238dd8379ef4c011ddee4759bd9924b0c3c10542282c6d97c0d",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:58120",
+          "quotation_sha256": "662ed23956f199826b0dc430a02cdddc940c1b8b44416b1b7d8a14a9766ed6b0",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/58120",
+        "https://hadeethenc.com/en/browse/hadith/58120"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N42",
+      "topic": "forgetful eating while fasting",
+      "claim": "من أكل أو شرب ناسيا وهو صائم، هل يقول الحديث أن يكمل صومه؟",
+      "reviewer_english_gloss": "Does the Hadith tell someone who forgetfully eats or drinks while fasting to complete the fast?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:4525",
+          "quotation_sha256": "ea29ae2e25f68510401750592594a459e648586d210c68d3ea92f455d192da5c",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:4525",
+          "quotation_sha256": "bcd82788c87e89ddf42cd8d18e58f0f8f07f7f0cb523a2b260f40e8c3b1965bf",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/4525",
+        "https://hadeethenc.com/en/browse/hadith/4525"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N43",
+      "topic": "Allah loves gentleness",
+      "claim": "Does the Hadith say Allah loves gentleness and rewards it differently from violence?",
+      "reviewer_english_gloss": "Does the Hadith say Allah loves gentleness and rewards it differently from violence?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:5797",
+          "quotation_sha256": "6d96ba1aecf7415f3392ae35b3595dc5dfef390883a090cabe0612904e589e77",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:5797",
+          "quotation_sha256": "0b034b164da6ff9d95ecdf70fe360a2507fb9e9c5d4dbc4c01c709322436d325",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/5797",
+        "https://hadeethenc.com/en/browse/hadith/5797"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N44",
+      "topic": "removing road hazards and faith",
+      "claim": "Is removing something harmful from a path described as a branch of faith in Hadith?",
+      "reviewer_english_gloss": "Is removing something harmful from a path described as a branch of faith in Hadith?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:3276",
+          "quotation_sha256": "1a2e0f79a746980ce0c8a17c33c74fbc10b1b86e9347b6173fda8605f1a73f3a",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:3276",
+          "quotation_sha256": "388e31a3193a1052ee9962f883cb46223cdd2c873c6b37da8feabee25e68e792",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/3276",
+        "https://hadeethenc.com/en/browse/hadith/3276"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N45",
+      "topic": "mercy toward the merciful",
+      "claim": "هل يقول الحديث إن الله يرحم من عباده الرحماء؟",
+      "reviewer_english_gloss": "Does the Hadith say Allah shows mercy to His merciful servants?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:6405",
+          "quotation_sha256": "4490d1c3de436700b832a68a1930e69361eebd3fa24642f3838bb3b0d400b350",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:6405",
+          "quotation_sha256": "d13545facb6e1ea036590da62881c8417000a19c8dae2ff38dbf9a4c66dfe2bb",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/6405",
+        "https://hadeethenc.com/en/browse/hadith/6405"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N46",
+      "topic": "reward for Quran letters",
+      "claim": "Does the Hadith describe reward for each letter recited from the Quran, with a good deed multiplied tenfold?",
+      "reviewer_english_gloss": "Does the Hadith describe reward for each letter recited from the Quran, with a good deed multiplied tenfold?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:6275",
+          "quotation_sha256": "e22cd69ce1b7904bce3d8dea62ddaf2125a796da55c7057a066bac09d2c979a1",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:6275",
+          "quotation_sha256": "f3b14da94888c6f26da62aabdc2fbdb639272856cd9177f9aa75eaeeec2e029d",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/6275",
+        "https://hadeethenc.com/en/browse/hadith/6275"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N47",
+      "topic": "prompt iftar",
+      "claim": "Does the Hadith encourage prompt iftar rather than needless delay?",
+      "reviewer_english_gloss": "Does the Hadith encourage prompt iftar rather than needless delay?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:4438",
+          "quotation_sha256": "66c2e7a99d57dfafc20f8d9641399045c80261579b53303469ef5a9898153258",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:4438",
+          "quotation_sha256": "7ee0dbada8d688e48dce2b3d070a54449f58f960894ac5c8dbd16b03485c6ae1",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/4438",
+        "https://hadeethenc.com/en/browse/hadith/4438"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N48",
+      "topic": "following Prophet prayer example",
+      "claim": "هل أمر النبي في الحديث بأن نصلي كما رأيناه يصلي؟",
+      "reviewer_english_gloss": "Did the Prophet instruct in Hadith to pray as people saw him pray?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:3059",
+          "quotation_sha256": "50893baac9e96c5fe15ab4ead0fd9f3e31f6dba3aef154194a97c9ab0e9317ba",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:3059",
+          "quotation_sha256": "63e98a9dbb98d1f8925be6d021d8e16dd8f27a8bb4a39789b38549d8266cb0cb",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/3059",
+        "https://hadeethenc.com/en/browse/hadith/3059"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N49",
+      "topic": "estrangement over three nights",
+      "claim": "Does the Hadith prohibit Muslims shunning one another for more than three nights as a general rule?",
+      "reviewer_english_gloss": "Does the Hadith prohibit Muslims shunning one another for more than three nights as a general rule?",
+      "input_language": "en",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:5365",
+          "quotation_sha256": "e7076a2d6c7fafe63e2a2afbbb971c36482f34795f548b62495deefbfad04522",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:5365",
+          "quotation_sha256": "82b11424360cb9bf2e2986fe6f7e761abe37938aecda5f3758cb3e5a1d99ca99",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/5365",
+        "https://hadeethenc.com/en/browse/hadith/5365"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    },
+    {
+      "id": "N50",
+      "topic": "praising Allah after food",
+      "claim": "هل يذكر الحديث رضا الله عن العبد الذي يحمده بعد الأكل أو الشرب؟",
+      "reviewer_english_gloss": "Does the Hadith mention Allah’s pleasure with a servant who praises Him after eating or drinking?",
+      "input_language": "ar",
+      "request_input_language": "auto",
+      "corpus_selection": "auto",
+      "reference_family": "hadith",
+      "reference_answer": "yes",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference_accuracy_eligible": true,
+      "reference_status": "primary_text_supported_or_explicitly_incompatible",
+      "reference_witnesses": [
+        {
+          "locator": "hadith:ar:5798",
+          "quotation_sha256": "052dcf80d48739806a25c9a88e7febc72c0b83935a7247f9a79fcb6d5497fefb",
+          "source_id": "HADEETHENC-AR",
+          "source_version": "v1.7.0"
+        },
+        {
+          "locator": "hadith:en:5798",
+          "quotation_sha256": "1e6c1634eb2a51bcc43d532d5e52dc3d40a4d600d7f8b0856011102ed5e9f7bf",
+          "source_id": "HADEETHENC-EN",
+          "source_version": "v1.25.0"
+        }
+      ],
+      "reference_links": [
+        "https://hadeethenc.com/ar/browse/hadith/5798",
+        "https://hadeethenc.com/en/browse/hadith/5798"
+      ],
+      "review_status": "developer_primary_source_and_language_review_not_scholar_certification"
+    }
+  ]
+}

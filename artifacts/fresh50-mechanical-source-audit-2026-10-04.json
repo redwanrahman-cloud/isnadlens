@@ -1,0 +1,1993 @@
+{
+  "kind": "source_authenticity_not_semantic_approval",
+  "cases": [
+    {
+      "id": "N01",
+      "raw_record_sha256": "104cd705dbd97980e28ec1b8b7d15739ed61efc0eae60e9a52eef22cd494f48a",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "According to the Quran, wudu includes wiping the head.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:5:6"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:5:6",
+          "context_locator": null,
+          "basis_quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا قُمْتُمْ إِلَى ٱلصَّلَوٰةِ فَٱغْسِلُوا۟ وُجُوهَكُمْ وَأَيْدِيَكُمْ إِلَى ٱلْمَرَافِقِ وَٱمْسَحُوا۟ بِرُءُوسِكُمْ وَأَرْجُلَكُمْ إِلَى ٱلْكَعْبَيْنِ ۚ وَإِن كُنتُمْ جُنُبًا فَٱطَّهَّرُوا۟ ۚ وَإِن كُنتُم مَّرْضَىٰٓ أَوْ عَلَىٰ سَفَرٍ أَوْ جَآءَ أَحَدٌ مِّنكُم مِّنَ ٱلْغَآئِطِ أَوْ لَـٰمَسْتُمُ ٱلنِّسَآءَ فَلَمْ تَجِدُوا۟ مَآءً فَتَيَمَّمُوا۟ صَعِيدًا طَيِّبًا فَٱمْسَحُوا۟ بِوُجُوهِكُمْ وَأَيْدِيكُم مِّنْهُ ۚ مَا يُرِيدُ ٱللَّهُ لِيَجْعَلَ عَلَيْكُم مِّنْ حَرَجٍ وَلَـٰكِن يُرِيدُ لِيُطَهِّرَكُمْ وَلِيُتِمَّ نِعْمَتَهُۥ عَلَيْكُمْ لَعَلَّكُمْ تَشْكُرُونَ"
+        }
+      ]
+    },
+    {
+      "id": "N02",
+      "raw_record_sha256": "1a51a1590b7beec1d632f0a067bd8b5b4f552b0e4716ffc99d4648bf980e9484",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "يذكر القرآن التيمم بصعيد طيب عند عدم وجود الماء ضمن الشروط المذكورة في الآيتين.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:4:43",
+            "tanzil-1.1-2026-10-04:5:6"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:4:43",
+          "context_locator": null,
+          "basis_quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَقْرَبُوا۟ ٱلصَّلَوٰةَ وَأَنتُمْ سُكَـٰرَىٰ حَتَّىٰ تَعْلَمُوا۟ مَا تَقُولُونَ وَلَا جُنُبًا إِلَّا عَابِرِى سَبِيلٍ حَتَّىٰ تَغْتَسِلُوا۟ ۚ وَإِن كُنتُم مَّرْضَىٰٓ أَوْ عَلَىٰ سَفَرٍ أَوْ جَآءَ أَحَدٌ مِّنكُم مِّنَ ٱلْغَآئِطِ أَوْ لَـٰمَسْتُمُ ٱلنِّسَآءَ فَلَمْ تَجِدُوا۟ مَآءً فَتَيَمَّمُوا۟ صَعِيدًا طَيِّبًا فَٱمْسَحُوا۟ بِوُجُوهِكُمْ وَأَيْدِيكُمْ ۗ إِنَّ ٱللَّهَ كَانَ عَفُوًّا غَفُورًا"
+        }
+      ]
+    },
+    {
+      "id": "N03",
+      "raw_record_sha256": "b54b55d4bdc8f280a60e0fd6b962c58df713cab9dc5ec56c23c0efefe9d6c677",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 17,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "According to the Quran, people can seek their livelihood after the Friday prayer.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:62:9",
+            "tanzil-1.1-2026-10-04:62:10"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:62:10",
+          "context_locator": null,
+          "basis_quotation": "فَإِذَا قُضِيَتِ ٱلصَّلَوٰةُ فَٱنتَشِرُوا۟ فِى ٱلْأَرْضِ وَٱبْتَغُوا۟ مِن فَضْلِ ٱللَّهِ وَٱذْكُرُوا۟ ٱللَّهَ كَثِيرًا لَّعَلَّكُمْ تُفْلِحُونَ"
+        }
+      ]
+    },
+    {
+      "id": "N04",
+      "raw_record_sha256": "9feb5bc6e5f56e4f621bf9253091fa02475ac46e24842b51cc87755a6eb53772",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "কোরআন অনুযায়ী, মুমিনদের নামাজ নির্দিষ্ট সময়ে আদায় করার বিধান রয়েছে।",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:4:103"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:4:103",
+          "context_locator": null,
+          "basis_quotation": "فَإِذَا قَضَيْتُمُ ٱلصَّلَوٰةَ فَٱذْكُرُوا۟ ٱللَّهَ قِيَـٰمًا وَقُعُودًا وَعَلَىٰ جُنُوبِكُمْ ۚ فَإِذَا ٱطْمَأْنَنتُمْ فَأَقِيمُوا۟ ٱلصَّلَوٰةَ ۚ إِنَّ ٱلصَّلَوٰةَ كَانَتْ عَلَى ٱلْمُؤْمِنِينَ كِتَـٰبًا مَّوْقُوتًا"
+        }
+      ]
+    },
+    {
+      "id": "N05",
+      "raw_record_sha256": "1e5679fda6c96b49e17305bb61587c9acf0db62970c7a77b4d58f586ad32e328",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 14,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "कुरान में पैगंबर को रात में अतिरिक्त नमाज़ पढ़ने का निर्देश दिया गया है।",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:17:79"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:17:79",
+          "context_locator": null,
+          "basis_quotation": "وَمِنَ ٱلَّيْلِ فَتَهَجَّدْ بِهِۦ نَافِلَةً لَّكَ عَسَىٰٓ أَن يَبْعَثَكَ رَبُّكَ مَقَامًا مَّحْمُودًا"
+        }
+      ]
+    },
+    {
+      "id": "N06",
+      "raw_record_sha256": "b2910f1e02d13809d3ac67d1ca25076de7d93b547723854bc87a38cc16d0ac1a",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "رمضان کی راتوں میں میاں بیوی کا جنسی تعلق جائز ہے، بشرطیکہ وہ اعتکاف میں نہ ہوں۔",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:2:222",
+            "tanzil-1.1-2026-10-04:3:113",
+            "tanzil-1.1-2026-10-04:17:79",
+            "tanzil-1.1-2026-10-04:20:130",
+            "hadeethenc-official-2026-10-04:en:4459",
+            "hadeethenc-official-2026-10-04:en:2754"
+          ],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": false,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N07",
+      "raw_record_sha256": "db533871e1d340a5953abfbdb0d58db114f4c188136a38268f9e63c142c7c14c",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "Al-Qur’an menyebut Safa dan Marwah sebagai bagian dari syiar Allah.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:2:158"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:2:158",
+          "context_locator": null,
+          "basis_quotation": "إِنَّ ٱلصَّفَا وَٱلْمَرْوَةَ مِن شَعَآئِرِ ٱللَّهِ ۖ فَمَنْ حَجَّ ٱلْبَيْتَ أَوِ ٱعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَن يَطَّوَّفَ بِهِمَا ۚ وَمَن تَطَوَّعَ خَيْرًا فَإِنَّ ٱللَّهَ شَاكِرٌ عَلِيمٌ"
+        }
+      ]
+    },
+    {
+      "id": "N08",
+      "raw_record_sha256": "301dc470a791ae340b1f391997ada7bb6f025167d32cab94d87b8a0271f2b66b",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "El Corán dice que, en el sacrificio, Allah no recibe la carne ni la sangre de los animales, sino la piedad de quienes sacrifican.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:22:37"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:22:37",
+          "context_locator": null,
+          "basis_quotation": "لَن يَنَالَ ٱللَّهَ لُحُومُهَا وَلَا دِمَآؤُهَا وَلَـٰكِن يَنَالُهُ ٱلتَّقْوَىٰ مِنكُمْ ۚ كَذَٰلِكَ سَخَّرَهَا لَكُمْ لِتُكَبِّرُوا۟ ٱللَّهَ عَلَىٰ مَا هَدَىٰكُمْ ۗ وَبَشِّرِ ٱلْمُحْسِنِينَ"
+        }
+      ]
+    },
+    {
+      "id": "N09",
+      "raw_record_sha256": "363db73869dbcbee0851005ae1c013718ce17ba489553f84e29688d4acb451f9",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "Le Coran demande de donner leur dot aux femmes.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:4:4"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:4:4",
+          "context_locator": null,
+          "basis_quotation": "وَءَاتُوا۟ ٱلنِّسَآءَ صَدُقَـٰتِهِنَّ نِحْلَةً ۚ فَإِن طِبْنَ لَكُمْ عَن شَىْءٍ مِّنْهُ نَفْسًا فَكُلُوهُ هَنِيٓـًٔا مَّرِيٓـًٔا"
+        }
+      ]
+    },
+    {
+      "id": "N10",
+      "raw_record_sha256": "01d4a4e64603f5bf7e55b62e5906f2a0535efebe19759bd234438d6189db4354",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "Der Koran nennt zwei volle Jahre für das Stillen, wenn die Stillzeit vollendet werden soll.",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": false,
+          "scope_matched": false,
+          "contradiction_basis": "absence_only",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N11",
+      "raw_record_sha256": "f8c6795a909a0e266216d778cd806825354d4494bace9b618a2aa48653b79d4a",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 15,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Quran says that a pregnant divorced woman’s waiting period ends when she gives birth.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:65:4"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:65:4",
+          "context_locator": null,
+          "basis_quotation": "وَٱلَّـٰٓـِٔى يَئِسْنَ مِنَ ٱلْمَحِيضِ مِن نِّسَآئِكُمْ إِنِ ٱرْتَبْتُمْ فَعِدَّتُهُنَّ ثَلَـٰثَةُ أَشْهُرٍ وَٱلَّـٰٓـِٔى لَمْ يَحِضْنَ ۚ وَأُو۟لَـٰتُ ٱلْأَحْمَالِ أَجَلُهُنَّ أَن يَضَعْنَ حَمْلَهُنَّ ۚ وَمَن يَتَّقِ ٱللَّهَ يَجْعَل لَّهُۥ مِنْ أَمْرِهِۦ يُسْرًا"
+        }
+      ]
+    },
+    {
+      "id": "N12",
+      "raw_record_sha256": "7f0fa30bce753be0ca2c9b670bb2fb51ea68cb2edf0cb094bd35fd36dd790973",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 15,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "ينهى القرآن عن منع المطلقات من العودة إلى أزواجهن بعد بلوغ نهاية العدة إذا تراضوا بينهم بالمعروف.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:2:232"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:2:232",
+          "context_locator": null,
+          "basis_quotation": "وَإِذَا طَلَّقْتُمُ ٱلنِّسَآءَ فَبَلَغْنَ أَجَلَهُنَّ فَلَا تَعْضُلُوهُنَّ أَن يَنكِحْنَ أَزْوَٰجَهُنَّ إِذَا تَرَٰضَوْا۟ بَيْنَهُم بِٱلْمَعْرُوفِ ۗ ذَٰلِكَ يُوعَظُ بِهِۦ مَن كَانَ مِنكُمْ يُؤْمِنُ بِٱللَّهِ وَٱلْيَوْمِ ٱلْـَٔاخِرِ ۗ ذَٰلِكُمْ أَزْكَىٰ لَكُمْ وَأَطْهَرُ ۗ وَٱللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ"
+        }
+      ]
+    },
+    {
+      "id": "N13",
+      "raw_record_sha256": "9018be4101be395d86296ea79ebfc38a450a36ff3844350832d4c6fcddd5eef9",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "কোরআন বলে যে কষ্টের সঙ্গে স্বস্তি রয়েছে।",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:94:5",
+            "tanzil-1.1-2026-10-04:94:6"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:94:5",
+          "context_locator": null,
+          "basis_quotation": "فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا"
+        }
+      ]
+    },
+    {
+      "id": "N14",
+      "raw_record_sha256": "8a9032f28012b3d2e621b1c2dc6ca17869d0306460d9a26e620dd7af3e6ce7af",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 12,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "कुरान कहता है कि अल्लाह किसी व्यक्ति पर उसकी क्षमता से अधिक जिम्मेदारी नहीं डालता।",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:6407"
+          ],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": false,
+          "scope_matched": false,
+          "contradiction_basis": "absence_only",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N15",
+      "raw_record_sha256": "2838abc79006a6d81323c9fc35694d77c31c54aa98ae6bebc5d5505dac4fbca7",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "قرآن کے مطابق اللہ کے ذکر سے دلوں کو اطمینان ملتا ہے۔",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:13:28"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:13:28",
+          "context_locator": null,
+          "basis_quotation": "ٱلَّذِينَ ءَامَنُوا۟ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ ۗ أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ"
+        }
+      ]
+    },
+    {
+      "id": "N16",
+      "raw_record_sha256": "df58b6e61215b2a2c10d19ccf2e6ba5c2671ca31443dd52f92042acb2edfac1f",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "Menurut Al-Qur’an, manusia dijadikan berbangsa dan bersuku agar saling mengenal.",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "absence_only",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N17",
+      "raw_record_sha256": "608aa1ee9a237b2d9e0e73bd1f14a9f4ce682d5327b2b7c94999940ec1d69d0a",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "El Corán dice que Allah toma las almas durante la muerte y también durante el sueño.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:39:42"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:39:42",
+          "context_locator": null,
+          "basis_quotation": "ٱللَّهُ يَتَوَفَّى ٱلْأَنفُسَ حِينَ مَوْتِهَا وَٱلَّتِى لَمْ تَمُتْ فِى مَنَامِهَا ۖ فَيُمْسِكُ ٱلَّتِى قَضَىٰ عَلَيْهَا ٱلْمَوْتَ وَيُرْسِلُ ٱلْأُخْرَىٰٓ إِلَىٰٓ أَجَلٍ مُّسَمًّى ۚ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ"
+        }
+      ]
+    },
+    {
+      "id": "N18",
+      "raw_record_sha256": "377b0ba6316952ef84ad00d4ac228afd221ad0579e606b78ad1e148970352194",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "Le Coran demande aux croyants de prier pour le Prophète et de le saluer.",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": false,
+          "scope_matched": false,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N19",
+      "raw_record_sha256": "0f8b8177e2d472083c88e5227ef663ec3ab05ad13c260dd7635aa26aaab44c0b",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "Der Koran fordert dazu auf, beim Besuch einer Gebetsstätte angemessenen Schmuck beziehungsweise angemessene Kleidung zu tragen.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:7:32"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "uncertain",
+          "evidence_id": null,
+          "context_locator": null,
+          "basis_quotation": null
+        }
+      ]
+    },
+    {
+      "id": "N20",
+      "raw_record_sha256": "0723536d1cccb434605550d5abedc53d5328f50a76f9b0930afd233de8c674fd",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "The Quran forbids insulting what other people worship in order to prevent them from insulting Allah in ignorance.",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:4:46",
+            "hadeethenc-official-2026-10-04:en:8878"
+          ],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": false,
+          "attribution_matched": true,
+          "scope_matched": false,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N21",
+      "raw_record_sha256": "04ce7b0f13d7c80a4bd59e6d6ec27b0bf77ceaeaa6053e46a2af0028e9a7e76e",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "يسأل المستخدم عمّا إذا كان القرآن ينهى عن قتل الأولاد خوفًا من الفقر.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:17:31",
+            "tanzil-1.1-2026-10-04:6:151"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "uncertain",
+          "evidence_id": null,
+          "context_locator": null,
+          "basis_quotation": null
+        }
+      ]
+    },
+    {
+      "id": "N22",
+      "raw_record_sha256": "146fd89778dc3cafddcb8bbca582bb9ade3589e1ca8859b10e461093e5420a23",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Quran describes Allah as near and as responding to those who call upon Him.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:2:186"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:2:186",
+          "context_locator": null,
+          "basis_quotation": "وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا۟ لِى وَلْيُؤْمِنُوا۟ بِى لَعَلَّهُمْ يَرْشُدُونَ"
+        }
+      ]
+    },
+    {
+      "id": "N23",
+      "raw_record_sha256": "8d0ca3448ad0f072afd3aa8b7b7f339ba6a9793b8e86e08857254f7284b62146",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "The Quran describes the heavens and earth as created in six days.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:7:54",
+            "tanzil-1.1-2026-10-04:10:3"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:7:54",
+          "context_locator": null,
+          "basis_quotation": "إِنَّ رَبَّكُمُ ٱللَّهُ ٱلَّذِى خَلَقَ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضَ فِى سِتَّةِ أَيَّامٍ ثُمَّ ٱسْتَوَىٰ عَلَى ٱلْعَرْشِ يُغْشِى ٱلَّيْلَ ٱلنَّهَارَ يَطْلُبُهُۥ حَثِيثًا وَٱلشَّمْسَ وَٱلْقَمَرَ وَٱلنُّجُومَ مُسَخَّرَٰتٍۭ بِأَمْرِهِۦٓ ۗ أَلَا لَهُ ٱلْخَلْقُ وَٱلْأَمْرُ ۗ تَبَارَكَ ٱللَّهُ رَبُّ ٱلْعَـٰلَمِينَ"
+        }
+      ]
+    },
+    {
+      "id": "N24",
+      "raw_record_sha256": "508d85f087ee5cb329ff9d8c72c3b1f80162ea6a2fa1bb1a9891ab551e82a4ce",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Quran says that Allah created the jinn and humans to worship Him.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:51:56"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "tanzil-1.1-2026-10-04:51:56",
+          "context_locator": null,
+          "basis_quotation": "وَمَا خَلَقْتُ ٱلْجِنَّ وَٱلْإِنسَ إِلَّا لِيَعْبُدُونِ"
+        }
+      ]
+    },
+    {
+      "id": "N25",
+      "raw_record_sha256": "7603aa236a043ee64ad06659df8c4bb0334b481b9a3ff251ef7bb9600b11e298",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 19,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "يصف القرآن الرسول بأنه بشر يوحى إليه.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:42:51",
+            "tanzil-1.1-2026-10-04:42:52"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "uncertain",
+          "evidence_id": null,
+          "context_locator": null,
+          "basis_quotation": null
+        }
+      ]
+    },
+    {
+      "id": "N26",
+      "raw_record_sha256": "5d270d2d9d9935e4519b4f4554621d3e5d9b7e9464040e495e9d0ceb290fafa8",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "claim-1",
+          "text": "The Quran says that Allah needs sleep.",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:2:255"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:2:255",
+          "basis_quotation": "لَا تَأْخُذُهُۥ سِنَةٌ وَلَا نَوْمٌ"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N27",
+      "raw_record_sha256": "1313243edce9c601d566f8884a5eb0fa1fdfc6354e4a851943f61552d0d0b3f1",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 14,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "claim_1",
+          "text": "القرآن يقول إن النساء لا نصيب لهن في الميراث.",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:4:7"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:4:7",
+          "basis_quotation": "وَلِلنِّسَآءِ نَصِيبٌ مِّمَّا تَرَكَ ٱلْوَٰلِدَانِ وَٱلْأَقْرَبُونَ مِمَّا قَلَّ مِنْهُ أَوْ كَثُرَ ۚ نَصِيبًا مَّفْرُوضًا"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N28",
+      "raw_record_sha256": "824c781fef8159e63f6ee9a4f15ca7ca6bffeb4548cf25f412871361f0efd207",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "The Quran says that people automatically bear guilt for their parents’ sins.",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:58217"
+          ],
+          "direct": false,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": false,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N29",
+      "raw_record_sha256": "1e99a727a1362dd40705a4262113b857c0b43fc15d3da15c15fcc4bfd4b64f9b",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Quran says that a ransom will be accepted on the Day of Judgment.",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:5:36",
+            "tanzil-1.1-2026-10-04:57:15",
+            "tanzil-1.1-2026-10-04:3:91",
+            "tanzil-1.1-2026-10-04:6:70"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": false,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N30",
+      "raw_record_sha256": "a64d5a7ad3a0888d352140ce044715d24608fe54b83ec177a613ecc27e95d47e",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 15,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "claim_1",
+          "text": "القرآن يقول إن أموال من كفروا وأولادهم تحميهم من عقاب الله.",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:9:55",
+            "tanzil-1.1-2026-10-04:9:85"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:9:55",
+          "basis_quotation": "إِنَّمَا يُرِيدُ ٱللَّهُ لِيُعَذِّبَهُم بِهَا فِى ٱلْحَيَوٰةِ ٱلدُّنْيَا"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N31",
+      "raw_record_sha256": "fe979ab9b7b00b964bc4fad42bb6d8a4a77ff9a19e7e32ace45c7c6acbba6fc8",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Quran says that hands and feet will never testify about people’s deeds on Judgment Day.",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:24:24",
+            "tanzil-1.1-2026-10-04:36:65"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": false,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:24:24",
+          "basis_quotation": "يَوْمَ تَشْهَدُ عَلَيْهِمْ أَلْسِنَتُهُمْ وَأَيْدِيهِمْ وَأَرْجُلُهُم بِمَا كَانُوا۟ يَعْمَلُونَ"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N32",
+      "raw_record_sha256": "0bbcbfb8547c60fd7e8ebb5a32358226b96ec9357a507b99e5079867e8d9bbdf",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 14,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "The Quran describes Allah as having a child.",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N33",
+      "raw_record_sha256": "757ceb569a7ea8154b4607598c9b53e6c4989b038ed8f299569b4a77b10d9b05",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "claim-1",
+          "text": "কোরআন বলে যে সৎকর্মের পুরস্কার শুধু পুরুষদের জন্য এবং বিশ্বাসী নারীদের জন্য নয়।",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:33:35"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": false,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:33:35",
+          "basis_quotation": "إِنَّ ٱلْمُسْلِمِينَ وَٱلْمُسْلِمَـٰتِ وَٱلْمُؤْمِنِينَ وَٱلْمُؤْمِنَـٰتِ وَٱلْقَـٰنِتِينَ وَٱلْقَـٰنِتَـٰتِ وَٱلصَّـٰدِقِينَ وَٱلصَّـٰدِقَـٰتِ وَٱلصَّـٰبِرِينَ وَٱلصَّـٰبِرَٰتِ وَٱلْخَـٰشِعِينَ وَٱلْخَـٰشِعَـٰتِ وَٱلْمُتَصَدِّقِينَ وَٱلْمُتَصَدِّقَـٰتِ وَٱلصَّـٰٓئِمِينَ وَٱلصَّـٰٓئِمَـٰتِ وَٱلْحَـٰفِظِينَ فُرُوجَهُمْ وَٱلْحَـٰفِظَـٰتِ وَٱلذَّٰكِرِينَ ٱللَّهَ كَثِيرًا وَٱلذَّٰكِرَٰتِ أَعَدَّ ٱللَّهُ لَهُم مَّغْفِرَةً وَأَجْرًا عَظِيمًا"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N34",
+      "raw_record_sha256": "4463c5b9064229e7055aa56b02fc9ce42bc51f0128a0bad653cde4a6bfec8e40",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "प्रश्न यह है कि क्या कुरान शैतान को इंसानों का मित्र बताता है।",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:6:121",
+            "tanzil-1.1-2026-10-04:6:128"
+          ],
+          "direct": false,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": false,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        },
+        {
+          "id": "c2",
+          "text": "प्रश्न यह है कि क्या कुरान इंसानों को शैतान को अपना मित्र मानने का निर्देश देता है।",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:6:121",
+            "tanzil-1.1-2026-10-04:6:128"
+          ],
+          "direct": false,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": false,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N35",
+      "raw_record_sha256": "d3ad5841463ba8455b4f205f22165c314186bca38f8b6ab2282f0fbf5c05ab10",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 6,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "قرآن کے مطابق آسمان، زمین اور ان کے درمیان کی چیزیں بے مقصد پیدا کی گئی ہیں۔",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "absence_only",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N36",
+      "raw_record_sha256": "1a49eddb6a585819dce6c49197757379bd26c19a28a74548aa16310ef5c1194a",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 14,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "Al-Qur’an memerintahkan membalas keburukan dengan yang lebih buruk.",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:5:1"
+          ],
+          "direct": false,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": false,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N37",
+      "raw_record_sha256": "8fe910d7559c4622e557639a9660631f60ecbd64c3c305d4ca188c6443a1a16d",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "claim_1",
+          "text": "El Corán dice que quienes fueron matados en el camino de Allah no están vivos junto a su Señor.",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:3:169"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": false,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:3:169",
+          "basis_quotation": "وَلَا تَحْسَبَنَّ ٱلَّذِينَ قُتِلُوا۟ فِى سَبِيلِ ٱللَّهِ أَمْوَٰتًۢا ۚ بَلْ أَحْيَآءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N38",
+      "raw_record_sha256": "0cd52dad93039a15dede8c5d2a78b00aab554700b72ad615f504e54579a7a35f",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "A1",
+          "text": "Le Coran indique-t-il que, pour le pèlerinage tamattu lorsqu’aucune offrande n’est disponible, il faut jeûner sept jours pendant le Hajj et trois jours après le retour ?",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:2:196"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": false,
+          "attribution_matched": true,
+          "scope_matched": false,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:2:196",
+          "basis_quotation": "فَمَن لَّمْ يَجِدْ فَصِيَامُ ثَلَـٰثَةِ أَيَّامٍ فِى ٱلْحَجِّ وَسَبْعَةٍ إِذَا رَجَعْتُمْ"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N39",
+      "raw_record_sha256": "ca6e797948f96aed73ddc552322ec83d7c9a1eae6c7dd2e9f997ee084ee584bf",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 19,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "claim_1",
+          "text": "The Quran says that the sun does not follow any course.",
+          "material": true,
+          "relation": "contradicts",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:13:2",
+            "tanzil-1.1-2026-10-04:36:38",
+            "tanzil-1.1-2026-10-04:36:40"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "explicit_negation_or_incompatible_statement",
+          "basis_evidence_id": "tanzil-1.1-2026-10-04:36:38",
+          "basis_quotation": "وَٱلشَّمْسُ تَجْرِى لِمُسْتَقَرٍّ لَّهَا ۚ ذَٰلِكَ تَقْدِيرُ ٱلْعَزِيزِ ٱلْعَلِيمِ"
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N40",
+      "raw_record_sha256": "d8e7e3a67685b29a08506c0354d78ac4781ecd3a410827fe4da507e3cb2c672e",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Quran instructs asking Allah to decrease one’s knowledge.",
+          "material": true,
+          "relation": "partial",
+          "evidence_ids": [
+            "tanzil-1.1-2026-10-04:17:85"
+          ],
+          "direct": false,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "absence_only",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N41",
+      "raw_record_sha256": "94d75efd755e4df74180bced7389299b84b8acec7441cbcbc1a781a39a6b6357",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "The Hadith teaches mentioning Allah’s name when eating.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:58120"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        },
+        {
+          "id": "c2",
+          "text": "The Hadith teaches eating with the right hand.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:58120"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        },
+        {
+          "id": "c3",
+          "text": "The Hadith teaches taking food from nearby.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:58120"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:en:58120",
+          "context_locator": null,
+          "basis_quotation": "‘Umar ibn Abi Salamah (may Allah be pleased with him) reported: I was a young boy under the care of the Messenger of Allah (may Allah's peace and blessings be upon him), and my hand used to wander all over the platter (of food). The Messenger of Allah (may Allah's peace and blessings be upon him) said, \"O boy, mention Allah's name, eat with your right hand, and eat from what is nearer to you.\" Since then, I have been eating that way."
+        },
+        {
+          "atom": "c2",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:en:58120",
+          "context_locator": null,
+          "basis_quotation": "‘Umar ibn Abi Salamah (may Allah be pleased with him) reported: I was a young boy under the care of the Messenger of Allah (may Allah's peace and blessings be upon him), and my hand used to wander all over the platter (of food). The Messenger of Allah (may Allah's peace and blessings be upon him) said, \"O boy, mention Allah's name, eat with your right hand, and eat from what is nearer to you.\" Since then, I have been eating that way."
+        },
+        {
+          "atom": "c3",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:en:58120",
+          "context_locator": null,
+          "basis_quotation": "‘Umar ibn Abi Salamah (may Allah be pleased with him) reported: I was a young boy under the care of the Messenger of Allah (may Allah's peace and blessings be upon him), and my hand used to wander all over the platter (of food). The Messenger of Allah (may Allah's peace and blessings be upon him) said, \"O boy, mention Allah's name, eat with your right hand, and eat from what is nearer to you.\" Since then, I have been eating that way."
+        }
+      ]
+    },
+    {
+      "id": "N42",
+      "raw_record_sha256": "f7f7edad29f1314b305e679e788e9007b45d1e841b9b443b33672cdb855ecdeb",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "يسأل المستخدم عمّا إذا كان الحديث يقول إن من أكل أو شرب ناسيًا وهو صائم يُكمل صومه.",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "absence_only",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N43",
+      "raw_record_sha256": "35fec2bdcbe2322f3517e932cd652e0a6372f933fd824386984bd6c24c2111a6",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Hadith says that Allah loves gentleness and gives for gentleness what He does not give for violence or anything else.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:5797",
+            "hadeethenc-official-2026-10-04:ar:5797"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:en:5797",
+          "context_locator": null,
+          "basis_quotation": "‘Ā’ishah, the Mother of the believers (may Allah be pleased with her) and wife of the Prophet (may Allah's peace and blessings be upon him), reported that the Messenger of Allah (may Allah's peace and blessings be upon him) said: \"O ‘Ā’ishah, indeed, Allah is gentle and He loves gentleness, and He gives for gentleness what He does not give for violence and what He does not give for anything else.\""
+        }
+      ]
+    },
+    {
+      "id": "N44",
+      "raw_record_sha256": "c02f3453fe7f993bb389e3c1eedc2d71981ba84c8e7875f139cab36617c06543",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The removal of something harmful from a path is described in a Hadith as a branch of faith.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:3276",
+            "hadeethenc-official-2026-10-04:en:6468",
+            "hadeethenc-official-2026-10-04:ar:3276",
+            "hadeethenc-official-2026-10-04:ar:6468"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:en:3276",
+          "context_locator": null,
+          "basis_quotation": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"Faith has over seventy branches or over sixty branches, the most excellent of which is the declaration that there is no god but Allah, and the lowest of which is the removal of what is harmful from the path; and modesty is a branch of faith.\""
+        }
+      ]
+    },
+    {
+      "id": "N45",
+      "raw_record_sha256": "b30f45b0ba2bd369c3ab369933ea6cabd993d8f11fd029740878071f47708240",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "ينص الحديث على أن الله يرحم من عباده الرحماء.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:ar:6405"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:ar:6405",
+          "context_locator": null,
+          "basis_quotation": "عن أسامة بن زيد رضي الله عنهما قال: رُفع إلى رسول الله - صلى الله عليه وسلم - ابن ابنته وهو في الموت، ففاضت عينا رسول الله صلى الله عليه وسلم فقال له سعد: ما هذا يا رسول الله؟! قال: «هذه رحمة جعلها الله تعالى في قلوب عباده، وإنما يرحم الله من عباده الرحماء»."
+        }
+      ]
+    },
+    {
+      "id": "N46",
+      "raw_record_sha256": "832236d347cc1d7eae119978d43b8fa682873b7e84b735bf9542f29f50ccde4b",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "The Hadith describes a reward for each letter recited from the Book of Allah, with one good deed for each letter and the good deed multiplied tenfold.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:6275"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "a1",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:en:6275",
+          "context_locator": null,
+          "basis_quotation": "‘Abdullāh ibn Mas‘ūd (may Allah be pleased with him) reported: The Messenger of Allah (may Allah’s peace and blessings be upon him) said: \"Whoever recites a letter from the Book of Allah will be credited with a good deed for it, and a good deed is multiplied tenfold. I am not saying that 'Alif-Lām-Mīm' is one letter, but Alif is a letter, Lām is a letter, and Mīm is a letter.\""
+        }
+      ]
+    },
+    {
+      "id": "N47",
+      "raw_record_sha256": "4d04e1bdbbc414526efe37bfe1db681447e79f95823ebc7d3b5ec2aee5eeeae6",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "The Hadith encourages prompt iftar rather than needless delay.",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N48",
+      "raw_record_sha256": "51326c660bb844577a91b720f450fb687ece60827c37b043c6bb02c4da549b4e",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": false,
+      "label_match": false,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "a1",
+          "text": "يسأل المستخدم عمّا إذا كان النبي قد أمر في حديث بأن نصلي كما رأيناه يصلي.",
+          "material": true,
+          "relation": "unrelated",
+          "evidence_ids": [],
+          "direct": false,
+          "context_fit": false,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "absence_only",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": []
+    },
+    {
+      "id": "N49",
+      "raw_record_sha256": "9b76fa83d6f3a3ecf5bf92266dffd408e881ad19a667bcfa19f720aaf5e55f66",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "The Hadith establishes a general rule prohibiting a Muslim from shunning another Muslim for more than three nights.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:en:5365"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:en:5365",
+          "context_locator": null,
+          "basis_quotation": "Abu Ayyūb al-Ansāri (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"It is unlawful for a Muslim to desert his fellow Muslim for more than three nights. As they meet, both of them turn their backs on each other. But the best of them is the one who starts by greeting the other.\""
+        }
+      ]
+    },
+    {
+      "id": "N50",
+      "raw_record_sha256": "c65fcbf0a76bcc70c255a9beed8ec7da06c4d8889e86a029a527e2b6b9e8fc93",
+      "seal_valid": true,
+      "original_preserved": true,
+      "source_count": 8,
+      "context_count": 16,
+      "all_source_bytes_match_admitted_corpus": true,
+      "known_witness_match": true,
+      "label_match": true,
+      "semantic_review_status": "pending_developer_primary_review",
+      "atoms": [
+        {
+          "id": "c1",
+          "text": "يذكر الحديث أن الله يرضى عن العبد الذي يحمده بعد الأكل أو الشرب.",
+          "material": true,
+          "relation": "supports",
+          "evidence_ids": [
+            "hadeethenc-official-2026-10-04:ar:5798"
+          ],
+          "direct": true,
+          "context_fit": true,
+          "negation_checked": true,
+          "modality_checked": true,
+          "qualifications_preserved": true,
+          "attribution_matched": true,
+          "scope_matched": true,
+          "contradiction_basis": "none",
+          "basis_evidence_id": null,
+          "basis_quotation": null
+        }
+      ],
+      "positive_basis": [
+        {
+          "atom": "c1",
+          "entails": "yes",
+          "evidence_id": "hadeethenc-official-2026-10-04:ar:5798",
+          "context_locator": null,
+          "basis_quotation": "عن أنس بن مالك رضي الله عنه قال: قال رسول الله صلى الله عليه وسلم: «إِنَّ اللهَ لَيَرْضَى عَنِ الْعَبْدِ أَنْ يَأْكُلَ الْأَكْلَةَ فَيَحْمَدَهُ عَلَيْهَا، أَوْ يَشْرَبَ الشَّرْبَةَ فَيَحْمَدَهُ عَلَيْهَا»."
+        }
+      ]
+    }
+  ]
+}

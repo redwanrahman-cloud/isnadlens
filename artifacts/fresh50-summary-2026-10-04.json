@@ -1,0 +1,194 @@
+{
+  "dataset_id": "fresh50-luna-terra-2026-10-04-v1",
+  "freeze": {
+    "dataset_id": "fresh50-luna-terra-2026-10-04-v1",
+    "frozen_at": "2026-10-04T15:41:42.086Z",
+    "dataset_sha256": "4d4a831cb9eede61dd55416c03bf0ac35083b6baf555ceb0820b9592811867c2",
+    "review_sha256": "1b774b9518461bf0202860f9ad63b7f67e46d4204a9cf49aca3e9f6196de6d69",
+    "application_commit": "6ea7bc7ee93f6bf32f5780f7c56f8a831d3a74ab",
+    "application_tree_sha256": "98cb1e01b046d420c4688c795e7451d81cfbea7733f50cd0e8f59a8ed0fc6028",
+    "production_build_id": "uJ3DAG95idGURYqUqgkL5",
+    "execution_order": [
+      "N01",
+      "N02",
+      "N03",
+      "N04",
+      "N05",
+      "N26",
+      "N27",
+      "N28",
+      "N41",
+      "N42",
+      "N06",
+      "N07",
+      "N08",
+      "N09",
+      "N10",
+      "N29",
+      "N30",
+      "N31",
+      "N43",
+      "N44",
+      "N11",
+      "N12",
+      "N13",
+      "N14",
+      "N15",
+      "N32",
+      "N33",
+      "N34",
+      "N45",
+      "N46",
+      "N16",
+      "N17",
+      "N18",
+      "N19",
+      "N20",
+      "N35",
+      "N36",
+      "N37",
+      "N47",
+      "N48",
+      "N21",
+      "N22",
+      "N23",
+      "N24",
+      "N25",
+      "N38",
+      "N39",
+      "N40",
+      "N49",
+      "N50"
+    ],
+    "request_policy": {
+      "inputLanguage": "auto",
+      "corpusSelection": "auto",
+      "reference_information_sent": false
+    },
+    "model_policy": {
+      "primary": "gpt-5.6-luna",
+      "strong": "gpt-5.6-terra",
+      "reasoning": "low"
+    },
+    "planned": 50,
+    "expected_yes": 35,
+    "expected_no": 15,
+    "authorized_development_max_usd": 4.8,
+    "budget_authorization": "Redwan approved5SAR extra for this new50 run;18SAR total development; preserve15SAR judging reserve. Unknown prior reservations retained.",
+    "max_calls_per_adapter": 200
+  },
+  "metrics": {
+    "planned": 50,
+    "recorded": 50,
+    "completed": 50,
+    "operationally_blocked": 0,
+    "not_submitted": 0,
+    "label_matches": 27,
+    "source_grounded_matches": 27,
+    "semantic_audits_completed": 50,
+    "wrong_decisive_labels": 0,
+    "unsupported_decisive_evidence": 0,
+    "abstentions": 23,
+    "original_and_seal_preserved": 50,
+    "all_nonempty_source_checks_passed": 50,
+    "language_detection_matches": 50,
+    "by_reference_answer": {
+      "yes": {
+        "planned": 35,
+        "completed": 35,
+        "label_matches": 23,
+        "grounded_matches": 23,
+        "abstentions": 12,
+        "wrong_decisive": 0
+      },
+      "no": {
+        "planned": 15,
+        "completed": 15,
+        "label_matches": 4,
+        "grounded_matches": 4,
+        "abstentions": 11,
+        "wrong_decisive": 0
+      }
+    },
+    "by_language": {
+      "en": {
+        "planned": 20,
+        "completed": 20,
+        "language_detected_correctly": 20,
+        "label_matches": 13,
+        "grounded_matches": 13
+      },
+      "ar": {
+        "planned": 10,
+        "completed": 10,
+        "language_detected_correctly": 10,
+        "label_matches": 6,
+        "grounded_matches": 6
+      },
+      "bn": {
+        "planned": 3,
+        "completed": 3,
+        "language_detected_correctly": 3,
+        "label_matches": 2,
+        "grounded_matches": 2
+      },
+      "hi": {
+        "planned": 3,
+        "completed": 3,
+        "language_detected_correctly": 3,
+        "label_matches": 1,
+        "grounded_matches": 1
+      },
+      "ur": {
+        "planned": 3,
+        "completed": 3,
+        "language_detected_correctly": 3,
+        "label_matches": 1,
+        "grounded_matches": 1
+      },
+      "id": {
+        "planned": 3,
+        "completed": 3,
+        "language_detected_correctly": 3,
+        "label_matches": 1,
+        "grounded_matches": 1
+      },
+      "es": {
+        "planned": 3,
+        "completed": 3,
+        "language_detected_correctly": 3,
+        "label_matches": 2,
+        "grounded_matches": 2
+      },
+      "fr": {
+        "planned": 3,
+        "completed": 3,
+        "language_detected_correctly": 3,
+        "label_matches": 1,
+        "grounded_matches": 1
+      },
+      "de": {
+        "planned": 2,
+        "completed": 2,
+        "language_detected_correctly": 2,
+        "label_matches": 0,
+        "grounded_matches": 0
+      }
+    },
+    "always_yes_baseline": 0.7,
+    "macro_label_agreement": 0.46190476190476193,
+    "observed_run_cost_usd": 0.4341979000000001,
+    "development_conservative_spend_sar": 13.856497499999993,
+    "unknown_reservations_retained_usd": 0.36552450000000003,
+    "development_cap_sar": 18,
+    "judging_reserve_sar": 15,
+    "limitations": [
+      "Fresh propositions selected from common question categories, not measured popularity analytics.",
+      "Developer primary-source review is not scholarly or independent linguistic certification.",
+      "Different question mix and nine-language auto routing prevent causal model-only comparison with prior50.",
+      "No application repair occurred during this frozen first pass.",
+      "Second new50 is deferred until these results are discussed."
+    ]
+  },
+  "operational_stop": null
+}
