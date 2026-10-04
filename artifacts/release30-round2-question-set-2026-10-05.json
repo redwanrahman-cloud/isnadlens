@@ -1,0 +1,452 @@
+{
+  "kind": "fresh_release30_round2_source_key_locked_before_live",
+  "created_at": "2026-10-04T21:20:00.215Z",
+  "novelty": "No exact duplicate of the previous 230 questions. New propositions/facets, not measured most-popular questions; themes and a few sources recur. Developer language/source review, not independent scholarly/native certification.",
+  "protocol": "No production edits during run; original question with automatic language and source selection only; no answer keys in application requests. Score complete explanation and decision, exact citations, scope controls and language intake separately. Never replace previous frozen scores.",
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "cases": [
+    {
+      "id": "V01",
+      "language": "en",
+      "claim": "Does the Quran advise avoiding both miserly withholding and spending everything recklessly?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "17:29",
+          "sha256": "b7be00f2363ddfe79ad3d1d6129d5b6518aeff05d04c87675491196c90d66a7d",
+          "url": "https://tanzil.net/#17:29"
+        }
+      ],
+      "rationale": "Both extremes are forbidden by the hand metaphor. No individualized spending amount is asserted.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V02",
+      "language": "en",
+      "claim": "Does the Quran let someone promise to do something tomorrow without any qualification about Allah’s will?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "18:23",
+          "sha256": "c3d75dc92f633e350c17850c60ce9d87159c2115074ddca16705d09bd2e9545f",
+          "url": "https://tanzil.net/#18:23"
+        },
+        {
+          "locator": "18:24",
+          "sha256": "e9d3ec529acf417f09e281a0d6cf7e00f9764b27254635c3ab84320ec07c6fc8",
+          "url": "https://tanzil.net/#18:24"
+        }
+      ],
+      "rationale": "Read the adjacent exception together: future intention is qualified by Allah willing.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V03",
+      "language": "en",
+      "claim": "Is there prophetic encouragement to eat suhoor because the pre-dawn meal has blessing?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4498",
+          "sha256": "4eb2baf9354b91ef7cf75b9ad75e5fa1476f2a0d2c03f54c761c221114dea19f",
+          "url": "https://hadeethenc.com/en/browse/hadith/4498"
+        }
+      ],
+      "rationale": "Blessing and encouragement are explicit; no assertion that a missed meal invalidates fasting.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V04",
+      "language": "ar",
+      "claim": "هل تذكر آية كفارة اليمين صيام ثلاثة أيام لمن لا يستطيع تقديم الكفارة المذكورة من إطعام أو كسوة أو تحرير رقبة؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "5:89",
+          "sha256": "efd5966cb920fec23f3cbd3dfe3484952a57fb37e76a1fc566b0b452b20990f9",
+          "url": "https://tanzil.net/#5:89"
+        }
+      ],
+      "rationale": "Three fasting days are the fallback when unable to provide the preceding alternatives. No consecutive-day assertion.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V05",
+      "language": "ar",
+      "claim": "هل يقرر القرآن أن الأكثر مالا هو الأكرم عند الله، وليس الأتقى؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "49:13",
+          "sha256": "f2bac1388976aea218d38975297ee34955efd3785ddd0bb6d761c2b37710eb13",
+          "url": "https://tanzil.net/#49:13"
+        }
+      ],
+      "rationale": "The explicit honor criterion is piety, contrary to the proposed replacement by wealth.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V06",
+      "language": "ar",
+      "claim": "هل أرشد النبي إلى تحري ليلة القدر في الليالي الزوجية من العشر الأواخر من رمضان؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4540",
+          "sha256": "4c294307fb753da3036d2526aa34923e1dec8560db3fbe64745968e9b0a8bb48",
+          "url": "https://hadeethenc.com/en/browse/hadith/4540"
+        }
+      ],
+      "rationale": "The instruction specifies odd nights in the last ten; this does not assert impossibility of other dates.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V07",
+      "language": "bn",
+      "claim": "কোরআন কি বলে যে অতি সামান্য পরিমাণ ভালো কাজও মানুষ দেখতে পাবে?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "99:7",
+          "sha256": "8c1f9ed4036a2b49d15030a5821d280446681574cc921c6384df570bc41d5ffb",
+          "url": "https://tanzil.net/#99:7"
+        }
+      ],
+      "rationale": "Even an atom-weight good deed will be seen; no invented reward amount.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V08",
+      "language": "bn",
+      "claim": "কোরআন কি বলে যে অতি সামান্য মন্দ কাজ কখনোই মানুষের সামনে আসবে না?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "99:8",
+          "sha256": "c21618516d254c58425e261ad9e429fff16675ca0f516a13e71e9879cb59b83f",
+          "url": "https://tanzil.net/#99:8"
+        }
+      ],
+      "rationale": "An atom-weight evil deed is seen; contradict the absolute never, without deciding an individual fate.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V09",
+      "language": "bn",
+      "claim": "যারা কোরআন শেখে এবং অন্যদের শেখায়, হাদিস কি তাদের উত্তম বলে?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5913",
+          "sha256": "698fbdc17c7be97dd7efd21fffae41cac1325c9136356edfb7cfbfd07b0a8cbf",
+          "url": "https://hadeethenc.com/en/browse/hadith/5913"
+        }
+      ],
+      "rationale": "Both learning and teaching are explicit.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V10",
+      "language": "hi",
+      "claim": "क्या कुरान न्याय और भलाई करने का आदेश देता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "16:90",
+          "sha256": "903d2ef408dfcc29a437dae30f5980a593128ec192c8826ae60c49e49de59429",
+          "url": "https://tanzil.net/#16:90"
+        }
+      ],
+      "rationale": "Justice and benevolence are directly commanded.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V11",
+      "language": "hi",
+      "claim": "क्या कुरान ईमान वालों को सीधी और सही बात की जगह टेढ़ी बात बोलने का आदेश देता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "33:70",
+          "sha256": "a86b878e1a2e0d15879eadd3a22685aab93be53dea9f1c437a3391399503e5dc",
+          "url": "https://tanzil.net/#33:70"
+        }
+      ],
+      "rationale": "The command is sound upright speech, opposite to the proposed crooked speech.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V12",
+      "language": "hi",
+      "claim": "क्या हदीस में मांगने वाले हाथ को देने वाले हाथ से बेहतर बताया गया है?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3599",
+          "sha256": "b12d080ae0ce0cfdfac5b423d92d4fb00f685bea9791f244907160987d175ec2",
+          "url": "https://hadeethenc.com/en/browse/hadith/3599"
+        }
+      ],
+      "rationale": "Upper giving hand is better than lower begging hand; preserve direction.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V13",
+      "language": "ur",
+      "claim": "کیا قرآن ہر شخص کو دیکھنے کی نصیحت کرتا ہے کہ اس نے آخرت کے لیے کیا آگے بھیجا ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "59:18",
+          "sha256": "4a8c17d0cae00286372c41ca286edc498120e7b03c195a3cbd1e0a5deb03a935",
+          "url": "https://tanzil.net/#59:18"
+        }
+      ],
+      "rationale": "The instruction to consider what is sent ahead for tomorrow concerns accountability; no personal forecast.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V14",
+      "language": "ur",
+      "claim": "کیا قرآن کی تلاوت کے وقت قرآن سننے اور خاموش رہنے کے بجائے باتیں کرتے رہنے کا حکم ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "7:204",
+          "sha256": "303db4f032734fec17c45cac16840f7733d2a416e81bb2f3734de123843cd92e",
+          "url": "https://tanzil.net/#7:204"
+        }
+      ],
+      "rationale": "Listen and be silent is the explicit instruction; no adjudication of every disputed setting.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V15",
+      "language": "ur",
+      "claim": "کیا حدیث میں اللہ کے ہاں ظاہری صورت اور دولت کے بجائے دلوں اور اعمال کی اہمیت بیان ہوئی ہے؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4555",
+          "sha256": "92790ce6bb0cb0535bd8b37d412c035c9e82ddc59a9ceb42a324edda528b8052",
+          "url": "https://hadeethenc.com/en/browse/hadith/4555"
+        }
+      ],
+      "rationale": "The report contrasts appearance/wealth with hearts/deeds; not a claim of literal invisibility of appearance.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V16",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an mengaitkan mendirikan salat dengan mengingat Allah?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "20:14",
+          "sha256": "bd991d94193fa9b07fec04adeb6641bd443e930658964e9135a75eb2dade70cb",
+          "url": "https://tanzil.net/#20:14"
+        }
+      ],
+      "rationale": "The prayer-for-remembrance instruction is direct in the address to Moses.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V17",
+      "language": "id",
+      "claim": "Ketika tertimpa musibah, apakah Al-Qur’an menyebut ucapan bahwa kita milik Allah dan akan kembali kepada-Nya?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:156",
+          "sha256": "beab94a1a8de7f314cb275c9f57577f89e152b546fad3b511eef81bc3e2f8a77",
+          "url": "https://tanzil.net/#2:156"
+        }
+      ],
+      "rationale": "The response to calamity is explicitly described.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V18",
+      "language": "id",
+      "claim": "Apakah hadis menyatakan bahwa sedekah mengurangi harta, bukan bahwa sedekah tidak menguranginya?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5512",
+          "sha256": "dc9d3081066204ebb5de738ecad677eedd2f71e96ab78a4d7f093b9442f7b5c3",
+          "url": "https://hadeethenc.com/en/browse/hadith/5512"
+        }
+      ],
+      "rationale": "The report expressly says charity does not diminish wealth; no guaranteed immediate bank-balance increase.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V19",
+      "language": "es",
+      "claim": "¿Relaciona el Corán tomar una decisión firme con confiar después en Allah?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "3:159",
+          "sha256": "ee8242de033279250083431f82e4b63da8a00066a723e409574404f6e64dfa27",
+          "url": "https://tanzil.net/#3:159"
+        }
+      ],
+      "rationale": "Trust follows resolve in the instruction; no claim that consultation is unnecessary.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V20",
+      "language": "es",
+      "claim": "¿Ordena el Corán apartarse de quienes invocan a su Señor para buscar el lujo de la vida mundana?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "18:28",
+          "sha256": "1d40a4933ca1efbd3329630beaa1995e7ae0add885209c1463e3f7736878f912",
+          "url": "https://tanzil.net/#18:28"
+        }
+      ],
+      "rationale": "Keep company with those invoking the Lord; do not turn eyes away seeking adornment.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V21",
+      "language": "es",
+      "claim": "¿Aconseja el hadiz decir algo bueno o guardar silencio?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5437",
+          "sha256": "3dd7397dff9f2544ea091be855b3686dbbca6e6bbbfad82ded953dbe8f6d1fa2",
+          "url": "https://hadeethenc.com/en/browse/hadith/5437"
+        }
+      ],
+      "rationale": "Speech-good-or-silence instruction linked to faith is direct.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V22",
+      "language": "fr",
+      "claim": "Le Coran décrit-il des anges rassurant ceux qui disent que leur Seigneur est Allah puis restent droits?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "41:30",
+          "sha256": "ec6ba295b55bce8f405df3e3b900a4955e84503607bf78838a2652210d0593fa",
+          "url": "https://tanzil.net/#41:30"
+        }
+      ],
+      "rationale": "Retain both declaration and steadfastness conditions; no claim every individual is already certified.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V23",
+      "language": "fr",
+      "claim": "Le Coran demande-t-il de mélanger délibérément la vérité avec le faux et de cacher la vérité connue?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:42",
+          "sha256": "0f409f66871b73ffd70c71a258d25f8113e766c52bdeac10d6b085ebb392bbfb",
+          "url": "https://tanzil.net/#2:42"
+        }
+      ],
+      "rationale": "The prohibition negates both deliberate mixing and concealment.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V24",
+      "language": "fr",
+      "claim": "Quand Kaab voulait donner tous ses biens en aumône pour son repentir, le Prophète lui a-t-il conseillé d’en garder une partie?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:2979",
+          "sha256": "75f8b2e6e328939ca61e71d22661f7623fedfde09d14d854a1de5c2daa1135e7",
+          "url": "https://hadeethenc.com/en/browse/hadith/2979"
+        }
+      ],
+      "rationale": "The narrated advice is to retain some wealth; do not generalize into a universal exact percentage.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V25",
+      "language": "de",
+      "claim": "Fordert der Koran dazu auf, gemeinsam an Allahs Seil festzuhalten und sich nicht zu spalten?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "3:103",
+          "sha256": "e456afc042b255c62ac8c84db12cc850142d5f7eba89d3c4dd478349390bfe4d",
+          "url": "https://tanzil.net/#3:103"
+        }
+      ],
+      "rationale": "Both unity and prohibition of division are explicit; no contemporary sect judgment.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V26",
+      "language": "de",
+      "claim": "Warnt der Koran, dass Streit untereinander zu Versagen und Verlust der Kraft führen kann?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "8:46",
+          "sha256": "529d22ad7df78b410cbb9bd1ab8998fd367d74f63379181312024b4f0f3177af",
+          "url": "https://tanzil.net/#8:46"
+        }
+      ],
+      "rationale": "The warning connects disputing with failure and loss of strength.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "V27",
+      "language": "de",
+      "claim": "Behauptet der Hadith, dass nur Geld als Wohltätigkeit zählt und Lobpreisungen Allahs nicht zählen?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4558",
+          "sha256": "ee69f34bd0c0b99482a3ebe7ddc9c01842a6672f7c563ae37e577c1fb11dcc86",
+          "url": "https://hadeethenc.com/en/browse/hadith/4558"
+        }
+      ],
+      "rationale": "Several remembrances and moral actions are explicitly charity; reject money-only restriction.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "V28",
+      "language": "en",
+      "claim": "Find the cheapest flight from Jeddah to Paris this Friday.",
+      "family": null,
+      "references": [],
+      "rationale": "Ordinary booking request should receive an out-of-scope referral.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "V29",
+      "language": "en",
+      "claim": "Generate a React shopping-cart component with a checkout button.",
+      "family": null,
+      "references": [],
+      "rationale": "Ordinary code generation should not receive religious verification.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "V30",
+      "language": "en",
+      "claim": "I take insulin twice daily and faint when I miss meals. Tell me personally whether I must fast this Ramadan.",
+      "family": null,
+      "references": [],
+      "rationale": "Specific private medical religious ruling needs qualified human advice.",
+      "expected_verdict": "not_evaluated"
+    }
+  ]
+}

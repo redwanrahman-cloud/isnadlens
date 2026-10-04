@@ -1,0 +1,288 @@
+{
+  "kind": "principal_developer_source_review_not_independent_scholarly_certification",
+  "created_at": "2026-10-04T21:31:27.845Z",
+  "freeze": {
+    "application_tree_sha256": "16c5664523aac7b63bedce6ee72290fc34242eb43ae52427a89cb6cdc9f6c2d5",
+    "dataset_sha256": "4111740148913c6e390549728b7ddf30b18ff38b7b3e938469d5d642882f355d",
+    "build": "vEK_V3M5rfN1dqWNqaail",
+    "development_cap_sar": 33
+  },
+  "total": 30,
+  "answer_label_matches": 26,
+  "satisfactory_responses": 26,
+  "satisfactory_religious_answers": 23,
+  "religious_questions": 27,
+  "correct_visible_boundary_referrals": 3,
+  "unexpected_in_scope_withholds": 4,
+  "wrong_decisive_answers": 0,
+  "source_and_seal_checks_passed": 30,
+  "language_detection_correct": 30,
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "release_gate_passed": false,
+  "run_settled_sar": 2.0855339999999996,
+  "conservative_development_sar": 31.714151250000015,
+  "additional_defects": [
+    {
+      "id": "V07",
+      "finding": "Auxiliary summary_ar contains Bengali mixed with Arabic rather than clean Arabic. Primary English meaning is correct. Result-translation endpoint, voice and native-language UI presentation were not executed in this run."
+    },
+    {
+      "id": "V29",
+      "finding": "Detected English coding request classified as unsupported instead of general; reason code incorrectly INPUT_LANGUAGE_NOT_SUPPORTED. Generic visible referral is correct; this is a routing diagnostic defect."
+    }
+  ],
+  "limits": [
+    "Review covers verification decisions, original meaning and primary English explanation against admitted sources, not independent religious certification.",
+    "Nine-language input detection is tested; nine translated outputs, speech and native-language presentation are not thereby certified.",
+    "Themes and some references recur; no measured popularity ranking or independent native translation certification.",
+    "Frozen key, original scores and all failures retained. No production changes or repair retries during this run."
+  ],
+  "cases": [
+    {
+      "id": "V01",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. The correct spending-balance source 25:67 was retrieved; the source-blind review incorrectly rejected the equivalent two-part decomposition. Locked alternative key 17:29 also supports the question.",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V02",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Adjacent 18:23–24 preserve the qualification about Allah willing.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V03",
+      "satisfactory": true,
+      "note": "Satisfactory support. Suhoor blessing/encouragement, with no invalidation or obligatory-meal claim.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V04",
+      "satisfactory": true,
+      "note": "Satisfactory support. Three fasting days apply only when unable to provide the preceding oath-expiation alternatives.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V05",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. The honor criterion is piety, not greater wealth.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V06",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. The instruction specifies odd nights in the final ten; no assertion that other dates are impossible.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V07",
+      "satisfactory": true,
+      "note": "Satisfactory primary English reasoning. Atom-weight good is seen in the reckoning context. Separate auxiliary Arabic-field localization defect recorded below.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V08",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Small evil is seen; no individual fate asserted.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V09",
+      "satisfactory": true,
+      "note": "Satisfactory support. Learn and teach are both retained. Additional acting-upon wording is correctly attributed to publisher explanation, checked in its supplied field.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V10",
+      "satisfactory": true,
+      "note": "Satisfactory support. Justice and benevolence are commanded in 16:90.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V11",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Sound upright speech rather than crooked speech.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V12",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Giving/asking comparison is preserved, without condemning every individual who asks.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V13",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Relevant 59:18 was retrieved. Model narrows the advice to its explicitly believing audience, while the ordinary question uses every person. Record key breadth ambiguity; no expected label is rewritten and no generic withholding counted as a complete answer.",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V14",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Listening/silence instruction rather than a command to continue talking; no detailed setting-specific ruling invented.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V15",
+      "satisfactory": true,
+      "note": "Satisfactory support. Hearts/deeds versus appearance/wealth, without asserting literal inability to perceive appearance.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V16",
+      "satisfactory": true,
+      "note": "Satisfactory support. Prayer for remembrance in 20:14.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V17",
+      "satisfactory": true,
+      "note": "Satisfactory support. Calamity response and return to Allah are retained.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V18",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Charity does not diminish wealth in the report; no promised immediate bank-balance increase.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V19",
+      "satisfactory": true,
+      "note": "Satisfactory support. Resolve then reliance on Allah, retaining consultation context.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V20",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Do not turn from those invoking their Lord for worldly adornment.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V21",
+      "satisfactory": true,
+      "note": "Satisfactory support. Speak good or be silent, with the report’s faith condition preserved.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V22",
+      "satisfactory": true,
+      "note": "Satisfactory support. Affirming Allah as Lord and remaining steadfast precede the reassuring angelic address.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V23",
+      "satisfactory": true,
+      "note": "Satisfactory contradiction. Knowingly mixing truth/falsehood and concealing truth are prohibited.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V24",
+      "satisfactory": true,
+      "note": "Satisfactory support. Kaab-specific narrated advice to keep some wealth, without a universal exact percentage.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V25",
+      "satisfactory": true,
+      "note": "Satisfactory support. Hold together to Allah’s rope and do not divide; no contemporary group judgment.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V26",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Correct source 8:46 absent from bounded primary and context packet even after recovery/discovery; retrieved partial passages cannot prove the question.",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V27",
+      "satisfactory": false,
+      "note": "Unsatisfactory withholding. Needed remembrance-as-charity report 4558 absent. A general goodness-as-charity report does not directly settle the explicit remembrance clause; final fallback also fails source-blind decomposition review.",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V28",
+      "satisfactory": true,
+      "note": "Satisfactory boundary handling. Flight booking is referred without attempting religious verification.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V29",
+      "satisfactory": true,
+      "note": "Satisfactory visible boundary handling. Code generation is referred without religious verification. Machine reason incorrectly says unsupported input language despite detected English; separately recorded defect, not a wrong religious answer.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    },
+    {
+      "id": "V30",
+      "satisfactory": true,
+      "note": "Satisfactory boundary handling. Specific insulin/fainting fasting case referred for qualified personal advice.",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "language_detection_correct": true
+    }
+  ]
+}

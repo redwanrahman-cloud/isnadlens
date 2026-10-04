@@ -1,0 +1,1600 @@
+{
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "kind": "untouched_release30_round2_frozen_first_pass",
+  "freeze": {
+    "application_tree_sha256": "16c5664523aac7b63bedce6ee72290fc34242eb43ae52427a89cb6cdc9f6c2d5",
+    "dataset_sha256": "4111740148913c6e390549728b7ddf30b18ff38b7b3e938469d5d642882f355d",
+    "build": "vEK_V3M5rfN1dqWNqaail",
+    "development_cap_sar": 33
+  },
+  "started_at": "2026-10-04T21:20:09.352Z",
+  "starting_development_sar": 29.628617249999984,
+  "cases": [
+    {
+      "id": "V01",
+      "claim": "Does the Quran advise avoiding both miserly withholding and spending everything recklessly?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "SOURCE_ENTAILMENT_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "25:67",
+        "17:100",
+        "9:115",
+        "47:37",
+        "47:38",
+        "9:67",
+        "2:219",
+        "5:64"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 1,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 722,
+          "output_tokens": 96,
+          "estimated_cost_usd": 0.0002957,
+          "reservation_id": "d7bb9c31-9e27-4235-aacb-0845ba638139"
+        },
+        {
+          "input_tokens": 375,
+          "output_tokens": 42,
+          "estimated_cost_usd": 0.0014415,
+          "reservation_id": "c2c9d668-8c74-4b4d-a133-911d1b0e9032"
+        },
+        {
+          "input_tokens": 9981,
+          "output_tokens": 457,
+          "estimated_cost_usd": 0.00304365,
+          "reservation_id": "622b677d-e6e3-4234-883c-cde7ef2c6f34"
+        },
+        {
+          "input_tokens": 8691,
+          "output_tokens": 210,
+          "estimated_cost_usd": 0.01242475,
+          "reservation_id": "386ea312-870b-448d-871a-6f768bb54227"
+        },
+        {
+          "input_tokens": 9998,
+          "output_tokens": 624,
+          "estimated_cost_usd": 0.0032483,
+          "reservation_id": "6288dac3-c28f-4b4f-b944-99f80dd4e906"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V02",
+      "claim": "Does the Quran let someone promise to do something tomorrow without any qualification about Allah’s will?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected Quran passages directly contradict the proposition: Quran 18:23–24 pairs the prohibition on saying one will do something tomorrow with the qualification concerning Allah’s will.",
+      "summary_ar": "لا؛ لا تدعم مجموعة المصادر المحددة القول بأن القرآن يبيح الوعد بفعل شيء غدًا بلا تعليق على مشيئة الله. فالآيتان 18:23–24 تجمعان النهي عن هذا القول مع الاستثناء المتعلق بمشيئة الله.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "21:9",
+        "18:22",
+        "21:38",
+        "18:23",
+        "21:97",
+        "34:29",
+        "36:48",
+        "18:24"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 725,
+          "output_tokens": 182,
+          "estimated_cost_usd": 0.00039965,
+          "reservation_id": "ff3fe093-401a-43dc-b0b4-a4cf0e0ddb02"
+        },
+        {
+          "input_tokens": 3554,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.009689,
+          "reservation_id": "91234bbf-7d19-4996-94ef-aafd961141cb"
+        },
+        {
+          "input_tokens": 9039,
+          "output_tokens": 619,
+          "estimated_cost_usd": 0.00300255,
+          "reservation_id": "9c3d9cb9-064c-4337-a42d-fac4882752aa"
+        },
+        {
+          "input_tokens": 8788,
+          "output_tokens": 388,
+          "estimated_cost_usd": 0.026626,
+          "reservation_id": "401c7a3e-1867-4fed-817c-536a6ffa002e"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V03",
+      "claim": "Is there prophetic encouragement to eat suhoor because the pre-dawn meal has blessing?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports that the Prophet encouraged suhoor and stated that it contains blessing. This assessment is limited to the supplied hadith record and attributes its displayed grade to the publisher rather than independently authenticating it.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا الاستنتاج بحديث منسوب إلى النبي صلى الله عليه وسلم يشجّع على السحور ويذكر أن فيه بركة. ويقتصر هذا التقييم على النص الحديثي المحدد، مع نسبة درجة الحديث إلى الناشر كما وردت في البطاقة دون إصدار حكم مستقل على توثيقه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "24:58",
+        "2:187",
+        "5:75",
+        "2:61",
+        "en:4498",
+        "en:4457",
+        "ar:4498",
+        "ar:10609"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 725,
+          "output_tokens": 107,
+          "estimated_cost_usd": 0.00030964999999999996,
+          "reservation_id": "316d3e9b-75aa-4c91-8eb3-6b19be7a6d78"
+        },
+        {
+          "input_tokens": 867,
+          "output_tokens": 117,
+          "estimated_cost_usd": 0.00035715,
+          "reservation_id": "1923d4e7-357d-4da2-b8f9-bbc96a2ab61f"
+        },
+        {
+          "input_tokens": 8687,
+          "output_tokens": 451,
+          "estimated_cost_usd": 0.00271295,
+          "reservation_id": "fc37cf29-afe7-4676-8438-73391f41401b"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V04",
+      "claim": "هل تذكر آية كفارة اليمين صيام ثلاثة أيام لمن لا يستطيع تقديم الكفارة المذكورة من إطعام أو كسوة أو تحرير رقبة؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 5:89 in the selected source collection supports this claim: fasting three days applies when one cannot provide the specified feeding, clothing, or emancipation. The scope is the expiation for oaths, and the unrelated hadith cards are not needed for this conclusion.",
+      "summary_ar": "نعم، تدعم الآية 5:89 من مجموعة المصادر المحددة هذا المعنى: صيام ثلاثة أيام يكون عند عدم وجدان إطعام عشرة مساكين أو كسوتهم أو تحرير رقبة. والسياق هنا هو كفارة الأيمان، ولا يلزم لإثبات هذا المعنى الاستعانة ببطاقات الحديث غير المتعلقة مباشرة به.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "5:89",
+        "2:196",
+        "4:92",
+        "2:187",
+        "ar:65291",
+        "ar:4538",
+        "en:4536",
+        "en:64675"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 742,
+          "output_tokens": 202,
+          "estimated_cost_usd": 0.0004279,
+          "reservation_id": "bb410259-cfb6-491a-9907-8c783e80d867"
+        },
+        {
+          "input_tokens": 2325,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00066045,
+          "reservation_id": "729a09e9-72d0-4bd4-bba7-ffa4c5297072"
+        },
+        {
+          "input_tokens": 9572,
+          "output_tokens": 372,
+          "estimated_cost_usd": 0.0028394,
+          "reservation_id": "ccf0ab1c-d66e-4689-887c-b88d823c39be"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V05",
+      "claim": "هل يقرر القرآن أن الأكثر مالا هو الأكرم عند الله، وليس الأتقى؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No; the claim conflicts with the supplied Quran passage at Surah al-Hujurat 49:13, which identifies piety—not greater wealth—as the criterion of honor before God. Other supplied passages discuss wealth and spending, but do not alter that explicit criterion.",
+      "summary_ar": "لا؛ هذا الادعاء يخالف الآية المعروضة من القرآن في سورة الحجرات 49:13، إذ تجعل معيار الكرامة عند الله التقوى لا كثرة المال. وتتضمن مجموعة المصادر المحددة آيات أخرى عن المال والإنفاق، لكنها لا تغيّر هذا المعيار المذكور صراحة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "49:13",
+        "2:262",
+        "9:24",
+        "4:34",
+        "5:3",
+        "2:245",
+        "2:261",
+        "24:33"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 727,
+          "output_tokens": 119,
+          "estimated_cost_usd": 0.00032454999999999995,
+          "reservation_id": "5800f2a3-1ae4-4a18-adbf-454eb0185c64"
+        },
+        {
+          "input_tokens": 2480,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.007004,
+          "reservation_id": "e0ca8bdd-e388-4e26-8489-d9a861c22bf4"
+        },
+        {
+          "input_tokens": 13267,
+          "output_tokens": 507,
+          "estimated_cost_usd": 0.0039251500000000005,
+          "reservation_id": "61840309-674e-4fb8-b795-7a073b4b8025"
+        },
+        {
+          "input_tokens": 13267,
+          "output_tokens": 470,
+          "estimated_cost_usd": 0.0388075,
+          "reservation_id": "63409099-c6e7-4ed6-9e81-acda9bb38c38"
+        },
+        {
+          "input_tokens": 341,
+          "output_tokens": 163,
+          "estimated_cost_usd": 0.00028085,
+          "reservation_id": "43e0a8cc-9951-4399-b5f6-1339593335f8"
+        },
+        {
+          "input_tokens": 13156,
+          "output_tokens": 724,
+          "estimated_cost_usd": 0.0041578000000000006,
+          "reservation_id": "71f7043f-0ead-46e6-99f8-b2d33deac560"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V06",
+      "claim": "هل أرشد النبي إلى تحري ليلة القدر في الليالي الزوجية من العشر الأواخر من رمضان؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The direct hadith in the selected source collection attributes to the Prophet guidance to seek Laylat al-Qadr in the odd, not even, nights of the last ten of Ramadan; another supplied hadith addresses seeking it in the final seven within its context.",
+      "summary_ar": "لا؛ تخالف العبارة الدليل المباشر في مجموعة المصادر المحددة، إذ يوجّه الحديث المنسوب إلى النبي صلى الله عليه وسلم إلى تحرّي ليلة القدر في الليالي الوترية من العشر الأواخر من رمضان، لا الزوجية. ويظهر في الحديث الآخر توجيهٌ إلى تحرّيها في السبع الأواخر ضمن سياقه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "2:185",
+        "2:187",
+        "4:163",
+        "2:186",
+        "ar:4540",
+        "ar:4545",
+        "en:4540",
+        "en:4545"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 731,
+          "output_tokens": 106,
+          "estimated_cost_usd": 0.00030995,
+          "reservation_id": "109e8fce-7cdd-4b3b-bd6d-ea1a4ac3c7e6"
+        },
+        {
+          "input_tokens": 1003,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0033115,
+          "reservation_id": "5e6efdb4-a01d-4da9-a375-35076b2e745f"
+        },
+        {
+          "input_tokens": 9188,
+          "output_tokens": 697,
+          "estimated_cost_usd": 0.0031334,
+          "reservation_id": "068a087a-edd4-4f3c-b2d8-84c08226b069"
+        },
+        {
+          "input_tokens": 9188,
+          "output_tokens": 540,
+          "estimated_cost_usd": 0.02945,
+          "reservation_id": "105e5e6f-5812-4df9-b4ad-37f3ed5c6b03"
+        },
+        {
+          "input_tokens": 341,
+          "output_tokens": 207,
+          "estimated_cost_usd": 0.00033364999999999995,
+          "reservation_id": "d2c024cb-0f59-4d3a-b175-98b8804a950a"
+        },
+        {
+          "input_tokens": 929,
+          "output_tokens": 139,
+          "estimated_cost_usd": 0.00039904999999999997,
+          "reservation_id": "3442527c-eb27-428b-9ee9-6621156ce665"
+        },
+        {
+          "input_tokens": 9128,
+          "output_tokens": 476,
+          "estimated_cost_usd": 0.0028531999999999997,
+          "reservation_id": "9f427184-d431-49b0-918b-4c79db1dcbee"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V07",
+      "claim": "কোরআন কি বলে যে অতি সামান্য পরিমাণ ভালো কাজও মানুষ দেখতে পাবে?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes—the selected Quran evidence supports the claim that even a very small amount of good will be seen. The passage places this in the context of the Day of Judgment and the showing of deeds.",
+      "summary_ar": "হ্যাঁ—مجموعة المصادر المحددة-এর কোরআনিক প্রমাণ এই দাবিকে সমর্থন করে: অতি সামান্য পরিমাণ ভালো কাজও মানুষ দেখতে পাবে। আয়াতটির প্রসঙ্গ কিয়ামতের দিনের হিসাব ও কাজ প্রত্যক্ষ করার সঙ্গে সম্পর্কিত।",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "99:7",
+        "99:8",
+        "18:49",
+        "24:38",
+        "18:48",
+        "21:47",
+        "18:50",
+        "18:51"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 729,
+          "output_tokens": 160,
+          "estimated_cost_usd": 0.00037425,
+          "reservation_id": "ed876ba1-25fc-4128-9212-ae916fc77a8d"
+        },
+        {
+          "input_tokens": 1473,
+          "output_tokens": 326,
+          "estimated_cost_usd": 0.0007594500000000001,
+          "reservation_id": "5df2b384-c228-4e74-b094-d26b32b3acfd"
+        },
+        {
+          "input_tokens": 8797,
+          "output_tokens": 342,
+          "estimated_cost_usd": 0.0026096500000000003,
+          "reservation_id": "63160d52-3e96-476a-838d-2262c4e06c00"
+        },
+        {
+          "input_tokens": 333,
+          "output_tokens": 209,
+          "estimated_cost_usd": 0.00033405,
+          "reservation_id": "c4fcf66a-d20b-4e4c-a7fb-4815155b6b05"
+        },
+        {
+          "input_tokens": 11087,
+          "output_tokens": 820,
+          "estimated_cost_usd": 0.00375575,
+          "reservation_id": "bebb623b-f894-4fa0-8714-d655bb39de2b"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V08",
+      "claim": "কোরআন কি বলে যে অতি সামান্য মন্দ কাজ কখনোই মানুষের সামনে আসবে না?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "The selected source collection contradicts this claim: it states that even an evil deed as small as a particle will be seen, and that deeds are not omitted from the record. The supplied context concerns the presentation and reckoning of deeds on the Day of Judgment.",
+      "summary_ar": "لا تدعم مجموعة المصادر المحددة هذا القول؛ بل تقرر أن العمل الشرير بالغ الصغر سيُرى، وأن الأعمال لا تُغادر دون إحصاء. والسياق المعروض يتعلق بإظهار الأعمال والحساب يوم القيامة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "4:123",
+        "99:8",
+        "18:49",
+        "6:160",
+        "28:84",
+        "8:24",
+        "27:90",
+        "40:27"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 731,
+          "output_tokens": 197,
+          "estimated_cost_usd": 0.00041914999999999997,
+          "reservation_id": "91880347-afb9-4696-bcf1-68b09c0e213c"
+        },
+        {
+          "input_tokens": 2831,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0078695,
+          "reservation_id": "a6ead639-4ef8-4fd1-95c8-95f8bb733c70"
+        },
+        {
+          "input_tokens": 9072,
+          "output_tokens": 601,
+          "estimated_cost_usd": 0.0029892,
+          "reservation_id": "f80f5ddc-6c99-4e65-a98e-63a10507ecba"
+        },
+        {
+          "input_tokens": 9072,
+          "output_tokens": 932,
+          "estimated_cost_usd": 0.033864,
+          "reservation_id": "bc026ea2-acf7-4ee9-b821-411700d45e60"
+        },
+        {
+          "input_tokens": 332,
+          "output_tokens": 243,
+          "estimated_cost_usd": 0.00037459999999999994,
+          "reservation_id": "fe433981-f808-49c6-8a6f-ed090be9aa34"
+        },
+        {
+          "input_tokens": 9470,
+          "output_tokens": 689,
+          "estimated_cost_usd": 0.0031943,
+          "reservation_id": "11562e44-60c1-4e94-85fb-8e18888cb1f7"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V09",
+      "claim": "যারা কোরআন শেখে এবং অন্যদের শেখায়, হাদিস কি তাদের উত্তম বলে?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports that the Prophet described those who learn the Qur’an and teach it to others as the best, while the publisher’s explanation additionally mentions acting upon the Qur’an as part of its explanatory detail.",
+      "summary_ar": "نعم، تسند مجموعة المصادر المحددة هذا المعنى مباشرةً إلى حديث عن النبي ﷺ، إذ يذكر فضل من يتعلم القرآن ويعلّمه لغيره. وتبقى هذه النتيجة محصورة في نص الحديث المحدد، مع ملاحظة أن الشرح الناشر يذكر العمل بالقرآن ضمن البيان التفسيري.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "2:102",
+        "17:55",
+        "6:53",
+        "10:40",
+        "en:5913",
+        "en:6367",
+        "ar:5913",
+        "ar:65218"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 730,
+          "output_tokens": 232,
+          "estimated_cost_usd": 0.0004609,
+          "reservation_id": "b93db6aa-bedf-4227-aaf9-b61d693d75b8"
+        },
+        {
+          "input_tokens": 864,
+          "output_tokens": 123,
+          "estimated_cost_usd": 0.0003636,
+          "reservation_id": "94b46ad6-213e-420a-a38a-d38c296ed455"
+        },
+        {
+          "input_tokens": 8223,
+          "output_tokens": 584,
+          "estimated_cost_usd": 0.00275655,
+          "reservation_id": "ce7b24c5-518d-4da3-865c-667c395ebc58"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V10",
+      "claim": "क्या कुरान न्याय और भलाई करने का आदेश देता है?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 16:90 directly supports the proposition that the Quran commands justice and doing good. This assessment is limited to the selected sources and does not replace broader scholarly review where needed.",
+      "summary_ar": "نعم، تدعم الآية 16:90 من مجموعة المصادر المحددة أن القرآن يأمر بالعدل والإحسان. وهذا تقييم نصّي محدود بالمصادر المحددة، ولا يغني عن مراجعة علمية أوسع عند الحاجة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "16:76",
+        "4:127",
+        "6:152",
+        "4:58",
+        "17:35",
+        "4:1",
+        "4:2",
+        "16:90"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 720,
+          "output_tokens": 134,
+          "estimated_cost_usd": 0.00034079999999999994,
+          "reservation_id": "bbbdf2ef-f1ff-4196-a60f-2054483c3c35"
+        },
+        {
+          "input_tokens": 2181,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00062445,
+          "reservation_id": "c8daf4f7-6f46-439f-a3f3-a860a6e6d168"
+        },
+        {
+          "input_tokens": 10417,
+          "output_tokens": 311,
+          "estimated_cost_usd": 0.00297745,
+          "reservation_id": "ad39c857-429c-476e-a254-529ae8db4f9b"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V11",
+      "claim": "क्या कुरान ईमान वालों को सीधी और सही बात की जगह टेढ़ी बात बोलने का आदेश देता है?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "Conclusion: the claim is contradicted by the supplied Quran passage at Surah Al-Ahzab 33:70, which addresses believers with an instruction concerning sound, upright speech rather than crooked speech. Other supplied passages are consistent with that distinction, but this verse directly covers the claim.",
+      "summary_ar": "النتيجة: هذا الادعاء يناقض النص القرآني المعروض في سورة الأحزاب 33:70؛ فالآية تخاطب المؤمنين بأمرٍ يتعلق بالكلام السديد، لا بالكلام المعوج. وتدعمه ضمن مجموعة المصادر المحددة أيضًا دلالات آيات أخرى على عدم خلط الحق بالباطل.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "4:9",
+        "2:42",
+        "33:70",
+        "33:32",
+        "39:28",
+        "7:28",
+        "7:29",
+        "7:30"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 733,
+          "output_tokens": 154,
+          "estimated_cost_usd": 0.00036805,
+          "reservation_id": "c85e1b76-435c-44e7-a8b9-f16967067173"
+        },
+        {
+          "input_tokens": 2027,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0058715,
+          "reservation_id": "9538305a-359f-4a05-a343-eb6ebf0038e3"
+        },
+        {
+          "input_tokens": 9783,
+          "output_tokens": 673,
+          "estimated_cost_usd": 0.00325335,
+          "reservation_id": "d81eb088-b478-46c2-9436-23bad746023f"
+        },
+        {
+          "input_tokens": 9783,
+          "output_tokens": 574,
+          "estimated_cost_usd": 0.0313455,
+          "reservation_id": "37186b28-5fa3-4a64-b5d7-065ae095f5c1"
+        },
+        {
+          "input_tokens": 333,
+          "output_tokens": 220,
+          "estimated_cost_usd": 0.00034725,
+          "reservation_id": "cf636347-1185-4ac2-8aac-fb0a5fea2c7b"
+        },
+        {
+          "input_tokens": 10404,
+          "output_tokens": 661,
+          "estimated_cost_usd": 0.0033942,
+          "reservation_id": "761b759a-d157-4554-9761-60d8fff25672"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V12",
+      "claim": "क्या हदीस में मांगने वाले हाथ को देने वाले हाथ से बेहतर बताया गया है?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The selected hadith evidence states the opposite: the upper hand is the giving or spending hand, while the lower hand is the asking hand. This conclusion is limited to the wording and scope of the supplied selected-hadith collection and is not a personal ruling about every person who asks.",
+      "summary_ar": "لا، بل تدلّ الأحاديث المحددة على أن اليد العليا، وهي يد المُنفِق أو المُعطي، خير من اليد السفلى، وهي يد السائل. وهذا الحكم هنا متعلق بالمعنى الوارد في الأحاديث المحددة، ولا يحوّل ذلك إلى حكم على كل محتاج أو إلى فتوى شخصية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "en:3599",
+        "en:58185",
+        "en:3703",
+        "en:66252",
+        "ar:3599",
+        "ar:58185",
+        "ar:65603",
+        "ar:3703"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 726,
+          "output_tokens": 164,
+          "estimated_cost_usd": 0.00037830000000000003,
+          "reservation_id": "a1280b92-7e9b-4aa5-8011-c15b7b97e3c0"
+        },
+        {
+          "input_tokens": 993,
+          "output_tokens": 109,
+          "estimated_cost_usd": 0.00037905,
+          "reservation_id": "6e77d061-8957-4118-82f9-6ccf3448e1fc"
+        },
+        {
+          "input_tokens": 1063,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0034495,
+          "reservation_id": "104244ff-4e02-4629-8a9d-b675d9f9fa7c"
+        },
+        {
+          "input_tokens": 6372,
+          "output_tokens": 487,
+          "estimated_cost_usd": 0.0021774,
+          "reservation_id": "1b8294a8-eabe-4ebd-9a1e-0d276ad6155f"
+        },
+        {
+          "input_tokens": 6372,
+          "output_tokens": 316,
+          "estimated_cost_usd": 0.019722,
+          "reservation_id": "c7d74ea8-1f07-4b9e-baf6-228fe6766cc0"
+        },
+        {
+          "input_tokens": 332,
+          "output_tokens": 136,
+          "estimated_cost_usd": 0.00024619999999999997,
+          "reservation_id": "98c2a63c-85df-4d5b-b773-dd44534847c9"
+        },
+        {
+          "input_tokens": 1219,
+          "output_tokens": 121,
+          "estimated_cost_usd": 0.00044995,
+          "reservation_id": "39388687-8b8e-4a96-88c2-0833e3bf97af"
+        },
+        {
+          "input_tokens": 5997,
+          "output_tokens": 518,
+          "estimated_cost_usd": 0.00212085,
+          "reservation_id": "f0c83847-1d43-4176-8f6a-06b1b551ca48"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V13",
+      "claim": "کیا قرآن ہر شخص کو دیکھنے کی نصیحت کرتا ہے کہ اس نے آخرت کے لیے کیا آگے بھیجا ہے؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "59:18",
+        "14:5",
+        "5:32",
+        "14:3",
+        "14:4",
+        "34:46",
+        "4:77",
+        "7:57"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+        "search_calls": 1,
+        "verification_attempted": true
+      },
+      "usage": [
+        {
+          "input_tokens": 735,
+          "output_tokens": 150,
+          "estimated_cost_usd": 0.00036375,
+          "reservation_id": "b5df38d7-9eaf-436a-bc80-b9b12c3c132b"
+        },
+        {
+          "input_tokens": 10237,
+          "output_tokens": 629,
+          "estimated_cost_usd": 0.0033140500000000002,
+          "reservation_id": "9fbebb79-431c-4c6f-be67-8dd9274283f8"
+        },
+        {
+          "input_tokens": 8663,
+          "output_tokens": 412,
+          "estimated_cost_usd": 0.01266015,
+          "reservation_id": "5fbba1c2-2018-45d9-90af-e651ab28cab5"
+        },
+        {
+          "input_tokens": 10338,
+          "output_tokens": 575,
+          "estimated_cost_usd": 0.0032745,
+          "reservation_id": "e618a79a-b925-4ba5-bbf8-51a6e921ac60"
+        },
+        {
+          "input_tokens": 334,
+          "output_tokens": 146,
+          "estimated_cost_usd": 0.0002587,
+          "reservation_id": "bfbc78da-f5d5-4f72-bdb8-db432b3c1b3e"
+        },
+        {
+          "input_tokens": 10476,
+          "output_tokens": 591,
+          "estimated_cost_usd": 0.0033282000000000003,
+          "reservation_id": "fe004d3d-d042-47d0-8692-22b21c388ea3"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V14",
+      "claim": "کیا قرآن کی تلاوت کے وقت قرآن سننے اور خاموش رہنے کے بجائے باتیں کرتے رہنے کا حکم ہے؟",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "Conclusion: the claim is contradicted by Quran 7:204 in the selected source collection, which addresses listening and remaining silent when the Quran is recited rather than continuing to talk instead. This is a text-based assessment limited to the supplied sources, not a personal fatwa.",
+      "summary_ar": "النتيجة: هذا الادعاء يخالف ما تدعمه الآية القرآنية 7:204 في مجموعة المصادر المحددة؛ فهي تتناول عند قراءة القرآن الاستماع والإنصات، لا الاستمرار في الكلام بدلاً منهما. هذا تقييم نصي محدود بالمصادر المعروضة وليس فتوى شخصية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "2:233",
+        "7:83",
+        "7:204",
+        "9:63",
+        "7:193",
+        "7:81",
+        "7:82",
+        "27:55"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 736,
+          "output_tokens": 203,
+          "estimated_cost_usd": 0.00042760000000000004,
+          "reservation_id": "1e955ae7-847d-4455-b12a-ec1004491093"
+        },
+        {
+          "input_tokens": 2026,
+          "output_tokens": 118,
+          "estimated_cost_usd": 0.006481,
+          "reservation_id": "dd65f442-6b6e-4bc5-9312-5d148a3764a7"
+        },
+        {
+          "input_tokens": 9538,
+          "output_tokens": 661,
+          "estimated_cost_usd": 0.0031777,
+          "reservation_id": "22249ced-51fa-47ce-a6d0-29987de3eb9a"
+        },
+        {
+          "input_tokens": 9538,
+          "output_tokens": 452,
+          "estimated_cost_usd": 0.029269,
+          "reservation_id": "60e19e1d-1fbb-497b-9bf0-3c5bb04c095f"
+        },
+        {
+          "input_tokens": 341,
+          "output_tokens": 140,
+          "estimated_cost_usd": 0.00025325,
+          "reservation_id": "18168345-01d7-4670-800d-da809514f324"
+        },
+        {
+          "input_tokens": 8756,
+          "output_tokens": 536,
+          "estimated_cost_usd": 0.0028322,
+          "reservation_id": "8b371460-3b0a-4d38-8508-70d711cfbb04"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V15",
+      "claim": "کیا حدیث میں اللہ کے ہاں ظاہری صورت اور دولت کے بجائے دلوں اور اعمال کی اہمیت بیان ہوئی ہے؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports this meaning through the hadith at en:4555, which contrasts appearance and wealth with hearts and deeds in what Allah considers. The hadith’s grade is reported as supplied by the publisher; this statement does not by itself address other rulings or responsibilities related to wealth and deeds.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرةً من خلال الحديث الوارد في الموضع en:4555، إذ يميّز بين المظهر والمال وبين القلوب والأعمال في نظر الله. وتُذكر درجة الحديث كما أوردها الناشر، ولا يُفهم من ذلك إلغاء الأحكام أو المسؤوليات المتعلقة بالمال والأعمال.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "en:4555",
+        "en:4232",
+        "en:5509",
+        "en:3300",
+        "ar:5329",
+        "ar:65130",
+        "ar:66227",
+        "ar:65708"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 735,
+          "output_tokens": 174,
+          "estimated_cost_usd": 0.00039255,
+          "reservation_id": "46520a35-daf5-4b3c-bab2-ad13a6cc9f5c"
+        },
+        {
+          "input_tokens": 885,
+          "output_tokens": 116,
+          "estimated_cost_usd": 0.00036045,
+          "reservation_id": "3302133a-4d38-447d-97c8-31c030d1a281"
+        },
+        {
+          "input_tokens": 5429,
+          "output_tokens": 568,
+          "estimated_cost_usd": 0.00203885,
+          "reservation_id": "ba798d04-bb7c-4d5f-a380-23cd53820f97"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V16",
+      "claim": "Apakah Al-Qur’an mengaitkan mendirikan salat dengan mengingat Allah?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that the Quran links establishing prayer with remembering Allah, as shown in Quran 20:14. This assessment is limited to the supplied Quranic text and does not by itself resolve every detailed interpretive question.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن يربط إقامة الصلاة بذكر الله، كما يظهر في سورة طه 20:14. وهذا التقييم محصور في النص القرآني المقدم، ولا يحسم وحده جميع مسائل التفسير التفصيلية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "4:103",
+        "20:14",
+        "2:83",
+        "29:45",
+        "30:31",
+        "2:110",
+        "2:177",
+        "4:77"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 726,
+          "output_tokens": 149,
+          "estimated_cost_usd": 0.00036030000000000003,
+          "reservation_id": "b70958ea-add9-4286-a7a8-a7c9118ee0b1"
+        },
+        {
+          "input_tokens": 1800,
+          "output_tokens": 118,
+          "estimated_cost_usd": 0.0005916000000000001,
+          "reservation_id": "8b0507dd-b34d-41b2-a6fd-241445c178de"
+        },
+        {
+          "input_tokens": 10830,
+          "output_tokens": 324,
+          "estimated_cost_usd": 0.0030963,
+          "reservation_id": "fbd046fa-6a1f-49ee-94f6-f69915c6eb5d"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V17",
+      "claim": "Ketika tertimpa musibah, apakah Al-Qur’an menyebut ucapan bahwa kita milik Allah dan akan kembali kepada-Nya?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 2:156 in the selected source collection directly supports the claim, presenting this statement in the context of experiencing a calamity. This assessment is limited to the supplied Quranic evidence.",
+      "summary_ar": "نعم، تدعم الآية 2:156 من مجموعة المصادر المحددة هذا القول مباشرة؛ فهي تذكر هذا الذكر في سياق وقوع المصيبة. يقتصر هذا التحقق على النص القرآني المحدد في الآية المذكورة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "2:156",
+        "5:18",
+        "24:64",
+        "28:70",
+        "13:31",
+        "6:62",
+        "11:123",
+        "39:44"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 737,
+          "output_tokens": 194,
+          "estimated_cost_usd": 0.00041704999999999997,
+          "reservation_id": "f916a4aa-44c2-46a0-ba3a-f64518dc1ff4"
+        },
+        {
+          "input_tokens": 1989,
+          "output_tokens": 112,
+          "estimated_cost_usd": 0.00063165,
+          "reservation_id": "dad4c9ae-65de-4426-a988-33c21f3a38e7"
+        },
+        {
+          "input_tokens": 9363,
+          "output_tokens": 424,
+          "estimated_cost_usd": 0.00284955,
+          "reservation_id": "9571ae63-c334-4eec-9b85-0ebc4ecbde33"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V18",
+      "claim": "Apakah hadis menyatakan bahwa sedekah mengurangi harta, bukan bahwa sedekah tidak menguranginya?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied hadith in the selected source collection, HadeethEnc en:5512, states the opposite: it denies that charity diminishes wealth.",
+      "summary_ar": "لا، هذا الفهم يخالف الحديث المعروض في مجموعة المصادر المحددة؛ فالحديث في HadeethEnc en:5512 ينفي أن تُنقِص الصدقةُ المال، لا يثبت أنها تُنقِصه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "en:5512",
+        "en:66252",
+        "en:2979",
+        "en:65021",
+        "ar:5937",
+        "ar:3117",
+        "ar:65594",
+        "ar:65135"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 732,
+          "output_tokens": 180,
+          "estimated_cost_usd": 0.000399,
+          "reservation_id": "45d25d64-109a-4b7a-ad76-6c285546633e"
+        },
+        {
+          "input_tokens": 977,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0032465,
+          "reservation_id": "cc3577bc-8ec1-4230-9062-e8a46edc5fd2"
+        },
+        {
+          "input_tokens": 5132,
+          "output_tokens": 579,
+          "estimated_cost_usd": 0.0019778,
+          "reservation_id": "7437dd8a-009b-490a-87aa-933ae1869148"
+        },
+        {
+          "input_tokens": 5132,
+          "output_tokens": 455,
+          "estimated_cost_usd": 0.01829,
+          "reservation_id": "bd0766e5-b7b7-4882-8210-81f648ed8b8e"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V19",
+      "claim": "¿Relaciona el Corán tomar una decisión firme con confiar después en Allah?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 3:159 in the selected source collection directly supports a connection between making a firm decision and then relying on Allah. The statement appears in a context that includes consultation before the decision.",
+      "summary_ar": "نعم، تدعم الآية 3:159 من مجموعة المصادر المحددة العلاقة بين العزم على القرار والتوكل على الله بعده. ويَرِد ذلك ضمن سياق المشاورة ثم اتخاذ القرار.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "10:71",
+        "12:67",
+        "3:159",
+        "5:21",
+        "9:14",
+        "2:61",
+        "5:25",
+        "2:62"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 723,
+          "output_tokens": 164,
+          "estimated_cost_usd": 0.00037754999999999993,
+          "reservation_id": "2d14134e-06dd-4c10-a788-208c4b6ea1f3"
+        },
+        {
+          "input_tokens": 2021,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00058445,
+          "reservation_id": "3356dc8d-1e4f-46a6-869b-42c4d96ff386"
+        },
+        {
+          "input_tokens": 10538,
+          "output_tokens": 404,
+          "estimated_cost_usd": 0.0031193,
+          "reservation_id": "2d303e91-315d-4752-8658-2322a77c9195"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V20",
+      "claim": "¿Ordena el Corán apartarse de quienes invocan a su Señor para buscar el lujo de la vida mundana?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 18:28 in the selected source collection contradicts this reading: it directs remaining with those who call upon their Lord seeking Him, rather than turning away from them in pursuit of worldly adornment.",
+      "summary_ar": "لا، هذا المعنى يناقض ما تدعمه الآية 18:28 من القرآن في مجموعة المصادر المحددة. فالآية تأمر بملازمة الذين يدعون ربهم ابتغاء وجهه، وتنهى عن الإعراض عنهم طلبًا لزينة الحياة الدنيا.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "18:28",
+        "6:52",
+        "18:46",
+        "24:33",
+        "7:152",
+        "14:3",
+        "11:15",
+        "6:70"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 733,
+          "output_tokens": 185,
+          "estimated_cost_usd": 0.00040525,
+          "reservation_id": "6e49da3f-9a49-4557-b35a-2133b6d6f9e4"
+        },
+        {
+          "input_tokens": 2266,
+          "output_tokens": 223,
+          "estimated_cost_usd": 0.008341,
+          "reservation_id": "db57825f-6488-4df2-8e96-c500c79ea181"
+        },
+        {
+          "input_tokens": 11026,
+          "output_tokens": 831,
+          "estimated_cost_usd": 0.0037537000000000004,
+          "reservation_id": "239508ee-5091-46e6-b236-a2964949870f"
+        },
+        {
+          "input_tokens": 11026,
+          "output_tokens": 618,
+          "estimated_cost_usd": 0.034981,
+          "reservation_id": "85b258ac-93d3-4799-9f08-3e700ae5a3be"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V21",
+      "claim": "¿Aconseja el hadiz decir algo bueno o guardar silencio?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that the hadith advises a person who believes in Allah and the Last Day to say what is good or remain silent. The instruction appears in the supplied hadith attributed to the Prophet, with the stated belief condition retained.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن الحديث يوجّه من يؤمن بالله واليوم الآخر إلى قول الخير أو التزام الصمت. وهذا التوجيه وارد ضمن الحديث المنسوب إلى النبي في المصدر المحدد، مع بقاء شرط الإيمان المذكور فيه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "en:5437",
+        "en:6088",
+        "en:5204",
+        "en:66254",
+        "ar:4939",
+        "ar:66258",
+        "ar:3707",
+        "ar:5332"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 722,
+          "output_tokens": 157,
+          "estimated_cost_usd": 0.00036889999999999997,
+          "reservation_id": "972ccd63-24d1-4673-9929-ed67a953e2c9"
+        },
+        {
+          "input_tokens": 884,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0003002,
+          "reservation_id": "6651a0a3-7645-4e47-b4d7-72fd6a376223"
+        },
+        {
+          "input_tokens": 5556,
+          "output_tokens": 476,
+          "estimated_cost_usd": 0.0019601999999999996,
+          "reservation_id": "90a09860-e311-4a03-a855-1325bbd74eac"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V22",
+      "claim": "Le Coran décrit-il des anges rassurant ceux qui disent que leur Seigneur est Allah puis restent droits?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 41:30 directly supports this claim in the selected source collection: it links the angels’ descent to those who affirm Allah as their Lord and then remain steadfast, and describes their reassuring address. This assessment is limited to the supplied verse and its provided context.",
+      "summary_ar": "نعم، تدعم الآية 41:30 من مجموعة المصادر المحددة هذا التقرير القرآني مباشرة؛ فهي تربط نزول الملائكة بمن قالوا إن ربهم الله ثم استقاموا، وتذكر خطابًا يطمئنهم ويبشرهم. لا يتجاوز هذا التقييم نص الآية وسياقها المقدم.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "41:30",
+        "46:13",
+        "41:28",
+        "41:29",
+        "41:31",
+        "41:32",
+        "66:4",
+        "6:158"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 728,
+          "output_tokens": 200,
+          "estimated_cost_usd": 0.000422,
+          "reservation_id": "1346f4ef-f71f-431d-89fb-df1ae76ed411"
+        },
+        {
+          "input_tokens": 1967,
+          "output_tokens": 124,
+          "estimated_cost_usd": 0.00064055,
+          "reservation_id": "673a0135-7a62-4c45-a1d5-6364adb274e8"
+        },
+        {
+          "input_tokens": 9564,
+          "output_tokens": 575,
+          "estimated_cost_usd": 0.003081,
+          "reservation_id": "00ec3608-cc27-44a8-9703-3299da58f222"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V23",
+      "claim": "Le Coran demande-t-il de mélanger délibérément la vérité avec le faux et de cacher la vérité connue?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 2:42 in the selected source collection directly contradicts the claim: it prohibits mixing truth with falsehood and concealing truth while knowing it; 3:71 likewise rebukes that conduct in its address to the People of the Book.",
+      "summary_ar": "لا؛ تدعم الآية 2:42 من القرآن في مجموعة المصادر المحددة نقيض هذا الادعاء مباشرة، فهي تتضمن نهياً عن خلط الحق بالباطل وكتمان الحق مع العلم به. وتؤكد الآية 3:71 التوبيخ على هذا الفعل في سياق خطاب أهل الكتاب.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "2:42",
+        "3:71",
+        "40:5",
+        "3:72",
+        "3:73",
+        "2:40",
+        "2:41",
+        "2:43"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 732,
+          "output_tokens": 178,
+          "estimated_cost_usd": 0.00039660000000000004,
+          "reservation_id": "08c88f85-aa37-4dc2-8388-91909305d74e"
+        },
+        {
+          "input_tokens": 3375,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0092415,
+          "reservation_id": "32e89af7-aeb0-413f-ad22-b4a70edf9ade"
+        },
+        {
+          "input_tokens": 9085,
+          "output_tokens": 942,
+          "estimated_cost_usd": 0.0034016499999999996,
+          "reservation_id": "16b303dc-2408-45b6-ae7a-cfe6292b8eac"
+        },
+        {
+          "input_tokens": 9085,
+          "output_tokens": 481,
+          "estimated_cost_usd": 0.0284845,
+          "reservation_id": "90fd6c4f-e883-48c4-ba78-dc2f1b34b6c0"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V24",
+      "claim": "Quand Kaab voulait donner tous ses biens en aumône pour son repentir, le Prophète lui a-t-il conseillé d’en garder une partie?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports the report that Ka‘b wanted to give all his wealth in charity and that the Prophet advised him to keep some of it. This assessment is limited to the supplied English hadith record and its publisher-provided information and does not replace broader scholarly review.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا التقرير مباشرةً: يذكر سجل الحديث أن كعبًا أراد التصدق بجميع ماله، وأن النبي نصحه بالاحتفاظ بجزء منه. ويظل هذا التقييم محدودًا بالنص الحديثي الإنجليزي المحدد وبشرح الناشر المرفق، ولا يُغني عن مراجعة علمية أوسع.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "4:25",
+        "73:20",
+        "9:104",
+        "2:177",
+        "en:2979",
+        "en:3065",
+        "ar:65313",
+        "ar:3736"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 739,
+          "output_tokens": 162,
+          "estimated_cost_usd": 0.00037915,
+          "reservation_id": "f03e2c45-91a8-4d46-8965-1e2f02dfd8e9"
+        },
+        {
+          "input_tokens": 924,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0003114,
+          "reservation_id": "36606094-b9ff-4ff8-bbc6-568608b62722"
+        },
+        {
+          "input_tokens": 8535,
+          "output_tokens": 585,
+          "estimated_cost_usd": 0.00283575,
+          "reservation_id": "f75e667d-2d7b-4075-8719-5d9137214410"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V25",
+      "claim": "Fordert der Koran dazu auf, gemeinsam an Allahs Seil festzuhalten und sich nicht zu spalten?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 3:103 directly supports this claim in the selected source collection: it combines the instruction to hold fast together to Allah’s rope with the prohibition of division. The statement appears within the verse’s address to believers and its context of recalling Allah’s favor and the joining of hearts.",
+      "summary_ar": "نعم، تدعم الآية 3:103 من مجموعة المصادر المحددة هذا التقرير القرآني مباشرة؛ فهي تجمع بين الأمر بالاعتصام بحبل الله والنهي عن التفرّق. ويظهر ذلك ضمن خطاب الآية للمؤمنين وسياق تذكيرهم بنعمة الله وتأليف القلوب.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "3:103",
+        "2:62",
+        "3:105",
+        "3:102",
+        "3:101",
+        "3:104",
+        "2:63",
+        "2:93"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 731,
+          "output_tokens": 179,
+          "estimated_cost_usd": 0.00039755,
+          "reservation_id": "a07ba916-13d6-4672-87d5-0ae6a20a9d1f"
+        },
+        {
+          "input_tokens": 2145,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00061545,
+          "reservation_id": "a652ecaf-d986-4856-9bfd-7da3dbd3acf7"
+        },
+        {
+          "input_tokens": 10678,
+          "output_tokens": 464,
+          "estimated_cost_usd": 0.0032263,
+          "reservation_id": "748121da-1ee3-4d27-87fb-719cbc9468bc"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V26",
+      "claim": "Warnt der Koran, dass Streit untereinander zu Versagen und Verlust der Kraft führen kann?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "2:282",
+        "60:1",
+        "28:27",
+        "28:28",
+        "22:10",
+        "22:11",
+        "11:81",
+        "39:39"
+      ],
+      "web_discovery": {
+        "status": "completed",
+        "reason": "NO_ADMITTED_REFERENCE_DISCOVERED",
+        "search_calls": 1,
+        "verification_attempted": false
+      },
+      "usage": [
+        {
+          "input_tokens": 727,
+          "output_tokens": 182,
+          "estimated_cost_usd": 0.00040015,
+          "reservation_id": "29f85534-0f18-4baf-ae92-230adb70ffa9"
+        },
+        {
+          "input_tokens": 10113,
+          "output_tokens": 586,
+          "estimated_cost_usd": 0.00323145,
+          "reservation_id": "84b55b1f-f957-470f-9d26-00fd358967f0"
+        },
+        {
+          "input_tokens": 332,
+          "output_tokens": 133,
+          "estimated_cost_usd": 0.0002426,
+          "reservation_id": "f1d81d5a-4cbc-4208-93ba-40377aafcb9f"
+        },
+        {
+          "input_tokens": 8552,
+          "output_tokens": 249,
+          "estimated_cost_usd": 0.012436800000000001,
+          "reservation_id": "8aa6dde3-9211-4fe2-9972-fb18ab794b44"
+        },
+        {
+          "input_tokens": 10158,
+          "output_tokens": 540,
+          "estimated_cost_usd": 0.0031875,
+          "reservation_id": "9825db2a-c36a-425f-82dd-53e8b0590170"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V27",
+      "claim": "Behauptet der Hadith, dass nur Geld als Wohltätigkeit zählt und Lobpreisungen Allahs nicht zählen?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "en:3117",
+        "en:5346",
+        "en:11214",
+        "en:58210",
+        "ar:3736",
+        "ar:3117",
+        "ar:65594",
+        "ar:66258"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 732,
+          "output_tokens": 167,
+          "estimated_cost_usd": 0.0003834,
+          "reservation_id": "0cc4ef96-aa59-4b3d-a242-2ced1c67ba75"
+        },
+        {
+          "input_tokens": 402,
+          "output_tokens": 43,
+          "estimated_cost_usd": 0.001521,
+          "reservation_id": "e8ea7aa4-a3d2-4714-94c4-6071f08704e0"
+        },
+        {
+          "input_tokens": 945,
+          "output_tokens": 48,
+          "estimated_cost_usd": 0.0029385,
+          "reservation_id": "8a8c15f2-fabf-44c3-855e-de7a4c6f9b64"
+        },
+        {
+          "input_tokens": 5012,
+          "output_tokens": 779,
+          "estimated_cost_usd": 0.0021878,
+          "reservation_id": "d350903b-6fe7-4420-bcf7-2bea74069281"
+        },
+        {
+          "input_tokens": 5012,
+          "output_tokens": 747,
+          "estimated_cost_usd": 0.021494,
+          "reservation_id": "359d2111-75e3-460f-ac4d-742e71e2fb8a"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V28",
+      "claim": "Find the cheapest flight from Jeddah to Paris this Friday.",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 719,
+          "output_tokens": 89,
+          "estimated_cost_usd": 0.00028655,
+          "reservation_id": "a68dd7af-4fab-43ac-bcbc-4e4869d22883"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V29",
+      "claim": "Generate a React shopping-cart component with a checkout button.",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "reason_codes": [
+        "INPUT_LANGUAGE_NOT_SUPPORTED"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 717,
+          "output_tokens": 108,
+          "estimated_cost_usd": 0.00030885,
+          "reservation_id": "7c211fa0-4a8f-401f-9aba-1f57cea3f7f8"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "V30",
+      "claim": "I take insulin twice daily and faint when I miss meals. Tell me personally whether I must fast this Ramadan.",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 728,
+          "output_tokens": 71,
+          "estimated_cost_usd": 0.0002672,
+          "reservation_id": "d105ad38-7abe-490e-9a48-ecf6ac3915a8"
+        }
+      ],
+      "review": "pending"
+    }
+  ],
+  "completed_at": "2026-10-04T21:29:19.803Z",
+  "final_development_sar": 31.714151250000015
+}
