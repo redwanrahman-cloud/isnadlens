@@ -146,6 +146,11 @@ describe('persistent spending controls and provider schema', () => {
       expect(fetchMock).toHaveBeenCalledTimes(2);
       const posted = JSON.parse(fetchMock.mock.calls[0][1].body);
       expect(posted.store).toBe(false); expect(posted.text.format.strict).toBe(true);
+      // The serialized provider request must retain the source/explanation boundary, not just local UI labels.
+      expect(posted.instructions).toContain('Do not repeat, reconstruct, or translate any Quran or Hadith quotation inside either summary');
+      expect(posted.instructions).toContain('including an English rendering of Arabic Quran text');
+      expect(posted.instructions).toContain('explicitly attribute it to the publisher');
+      expect(posted.instructions).toContain('Never include process boilerplate');
     } finally { cwd.mockRestore(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); rmSync(directory, { recursive: true, force: true }); }
   });
   it('requires an explicit positive cap and preserves unresolved reservations across reloads', () => {
@@ -302,6 +307,102 @@ describe('adversarial citation, selection and compound coverage regression', () 
     try {
       const record = await verifyClaim({ claim: 'The Quran never mentions Ramadan.', inputLanguage: 'en' });
       expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toContain('SEMANTIC_BASIS_QUOTATION_INVALID');
+    } finally { mocked.mockRestore(); }
+  });
+});
+describe('one-step objective semantic reference router', () => {
+  const claim = 'The Quran never mentions Ramadan.';
+  const usage = (id: string, cost: number) => ({ input_tokens: 100, output_tokens: 50, estimated_cost_usd: cost, reservation_id: id });
+  function packets() {
+    const corpus = loadCorpus(); const verse = corpus.verses.find(item => item.id === '2:185')!;
+    const id = `${corpus.manifest.id}:2:185`;
+    const valid: SemanticAssessment = { ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts', evidence_ids: [id], contradiction_basis: 'explicit_negation_or_incompatible_statement', basis_evidence_id: id, basis_quotation: verse.display }] };
+    const invalid: SemanticAssessment = { ...valid, atomic_claims: valid.atomic_claims.map(item => ({ ...item, basis_quotation: 'رمضان ... القرآن' })) };
+    return { valid, invalid };
+  }
+  it.each(['quotation', 'reference'])('reassesses an invalid mini %s once with strong on the exact same packet and preserves both assessments and costs', async kind => {
+    const { valid, invalid } = packets();
+    const failed = kind === 'quotation' ? invalid : { ...valid, atomic_claims: valid.atomic_claims.map(item => ({ ...item, evidence_ids: ['invented-source-id'] })) };
+    const miniUsage = usage('mini-reservation', .001); const strongUsage = usage('strong-reservation', .003);
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: failed, model: 'gpt-5.4-mini', usage: miniUsage }).mockResolvedValueOnce({ assessment: valid, model: 'gpt-5.4', usage: strongUsage });
+    try {
+      const record = await verifyClaim({ claim, inputLanguage: 'en' });
+      expect(record.verdict).toBe('conflicting_within_selected_corpus'); expect(mocked).toHaveBeenCalledTimes(2);
+      expect(mocked.mock.calls[0][3]).toBe('gpt-5.4-mini'); expect(mocked.mock.calls[1][3]).toBe('gpt-5.4');
+      expect(JSON.stringify(mocked.mock.calls[0][2])).toBe(JSON.stringify(mocked.mock.calls[1][2]));
+      expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
+      expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
+      expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
+      expect(record.router_version).toContain('semantic-reference-failure'); expect(verifySeal(record)).toBe(true);
+      const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
+      expect(verifySeal(changed)).toBe(false);
+    } finally { mocked.mockRestore(); }
+  });
+  it('refuses after the single strong attempt remains invalid without weakening exact source checks', async () => {
+    const { invalid } = packets();
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: invalid, model: 'gpt-5.4-mini', usage: usage('mini', .001) }).mockResolvedValueOnce({ assessment: invalid, model: 'gpt-5.4', usage: usage('strong', .003) });
+    try {
+      const record = await verifyClaim({ claim, inputLanguage: 'en' });
+      expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toContain('SEMANTIC_BASIS_QUOTATION_INVALID');
+      expect(mocked).toHaveBeenCalledTimes(2); expect(record.assessment_attempts).toHaveLength(2); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
+  it('does not escalate an ordinary insufficient assessment or a semantic scope refusal', async () => {
+    const { invalid } = packets();
+    const incomplete = { ...assessment, atomic_claims: [{ ...atom, relation: 'unrelated' as const, direct: false, evidence_ids: [] }], all_material_claims_covered: false };
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: incomplete, model: 'gpt-5.4-mini', usage: null }).mockResolvedValueOnce({ assessment: { ...invalid, in_scope: false }, model: 'gpt-5.4-mini', usage: null });
+    try {
+      expect((await verifyClaim({ claim, inputLanguage: 'en' })).verdict).toBe('insufficient_within_selected_corpus');
+      expect(mocked).toHaveBeenCalledTimes(1);
+      expect((await verifyClaim({ claim, inputLanguage: 'en' })).verdict).toBe('not_evaluated');
+      expect(mocked).toHaveBeenCalledTimes(2);
+    } finally { mocked.mockRestore(); }
+  });
+  it('fails closed on the strong budget stop while retaining the completed mini assessment and its cost', async () => {
+    const { invalid } = packets(); const miniUsage = usage('mini', .001);
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: invalid, model: 'gpt-5.4-mini', usage: miniUsage }).mockRejectedValueOnce(new Error('SPEND_BUDGET_STOP'));
+    try {
+      const record = await verifyClaim({ claim, inputLanguage: 'en' });
+      expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toContain('SPEND_BUDGET_STOP');
+      expect(record.assessment_attempts?.[0].usage).toEqual(miniUsage);
+      expect(record.assessment_attempts?.[1]).toMatchObject({ model: 'gpt-5.4', reason: 'SPEND_BUDGET_STOP', raw_assessment: null, usage: null });
+      expect(mocked).toHaveBeenCalledTimes(2); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
+  it('never routes network/refusal errors or personal inputs into a strong paid attempt', async () => {
+    const mocked = vi.spyOn(provider, 'assessClaim').mockRejectedValueOnce(new Error('PROVIDER_UNAVAILABLE')).mockRejectedValueOnce(new Error('PROVIDER_REFUSAL'));
+    try {
+      expect((await verifyClaim({ claim, inputLanguage: 'en' })).reason_codes).toContain('PROVIDER_UNAVAILABLE');
+      expect(mocked).toHaveBeenCalledTimes(1);
+      expect((await verifyClaim({ claim, inputLanguage: 'en' })).reason_codes).toContain('PROVIDER_REFUSAL');
+      expect(mocked).toHaveBeenCalledTimes(2);
+      expect((await verifyClaim({ claim: 'Can I stop fasting because of my illness?', inputLanguage: 'en' })).verdict).toBe('not_evaluated');
+      expect(mocked).toHaveBeenCalledTimes(2);
+    } finally { mocked.mockRestore(); }
+  });
+  it('honors explicitly configured strong assessment without first calling mini or retrying invalid strong output', async () => {
+    vi.stubEnv('OPENAI_MODEL', 'gpt-5.4');
+    const { valid, invalid } = packets();
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: valid, model: 'gpt-5.4', usage: null }).mockResolvedValueOnce({ assessment: invalid, model: 'gpt-5.4', usage: null });
+    try {
+      expect((await verifyClaim({ claim, inputLanguage: 'en' })).verdict).toBe('conflicting_within_selected_corpus');
+      expect(mocked).toHaveBeenCalledTimes(1); expect(mocked.mock.calls[0][3]).toBe('gpt-5.4');
+      const refused = await verifyClaim({ claim, inputLanguage: 'en' });
+      expect(refused.verdict).toBe('not_evaluated'); expect(refused.assessment_attempts).toHaveLength(1);
+      expect(mocked).toHaveBeenCalledTimes(2); expect(mocked.mock.calls[1][3]).toBe('gpt-5.4');
+    } finally { mocked.mockRestore(); vi.unstubAllEnvs(); }
+  });
+  it('seals server-side quote identification and bypasses only missing topic keywords, never privacy checks', async () => {
+    const identification = { status: 'identified' as const, corpus: 'hadith' as const, method: 'exact_quotation' as const, candidate_locators: ['en:4560'], note: 'Mechanical fixture identified by the server.' };
+    const unknown = { ...assessment, atomic_claims: [{ ...atom, relation: 'unrelated' as const, direct: false, evidence_ids: [] }], all_material_claims_covered: false };
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: unknown, model: 'gpt-5.4-mini', usage: null });
+    try {
+      const bare = await verifyClaim({ claim: 'The reward of deeds depends on what was intended.', inputLanguage: 'en', corpusSelection: 'hadith', sourceIdentification: identification });
+      expect(bare.verdict).toBe('insufficient_within_selected_corpus'); expect(bare.source_identification).toEqual(identification); expect(verifySeal(bare)).toBe(true);
+      expect(mocked).toHaveBeenCalledTimes(1);
+      const privateClaim = await verifyClaim({ claim: 'Patient Ali has diabetes.', inputLanguage: 'en', corpusSelection: 'hadith', sourceIdentification: identification });
+      expect(privateClaim.verdict).toBe('not_evaluated'); expect(privateClaim.reason_codes).toContain('PRIVATE_OR_SENSITIVE_FACTS_REFERRAL');
+      expect(mocked).toHaveBeenCalledTimes(1);
     } finally { mocked.mockRestore(); }
   });
 });

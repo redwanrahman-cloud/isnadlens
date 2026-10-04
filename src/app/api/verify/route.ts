@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyClaim } from '@/lib/verification';
+import { verifyAutoClaim } from '@/lib/auto-verification';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -35,12 +36,14 @@ export async function POST(request: NextRequest) {
   if (!body || typeof body.claim!=='string' || !['ar','en'].includes(body.inputLanguage)) {
     return NextResponse.json({error:'INVALID_INPUT'}, {status:400});
   }
-  if (body.corpusSelection !== undefined && !['quran', 'hadith'].includes(body.corpusSelection)) {
+  if (body.corpusSelection !== undefined && !['auto', 'quran', 'hadith'].includes(body.corpusSelection)) {
     return NextResponse.json({error:'INVALID_INPUT'}, {status:400});
   }
   active++;
   try {
-    const record = await verifyClaim({claim:body.claim,inputLanguage:body.inputLanguage,corpusSelection:body.corpusSelection ?? 'quran'});
+    const record = body.corpusSelection === 'auto'
+      ? await verifyAutoClaim({claim:body.claim,inputLanguage:body.inputLanguage})
+      : await verifyClaim({claim:body.claim,inputLanguage:body.inputLanguage,corpusSelection:body.corpusSelection ?? 'quran'});
     return NextResponse.json(record,{headers:{'Cache-Control':'no-store'}});
   } catch {
     return NextResponse.json({error:'VERIFICATION_UNAVAILABLE'},{status:503});

@@ -19,3 +19,7 @@ Recommended preparation:
 5. Keep hosted provider calls disabled until concurrent-instance budget tests, restart persistence, spoofed-header checks and fail-closed behavior pass.
 
 No free-plan eligibility, account access or deployed performance is claimed by this review.
+
+Local preparation update: Hadith loader now retains a recursively frozen corpus after the initial complete cryptographic/source validation. Warm loads compare size, nanosecond modification/change times, inode and device for all eight source paths. Missing or changed files clear the cache and require full validation again; pre/post metadata detects changes during initialization. This assumes a trusted local filesystem or immutable deployment image. Metadata comparison is an invalidation signal, not a new cryptographic proof against an attacker controlling files and metadata. Local measurement: approximately 875 ms cold and 0.34 ms warm; cloud performance remains unmeasured.
+
+Production tracing verified 4 October: private artifacts and environment files excluded across server traces; required corpus files remain included. This packaging check does not replace shared hosted spending controls.

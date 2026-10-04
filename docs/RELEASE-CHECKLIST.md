@@ -12,7 +12,7 @@ This tracks actual completion, not promised capabilities. Visual redesign requir
 
 ## Current language milestone
 
-- Six display dictionaries prepared; integration and live result-translation checks underway.
+- Six selectable display languages and four live explanation translations verified; independent linguistic review pending.
 - Language switching must retain original claim, verdict, evidence bytes/IDs, record ID and seal.
 - Explanation translations are separate drafts, not Quran translations or scholarly approval.
 - Translation failure must preserve the original explanation and show that translation is unavailable.
@@ -28,7 +28,7 @@ This tracks actual completion, not promised capabilities. Visual redesign requir
 
 ## Evaluation and judging package
 
-- Compare configured mini and stronger model on identical development cases before fixing the routing policy.
+- Paired mini/strong comparison completed on four provisional development cases; narrow citation-failure routing verified. These cases are not the final evaluation.
 - Freeze prompts, schemas, source snapshots and model routing before running the untouched final evaluation.
 - Clearly separate mechanical correctness, provisional semantic labels and independent scholarly/linguistic review status.
 - Prepare the official-template presentation, a real working-use-case demonstration and video at most 115 seconds.

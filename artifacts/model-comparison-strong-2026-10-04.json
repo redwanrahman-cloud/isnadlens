@@ -1,0 +1,141 @@
+{
+  "purpose": "Paired development comparison on reused cases; provisional labels are not independent religious ground truth. Not the untouched final evaluation.",
+  "cases": [
+    {
+      "id": "ramadan-prescribed",
+      "label": "strong",
+      "http_status": 200,
+      "expected_provisional": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "agrees_with_provisional": true,
+      "latency_ms": 9495,
+      "model": "gpt-5.4-2026-03-05",
+      "prompt_version": "claim-assessment-v1.3-meaning-and-absence",
+      "schema_version": "atomic-semantic-v1.1-contradiction-basis",
+      "record_id": "2efff1f9-9b91-4cce-9b11-f7b9552a8ed3",
+      "seal_valid": true,
+      "source_integrity": true,
+      "locators": [
+        "2:185",
+        "2:183",
+        "2:187",
+        "2:196",
+        "4:92",
+        "5:89",
+        "5:95",
+        "58:4"
+      ],
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "usage": {
+        "input_tokens": 6940,
+        "output_tokens": 503,
+        "estimated_cost_usd": 0.024895,
+        "reservation_id": "0c44c4db-8722-41fc-ade8-efbe5f146453"
+      }
+    },
+    {
+      "id": "ramadan-negated",
+      "label": "strong",
+      "http_status": 200,
+      "expected_provisional": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "agrees_with_provisional": true,
+      "latency_ms": 8918,
+      "model": "gpt-5.4-2026-03-05",
+      "prompt_version": "claim-assessment-v1.3-meaning-and-absence",
+      "schema_version": "atomic-semantic-v1.1-contradiction-basis",
+      "record_id": "866d8ba1-19fb-4884-865c-48df584e41d5",
+      "seal_valid": true,
+      "source_integrity": true,
+      "locators": [
+        "2:185",
+        "3:75",
+        "3:167",
+        "6:53",
+        "11:8",
+        "29:10",
+        "48:11",
+        "74:31"
+      ],
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "usage": {
+        "input_tokens": 5604,
+        "output_tokens": 495,
+        "estimated_cost_usd": 0.021435,
+        "reservation_id": "f1d40745-ab4f-4937-a3d5-7299ce20ee82"
+      }
+    },
+    {
+      "id": "compound-app-requirement",
+      "label": "strong",
+      "http_status": 200,
+      "expected_provisional": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "agrees_with_provisional": true,
+      "latency_ms": 8576,
+      "model": "gpt-5.4-2026-03-05",
+      "prompt_version": "claim-assessment-v1.3-meaning-and-absence",
+      "schema_version": "atomic-semantic-v1.1-contradiction-basis",
+      "record_id": "d41f6c01-3406-4ac6-850a-ee98be4ed7b4",
+      "seal_valid": true,
+      "source_integrity": true,
+      "locators": [
+        "2:185",
+        "2:183",
+        "2:187",
+        "2:196",
+        "4:92",
+        "5:89",
+        "5:95",
+        "58:4"
+      ],
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "usage": {
+        "input_tokens": 6949,
+        "output_tokens": 611,
+        "estimated_cost_usd": 0.0265375,
+        "reservation_id": "bf986580-d8dd-4ccc-a994-1ace2586b5bc"
+      }
+    },
+    {
+      "id": "hadith-intention-negated",
+      "label": "strong",
+      "http_status": 200,
+      "expected_provisional": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "agrees_with_provisional": true,
+      "latency_ms": 9187,
+      "model": "gpt-5.4-2026-03-05",
+      "prompt_version": "claim-assessment-v1.3-meaning-and-absence",
+      "schema_version": "atomic-semantic-v1.1-contradiction-basis",
+      "record_id": "8ddaeb94-dedc-47b5-bb56-a0526035f62b",
+      "seal_valid": true,
+      "source_integrity": true,
+      "locators": [
+        "en:4560",
+        "en:66511",
+        "en:2756",
+        "en:65014",
+        "en:4234",
+        "en:4820",
+        "en:10622",
+        "en:65037"
+      ],
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "usage": {
+        "input_tokens": 15744,
+        "output_tokens": 555,
+        "estimated_cost_usd": 0.047685,
+        "reservation_id": "6413ae18-04c5-4e6f-bdf9-3cae6dfec84a"
+      }
+    }
+  ]
+}

@@ -12,6 +12,8 @@ export const evidenceSchema = z.object({
   publisher_grade_status: z.literal('publisher_supplied_not_independently_graded').optional(), publisher_notice: z.string().optional(),
 });
 export const usageSchema = z.object({ input_tokens: z.number().int().nonnegative(), output_tokens: z.number().int().nonnegative(), estimated_cost_usd: z.number().nonnegative(), reservation_id: z.string() });
+export const sourceIdentificationSchema = z.object({ status: z.enum(['identified', 'ambiguous', 'not_identified']), corpus: z.enum(['quran', 'hadith']).nullable(), method: z.enum(['explicit_attribution', 'exact_quotation', 'normalized_quotation', 'none']), candidate_locators: z.array(z.string()).max(16), note: z.string().max(2000) });
+export type SourceIdentification = z.infer<typeof sourceIdentificationSchema>;
 export const recordSchema = z.object({
   record_id: z.string(), original_claim: z.string(), verdict: verdictSchema, reason_codes: z.array(z.string()),
   summary_ar: z.string(), summary_en: z.string(), evidence_items: z.array(evidenceSchema), limitations: z.array(z.string()),
@@ -21,6 +23,9 @@ export const recordSchema = z.object({
   retrieval_ids: z.array(z.string()), semantic_assessment: z.unknown().nullable(),
   prompt_version: z.string(), schema_version: z.string(), usage: usageSchema.nullable(),
   corpus_selection: z.enum(['quran', 'hadith']),
+  router_version: z.string().optional(),
+  assessment_attempts: z.array(z.object({ model: z.string(), reason: z.string(), raw_assessment: z.unknown().nullable(), usage: usageSchema.nullable() })).max(2).optional(),
+  source_identification: sourceIdentificationSchema.optional(),
 });
 export type VerificationRecord = z.infer<typeof recordSchema>;
 export type EvidenceItem = z.infer<typeof evidenceSchema>;

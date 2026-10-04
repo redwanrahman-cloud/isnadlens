@@ -1,0 +1,185 @@
+{
+  "purpose": "Development routing and linkage checks; no independent scholarly approval.",
+  "cases": [
+    {
+      "id": "unknown-origin-hadith",
+      "http_status": 200,
+      "matched": true,
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_identification": {
+        "status": "identified",
+        "corpus": "hadith",
+        "method": "normalized_quotation",
+        "candidate_locators": [
+          "hadith:ar:4560",
+          "hadith:ar:66511"
+        ],
+        "note": "Direct quotation candidates identify a source family within admitted editions only. This is not a semantic verdict or independent authentication."
+      },
+      "record_id": "e78754dc-5d7b-44b0-b2ad-5e2b6656d62f",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "model": "gpt-5.4-mini-2026-03-17",
+      "attempts": [
+        {
+          "model": "gpt-5.4-mini-2026-03-17",
+          "reason": "SEMANTIC_VALIDATION_PASSED",
+          "usage": {
+            "input_tokens": 5345,
+            "output_tokens": 391,
+            "estimated_cost_usd": 0.00576825,
+            "reservation_id": "53a5369d-4927-442d-9efc-21d4c2e08bfe"
+          }
+        }
+      ],
+      "usage": {
+        "input_tokens": 5345,
+        "output_tokens": 391,
+        "estimated_cost_usd": 0.00576825,
+        "reservation_id": "53a5369d-4927-442d-9efc-21d4c2e08bfe"
+      }
+    },
+    {
+      "id": "unknown-origin-quran",
+      "http_status": 200,
+      "matched": true,
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_identification": {
+        "status": "identified",
+        "corpus": "quran",
+        "method": "exact_quotation",
+        "candidate_locators": [
+          "quran:21:30"
+        ],
+        "note": "Direct quotation candidates identify a source family within admitted editions only. This is not a semantic verdict or independent authentication."
+      },
+      "record_id": "6e27314e-3533-4aa2-8207-a006cf8e551c",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "model": "gpt-5.4-mini-2026-03-17",
+      "attempts": [
+        {
+          "model": "gpt-5.4-mini-2026-03-17",
+          "reason": "SEMANTIC_VALIDATION_PASSED",
+          "usage": {
+            "input_tokens": 5243,
+            "output_tokens": 306,
+            "estimated_cost_usd": 0.00530925,
+            "reservation_id": "c5caada9-1088-43e1-a4ce-0e34359a4864"
+          }
+        }
+      ],
+      "usage": {
+        "input_tokens": 5243,
+        "output_tokens": 306,
+        "estimated_cost_usd": 0.00530925,
+        "reservation_id": "c5caada9-1088-43e1-a4ce-0e34359a4864"
+      }
+    },
+    {
+      "id": "quoted-in-both",
+      "http_status": 200,
+      "matched": true,
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "SOURCE_IDENTIFICATION_AMBIGUOUS"
+      ],
+      "source_identification": {
+        "status": "ambiguous",
+        "corpus": null,
+        "method": "exact_quotation",
+        "candidate_locators": [
+          "quran:112:1",
+          "hadith:ar:5213",
+          "hadith:ar:5879",
+          "hadith:ar:6082",
+          "hadith:ar:10622",
+          "hadith:ar:11256",
+          "hadith:ar:65060",
+          "hadith:ar:65261",
+          "hadith:ar:65262",
+          "hadith:ar:65263"
+        ],
+        "note": "The quotation occurs in both admitted source families. Select the intended source; no family was chosen automatically."
+      },
+      "record_id": "14da32b5-1919-4548-add9-5ac6c7e34887",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "model": "none",
+      "usage": null
+    },
+    {
+      "id": "religious-paraphrase-needs-selection",
+      "http_status": 200,
+      "matched": true,
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "SOURCE_NOT_IDENTIFIED"
+      ],
+      "source_identification": {
+        "status": "not_identified",
+        "corpus": null,
+        "method": "none",
+        "candidate_locators": [],
+        "note": "No direct quotation match was found in the admitted editions. This does not establish that the text is absent from all Quran or Hadith sources. Select a source manually for a paraphrase."
+      },
+      "record_id": "10da6c5b-c4c3-4814-8154-58c242911f3e",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "model": "none",
+      "usage": null
+    },
+    {
+      "id": "weather-outside",
+      "http_status": 200,
+      "matched": true,
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "record_id": "76679ce0-37bf-429f-b4f0-ac8dafadb4f5",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "model": "none",
+      "attempts": [],
+      "usage": null
+    },
+    {
+      "id": "arabic-negation-router",
+      "http_status": 200,
+      "matched": true,
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "record_id": "2d1a24cb-7a7a-4ca9-8af3-77e57ba57f90",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "model": "gpt-5.4-mini-2026-03-17",
+      "attempts": [
+        {
+          "model": "gpt-5.4-mini-2026-03-17",
+          "reason": "SEMANTIC_VALIDATION_PASSED",
+          "usage": {
+            "input_tokens": 5732,
+            "output_tokens": 608,
+            "estimated_cost_usd": 0.007035,
+            "reservation_id": "f85361c3-3cb1-4411-9992-82521d089f52"
+          }
+        }
+      ],
+      "usage": {
+        "input_tokens": 5732,
+        "output_tokens": 608,
+        "estimated_cost_usd": 0.007035,
+        "reservation_id": "f85361c3-3cb1-4411-9992-82521d089f52"
+      }
+    }
+  ]
+}

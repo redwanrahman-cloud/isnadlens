@@ -39,7 +39,7 @@ Lexical retrieval has limited English vocabulary and can miss relevant passages.
 
 ## Release gates still open
 
-Controlled model comparison; six-language semantic and immutable-field checks; untouched final evaluation after freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission.
+Independent linguistic review; untouched final evaluation after freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission.
 
 ## Development probes
 

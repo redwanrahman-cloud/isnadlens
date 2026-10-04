@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 import { sha256 } from './corpus';
@@ -35,7 +35,33 @@ export function validateHadith(raw: unknown, pins: z.infer<typeof pinSchema>): H
   }
   return corpus;
 }
+let cachedHadith: { fingerprint: string; corpus: HadithCorpus } | undefined;
+function sourceFingerprint(): string {
+  const paths = [join(process.cwd(), 'docs', 'source-rights', 'hadeethenc-pins.json'),
+    join(process.cwd(), 'data', 'hadeethenc.json'),
+    ...languages.options.map(language => join(process.cwd(), 'data', 'raw', 'hadeethenc', `hadeethenc-${language}.xlsx`))];
+  return JSON.stringify(paths.map(absolute => {
+    const stat = statSync(absolute, { bigint: true });
+    if (!stat.isFile()) throw new Error('HADITH_SOURCE_NOT_FILE');
+    return [absolute, stat.size.toString(), stat.mtimeNs.toString(), stat.ctimeNs.toString(), stat.ino.toString(), stat.dev.toString()];
+  }));
+}
+function deepFreeze<T>(value: T): T {
+  if (value !== null && typeof value === 'object' && !Object.isFrozen(value)) {
+    for (const child of Object.values(value)) deepFreeze(child);
+    Object.freeze(value);
+  }
+  return value;
+}
+// Stat reuse assumes trusted local files / an immutable pinned deployment image.
+// Metadata is an invalidation signal, not a fresh cryptographic proof of unchanged bytes.
+// An attacker controlling the filesystem and its metadata is outside this cache trust boundary.
 export function loadHadith(): HadithCorpus {
+  let fingerprint: string;
+  try { fingerprint = sourceFingerprint(); }
+  catch (error) { cachedHadith = undefined; throw error; }
+  if (cachedHadith?.fingerprint === fingerprint) return cachedHadith.corpus;
+  cachedHadith = undefined;
   const pinsBytes = readFileSync(join(process.cwd(), 'docs/source-rights/hadeethenc-pins.json'));
   if (createHash('sha256').update(pinsBytes).digest('hex') !== ADMITTED_PIN_FILE_HASH) throw new Error('HADITH_PIN_FILE_MISMATCH');
   const pins = pinSchema.parse(JSON.parse(pinsBytes.toString('utf8')));
@@ -44,7 +70,11 @@ export function loadHadith(): HadithCorpus {
     const bytes = readFileSync(join(process.cwd(), 'data/raw/hadeethenc', source.filename));
     if (createHash('sha256').update(bytes).digest('hex') !== source.raw_sha256) throw new Error('HADITH_RAW_HASH_MISMATCH');
   }
-  return corpus;
+  // Refuse publication if a file changed while the full validation was in progress.
+  if (sourceFingerprint() !== fingerprint) throw new Error('HADITH_SOURCES_CHANGED_DURING_VALIDATION');
+  const frozen = deepFreeze(corpus);
+  cachedHadith = { fingerprint, corpus: frozen };
+  return frozen;
 }
 const escapeRegex = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'ar' | 'en', limit = 8): HadithRecord[] {
