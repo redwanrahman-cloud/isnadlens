@@ -1,0 +1,25 @@
+{
+  "kind": "developer_source_grounded_review_not_independent_scholarly_certification",
+  "frozen_first_pass": "release30-first-pass-2026-10-04.json",
+  "total": 30,
+  "religious_questions": 27,
+  "boundary_controls": 3,
+  "answer_label_matches": 26,
+  "wrong_decisive_labels": 0,
+  "unexpected_in_scope_withholds": 4,
+  "correct_boundary_referrals": 3,
+  "fully_satisfactory_explanations_and_boundaries": 25,
+  "fully_satisfactory_religious_answers": 22,
+  "required_satisfactory": 27,
+  "release_gate_passed": false,
+  "limitations": "Principal developer review of the retrieved publisher sources and recorded meanings; no independent native-language or scholarly certification and no measured popularity claim.",
+  "findings": [
+    {"id":"R05","finding":"Arabic false hypothesis about preferring the farther neighbor was represented faithfully but rejected by the source-blind meaning check. Correct relationship was withheld."},
+    {"id":"R18","finding":"Riding/ride and suitable/fit morphology prevented the relevant animal-fitness report from entering the bounded packet. Correctly withheld on incomplete evidence."},
+    {"id":"R19","finding":"Prayer and showing-off occur across neighboring verses. Individual-verse scoring missed the admitted contextual evidence. Correctly withheld on incomplete evidence."},
+    {"id":"R21","finding":"The benchmark expected support for a compound proposition. The source establishes promise-breaking as a trait of hypocrisy, but does not by itself establish every added inference about judging individuals. Withholding the complete conjunction is defensible; original gold and frozen score remain unchanged. Treat as benchmark ambiguity rather than force support."},
+    {"id":"R24","finding":"Supported badge matches the nasal-ablution source, but explanation mentioned a fasting exception without specifying that it restricts intensified/deep inhalation. This can mislead about ordinary nasal rinsing; not counted fully satisfactory."},
+    {"id":"R09","finding":"Final direct support is grounded in en:3433. One assessor supplied a redundant secondary attribution that does not by itself cover the complete response sequence; independently selected proving unit covers it. No wrong decisive answer identified."}
+  ],
+  "remaining_cases": "All other recorded conclusions were manually reviewed against supplied primary/context sources, with publisher grades treated as attributed metadata. The 3 unrelated/private controls correctly referred without attempting a religious answer."
+}

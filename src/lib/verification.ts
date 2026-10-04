@@ -10,9 +10,11 @@ import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, chec
 import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './citations';
 import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlannerFailure, type QueryOverrides } from './query-planner';
 import { discoverWebReferences } from './web-discovery';
+import {preserveWholeQuestion} from './source-decision';
+import {vagueExceptionSummary} from './condition-summary';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v8-meaning-recovery';
+export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v10-condition-summary';
 export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
   const atoms = assessment.atomic_claims.filter(a => a.material);
   if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
@@ -235,8 +237,9 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       const scopeNeedsConfirmation = isFirstTier(requestedModel) && !result.assessment.in_scope && publicEvidenceRequest(searchClaim);
       const atoms = result.assessment.atomic_claims.filter(a => a.material);
       const supportFlagsNeedConfirmation = isFirstTier(requestedModel) && !invalid && result.assessment.in_scope && result.assessment.original_meaning_preserved && result.assessment.all_material_claims_covered && atoms.length > 0 && atoms.every(a => a.relation === 'supports') && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'insufficient_within_selected_corpus';
-      base.assessment_attempts!.push({ model: result.model, reason: invalid ?? (scopeNeedsConfirmation ? 'PUBLIC_SOURCE_SCOPE_CONFIRMATION_REQUIRED' : supportFlagsNeedConfirmation ? 'SUPPORT_FLAGS_CONFIRMATION_REQUIRED' : conflictNeedsConfirmation ? 'CONTRADICTION_CONFIRMATION_REQUIRED' : 'SEMANTIC_VALIDATION_PASSED'), raw_assessment: result.assessment, usage: result.usage });
-      if (!invalid && !conflictNeedsConfirmation && !scopeNeedsConfirmation && !supportFlagsNeedConfirmation) break;
+      const summaryNeedsConfirmation=isFirstTier(requestedModel)&&!invalid&&['supported_within_selected_corpus','conflicting_within_selected_corpus'].includes(decideVerdict(result.assessment,new Set(base.retrieval_ids)))&&vagueExceptionSummary(result.assessment.summary_en,result.assessment.summary_ar);
+      base.assessment_attempts!.push({ model: result.model, reason: invalid ?? (scopeNeedsConfirmation ? 'PUBLIC_SOURCE_SCOPE_CONFIRMATION_REQUIRED' : supportFlagsNeedConfirmation ? 'SUPPORT_FLAGS_CONFIRMATION_REQUIRED' : conflictNeedsConfirmation ? 'CONTRADICTION_CONFIRMATION_REQUIRED' : summaryNeedsConfirmation?'QUALIFICATION_DETAIL_REVIEW_REQUIRED':'SEMANTIC_VALIDATION_PASSED'), raw_assessment: result.assessment, usage: result.usage });
+      if (!invalid && !conflictNeedsConfirmation && !scopeNeedsConfirmation && !supportFlagsNeedConfirmation && !summaryNeedsConfirmation) break;
       // Exactly one strong reassessment for invalid semantic references or a proposed mini contradiction.
       // A screened public source question gets one scope reassessment; private/sensitive gates remain pre-provider.
       // Ordinary insufficiency, provider errors and source corruption never trigger it.
@@ -246,6 +249,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     let assessment = result.assessment;
     const ids = new Set(base.evidence_items.map(e => e.evidence_id));
     base.verdict = decideVerdict(assessment, ids);
+    if(['supported_within_selected_corpus','conflicting_within_selected_corpus'].includes(base.verdict)&&vagueExceptionSummary(assessment.summary_en,assessment.summary_ar)){base.verdict='not_evaluated';return fail('QUALIFICATION_DETAIL_UNCONFIRMED');}
     let restoredFirstCandidate=false;
     if(base.verdict==='insufficient_within_selected_corpus' && assessment.in_scope && assessment.original_meaning_preserved && assessment.all_material_claims_covered && assessment.atomic_claims.some(a=>a.material&&a.relation==='contradicts') && base.assessment_attempts?.length===2){
       const first=base.assessment_attempts[0];const parsed=semanticSchema.safeParse(first.raw_assessment);
@@ -261,21 +265,30 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       let decisionMode:'decision'|'support'=base.verdict==='conflicting_within_selected_corpus'?'decision':'support';
       base.limitations.push('A separate source-focused model check evaluates proposed support or contradiction and preservation of the original question; it is not independent scholarly review and can still err. Its additional usage is sealed separately.');
       try {
+        const preserveCandidate=()=>{
+          const exact=preserveWholeQuestion(claim,assessment);
+          if(exact!==assessment){assessment=exact;base.semantic_assessment=exact;base.proposition_derivation='single_material_proposition_uses_whole_original_input';}
+        };
+        preserveCandidate();
         let checked = await reviewPositiveEntailment(claim, assessment, base.evidence_items, decisionMode);
-        const recordMeaning = () => { if(checked.meaning_check)base.meaning_review_attempts=[...(base.meaning_review_attempts??[]),{assessment_model:base.model, ...checked.meaning_check}]; };
+        const recordMeaning = () => {
+          if(checked.meaning_check)base.meaning_review_attempts=[...(base.meaning_review_attempts??[]),{assessment_model:base.model, ...checked.meaning_check}];
+          base.source_review_attempts=[...(base.source_review_attempts??[]),{assessment_model:base.model,mode:decisionMode,version:ENTAILMENT_VERSION,input_assessment:assessment,review:checked.review,raw_provider_review:checked.raw_provider_review,unit_provenance:checked.unit_provenance,model:checked.model,usage:checked.usage}];
+        };
         recordMeaning();
         // A reassessment can accidentally answer instead of representing the question.
         // Reuse only an already recorded, structurally valid first candidate; it must
         // independently pass both meaning and source checks. No forced verdict or new loop.
-        if(!restoredFirstCandidate && checked.meaning_check?.review.faithful==='no' && base.assessment_attempts?.length===2){
+        if(!restoredFirstCandidate && (checked.meaning_check?.review.faithful==='no'||base.proposition_derivation&&!validPositiveReview(checked.review,assessment,base.evidence_items)) && base.assessment_attempts?.length===2){
           const first=base.assessment_attempts[0];
           const parsed=semanticSchema.safeParse(first.raw_assessment);
           if(parsed.success && !semanticReferenceError(parsed.data,base.evidence_items)){
             const candidateVerdict=decideVerdict(parsed.data,ids);
             if(candidateVerdict==='supported_within_selected_corpus'||candidateVerdict==='conflicting_within_selected_corpus'){
               assessment=parsed.data;base.semantic_assessment=assessment;base.model=first.model;base.usage=first.usage;base.verdict=candidateVerdict;
-              restoredFirstCandidate=true;base.assessment_selection_reason='previous_candidate_after_meaning_rejection';
+              restoredFirstCandidate=true;base.assessment_selection_reason=checked.meaning_check?.review.faithful==='no'?'previous_candidate_after_meaning_rejection':'previous_candidate_after_source_rejection';
               decisionMode=candidateVerdict==='conflicting_within_selected_corpus'?'decision':'support';
+              preserveCandidate();
               checked=await reviewPositiveEntailment(claim,assessment,base.evidence_items,decisionMode);recordMeaning();
             }
           }
@@ -288,6 +301,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNAVAILABLE');
       }
     }
+    if(['supported_within_selected_corpus','conflicting_within_selected_corpus'].includes(base.verdict)&&vagueExceptionSummary(assessment.summary_en,assessment.summary_ar)){base.verdict='not_evaluated';return fail('QUALIFICATION_DETAIL_UNCONFIRMED');}
     base.summary_ar = assessment.summary_ar; base.summary_en = assessment.summary_en;
     // The sealed final decision controls the headline; retain the raw model prose in semantic_assessment.
     if (base.verdict === 'insufficient_within_selected_corpus') {

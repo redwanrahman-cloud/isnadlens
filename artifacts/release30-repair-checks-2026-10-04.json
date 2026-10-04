@@ -1,0 +1,270 @@
+{
+  "kind": "known_failure_repair_checks_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "5f1a2664d18f9bd0c38794635c91c3ade83d2349c15d34260f6f00b37f428e5b",
+    "build": "Nyp_W4elYmW6JflndbsfB",
+    "original_first_pass_sha256": "133a94b7bf61c84151ddbfe1eaef5f24c881d9f7b290f5667e2b1b1c7cc95084"
+  },
+  "cases": [
+    {
+      "id": "R05",
+      "claim": "عند المفاضلة في الهدية بين جارين، هل أرشد النبي إلى الأبعد بابا؟",
+      "original_benchmark_expected": "conflicting_within_selected_corpus",
+      "repair_check_expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No; the claim conflicts with the supplied hadith in the selected source collection, which makes proximity of the door—not distance—the criterion when choosing between two neighbors for a gift. The displayed English hadith card attributes this guidance to the Prophet.",
+      "summary_ar": "لا؛ الادعاء يخالف الحديث المعروض في مجموعة المصادر المحددة، إذ يجعل معيار الإهداء بين الجارين قرب الباب لا بُعده. والدليل المحدد منسوب إلى النبي ﷺ في بطاقة الحديث الإنجليزية.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence_locators": [
+        "3:21",
+        "2:136",
+        "3:84",
+        "2:213",
+        "ar:11199",
+        "ar:66173",
+        "en:4250",
+        "en:10930"
+      ],
+      "usage": [
+        {
+          "input_tokens": 730,
+          "output_tokens": 191,
+          "estimated_cost_usd": 0.0004117,
+          "reservation_id": "1776d527-8d5d-45f9-8fe2-bdc1baf9ed0d"
+        },
+        {
+          "input_tokens": 952,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.003184,
+          "reservation_id": "3ed9bdd8-e262-4824-ba47-af446674403a"
+        },
+        {
+          "input_tokens": 7534,
+          "output_tokens": 542,
+          "estimated_cost_usd": 0.0025339,
+          "reservation_id": "fbe96cb0-300d-41e7-b426-9d940a985c3e"
+        },
+        {
+          "input_tokens": 7534,
+          "output_tokens": 478,
+          "estimated_cost_usd": 0.024571,
+          "reservation_id": "ac61c83f-8f18-41e9-a995-6fe9a2b79457"
+        }
+      ],
+      "manual_explanation_review": "satisfactory: developer source review; R21 is a defensible compound-claim withholding control"
+    },
+    {
+      "id": "R18",
+      "claim": "Apakah hadis membolehkan menunggangi hewan walaupun hewan itu tidak layak untuk ditunggangi?",
+      "original_benchmark_expected": "conflicting_within_selected_corpus",
+      "repair_check_expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The claim conflicts with the displayed hadith in the selected source collection, which conditions riding on the animal being fit for riding. The passage concerns humane treatment of animals and does not permit riding an animal that is unfit to be ridden.",
+      "summary_ar": "لا، الادعاء يناقض الحديث المعروض في مجموعة المصادر المحددة؛ إذ يقيّد ركوب الحيوان بكونه صالحًا للركوب. ويتصل النص بمعاملة الحيوانات برفق، فلا يثبت منه جواز ركوب الحيوان غير القادر أو غير الملائم للركوب.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence_locators": [
+        "en:5935",
+        "en:8844",
+        "en:4228",
+        "en:10643",
+        "ar:65254",
+        "ar:5794",
+        "ar:3121",
+        "ar:66067"
+      ],
+      "usage": [
+        {
+          "input_tokens": 733,
+          "output_tokens": 168,
+          "estimated_cost_usd": 0.00038485,
+          "reservation_id": "3318882a-b2b5-4bc8-b9a7-e85720b54d41"
+        },
+        {
+          "input_tokens": 977,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0032465,
+          "reservation_id": "5994a38c-1e7d-4f71-aa74-852ca41fe58b"
+        },
+        {
+          "input_tokens": 5160,
+          "output_tokens": 602,
+          "estimated_cost_usd": 0.0020124,
+          "reservation_id": "3314e8ca-db38-4641-9ce6-bd15190ebd9a"
+        },
+        {
+          "input_tokens": 5160,
+          "output_tokens": 500,
+          "estimated_cost_usd": 0.0189,
+          "reservation_id": "418c8936-5c8d-49d5-9e29-a3fd9f6de4c1"
+        }
+      ],
+      "manual_explanation_review": "satisfactory: developer source review; R21 is a defensible compound-claim withholding control"
+    },
+    {
+      "id": "R19",
+      "claim": "¿Elogia el Corán a quienes hacen la oración para presumir ante los demás?",
+      "original_benchmark_expected": "conflicting_within_selected_corpus",
+      "repair_check_expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The selected source collection presents the opposite evaluation: it mentions a warning concerning worshippers in the context of those who perform prayer ostentatiously. This assessment is limited to the supplied verses and does not replace broader scholarly review of context and interpretation.",
+      "summary_ar": "لا، بل تُظهر مجموعة المصادر المحددة موقفًا معاكسًا: تذكر الوعيد للمصلين في السياق الذي يصف الذين يصلّون رياءً. وهذا التقييم محصور في الآيات المقدمة، ولا يغني عن مراجعة علمية أوسع للسياق والتفسير.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence_locators": [
+        "20:132",
+        "2:125",
+        "8:47",
+        "2:167",
+        "24:37",
+        "107:4",
+        "2:83",
+        "107:5"
+      ],
+      "usage": [
+        {
+          "input_tokens": 726,
+          "output_tokens": 149,
+          "estimated_cost_usd": 0.00036030000000000003,
+          "reservation_id": "4710878a-6e50-47f3-9b54-626015bc4285"
+        },
+        {
+          "input_tokens": 1706,
+          "output_tokens": 199,
+          "estimated_cost_usd": 0.006653,
+          "reservation_id": "cec7c905-3cbf-44f0-acf5-97da104a12cd"
+        },
+        {
+          "input_tokens": 2653,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0074365,
+          "reservation_id": "0af62f76-c78d-451d-858a-c514a4c34320"
+        },
+        {
+          "input_tokens": 9456,
+          "output_tokens": 740,
+          "estimated_cost_usd": 0.003252,
+          "reservation_id": "0d199f18-64d7-4aca-8f03-53beb2973139"
+        },
+        {
+          "input_tokens": 9456,
+          "output_tokens": 399,
+          "estimated_cost_usd": 0.028428,
+          "reservation_id": "1d3bdfe7-5620-476b-b3d4-80ef492b28da"
+        }
+      ],
+      "manual_explanation_review": "satisfactory: developer source review; R21 is a defensible compound-claim withholding control"
+    },
+    {
+      "id": "R24",
+      "claim": "Le hadith demande-t-il de faire entrer de l’eau dans le nez puis de l’expulser pendant les ablutions?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. The selected evidence supports the proposition that water is drawn into the nose and then expelled during ablution. One selected hadith states an exception related to fasting, and the displayed grades are attributed to the publisher.",
+      "summary_ar": "نعم، تدعم الأحاديث المحددة أن إدخال الماء في الأنف ثم إخراجه يُذكر ضمن الوضوء. ويظهر في المصدر المحدد استثناء متعلق بالصيام في أحد الأحاديث، كما أن درجات الأحاديث المذكورة منسوبة إلى الناشر.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "en:8381",
+        "en:8378",
+        "en:3033",
+        "en:8356",
+        "ar:65358",
+        "ar:8408",
+        "ar:66166",
+        "ar:8372"
+      ],
+      "usage": [
+        {
+          "input_tokens": 733,
+          "output_tokens": 178,
+          "estimated_cost_usd": 0.00039685,
+          "reservation_id": "ffca526f-7c3e-4197-9f0a-ed418395728e"
+        },
+        {
+          "input_tokens": 1824,
+          "output_tokens": 147,
+          "estimated_cost_usd": 0.0006324,
+          "reservation_id": "e5ac7517-7244-4441-b861-9af7fc486311"
+        },
+        {
+          "input_tokens": 5621,
+          "output_tokens": 552,
+          "estimated_cost_usd": 0.0020676500000000003,
+          "reservation_id": "48e7cf7d-47cf-4006-90ef-da90bac2399b"
+        }
+      ],
+      "manual_explanation_review": "unsatisfactory: fasting exception does not specify intensified inhalation"
+    },
+    {
+      "id": "R21",
+      "claim": "¿Romper una promesa aparece en el hadiz como un rasgo de hipocresía, sin que esto nos autorice a juzgar a una persona concreta?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": true,
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "en:66537",
+        "en:65124",
+        "en:4234",
+        "en:6404",
+        "ar:6007",
+        "ar:65695",
+        "ar:65094",
+        "ar:66537"
+      ],
+      "usage": [
+        {
+          "input_tokens": 742,
+          "output_tokens": 184,
+          "estimated_cost_usd": 0.00040629999999999996,
+          "reservation_id": "7a19500b-3287-4d0c-8e32-c51724316ec1"
+        },
+        {
+          "input_tokens": 5592,
+          "output_tokens": 1009,
+          "estimated_cost_usd": 0.0026088,
+          "reservation_id": "dae46f7f-1c0a-4073-ad7e-a63ac7d9c7ea"
+        },
+        {
+          "input_tokens": 8573,
+          "output_tokens": 411,
+          "estimated_cost_usd": 0.01263645,
+          "reservation_id": "404eb6c4-e42c-4025-9aea-9bf9bc7d3087"
+        }
+      ],
+      "manual_explanation_review": "satisfactory: developer source review; R21 is a defensible compound-claim withholding control"
+    }
+  ],
+  "started_at": "2026-10-04T20:59:26.677Z",
+  "completed_at": "2026-10-04T21:01:07.729Z",
+  "final_development_sar": 29.599902937499984,
+  "original_first_pass_unchanged": true,
+  "settled_sar": 0.45045975,
+  "satisfactory_explanations_and_controls": 4
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "known_failure_repair_checks_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "16c5664523aac7b63bedce6ee72290fc34242eb43ae52427a89cb6cdc9f6c2d5",
+    "build": "vEK_V3M5rfN1dqWNqaail",
+    "original_first_pass_sha256": "133a94b7bf61c84151ddbfe1eaef5f24c881d9f7b290f5667e2b1b1c7cc95084"
+  },
+  "cases": [
+    {
+      "id": "R24",
+      "claim": "Le hadith demande-t-il de faire entrer de l’eau dans le nez puis de l’expulser pendant les ablutions?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. The selected source collection directly supports that ablution includes drawing water into the nose and expelling it; one report also specifies a limitation against doing this intensely while fasting.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن الوضوء يتضمن إدخال الماء في الأنف ثم إخراجه. ويذكر أحد النصوص استثناء الصائم من المبالغة في ذلك، وهو قيد لا ينفي أصل الفعل أثناء الوضوء.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "en:8381",
+        "en:8378",
+        "en:3033",
+        "en:3313",
+        "ar:3730",
+        "ar:66392",
+        "ar:8378",
+        "ar:6263"
+      ],
+      "usage": [
+        {
+          "input_tokens": 733,
+          "output_tokens": 175,
+          "estimated_cost_usd": 0.00039325,
+          "reservation_id": "7610bb61-9958-4674-8df1-22b3e37c535c"
+        },
+        {
+          "input_tokens": 2163,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0006199500000000001,
+          "reservation_id": "74fe522f-def5-462f-89e4-4cb3d2b13c13"
+        },
+        {
+          "input_tokens": 8839,
+          "output_tokens": 572,
+          "estimated_cost_usd": 0.00289615,
+          "reservation_id": "4527026e-b907-4907-9953-19ac4b3d851c"
+        }
+      ],
+      "manual_explanation_review": "satisfactory: explicitly limits intense inhalation while fasting"
+    }
+  ],
+  "started_at": "2026-10-04T21:11:38.178Z",
+  "completed_at": "2026-10-04T21:11:51.698Z",
+  "final_development_sar": 29.628617249999984,
+  "original_first_pass_unchanged": true,
+  "settled_sar": 0.014660062500000003
+}

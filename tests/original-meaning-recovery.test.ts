@@ -105,13 +105,15 @@ it.each([[true,'reversed'],[false,'reversed'],[true,'qualification_disagreement'
  }
  const assess=vi.spyOn(provider,'assessClaim').mockResolvedValueOnce({assessment:first,model:'gpt-5.6-luna',usage:null}).mockResolvedValueOnce({assessment:reversed,model:'gpt-5.6-terra',usage:null});
  const check=vi.spyOn(provider,'reviewPositiveEntailment').mockImplementation(async (_claim,a,cards)=>{
-   const accepted=a===first?acceptsFirst:a.atomic_claims[0].text===first.atomic_claims[0].text&&acceptsFirst;
+   const accepted=a.atomic_claims[0].relation==='contradicts'&&a.atomic_claims[0].qualifications_preserved&&acceptsFirst;
    return {model:'fixture',usage:null,meaning_check:{model:'fixture',usage:null,review:{faithful:accepted?'yes':'no'}},review:{atoms:a.atomic_claims.map(x=>({atom_id:x.id,entails:accepted?'yes':'no',attribution_preserved:accepted,qualifications_preserved:accepted,evidence_id:accepted?x.evidence_ids[0]:null,context_locator:null,basis_quotation:accepted?cards.find(c=>c.evidence_id===x.evidence_ids[0])!.quotation:null}))}};
  });
  const r=await verifyClaim({claim:captured.original_claim,inputLanguage:'en',corpusSelection:'hadith',admittedTextual:true});
  expect(assess).toHaveBeenCalledTimes(2);expect(check).toHaveBeenCalledTimes(scenario==='reversed'?2:1);
  expect(r.verdict).toBe(acceptsFirst?'conflicting_within_selected_corpus':'not_evaluated');
  expect(r.assessment_attempts?.[1].raw_assessment).toEqual(reversed);
+ expect(r.source_review_attempts).toHaveLength(scenario==='reversed'?2:1);
+ expect(r.source_review_attempts?.[0].input_assessment).toMatchObject({atomic_claims:[{text:captured.original_claim}]});
  expect(r.meaning_review_attempts?.[0].review).toEqual({faithful:scenario==='reversed'||!acceptsFirst?'no':'yes'});
  expect(verifySeal(r)).toBe(true);
 });

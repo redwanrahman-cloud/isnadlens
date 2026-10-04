@@ -2,13 +2,55 @@ import {afterEach,expect,it,vi} from 'vitest';
 import {loadCorpus,sha256} from '../src/lib/corpus';
 import {loadHadith,retrieveHadith} from '../src/lib/hadith';
 import {retrieveWithPublishedEnglishAid,englishWords} from '../src/lib/retrieval';
-import {sourceDecisionInstructions} from '../src/lib/source-decision';
+import {sourceDecisionInstructions,preserveWholeQuestion} from '../src/lib/source-decision';
 import * as provider from '../src/lib/provider';
 import * as planner from '../src/lib/query-planner';
 import * as discovery from '../src/lib/web-discovery';
 import {verifyClaimWithRecovery,verifySeal} from '../src/lib/verification';
 import type {SemanticAssessment} from '../src/lib/contracts';
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllEnvs();});
+it('retains the entire original question without changing source relationships or raw assessments',async()=>{
+ const original='Does the source permit riding an animal that is unfit?';
+ const raw=incomplete('The source permits riding an unfit animal.');raw.all_material_claims_covered=true;
+ const before=structuredClone(raw),derived=preserveWholeQuestion(original,raw);
+ expect(raw).toEqual(before);expect(derived.atomic_claims[0]).toEqual({...before.atomic_claims[0],text:original});
+ expect(await provider.reviewOriginalMeaning(original,derived)).toEqual({model:'exact_original_input_identity',usage:null,review:{faithful:'yes'}});
+ expect(derived.atomic_claims[0].relation).toBe('unrelated');
+ const compound={...raw,atomic_claims:[...raw.atomic_claims,{...raw.atomic_claims[0],id:'b',text:'Another assertion'}]};
+ expect(preserveWholeQuestion(original,compound)).toBe(compound);
+});
+it('retrieves a fitness condition despite riding inflection and opposite-condition wording',()=>{
+ const c=loadHadith();
+ expect(retrieveHadith(c,'Does a hadith permit riding an animal even though the animal is not suitable for riding?','en',2).map(r=>r.id)).toContain('5935');
+ expect(englishWords('riding ridden rode ride unsuitable unfit suitable fit')).toEqual(['ride','ride','ride','ride','fit','fit','fit','fit']);
+});
+it('retrieves adjoining prayer and showing-off clauses inside the admitted context window',()=>{
+ const c=loadCorpus(),before=sha256(JSON.stringify(c.verses));
+ const hits=retrieveWithPublishedEnglishAid(c,'¿Elogia el Corán a quienes hacen la oración para presumir ante los demás?',4,['القرآن الصلاة رياء','Quran prayer showing off'],'Does the Quran praise those who perform prayer to show off before others?').verses;
+ expect(hits.some(v=>v.surah===107&&[4,5,6].includes(v.ayah))).toBe(true);
+ expect(sha256(JSON.stringify(c.verses))).toBe(before);
+});
+it('does not turn exact original-input preservation into a source-confirmation bypass',async()=>{
+ vi.spyOn(provider,'providerReady').mockReturnValue(true);
+ vi.spyOn(provider,'assessClaim').mockImplementation(async (_claim,_language,cards)=>{
+  const assessed=incomplete('A model-generated corrected answer.');assessed.all_material_claims_covered=true;
+  assessed.atomic_claims[0]={...assessed.atomic_claims[0],relation:'supports',evidence_ids:[cards[0].evidence_id],direct:true,context_fit:true};
+  return {model:'fixture',usage:null,assessment:assessed};
+ });
+ const source=vi.spyOn(provider,'reviewPositiveEntailment').mockImplementation(async (claim,a)=>{
+  expect(a.atomic_claims[0].text).toBe(claim);
+  return {model:'fixture',usage:null,meaning_check:{model:'exact_original_input_identity',usage:null,review:{faithful:'yes'}},review:{atoms:[{atom_id:'a',entails:'no',attribution_preserved:true,qualifications_preserved:true,evidence_id:null,context_locator:null,basis_quotation:null}]}};
+ });
+ const r=await verifyClaimWithRecovery({claim:'Does Quran 2:185 never mention Ramadan?',inputLanguage:'en',admittedTextual:true,corpusSelection:'quran'});
+ expect(source).toHaveBeenCalled();expect(r.verdict).not.toBe('supported_within_selected_corpus');expect(verifySeal(r)).toBe(true);
+ expect(r.assessment_attempts?.[0].raw_assessment).toMatchObject({atomic_claims:[{text:'A model-generated corrected answer.'}]});
+});
+it.each(["Is the sa'i between Safa and Marwah only three circuits?","Does the journey between Safa and Marwah have five rounds?","Are the rounds between Safa and Marwa only three?"])('retrieves the complete ritual narrative within two English cards: %s',claim=>{
+ const c=loadHadith(),before=sha256(JSON.stringify(c.records));
+ const hints=["sa'i between Safa Marwah","three circuits sa'i","seven circuits sa'i","number of sa'i circuits","counting sa'i circuits"];
+ expect(retrieveHadith(c,claim,'en',2,hints).map(r=>r.id)).toContain('3309');
+ expect(sha256(JSON.stringify(c.records))).toBe(before);
+});
 it('retrieves pregnancy maintenance within the real combined-source Quran allowance',()=>{
  const c=loadCorpus(),before=sha256(JSON.stringify(c.verses));
  const claim='هل يجب الإنفاق على المطلقة الحامل حتى تضع حملها؟';

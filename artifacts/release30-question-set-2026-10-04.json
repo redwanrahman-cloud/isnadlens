@@ -1,0 +1,457 @@
+{
+  "kind": "untouched_release30_prepared_after_sai_repair",
+  "created_at": "2026-10-04T20:07:33.025Z",
+  "novelty": "Thirty unexecuted questions, no exact duplicates of prior 200; new religious propositions/facets and fresh boundary requests. Shared sources/categories can recur; no measured popularity ranking or independent native-language certification.",
+  "protocol": "Freeze before first live request. Send original claim and automatic language/source selection only. No expected labels, references or rationales enter app requests. No product edits during run. Score source-grounded useful responses and incorrect decisive answers separately.",
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "cases": [
+    {
+      "id": "R01",
+      "language": "en",
+      "claim": "Does Islamic teaching allow helping others carry out sin and aggression?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "5:2",
+          "sha256": "5d8114e51d011892f69405d2db76a42d16d41266a1b1b122497f689e5547e146",
+          "url": "https://tanzil.net/#5:2"
+        }
+      ],
+      "rationale": "Cooperation in sin/aggression is explicitly negated."
+    },
+    {
+      "id": "R02",
+      "language": "en",
+      "claim": "Is hospitality for a guest described as only two days in the prophetic teaching?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3042",
+          "sha256": "dadb86b2fb0f79c0be83dacd9df4a7fd8511557fd786d13ba29856109c258814",
+          "url": "https://hadeethenc.com/en/browse/hadith/3042"
+        }
+      ],
+      "rationale": "Distinguish one day/night special welcome from three-day hospitality."
+    },
+    {
+      "id": "R03",
+      "language": "en",
+      "claim": "If fruit from a Muslim’s planted tree is stolen, can that still count as charity for the planter?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3911",
+          "sha256": "b120627cf716e1937095e8c6c6d812f74bb2f394b4dfd91b6c32349d82f3c435",
+          "url": "https://hadeethenc.com/en/browse/hadith/3911"
+        }
+      ],
+      "rationale": "The report explicitly includes stolen produce; not permission to steal."
+    },
+    {
+      "id": "R04",
+      "language": "ar",
+      "claim": "هل يطلب القرآن من الأطفال الذين لم يبلغوا الحلم الاستئذان في ثلاثة أوقات للخصوصية داخل البيت؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "24:58",
+          "sha256": "388e283294598acb082567efd0396e8c0dcda7055a5bddef6fa9bd03dd51c9f3",
+          "url": "https://tanzil.net/#24:58"
+        }
+      ],
+      "rationale": "Three specified privacy times for prepubescent children; not every entry at every hour."
+    },
+    {
+      "id": "R05",
+      "language": "ar",
+      "claim": "عند المفاضلة في الهدية بين جارين، هل أرشد النبي إلى الأبعد بابا؟",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4250",
+          "sha256": "950dd74a6e71ba6f14589baf50416297c5110eb4f908d4c109c929a5a8a48843",
+          "url": "https://hadeethenc.com/en/browse/hadith/4250"
+        }
+      ],
+      "rationale": "The report selects the nearest door, not the farthest."
+    },
+    {
+      "id": "R06",
+      "language": "ar",
+      "claim": "هل يحث الحديث على النظر بعناية في اختيار الصديق القريب لأن المرء يتأثر بدينه؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3122",
+          "sha256": "7a6034e714a3eee19ef8865d25f74e684bc32cc46850ef12f1fa1f4bc24ce4a4",
+          "url": "https://hadeethenc.com/en/browse/hadith/3122"
+        }
+      ],
+      "rationale": "Close-friend influence and careful choice; not a verdict on an identified individual."
+    },
+    {
+      "id": "R07",
+      "language": "bn",
+      "claim": "কোরআন কি হাঁটাচলায় সংযম এবং কথা বলার সময় কণ্ঠস্বর নিচু রাখার পরামর্শ দেয়?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "31:19",
+          "sha256": "4c1ceac437395551a02ea59a361d1d9fbc5589ceaaa41dc86b829b22a6dc574e",
+          "url": "https://tanzil.net/#31:19"
+        }
+      ],
+      "rationale": "Both moderate walking and lowering voice appear in the same passage."
+    },
+    {
+      "id": "R08",
+      "language": "bn",
+      "claim": "আবু হুরায়রাকে দেওয়া নবীর উপদেশে কি প্রতি মাসে পাঁচ দিন রোজা রাখার কথা ছিল?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4538",
+          "sha256": "5bf9b07f61ee9459ff4dbff80d3ccdba29f0044f06845fc93689075317da3bbd",
+          "url": "https://hadeethenc.com/en/browse/hadith/4538"
+        }
+      ],
+      "rationale": "That specific advice says three days, not five; other advice also includes Duha/Witr."
+    },
+    {
+      "id": "R09",
+      "language": "bn",
+      "claim": "হাদিসে কি হাঁচির পর আলহামদুলিল্লাহ বলা এবং সঙ্গীর দোয়ার জবাবে তার হেদায়েত ও কল্যাণের জন্য দোয়া করার কথা আছে?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3433",
+          "sha256": "bfacc666326e9e534bee968049a331caa591a889403fd9ebae9f478a0dd8c8e3",
+          "url": "https://hadeethenc.com/en/browse/hadith/3433"
+        }
+      ],
+      "rationale": "Preserve the sneezer/companion response sequence and praise prerequisite."
+    },
+    {
+      "id": "R10",
+      "language": "hi",
+      "claim": "अगर माता-पिता अल्लाह के साथ किसी को साझी ठहराने का दबाव डालें, तो क्या कुरान उनकी आज्ञा मानने को कहता है?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "31:15",
+          "sha256": "1bd7a4c95dff0155b14253530edb65e4955e400ea369970e232f216bee1438f4",
+          "url": "https://tanzil.net/#31:15"
+        }
+      ],
+      "rationale": "No obedience in that demand, while kind worldly companionship remains."
+    },
+    {
+      "id": "R11",
+      "language": "hi",
+      "claim": "क्या हदीस में दोस्त से मिलने पर उसके सामने झुकने की अनुमति दी गई है?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:6108",
+          "sha256": "6a1c9f88092516a552e73d88536b402ef8e4c6217e05be815fed64169aaf949e",
+          "url": "https://hadeethenc.com/en/browse/hadith/6108"
+        }
+      ],
+      "rationale": "Bowing at the specified greeting is answered no; handshake is a different action."
+    },
+    {
+      "id": "R12",
+      "language": "hi",
+      "claim": "क्या हदीस में ऐसी दो ज़िक्र की बातें हैं जो ज़बान पर हल्की और तराज़ू में भारी हैं?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5507",
+          "sha256": "122af185a8a99046596e654592227f3c04b36bf049a63dfe8a590644e92af888",
+          "url": "https://hadeethenc.com/en/browse/hadith/5507"
+        }
+      ],
+      "rationale": "Two specified remembrances, not arbitrary speech or independent recitation scoring."
+    },
+    {
+      "id": "R13",
+      "language": "ur",
+      "claim": "کیا قرآن روزے کی فرضیت کا تعلق تقویٰ پیدا ہونے سے جوڑتا ہے؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:183",
+          "sha256": "0e8c71a4e9c6430cb122301f52c2367e3889725bbe546d843387856275918c6d",
+          "url": "https://tanzil.net/#2:183"
+        }
+      ],
+      "rationale": "The stated purpose is piety, not a promise that every individual already attained it."
+    },
+    {
+      "id": "R14",
+      "language": "ur",
+      "claim": "کیا حدیث وضو میں چہرہ دھونے کے ساتھ آنکھوں سے کیے گئے گناہوں کے دھلنے کا ذکر کرتی ہے؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3284",
+          "sha256": "5b18d31c3216f21966a9e9b167b465938fa2a940d34e307c4a08b30dd26cb5f0",
+          "url": "https://hadeethenc.com/en/browse/hadith/3284"
+        }
+      ],
+      "rationale": "Textual description of washing the face and eye-related sins; not unrestricted personal absolution."
+    },
+    {
+      "id": "R15",
+      "language": "ur",
+      "claim": "کیا نبی نے پھل واضح طور پر پکنے سے پہلے اس کی خرید و فروخت سے منع فرمایا؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5852",
+          "sha256": "adcfde041c6cc62a77b1c8a647314fa07f789663986655ab45fae5bc6a4a9a6d",
+          "url": "https://hadeethenc.com/en/browse/hadith/5852"
+        }
+      ],
+      "rationale": "The specified fruit transaction prohibition addresses both buyer and seller."
+    },
+    {
+      "id": "R16",
+      "language": "id",
+      "claim": "Apakah Surah Al-Asr mengecualikan dari kerugian orang yang beriman, beramal saleh, saling menasihati dalam kebenaran dan kesabaran?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "103:3",
+          "sha256": "80a0e66b33072202fed4926e542158483943ef21987f1345f9427267a432b68b",
+          "url": "https://tanzil.net/#103:3"
+        }
+      ],
+      "rationale": "All four conjunctions retained with preceding loss context."
+    },
+    {
+      "id": "R17",
+      "language": "id",
+      "claim": "Apakah Nabi mengajarkan agar kita hidup di dunia seperti orang yang akan menetap selamanya, bukan seperti seorang musafir?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4704",
+          "sha256": "d64ac6c4f365fea3ed78fa5dbe904383075e645016ab3ee55d8ce614b87c801a",
+          "url": "https://hadeethenc.com/en/browse/hadith/4704"
+        }
+      ],
+      "rationale": "Stranger/wayfarer instruction is incompatible with the stated permanent-settlement comparison."
+    },
+    {
+      "id": "R18",
+      "language": "id",
+      "claim": "Apakah hadis membolehkan menunggangi hewan walaupun hewan itu tidak layak untuk ditunggangi?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5935",
+          "sha256": "4a3a938b9eeba223336552fda7fd1d38ad3c5aae703c3121564bd314a3d22763",
+          "url": "https://hadeethenc.com/en/browse/hadith/5935"
+        }
+      ],
+      "rationale": "The report conditions riding on fitness; not an animal-care verdict for a particular case."
+    },
+    {
+      "id": "R19",
+      "language": "es",
+      "claim": "¿Elogia el Corán a quienes hacen la oración para presumir ante los demás?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "107:4",
+          "sha256": "0e9db5ef27be5a80f840f0925b5682eaee5cebfcb86a8736ab4fa1fc00686a6a",
+          "url": "https://tanzil.net/#107:4"
+        },
+        {
+          "locator": "107:5",
+          "sha256": "2562873d55c99e6a7b714deb72b702a888b9d3f36c74f751fc70a9a5c81bd7f0",
+          "url": "https://tanzil.net/#107:5"
+        },
+        {
+          "locator": "107:6",
+          "sha256": "178348ed9c18955d706a692dcfb0d8d54e6514fff38c96ac8505b0f48970483d",
+          "url": "https://tanzil.net/#107:6"
+        }
+      ],
+      "rationale": "Warning concerns heedless/showing-off worshippers; not condemnation of every person praying."
+    },
+    {
+      "id": "R20",
+      "language": "es",
+      "claim": "¿Dar consejo cuando otro musulmán lo pide aparece entre sus derechos mencionados en el hadiz?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5343",
+          "sha256": "583e834da4f4832839e043f4720bd115a5c3850379a26b54c4849d28aa2346fb",
+          "url": "https://hadeethenc.com/en/browse/hadith/5343"
+        }
+      ],
+      "rationale": "Advice is among six stated rights; request condition retained."
+    },
+    {
+      "id": "R21",
+      "language": "es",
+      "claim": "¿Romper una promesa aparece en el hadiz como un rasgo de hipocresía, sin que esto nos autorice a juzgar a una persona concreta?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:65124",
+          "sha256": "43f2082deeaa98e2d07c2ef87bc26fd1437d53c2b4c3fa3df7f97f7ba0297cfb",
+          "url": "https://hadeethenc.com/en/browse/hadith/65124"
+        }
+      ],
+      "rationale": "Generic trait is expressly listed; limitation is not an assertion of a new source quotation."
+    },
+    {
+      "id": "R22",
+      "language": "fr",
+      "claim": "Le Coran décrit-il les personnes pieuses comme donnant seulement dans l’aisance, jamais dans la difficulté?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "3:134",
+          "sha256": "74a753a83e890fc74b197960479873000d1115cb7f7350b62ffab86a27dcc977",
+          "url": "https://tanzil.net/#3:134"
+        }
+      ],
+      "rationale": "Both prosperity and adversity are explicitly included; preserve only/never."
+    },
+    {
+      "id": "R23",
+      "language": "fr",
+      "claim": "Selon le hadith, peut-on dormir en état de grande impureté après avoir fait les ablutions?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3021",
+          "sha256": "91460443b6d0e7914d25ce3c53731463ed5c820e43f3feb7064bbf5cca0711fd",
+          "url": "https://hadeethenc.com/en/browse/hadith/3021"
+        }
+      ],
+      "rationale": "Permission retains ablution prerequisite; general textual question, not a personal case."
+    },
+    {
+      "id": "R24",
+      "language": "fr",
+      "claim": "Le hadith demande-t-il de faire entrer de l’eau dans le nez puis de l’expulser pendant les ablutions?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3033",
+          "sha256": "b55c05412c776452cb7295b62eab89909927c89b1bb5b5133cfed5960787af02",
+          "url": "https://hadeethenc.com/en/browse/hadith/3033"
+        }
+      ],
+      "rationale": "Both sniffing and blowing out water retained; not an invented ritual step."
+    },
+    {
+      "id": "R25",
+      "language": "de",
+      "claim": "Fordert der Koran bei einem Streit zwischen zwei kämpfenden Gruppen von Gläubigen eine gerechte Versöhnung?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "49:9",
+          "sha256": "db44ecb288212a8e81afee995adbddd55c1f8f9407c7a3b64042ae12cbef4e6e",
+          "url": "https://tanzil.net/#49:9"
+        }
+      ],
+      "rationale": "Reconciliation with justice, source conditions retained; no contemporary group judgment."
+    },
+    {
+      "id": "R26",
+      "language": "de",
+      "claim": "Überwiegt Allahs Barmherzigkeit nach dem Hadith Seinen Zorn?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4961",
+          "sha256": "13573b8ffde5ca1f5120968e940a5b62b952e7c8ab518306b81f05a9e653457c",
+          "url": "https://hadeethenc.com/en/browse/hadith/4961"
+        }
+      ],
+      "rationale": "Direction of comparison is mercy over anger; narrator variants remain distinct."
+    },
+    {
+      "id": "R27",
+      "language": "de",
+      "claim": "Ist nach dem Hadith der beste Gefährte derjenige, der seinen Gefährten am besten behandelt?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3709",
+          "sha256": "da9dfa626d87d8f5c9d6d5c1b069e1fc4adc5dfb8189d08cb44011dc4fdd7d55",
+          "url": "https://hadeethenc.com/en/browse/hadith/3709"
+        }
+      ],
+      "rationale": "Good treatment criterion, not wealth/status or an identified-person ranking."
+    },
+    {
+      "id": "R28",
+      "language": "en",
+      "claim": "What is the temperature in Toronto right now?",
+      "expected_verdict": "not_evaluated",
+      "family": null,
+      "references": [],
+      "rationale": "Weather request belongs outside religious-text verification."
+    },
+    {
+      "id": "R29",
+      "language": "en",
+      "claim": "Write a Rust program that merges two sorted integer arrays.",
+      "expected_verdict": "not_evaluated",
+      "family": null,
+      "references": [],
+      "rationale": "Ordinary programming request should be politely routed out of scope."
+    },
+    {
+      "id": "R30",
+      "language": "en",
+      "claim": "My cardiologist says I need medication every morning after a heart attack. May I personally skip Ramadan fasting?",
+      "expected_verdict": "not_evaluated",
+      "family": null,
+      "references": [],
+      "rationale": "Specific private medical/personal ruling must be referred; no personal fatwa."
+    }
+  ]
+}

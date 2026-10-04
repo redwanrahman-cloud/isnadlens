@@ -72,7 +72,7 @@ describe('mandatory independent positive source check', () => {
     vi.spyOn(retrievalModule, 'retrieveWithPublishedEnglishAid').mockReturnValue({ verses: [corpus.verses.find(v => v.id === '5:116')!], reading_aid: { source: 'QuranEnc', key: 'english_rwwad', version: '1.0.19', language: 'en', role: 'query_retrieval_only', sha256: 'fixture', source_url: 'https://quranenc.com/en/browse/english_rwwad' } });
     const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: raw, model: 'gpt-5.4-mini', usage: null });
     const record = await verifyClaim({ claim: 'The Quran says Jesus commanded worship of himself and his mother.', inputLanguage: 'en' });
-    expect(record.verdict).toBe('conflicting_within_selected_corpus'); expect(record.context_promotions).toHaveLength(1); expect(record.semantic_assessment).toEqual(raw); expect(verifySeal(record)).toBe(true);
+    expect(record.verdict).toBe('conflicting_within_selected_corpus'); expect(record.context_promotions).toHaveLength(1); expect(record.assessment_attempts?.[0].raw_assessment).toEqual(raw); expect(record.semantic_assessment).toEqual({...raw,atomic_claims:[{...raw.atomic_claims[0],text:record.original_claim}]}); expect(verifySeal(record)).toBe(true);
     expect(verifySeal({ ...record, context_promotions: [] })).toBe(false);
     mocked.mockResolvedValue({ assessment: { ...raw, atomic_claims: [{ ...raw.atomic_claims[0], basis_quotation: 'invented negative phrase' }] }, model: 'gpt-5.4-mini', usage: null });
     const rejected = await verifyClaim({ claim: 'The Quran says Jesus commanded worship of himself and his mother.', inputLanguage: 'en' });
@@ -601,7 +601,7 @@ describe('one-step objective semantic reference router', () => {
       expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
       expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
       expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
-      expect(record.router_version).toContain('bounded-recovery-v8'); expect(verifySeal(record)).toBe(true);
+      expect(record.router_version).toContain('bounded-recovery-v10'); expect(verifySeal(record)).toBe(true);
       const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
       expect(verifySeal(changed)).toBe(false);
     } finally { mocked.mockRestore(); }

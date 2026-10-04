@@ -3,6 +3,12 @@ export const meaningInstructions = 'Compare the PROPOSITION UNDER TEST in the or
 export function meaningPacket(claim: string, assertions: {id: string; text: string; material: boolean}[]) {
   return {original_claim: claim, propositions_under_test: assertions.filter(a => a.material).map(a => ({id: a.id, text: a.text}))};
 }
+/** A single proposition can be tested in its original question form. Never
+ * derive a new answer or modify any relation/qualification/source flag. */
+export function preserveWholeQuestion<T extends {atomic_claims:{text:string;material:boolean}[];in_scope:boolean;original_meaning_preserved:boolean}>(claim:string,assessment:T):T {
+  if(!assessment.in_scope||!assessment.original_meaning_preserved||assessment.atomic_claims.length!==1||!assessment.atomic_claims[0].material)return assessment;
+  return {...assessment,atomic_claims:[{...assessment.atomic_claims[0],text:claim}]};
+}
 
 /** Reject only a near-identical proposition with an explicit polarity flip.
  * This cannot confirm semantic equivalence or a religious verdict. */
@@ -34,6 +40,7 @@ export function sourceDecisionInstructions(mode: 'support' | 'decision'): string
     : 'SUPPORT MODE: Confirm direct source support for the original proposition. Only proposed_relation=supports can receive entails=yes. A related topic, different action or incomplete condition is not direct support.';
   return task + '\n' + [
     'First independently compare each assertion to the ORIGINAL user input. For a question, preserve the proposition being asked, not the fact that the user asked it. Read both languages faithfully. If an assertion reverses or silently corrects the user proposition, return entails=no even when it matches the source or yields the right final answer.',
+    'An assertion may retain the whole original question verbatim. Test the proposition inside that question, including every material clause of a conjunction. One atom is not necessarily one simple clause; partial coverage cannot establish complete support. Source support does not mean merely that the source can answer it: if the question asks whether the sky is green and the source explicitly says blue, supports must receive no; contradicts can receive yes in decision mode. Exact input identity confirms preservation only, never truth or source agreement.',
     'Preserve action, object, speaker attribution, negation, exchanged numbers, direction, only/always qualifiers and material conditions. attribution_preserved and qualifications_preserved concern faithful comparison, not agreement between user and source. Never set them false merely because the source disagrees with a faithfully represented assertion.',
     'Use ONLY that assertion\'s cited immutable source units. Primary and supplied context units are equally eligible. One complete proving unit suffices; unrelated units cannot veto it. Direct Quran coverage does not require Hadith corroboration. Do not merge texts, infer abrogation or reconcile genuinely competing interpretations from memory.',
     'An ordinary general-rule assertion does not mean always without exceptions. Retain source-stated exceptions; reject a genuinely universal assertion that excludes them. Do not invent exceptions or detach a limiting condition from its prerequisite.',

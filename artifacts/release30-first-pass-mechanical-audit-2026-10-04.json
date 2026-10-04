@@ -1,0 +1,343 @@
+{
+  "kind": "untouched_release30_mechanical_audit_not_scholarly_certification",
+  "total": 30,
+  "answer_label_matches": 26,
+  "wrong_decisive_answer_labels": 0,
+  "abstentions": 7,
+  "source_and_seal_checks_passed": 30,
+  "run_settled_sar": 2.0755661249999995,
+  "development_sar": 29.14944318749999,
+  "development_cap_sar": 33,
+  "cases": [
+    {
+      "id": "R01",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "R02",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "R03",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R04",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R05",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ]
+    },
+    {
+      "id": "R06",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R07",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R08",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "R09",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R10",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "R11",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "R12",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R13",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R14",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R15",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R16",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R17",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "R18",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R19",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R20",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R21",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R22",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "R23",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R24",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R25",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R26",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R27",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "R28",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ]
+    },
+    {
+      "id": "R29",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ]
+    },
+    {
+      "id": "R30",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "PRIVATE_OR_SENSITIVE_FACTS_REFERRAL"
+      ]
+    }
+  ]
+}

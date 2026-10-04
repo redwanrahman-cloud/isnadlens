@@ -1,0 +1,61 @@
+{
+  "kind": "known_failure_repair_checks_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "e0f73dd44ce017cffc9b9c0c8b23d9df41f8b6fc3993ac8acaddefa300107998",
+    "build": "sf_GPbD8XGzipScv5yBwt",
+    "original_first_pass_sha256": "133a94b7bf61c84151ddbfe1eaef5f24c881d9f7b290f5667e2b1b1c7cc95084"
+  },
+  "cases": [
+    {
+      "id": "R24",
+      "claim": "Le hadith demande-t-il de faire entrer de l’eau dans le nez puis de l’expulser pendant les ablutions?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. The selected source collection directly supports that the hadiths describe drawing water into the nose and expelling it during ablution. One supplied report mentions an exception for a person who is fasting; this is a corpus-bounded textual assessment, not a comprehensive legal ruling.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن إدخال الماء في الأنف ثم إخراجه من أعمال الوضوء المذكورة في الأحاديث. ويذكر أحد المصادر استثناء الصائم، كما يصف مصدر آخر فعل النبي ﷺ أثناء الوضوء؛ وهذا تقييم للنصوص المحددة وليس حكمًا فقهيًا شاملًا.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "en:8381",
+        "en:8378",
+        "en:3033",
+        "en:3313",
+        "ar:6263",
+        "ar:66392",
+        "ar:5433",
+        "ar:3730"
+      ],
+      "usage": [
+        {
+          "input_tokens": 733,
+          "output_tokens": 178,
+          "estimated_cost_usd": 0.00039685,
+          "reservation_id": "b8cce93c-3ca7-40b1-a10f-fc76a342a6f1"
+        },
+        {
+          "input_tokens": 2163,
+          "output_tokens": 144,
+          "estimated_cost_usd": 0.00071355,
+          "reservation_id": "160940c1-caf0-432e-998a-03edd580afd8"
+        },
+        {
+          "input_tokens": 7708,
+          "output_tokens": 592,
+          "estimated_cost_usd": 0.0026374000000000002,
+          "reservation_id": "4d6bba62-4a36-40bb-b624-2a5ec3b147bf"
+        }
+      ],
+      "manual_explanation_review": "unsatisfactory: second vague phrase exposed lexical trigger gap"
+    }
+  ],
+  "started_at": "2026-10-04T21:09:47.620Z",
+  "completed_at": "2026-10-04T21:10:02.603Z",
+  "final_development_sar": 29.613957187499985,
+  "original_first_pass_unchanged": true,
+  "settled_sar": 0.01405425
+}

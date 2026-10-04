@@ -98,6 +98,7 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   // English derived tokens handle inflection and ordinary paraphrases, while
   // the retained publisher strings remain the authenticated quotation bytes.
   const englishSets = new Map(language === 'en' ? selected.map(record => [record, {text:new Set(englishWords(record.fields.hadith_text??'')),title:new Set(englishWords(record.fields.title??''))}] as const) : []);
+  const originalConcepts=[...new Set(englishWords(query))].filter(t=>!boilerplate.has(t));
   const matches = (record: HadithRecord, index:number, title=false) => language==='en' ? Boolean(englishSets.get(record)?.[title?'title':'text'].has(terms[index])) : patterns[index].test(record.fields[title?'title':'hadith_text']??'');
   const weights = patterns.map((pattern,index) => {
     const frequency = selected.filter(record => matches(record,index) || matches(record,index,true)).length;
@@ -106,7 +107,8 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   return selected.map(record => {
     // Publisher title/text remain unchanged. Explanations are not promoted into primary quotation support.
     const title = record.fields.title ?? ''; const text = record.fields.hadith_text ?? '';
-    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((matches(record,index) ? lengthWeight(record,'text') : 0) + (matches(record,index,true) ? .5 * lengthWeight(record,'title') : 0)), 0);
+    const originalCoverage=language==='en'&&originalConcepts.length?originalConcepts.filter(t=>englishSets.get(record)?.text.has(t)||englishSets.get(record)?.title.has(t)).length/originalConcepts.length:0;
+    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((matches(record,index) ? lengthWeight(record,'text') : 0) + (matches(record,index,true) ? .5 * lengthWeight(record,'title') : 0)), 0) + 12*originalCoverage**2;
     return { record, score };
   }).filter(hit => hit.score > 0).sort((a, b) => b.score - a.score || Number(a.record.id) - Number(b.record.id)).slice(0, limit).map(hit => hit.record);
 }

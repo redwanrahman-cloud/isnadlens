@@ -1,0 +1,48 @@
+{
+  "kind": "known_sai_retrieval_and_answer_smoke_not_holdout",
+  "freeze": {
+    "application_tree_sha256": "7526308a8e2fe1dead872023c389c3865181445957ddf09d00da608b28f981bc",
+    "build": "0hmOJwQ7tXcG5bcYywEgH"
+  },
+  "claim": "کیا صفا اور مروہ کے درمیان سعی صرف تین چکر ہے؟",
+  "verdict": "conflicting_within_selected_corpus",
+  "summary": "The claim that Sa‘i between Safa and Marwah consists of only three rounds is contradicted by the supplied hadith card en:3309, which describes seven rounds. Quran 2:158 in the selected source collection establishes Safa and Marwah as ritual landmarks but does not state the number of rounds.",
+  "reasons": [
+    "DIRECT_MATERIAL_CONTRADICTION"
+  ],
+  "relevant_narrative_retrieved": true,
+  "seal_valid": true,
+  "usage": [
+    {
+      "input_tokens": 725,
+      "output_tokens": 163,
+      "estimated_cost_usd": 0.00037685,
+      "reservation_id": "e790f34a-c336-411a-8af3-dbf5adf78231"
+    },
+    {
+      "input_tokens": 368,
+      "output_tokens": 16,
+      "estimated_cost_usd": 0.001112,
+      "reservation_id": "51899c32-a0ea-4a82-bc4d-b72372636931"
+    },
+    {
+      "input_tokens": 8984,
+      "output_tokens": 504,
+      "estimated_cost_usd": 0.0028508,
+      "reservation_id": "9bc22f07-2cf5-4f3d-8e78-bb827bf3165a"
+    },
+    {
+      "input_tokens": 8984,
+      "output_tokens": 616,
+      "estimated_cost_usd": 0.029852,
+      "reservation_id": "1c1b31ee-1e3e-424a-9856-9067ea1f1d40"
+    },
+    {
+      "input_tokens": 1359,
+      "output_tokens": 67,
+      "estimated_cost_usd": 0.0042015,
+      "reservation_id": "794ca152-fb47-4e46-819b-a6e7de443d92"
+    }
+  ],
+  "passed": true
+}

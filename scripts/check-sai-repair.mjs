@@ -1,0 +1,16 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {hash,applicationTreeHash} from './holdout-protocol.mjs';
+import {evaluationUsage} from './lib/evaluation-usage.mjs';
+if(!process.argv.includes('--live'))throw new Error('LIVE_FLAG_REQUIRED');
+const offline=JSON.parse(await readFile('artifacts/offline-sai-release30-2026-10-04.json','utf8'));
+if(offline.failures.length||!offline.budget_unchanged)throw new Error('OFFLINE_GATE_FAILED');
+const cases=JSON.parse(await readFile('artifacts/web50-question-set-2026-10-04.json','utf8')).cases;
+const claim=cases.find(c=>c.id==='T45').claim;
+const freeze={application_tree_sha256:await applicationTreeHash(),build:(await readFile('.next/BUILD_ID','utf8')).trim()};
+const response=await fetch('http://127.0.0.1:3100/api/verify',{method:'POST',headers:{'Content-Type':'application/json','x-real-ip':'sai-repair-pre-release30'},body:JSON.stringify({claim,inputLanguage:'auto',corpusSelection:'auto'}),signal:AbortSignal.timeout(240000)});
+const r=await response.json();await writeFile('artifacts/private/sai-repair-live-smoke.json',JSON.stringify(r,null,2),{flag:'wx'});
+const {audit_hash,...payload}=r;
+const report={kind:'known_sai_retrieval_and_answer_smoke_not_holdout',freeze,claim,verdict:r.verdict,summary:r.summary_en,reasons:r.reason_codes,relevant_narrative_retrieved:r.evidence_items.some(e=>['en:3309','ar:3309'].includes(e.locator)),seal_valid:audit_hash===hash(JSON.stringify(payload)),usage:evaluationUsage(r)};
+report.passed=report.relevant_narrative_retrieved&&report.seal_valid&&r.verdict==='conflicting_within_selected_corpus';
+await writeFile('artifacts/sai-repair-live-smoke-2026-10-04.json',JSON.stringify(report,null,2),{flag:'wx'});console.log(JSON.stringify(report));
+if(!report.passed)process.exitCode=1;

@@ -14,13 +14,14 @@ export function englishWords(text: string): string[] {
   const latinFolded = text.replace(/\p{Script=Latin}/gu, char=>char.normalize('NFD').replace(/\p{M}/gu,''));
   return normalizeQuery(latinFolded).split(' ').filter(word => /^[a-z]{3,}$/.test(word) && !englishStop.has(word)).map(word => {
     const synonyms: Record<string,string> = {maintain:'support',maintenance:'support',childbirth:'birth',deliver:'birth',delivery:'birth',pregnancy:'pregnant',divorcee:'divorce',divorced:'divorce',known:'know',home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything',enslaved:'slave',slaves:'slave',strength:'strong',angry:'anger'};
-    const irregular:Record<string,string>={saw:'see',seen:'see',children:'child',men:'man',women:'woman',feet:'foot',took:'take',taken:'take',gave:'give',given:'give',ate:'eat',eaten:'eat',drank:'drink',drunk:'drink'};
+    const irregular:Record<string,string>={ride:'ride',riding:'ride',ridden:'ride',rode:'ride',unfit:'fit',unsuitable:'fit',suitable:'fit',saw:'see',seen:'see',children:'child',men:'man',women:'woman',feet:'foot',took:'take',taken:'take',gave:'give',given:'give',ate:'eat',eaten:'eat',drank:'drink',drunk:'drink'};
+    if (['pray','prays','prayer','prayers','praying'].includes(word)) return 'prayer';
     if (irregular[word]) return irregular[word];
     if (synonyms[word]) return synonyms[word];
     return word.replace(/ying$/, 'y').replace(/ies$/, 'y').replace(/([a-z])\1ing$/, '$1').replace(/ing$/, '').replace(/ed$/, '').replace(/ly$/, '').replace(/(?<!s)s$/, '');
   }).filter(word => word.length >= 3);
 }
-type EnglishIndex = {rows: {id:string;words:Set<string>}[];frequency:Map<string,number>};
+type EnglishIndex = {rows: {id:string;words:Set<string>;context:Set<string>}[];frequency:Map<string,number>};
 const englishIndices = new WeakMap<object, EnglishIndex>();
 export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: string, limit = 8, additionalQueries: readonly string[] = [], englishSearchClaim = originalClaim): {verses:Verse[];reading_aid:QuranReadingAid} {
   // Admission is checked on every call before the derived cache is consulted.
@@ -29,7 +30,13 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   if (!edition || edition.metadata.key !== 'english_rwwad') throw new Error('QURAN_ENGLISH_READING_AID_UNAVAILABLE');
   let index = englishIndices.get(edition);
   if (!index) {
-    const rows = edition.records.map(row => ({id:`${row.sura}:${row.aya}`,words:new Set(englishWords(row.translation))}));
+    const primary=edition.records.map(row=>({id:`${row.sura}:${row.aya}`,words:new Set(englishWords(row.translation))}));
+    const byId=new Map(primary.map(row=>[row.id,row.words]));
+    const rows=primary.map(row=>{
+      const [surah,ayah]=row.id.split(':').map(Number);
+      const context=new Set([-2,-1,0,1,2].flatMap(offset=>[...(byId.get(`${surah}:${ayah+offset}`)??[])]));
+      return {...row,context};
+    });
     const frequency = new Map<string,number>();
     for (const row of rows) for (const word of row.words) frequency.set(word,(frequency.get(word)??0)+1);
     index = {rows,frequency}; englishIndices.set(edition,index);
@@ -37,15 +44,17 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   // The server routing gloss is a retrieval aid only. Native text still controls
   // original references, safety checks and the final model assessment.
   const originalWords = [...new Set(englishWords(englishSearchClaim))];
+  const routedSearch=englishSearchClaim!==originalClaim;
+  const contextSearch=englishWords(originalClaim).join(' ')!==englishWords(englishSearchClaim).join(' ');
   const hints = additionalQueries.slice(0,20).filter(value => typeof value==='string' && value.length<=160);
   const hintedWords = [...new Set(hints.flatMap(hint=>englishWords(queryTerms(hint).join(' '))))].slice(0,48);
   const primaryWords = originalWords.length ? originalWords : hintedWords;
   const secondaryWords = originalWords.length ? hintedWords.filter(word=>!originalWords.includes(word)) : [];
   const score = (words:Set<string>, queries:string[]) => queries.reduce((total,word)=>total+(words.has(word)?Math.log(1+index!.rows.length/(index!.frequency.get(word)??index!.rows.length)):0),0);
-  const englishScores = new Map(index.rows.map(row=>[row.id,score(row.words,primaryWords)+.15*score(row.words,secondaryWords)]));
+  const englishScores = new Map(index.rows.map(row=>[row.id,Math.max(score(row.words,primaryWords),contextSearch?.65*score(row.context,primaryWords):0)+.15*score(row.words,secondaryWords)]));
   // Reward joint coverage of the original question's concepts, rather than
   // letting an Arabic rank for one incidental word dominate a routed question.
-  const conceptCoverage = new Map(index.rows.map(row=>[row.id,primaryWords.filter(word=>row.words.has(word)).length/Math.max(1,primaryWords.length)]));
+  const conceptCoverage = new Map(index.rows.map(row=>[row.id,Math.max(primaryWords.filter(word=>row.words.has(word)).length,contextSearch?.75*primaryWords.filter(word=>row.context.has(word)).length:0)/Math.max(1,primaryWords.length)]));
   // A known original subject can be expressed differently by the translation
   // (e.g. an ordinary English noun versus its formal synonym). Preserve its
   // Arabic/English dictionary matches ahead of incidental question qualifiers.
@@ -63,7 +72,7 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   const phrases = hints.map(normalizeQuery).filter(s=>/\p{Script=Arabic}/u.test(s)&&s.split(' ').length>=3);
   const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + .06*(conceptCoverage.get(verse.id)??0) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
   const verses = corpus.verses.filter(verse=>explicit.has(verse.id)||(englishScores.get(verse.id)??0)>0||lexicalRanks.has(verse.id))
-    .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || (englishSearchClaim===originalClaim ? Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) : rankScore(b)-rankScore(a)) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
+    .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || (!routedSearch ? Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) : rankScore(b)-rankScore(a)) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
   const pin=getQuranTranslationAdmission().sources.find(source=>source.key==='english_rwwad');
   if(!pin) throw new Error('QURAN_ENGLISH_READING_AID_PIN_MISSING');
   return {verses,reading_aid:{source:'QuranEnc',key:'english_rwwad',version:edition.metadata.version,language:'en',role:'query_retrieval_only',sha256:pin.json_sha256,source_url:'https://quranenc.com/en/browse/english_rwwad'}};

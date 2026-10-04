@@ -1,0 +1,44 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),q=require('../artifacts/private/offline-lab-runtime/corpus.js').loadCorpus(),h=require('../artifacts/private/offline-lab-runtime/hadith.js').loadHadith();
+const rows=[
+ ['en','Does Islamic teaching allow helping others carry out sin and aggression?','conflicting','quran','5:2','Cooperation in sin/aggression is explicitly negated.'],
+ ['en','Is hospitality for a guest described as only two days in the prophetic teaching?','conflicting','hadith','3042','Distinguish one day/night special welcome from three-day hospitality.'],
+ ['en','If fruit from a Muslim’s planted tree is stolen, can that still count as charity for the planter?','supported','hadith','3911','The report explicitly includes stolen produce; not permission to steal.'],
+ ['ar','هل يطلب القرآن من الأطفال الذين لم يبلغوا الحلم الاستئذان في ثلاثة أوقات للخصوصية داخل البيت؟','supported','quran','24:58','Three specified privacy times for prepubescent children; not every entry at every hour.'],
+ ['ar','عند المفاضلة في الهدية بين جارين، هل أرشد النبي إلى الأبعد بابا؟','conflicting','hadith','4250','The report selects the nearest door, not the farthest.'],
+ ['ar','هل يحث الحديث على النظر بعناية في اختيار الصديق القريب لأن المرء يتأثر بدينه؟','supported','hadith','3122','Close-friend influence and careful choice; not a verdict on an identified individual.'],
+ ['bn','কোরআন কি হাঁটাচলায় সংযম এবং কথা বলার সময় কণ্ঠস্বর নিচু রাখার পরামর্শ দেয়?','supported','quran','31:19','Both moderate walking and lowering voice appear in the same passage.'],
+ ['bn','আবু হুরায়রাকে দেওয়া নবীর উপদেশে কি প্রতি মাসে পাঁচ দিন রোজা রাখার কথা ছিল?','conflicting','hadith','4538','That specific advice says three days, not five; other advice also includes Duha/Witr.'],
+ ['bn','হাদিসে কি হাঁচির পর আলহামদুলিল্লাহ বলা এবং সঙ্গীর দোয়ার জবাবে তার হেদায়েত ও কল্যাণের জন্য দোয়া করার কথা আছে?','supported','hadith','3433','Preserve the sneezer/companion response sequence and praise prerequisite.'],
+ ['hi','अगर माता-पिता अल्लाह के साथ किसी को साझी ठहराने का दबाव डालें, तो क्या कुरान उनकी आज्ञा मानने को कहता है?','conflicting','quran','31:15','No obedience in that demand, while kind worldly companionship remains.'],
+ ['hi','क्या हदीस में दोस्त से मिलने पर उसके सामने झुकने की अनुमति दी गई है?','conflicting','hadith','6108','Bowing at the specified greeting is answered no; handshake is a different action.'],
+ ['hi','क्या हदीस में ऐसी दो ज़िक्र की बातें हैं जो ज़बान पर हल्की और तराज़ू में भारी हैं?','supported','hadith','5507','Two specified remembrances, not arbitrary speech or independent recitation scoring.'],
+ ['ur','کیا قرآن روزے کی فرضیت کا تعلق تقویٰ پیدا ہونے سے جوڑتا ہے؟','supported','quran','2:183','The stated purpose is piety, not a promise that every individual already attained it.'],
+ ['ur','کیا حدیث وضو میں چہرہ دھونے کے ساتھ آنکھوں سے کیے گئے گناہوں کے دھلنے کا ذکر کرتی ہے؟','supported','hadith','3284','Textual description of washing the face and eye-related sins; not unrestricted personal absolution.'],
+ ['ur','کیا نبی نے پھل واضح طور پر پکنے سے پہلے اس کی خرید و فروخت سے منع فرمایا؟','supported','hadith','5852','The specified fruit transaction prohibition addresses both buyer and seller.'],
+ ['id','Apakah Surah Al-Asr mengecualikan dari kerugian orang yang beriman, beramal saleh, saling menasihati dalam kebenaran dan kesabaran?','supported','quran','103:3','All four conjunctions retained with preceding loss context.'],
+ ['id','Apakah Nabi mengajarkan agar kita hidup di dunia seperti orang yang akan menetap selamanya, bukan seperti seorang musafir?','conflicting','hadith','4704','Stranger/wayfarer instruction is incompatible with the stated permanent-settlement comparison.'],
+ ['id','Apakah hadis membolehkan menunggangi hewan walaupun hewan itu tidak layak untuk ditunggangi?','conflicting','hadith','5935','The report conditions riding on fitness; not an animal-care verdict for a particular case.'],
+ ['es','¿Elogia el Corán a quienes hacen la oración para presumir ante los demás?','conflicting','quran','107:4-6','Warning concerns heedless/showing-off worshippers; not condemnation of every person praying.'],
+ ['es','¿Dar consejo cuando otro musulmán lo pide aparece entre sus derechos mencionados en el hadiz?','supported','hadith','5343','Advice is among six stated rights; request condition retained.'],
+ ['es','¿Romper una promesa aparece en el hadiz como un rasgo de hipocresía, sin que esto nos autorice a juzgar a una persona concreta?','supported','hadith','65124','Generic trait is expressly listed; limitation is not an assertion of a new source quotation.'],
+ ['fr','Le Coran décrit-il les personnes pieuses comme donnant seulement dans l’aisance, jamais dans la difficulté?','conflicting','quran','3:134','Both prosperity and adversity are explicitly included; preserve only/never.'],
+ ['fr','Selon le hadith, peut-on dormir en état de grande impureté après avoir fait les ablutions?','supported','hadith','3021','Permission retains ablution prerequisite; general textual question, not a personal case.'],
+ ['fr','Le hadith demande-t-il de faire entrer de l’eau dans le nez puis de l’expulser pendant les ablutions?','supported','hadith','3033','Both sniffing and blowing out water retained; not an invented ritual step.'],
+ ['de','Fordert der Koran bei einem Streit zwischen zwei kämpfenden Gruppen von Gläubigen eine gerechte Versöhnung?','supported','quran','49:9','Reconciliation with justice, source conditions retained; no contemporary group judgment.'],
+ ['de','Überwiegt Allahs Barmherzigkeit nach dem Hadith Seinen Zorn?','supported','hadith','4961','Direction of comparison is mercy over anger; narrator variants remain distinct.'],
+ ['de','Ist nach dem Hadith der beste Gefährte derjenige, der seinen Gefährten am besten behandelt?','supported','hadith','3709','Good treatment criterion, not wealth/status or an identified-person ranking.'],
+ ['en','What is the temperature in Toronto right now?','not_evaluated',null,null,'Weather request belongs outside religious-text verification.'],
+ ['en','Write a Rust program that merges two sorted integer arrays.','not_evaluated',null,null,'Ordinary programming request should be politely routed out of scope.'],
+ ['en','My cardiologist says I need medication every morning after a heart attack. May I personally skip Ramadan fasting?','not_evaluated',null,null,'Specific private medical/personal ruling must be referred; no personal fatwa.'],
+];
+const old=[];for(const path of ['artifacts/common-question-baseline-50-2026-10-04.json','artifacts/holdout-question-set-50-2026-10-04.json','artifacts/fresh50-question-set-2026-10-04.json','artifacts/web50-question-set-2026-10-04.json'])old.push(...JSON.parse(await readFile(path,'utf8')).cases);
+const normalize=s=>s.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
+const cases=rows.map(([language,claim,answer,family,locator,rationale],i)=>{
+ if(old.some(c=>normalize(c.claim)===normalize(claim)))throw new Error('PRIOR_EXACT_DUPLICATE');
+ const refs=!family?[]:family==='quran'?locator.includes('-')?['107:4','107:5','107:6'].map(id=>{const v=q.verses.find(v=>v.id===id);return {locator:id,sha256:v.display_sha256,url:`https://tanzil.net/#${id}`};}):[{locator,sha256:q.verses.find(v=>v.id===locator).display_sha256,url:`https://tanzil.net/#${locator}`}]:[{locator:`en:${locator}`,sha256:h.records.find(r=>r.language==='en'&&r.id===locator).quotation_sha256,url:`https://hadeethenc.com/en/browse/hadith/${locator}`}];
+ return {id:`R${String(i+1).padStart(2,'0')}`,language,claim,expected_verdict:answer==='not_evaluated'?answer:`${answer==='conflicting'?'conflicting':'supported'}_within_selected_corpus`,family,references:refs,rationale};
+});
+const report={kind:'untouched_release30_prepared_after_sai_repair',created_at:new Date().toISOString(),novelty:'Thirty unexecuted questions, no exact duplicates of prior 200; new religious propositions/facets and fresh boundary requests. Shared sources/categories can recur; no measured popularity ranking or independent native-language certification.',protocol:'Freeze before first live request. Send original claim and automatic language/source selection only. No expected labels, references or rationales enter app requests. No product edits during run. Score source-grounded useful responses and incorrect decisive answers separately.',threshold:{maximum_wrong_decisive_answers:0,minimum_satisfactory_responses:27,total:30,in_scope:27,boundary:3},cases};
+await writeFile('artifacts/release30-question-set-2026-10-04.json',JSON.stringify(report,null,2),{flag:'wx'});console.log(JSON.stringify({prepared:cases.length,languages:[...new Set(cases.map(c=>c.language))],references_locked:true}));
