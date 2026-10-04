@@ -1,0 +1,28 @@
+{
+  "schema_version": "1",
+  "admitted_at": "2026-10-04",
+  "manifest_id": "tanzil-1.1-2026-10-04",
+  "version": "1.1",
+  "corpus_sha256": "b38d2ff661bd43dc3d57194cf10427856e2423594541f48c46b1f20e826e1dad",
+  "verse_count": 6236,
+  "surah_count": 114,
+  "sources": [
+    {
+      "id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "type": "uthmani",
+      "version": "1.1",
+      "raw_sha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+      "url": "https://tanzil.net",
+      "licence_url": "https://tanzil.net/docs/Text_License"
+    },
+    {
+      "id": "QURAN-AR-TANZIL-SIMPLE-CLEAN-V1.1",
+      "type": "simple-clean",
+      "version": "1.1",
+      "raw_sha256": "228df2a717671aeb9d2ff573002bd28d6b3f973f4bc7153554e3a81663d67610",
+      "url": "https://tanzil.net",
+      "licence_url": "https://tanzil.net/docs/Text_License"
+    }
+  ],
+  "provenance": "docs/source-rights/tanzil-acquisition.json"
+}

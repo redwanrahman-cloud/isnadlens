@@ -6,3 +6,4 @@ data/raw/
 data/corpus.json
 artifacts/private/
 *.log
+*.tsbuildinfo
