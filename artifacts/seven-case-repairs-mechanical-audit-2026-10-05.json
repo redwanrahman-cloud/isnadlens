@@ -1,0 +1,97 @@
+{
+  "kind": "known_seven_case_repair_mechanical_audit_not_fresh_accuracy",
+  "total": 7,
+  "answer_label_matches": 7,
+  "wrong_decisive_answer_labels": 0,
+  "abstentions": 0,
+  "source_and_seal_checks_passed": 7,
+  "run_settled_sar": 1.239979125,
+  "development_sar": 37.07148693750004,
+  "development_cap_sar": 39,
+  "cases": [
+    {
+      "id": "W03",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "W17",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "W21",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "W24",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "W25",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "W26",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "W27",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    }
+  ]
+}

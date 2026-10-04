@@ -1,0 +1,66 @@
+{
+  "threshold": {
+    "total": 1,
+    "minimum_satisfactory_responses": 1
+  },
+  "kind": "known_natural_contrast_check_not_fresh_accuracy",
+  "freeze": {
+    "application_tree_sha256": "5118ffc539d2fcc78a588d0083bd8f2f72a7cfc3f3368998e91a42addfb56270",
+    "dataset_sha256": "452ff72fd225546e3eb978ecef7788e6544e1b3062a5e7462b8e1eeabfd6e531",
+    "build": "SVEvOLRtbYnGREzY_lq7L",
+    "development_cap_sar": 39
+  },
+  "started_at": "2026-10-04T23:36:46.250Z",
+  "starting_development_sar": 37.07148693750004,
+  "cases": [
+    {
+      "id": "W05",
+      "claim": "هل يقول القرآن إن مع العسر يسرا، بدلا من أن يقرر أن كل الحياة خالية من الصعوبة؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The supplied Quran passages support that ease accompanies hardship, rather than presenting all of life as free from difficulty. This assessment is limited to the selected source collection and the passages provided.",
+      "summary_ar": "نعم، تدعم الآيتان 94:5–6 أن القرآن يقرر اقتران اليسر بالعسر، ولا تعرضان الحياة كلها بوصفها خالية من الصعوبة. وهذا التقييم مستند إلى مجموعة المصادر المحددة، مع بقاء حدوده ضمن النصوص المقدمة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "94:5",
+        "94:6",
+        "4:94",
+        "6:130",
+        "43:32",
+        "94:7",
+        "2:179",
+        "2:185"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 870,
+          "output_tokens": 155,
+          "estimated_cost_usd": 0.0004035,
+          "reservation_id": "9090c676-7774-480a-89bb-1cdd3b7b2e42"
+        },
+        {
+          "input_tokens": 10516,
+          "output_tokens": 100,
+          "estimated_cost_usd": 0.02749,
+          "reservation_id": "6365714f-f537-41a4-9c28-aa09175f9353"
+        },
+        {
+          "input_tokens": 9778,
+          "output_tokens": 691,
+          "estimated_cost_usd": 0.0032736999999999996,
+          "reservation_id": "175b713e-ca22-4d13-8aae-42253f2e6d80"
+        }
+      ],
+      "review": "pending"
+    }
+  ],
+  "completed_at": "2026-10-04T23:36:58.713Z",
+  "final_development_sar": 37.188363937500036
+}

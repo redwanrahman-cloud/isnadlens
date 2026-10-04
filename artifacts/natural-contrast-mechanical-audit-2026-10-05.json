@@ -1,0 +1,25 @@
+{
+  "kind": "known_natural_contrast_mechanical_audit_not_fresh_accuracy",
+  "total": 1,
+  "answer_label_matches": 1,
+  "wrong_decisive_answer_labels": 0,
+  "abstentions": 0,
+  "source_and_seal_checks_passed": 1,
+  "run_settled_sar": 0.11687700000000001,
+  "development_sar": 37.188363937500036,
+  "development_cap_sar": 39,
+  "cases": [
+    {
+      "id": "W05",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "threshold": {
+    "total": 7,
+    "minimum_satisfactory_responses": 7,
+    "maximum_wrong_decisive_answers": 0
+  },
+  "kind": "seven_known_case_repairs_not_fresh_accuracy",
+  "freeze": {
+    "application_tree_sha256": "5118ffc539d2fcc78a588d0083bd8f2f72a7cfc3f3368998e91a42addfb56270",
+    "dataset_sha256": "452ff72fd225546e3eb978ecef7788e6544e1b3062a5e7462b8e1eeabfd6e531",
+    "build": "SVEvOLRtbYnGREzY_lq7L",
+    "development_cap_sar": 37
+  },
+  "started_at": "2026-10-04T23:31:56.671Z",
+  "starting_development_sar": 35.831507812500035,
+  "cases": [
+    {
+      "id": "W03",
+      "claim": "In the prophetic example about trusting Allah, do the birds stay in their nests all day rather than going out?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied prophetic example depicts birds leaving in the morning and returning in the evening, rather than remaining in their nests all day. Its accompanying explanation presents seeking sustenance alongside reliance on Allah, not passive inaction.",
+      "summary_ar": "لا، هذا الفهم يخالف المثال النبوي المعروض في المصدر المحدد: فالمثال يصوّر الطيور خارجةً في الصباح ثم عائدةً في المساء، لا باقيةً في أعشاشها طوال اليوم. ويعرض الشرح المرفق السعي في طلب الرزق مع التوكل على الله، لا الاتكال السلبي.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "2:260",
+        "2:258",
+        "2:259",
+        "60:6",
+        "en:4721",
+        "en:66538",
+        "ar:3383",
+        "ar:66538"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 867,
+          "output_tokens": 195,
+          "estimated_cost_usd": 0.00045075,
+          "reservation_id": "a9f39fe3-671b-4a15-8cfd-c15ac36fccb2"
+        },
+        {
+          "input_tokens": 8869,
+          "output_tokens": 155,
+          "estimated_cost_usd": 0.0240325,
+          "reservation_id": "b3e2091d-1a32-47b0-847b-63619f75346c"
+        },
+        {
+          "input_tokens": 9949,
+          "output_tokens": 532,
+          "estimated_cost_usd": 0.00312565,
+          "reservation_id": "9e3c03f7-55b6-424b-9bbf-54d2d11b6839"
+        },
+        {
+          "input_tokens": 9949,
+          "output_tokens": 484,
+          "estimated_cost_usd": 0.0306805,
+          "reservation_id": "d55833a2-6df9-4fe3-8949-4646501033e2"
+        },
+        {
+          "input_tokens": 340,
+          "output_tokens": 181,
+          "estimated_cost_usd": 0.0003022,
+          "reservation_id": "bd4065b7-f7f7-48e5-a5b0-2a12e76de5f6"
+        },
+        {
+          "input_tokens": 9224,
+          "output_tokens": 570,
+          "estimated_cost_usd": 0.00299,
+          "reservation_id": "9e400e91-3871-42bc-adf4-b0732503f180"
+        }
+      ],
+      "explanation_diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "review": "pending"
+    },
+    {
+      "id": "W17",
+      "claim": "Apakah Al-Qur’an menyatakan orang yang berilmu sama saja dengan orang yang tidak berilmu?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 39:9 directly presents those who know and those who do not know as not equal; this assessment is limited to the selected source collection.",
+      "summary_ar": "لا، هذا الادعاء يخالف القرآن في الآية 39:9؛ فالمقطع المعروض يطرح نفيَ تساوي الذين يعلمون والذين لا يعلمون. هذا التقييم مقصور على مجموعة المصادر المحددة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "39:9",
+        "19:65",
+        "21:109",
+        "6:50",
+        "27:42",
+        "2:118",
+        "2:194",
+        "39:29"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 868,
+          "output_tokens": 163,
+          "estimated_cost_usd": 0.0004126,
+          "reservation_id": "36e74c48-b392-4568-8183-36552cd29562"
+        },
+        {
+          "input_tokens": 10035,
+          "output_tokens": 182,
+          "estimated_cost_usd": 0.0272715,
+          "reservation_id": "9e149522-f794-4613-9b63-21b0ae27869a"
+        },
+        {
+          "input_tokens": 9693,
+          "output_tokens": 551,
+          "estimated_cost_usd": 0.00308445,
+          "reservation_id": "fb8e117c-e6fe-4a14-85e4-85a5e5c7bbfc"
+        },
+        {
+          "input_tokens": 9693,
+          "output_tokens": 547,
+          "estimated_cost_usd": 0.0307965,
+          "reservation_id": "a04c919f-9367-49a2-8fbe-2ebb7cd70722"
+        }
+      ],
+      "explanation_diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "review": "pending"
+    },
+    {
+      "id": "W21",
+      "claim": "¿Anima el hadiz a decirle a un hermano que lo queremos cuando sentimos ese afecto?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The supplied hadith directly supports telling a fellow Muslim that one loves him when that affection is present. This assessment is limited to the selected source collection, with the displayed grading attributed to the publisher.",
+      "summary_ar": "نعم، يدعم الحديث هذا المعنى مباشرة: إذا أحبّ المسلم أخاه المسلم، فإنه يُستحب له أن يُخبره بمحبته. وهذا التقييم مبني على الحديث المحدد في مجموعة المصادر المحددة، مع بقاء التحقق العلمي التفصيلي من درجة الحديث منسوبًا إلى بيانات الناشر المرفقة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "en:3219",
+        "en:3017",
+        "en:4717",
+        "en:66520",
+        "ar:65002",
+        "ar:65585",
+        "ar:64633",
+        "ar:66399"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 866,
+          "output_tokens": 190,
+          "estimated_cost_usd": 0.0004445,
+          "reservation_id": "eb1525a9-271a-45af-afd2-553a16adaae0"
+        },
+        {
+          "input_tokens": 3726,
+          "output_tokens": 217,
+          "estimated_cost_usd": 0.011919,
+          "reservation_id": "8eb82f67-88e8-4b43-9c5d-0223a4c5128c"
+        },
+        {
+          "input_tokens": 4917,
+          "output_tokens": 459,
+          "estimated_cost_usd": 0.00178005,
+          "reservation_id": "3917810a-a8a1-436b-a084-750b6bd97773"
+        }
+      ],
+      "explanation_diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "review": "pending"
+    },
+    {
+      "id": "W24",
+      "claim": "Le hadith décrit-il la bonté morale comme un bon comportement?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports this meaning by identifying righteousness with good morals and presenting good treatment of people as practical good conduct. This conclusion is limited to the meaning conveyed by the supplied hadith records.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرة؛ فهي تربط البرّ بحسن الأخلاق، وتصف معاملة الناس بحسن الأخلاق بوصفها سلوكًا عمليًا. ويظل ذلك ضمن مضمون الأحاديث المحددة، لا حكمًا على جميع استعمالات عبارة «البُعد الأخلاقي».",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "en:5371",
+        "en:4302",
+        "en:4308",
+        "en:5476",
+        "ar:66233",
+        "ar:5329",
+        "ar:11169",
+        "ar:5500"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 859,
+          "output_tokens": 171,
+          "estimated_cost_usd": 0.00041995,
+          "reservation_id": "de9f86dc-765f-461c-899c-d1dada57a339"
+        },
+        {
+          "input_tokens": 4181,
+          "output_tokens": 271,
+          "estimated_cost_usd": 0.0137045,
+          "reservation_id": "3e4aed1d-2173-4a6b-8bb7-f9f3f7713550"
+        },
+        {
+          "input_tokens": 5103,
+          "output_tokens": 459,
+          "estimated_cost_usd": 0.00182655,
+          "reservation_id": "f1c22afc-3a60-40f8-b336-2ec15080c1bb"
+        }
+      ],
+      "explanation_diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "review": "pending"
+    },
+    {
+      "id": "W25",
+      "claim": "Sagt der Koran, dass man für eingegangene Versprechen keinerlei Rechenschaft ablegen muss?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "reason_codes": [
+        "SPEND_BUDGET_STOP"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "summary_ar": "لم يتم تقييم الادعاء.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "2:233",
+        "33:15",
+        "5:9",
+        "10:5",
+        "16:93",
+        "5:7",
+        "2:235",
+        "74:38"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 867,
+          "output_tokens": 201,
+          "estimated_cost_usd": 0.00045795,
+          "reservation_id": "65ddad57-f783-4e6b-8443-da1ed0613d61"
+        },
+        {
+          "input_tokens": 11839,
+          "output_tokens": 746,
+          "estimated_cost_usd": 0.0038549499999999998,
+          "reservation_id": "960c2300-513e-4faa-8c79-7d5495b77644"
+        }
+      ],
+      "explanation_diagnostic": null,
+      "review": "pending"
+    }
+  ],
+  "operational_stop": "W25",
+  "completed_at": "2026-10-04T23:33:26.382Z",
+  "final_development_sar": 36.42233568750004
+}

@@ -11,10 +11,10 @@ export function englishWords(text: string): string[] {
   // Derived search tokens only; publisher strings and original negation remain intact.
   // Latin transliteration macrons (e.g. ā) are folded in the derived index only.
   // Otherwise the strict Latin token filter silently loses publisher spellings.
-  const latinFolded = text.replace(/\p{Script=Latin}/gu, char=>char.normalize('NFD').replace(/\p{M}/gu,''));
+  const latinFolded = text.replace(/\bpossess(?:es|ing)?\s+knowledge\b/gi,'knowledge').replace(/\p{Script=Latin}/gu, char=>char.normalize('NFD').replace(/\p{M}/gu,''));
   const grammar=new Set(['can','could','would','among','yourselves','claim','claims','claimed','count','counts','counting','lead','leads']);
   return normalizeQuery(latinFolded).split(' ').filter(word => /^[a-z]{3,}$/.test(word) && !englishStop.has(word)&&!grammar.has(word)).map(word => {
-    const paraphrases:Record<string,string>={disagreement:'dispute',disagreements:'dispute',quarrel:'dispute',quarrels:'dispute',disputes:'dispute',failure:'fail',failures:'fail',loss:'lose',weakness:'weak',weaken:'weak',weakened:'weak',money:'wealth'};
+    const paraphrases:Record<string,string>={disagreement:'dispute',disagreements:'dispute',quarrel:'dispute',quarrels:'dispute',disputes:'dispute',failure:'fail',failures:'fail',loss:'lose',weakness:'weak',weaken:'weak',weakened:'weak',money:'wealth',same:'equal',alike:'equal',knowledge:'know',knowledgeable:'know',learned:'know',knowing:'know',promises:'covenant',promise:'covenant',pledge:'covenant',pledges:'covenant',covenants:'covenant',accountability:'account',accountable:'account',questioned:'account'};
     if(paraphrases[word])return paraphrases[word];
     const synonyms: Record<string,string> = {maintain:'support',maintenance:'support',childbirth:'birth',deliver:'birth',delivery:'birth',pregnancy:'pregnant',divorcee:'divorce',divorced:'divorce',known:'know',home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything',enslaved:'slave',slaves:'slave',strength:'strong',angry:'anger'};
     const irregular:Record<string,string>={giving:'give',ride:'ride',riding:'ride',ridden:'ride',rode:'ride',unfit:'fit',unsuitable:'fit',suitable:'fit',saw:'see',seen:'see',children:'child',men:'man',women:'woman',feet:'foot',took:'take',taken:'take',gave:'give',given:'give',ate:'eat',eaten:'eat',drank:'drink',drunk:'drink'};
@@ -57,6 +57,10 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   const englishScores = new Map(index.rows.map(row=>[row.id,Math.max(score(row.words,primaryWords),contextSearch?.65*score(row.context,primaryWords):0)+.15*score(row.words,secondaryWords)]));
   // Reward joint coverage of the original question's concepts, rather than
   // letting an Arabic rank for one incidental word dominate a routed question.
+  // Prefer concepts occurring in one sentence over incidental co-occurrence
+  // across unrelated sentences/context. This ranking never establishes truth.
+  const comparisonSearch=primaryWords.includes('equal');
+  const sentenceCoverage=new Map(edition.records.map(row=>[row.sura+':'+row.aya,Math.max(...row.translation.split(/[.!?;]+/).map(sentence=>{const words=new Set(englishWords(sentence));return primaryWords.filter(word=>words.has(word)).length/Math.max(1,primaryWords.length);}))]));
   const conceptCoverage = new Map(index.rows.map(row=>[row.id,Math.max(primaryWords.filter(word=>row.words.has(word)).length,contextSearch?.75*primaryWords.filter(word=>row.context.has(word)).length:0)/Math.max(1,primaryWords.length)]));
   // A known original subject can be expressed differently by the translation
   // (e.g. an ordinary English noun versus its formal synonym). Preserve its
@@ -73,7 +77,7 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   // Fuse independent Arabic and English rankings rather than allowing a
   // dictionary subject or foreign Latin token to veto the other channel.
   const phrases = hints.map(normalizeQuery).filter(s=>/\p{Script=Arabic}/u.test(s)&&s.split(' ').length>=3);
-  const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + .06*(conceptCoverage.get(verse.id)??0) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
+  const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + .14*Math.pow(comparisonSearch?(sentenceCoverage.get(verse.id)??0):0,2) + .06*(conceptCoverage.get(verse.id)??0) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
   const verses = corpus.verses.filter(verse=>explicit.has(verse.id)||(englishScores.get(verse.id)??0)>0||lexicalRanks.has(verse.id))
     .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || (!routedSearch ? Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) : rankScore(b)-rankScore(a)) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
   const pin=getQuranTranslationAdmission().sources.find(source=>source.key==='english_rwwad');
