@@ -1,0 +1,538 @@
+{
+  "purpose": "Live development probes of ordinary wording; no independent scholarly accuracy claim.",
+  "cases": [
+    {
+      "id": "user-pig-wording-stale-language",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "en",
+      "corpus_selection": "both",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:60",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4314",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65950",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "supports"
+        }
+      ],
+      "retrieval_plan": {
+        "status": "planned",
+        "reason": "BOUNDED_AI_SEARCH_EXPANSION",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "arabic_terms": [
+          "أكل الخنزير",
+          "تحريم لحم الخنزير",
+          "الخنزير في الإسلام",
+          "النجاسة والخنزير",
+          "الحلال والحرام",
+          "الطعام الحرام"
+        ],
+        "english_terms": [
+          "pig eating haram",
+          "pork prohibition",
+          "pig in Islam",
+          "unclean animal",
+          "halal and haram",
+          "forbidden food"
+        ],
+        "usage": {
+          "input_tokens": 251,
+          "output_tokens": 86,
+          "estimated_cost_usd": 0.00057525,
+          "reservation_id": "370ab874-9d82-4c25-a5fe-a08649dc31a8"
+        },
+        "planner_version": "bounded-search-terms-v1"
+      },
+      "model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 6188,
+        "output_tokens": 407,
+        "estimated_cost_usd": 0.0064725,
+        "reservation_id": "32bb811a-77e1-4f9a-92b8-0732c0183f34"
+      },
+      "no_paid_usage": false
+    },
+    {
+      "id": "ordinary-pork-question",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "en",
+      "corpus_selection": "both",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3003",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4314",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65950",
+          "relation": "unrelated"
+        }
+      ],
+      "retrieval_plan": {
+        "status": "planned",
+        "reason": "BOUNDED_AI_SEARCH_EXPANSION",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "arabic_terms": [
+          "أكل الخنزير",
+          "لحم الخنزير",
+          "حرام أكل الخنزير",
+          "تحريم الخنزير",
+          "الحلال والحرام"
+        ],
+        "english_terms": [
+          "eating pork",
+          "pork prohibition",
+          "is pork haram",
+          "pork in islam",
+          "halal and haram"
+        ],
+        "usage": {
+          "input_tokens": 252,
+          "output_tokens": 76,
+          "estimated_cost_usd": 0.000531,
+          "reservation_id": "242d8d33-b042-47aa-a550-a25d90ba8463"
+        },
+        "planner_version": "bounded-search-terms-v1"
+      },
+      "model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 6492,
+        "output_tokens": 349,
+        "estimated_cost_usd": 0.0064395,
+        "reservation_id": "7a303c17-bbc5-48ab-b439-651888196c16"
+      },
+      "no_paid_usage": false
+    },
+    {
+      "id": "opposite-pork-claim",
+      "http_status": 200,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "en",
+      "corpus_selection": "both",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "contradicts"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "contradicts"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3003",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:2975",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:5808",
+          "relation": "unrelated"
+        }
+      ],
+      "retrieval_plan": {
+        "status": "planned",
+        "reason": "BOUNDED_AI_SEARCH_EXPANSION",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "arabic_terms": [
+          "أكل الخنزير",
+          "لحم الخنزير",
+          "تحريم الخنزير",
+          "الحلال والحرام",
+          "الأطعمة المحرمة",
+          "نجاسة الخنزير",
+          "أحكام الطعام",
+          "المأكولات في الإسلام"
+        ],
+        "english_terms": [
+          "eating pork",
+          "pork in Islam",
+          "halal and haram",
+          "forbidden foods",
+          "impure meat",
+          "is pork halal",
+          "Islamic dietary law",
+          "prohibited foods"
+        ],
+        "usage": {
+          "input_tokens": 252,
+          "output_tokens": 104,
+          "estimated_cost_usd": 0.000657,
+          "reservation_id": "4783338e-2029-49b1-9684-b13ead9e1874"
+        },
+        "planner_version": "bounded-search-terms-v1"
+      },
+      "model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 6381,
+        "output_tokens": 449,
+        "estimated_cost_usd": 0.00680625,
+        "reservation_id": "0e371a8d-c222-48b4-9064-956f28cebb8a"
+      },
+      "no_paid_usage": false
+    },
+    {
+      "id": "arabic-pork-question",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "ar",
+      "corpus_selection": "both",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:75",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:58121",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:2975",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated"
+        }
+      ],
+      "retrieval_plan": {
+        "status": "planned",
+        "reason": "BOUNDED_AI_SEARCH_EXPANSION",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "arabic_terms": [
+          "أكل لحم الخنزير",
+          "لحم الخنزير",
+          "تحريم الخنزير",
+          "أحكام الأطعمة",
+          "الأطعمة المحرمة",
+          "النجس في الطعام"
+        ],
+        "english_terms": [
+          "eating pork",
+          "pork meat",
+          "prohibited food",
+          "forbidden meat",
+          "food laws",
+          "impure food"
+        ],
+        "usage": {
+          "input_tokens": 257,
+          "output_tokens": 81,
+          "estimated_cost_usd": 0.00055725,
+          "reservation_id": "3c0b8d2d-e1ec-4839-85c5-8b6a009ab5fe"
+        },
+        "planner_version": "bounded-search-terms-v1"
+      },
+      "model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 5968,
+        "output_tokens": 393,
+        "estimated_cost_usd": 0.0062445,
+        "reservation_id": "617d3510-bdca-4c85-8501-c64797417827"
+      },
+      "no_paid_usage": false
+    },
+    {
+      "id": "ordinary-intentions-paraphrase",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "en",
+      "corpus_selection": "both",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "35:10",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:25",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:82",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:130",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4820",
+          "relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10622",
+          "relation": "unrelated"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4560",
+          "relation": "supports"
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:6255",
+          "relation": "unrelated"
+        }
+      ],
+      "retrieval_plan": {
+        "status": "planned",
+        "reason": "BOUNDED_AI_SEARCH_EXPANSION",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "arabic_terms": [
+          "النية",
+          "العمل بالنية",
+          "مقاصد الأعمال",
+          "الإخلاص",
+          "الاعمال بالنيات",
+          "نية القلب",
+          "قصد الفعل",
+          "العمل الصالح",
+          "النية والعمل",
+          "اعتبار النية"
+        ],
+        "english_terms": [
+          "intention",
+          "deeds and intentions",
+          "actions and motives",
+          "intent matters",
+          "sincerity",
+          "purpose of action",
+          "heart intention",
+          "moral value",
+          "religious intention",
+          "relevant intention"
+        ],
+        "usage": {
+          "input_tokens": 258,
+          "output_tokens": 104,
+          "estimated_cost_usd": 0.0006615,
+          "reservation_id": "8473decc-2f51-45b0-acba-cb9c031adf52"
+        },
+        "planner_version": "bounded-search-terms-v1"
+      },
+      "model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 16720,
+        "output_tokens": 338,
+        "estimated_cost_usd": 0.014061,
+        "reservation_id": "46c435e8-6c5f-4ce8-94f4-00360ae31470"
+      },
+      "no_paid_usage": false
+    },
+    {
+      "id": "weather-refusal",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [],
+      "model": "none",
+      "usage": null,
+      "no_paid_usage": true
+    },
+    {
+      "id": "personal-refusal",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [],
+      "model": "none",
+      "usage": null,
+      "no_paid_usage": true
+    },
+    {
+      "id": "fabricated-reference",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": true,
+      "original_preserved": true,
+      "input_language": "en",
+      "corpus_selection": "both",
+      "reason_codes": [
+        "EXPLICIT_LOCATOR_MALFORMED_OR_RANGE_UNSUPPORTED"
+      ],
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [],
+      "model": "none",
+      "usage": null,
+      "no_paid_usage": true
+    }
+  ],
+  "semantic_review_limits": "Expected verdict/routing checks passed; this is not independent accuracy validation. Related-source action entailment and per-card evidence ID selection still need broader review."
+}

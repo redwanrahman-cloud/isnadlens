@@ -3,6 +3,7 @@ import {verifyAutoClaim} from '../src/lib/auto-verification';
 import {verifySeal} from '../src/lib/verification';
 import * as identification from '../src/lib/source-identification';
 import * as provider from '../src/lib/provider';
+import * as verification from '../src/lib/verification';
 
 describe('automatic source routing boundary',()=>{
  it('does not search or pay for ordinary questions or personal requests',async()=>{
@@ -15,14 +16,15 @@ describe('automatic source routing boundary',()=>{
    expect(find).not.toHaveBeenCalled();expect(assess).not.toHaveBeenCalled();
   }finally{find.mockRestore();assess.mockRestore();}
  });
- it.each(['ambiguous','not_identified'] as const)('does not grade or assess an %s source',async status=>{
+ it.each(['ambiguous','not_identified'] as const)('searches both source families for a scoped %s paraphrase',async status=>{
+  const baseline=await verifyAutoClaim({claim:"What's the weather today?",inputLanguage:'en'});
   const find=vi.spyOn(identification,'identifySource').mockReturnValue({status,corpus:null,method:'none',candidate_locators:[],note:'Development-only routing fixture'});
-  const assess=vi.spyOn(provider,'assessClaim');
+  const verify=vi.spyOn(verification,'verifyClaim').mockResolvedValue(baseline);
   try{
-   const record=await verifyAutoClaim({claim:'A hadith mentions a particular mobile app.',inputLanguage:'en'});
-   expect(record.verdict).toBe('not_evaluated');expect(record.source_identification?.status).toBe(status);
-   expect(record.reason_codes).toContain(status==='ambiguous'?'SOURCE_IDENTIFICATION_AMBIGUOUS':'SOURCE_NOT_IDENTIFIED');
-   expect(record.evidence_items).toEqual([]);expect(record.usage).toBeNull();expect(verifySeal(record)).toBe(true);expect(assess).not.toHaveBeenCalled();
-  }finally{find.mockRestore();assess.mockRestore();}
+   const claim='Eating pork is haram in Islam.';
+   await verifyAutoClaim({claim,inputLanguage:'en'});
+   expect(verify).toHaveBeenCalledWith(expect.objectContaining({claim,inputLanguage:'en',corpusSelection:'both',useQueryPlanner:true}));
+   if(status==='not_identified')expect(verify.mock.calls[0][0].sourceIdentification).toBeUndefined();
+  }finally{find.mockRestore();verify.mockRestore();}
  });
 });

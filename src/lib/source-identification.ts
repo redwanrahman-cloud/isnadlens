@@ -51,7 +51,7 @@ export function identifySource(claim: string, inputLanguage: 'ar' | 'en', suppli
   const hadithNamed = /\b(?:hadith|hadeeth|prophet|messenger of allah)\b|حديث|الحديث|رسول الله|قال النبي/iu.test(attribution);
   const quranExplicit = quranNamed || refs.references.length > 0;
   const hadithExplicit = hadithNamed || links.links.length > 0;
-  if (quranExplicit && hadithExplicit) return { status: 'ambiguous', corpus: null, method: 'explicit_attribution', candidate_locators: boundedLocators([...refs.references.map(id => `quran:${id}`), ...links.links.map(link => `hadith:${link.language}:${link.id}`)]), note: 'Both source families are explicitly mentioned. Select the intended source; no attribution has been corrected.' };
+  if (quranExplicit && hadithExplicit) return { status: 'ambiguous', corpus: null, method: 'explicit_attribution', candidate_locators: boundedLocators([...refs.references.map(id => `quran:${id}`), ...links.links.map(link => `hadith:${link.language}:${link.id}`)]), note: 'Both source families are explicitly mentioned. Auto searches both separately; no attribution has been corrected.' };
   if (quranExplicit || hadithExplicit) return { status: 'identified', corpus: quranExplicit ? 'quran' : 'hadith', method: 'explicit_attribution', candidate_locators: boundedLocators(quranExplicit ? refs.references.map(id => `quran:${id}`) : links.links.map(link => `hadith:${link.language}:${link.id}`)), note: 'Routed by the stated attribution or reference. This is not confirmation that the quotation or attribution is correct; verification must check it.' };
   const quotes = extractClaimQuotes(claim);
   const spans = (quotes.length ? quotes : [claim.trim()]).filter(meaningful);
@@ -74,8 +74,8 @@ export function identifySource(claim: string, inputLanguage: 'ar' | 'en', suppli
       if (exact || pattern.test(text)) candidates.set(`hadith:${record.language}:${record.id}`, { corpus: 'hadith', exact: exact || Boolean(candidates.get(`hadith:${record.language}:${record.id}`)?.exact) });
     }
   }
-  if (!candidates.size) return absent('No direct quotation match was found in the admitted editions. This does not establish that the text is absent from all Quran or Hadith sources. Select a source manually for a paraphrase.');
+  if (!candidates.size) return absent('No direct quotation match was found in the admitted editions. This does not establish that the text is absent from all Quran or Hadith sources. Auto may search both source families for a paraphrase.');
   const families = new Set([...candidates.values()].map(value => value.corpus));
   const method = [...candidates.values()].some(value => value.exact) ? 'exact_quotation' : 'normalized_quotation';
-  return { status: families.size === 1 ? 'identified' : 'ambiguous', corpus: families.size === 1 ? [...families][0] : null, method, candidate_locators: boundedLocators([...candidates.keys()]), note: families.size === 1 ? 'Direct quotation candidates identify a source family within admitted editions only. This is not a semantic verdict or independent authentication.' : 'The quotation occurs in both admitted source families. Select the intended source; no family was chosen automatically.' };
+  return { status: families.size === 1 ? 'identified' : 'ambiguous', corpus: families.size === 1 ? [...families][0] : null, method, candidate_locators: boundedLocators([...candidates.keys()]), note: families.size === 1 ? 'Direct quotation candidates identify a source family within admitted editions only. This is not a semantic verdict or independent authentication.' : 'The quotation occurs in both admitted source families. Auto searches both separately; this does not determine its original attribution.' };
 }

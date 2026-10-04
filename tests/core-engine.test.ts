@@ -151,6 +151,15 @@ describe('persistent spending controls and provider schema', () => {
       expect(posted.instructions).toContain('including an English rendering of Arabic Quran text');
       expect(posted.instructions).toContain('explicitly attribute it to the publisher');
       expect(posted.instructions).toContain('Never include process boilerplate');
+      expect(posted.instructions).toContain('atomic_claims contains ONLY assertions made by the USER');
+      expect(posted.instructions).toContain('Source qualifications absent from the user claim belong in summaries, limitations and qualification/context checks');
+      expect(posted.instructions).toContain('An explicit user universal such as always, never, without exceptions');
+      expect(posted.instructions).toContain('Do not require every retrieved item or every source family to support every atom');
+      expect(posted.instructions).toContain('Generic religious claims and questions have no asserted source-family attribution');
+      expect(posted.instructions).toContain('Compare the governing action/predicate as well as its object');
+      expect(posted.instructions).toContain('A prohibition on selling an object does not by itself prove a prohibition on consuming it');
+      expect(posted.instructions).toContain('Exclude such merely related evidence IDs from supports atoms');
+      expect(posted.instructions).toContain('مجموعة المصادر المحددة');
     } finally { cwd.mockRestore(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); rmSync(directory, { recursive: true, force: true }); }
   });
   it('requires an explicit positive cap and preserves unresolved reservations across reloads', () => {

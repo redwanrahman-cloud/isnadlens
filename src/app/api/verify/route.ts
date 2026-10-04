@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyClaim } from '@/lib/verification';
 import { verifyAutoClaim } from '@/lib/auto-verification';
+import { inferClaimInputLanguage } from '@/lib/claim-language';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -41,9 +42,10 @@ export async function POST(request: NextRequest) {
   }
   active++;
   try {
+    const inputLanguage = inferClaimInputLanguage(body.claim,body.inputLanguage);
     const record = body.corpusSelection === 'auto'
-      ? await verifyAutoClaim({claim:body.claim,inputLanguage:body.inputLanguage})
-      : await verifyClaim({claim:body.claim,inputLanguage:body.inputLanguage,corpusSelection:body.corpusSelection ?? 'quran'});
+      ? await verifyAutoClaim({claim:body.claim,inputLanguage})
+      : await verifyClaim({claim:body.claim,inputLanguage,corpusSelection:body.corpusSelection ?? 'quran',useQueryPlanner:true});
     return NextResponse.json(record,{headers:{'Cache-Control':'no-store'}});
   } catch {
     return NextResponse.json({error:'VERIFICATION_UNAVAILABLE'},{status:503});

@@ -22,10 +22,11 @@ export const recordSchema = z.object({
   input_language: z.enum(['ar', 'en']), corpus_manifest: z.unknown().nullable(), corpus_sha256: z.string().nullable(),
   retrieval_ids: z.array(z.string()), semantic_assessment: z.unknown().nullable(),
   prompt_version: z.string(), schema_version: z.string(), usage: usageSchema.nullable(),
-  corpus_selection: z.enum(['quran', 'hadith']),
+  corpus_selection: z.enum(['quran', 'hadith', 'both']),
   router_version: z.string().optional(),
   assessment_attempts: z.array(z.object({ model: z.string(), reason: z.string(), raw_assessment: z.unknown().nullable(), usage: usageSchema.nullable() })).max(2).optional(),
   source_identification: sourceIdentificationSchema.optional(),
+  retrieval_plan: z.object({ status: z.enum(['planned', 'lexical_fallback', 'provided']), reason: z.string(), model: z.string(), arabic_terms: z.array(z.string()).max(10), english_terms: z.array(z.string()).max(10), usage: usageSchema.nullable(), planner_version: z.string() }).optional(),
 });
 export type VerificationRecord = z.infer<typeof recordSchema>;
 export type EvidenceItem = z.infer<typeof evidenceSchema>;

@@ -18,6 +18,11 @@ export function scopeGate(claim: string): string | null {
   if (namedFact && !['Intention', 'Prayer', 'Fasting', 'Charity', 'Religion', 'Islam', 'Quran', 'God', 'Allah', 'Creation', 'Water', 'Life', 'Mercy', 'Justice'].includes(namedFact[1])) return 'PERSONAL_FACTS_REFERRAL';
   const nonDomain = claim.replace(/[\p{Script=Latin}\p{Script=Arabic}\p{M}\p{N}\p{P}\p{S}\p{Z}\s]/gu, '');
   if (nonDomain.length) return 'INPUT_LANGUAGE_NOT_SUPPORTED';
+  // Islamic normative labels establish a textual-claim domain, not a verdict.
+  // Ordinary food questions without such context remain outside this verifier.
+  const generalIslamicRule = /\b(halal|haram)\b|حلال|حرام/i.test(claim)
+    || (/\b(pork|pig|pigs|swine)\b|خنزير|خنازير/i.test(claim) && /\b(forbidden|prohibited|permitted|permissible|lawful|unlawful|islam|muslim|religion)\b|محرم|محرّم|يجوز|الإسلام|الاسلام|مسلم|الدين/i.test(claim));
+  if (generalIslamicRule) return null;
   if (!/\b(quran|qur'an|koran|allah|islam|muslim|prayer|pray|fasting|ramadan|zakat|hajj|umrah|charity|religion|god|creation|compulsion|usury|gambling|alcohol|inheritance|parents|mercy|water|life|hadith|hadeeth|prophet|muhammad|intentions|intention)\b|قرآن|القران|الله|الإسلام|الاسلام|مسلم|الصلاة|صلاة|الصيام|صيام|رمضان|زكاة|الزكاة|الحج|حج|العمرة|الدين|إكراه|اكراه|خلق|الماء|ماء|حي|الربا|الخمر|الوالدين|حديث|النبي|رسول|نيات|النيات|نية|النية|(?:^|[^\d])\d{1,3}\s*:\s*\d{1,3}(?!\d)/i.test(claim)) return 'OUTSIDE_SUPPORTED_CLAIM_SCOPE';
   return null;
 }
