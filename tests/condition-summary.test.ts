@@ -21,7 +21,7 @@ it.each([false,true])('rechecks a vague first-tier summary once and never publis
    summary_ar:'الصيام مفروض.',limitations:[],atomic_claims:[{id:'a',text:claim,material:true,relation:'supports',evidence_ids:[cards[0].evidence_id],direct:true,context_fit:true,negation_checked:true,modality_checked:true,qualifications_preserved:true,attribution_matched:true,scope_matched:true,contradiction_basis:'none',basis_evidence_id:null,basis_quotation:null}]};
   return {model:model!,usage:null,assessment};
  });
- const source=vi.spyOn(provider,'reviewPositiveEntailment').mockImplementation(async (_claim,a,cards)=>({model:'fixture',usage:null,review:{atoms:[{atom_id:'a',entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:a.atomic_claims[0].evidence_ids[0],context_locator:null,basis_quotation:cards[0].quotation}]}}));
+ const source=vi.spyOn(provider,'reviewPositiveEntailment').mockImplementation(async (_claim,a,cards)=>({model:'fixture',usage:null,review:{explanation_preserved:true,atoms:[{atom_id:'a',entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:a.atomic_claims[0].evidence_ids[0],context_locator:null,basis_quotation:cards[0].quotation}]}}));
  const result=await verifyClaim({claim,inputLanguage:'en',admittedTextual:true});
  expect(assessed).toHaveBeenCalledTimes(2);
  expect(assessed.mock.calls[0][2]).toEqual(assessed.mock.calls[1][2]);

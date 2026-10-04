@@ -1,6 +1,14 @@
 import type { SemanticAssessment, VerificationRecord } from './contracts';
 import { asciiDigits } from './citations';
 
+/** Mechanical public-entry checks. Meaning and religious scope belong to the router. */
+export function inputValidityGate(claim: string): string | null {
+  if (typeof claim !== 'string' || claim.trim().length < 2 || claim.length > 1200) return 'INPUT_INVALID';
+  const numbers = asciiDigits(claim).replace(/[০-৯]/g, d => String(d.charCodeAt(0) - 0x09e6)).replace(/[०-९]/g, d => String(d.charCodeAt(0) - 0x0966));
+  if (/[\w.+-]+@[\w.-]+\.[a-z]{2,}|\+?\d[\d\s-]{8,}/i.test(numbers)) return 'PRIVATE_DATA_REFERRAL';
+  return null;
+}
+
 /** Public source questions can mention sensitive subjects without describing a private case. */
 export function publicEvidenceRequest(claim: string): boolean {
   return /\b(quran|qur'an|koran|hadith|hadeeth|islam|islamic|sunnah)\b|قرآن|القران|حديث|الإسلام|الاسلام|السنة|কুরআন|কোরআন|হাদিস|इस्लाम|कुरान|قرآن|حدیث/i.test(claim)
@@ -49,6 +57,7 @@ export function nativeSafetyGate(claim: string): string | null {
 }
 
 export function scopeGate(claim: string, admittedTextual = false): string | null {
+  if (admittedTextual) return inputValidityGate(claim);
   if (claim.trim().length < 5 || claim.length > 1200) return 'INPUT_INVALID';
   if (/ignore.{0,30}(instructions|rules)|system prompt|developer message|تجاهل.{0,30}(تعليمات|قواعد)/i.test(claim)) return 'INSTRUCTION_INJECTION';
   // Everyday/live-information requests stay outside textual verification even

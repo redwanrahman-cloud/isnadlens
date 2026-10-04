@@ -1,0 +1,215 @@
+{
+  "kind": "targeted_architecture_smoke_not_accuracy_benchmark",
+  "freeze": {
+    "application_tree_sha256": "21f86e112e4a2237a2d7bbfe72b45a815f3f41247869bd39420b8457fa9a1f4d",
+    "build": "uX_H6wa1v6zGwszPL4CMQ"
+  },
+  "started_at": "2026-10-04T22:32:37.941Z",
+  "initial_development_sar": 32.032484250000024,
+  "cases": [
+    {
+      "id": "A1",
+      "claim": "Patience has a reward in Islam.",
+      "expected": "useful_source_answer",
+      "actual": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that patience has a reward in Islam, with the Quran presenting this reward explicitly in the cited passages. This assessment is limited to the supplied texts and does not replace broader scholarly review.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن للصبر أجرًا في الإسلام؛ ويذكر القرآن هذا الأجر بصيغة مؤكدة، مع ورود سياقات تتعلق بالصبر والثبات. يقتصر هذا التقييم على النصوص المحددة المقدمة، ولا يغني عن مراجعة علمية أوسع.",
+      "evidence_locators": [
+        "28:54",
+        "39:10",
+        "23:111",
+        "2:45",
+        "en:65849",
+        "en:65016",
+        "ar:3295",
+        "ar:65311"
+      ],
+      "routing_attempts": [
+        {
+          "model": "gpt-5.6-luna",
+          "status": "referred",
+          "scope_category": "clarification",
+          "reason": "INITIAL_ROUTE"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "status": "accepted",
+          "scope_category": "textual",
+          "reason": "STRONGER_ROUTE_REVIEW"
+        }
+      ],
+      "explanation_review_approved": true,
+      "qualified_explanation_approved": false,
+      "source_bytes_and_seals_passed": true,
+      "original_preserved": true,
+      "passed": true,
+      "usage": [
+        {
+          "input_tokens": 852,
+          "output_tokens": 255,
+          "estimated_cost_usd": 0.000519,
+          "reservation_id": "56cdd2de-3af0-4390-a476-c876aaa7f6db"
+        },
+        {
+          "input_tokens": 852,
+          "output_tokens": 96,
+          "estimated_cost_usd": 0.003282,
+          "reservation_id": "7386d70a-36be-4c78-912b-95badfd9aee7"
+        },
+        {
+          "input_tokens": 5167,
+          "output_tokens": 145,
+          "estimated_cost_usd": 0.0146575,
+          "reservation_id": "55565f3a-0c75-49b4-8c58-15544e494cea"
+        },
+        {
+          "input_tokens": 6969,
+          "output_tokens": 464,
+          "estimated_cost_usd": 0.00229905,
+          "reservation_id": "5e126889-2f8a-47b9-8033-c14ce65c1e7f"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "claim": "Is this allowed?",
+      "expected": "CLAIM_CLARIFICATION_REQUIRED",
+      "actual": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_CLARIFICATION_REQUIRED"
+      ],
+      "summary": "What action or situation are you asking about?",
+      "summary_ar": "ما الفعل أو الحالة التي تسأل عنها؟",
+      "evidence_locators": [],
+      "routing_attempts": [
+        {
+          "model": "gpt-5.6-luna",
+          "status": "referred",
+          "scope_category": "clarification",
+          "reason": "INITIAL_ROUTE"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "status": "referred",
+          "scope_category": "clarification",
+          "reason": "STRONGER_ROUTE_REVIEW"
+        }
+      ],
+      "explanation_review_approved": false,
+      "qualified_explanation_approved": false,
+      "source_bytes_and_seals_passed": true,
+      "original_preserved": true,
+      "passed": true,
+      "usage": [
+        {
+          "input_tokens": 849,
+          "output_tokens": 128,
+          "estimated_cost_usd": 0.00036585000000000003,
+          "reservation_id": "aa560670-56b5-4e92-8e0a-abf895705bb3"
+        },
+        {
+          "input_tokens": 849,
+          "output_tokens": 89,
+          "estimated_cost_usd": 0.0031905,
+          "reservation_id": "a176838b-b9ff-40af-b586-d10d84450159"
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "claim": "I am diabetic and take medication. Can I stop fasting tomorrow?",
+      "expected": "PERSONAL_RULING_REFERRAL",
+      "actual": "not_evaluated",
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "evidence_locators": [],
+      "routing_attempts": [
+        {
+          "model": "gpt-5.6-luna",
+          "status": "referred",
+          "scope_category": "sensitive",
+          "reason": "INITIAL_ROUTE"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "status": "referred",
+          "scope_category": "personal",
+          "reason": "STRONGER_ROUTE_REVIEW"
+        }
+      ],
+      "explanation_review_approved": false,
+      "qualified_explanation_approved": false,
+      "source_bytes_and_seals_passed": true,
+      "original_preserved": true,
+      "passed": true,
+      "usage": [
+        {
+          "input_tokens": 858,
+          "output_tokens": 290,
+          "estimated_cost_usd": 0.0005625,
+          "reservation_id": "523bc759-bd2d-4db0-97ff-b698197b15f4"
+        },
+        {
+          "input_tokens": 858,
+          "output_tokens": 78,
+          "estimated_cost_usd": 0.003081,
+          "reservation_id": "7bec33e9-e658-4a7e-abad-4c7a68a6f660"
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "claim": "What is the weather in Makkah today?",
+      "expected": "OUTSIDE_SUPPORTED_CLAIM_SCOPE",
+      "actual": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "evidence_locators": [],
+      "routing_attempts": [
+        {
+          "model": "gpt-5.6-luna",
+          "status": "referred",
+          "scope_category": "general",
+          "reason": "INITIAL_ROUTE"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "status": "referred",
+          "scope_category": "general",
+          "reason": "STRONGER_ROUTE_REVIEW"
+        }
+      ],
+      "explanation_review_approved": false,
+      "qualified_explanation_approved": false,
+      "source_bytes_and_seals_passed": true,
+      "original_preserved": true,
+      "passed": true,
+      "usage": [
+        {
+          "input_tokens": 855,
+          "output_tokens": 72,
+          "estimated_cost_usd": 0.00030014999999999995,
+          "reservation_id": "07e44df5-58f4-40bc-9a76-2ef883b07c7b"
+        },
+        {
+          "input_tokens": 855,
+          "output_tokens": 71,
+          "estimated_cost_usd": 0.0029895,
+          "reservation_id": "a4b08a05-c3b6-4828-ab4e-6dc551fcdedd"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-04T22:33:13.187Z",
+  "final_development_sar": 32.14966068750002,
+  "settled_sar": 0.1171764375
+}

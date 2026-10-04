@@ -39,7 +39,7 @@ it('does not turn exact original-input preservation into a source-confirmation b
  });
  const source=vi.spyOn(provider,'reviewPositiveEntailment').mockImplementation(async (claim,a)=>{
   expect(a.atomic_claims[0].text).toBe(claim);
-  return {model:'fixture',usage:null,meaning_check:{model:'exact_original_input_identity',usage:null,review:{faithful:'yes'}},review:{atoms:[{atom_id:'a',entails:'no',attribution_preserved:true,qualifications_preserved:true,evidence_id:null,context_locator:null,basis_quotation:null}]}};
+  return {model:'fixture',usage:null,meaning_check:{model:'exact_original_input_identity',usage:null,review:{faithful:'yes'}},review:{explanation_preserved:true,atoms:[{atom_id:'a',entails:'no',attribution_preserved:true,qualifications_preserved:true,evidence_id:null,context_locator:null,basis_quotation:null}]}};
  });
  const r=await verifyClaimWithRecovery({claim:'Does Quran 2:185 never mention Ramadan?',inputLanguage:'en',admittedTextual:true,corpusSelection:'quran'});
  expect(source).toHaveBeenCalled();expect(r.verdict).not.toBe('supported_within_selected_corpus');expect(verifySeal(r)).toBe(true);

@@ -3,7 +3,7 @@ import { CLAIM_LANGUAGES, type ClaimLanguage } from './claim-language';
 import { randomUUID } from 'node:crypto';
 import { loadCorpus, sha256, type Corpus, type Verse } from './corpus';
 import { recordSchema, semanticSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
-import { scopeGate, decideVerdict, nativeSafetyGate, publicEvidenceRequest } from './policy';
+import { scopeGate, decideVerdict, nativeSafetyGate, inputValidityGate, publicEvidenceRequest } from './policy';
 import { retrieve, retrieveWithPublishedEnglishAid } from './retrieval';
 import { assessClaim, reviewPositiveEntailment, reviewQualifiedExplanation, ENTAILMENT_VERSION, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure, type EntailmentReview } from './provider';
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation, type HadithCorpus } from './hadith';
@@ -14,16 +14,17 @@ import {preserveWholeQuestion} from './source-decision';
 import {vagueExceptionSummary} from './condition-summary';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v11-qualified-explanation';
+export const ROUTER_VERSION = 'luna-terra-model-routing-v12-reviewed-explanation';
 export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
   const atoms = assessment.atomic_claims.filter(a => a.material);
+  if (review.explanation_preserved !== true) return false;
   if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
   return atoms.every(atom => {
     const check = review.atoms.find(a => a.atom_id === atom.id);
     if (!check || check.entails !== 'yes' || !check.attribution_preserved || !check.qualifications_preserved || !check.evidence_id || !atom.evidence_ids.includes(check.evidence_id) || !check.basis_quotation?.trim()) return false;
     const card = evidence.find(e => e.evidence_id === check.evidence_id);
     const text = check.context_locator === null ? card?.quotation : card?.source_context.find(c => c.locator === check.context_locator && c.integrity_passed)?.quotation;
-    return Boolean(card?.integrity.passed && text?.includes(check.basis_quotation));
+    return Boolean(card?.integrity.passed && text===check.basis_quotation) && (check.additional_basis??[]).every(b=>{const c=evidence.find(e=>e.evidence_id===b.evidence_id);const t=b.context_locator===null?c?.quotation:c?.source_context.find(u=>u.locator===b.context_locator&&u.integrity_passed)?.quotation;return Boolean(c?.integrity.passed&&atom.evidence_ids.includes(b.evidence_id)&&t===b.basis_quotation);});
   });
 }
 function semanticReferenceError(assessment: SemanticAssessment, evidence: EvidenceItem[]): string | null {
@@ -116,7 +117,7 @@ export function checkExplicitCitation(corpus: Corpus, claim: string): string | n
   if (quotes.some(quote => !/[\u0600-\u06ff]/.test(quote))) return 'TRANSLATED_QUOTATION_NOT_ADMITTED';
   return null;
 }
-export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides, scopeClaim, webLocators, admittedTextual = false }: { claim: string; inputLanguage: ClaimLanguage; scopeClaim?: string; admittedTextual?: boolean; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides; webLocators?:{quran:string[];hadith:string[]} }): Promise<VerificationRecord> {
+export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides, scopeClaim, webLocators, retainedLocators, admittedTextual = false }: { claim: string; inputLanguage: ClaimLanguage; scopeClaim?: string; admittedTextual?: boolean; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides; retainedLocators?:{quran:string[];hadith:string[]}; webLocators?:{quran:string[];hadith:string[]} }): Promise<VerificationRecord> {
   const base: Omit<VerificationRecord, 'audit_hash'> = { record_id: randomUUID(), original_claim: typeof claim === 'string' ? claim : '', verdict: 'not_evaluated', reason_codes: [], summary_ar: 'لم يتم تقييم الادعاء.', summary_en: 'This claim has not been evaluated.', evidence_items: [], limitations: ['Results apply only to retrieved evidence in the admitted Arabic Quran edition.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'English explanations are not authoritative Quran translations.'], created_at: new Date().toISOString(), model: 'none', technical_verification_status: 'not_run', human_scholarly_status: 'not_reviewed', linguistic_review_status: 'not_reviewed', input_language: CLAIM_LANGUAGES.includes(inputLanguage) ? inputLanguage : 'en', corpus_manifest: null, corpus_sha256: null, retrieval_ids: [], semantic_assessment: null, prompt_version: PROMPT_VERSION, schema_version: SCHEMA_VERSION, usage: null, corpus_selection: 'quran' };
   base.corpus_selection = corpusSelection;
   base.router_version = ROUTER_VERSION; base.assessment_attempts = [];
@@ -130,7 +131,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   } : {}) });
   if (typeof claim !== 'string' || !CLAIM_LANGUAGES.includes(inputLanguage)) return fail('INPUT_INVALID');
   if (!['quran', 'hadith', 'both'].includes(corpusSelection)) { base.corpus_selection = 'quran'; return fail('CORPUS_SELECTION_INVALID'); }
-  const nativeBlocked = nativeSafetyGate(claim); if (nativeBlocked) return fail(nativeBlocked);
+  const nativeBlocked = (admittedTextual ? inputValidityGate(claim) : nativeSafetyGate(claim)); if (nativeBlocked) return fail(nativeBlocked);
   const searchClaim = scopeClaim ?? claim;
   // Server-only routing admission; the API never accepts this flag from clients.
   const blocked = scopeGate(searchClaim, admittedTextual);
@@ -209,6 +210,14 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     if(hadith)for(const id of webLocators.hadith.slice(0,4)){const record=hadith.records.find(r=>`${r.language}:${r.id}`===id&&['ar','en'].includes(r.language));if(record)discovered.push(authenticateHadith(hadith,record));}
     base.evidence_items=[...new Map([...discovered,...base.evidence_items].map(e=>[e.evidence_id,e])).values()].slice(0,8);
   }
+  if(retainedLocators){
+    // Server-only previous-candidate IDs are reauthenticated, never trusted as supplied text.
+    const retained:EvidenceItem[]=[];
+    if(quran)for(const id of retainedLocators.quran){const verse=quran.verses.find(v=>v.id===id);if(verse)retained.push(authenticateEvidence(quran,verse));}
+    if(hadith)for(const id of retainedLocators.hadith){const record=hadith.records.find(r=>`${r.language}:${r.id}`===id&&['ar','en'].includes(r.language));if(record)retained.push(authenticateHadith(hadith,record));}
+    base.evidence_items=[...new Map([...retained.slice(0,4),...base.evidence_items].map(e=>[e.evidence_id,e])).values()].slice(0,8);
+    base.limitations.push('Up to four previously relevant source cards were reauthenticated and retained alongside the new bounded search candidates.');
+  }
   base.retrieval_ids = base.evidence_items.map(e => e.evidence_id);
   if (base.evidence_items.some(e => !e.integrity.passed)) return fail('CITATION_INTEGRITY_FAILURE');
   base.technical_verification_status = base.evidence_items.length ? 'passed' : 'no_candidates';
@@ -235,7 +244,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       // A proposed explicit contradiction needs confirmation even if the first
       // model marked a qualification false. Never flip those flags by code.
       const conflictNeedsConfirmation = isFirstTier(requestedModel) && !invalid && result.assessment.in_scope && result.assessment.original_meaning_preserved && result.assessment.atomic_claims.some(a => a.material && a.relation === 'contradicts' && a.contradiction_basis === 'explicit_negation_or_incompatible_statement' && a.basis_evidence_id && a.basis_quotation);
-      const scopeNeedsConfirmation = isFirstTier(requestedModel) && !result.assessment.in_scope && publicEvidenceRequest(searchClaim);
+      const scopeNeedsConfirmation = isFirstTier(requestedModel) && !result.assessment.in_scope && (admittedTextual || publicEvidenceRequest(searchClaim));
       const atoms = result.assessment.atomic_claims.filter(a => a.material);
       const supportFlagsNeedConfirmation = isFirstTier(requestedModel) && !invalid && result.assessment.in_scope && result.assessment.original_meaning_preserved && result.assessment.all_material_claims_covered && atoms.length > 0 && atoms.every(a => a.relation === 'supports') && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'insufficient_within_selected_corpus';
       const summaryNeedsConfirmation=isFirstTier(requestedModel)&&!invalid&&['supported_within_selected_corpus','conflicting_within_selected_corpus'].includes(decideVerdict(result.assessment,new Set(base.retrieval_ids)))&&vagueExceptionSummary(result.assessment.summary_en,result.assessment.summary_ar);
@@ -277,6 +286,20 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
           base.source_review_attempts=[...(base.source_review_attempts??[]),{assessment_model:base.model,mode:decisionMode,version:ENTAILMENT_VERSION,input_assessment:assessment,review:checked.review,raw_provider_review:checked.raw_provider_review,unit_provenance:checked.unit_provenance,model:checked.model,usage:checked.usage}];
         };
         recordMeaning();
+        // Prose failure is not a retrieval failure. Reassess once on the SAME
+        // authenticated evidence, then independently review the replacement.
+        if(checked.review.explanation_preserved===false && base.assessment_attempts?.length===1 && assessmentModels().length>1){
+          const strong=assessmentModels()[1];
+          const revised=await assessClaim(claim,inputLanguage,base.evidence_items,strong);
+          base.assessment_attempts.push({model:revised.model,reason:'FINAL_EXPLANATION_REASSESSMENT',raw_assessment:revised.assessment,usage:revised.usage});
+          const revisedVerdict=decideVerdict(revised.assessment,new Set(base.retrieval_ids));
+          if(semanticReferenceError(revised.assessment,base.evidence_items)||!['supported_within_selected_corpus','conflicting_within_selected_corpus'].includes(revisedVerdict))return fail('FINAL_EXPLANATION_UNCONFIRMED');
+          assessment=revised.assessment;base.semantic_assessment=assessment;base.model=revised.model;base.usage=revised.usage;base.verdict=revisedVerdict;
+          restoredFirstCandidate=true;
+          decisionMode=revisedVerdict==='conflicting_within_selected_corpus'?'decision':'support';
+          preserveCandidate();
+          checked=await reviewPositiveEntailment(claim,assessment,base.evidence_items,decisionMode);recordMeaning();
+        }
         // A reassessment can accidentally answer instead of representing the question.
         // Reuse only an already recorded, structurally valid first candidate; it must
         // independently pass both meaning and source checks. No forced verdict or new loop.
@@ -296,7 +319,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         }
         const passed = validPositiveReview(checked.review, assessment, base.evidence_items);
         base.entailment_review = { version: ENTAILMENT_VERSION, model: checked.model, status: passed ? 'passed' : 'rejected', raw_review: checked.review, raw_provider_review: checked.raw_provider_review, unit_provenance: checked.unit_provenance, derivation: 'whole_immutable_selected_source_unit', usage: checked.usage, reason: passed ? 'SOURCE_ENTAILMENT_CONFIRMED' : 'SOURCE_ENTAILMENT_UNCONFIRMED' };
-        if (!passed) { base.verdict = 'not_evaluated'; return fail(decisionMode==='decision'?'CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED':'SOURCE_ENTAILMENT_UNCONFIRMED'); }
+        if (!passed) { base.verdict = 'not_evaluated'; return fail(checked.review.explanation_preserved!==true?'FINAL_EXPLANATION_UNCONFIRMED':decisionMode==='decision'?'CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED':'SOURCE_ENTAILMENT_UNCONFIRMED'); }
       } catch (error) {
         base.entailment_review = { version: ENTAILMENT_VERSION, model: error instanceof ProviderFailure ? error.model : primaryModel(), status: 'unavailable', raw_review: null, usage: error instanceof ProviderFailure ? error.usage : null, reason: error instanceof Error ? error.message : 'PROVIDER_UNAVAILABLE' };
         base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNAVAILABLE');
@@ -311,16 +334,17 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       const material=assessment.atomic_claims.filter(a=>a.material);
       // Only a directly evidenced narrower condition/audience is eligible.
       // Missing retrieval, unrelated evidence and unpreserved meanings cannot qualify.
-      if(assessment.in_scope&&assessment.original_meaning_preserved&&material.length===1&&material[0].relation==='partial'&&material[0].direct&&material[0].context_fit&&material[0].negation_checked&&material[0].modality_checked&&material[0].attribution_matched&&(!material[0].scope_matched||!material[0].qualifications_preserved)&&material[0].evidence_ids.length&&!vagueExceptionSummary(assessment.summary_en,assessment.summary_ar)){
+      if(assessment.in_scope&&assessment.original_meaning_preserved&&material.some(a=>['partial','supports'].includes(a.relation)&&a.direct&&a.context_fit&&a.negation_checked&&a.modality_checked&&a.attribution_matched&&a.evidence_ids.length)&&!vagueExceptionSummary(assessment.summary_en,assessment.summary_ar)){
         const draft={draft_en:assessment.summary_en,draft_ar:assessment.summary_ar};
         try{
           const checked=await reviewQualifiedExplanation(claim,assessment,base.evidence_items);
           const r=checked.review.atoms[0],card=base.evidence_items.find(e=>e.evidence_id===r?.evidence_id);
           const text=r?.context_locator===null?card?.quotation:card?.source_context.find(c=>c.locator===r?.context_locator&&c.integrity_passed)?.quotation;
-          const passed=checked.review.atoms.length===1&&r.atom_id==='qualified_explanation'&&r.entails==='yes'&&r.attribution_preserved&&r.qualifications_preserved&&Boolean(card?.integrity.passed&&material[0].evidence_ids.includes(card.evidence_id)&&r.basis_quotation&&text===r.basis_quotation);
-          base.qualified_explanation_review={version:'qualified-explanation-v1',...draft,model:checked.model,status:passed?'passed':'rejected',raw_review:checked.review,raw_provider_review:checked.raw_provider_review,unit_provenance:checked.unit_provenance,usage:checked.usage,reason:passed?'QUALIFIED_EXPLANATION_SOURCE_CONFIRMED':'QUALIFIED_EXPLANATION_UNCONFIRMED'};
+          const cited=new Set(material.flatMap(a=>a.evidence_ids));
+          const passed=checked.review.explanation_preserved===true&&checked.review.atoms.length===1&&r.atom_id==='qualified_explanation'&&r.entails==='yes'&&r.attribution_preserved&&r.qualifications_preserved&&Boolean(card?.integrity.passed&&cited.has(card.evidence_id)&&r.basis_quotation&&text===r.basis_quotation)&&(r.additional_basis??[]).every(b=>{const c=base.evidence_items.find(e=>e.evidence_id===b.evidence_id);const t=b.context_locator===null?c?.quotation:c?.source_context.find(u=>u.locator===b.context_locator&&u.integrity_passed)?.quotation;return Boolean(c?.integrity.passed&&cited.has(b.evidence_id)&&t===b.basis_quotation);});
+          base.qualified_explanation_review={version:'qualified-explanation-v2',...draft,model:checked.model,status:passed?'passed':'rejected',raw_review:checked.review,raw_provider_review:checked.raw_provider_review,unit_provenance:checked.unit_provenance,usage:checked.usage,reason:passed?'QUALIFIED_EXPLANATION_SOURCE_CONFIRMED':'QUALIFIED_EXPLANATION_UNCONFIRMED'};
           if(passed){base.summary_en=`Qualified explanation: ${assessment.summary_en} The complete claim is not established as worded.`;base.summary_ar=`توضيح مقيّد: ${assessment.summary_ar} لم يثبت الادعاء كاملًا بصيغته الواردة.`;}
-        }catch(error){base.qualified_explanation_review={version:'qualified-explanation-v1',...draft,model:error instanceof ProviderFailure?error.model:primaryModel(),status:'unavailable',raw_review:null,usage:error instanceof ProviderFailure?error.usage:null,reason:error instanceof Error?error.message:'PROVIDER_UNAVAILABLE'};}
+        }catch(error){base.qualified_explanation_review={version:'qualified-explanation-v2',...draft,model:error instanceof ProviderFailure?error.model:primaryModel(),status:'unavailable',raw_review:null,usage:error instanceof ProviderFailure?error.usage:null,reason:error instanceof Error?error.message:'PROVIDER_UNAVAILABLE'};}
       }
     } else if (base.verdict === 'not_evaluated') {
       base.summary_ar = 'لم يتم التحقق من هذا الادعاء؛ يلزم الرجوع إلى سبب التوقف المعروض.';
@@ -335,6 +359,13 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     const allowed = ['PROVIDER_UNAVAILABLE', 'PROVIDER_RATE_LIMIT', 'PROVIDER_INCOMPLETE', 'PROVIDER_REFUSAL', 'SPEND_OR_CONCURRENCY_STOP', 'MODEL_NOT_ALLOWLISTED', 'PACKET_LIMIT', 'PACKET_INTEGRITY_FAILURE', 'SPEND_BUDGET_STOP', 'SPEND_BUDGET_UNAUTHORIZED', 'BUDGET_LEDGER_LOCKED', 'BUDGET_LEDGER_INVALID'];
     return fail(error instanceof Error && allowed.includes(error.message) ? error.message : 'SEMANTIC_SCHEMA_OR_PROVIDER_FAILURE');
   }
+}
+
+function usefulLocators(record:VerificationRecord):{quran:string[];hadith:string[]}{
+  const parsed=semanticSchema.safeParse(record.semantic_assessment);
+  const ids=new Set(parsed.success?parsed.data.atomic_claims.filter(a=>a.material&&['supports','partial'].includes(a.relation)&&a.direct&&a.context_fit).flatMap(a=>a.evidence_ids):[]);
+  const cards=record.evidence_items.filter(e=>ids.has(e.evidence_id)&&e.integrity.passed).slice(0,4);
+  return {quran:cards.filter(e=>e.source_id.startsWith('QURAN-')).map(e=>e.locator),hadith:cards.filter(e=>!e.source_id.startsWith('QURAN-')).map(e=>e.locator)};
 }
 
 /** One additional search plan for an evidence gap, never a recursive retry or a verdict override. */
@@ -352,7 +383,7 @@ async function verifyClaimWithLocalRecovery(options: Parameters<typeof verifyCla
   catch (error) {
     return sealRecord({...initialPayload,retrieval_recovery:{version:'bounded-retrieval-recovery-v1',status:'unavailable',reason:error instanceof QueryPlannerFailure?error.message:'QUERY_PLAN_UNAVAILABLE',first_record:first,usage:error instanceof QueryPlannerFailure?error.usage:null}});
   }
-  const second = await verifyClaim({...options,useQueryPlanner:false,queryOverrides:{arabic_terms:plan.arabic_terms,english_terms:plan.english_terms}});
+  const second = await verifyClaim({...options,retainedLocators:usefulLocators(first),useQueryPlanner:false,queryOverrides:{arabic_terms:plan.arabic_terms,english_terms:plan.english_terms}});
   const {audit_hash: discarded,...payload} = second; void discarded;
   return sealRecord({...payload,retrieval_recovery:{version:'bounded-retrieval-recovery-v1',status:'completed',reason:'ONE_ALTERNATIVE_SEARCH_FOR_EVIDENCE_GAP',first_record:first,usage:plan.usage,rejected_search_term_count:plan.rejected_search_term_count},limitations:[...second.limitations,'One bounded alternative search was attempted after incomplete evidence. The complete first sealed result and extra planning usage are retained; no original verdict was rewritten.']});
 }
@@ -368,7 +399,7 @@ export async function verifyClaimWithRecovery(options:Parameters<typeof verifyCl
   if(!eligible||operational)return previous;
   const discovery=await discoverWebReferences(options.claim,options.scopeClaim??options.claim,options.corpusSelection??'quran',options.admittedTextual);
   const attempted=discovery.status==='completed'&&(discovery.quran_locators.length>0||discovery.hadith_locators.length>0);
-  const result=attempted?await verifyClaim({...options,useQueryPlanner:false,webLocators:{quran:discovery.quran_locators,hadith:discovery.hadith_locators}}):previous;
+  const result=attempted?await verifyClaim({...options,retainedLocators:usefulLocators(previous),useQueryPlanner:false,webLocators:{quran:discovery.quran_locators,hadith:discovery.hadith_locators}}):previous;
   const {audit_hash:omitted,...payload}=result;void omitted;
   return sealRecord({...payload,web_discovery:{...discovery,previous_record:previous,verification_attempted:attempted},limitations:[...result.limitations,'Online search discovers references only. Quran and Hadith conclusions are rechecked against immutable admitted passages. Al-Ifta links are attributed guidance, not a verified scripture verdict.']});
 }

@@ -30,10 +30,10 @@ describe('bounded AI search planner adapter', () => {
     await expect(planClaimQueries({claim,inputLanguage:'en',admittedTextual:true})).resolves.toHaveProperty('arabic_terms');
     expect(fetchMock).toHaveBeenCalledOnce();
   });
-  it('retains personal screening even after server textual admission',async()=>{
-    const fetchMock=vi.fn();vi.stubGlobal('fetch',fetchMock);
-    await expect(planClaimQueries({claim:'Can I stop fasting because of my illness?',inputLanguage:'en',admittedTextual:true})).rejects.toThrow('PERSONAL_RULING_REFERRAL');
-    expect(fetchMock).not.toHaveBeenCalled();
+  it('uses model admission without a second personal-keyword decision',async()=>{
+    const fetchMock=vi.fn().mockResolvedValue(response(terms));vi.stubGlobal('fetch',fetchMock);
+    await expect(planClaimQueries({claim:'Can I stop fasting because of my illness?',inputLanguage:'en',admittedTextual:true})).resolves.toHaveProperty('arabic_terms');
+    expect(fetchMock).toHaveBeenCalledOnce();
   });
   it('returns only bounded search terms and settles known usage in the existing ledger', async () => {
     const fetchMock = vi.fn().mockResolvedValue(response(terms)); vi.stubGlobal('fetch', fetchMock);

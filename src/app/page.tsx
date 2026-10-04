@@ -28,8 +28,10 @@ const statusLabels: Record<string,[string,string]> = {
   passed: ['اجتاز فحص السلامة','Integrity checks passed'], not_run: ['لم يُجرَ الفحص','Not checked'], no_candidates: ['لم تُسترجع نصوص','No passages retrieved'], not_reviewed: ['لم تُجرَ مراجعة بشرية','Not human-reviewed'], not_assessed: ['لم تُقيّم العلاقة','Relationship not assessed'], supports: ['يدعم الادعاء','Supports the claim'], contradicts: ['يتعارض مع الادعاء','Contradicts the claim'], partial: ['يدعم جزءاً فقط','Partial support'], unrelated: ['غير مرتبط بالادعاء','Unrelated to the claim']
 };
 const reasonLabels: Record<string,[string,string]> = {
+  CLAIM_CLARIFICATION_REQUIRED:['يلزم توضيح السؤال قبل البحث في المصادر.','Clarify the question before source verification.'],
+  FINAL_EXPLANATION_UNCONFIRMED:['لم يجتز الشرح النهائي مراجعة الأدلة؛ لم تُعتمد نتيجة.','The final explanation did not pass evidence review. No conclusion is confirmed.'],
   CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED: ['لم يجتز الاستدلال فحص معنى السؤال أو التعارض المباشر؛ لا توجد نتيجة مؤكدة.','The reasoning did not pass the question-meaning or direct-contradiction check. No conclusion is confirmed.'],
-  INPUT_INVALID: ['اكتب ادعاءً واضحاً بين ٥ و١٢٠٠ حرف.','Enter a clear claim between 5 and 1,200 characters.'],
+  INPUT_INVALID: ['اكتب سؤالاً أو ادعاءً واضحاً حتى ١٢٠٠ حرف.','Enter a clear question or claim up to 1,200 characters.'],
   PERSONAL_RULING_REFERRAL: ['هذه حالة شخصية تحتاج سؤال مختص مؤهل؛ لا تصدر العدسة فتوى شخصية.','This personal situation needs a qualified specialist; IsnadLens does not issue personal fatwas.'],
   SENSITIVE_SCOPE_REFERRAL: ['الموضوع خارج نطاق التقييم الآلي هنا ويحتاج مراجعة مختص.','This topic is outside automated assessment here and requires qualified review.'],
   PRIVATE_DATA_REFERRAL: ['أزل بيانات الاتصال الشخصية قبل فحص الادعاء.','Remove personal contact details before examining the claim.'],

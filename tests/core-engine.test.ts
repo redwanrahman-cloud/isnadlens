@@ -28,7 +28,7 @@ it('reserves hosted-search fees and context before calling, then settles actual 
  }finally{rmSync(directory,{recursive:true,force:true});}
 });
 const assessment: SemanticAssessment = { in_scope: true, original_meaning_preserved: true, atomic_claims: [atom], all_material_claims_covered: true, summary_ar: 'تفسير', summary_en: 'Explanation', limitations: [] };
-beforeEach(() => { vi.spyOn(provider, 'reviewPositiveEntailment').mockImplementation(async (_claim, assessed, cards) => ({ model: 'gpt-5.4-mini', usage: null, review: { atoms: assessed.atomic_claims.filter(a => a.material).map(a => ({ atom_id: a.id, entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, evidence_id: a.evidence_ids[0] ?? null, context_locator: null, basis_quotation: cards.find(e => e.evidence_id === a.evidence_ids[0])?.quotation ?? null })) } })); });
+beforeEach(() => { vi.spyOn(provider, 'reviewPositiveEntailment').mockImplementation(async (_claim, assessed, cards) => ({ model: 'gpt-5.4-mini', usage: null, review: { explanation_preserved:true, atoms: assessed.atomic_claims.filter(a => a.material).map(a => ({ atom_id: a.id, entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, evidence_id: a.evidence_ids[0] ?? null, context_locator: null, basis_quotation: cards.find(e => e.evidence_id === a.evidence_ids[0])?.quotation ?? null })) } })); });
 afterEach(() => { vi.restoreAllMocks(); });
 describe('mandatory independent positive source check', () => {
   it('resolves only immutable selected units, binding exact context and refusing arbitrary or ambiguous IDs', () => {
@@ -36,17 +36,17 @@ describe('mandatory independent positive source check', () => {
     const units = provider.buildSourceUnits([card]);
     const assessed = { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [card.evidence_id] }] };
     const decision = { atom_id: 'a1', entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, basis_unit_id: units[0].unit_id };
-    const raw = { atoms: [decision] };
+    const raw = { explanation_preserved:true, atoms: [decision] };
     expect(provider.resolveUnitReview(raw, units).atoms[0]).toMatchObject({ evidence_id: card.evidence_id, context_locator: null, basis_quotation: card.quotation });
     const context = units[1];
-    expect(provider.resolveUnitReview({ atoms: [{ ...decision, basis_unit_id: context.unit_id }] }, units).atoms[0]).toMatchObject({ context_locator: context.context_locator, basis_quotation: context.text });
-    expect(raw).toEqual({ atoms: [decision] });
-    expect(validPositiveReview(provider.resolveUnitReview({ atoms: [{ ...decision, basis_unit_id: 'unsupplied-unit' }] }, units), assessed, [card])).toBe(false);
+    expect(provider.resolveUnitReview({ explanation_preserved:true, atoms: [{ ...decision, basis_unit_id: context.unit_id }] }, units).atoms[0]).toMatchObject({ context_locator: context.context_locator, basis_quotation: context.text });
+    expect(raw).toEqual({ explanation_preserved:true, atoms: [decision] });
+    expect(validPositiveReview(provider.resolveUnitReview({ explanation_preserved:true, atoms: [{ ...decision, basis_unit_id: 'unsupplied-unit' }] }, units), assessed, [card])).toBe(false);
     expect(() => provider.resolveUnitReview(raw, [units[0], units[0]])).toThrow('SOURCE_UNIT_INVALID');
     expect(() => provider.resolveUnitReview(raw, [{ ...units[0], text: 'forged text' }])).toThrow('SOURCE_UNIT_INVALID');
     expect(() => provider.buildSourceUnits([{ ...card, quotation: 'forged text' }])).toThrow('PACKET_INTEGRITY_FAILURE');
     expect(() => provider.buildSourceUnits(Array(9).fill(card))).toThrow('PACKET_INTEGRITY_FAILURE');
-    expect(validPositiveReview(provider.resolveUnitReview({ atoms: [decision, decision] }, units), assessed, [card])).toBe(false);
+    expect(validPositiveReview(provider.resolveUnitReview({ explanation_preserved:true, atoms: [decision, decision] }, units), assessed, [card])).toBe(false);
   });
   it('promotes only exact already-supplied Quran neighbors, keeping bounded authenticated cards', () => {
     const corpus = loadCorpus(); const parent = authenticateEvidence(corpus, corpus.verses.find(v => v.id === '5:116')!);
@@ -89,7 +89,7 @@ describe('mandatory independent positive source check', () => {
       const fetchMock = vi.fn(); vi.stubGlobal('fetch', fetchMock);
       await expect(provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card])).rejects.toThrow('PROVIDER_UNAVAILABLE'); expect(fetchMock).not.toHaveBeenCalled();
       vi.stubEnv('ISNADLENS_PAID_CALLS_AUTHORIZED', 'true'); vi.stubEnv('ISNADLENS_MAX_SPEND_USD', '.2'); vi.stubEnv('ISNADLENS_MAX_CALLS', '1000'); vi.stubEnv('OPENAI_API_KEY', 'mock-key');
-      const review = { atoms: [{ atom_id: 'a1', entails: 'yes', attribution_preserved: true, qualifications_preserved: true, basis_unit_id: `${card.evidence_id}:primary` }] };
+      const review = { explanation_preserved:true, atoms: [{ atom_id: 'a1', entails: 'yes', attribution_preserved: true, qualifications_preserved: true, basis_unit_id: `${card.evidence_id}:primary` }] };
       const response = (text: string) => new Response(JSON.stringify({ status: 'completed', usage: { input_tokens: 100, output_tokens: 40 }, output: [{ content: [{ type: 'output_text', text }] }] }), { status: 200 });
       fetchMock.mockResolvedValueOnce(response('{"faithful":"yes"}')).mockResolvedValueOnce(response(JSON.stringify(review))).mockResolvedValueOnce(response('{malformed'));
       const result = await provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card]); expect(result.usage?.reservation_id).toBeTruthy();
@@ -110,8 +110,8 @@ describe('mandatory independent positive source check', () => {
   });
   it('rejects unrelated-source assessment when independent source check denies entailment', async () => {
     const model = vi.spyOn(provider, 'assessClaim').mockImplementation(async (_claim, _language, cards) => ({ assessment: { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [cards[0].evidence_id] }] }, model: 'gpt-5.4-mini', usage: null }));
-    const raw = { atoms: [{ atom_id: 'a1', entails: 'no' as const, attribution_preserved: true, qualifications_preserved: true, basis_unit_id: null }] };
-    vi.mocked(provider.reviewPositiveEntailment).mockResolvedValue({ review: { atoms: [{ atom_id: 'a1', entails: 'no', attribution_preserved: true, qualifications_preserved: true, evidence_id: null, context_locator: null, basis_quotation: null }] }, raw_provider_review: raw, unit_provenance: [], model: 'gpt-5.4-mini', usage: { input_tokens: 10, output_tokens: 20, estimated_cost_usd: 0.001, reservation_id: 'review-cost' } });
+    const raw = { explanation_preserved:true, atoms: [{ atom_id: 'a1', entails: 'no' as const, attribution_preserved: true, qualifications_preserved: true, basis_unit_id: null }] };
+    vi.mocked(provider.reviewPositiveEntailment).mockResolvedValue({ review: { explanation_preserved:true, atoms: [{ atom_id: 'a1', entails: 'no', attribution_preserved: true, qualifications_preserved: true, evidence_id: null, context_locator: null, basis_quotation: null }] }, raw_provider_review: raw, unit_provenance: [], model: 'gpt-5.4-mini', usage: { input_tokens: 10, output_tokens: 20, estimated_cost_usd: 0.001, reservation_id: 'review-cost' } });
     const record = await verifyClaim({ claim: 'The Quran prescribes prayer.', inputLanguage: 'en' });
     expect(model).toHaveBeenCalledTimes(1); expect(record.verdict).toBe('not_evaluated');
     expect(record.reason_codes).toEqual(['SOURCE_ENTAILMENT_UNCONFIRMED']); expect(record.entailment_review?.usage?.reservation_id).toBe('review-cost'); expect(verifySeal(record)).toBe(true);
@@ -128,13 +128,13 @@ describe('mandatory independent positive source check', () => {
     const card = authenticateEvidence(loadCorpus(), loadCorpus().verses.find(v => v.id === '2:185')!);
     const assessed = { ...assessment, atomic_claims: [{ ...atom, evidence_ids: [card.evidence_id] }] };
     const check = { atom_id: 'a1', entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, evidence_id: card.evidence_id, context_locator: null, basis_quotation: card.quotation };
-    expect(validPositiveReview({ atoms: [check] }, assessed, [card])).toBe(true);
-    expect(validPositiveReview({ atoms: [{ ...check, basis_quotation: 'invented words' }] }, assessed, [card])).toBe(false);
-    expect(validPositiveReview({ atoms: [{ ...check, qualifications_preserved: false }] }, assessed, [card])).toBe(false);
-    expect(validPositiveReview({ atoms: [check, check] }, assessed, [card])).toBe(false);
-    expect(validPositiveReview({ atoms: [{ ...check, evidence_id: 'invented-context-id' }] }, assessed, [card])).toBe(false);
+    expect(validPositiveReview({ explanation_preserved:true, atoms: [check] }, assessed, [card])).toBe(true);
+    expect(validPositiveReview({ explanation_preserved:true, atoms: [{ ...check, basis_quotation: 'invented words' }] }, assessed, [card])).toBe(false);
+    expect(validPositiveReview({ explanation_preserved:true, atoms: [{ ...check, qualifications_preserved: false }] }, assessed, [card])).toBe(false);
+    expect(validPositiveReview({ explanation_preserved:true, atoms: [check, check] }, assessed, [card])).toBe(false);
+    expect(validPositiveReview({ explanation_preserved:true, atoms: [{ ...check, evidence_id: 'invented-context-id' }] }, assessed, [card])).toBe(false);
     const context = card.source_context[0];
-    expect(validPositiveReview({ atoms: [{ ...check, context_locator: context.locator, basis_quotation: context.quotation }] }, assessed, [card])).toBe(true);
+    expect(validPositiveReview({ explanation_preserved:true, atoms: [{ ...check, context_locator: context.locator, basis_quotation: context.quotation }] }, assessed, [card])).toBe(true);
   });
 });
 describe('complete semantic coverage policy', () => {
@@ -601,7 +601,7 @@ describe('one-step objective semantic reference router', () => {
       expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
       expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
       expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
-      expect(record.router_version).toContain('bounded-recovery-v11'); expect(verifySeal(record)).toBe(true);
+      expect(record.router_version).toContain('model-routing-v12'); expect(verifySeal(record)).toBe(true);
       const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
       expect(verifySeal(changed)).toBe(false);
     } finally { mocked.mockRestore(); }

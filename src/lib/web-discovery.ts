@@ -4,7 +4,7 @@ import { primaryModel, modelReasoning } from './model-config';
 import { loadCorpus, sha256 } from './corpus';
 import { loadHadith } from './hadith';
 import { parseQuranReferences, parseHadithLinks } from './citations';
-import { scopeGate, nativeSafetyGate } from './policy';
+import { scopeGate, nativeSafetyGate, inputValidityGate } from './policy';
 import type { VerificationRecord } from './contracts';
 
 export const TRUSTED_DOMAINS = ['quranenc.com', 'hadeethenc.com', 'alifta.gov.sa'] as const;
@@ -52,7 +52,7 @@ export function searchReferences(output:SearchOutput[]){
 }
 export async function discoverWebReferences(claim:string, searchClaim=claim, selection:'quran'|'hadith'|'both'='both', admittedTextual=false):Promise<WebDiscovery>{
   const base:WebDiscovery={version:WEB_DISCOVERY_VERSION,status:'unavailable',reason:'WEB_DISCOVERY_UNAVAILABLE',search_calls:0,model:primaryModel(),usage:null,pages:[],quran_locators:[],hadith_locators:[]};
-  if(claim.length>1200||searchClaim.length>1400||nativeSafetyGate(claim)||scopeGate(searchClaim, admittedTextual)){base.reason='WEB_SCOPE_REFERRAL';return base;}
+  if(claim.length>1200||searchClaim.length>1400||(admittedTextual?inputValidityGate(claim):nativeSafetyGate(claim))||scopeGate(searchClaim, admittedTextual)){base.reason='WEB_SCOPE_REFERRAL';return base;}
   const cacheKey=sha256(JSON.stringify([WEB_DISCOVERY_VERSION,claim,searchClaim,selection]));
   const cached=discoveryCache.get(cacheKey);
   if(cached&&cached.expires>Date.now())return {...structuredClone(cached.result),usage:null,search_calls:0,cached:true};

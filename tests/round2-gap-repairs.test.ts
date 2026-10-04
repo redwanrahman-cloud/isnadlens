@@ -35,7 +35,7 @@ it.each([false,true])('only exposes source-confirmed qualified prose and leaves 
  setup();const planned=vi.spyOn(planner,'planClaimQueries').mockRejectedValue(new planner.QueryPlannerFailure('SPEND_BUDGET_STOP'));
  const review=vi.spyOn(provider,'reviewQualifiedExplanation').mockImplementation(async (_claim,_a,cards)=>{
   const card=cards.find(c=>c.locator==='59:18')!;
-  return {model:'gpt-5.6-terra',usage:null,raw_provider_review:{atoms:[]},unit_provenance:[],review:{atoms:[{atom_id:'qualified_explanation',entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:card.evidence_id,context_locator:null,basis_quotation:forged?'invented source text':card.quotation}]}};
+  return {model:'gpt-5.6-terra',usage:null,raw_provider_review:{explanation_preserved:true,atoms:[]},unit_provenance:[],review:{explanation_preserved:true,atoms:[{atom_id:'qualified_explanation',entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:card.evidence_id,context_locator:null,basis_quotation:forged?'invented source text':card.quotation}]}};
  });
  return verifyClaimWithRecovery(options).then(r=>{
   expect(review).toHaveBeenCalledOnce();expect(r.verdict).toBe('insufficient_within_selected_corpus');expect(verifySeal(r)).toBe(true);
