@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { verifyClaim } from '@/lib/verification';
-import { verifyAutoClaim } from '@/lib/auto-verification';
-import { inferClaimInputLanguage } from '@/lib/claim-language';
+import { verifyMultilingualClaim } from '@/lib/multilingual-intake';
+import { isClaimInputSelection } from '@/lib/claim-language';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -34,7 +33,7 @@ export async function POST(request: NextRequest) {
   let body;
   try { body = await readBoundedBody(request); }
   catch { return NextResponse.json({error:'INVALID_INPUT'}, {status:400}); }
-  if (!body || typeof body.claim!=='string' || !['ar','en'].includes(body.inputLanguage)) {
+  if (!body || typeof body.claim!=='string' || !isClaimInputSelection(body.inputLanguage)) {
     return NextResponse.json({error:'INVALID_INPUT'}, {status:400});
   }
   if (body.corpusSelection !== undefined && !['auto', 'quran', 'hadith'].includes(body.corpusSelection)) {
@@ -42,10 +41,7 @@ export async function POST(request: NextRequest) {
   }
   active++;
   try {
-    const inputLanguage = inferClaimInputLanguage(body.claim,body.inputLanguage);
-    const record = body.corpusSelection === 'auto'
-      ? await verifyAutoClaim({claim:body.claim,inputLanguage})
-      : await verifyClaim({claim:body.claim,inputLanguage,corpusSelection:body.corpusSelection ?? 'quran',useQueryPlanner:true});
+    const record = await verifyMultilingualClaim({claim:body.claim,inputLanguage:body.inputLanguage,corpusSelection:body.corpusSelection ?? 'auto'});
     return NextResponse.json(record,{headers:{'Cache-Control':'no-store'}});
   } catch {
     return NextResponse.json({error:'VERIFICATION_UNAVAILABLE'},{status:503});

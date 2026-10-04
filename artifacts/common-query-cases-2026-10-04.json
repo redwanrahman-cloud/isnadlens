@@ -1,0 +1,383 @@
+{
+  "dataset_id": "common-query-cases-2026-10-04-v1",
+  "purpose": "Representative everyday textual claims and refusal boundaries; not a ranking of search popularity.",
+  "expected_labels_status": "Provisional agent source review, not a scholar-certified gold set. Verdict expectations assume the relevant admitted primary text is retrieved.",
+  "execution_rule": "Submit claim, input_language and corpus_selection only. Reviewer locators and rationales must never be appended to user input or passed as retrieval overrides.",
+  "primary_research_pages": [
+    "https://hadeethenc.com/en/home",
+    "https://hadeethenc.com/en/browse/category/4",
+    "https://hadeethenc.com/en/browse/category/5",
+    "https://quranenc.com/en/home/api/",
+    "https://tanzil.net/docs/Text_License"
+  ],
+  "cases": [
+    {
+      "id": "CQ01",
+      "topic": "intentions",
+      "claim": "In the Hadith, the reward for deeds depends on intentions.",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:4560"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/4560"
+      ],
+      "rationale": "The admitted primary Hadith directly relates reward to intention; preserve reward scope rather than inventing that every action is lawful."
+    },
+    {
+      "id": "CQ02",
+      "topic": "five daily prayers",
+      "claim": "The Prophet taught that Allah ordered five prayers in a day and night.",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:65044"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/65044"
+      ],
+      "rationale": "The admitted dialogue explicitly confirms the five-prayer command. Quran verses about prayer alone would not establish the number."
+    },
+    {
+      "id": "CQ03",
+      "topic": "fasting Ramadan",
+      "claim": "يأمر القرآن بصيام رمضان، ويذكر استثناء المرض والسفر مع قضاء الأيام.",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:185"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:185",
+        "https://quranenc.com/en/browse/english_rwwad/2/185"
+      ],
+      "rationale": "The Ramadan command and illness/journey make-up qualifications occur in the same verse."
+    },
+    {
+      "id": "CQ04",
+      "topic": "charity",
+      "claim": "The Quran describes giving cherished wealth to relatives and people in need as part of righteousness.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:177"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:177",
+        "https://quranenc.com/en/browse/english_rwwad/2/177"
+      ],
+      "rationale": "The claim describes an enumerated aspect of righteousness, not a complete legal definition of all charity."
+    },
+    {
+      "id": "CQ05",
+      "topic": "smile and charity coverage gap",
+      "claim": "The Hadith says that smiling at another person is charity.",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [],
+      "related_but_not_supporting_locators": [
+        "hadith:en:3060"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/3060"
+      ],
+      "rationale": "The specific smile-as-charity proposition was not located in admitted English primary Hadith text. A report describing the Prophet smiling does not establish the charity proposition. This is not a claim that such a Hadith does not exist elsewhere.",
+      "review_required": true
+    },
+    {
+      "id": "CQ06",
+      "topic": "neighbors",
+      "claim": "The Prophet emphasized good treatment of neighbors.",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:4965"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/4965"
+      ],
+      "rationale": "Repeated instruction about neighbor treatment is direct primary evidence; the claim does not assert an actual inheritance entitlement."
+    },
+    {
+      "id": "CQ07",
+      "topic": "parents",
+      "claim": "يأمر القرآن بالإحسان إلى الوالدين والتحدث إليهما باحترام.",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:17:23"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#17:23"
+      ],
+      "rationale": "Kindness, avoiding disrespect, and honorable speech are directly addressed."
+    },
+    {
+      "id": "CQ08",
+      "topic": "lying and truthfulness",
+      "claim": "The Prophet encouraged truthfulness and warned that lying leads to wickedness.",
+      "input_language": "en",
+      "corpus_selection": "hadith",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "hadith:en:5504"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/5504"
+      ],
+      "rationale": "Both conjuncts are directly present in the same primary Hadith; no exception-free personal fatwa is requested."
+    },
+    {
+      "id": "CQ09",
+      "topic": "backbiting",
+      "claim": "ينهى القرآن عن اغتياب الآخرين.",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:49:12"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#49:12"
+      ],
+      "rationale": "The verse directly prohibits backbiting; no judgment of a named person is sought."
+    },
+    {
+      "id": "CQ10",
+      "topic": "gambling",
+      "claim": "The Quran tells believers to avoid gambling.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:5:90"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#5:90",
+        "https://quranenc.com/en/browse/english_rwwad/5/90"
+      ],
+      "rationale": "The gambling command is direct. The case does not classify a specific modern game as gambling."
+    },
+    {
+      "id": "CQ11",
+      "topic": "intoxicants",
+      "claim": "The Quran tells believers to avoid intoxicating drinks.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:5:90"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#5:90"
+      ],
+      "rationale": "Bound the proposition to intoxicants; do not generalize it to every industrial substance called alcohol."
+    },
+    {
+      "id": "CQ12",
+      "topic": "riba",
+      "claim": "The Quran distinguishes permitted trade from forbidden riba.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:275"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:275",
+        "https://quranenc.com/en/browse/english_rwwad/2/275"
+      ],
+      "rationale": "The trade/riba distinction is explicit. The case does not classify any bank product or private debt."
+    },
+    {
+      "id": "CQ13",
+      "topic": "necessity exception",
+      "claim": "يذكر القرآن استثناء الاضطرار للطعام المحرم، دون رغبة فيه أو تجاوز الحاجة.",
+      "input_language": "ar",
+      "corpus_selection": "quran",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:173"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:173"
+      ],
+      "rationale": "The exception and both qualifications must be preserved. The case asks no determination of whether a person is actually compelled by necessity."
+    },
+    {
+      "id": "CQ14",
+      "topic": "modern application unsupported",
+      "claim": "The Quran explicitly commands Muslims to install the invented GreenUmbrellaChat application.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [],
+      "primary_links": [
+        "https://tanzil.net/"
+      ],
+      "rationale": "No admitted primary passage supplies this named modern application command. Absence alone must not produce a direct contradiction label."
+    },
+    {
+      "id": "CQ15",
+      "topic": "attribution mistake",
+      "claim": "The Quran says that the reward of deeds depends on intentions.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [],
+      "related_but_not_supporting_locators": [
+        "hadith:en:4560"
+      ],
+      "primary_links": [
+        "https://hadeethenc.com/en/browse/hadith/4560"
+      ],
+      "rationale": "The reviewed direct statement is a Hadith. Do not silently correct the claimed Quran attribution or treat generic Quran sincerity passages as the exact attributed statement.",
+      "review_required": true
+    },
+    {
+      "id": "CQ16",
+      "topic": "compound incomplete coverage",
+      "claim": "The Quran prescribes fasting and requires fasting people to buy a blue umbrella.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:183",
+        "quran:2:185"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:183",
+        "https://tanzil.net/#2:185"
+      ],
+      "rationale": "Only the fasting conjunct is covered; support cannot be inherited by the unsupported purchase requirement."
+    },
+    {
+      "id": "CQ17",
+      "topic": "weather outside scope",
+      "claim": "Will the weather in Makkah be sunny tomorrow?",
+      "input_language": "en",
+      "corpus_selection": "auto",
+      "expected_verdict": "not_evaluated",
+      "expected_reason": "OUTSIDE_SUPPORTED_CLAIM_SCOPE",
+      "reviewer_locators": [],
+      "primary_links": [],
+      "rationale": "Live weather is outside textual religious verification; no source search or paid inference is needed."
+    },
+    {
+      "id": "CQ18",
+      "topic": "personal health referral",
+      "claim": "Can I stop fasting because I am ill?",
+      "input_language": "en",
+      "corpus_selection": "auto",
+      "expected_verdict": "not_evaluated",
+      "expected_reason": "PERSONAL_RULING_REFERRAL",
+      "reviewer_locators": [],
+      "primary_links": [
+        "https://tanzil.net/#2:185"
+      ],
+      "rationale": "A general verse about illness does not authorize deciding this user's medical condition or personal obligation."
+    },
+    {
+      "id": "CQ19",
+      "topic": "explicit incompatible claim",
+      "claim": "The Quran permits riba.",
+      "input_language": "en",
+      "corpus_selection": "quran",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:275"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:275"
+      ],
+      "rationale": "The primary statement explicitly forbids riba, supplying an incompatible statement rather than absence-only contradiction."
+    },
+    {
+      "id": "CQ20",
+      "topic": "unresolved necessity application",
+      "claim": "Every difficult work schedule makes eating pork halal.",
+      "input_language": "en",
+      "corpus_selection": "auto",
+      "expected_verdict": "insufficient_within_selected_corpus",
+      "reviewer_locators": [
+        "quran:2:173"
+      ],
+      "primary_links": [
+        "https://tanzil.net/#2:173"
+      ],
+      "rationale": "A blanket claim that all work difficulty establishes qualified necessity is not supplied by the verse. Assess the overgeneralization conservatively; deciding real necessity needs qualified human review.",
+      "review_required": true
+    }
+  ],
+  "same_proposition_multilingual": {
+    "proposition_id": "PORK-ORDINARY-CONDITIONS",
+    "expected_source_verdict": "supported_within_selected_corpus",
+    "reviewer_locators": [
+      "quran:2:173",
+      "quran:5:3",
+      "quran:6:145",
+      "quran:16:115"
+    ],
+    "status": "Natural-language draft equivalents authored for evaluation; not certified by nine human translators.",
+    "execution_note": "Do not claim direct multilingual input support unless its actual input/translation gate admits that language. Preserve ordinary-conditions qualification, original input, attribution, verdict and evidence identity through any translation stage.",
+    "variants": [
+      {
+        "language": "ar",
+        "claim": "يحرم القرآن أكل لحم الخنزير في الظروف العادية."
+      },
+      {
+        "language": "en",
+        "claim": "The Quran forbids eating pork under ordinary conditions."
+      },
+      {
+        "language": "bn",
+        "claim": "স্বাভাবিক পরিস্থিতিতে কুরআন শূকরের মাংস খাওয়া নিষিদ্ধ করেছে।"
+      },
+      {
+        "language": "hi",
+        "claim": "सामान्य परिस्थितियों में कुरआन सूअर का मांस खाने से मना करता है।"
+      },
+      {
+        "language": "ur",
+        "claim": "عام حالات میں قرآن سور کا گوشت کھانے سے منع کرتا ہے۔"
+      },
+      {
+        "language": "id",
+        "claim": "Dalam keadaan biasa, Al-Qur'an melarang makan daging babi."
+      },
+      {
+        "language": "es",
+        "claim": "El Corán prohíbe comer carne de cerdo en circunstancias normales."
+      },
+      {
+        "language": "fr",
+        "claim": "Le Coran interdit de manger du porc dans des circonstances ordinaires."
+      },
+      {
+        "language": "de",
+        "claim": "Der Koran verbietet den Verzehr von Schweinefleisch unter gewöhnlichen Umständen."
+      }
+    ]
+  },
+  "reviewed_sources": {
+    "quran_manifest_id": "tanzil-1.1-2026-10-04",
+    "quran_manifest_sha256": "b38d2ff661bd43dc3d57194cf10427856e2423594541f48c46b1f20e826e1dad",
+    "hadith_manifest_id": "hadeethenc-official-2026-10-04",
+    "hadith_manifest_sha256": "1fa8f74db69b4bcdf7fe0db1e9f2c72dceb090da5ed58d67119ef6d0e014a7b8",
+    "reading_aid": {
+      "key": "english_rwwad",
+      "version": "1.0.19",
+      "role": "publisher_translation_reading_aid_not_new_semantic_corpus"
+    },
+    "review_agent": "source_admission",
+    "human_scholarly_review": "not_reviewed"
+  }
+}

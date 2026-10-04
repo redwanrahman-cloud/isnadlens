@@ -1,5 +1,14 @@
 # Release checklist
 
+## Latest verified increment — 4 October 2026
+
+- Nine fresh input languages, automatic detection, original-preserving routing and native explanation requests.
+- Quran direct support sufficient; every mini-model conflict requires strong confirmation, preserving attribution and explicit conditions.
+- Complete common-query live development rerun 29/29 provisional expectations, three fresh question phrasings, intact original inputs/seals/quotation checks. Independent final evaluation remains open.
+- 208 regression tests and production build passed; production traces contain zero private artifacts or environment files.
+- Google unpaid-project speech connected after Redwan's confirmation; real English/Arabic WAV generation and identical-byte cached reuse passed. Browser generated-result audio reached readyState 4, played and paused without media errors. Narrow page width 309px had no horizontal overflow; native audio width about222px. Physical iPhone/Android playback and pronunciation review remain open.
+- Proof: parent outputs/isnadlens-google-natural-voice-2026-10-04.jpg. Private keys, caches and full development records are excluded from Git.
+
 This tracks actual completion, not promised capabilities. Visual redesign requires Redwan's approval of its direction first.
 
 ## Verified local milestones

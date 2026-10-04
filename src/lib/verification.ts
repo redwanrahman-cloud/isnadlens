@@ -1,7 +1,8 @@
+import { CLAIM_LANGUAGES, type ClaimLanguage } from './claim-language';
 import { randomUUID } from 'node:crypto';
 import { loadCorpus, sha256, type Corpus, type Verse } from './corpus';
 import { recordSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
-import { scopeGate, decideVerdict } from './policy';
+import { scopeGate, decideVerdict, nativeSafetyGate } from './policy';
 import { retrieve } from './retrieval';
 import { assessClaim, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure } from './provider';
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation, type HadithCorpus } from './hadith';
@@ -9,7 +10,7 @@ import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './ci
 import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlannerFailure, type QueryOverrides } from './query-planner';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'mini-default-strong-on-semantic-reference-failure-v1';
+export const ROUTER_VERSION = 'mini-default-strong-on-reference-failure-or-contradiction-v2';
 function semanticReferenceError(assessment: SemanticAssessment, evidence: EvidenceItem[]): string | null {
   const ids = new Set(evidence.map(item => item.evidence_id));
   if (assessment.atomic_claims.some(atom => atom.evidence_ids.some(id => !ids.has(id)))) return 'SEMANTIC_REFERENCE_INVALID';
@@ -47,7 +48,7 @@ export function authenticateEvidence(corpus: Corpus, verse: Verse): EvidenceItem
 }
 export function getCoverage() {
   const hadith = getHadithCoverage();
-  try { const corpus = loadCorpus(); return { hadith, approved: true, verse_count: corpus.verses.length, source: 'Tanzil Arabic Quran', provider_ready: providerReady(), available: true, corpus_id: corpus.manifest.id, version: corpus.manifest.version, corpus_sha256: corpus.manifest.sha256, verses: corpus.verses.length, sources: corpus.manifest.sources, input_languages: ['ar', 'en'], source_languages: ['ar'], semantic_provider_ready: providerReady(), limitations: ['Verification searches admitted Arabic Quran and selected Arabic/English Hadith; published passage translations are separate display only.', 'Bounded AI-assisted or lexical retrieval can miss relevant passages; absence is not a religious ruling.'] }; }
+  try { const corpus = loadCorpus(); return { hadith, approved: true, verse_count: corpus.verses.length, source: 'Tanzil Arabic Quran', provider_ready: providerReady(), available: true, corpus_id: corpus.manifest.id, version: corpus.manifest.version, corpus_sha256: corpus.manifest.sha256, verses: corpus.verses.length, sources: corpus.manifest.sources, input_languages: [...CLAIM_LANGUAGES], source_languages: ['ar'], semantic_provider_ready: providerReady(), limitations: ['Verification searches admitted Arabic Quran and selected Arabic/English Hadith; published passage translations are separate display only.', 'Bounded AI-assisted or lexical retrieval can miss relevant passages; absence is not a religious ruling.'] }; }
   catch { return { hadith, approved: false, verse_count: 0, source: 'Tanzil Arabic Quran', version: 'not_admitted', provider_ready: providerReady(), available: false, verses: 0, semantic_provider_ready: providerReady(), limitations: ['Source edition is not admitted or failed integrity checks.'] }; }
 }
 export function checkExplicitCitation(corpus: Corpus, claim: string): string | null {
@@ -64,8 +65,8 @@ export function checkExplicitCitation(corpus: Corpus, claim: string): string | n
   if (quotes.some(quote => !/[\u0600-\u06ff]/.test(quote))) return 'TRANSLATED_QUOTATION_NOT_ADMITTED';
   return null;
 }
-export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides }: { claim: string; inputLanguage: 'ar' | 'en'; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides }): Promise<VerificationRecord> {
-  const base: Omit<VerificationRecord, 'audit_hash'> = { record_id: randomUUID(), original_claim: typeof claim === 'string' ? claim : '', verdict: 'not_evaluated', reason_codes: [], summary_ar: 'لم يتم تقييم الادعاء.', summary_en: 'This claim has not been evaluated.', evidence_items: [], limitations: ['Results apply only to retrieved evidence in the admitted Arabic Quran edition.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'English explanations are not authoritative Quran translations.'], created_at: new Date().toISOString(), model: 'none', technical_verification_status: 'not_run', human_scholarly_status: 'not_reviewed', linguistic_review_status: 'not_reviewed', input_language: inputLanguage === 'en' ? 'en' : 'ar', corpus_manifest: null, corpus_sha256: null, retrieval_ids: [], semantic_assessment: null, prompt_version: PROMPT_VERSION, schema_version: SCHEMA_VERSION, usage: null, corpus_selection: 'quran' };
+export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides, scopeClaim }: { claim: string; inputLanguage: ClaimLanguage; scopeClaim?: string; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides }): Promise<VerificationRecord> {
+  const base: Omit<VerificationRecord, 'audit_hash'> = { record_id: randomUUID(), original_claim: typeof claim === 'string' ? claim : '', verdict: 'not_evaluated', reason_codes: [], summary_ar: 'لم يتم تقييم الادعاء.', summary_en: 'This claim has not been evaluated.', evidence_items: [], limitations: ['Results apply only to retrieved evidence in the admitted Arabic Quran edition.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'English explanations are not authoritative Quran translations.'], created_at: new Date().toISOString(), model: 'none', technical_verification_status: 'not_run', human_scholarly_status: 'not_reviewed', linguistic_review_status: 'not_reviewed', input_language: CLAIM_LANGUAGES.includes(inputLanguage) ? inputLanguage : 'en', corpus_manifest: null, corpus_sha256: null, retrieval_ids: [], semantic_assessment: null, prompt_version: PROMPT_VERSION, schema_version: SCHEMA_VERSION, usage: null, corpus_selection: 'quran' };
   base.corpus_selection = corpusSelection;
   base.router_version = ROUTER_VERSION; base.assessment_attempts = [];
   // This argument is populated by server-side source identification, never accepted from a raw API request.
@@ -76,16 +77,19 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     summary_ar: 'عدسة الإسناد مخصّصة للتحقق من الادعاءات المتعلقة بالقرآن والحديث، ولا تجيب عن الأسئلة العامة أو الطقس. اكتب ادعاءً واضحاً تريد فحصه في المصدر المحدد.',
     summary_en: 'IsnadLens verifies claims about the Quran and Hadith. It does not answer general questions or provide weather updates. Enter a clear claim to examine against the selected source.',
   } : {}) });
-  if (typeof claim !== 'string' || !['ar', 'en'].includes(inputLanguage)) return fail('INPUT_INVALID');
+  if (typeof claim !== 'string' || !CLAIM_LANGUAGES.includes(inputLanguage)) return fail('INPUT_INVALID');
   if (!['quran', 'hadith', 'both'].includes(corpusSelection)) { base.corpus_selection = 'quran'; return fail('CORPUS_SELECTION_INVALID'); }
-  const blocked = scopeGate(claim);
+  const nativeBlocked = nativeSafetyGate(claim); if (nativeBlocked) return fail(nativeBlocked);
+  const searchClaim = scopeClaim ?? claim;
+  const blocked = scopeGate(searchClaim);
   const identifiedQuotation = sourceIdentification && (sourceIdentification.status === 'identified' && sourceIdentification.corpus === corpusSelection || corpusSelection === 'both' && sourceIdentification.status === 'ambiguous' && sourceIdentification.candidate_locators.length > 0) && ['exact_quotation', 'normalized_quotation'].includes(sourceIdentification.method);
   if (blocked && !(blocked === 'OUTSIDE_SUPPORTED_CLAIM_SCOPE' && identifiedQuotation)) return fail(blocked);
-  if (inputLanguage === 'ar' && !/\p{Script=Arabic}/u.test(claim) || inputLanguage === 'en' && !/\p{Script=Latin}/u.test(claim)) return fail('INPUT_LANGUAGE_MISMATCH');
-  const explicitlyQuran = /\b(quran|qur'an|koran)\b|قرآن|القران/i.test(claim) || parseQuranReferences(claim).references.length > 0;
-  const explicitlyHadith = /\b(hadith|hadeeth|prophet said|muhammad said)\b|حديث|قال النبي|قال رسول/i.test(claim) || parseHadithLinks(claim).links.length > 0;
+  if (inputLanguage === 'ar' && !/\p{Script=Arabic}/u.test(claim) || !['ar', 'ur', 'bn', 'hi'].includes(inputLanguage) && !/\p{Script=Latin}/u.test(claim) || inputLanguage === 'ur' && !/\p{Script=Arabic}/u.test(claim) || inputLanguage === 'bn' && !/\p{Script=Bengali}/u.test(claim) || inputLanguage === 'hi' && !/\p{Script=Devanagari}/u.test(claim)) return fail('INPUT_LANGUAGE_MISMATCH');
+  const explicitlyQuran = /\b(quran|qur'an|koran)\b|قرآن|القران/i.test(claim + " " + searchClaim) || parseQuranReferences(claim).references.length > 0;
+  const explicitlyHadith = /\b(hadith|hadeeth|prophet said|muhammad said)\b|حديث|قال النبي|قال رسول/i.test(claim + " " + searchClaim) || parseHadithLinks(claim).links.length > 0;
   if (corpusSelection !== 'both' && explicitlyQuran && explicitlyHadith || corpusSelection === 'hadith' && explicitlyQuran || corpusSelection === 'quran' && explicitlyHadith) return fail('SOURCE_ATTRIBUTION_OR_SELECTION_MISMATCH');
   const malformed = parseQuranReferences(claim).error ?? parseHadithLinks(claim).error; if (malformed) return fail(malformed);
+  const retrievalLanguage: 'ar' | 'en' = inputLanguage === 'ar' ? 'ar' : 'en';
   let quran: Corpus | undefined; let hadith: HadithCorpus | undefined;
   if (corpusSelection !== 'hadith') {
     try { quran = loadCorpus(); } catch { return fail('CORPUS_INTEGRITY_OR_AVAILABILITY_FAILURE'); }
@@ -93,7 +97,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   }
   if (corpusSelection !== 'quran') {
     try { hadith = loadHadith(); } catch { return fail('HADITH_INTEGRITY_OR_AVAILABILITY_FAILURE'); }
-    const citationError = checkHadithCitation(hadith, claim, inputLanguage); if (citationError) return fail(citationError);
+    const citationError = checkHadithCitation(hadith, claim, retrievalLanguage); if (citationError) return fail(citationError);
   }
   if (quran && hadith) {
     const componentHashes = { quran: quran.manifest.sha256, hadith: hadith.manifest.sha256 };
@@ -107,22 +111,24 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     base.retrieval_plan = { ...overrides, status: 'provided', reason: 'SERVER_PROVIDED_SEARCH_TERMS', model: 'none', usage: null, planner_version: QUERY_PLANNER_VERSION };
   } else if (useQueryPlanner) {
     try {
-      const plan = await planClaimQueries({ claim, inputLanguage }); overrides = { arabic_terms: plan.arabic_terms, english_terms: plan.english_terms };
+      const plan = await planClaimQueries({ claim: searchClaim, inputLanguage: retrievalLanguage }); overrides = { arabic_terms: plan.arabic_terms, english_terms: plan.english_terms };
       base.retrieval_plan = { ...plan, status: 'planned', reason: 'BOUNDED_AI_SEARCH_EXPANSION' };
     } catch (error) {
       base.retrieval_plan = { ...overrides, status: 'lexical_fallback', reason: error instanceof Error ? error.message : 'QUERY_PLAN_UNAVAILABLE', model: error instanceof QueryPlannerFailure ? error.model : 'none', usage: error instanceof QueryPlannerFailure ? error.usage : null, planner_version: QUERY_PLANNER_VERSION };
       base.limitations.push('AI search planning was unavailable; deterministic lexical retrieval was used instead.');
     }
   }
-  if (quran) base.evidence_items.push(...retrieve(quran, claim, hadith ? 4 : 8, overrides.arabic_terms).map(verse => authenticateEvidence(quran!, verse)));
+  const quranHints = overrides.arabic_terms.flatMap((term, index) => [term, ...(overrides.english_terms[index] ? [overrides.english_terms[index]] : [])]);
+  for (let index = overrides.arabic_terms.length; index < overrides.english_terms.length; index++) quranHints.push(overrides.english_terms[index]);
+  if (quran) base.evidence_items.push(...retrieve(quran, claim, hadith ? 4 : 8, quranHints.slice(0, 8)).map(verse => authenticateEvidence(quran!, verse)));
   if (hadith) {
-    if (!quran) base.evidence_items.push(...retrieveHadith(hadith, claim, inputLanguage, 8, inputLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms).map(record => authenticateHadith(hadith!, record)));
+    if (!quran) base.evidence_items.push(...retrieveHadith(hadith, claim, retrievalLanguage, 8, retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms).map(record => authenticateHadith(hadith!, record)));
     else {
-      const preferred = retrieveHadith(hadith, claim, inputLanguage, 2, inputLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms);
-      const otherLanguage = inputLanguage === 'ar' ? 'en' : 'ar';
+      const preferred = retrieveHadith(hadith, claim, retrievalLanguage, 2, retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms);
+      const otherLanguage = retrievalLanguage === 'ar' ? 'en' : 'ar';
       const other = retrieveHadith(hadith, claim, otherLanguage, 2, otherLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms);
       const chosen = [...preferred, ...other];
-      if (chosen.length < 4) for (const record of retrieveHadith(hadith, claim, inputLanguage, 4, inputLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms)) if (chosen.length < 4 && !chosen.some(item => item.language === record.language && item.id === record.id)) chosen.push(record);
+      if (chosen.length < 4) for (const record of retrieveHadith(hadith, claim, retrievalLanguage, 4, retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms)) if (chosen.length < 4 && !chosen.some(item => item.language === record.language && item.id === record.id)) chosen.push(record);
       base.evidence_items.push(...chosen.map(record => authenticateHadith(hadith!, record)));
     }
   }
@@ -143,11 +149,12 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       }
       base.model = result.model; base.usage = result.usage; base.semantic_assessment = result.assessment;
       const invalid = semanticReferenceError(result.assessment, base.evidence_items);
-      base.assessment_attempts!.push({ model: result.model, reason: invalid ?? 'SEMANTIC_VALIDATION_PASSED', raw_assessment: result.assessment, usage: result.usage });
-      if (!invalid) break;
-      // Exactly one strong reassessment, only for these mechanically detected model-reference errors.
-      // Scope refusals, incomplete evidence, provider errors and source corruption never trigger it.
-      if (requestedModel === 'gpt-5.4' || !result.assessment.in_scope || !result.assessment.original_meaning_preserved) return fail(invalid);
+      const conflictNeedsConfirmation = requestedModel === 'gpt-5.4-mini' && !invalid && decideVerdict(result.assessment, new Set(base.retrieval_ids)) === 'conflicting_within_selected_corpus';
+      base.assessment_attempts!.push({ model: result.model, reason: invalid ?? (conflictNeedsConfirmation ? 'CONTRADICTION_CONFIRMATION_REQUIRED' : 'SEMANTIC_VALIDATION_PASSED'), raw_assessment: result.assessment, usage: result.usage });
+      if (!invalid && !conflictNeedsConfirmation) break;
+      // Exactly one strong reassessment for invalid semantic references or a proposed mini contradiction.
+      // Scope refusals, ordinary insufficiency, provider errors and source corruption never trigger it.
+      if (requestedModel === 'gpt-5.4' || !result.assessment.in_scope || !result.assessment.original_meaning_preserved) return fail(invalid ?? 'CONTRADICTION_UNCONFIRMED');
     }
     if (!result) return fail('SEMANTIC_SCHEMA_OR_PROVIDER_FAILURE');
     const assessment = result.assessment;

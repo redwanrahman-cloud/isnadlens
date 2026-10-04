@@ -49,3 +49,31 @@ test('broad AI food hints cannot displace original distinctive subject matches',
   const justice = retrieve(corpus, 'justice', 4, ['الماء', 'الصلاة', 'الحياة', 'قال', 'الله']);
   expect(justice.every(verse => verse.search.includes('العدل') || verse.search.includes('القسط'))).toBe(true);
 });
+test('Arabic article and conjunction topic lookup finds primary backbiting text without erasing negation', () => {
+  const corpus = loadCorpus(); const before = sha256(JSON.stringify(corpus.verses));
+  for (const claim of ['ينهى القرآن عن اغتياب الآخرين.', 'الغيبة حرام', 'والغيبة ليست مباحة']) {
+    expect(retrieve(corpus, claim, 4, ['الغيبة', 'backbiting', 'الكذب']).some(verse => verse.id === '49:12'), claim).toBe(true);
+  }
+  expect(queryTerms('والغيبة لا تجوز')).toContain('لا');
+  expect(queryTerms('الغيبة ليس حلالا')).toContain('ليس');
+  expect(queryTerms('والكذب')).toContain('lying');
+  expect(queryTerms('الصدق')).toContain('truthfulness');
+  expect(queryTerms('الكتاب')).not.toContain('كتاب'); // Unknown words are not blindly stemmed.
+  expect(sha256(JSON.stringify(corpus.verses))).toBe(before);
+});
+test('ordinary intoxicants and necessity wording retrieves actual primary provisions despite generic surrounding words', () => {
+  const corpus = loadCorpus();
+  expect(retrieve(corpus, 'The Quran tells believers to avoid intoxicating drinks.', 4, ['القرآن', 'المؤمنون', 'المسكرات', 'intoxicating drinks']).some(verse => verse.id === '5:90')).toBe(true);
+  expect(retrieve(corpus, 'يذكر القرآن استثناء الاضطرار للطعام المحرم، دون رغبة فيه أو تجاوز الحاجة.', 4, ['الاضطرار', 'الطعام المحرم', 'دون رغبة', 'تجاوز الحاجة', 'necessity']).some(verse => verse.id === '2:173')).toBe(true);
+  expect(queryTerms('المسكرات')).toContain('الخمر');
+  expect(queryTerms('والاضطرار')).toContain('اضطر');
+});
+test('translated subject hints anchor unfamiliar Urdu while known original topics and explicit references remain authoritative', () => {
+  const corpus = loadCorpus();
+  const claim = 'عام حالات میں قرآن سور کا گوشت کھانے سے منع کرتا ہے۔';
+  const hints = ['قرآن', 'Quran', 'سور کا گوشت', 'eating pork', 'کھانے سے منع', 'forbids'];
+  expect(new Set(retrieve(corpus, claim, 4, hints).map(verse => verse.id))).toEqual(new Set(['2:173','5:3','6:145','16:115']));
+  expect(retrieve(corpus, 'backbiting is not permitted', 1, ['eating pork'])[0].id).toBe('49:12');
+  expect(queryTerms('backbiting is not permitted')).toContain('not');
+  expect(retrieve(corpus, claim + ' 21:30', 1, hints)[0].id).toBe('21:30');
+});

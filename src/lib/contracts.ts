@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { CLAIM_LANGUAGES } from './claim-language';
 
 export const verdictSchema = z.enum(['supported_within_selected_corpus', 'conflicting_within_selected_corpus', 'insufficient_within_selected_corpus', 'not_evaluated']);
 export const relationSchema = z.enum(['supports', 'contradicts', 'partial', 'unrelated', 'not_assessed']);
@@ -19,7 +20,7 @@ export const recordSchema = z.object({
   summary_ar: z.string(), summary_en: z.string(), evidence_items: z.array(evidenceSchema), limitations: z.array(z.string()),
   created_at: z.string(), model: z.string(), technical_verification_status: z.string(), human_scholarly_status: z.string(),
   linguistic_review_status: z.string(), audit_hash: z.string(),
-  input_language: z.enum(['ar', 'en']), corpus_manifest: z.unknown().nullable(), corpus_sha256: z.string().nullable(),
+  input_language: z.enum(CLAIM_LANGUAGES), corpus_manifest: z.unknown().nullable(), corpus_sha256: z.string().nullable(),
   retrieval_ids: z.array(z.string()), semantic_assessment: z.unknown().nullable(),
   prompt_version: z.string(), schema_version: z.string(), usage: usageSchema.nullable(),
   corpus_selection: z.enum(['quran', 'hadith', 'both']),
@@ -27,6 +28,7 @@ export const recordSchema = z.object({
   assessment_attempts: z.array(z.object({ model: z.string(), reason: z.string(), raw_assessment: z.unknown().nullable(), usage: usageSchema.nullable() })).max(2).optional(),
   source_identification: sourceIdentificationSchema.optional(),
   retrieval_plan: z.object({ status: z.enum(['planned', 'lexical_fallback', 'provided']), reason: z.string(), model: z.string(), arabic_terms: z.array(z.string()).max(10), english_terms: z.array(z.string()).max(10), usage: usageSchema.nullable(), planner_version: z.string() }).optional(),
+  language_intake: z.object({ requested_language: z.enum([...CLAIM_LANGUAGES, 'auto']), detected_language: z.enum(CLAIM_LANGUAGES).nullable(), confidence: z.enum(['high', 'medium', 'low']), scope_category: z.enum(['textual', 'general', 'personal', 'sensitive', 'injection', 'unsupported']), english_gloss: z.string().max(1400), arabic_terms: z.array(z.string()).max(10), english_terms: z.array(z.string()).max(10), model: z.string(), usage: usageSchema.nullable(), status: z.enum(['accepted', 'ambiguous', 'referred', 'unavailable']), version: z.string() }).optional(),
 });
 export type VerificationRecord = z.infer<typeof recordSchema>;
 export type EvidenceItem = z.infer<typeof evidenceSchema>;

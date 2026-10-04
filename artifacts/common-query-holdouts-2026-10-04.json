@@ -1,0 +1,53 @@
+{
+  "purpose": "Fresh development phrasing; provisional source expectations, not independent final religious evaluation",
+  "cases": [
+    {
+      "id": "parents-question",
+      "claim": "Does Islam encourage being kind to parents?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "detected_language": "en",
+      "language_matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "integrity": true,
+      "summary": "Yes, the selected sources support that Islam encourages kindness to parents. The Quran passages command good treatment of parents, and the hadiths connect parents’ old age with a duty to honor them and classify undutifulness toward parents as a grave sin.",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "intentions-question",
+      "claim": "Are good deeds judged by intentions in Islam?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "detected_language": "en",
+      "language_matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "integrity": true,
+      "summary": "Yes, the selected sources support that good deeds are judged by intention, with the explicit qualification in the hadith that a person is rewarded according to what he intended.",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "gambling-spanish",
+      "claim": "¿Está prohibido apostar en el islam?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "detected_language": "es",
+      "language_matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "integrity": true,
+      "summary": "Yes, the selected sources support that gambling (maysir) is prohibited in Islam, with 2:219 noting some benefit for people but greater sin, and 5:90-91 commanding avoidance. The selected hadiths also support the broader rule that every intoxicant is prohibited, which is relevant to the same prohibition context.",
+      "model": "gpt-5.4-mini-2026-03-17",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    }
+  ]
+}

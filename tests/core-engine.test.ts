@@ -160,6 +160,15 @@ describe('persistent spending controls and provider schema', () => {
       expect(posted.instructions).toContain('A prohibition on selling an object does not by itself prove a prohibition on consuming it');
       expect(posted.instructions).toContain('Exclude such merely related evidence IDs from supports atoms');
       expect(posted.instructions).toContain('مجموعة المصادر المحددة');
+      expect(posted.instructions).toContain('Keep a proposition and its restrictive qualifiers together');
+      expect(posted.instructions).toContain('A source general rule with an explicit exceptional circumstance can directly support');
+      expect(posted.instructions).toContain('never permission to invent an exception or equate different conditions');
+      expect(posted.instructions).toContain('Complete direct Quran coverage of every USER material assertion is sufficient');
+      expect(posted.instructions).toContain('no extra Hadith corroboration is required');
+      expect(posted.instructions).toContain('An explicit Quran/Prophet attribution must be supported by that same source family');
+      expect(posted.instructions).toContain('need for qualified review');
+      expect(posted.instructions).toContain('Discussion of indirect or unrelated retrieved cards belongs in evidence details');
+      expect(posted.instructions).toContain('Never suppress a material source exception');
     } finally { cwd.mockRestore(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); rmSync(directory, { recursive: true, force: true }); }
   });
   it('requires an explicit positive cap and preserves unresolved reservations across reloads', () => {
@@ -337,6 +346,31 @@ describe('adversarial citation, selection and compound coverage regression', () 
     } finally { mocked.mockRestore(); }
   });
 });
+describe('Quran-first coverage without extra corroboration requirements', () => {
+  it('accepts complete direct Quran coverage while honestly marking retrieved sale Hadith as unrelated', async () => {
+    const corpus = loadCorpus(); const quranId = `${corpus.manifest.id}:2:173`;
+    const supported = { ...assessment, atomic_claims: [{ ...atom, text: 'The Quran at 2:173 forbids pork.', evidence_ids: [quranId] }] };
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: supported, model: 'gpt-5.4-mini', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'The Quran at 2:173 forbids pork.', inputLanguage: 'en', corpusSelection: 'both', queryOverrides: { arabic_terms: ['الخنزير'], english_terms: ['swine'] } });
+      expect(record.verdict).toBe('supported_within_selected_corpus');
+      expect(record.evidence_items.find(card => card.evidence_id === quranId)?.semantic_relation).toBe('supports');
+      const hadith = record.evidence_items.filter(card => card.source_id.startsWith('HADEETHENC-'));
+      expect(hadith.length).toBeGreaterThan(0); expect(hadith.every(card => card.semantic_relation === 'unrelated')).toBe(true);
+      expect(hadith.some(card => card.source_language === 'en' && /sell|sale/i.test(card.quotation))).toBe(true);
+      expect(mocked).toHaveBeenCalledOnce(); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
+  it('does not let Quran coverage erase an unsupported user conjunction or explicit Hadith attribution', () => {
+    const quranId = 'quran-fixture'; const hadithId = 'hadith-fixture'; const ids = new Set([quranId, hadithId]);
+    const directQuran = { ...atom, evidence_ids: [quranId], text: 'A directly covered Quran proposition' };
+    const unrelatedDetails = { ...atom, id: 'detail', material: false, direct: false, relation: 'partial' as const, evidence_ids: [hadithId], text: 'Related source commentary, not a user assertion' };
+    expect(decideVerdict({ ...assessment, atomic_claims: [directQuran, unrelatedDetails] }, ids)).toBe('supported_within_selected_corpus');
+    const unsupportedConjunction = { ...atom, id: 'missing', relation: 'unrelated' as const, direct: false, evidence_ids: [], text: 'A second unproved user assertion' };
+    expect(decideVerdict({ ...assessment, atomic_claims: [directQuran, unsupportedConjunction] }, ids)).toBe('insufficient_within_selected_corpus');
+    expect(decideVerdict({ ...assessment, atomic_claims: [{ ...directQuran, text: 'The Prophet uttered this claim', attribution_matched: false }] }, ids)).toBe('insufficient_within_selected_corpus');
+  });
+});
 describe('one-step objective semantic reference router', () => {
   const claim = 'The Quran never mentions Ramadan.';
   const usage = (id: string, cost: number) => ({ input_tokens: 100, output_tokens: 50, estimated_cost_usd: cost, reservation_id: id });
@@ -347,6 +381,35 @@ describe('one-step objective semantic reference router', () => {
     const invalid: SemanticAssessment = { ...valid, atomic_claims: valid.atomic_claims.map(item => ({ ...item, basis_quotation: 'رمضان ... القرآن' })) };
     return { valid, invalid };
   }
+  it('requires a strong same-packet review before publishing a mini contradiction and retains the corrected insufficient result', async () => {
+    const userClaim = 'The Hadith says that smiling at another person is charity.';
+    const corpus = loadHadith(); const related = retrieveHadith(corpus, userClaim, 'en')[0];
+    const card = authenticateHadith(corpus, related);
+    // Exact quotation is genuine, but the mocked mini wrongly treats related subject matter as negation.
+    const falseConflict: SemanticAssessment = { ...assessment, atomic_claims: [{ ...atom, text: userClaim, relation: 'contradicts', evidence_ids: [card.evidence_id], contradiction_basis: 'explicit_negation_or_incompatible_statement', basis_evidence_id: card.evidence_id, basis_quotation: card.quotation }] };
+    const corrected: SemanticAssessment = { ...assessment, all_material_claims_covered: false, atomic_claims: [{ ...atom, text: userClaim, relation: 'unrelated', direct: false, evidence_ids: [] }] };
+    const miniUsage = usage('mini-conflict', .001); const strongUsage = usage('strong-confirmation', .003);
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: falseConflict, model: 'gpt-5.4-mini', usage: miniUsage }).mockResolvedValueOnce({ assessment: corrected, model: 'gpt-5.4', usage: strongUsage });
+    try {
+      const record = await verifyClaim({ claim: userClaim, inputLanguage: 'en', corpusSelection: 'hadith' });
+      expect(record.verdict).toBe('insufficient_within_selected_corpus'); expect(mocked).toHaveBeenCalledTimes(2);
+      expect(mocked.mock.calls[1][0]).toBe(userClaim); expect(mocked.mock.calls[1][3]).toBe('gpt-5.4');
+      expect(JSON.stringify(mocked.mock.calls[0][2])).toBe(JSON.stringify(mocked.mock.calls[1][2]));
+      expect(record.assessment_attempts?.[0]).toMatchObject({ reason: 'CONTRADICTION_CONFIRMATION_REQUIRED', raw_assessment: falseConflict, usage: miniUsage });
+      expect(record.assessment_attempts?.[1]).toMatchObject({ raw_assessment: corrected, usage: strongUsage });
+      expect(record.semantic_assessment).toEqual(corrected); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
+  it.each(['PROVIDER_UNAVAILABLE', 'SPEND_BUDGET_STOP'])('never publishes an unconfirmed mini contradiction after strong failure %s', async reason => {
+    const { valid } = packets();
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValueOnce({ assessment: valid, model: 'gpt-5.4-mini', usage: usage('mini-conflict', .001) }).mockRejectedValueOnce(new Error(reason));
+    try {
+      const record = await verifyClaim({ claim, inputLanguage: 'en' });
+      expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toEqual([reason]);
+      expect(record.assessment_attempts).toHaveLength(2); expect(record.assessment_attempts?.[0].reason).toBe('CONTRADICTION_CONFIRMATION_REQUIRED');
+      expect(record.assessment_attempts?.[0].raw_assessment).toEqual(valid); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
   it.each(['quotation', 'reference'])('reassesses an invalid mini %s once with strong on the exact same packet and preserves both assessments and costs', async kind => {
     const { valid, invalid } = packets();
     const failed = kind === 'quotation' ? invalid : { ...valid, atomic_claims: valid.atomic_claims.map(item => ({ ...item, evidence_ids: ['invented-source-id'] })) };
@@ -360,7 +423,7 @@ describe('one-step objective semantic reference router', () => {
       expect(record.assessment_attempts?.map(item => item.usage)).toEqual([miniUsage, strongUsage]);
       expect(record.assessment_attempts?.[0].raw_assessment).toEqual(failed);
       expect(record.assessment_attempts?.[1].raw_assessment).toEqual(valid);
-      expect(record.router_version).toContain('semantic-reference-failure'); expect(verifySeal(record)).toBe(true);
+      expect(record.router_version).toContain('reference-failure-or-contradiction'); expect(verifySeal(record)).toBe(true);
       const changed = { ...record, assessment_attempts: record.assessment_attempts!.map((item, index) => index ? item : { ...item, reason: 'erased failure' }) };
       expect(verifySeal(changed)).toBe(false);
     } finally { mocked.mockRestore(); }

@@ -1,31 +1,28 @@
 import {beforeEach,describe,expect,it,vi} from 'vitest';
 import {NextRequest} from 'next/server';
-const mocks=vi.hoisted(()=>({verify:vi.fn(),auto:vi.fn()}));
-vi.mock('@/lib/verification',()=>({verifyClaim:mocks.verify}));
-vi.mock('@/lib/auto-verification',()=>({verifyAutoClaim:mocks.auto}));
+const mocks=vi.hoisted(()=>({verify:vi.fn()}));
+vi.mock('@/lib/multilingual-intake',()=>({verifyMultilingualClaim:mocks.verify}));
 vi.mock('@/lib/claim-language',async()=>import('../src/lib/claim-language'));
 import {POST} from '../src/app/api/verify/route';
+import {CLAIM_LANGUAGES,type ClaimInputSelection} from '../src/lib/claim-language';
 let client=0;
-beforeEach(()=>{vi.clearAllMocks();mocks.verify.mockImplementation(async input=>input);mocks.auto.mockImplementation(async input=>input);});
-function request(claim:string,inputLanguage:'ar'|'en',corpusSelection:'auto'|'quran'|'hadith'){
-  return new NextRequest('http://localhost/api/verify',{method:'POST',headers:{'Content-Type':'application/json','x-real-ip':`test-language-${++client}`},body:JSON.stringify({claim,inputLanguage,corpusSelection})});
+beforeEach(()=>{vi.clearAllMocks();mocks.verify.mockImplementation(async input=>input);});
+function request(claim:string,inputLanguage:string,corpusSelection?:'auto'|'quran'|'hadith'){
+  return new NextRequest('http://localhost/api/verify',{method:'POST',headers:{'Content-Type':'application/json','x-real-ip':`test-language-${++client}`},body:JSON.stringify({claim,inputLanguage,...(corpusSelection?{corpusSelection}:{})})});
 }
-describe('API script-based claim-language boundary',()=>{
-  it('corrects a stale Arabic selection for natural English without rewriting the claim',async()=>{
+describe('API multilingual intake boundary',()=>{
+  it('delegates auto-detection without rewriting the original claim',async()=>{
     const claim='  pig eating is haram?  ';
-    const response=await POST(request(claim,'ar','auto'));
-    expect(response.status).toBe(200);
-    expect(mocks.auto).toHaveBeenCalledWith({claim,inputLanguage:'en'});
+    expect((await POST(request(claim,'auto'))).status).toBe(200);
+    expect(mocks.verify).toHaveBeenCalledWith({claim,inputLanguage:'auto',corpusSelection:'auto'});
+  });
+  it.each(CLAIM_LANGUAGES)('passes explicit %s input and selected source to the intake wrapper',async inputLanguage=>{
+    const claim='Original wording stays unchanged.';
+    expect((await POST(request(claim,inputLanguage,'quran'))).status).toBe(200);
+    expect(mocks.verify).toHaveBeenCalledWith({claim,inputLanguage,corpusSelection:'quran'});
+  });
+  it('rejects unsupported input-language values before verification',async()=>{
+    expect((await POST(request('Original claim','ja','hadith'))).status).toBe(400);
     expect(mocks.verify).not.toHaveBeenCalled();
-  });
-  it('corrects Arabic claim input in manual Quran mode',async()=>{
-    const claim='أكل لحم الخنزير حرام؟';
-    await POST(request(claim,'en','quran'));
-    expect(mocks.verify).toHaveBeenCalledWith({claim,inputLanguage:'ar',corpusSelection:'quran',useQueryPlanner:true});
-  });
-  it('retains the explicit selection for mixed-script claims',async()=>{
-    const claim='هل eating pork حرام؟';
-    await POST(request(claim,'ar','hadith'));
-    expect(mocks.verify).toHaveBeenCalledWith({claim,inputLanguage:'ar',corpusSelection:'hadith',useQueryPlanner:true});
   });
 });

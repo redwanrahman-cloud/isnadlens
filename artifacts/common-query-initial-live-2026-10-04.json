@@ -1,0 +1,2322 @@
+{
+  "dataset_id": "common-query-cases-2026-10-04-v1",
+  "purpose": "Development evaluation; labels are provisional source review, not an independent religious accuracy benchmark. No reference injection. All requests use automatic language detection.",
+  "cases": [
+    {
+      "id": "CQ01",
+      "topic": "intentions",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4560",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:66511",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65014",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3435",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4494",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65085",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4234",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4820",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 446,
+        "output_tokens": 72,
+        "estimated_cost_usd": 0.0006585,
+        "reservation_id": "30cb5b80-7e51-46f9-9cfa-15da822ae878"
+      },
+      "assessment_usage": {
+        "input_tokens": 13557,
+        "output_tokens": 291,
+        "estimated_cost_usd": 0.01147725,
+        "reservation_id": "2b6ffcc1-3d3a-4719-8381-43c8e625b3ed"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ02",
+      "topic": "five daily prayers",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:11286",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65044",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:6610",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10615",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:2752",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3135",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3656",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4541",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 447,
+        "output_tokens": 82,
+        "estimated_cost_usd": 0.00070425,
+        "reservation_id": "ae695d67-00b2-45cf-99a1-03084bd3a146"
+      },
+      "assessment_usage": {
+        "input_tokens": 8011,
+        "output_tokens": 342,
+        "estimated_cost_usd": 0.00754725,
+        "reservation_id": "e834081c-1891-4233-888a-1abe81fd743d"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ03",
+      "topic": "fasting Ramadan",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "ar",
+      "detected_language": "ar",
+      "input_language": "ar",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "22:28",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:185",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "9:91",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:36",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:183",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:187",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:196",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:92",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 453,
+        "output_tokens": 97,
+        "estimated_cost_usd": 0.00077625,
+        "reservation_id": "e438e7c2-60ed-4d6d-93ea-6967fedce702"
+      },
+      "assessment_usage": {
+        "input_tokens": 7367,
+        "output_tokens": 749,
+        "estimated_cost_usd": 0.00889575,
+        "reservation_id": "a4192ca1-7b33-4faa-8be8-dec9c72e7149"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ04",
+      "topic": "charity",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:177",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:83",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:215",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:8",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:36",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "8:41",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "9:60",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:22",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 450,
+        "output_tokens": 95,
+        "estimated_cost_usd": 0.000765,
+        "reservation_id": "1755bb5e-7f07-412d-a246-6bcb398e4a7c"
+      },
+      "assessment_usage": {
+        "input_tokens": 7162,
+        "output_tokens": 576,
+        "estimated_cost_usd": 0.0079635,
+        "reservation_id": "5b1171bd-aa03-4076-8f4a-9abc590b1eee"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ05",
+      "topic": "smile and charity coverage gap",
+      "http_status": 200,
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4245",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3119",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3042",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3483",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10413",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5813",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65566",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10846",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 445,
+        "output_tokens": 69,
+        "estimated_cost_usd": 0.00064425,
+        "reservation_id": "0df54d30-b0b8-4191-9fb2-a6d8a475fa10"
+      },
+      "assessment_usage": {
+        "input_tokens": 7931,
+        "output_tokens": 375,
+        "estimated_cost_usd": 0.00763575,
+        "reservation_id": "8c33eace-6ef5-4f5d-bea9-41f4f6b745d8"
+      },
+      "no_semantic_assessment": false,
+      "review_required": true
+    },
+    {
+      "id": "CQ06",
+      "topic": "neighbors",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4965",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3709",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4250",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5336",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:6094",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10855",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:66268",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5437",
+          "relation": "supports",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 441,
+        "output_tokens": 68,
+        "estimated_cost_usd": 0.00063675,
+        "reservation_id": "4e1c1621-1c5b-467b-8ed6-3e98194925c5"
+      },
+      "assessment_usage": {
+        "input_tokens": 3982,
+        "output_tokens": 355,
+        "estimated_cost_usd": 0.004584,
+        "reservation_id": "eab2115d-6c12-4f8b-ab11-5ce37f3fcb5d"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ07",
+      "topic": "parents",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "ar",
+      "detected_language": "ar",
+      "input_language": "ar",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:83",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:36",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:135",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:151",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "17:23",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:178",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:77",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:6",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 452,
+        "output_tokens": 86,
+        "estimated_cost_usd": 0.000726,
+        "reservation_id": "1df016aa-11bc-4706-8cbc-fcfd5e7e90be"
+      },
+      "assessment_usage": {
+        "input_tokens": 7215,
+        "output_tokens": 559,
+        "estimated_cost_usd": 0.00792675,
+        "reservation_id": "67d57d1b-8f59-45f4-922b-714ba6e705ae"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ08",
+      "topic": "lying and truthfulness",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5504",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:6327",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4564",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4820",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:6604",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:10622",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3353",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:3633",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 447,
+        "output_tokens": 75,
+        "estimated_cost_usd": 0.00067275,
+        "reservation_id": "71b1ce79-c57c-4af7-8499-70350b0ed59b"
+      },
+      "assessment_usage": {
+        "input_tokens": 18698,
+        "output_tokens": 428,
+        "estimated_cost_usd": 0.0159495,
+        "reservation_id": "d4b6fffe-6d4d-4554-942c-5604c42ac8dd"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ09",
+      "topic": "backbiting",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "ar",
+      "detected_language": "ar",
+      "input_language": "ar",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:36",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:48",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:52",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:54",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:62",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:63",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:76",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:79",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 442,
+        "output_tokens": 68,
+        "estimated_cost_usd": 0.0006375,
+        "reservation_id": "bf7c56d3-f167-49dc-abf4-dd83bee37315"
+      },
+      "assessment_usage": {
+        "input_tokens": 5915,
+        "output_tokens": 312,
+        "estimated_cost_usd": 0.00584025,
+        "reservation_id": "1e278616-db99-4bab-961e-69db10f48352"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ10",
+      "topic": "gambling",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:219",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:90",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:91",
+          "relation": "supports",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 441,
+        "output_tokens": 63,
+        "estimated_cost_usd": 0.00061425,
+        "reservation_id": "6bd2983e-8ca5-48e7-aedc-ea101e7113ca"
+      },
+      "assessment_usage": {
+        "input_tokens": 3636,
+        "output_tokens": 341,
+        "estimated_cost_usd": 0.0042615,
+        "reservation_id": "1423dbb1-39e5-4224-8a93-0beeeeca6aa4"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ11",
+      "topic": "intoxicants",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:285",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:28",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:110",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:122",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:160",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:162",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:11",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "8:2",
+          "relation": "partial",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 443,
+        "output_tokens": 76,
+        "estimated_cost_usd": 0.00067425,
+        "reservation_id": "e484f4a6-7848-4453-859b-ff0ee0b97c7f"
+      },
+      "assessment_usage": {
+        "input_tokens": 6466,
+        "output_tokens": 460,
+        "estimated_cost_usd": 0.0069195,
+        "reservation_id": "00ff100d-2595-47e4-9e28-e9ed39b7e8dd"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ12",
+      "topic": "riba",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:275",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:194",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:23",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:138",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:144",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:149",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:150",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 443,
+        "output_tokens": 75,
+        "estimated_cost_usd": 0.00066975,
+        "reservation_id": "1a637c6c-e4fd-4e6a-bb42-4e78c9b4e821"
+      },
+      "assessment_usage": {
+        "input_tokens": 7682,
+        "output_tokens": 297,
+        "estimated_cost_usd": 0.007098,
+        "reservation_id": "104a44e5-4a8c-4d98-b8f1-d4e71e7290ee"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ13",
+      "topic": "necessity exception",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "ar",
+      "detected_language": "ar",
+      "input_language": "ar",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "46:16",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:114",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:39",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:81",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:82",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:217",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:257",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:275",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-2026-03-05",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 455,
+        "output_tokens": 105,
+        "estimated_cost_usd": 0.00081375,
+        "reservation_id": "88a8f817-a573-43e9-a8be-5ea01c1de175"
+      },
+      "assessment_usage": {
+        "input_tokens": 6956,
+        "output_tokens": 597,
+        "estimated_cost_usd": 0.026345,
+        "reservation_id": "c2e96305-f024-44cf-a5e4-a40747a534fb"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ14",
+      "topic": "modern application unsupported",
+      "http_status": 200,
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:132",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:133",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:136",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:52",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:64",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:80",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:84",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:102",
+          "relation": "contradicts",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 448,
+        "output_tokens": 88,
+        "estimated_cost_usd": 0.000732,
+        "reservation_id": "952384d2-72ab-459c-bcde-d7545098bb36"
+      },
+      "assessment_usage": {
+        "input_tokens": 6124,
+        "output_tokens": 606,
+        "estimated_cost_usd": 0.00732,
+        "reservation_id": "31c4f200-a531-4a91-897a-93ebe0b02daf"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ15",
+      "topic": "attribution mistake",
+      "http_status": 200,
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:274",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:99",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:143",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "13:22",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "14:31",
+          "relation": "partial",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:2",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "24:3",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "35:29",
+          "relation": "partial",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 445,
+        "output_tokens": 71,
+        "estimated_cost_usd": 0.00065325,
+        "reservation_id": "f3be110e-791f-4d89-b1b4-d01455d00bc2"
+      },
+      "assessment_usage": {
+        "input_tokens": 6586,
+        "output_tokens": 397,
+        "estimated_cost_usd": 0.006726,
+        "reservation_id": "eb4e3b6e-e181-4eaa-92bc-327b6741595e"
+      },
+      "no_semantic_assessment": false,
+      "review_required": true
+    },
+    {
+      "id": "CQ16",
+      "topic": "compound incomplete coverage",
+      "http_status": 200,
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:183",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:187",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:196",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "4:92",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:89",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:95",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "58:4",
+          "relation": "supports",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 448,
+        "output_tokens": 73,
+        "estimated_cost_usd": 0.0006645,
+        "reservation_id": "eec229ef-fe32-45f1-b68d-39c960c4f025"
+      },
+      "assessment_usage": {
+        "input_tokens": 6965,
+        "output_tokens": 486,
+        "estimated_cost_usd": 0.00741075,
+        "reservation_id": "6643985b-f095-4f75-bf38-159ca6b71e8a"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ17",
+      "topic": "weather outside scope",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "evidence": [],
+      "model": "none",
+      "intake_status": "referred",
+      "intake_usage": {
+        "input_tokens": 445,
+        "output_tokens": 53,
+        "estimated_cost_usd": 0.00057225,
+        "reservation_id": "49ef6e60-8672-449c-8905-50a927c11cc3"
+      },
+      "assessment_usage": null,
+      "no_semantic_assessment": true,
+      "review_required": false
+    },
+    {
+      "id": "CQ18",
+      "topic": "personal health referral",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "expected_language": "en",
+      "detected_language": null,
+      "input_language": "en",
+      "language_matched": false,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "evidence": [],
+      "model": "none",
+      "intake_status": "unavailable",
+      "intake_usage": null,
+      "assessment_usage": null,
+      "no_semantic_assessment": true,
+      "review_required": false
+    },
+    {
+      "id": "CQ19",
+      "topic": "explicit incompatible claim",
+      "http_status": 200,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:35",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:273",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:275",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:276",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:278",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:64",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:79",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "3:80",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 439,
+        "output_tokens": 65,
+        "estimated_cost_usd": 0.00062175,
+        "reservation_id": "100598fb-3d66-4301-8849-8713629c8732"
+      },
+      "assessment_usage": {
+        "input_tokens": 6502,
+        "output_tokens": 349,
+        "estimated_cost_usd": 0.006447,
+        "reservation_id": "45f471ec-ce08-4be3-a8ae-4ae2c3a4b7a2"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "CQ20",
+      "topic": "unresolved necessity application",
+      "http_status": 200,
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "contradicts",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4711",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5806",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65025",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 442,
+        "output_tokens": 88,
+        "estimated_cost_usd": 0.0007275,
+        "reservation_id": "1bf45bff-bd83-4c87-9af8-0d4c9cd9ccdf"
+      },
+      "assessment_usage": {
+        "input_tokens": 6318,
+        "output_tokens": 717,
+        "estimated_cost_usd": 0.007965,
+        "reservation_id": "7f53db73-a382-400e-bc19-c3c2d2d5dbd7"
+      },
+      "no_semantic_assessment": false,
+      "review_required": true
+    },
+    {
+      "id": "LANG-ar",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "ar",
+      "detected_language": "ar",
+      "input_language": "ar",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 448,
+        "output_tokens": 81,
+        "estimated_cost_usd": 0.0007005,
+        "reservation_id": "62958d79-d3d7-4700-84d8-49faf9d27723"
+      },
+      "assessment_usage": {
+        "input_tokens": 6485,
+        "output_tokens": 590,
+        "estimated_cost_usd": 0.00751875,
+        "reservation_id": "a4c1d761-7bcc-4c1f-b268-20aa319bfe59"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-en",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "en",
+      "detected_language": "en",
+      "input_language": "en",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:5335",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65025",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 443,
+        "output_tokens": 72,
+        "estimated_cost_usd": 0.00065625,
+        "reservation_id": "1ee9e310-47aa-41c1-96a6-89b67adf48a9"
+      },
+      "assessment_usage": {
+        "input_tokens": 6303,
+        "output_tokens": 515,
+        "estimated_cost_usd": 0.00704475,
+        "reservation_id": "c9d9408c-3f55-487a-8882-26dc90d978d2"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-bn",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "bn",
+      "detected_language": "bn",
+      "input_language": "bn",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:66536",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65025",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 457,
+        "output_tokens": 74,
+        "estimated_cost_usd": 0.00067575,
+        "reservation_id": "49332f2b-823a-4f23-8d8b-ac08eb203914"
+      },
+      "assessment_usage": {
+        "input_tokens": 6650,
+        "output_tokens": 419,
+        "estimated_cost_usd": 0.006873,
+        "reservation_id": "284670ac-357f-49a9-b746-5e028634c666"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-hi",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "hi",
+      "detected_language": "hi",
+      "input_language": "hi",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4219",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65257",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 456,
+        "output_tokens": 73,
+        "estimated_cost_usd": 0.0006705,
+        "reservation_id": "f86cf425-8e1b-4c32-85e1-1666c08f4832"
+      },
+      "assessment_usage": {
+        "input_tokens": 6152,
+        "output_tokens": 412,
+        "estimated_cost_usd": 0.006468,
+        "reservation_id": "a5943f5d-10c7-4f60-ac18-b7f035dfcb50"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-ur",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "ur",
+      "detected_language": "ur",
+      "input_language": "ur",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:23",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:61",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:114",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:184",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:66153",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:3096",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 449,
+        "output_tokens": 68,
+        "estimated_cost_usd": 0.00064275,
+        "reservation_id": "cd26f2e8-09e1-41c1-9cc6-4fcf84550302"
+      },
+      "assessment_usage": {
+        "input_tokens": 6787,
+        "output_tokens": 366,
+        "estimated_cost_usd": 0.00673725,
+        "reservation_id": "32e3c869-6157-44e2-9c6c-a498b964c9a8"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-id",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "expected_language": "id",
+      "detected_language": "id",
+      "input_language": "id",
+      "language_matched": true,
+      "matched": true,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4219",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65257",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 449,
+        "output_tokens": 74,
+        "estimated_cost_usd": 0.00066975,
+        "reservation_id": "5e1b22cb-4642-4416-b53f-4b09c715842d"
+      },
+      "assessment_usage": {
+        "input_tokens": 6145,
+        "output_tokens": 388,
+        "estimated_cost_usd": 0.00635475,
+        "reservation_id": "b08b6efd-0908-4560-872e-16f0281850d9"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-es",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "es",
+      "detected_language": "es",
+      "input_language": "es",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:2935",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 449,
+        "output_tokens": 63,
+        "estimated_cost_usd": 0.00062025,
+        "reservation_id": "d19e36b1-8089-45ca-a3be-01268ca27064"
+      },
+      "assessment_usage": {
+        "input_tokens": 6389,
+        "output_tokens": 559,
+        "estimated_cost_usd": 0.00730725,
+        "reservation_id": "8ded4478-5e63-4dd1-93d6-5e8bb2c27f6d"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-fr",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "fr",
+      "detected_language": "fr",
+      "input_language": "fr",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:65025",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 447,
+        "output_tokens": 71,
+        "estimated_cost_usd": 0.00065475,
+        "reservation_id": "814ef04c-aeed-4062-b5a1-bc5d03f8980a"
+      },
+      "assessment_usage": {
+        "input_tokens": 6484,
+        "output_tokens": 564,
+        "estimated_cost_usd": 0.007401,
+        "reservation_id": "9b4c277d-1231-4392-b3fc-ae5a63d6faac"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    },
+    {
+      "id": "LANG-de",
+      "topic": "same proposition, automatic language detection",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "expected_language": "de",
+      "detected_language": "de",
+      "input_language": "de",
+      "language_matched": true,
+      "matched": false,
+      "original_preserved": true,
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "reviewer_evidence_retrieved": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence": [
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "5:3",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "2:173",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "16:115",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+          "locator": "6:145",
+          "relation": "supports",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-EN",
+          "locator": "en:65025",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:4556",
+          "relation": "unrelated",
+          "integrity": true
+        },
+        {
+          "source_id": "HADEETHENC-AR",
+          "locator": "ar:2935",
+          "relation": "unrelated",
+          "integrity": true
+        }
+      ],
+      "model": "gpt-5.4-mini-2026-03-17",
+      "intake_status": "accepted",
+      "intake_usage": {
+        "input_tokens": 452,
+        "output_tokens": 65,
+        "estimated_cost_usd": 0.0006315,
+        "reservation_id": "60c90f06-b45f-42f4-8b8a-5edcca39e1c4"
+      },
+      "assessment_usage": {
+        "input_tokens": 6392,
+        "output_tokens": 604,
+        "estimated_cost_usd": 0.007512,
+        "reservation_id": "10cedcec-5084-42f4-9479-efece997ee59"
+      },
+      "no_semantic_assessment": false,
+      "review_required": false
+    }
+  ]
+}

@@ -17,9 +17,34 @@ beforeEach(() => {
   directory = mkdtempSync(join(tmpdir(), 'isnadlens-translation-'));
   vi.spyOn(process, 'cwd').mockReturnValue(directory);
   vi.stubEnv('OPENAI_API_KEY', 'not-a-real-key'); vi.stubEnv('ISNADLENS_PAID_CALLS_AUTHORIZED', 'true'); vi.stubEnv('ISNADLENS_MAX_SPEND_USD', '1');
+  vi.stubEnv('ISNADLENS_MAX_CALLS','100');
 });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); rmSync(directory, { recursive: true, force: true }); });
 describe('sealed result explanation translation', () => {
+  it.each(['es','fr','de','id'] as const)('rejects invented mixed-script prose for %s without a paid retry',async language=>{
+    const fetchMock=vi.fn().mockResolvedValue(response({summary:'Se evaluaron 2 pasajes, ni تجاوزing limits.',limitations:['No es una fetua.','Se requiere revisión humana.']}));
+    vi.stubGlobal('fetch',fetchMock);
+    await expect(translateResultExplanation(fixture(),language)).rejects.toThrow('TRANSLATION_UNEXPECTED_FOREIGN_SCRIPT');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+  it('allows an unchanged source-authored Arabic name, but rejects changed names or attached Latin fragments',async()=>{
+    const {audit_hash:ignored,...record}=fixture();void ignored;
+    const original=sealRecord({...record,summary_en:'Scholar "عمر" assessed 2 passages.'});
+    const limitations=['Esto no es una fetua.','Se requiere revisión humana.'];
+    const fetchMock=vi.fn().mockResolvedValueOnce(response({summary:'El estudioso "عمر" evaluó 2 pasajes.',limitations})).mockResolvedValueOnce(response({summary:'El estudioso "عمرو" evaluó 2 pasajes.',limitations})).mockResolvedValueOnce(response({summary:'El estudioso "عمرing" evaluó 2 pasajes.',limitations}));
+    vi.stubGlobal('fetch',fetchMock);
+    expect((await translateResultExplanation(original,'es')).summary).toContain('"عمر"');
+    await expect(translateResultExplanation(original,'es')).rejects.toThrow('TRANSLATION_UNEXPECTED_FOREIGN_SCRIPT');
+    await expect(translateResultExplanation(original,'es')).rejects.toThrow('TRANSLATION_UNEXPECTED_FOREIGN_SCRIPT');
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+  });
+  it('checks every limitation and rejects foreign-script homoglyphs not present in that exact input field',async()=>{
+    const fetchMock=vi.fn().mockResolvedValue(response({summary:'Solo se evaluaron 2 pasajes.',limitations:['Esto no es una fetua.','Se requiere revisión de Tаnzil.']}));
+    vi.stubGlobal('fetch',fetchMock);
+    // The apparent Latin name contains a Cyrillic а rather than Latin a.
+    await expect(translateResultExplanation(fixture(),'es')).rejects.toThrow('TRANSLATION_UNEXPECTED_FOREIGN_SCRIPT');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
   it.each([
     {language:'es' as const,summary:'Solo se evaluaron 2 pasajes recuperados; la evidencia está incompleta.',limitations:['Esto no es una fetua.','Se requiere revisión humana.']},
     {language:'fr' as const,summary:'Seuls 2 passages retrouvés ont été évalués ; les preuves sont incomplètes.',limitations:['Ceci n’est pas une fatwa.','Une révision humaine est nécessaire.']},

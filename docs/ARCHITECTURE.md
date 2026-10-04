@@ -1,5 +1,13 @@
 # Event-window architecture
 
+## Current boundaries — 4 October 2026
+
+This milestone supersedes earlier Arabic/English-only input descriptions below. Fresh input accepts nine languages. Native privacy screening precedes separately budgeted language intake: detection, a neutral English routing gloss and Arabic/English search terms. The original input is assessed and sealed unchanged. Shared scripts alone never establish a language; uncertain intake requests explicit selection. Accepted automatic detection switches display and requests one cached native explanation translation, with existing record/seal linkage and race protection.
+
+Quran evidence comes first: direct complete support for every material user assertion is sufficient without additional Hadith corroboration. Relevant Hadith can establish other claims, while publisher grading remains attributed. Explicit source attribution and source conditions are preserved. This is source-based verification, not a general automated Islamic-law hierarchy or a personal fatwa service. Competing interpretations require qualified review. Every mini-model conflicting conclusion requires one strong confirmation on the same claim/evidence; provider failure cannot publish the unconfirmed conflict.
+
+Optional Google free-tier speech requires an operator-confirmed unpaid project and server-held key. Native WAV playback avoids installed-voice requirements; bounded requests, persistent local quotas, private cache and no paid fallback are implemented. These local controls are not a multi-instance deployment solution. Account availability, live audio, pronunciation and physical-phone playback remain checks after configuration. See FREE-SPEECH.md.
+
 Created after Redwan authorized the build on 4 October 2026.
 
 Claim intake → deterministic scope/privacy boundary → frozen admitted-corpus lexical retrieval → exact source/locator/quotation/hash checks → authorized structured semantic assessment → rule-constrained corpus-bounded verdict → sealed record → presentation.
