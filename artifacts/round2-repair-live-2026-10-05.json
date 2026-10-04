@@ -1,0 +1,307 @@
+{
+  "kind": "known_failure_repair_checks_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "678e333f4b9056359640d7aca2b3e8c2c99ebefb4312a842185be0548c5d3f25",
+    "build": "fZcik2FTVYPowomPklGei",
+    "original_first_pass_sha256": "732c944e07c256e3c4b023c615b9ff80db727270df6bf86709fd03644d676e71"
+  },
+  "cases": [
+    {
+      "id": "V01",
+      "claim": "Does the Quran advise avoiding both miserly withholding and spending everything recklessly?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Quran 25:67 supports the claim that spending should avoid both miserly restriction and wasteful excess, instead maintaining balance. The passage addresses spending conduct and does not provide further details about every individual case.",
+      "summary_ar": "نعم، تدعم الآية 25:67 من مجموعة المصادر المحددة المعنى العام بأن الإنفاق ينبغي أن يتجنب التقتير والإسراف مع التزام الاعتدال. ويتعلق النص بسلوك الإنفاق، ولا يقرر هنا تفاصيل إضافية عن كل حالة فردية.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "qualified_explanation_status": null,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "25:67",
+        "17:100",
+        "9:115",
+        "47:37",
+        "47:38",
+        "9:67",
+        "2:219",
+        "5:64"
+      ],
+      "usage": [
+        {
+          "input_tokens": 722,
+          "output_tokens": 176,
+          "estimated_cost_usd": 0.0003917,
+          "reservation_id": "640775eb-9f9b-4524-a935-fdaf1e3ff36a"
+        },
+        {
+          "input_tokens": 1857,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00054345,
+          "reservation_id": "384cab9a-d7fa-45b8-930b-e944e092d5c1"
+        },
+        {
+          "input_tokens": 10033,
+          "output_tokens": 434,
+          "estimated_cost_usd": 0.00302905,
+          "reservation_id": "f8f0aae0-78a8-4fa1-ae01-9d0c7037fb22"
+        },
+        {
+          "input_tokens": 8700,
+          "output_tokens": 271,
+          "estimated_cost_usd": 0.0125002,
+          "reservation_id": "d8d9bc94-f4c7-4df7-9639-d1b57bf63f91"
+        },
+        {
+          "input_tokens": 10050,
+          "output_tokens": 581,
+          "estimated_cost_usd": 0.0032097,
+          "reservation_id": "d72c8775-d7c0-4819-bc53-ff9756b9a291"
+        }
+      ],
+      "manual_explanation_review": "satisfactory source-grounded explanation; V07 Arabic field also checked"
+    },
+    {
+      "id": "V13",
+      "claim": "کیا قرآن ہر شخص کو دیکھنے کی نصیحت کرتا ہے کہ اس نے آخرت کے لیے کیا آگے بھیجا ہے؟",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": true,
+      "summary": "Qualified explanation: Quran 59:18 supports the general exhortation to examine what one has sent ahead for the Hereafter, but its address is explicitly to believers rather than to every person without qualification. Thus, the selected evidence supports the general meaning but does not fully cover the claim’s universal scope. The complete claim is not established as worded.",
+      "summary_ar": "توضيح مقيّد: تدعم الآية 59:18 أصلَ الحث على أن ينظر المرء فيما قدّمه للغد، لكنها توجّه الخطاب صراحةً إلى المؤمنين، لا إلى كل شخص بلا تقييد. لذلك فالدليل المحدد يؤيد المعنى العام ولا يغطي إطلاق «كل شخص» بالكامل. لم يثبت الادعاء كاملًا بصيغته الواردة.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "qualified_explanation_status": "passed",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "5:32",
+        "14:5",
+        "14:3",
+        "14:4",
+        "59:18",
+        "2:85",
+        "34:46",
+        "2:87"
+      ],
+      "usage": [
+        {
+          "input_tokens": 735,
+          "output_tokens": 228,
+          "estimated_cost_usd": 0.00045735,
+          "reservation_id": "cf3fa3d5-f232-417d-a6fe-ff812822d640"
+        },
+        {
+          "input_tokens": 10548,
+          "output_tokens": 574,
+          "estimated_cost_usd": 0.0033258000000000003,
+          "reservation_id": "b8755fee-1f54-45d2-8b37-03fe82f4f035"
+        },
+        {
+          "input_tokens": 1684,
+          "output_tokens": 485,
+          "estimated_cost_usd": 0.01003,
+          "reservation_id": "c5d90a7a-3f48-45e1-89a5-4b5a28d97259"
+        }
+      ],
+      "manual_explanation_review": "satisfactory limited explanation, independently source-checked; broad original remains unconfirmed"
+    },
+    {
+      "id": "V26",
+      "claim": "Warnt der Koran, dass Streit untereinander zu Versagen und Verlust der Kraft führen kann?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Quran 8:46 directly supports the claim by linking internal dispute with failure and the loss of strength, in the context of instructing believers to obey, remain steadfast, and be patient during an encounter.",
+      "summary_ar": "نعم، تدعم الآية 8:46 من مجموعة المصادر المحددة هذا المعنى مباشرة، إذ تربط التنازع بالفشل وذهاب القوة. ويرد ذلك ضمن توجيه المؤمنين إلى طاعة الله ورسوله والصبر، وفي سياق مواجهة فئة.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "qualified_explanation_status": null,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "8:44",
+        "8:45",
+        "8:46",
+        "11:30",
+        "2:256",
+        "2:257",
+        "6:94",
+        "2:258"
+      ],
+      "usage": [
+        {
+          "input_tokens": 727,
+          "output_tokens": 158,
+          "estimated_cost_usd": 0.00037135,
+          "reservation_id": "29dc4a3c-cee6-4d62-ad42-a3cae50f1ebe"
+        },
+        {
+          "input_tokens": 2148,
+          "output_tokens": 144,
+          "estimated_cost_usd": 0.0007097999999999999,
+          "reservation_id": "920e24ef-d04b-4e7f-80e9-db9387665481"
+        },
+        {
+          "input_tokens": 12060,
+          "output_tokens": 498,
+          "estimated_cost_usd": 0.0036126,
+          "reservation_id": "1f32ee39-88e8-4be0-9ba1-67f283208ddb"
+        }
+      ],
+      "manual_explanation_review": "satisfactory source-grounded explanation; V07 Arabic field also checked"
+    },
+    {
+      "id": "V27",
+      "claim": "Behauptet der Hadith, dass nur Geld als Wohltätigkeit zählt und Lobpreisungen Allahs nicht zählen?",
+      "original_benchmark_expected": "conflicting_within_selected_corpus",
+      "repair_check_expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The supplied hadith at en:4558 directly contradicts the claim: it counts several forms of praising and remembering Allah as charity, rather than restricting charity to money. It also identifies other non-monetary acts as charity.",
+      "summary_ar": "لا، هذا الادعاء مخالف للحديث المعروض في مجموعة المصادر المحددة؛ فحديث أبي ذر في المرجع en:4558 يعدّ تسبيح الله وتكبيره وحمده وتهليله من الصدقة، فلا يحصرها في المال. كما يذكر الحديث أعمالاً أخرى تُعدّ صدقة.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "qualified_explanation_status": null,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "evidence_locators": [
+        "en:4558",
+        "en:8414",
+        "en:5512",
+        "en:5734",
+        "ar:65597",
+        "ar:65055",
+        "ar:65623",
+        "ar:65595"
+      ],
+      "usage": [
+        {
+          "input_tokens": 732,
+          "output_tokens": 167,
+          "estimated_cost_usd": 0.0003834,
+          "reservation_id": "f2b71a53-cebe-4f9a-91bf-88b5593a4e00"
+        },
+        {
+          "input_tokens": 1173,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.0037365,
+          "reservation_id": "ab2cf47d-775f-466b-89ed-41c3e91f31b0"
+        },
+        {
+          "input_tokens": 5782,
+          "output_tokens": 810,
+          "estimated_cost_usd": 0.0024175,
+          "reservation_id": "27c9e399-8f89-4963-b7ab-efe80b6274eb"
+        },
+        {
+          "input_tokens": 5782,
+          "output_tokens": 626,
+          "estimated_cost_usd": 0.021967,
+          "reservation_id": "401fef33-b228-43ad-a331-6fde2a61977c"
+        }
+      ],
+      "manual_explanation_review": "satisfactory source-grounded explanation; V07 Arabic field also checked"
+    },
+    {
+      "id": "V07",
+      "claim": "কোরআন কি বলে যে অতি সামান্য পরিমাণ ভালো কাজও মানুষ দেখতে পাবে?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Quran 99:7 in the selected source collection supports the claim that even a very small amount of good done by a person will be seen. The surrounding context concerns the disclosure of deeds on the Day of Judgment.",
+      "summary_ar": "نعم، تدعم الآية 99:7 من مجموعة المصادر المحددة هذا المعنى: من يعمل خيرًا بقدر ضئيل جدًا يراه. والسياق يتحدث عن ظهور الأعمال يوم الحساب، مع بقاء الحكم متعلقًا بمن يقوم بالعمل.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "qualified_explanation_status": null,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "evidence_locators": [
+        "99:7",
+        "99:8",
+        "35:10",
+        "4:124",
+        "18:2",
+        "18:49",
+        "24:38",
+        "18:48"
+      ],
+      "usage": [
+        {
+          "input_tokens": 729,
+          "output_tokens": 231,
+          "estimated_cost_usd": 0.00045945,
+          "reservation_id": "e83fd609-ef6d-457c-b525-8f371113f6d1"
+        },
+        {
+          "input_tokens": 1487,
+          "output_tokens": 125,
+          "estimated_cost_usd": 0.00052175,
+          "reservation_id": "51e10eee-baef-4ae2-8b6f-b1c6e23739cb"
+        },
+        {
+          "input_tokens": 8746,
+          "output_tokens": 489,
+          "estimated_cost_usd": 0.0027733000000000002,
+          "reservation_id": "58a3ea6b-0c33-4466-b0a2-c0e84b2a4e0f"
+        },
+        {
+          "input_tokens": 333,
+          "output_tokens": 127,
+          "estimated_cost_usd": 0.00023565000000000004,
+          "reservation_id": "20ea4081-65ff-44a6-979c-e675517ed5d1"
+        },
+        {
+          "input_tokens": 11139,
+          "output_tokens": 604,
+          "estimated_cost_usd": 0.00350955,
+          "reservation_id": "1da2c5a1-f44c-44d2-acc3-404dbfd25bed"
+        }
+      ],
+      "manual_explanation_review": "satisfactory source-grounded explanation; V07 Arabic field also checked"
+    },
+    {
+      "id": "V29",
+      "claim": "Generate a React shopping-cart component with a checkout button.",
+      "original_benchmark_expected": "not_evaluated",
+      "repair_check_expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "qualified_explanation_status": null,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "evidence_locators": [],
+      "usage": [
+        {
+          "input_tokens": 717,
+          "output_tokens": 56,
+          "estimated_cost_usd": 0.00024645,
+          "reservation_id": "afaea0f2-120f-40eb-a92a-72ad6407b067"
+        }
+      ],
+      "manual_explanation_review": "correct visible referral and corrected scope reason"
+    }
+  ],
+  "started_at": "2026-10-04T21:52:17.197Z",
+  "completed_at": "2026-10-04T21:54:15.760Z",
+  "final_development_sar": 32.01527737500002,
+  "original_first_pass_unchanged": true,
+  "settled_sar": 0.2791183125,
+  "satisfactory_known_repair_responses": 6
+}

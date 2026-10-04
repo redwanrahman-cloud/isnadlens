@@ -163,6 +163,12 @@ describe('nine-language routing without altering source text or user claim', () 
     const record = await verifyMultilingualClaim({ claim: 'Oruç Ramazanda farzdır.', inputLanguage: 'auto' });
     expect(record.reason_codes).toEqual(['INPUT_LANGUAGE_NOT_SUPPORTED']);
   });
+  it('does not mislabel a detected English coding request as an unsupported language',async()=>{
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(mockResponse(output('en',{scope_category:'unsupported',english_gloss:'Generate a React shopping-cart component.',arabic_terms:[],english_terms:[]}))));
+    const assessed=vi.spyOn(provider,'assessClaim');
+    const record=await verifyMultilingualClaim({claim:'Generate a React shopping-cart component with a checkout button.',inputLanguage:'auto'});
+    expect(record.reason_codes).toEqual(['OUTSIDE_SUPPORTED_CLAIM_SCOPE']);expect(record.language_intake?.detected_language).toBe('en');expect(assessed).not.toHaveBeenCalled();expect(verifySeal(record)).toBe(true);
+  });
   it('admits representative public source claims but retains general/personal boundaries from the research set', () => {
     const dataset = JSON.parse(readFileSync('artifacts/common-query-cases-2026-10-04.json', 'utf8')) as { cases: { id: string; claim: string; expected_verdict: string }[] };
     for (const row of dataset.cases) {

@@ -1,0 +1,35 @@
+{
+  "kind": "known_failure_repair_checks_not_new_holdout",
+  "freeze": {
+    "application_tree_sha256": "678e333f4b9056359640d7aca2b3e8c2c99ebefb4312a842185be0548c5d3f25",
+    "build": "fZcik2FTVYPowomPklGei",
+    "original_first_pass_sha256": "732c944e07c256e3c4b023c615b9ff80db727270df6bf86709fd03644d676e71"
+  },
+  "cases": [
+    {
+      "id": "V01",
+      "claim": "Does the Quran advise avoiding both miserly withholding and spending everything recklessly?",
+      "original_benchmark_expected": "supported_within_selected_corpus",
+      "repair_check_expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "label_match": false,
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "qualified_explanation_status": null,
+      "reason_codes": [
+        "PROVIDER_UNAVAILABLE"
+      ],
+      "evidence_locators": [],
+      "usage": [],
+      "manual_explanation_review": "pending"
+    }
+  ],
+  "started_at": "2026-10-04T21:50:49.577Z",
+  "operational_stop": "V01",
+  "completed_at": "2026-10-04T21:50:51.296Z",
+  "final_development_sar": 31.736159062500015,
+  "original_first_pass_unchanged": true,
+  "settled_sar": 0
+}

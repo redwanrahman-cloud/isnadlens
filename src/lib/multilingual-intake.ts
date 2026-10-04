@@ -13,7 +13,7 @@ import { loadHadith, checkHadithCitation } from './hadith';
 import type { VerificationRecord } from './contracts';
 import { identifySource } from './source-identification';
 
-export const INTAKE_VERSION = 'nine-language-routing-v1.7-general-rule-scope';
+export const INTAKE_VERSION = 'nine-language-routing-v1.8-scope-referral-reason';
 type Intake = NonNullable<VerificationRecord['language_intake']>;
 const outputSchema = z.object({ detected_language: z.enum(CLAIM_LANGUAGES).nullable(), confidence: z.enum(['high', 'medium', 'low']), scope_category: z.enum(['textual', 'general', 'personal', 'sensitive', 'injection', 'unsupported']), english_gloss: z.string().min(1).max(1400), arabic_terms: z.unknown(), english_terms: z.unknown() }).strict();
 export function filterIntakeHints(arabic: unknown, english: unknown): Pick<Intake, 'arabic_terms' | 'english_terms' | 'rejected_search_term_count' | 'search_terms_status'> {
@@ -113,7 +113,7 @@ export async function verifyMultilingualClaim({ claim, inputLanguage = 'auto', c
   let intake: Intake;
   try { intake = await detectAndRouteClaim(claim, requested); }
   catch (error) { return refuse(error instanceof IntakeFailure ? error.message : error instanceof Error ? error.message : 'INTAKE_UNAVAILABLE', { requested_language: requested, detected_language: null, confidence: 'low', scope_category: 'unsupported', english_gloss: '', arabic_terms: [], english_terms: [], model: error instanceof IntakeFailure ? error.model : 'none', usage: error instanceof IntakeFailure ? error.usage : null, status: 'unavailable', version: INTAKE_VERSION }); }
-  if (intake.scope_category === 'unsupported') return refuse('INPUT_LANGUAGE_NOT_SUPPORTED', intake);
+  if (intake.scope_category === 'unsupported') return refuse(intake.detected_language?'OUTSIDE_SUPPORTED_CLAIM_SCOPE':'INPUT_LANGUAGE_NOT_SUPPORTED', intake);
   if (intake.status === 'ambiguous' || !intake.detected_language) return refuse('LANGUAGE_SELECTION_REQUIRED', intake);
   if (intake.scope_category !== 'textual') return refuse(intake.scope_category === 'personal' ? 'PERSONAL_RULING_REFERRAL' : intake.scope_category === 'sensitive' ? 'SENSITIVE_SCOPE_REFERRAL' : intake.scope_category === 'injection' ? 'INSTRUCTION_INJECTION' : 'OUTSIDE_SUPPORTED_CLAIM_SCOPE', intake);
   const glossBlocked = scopeGate(intake.english_gloss, true);

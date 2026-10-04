@@ -12,9 +12,12 @@ export function englishWords(text: string): string[] {
   // Latin transliteration macrons (e.g. ā) are folded in the derived index only.
   // Otherwise the strict Latin token filter silently loses publisher spellings.
   const latinFolded = text.replace(/\p{Script=Latin}/gu, char=>char.normalize('NFD').replace(/\p{M}/gu,''));
-  return normalizeQuery(latinFolded).split(' ').filter(word => /^[a-z]{3,}$/.test(word) && !englishStop.has(word)).map(word => {
+  const grammar=new Set(['can','could','would','among','yourselves','claim','claims','claimed','count','counts','counting','lead','leads']);
+  return normalizeQuery(latinFolded).split(' ').filter(word => /^[a-z]{3,}$/.test(word) && !englishStop.has(word)&&!grammar.has(word)).map(word => {
+    const paraphrases:Record<string,string>={disagreement:'dispute',disagreements:'dispute',quarrel:'dispute',quarrels:'dispute',disputes:'dispute',failure:'fail',failures:'fail',loss:'lose',weakness:'weak',weaken:'weak',weakened:'weak',money:'wealth'};
+    if(paraphrases[word])return paraphrases[word];
     const synonyms: Record<string,string> = {maintain:'support',maintenance:'support',childbirth:'birth',deliver:'birth',delivery:'birth',pregnancy:'pregnant',divorcee:'divorce',divorced:'divorce',known:'know',home:'house',homes:'house',hurtful:'hurt',spying:'spy',backbite:'backbit',ridicule:'mock',ridiculing:'mock',secretly:'secret',encompassing:'encompass',everything:'everything',enslaved:'slave',slaves:'slave',strength:'strong',angry:'anger'};
-    const irregular:Record<string,string>={ride:'ride',riding:'ride',ridden:'ride',rode:'ride',unfit:'fit',unsuitable:'fit',suitable:'fit',saw:'see',seen:'see',children:'child',men:'man',women:'woman',feet:'foot',took:'take',taken:'take',gave:'give',given:'give',ate:'eat',eaten:'eat',drank:'drink',drunk:'drink'};
+    const irregular:Record<string,string>={giving:'give',ride:'ride',riding:'ride',ridden:'ride',rode:'ride',unfit:'fit',unsuitable:'fit',suitable:'fit',saw:'see',seen:'see',children:'child',men:'man',women:'woman',feet:'foot',took:'take',taken:'take',gave:'give',given:'give',ate:'eat',eaten:'eat',drank:'drink',drunk:'drink'};
     if (['pray','prays','prayer','prayers','praying'].includes(word)) return 'prayer';
     if (irregular[word]) return irregular[word];
     if (synonyms[word]) return synonyms[word];

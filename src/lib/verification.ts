@@ -5,7 +5,7 @@ import { loadCorpus, sha256, type Corpus, type Verse } from './corpus';
 import { recordSchema, semanticSchema, sourceIdentificationSchema, type SourceIdentification, type EvidenceItem, type VerificationRecord, type SemanticAssessment } from './contracts';
 import { scopeGate, decideVerdict, nativeSafetyGate, publicEvidenceRequest } from './policy';
 import { retrieve, retrieveWithPublishedEnglishAid } from './retrieval';
-import { assessClaim, reviewPositiveEntailment, ENTAILMENT_VERSION, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure, type EntailmentReview } from './provider';
+import { assessClaim, reviewPositiveEntailment, reviewQualifiedExplanation, ENTAILMENT_VERSION, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure, type EntailmentReview } from './provider';
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation, type HadithCorpus } from './hadith';
 import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './citations';
 import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlannerFailure, type QueryOverrides } from './query-planner';
@@ -14,7 +14,7 @@ import {preserveWholeQuestion} from './source-decision';
 import {vagueExceptionSummary} from './condition-summary';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v10-condition-summary';
+export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v11-qualified-explanation';
 export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
   const atoms = assessment.atomic_claims.filter(a => a.material);
   if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
@@ -27,6 +27,7 @@ export function validPositiveReview(review: EntailmentReview, assessment: Semant
   });
 }
 function semanticReferenceError(assessment: SemanticAssessment, evidence: EvidenceItem[]): string | null {
+  if(/[\p{Script=Bengali}\p{Script=Devanagari}]/u.test(assessment.summary_ar))return 'ARABIC_SUMMARY_LANGUAGE_INVALID';
   const ids = new Set(evidence.map(item => item.evidence_id));
   if (assessment.atomic_claims.some(atom => atom.evidence_ids.some(id => !ids.has(id)))) return 'SEMANTIC_REFERENCE_INVALID';
   const invalidBasis=assessment.atomic_claims.some(atom=>{
@@ -307,6 +308,20 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     if (base.verdict === 'insufficient_within_selected_corpus') {
       base.summary_ar = 'الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.';
       base.summary_en = 'The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.';
+      const material=assessment.atomic_claims.filter(a=>a.material);
+      // Only a directly evidenced narrower condition/audience is eligible.
+      // Missing retrieval, unrelated evidence and unpreserved meanings cannot qualify.
+      if(assessment.in_scope&&assessment.original_meaning_preserved&&material.length===1&&material[0].relation==='partial'&&material[0].direct&&material[0].context_fit&&material[0].negation_checked&&material[0].modality_checked&&material[0].attribution_matched&&(!material[0].scope_matched||!material[0].qualifications_preserved)&&material[0].evidence_ids.length&&!vagueExceptionSummary(assessment.summary_en,assessment.summary_ar)){
+        const draft={draft_en:assessment.summary_en,draft_ar:assessment.summary_ar};
+        try{
+          const checked=await reviewQualifiedExplanation(claim,assessment,base.evidence_items);
+          const r=checked.review.atoms[0],card=base.evidence_items.find(e=>e.evidence_id===r?.evidence_id);
+          const text=r?.context_locator===null?card?.quotation:card?.source_context.find(c=>c.locator===r?.context_locator&&c.integrity_passed)?.quotation;
+          const passed=checked.review.atoms.length===1&&r.atom_id==='qualified_explanation'&&r.entails==='yes'&&r.attribution_preserved&&r.qualifications_preserved&&Boolean(card?.integrity.passed&&material[0].evidence_ids.includes(card.evidence_id)&&r.basis_quotation&&text===r.basis_quotation);
+          base.qualified_explanation_review={version:'qualified-explanation-v1',...draft,model:checked.model,status:passed?'passed':'rejected',raw_review:checked.review,raw_provider_review:checked.raw_provider_review,unit_provenance:checked.unit_provenance,usage:checked.usage,reason:passed?'QUALIFIED_EXPLANATION_SOURCE_CONFIRMED':'QUALIFIED_EXPLANATION_UNCONFIRMED'};
+          if(passed){base.summary_en=`Qualified explanation: ${assessment.summary_en} The complete claim is not established as worded.`;base.summary_ar=`توضيح مقيّد: ${assessment.summary_ar} لم يثبت الادعاء كاملًا بصيغته الواردة.`;}
+        }catch(error){base.qualified_explanation_review={version:'qualified-explanation-v1',...draft,model:error instanceof ProviderFailure?error.model:primaryModel(),status:'unavailable',raw_review:null,usage:error instanceof ProviderFailure?error.usage:null,reason:error instanceof Error?error.message:'PROVIDER_UNAVAILABLE'};}
+      }
     } else if (base.verdict === 'not_evaluated') {
       base.summary_ar = 'لم يتم التحقق من هذا الادعاء؛ يلزم الرجوع إلى سبب التوقف المعروض.';
       base.summary_en = 'This claim has not been verified; see the displayed reason for the stop.';
@@ -325,6 +340,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
 /** One additional search plan for an evidence gap, never a recursive retry or a verdict override. */
 async function verifyClaimWithLocalRecovery(options: Parameters<typeof verifyClaim>[0]): Promise<VerificationRecord> {
   const first = await verifyClaim(options);
+  if(first.qualified_explanation_review?.status==='passed'||first.qualified_explanation_review?.status==='unavailable')return first;
   const assessment = first.semantic_assessment as SemanticAssessment | null;
   const missing = first.verdict === 'insufficient_within_selected_corpus' &&
     (first.reason_codes.includes('NO_RETRIEVED_EVIDENCE') || assessment?.in_scope && assessment.original_meaning_preserved && assessment.atomic_claims.filter(a=>a.material).every(a=>['partial','unrelated'].includes(a.relation)));
@@ -344,6 +360,7 @@ async function verifyClaimWithLocalRecovery(options: Parameters<typeof verifyCla
 /** At most one online discovery run, after eligible local evidence recovery. */
 export async function verifyClaimWithRecovery(options:Parameters<typeof verifyClaim>[0]):Promise<VerificationRecord>{
   const previous=await verifyClaimWithLocalRecovery(options);
+  if(previous.qualified_explanation_review?.status==='passed'||previous.qualified_explanation_review?.status==='unavailable')return previous;
   if(process.env.ISNADLENS_WEB_SEARCH_ENABLED!=='true'||!providerReady())return previous;
   const a=previous.semantic_assessment as SemanticAssessment|null;
   const eligible=previous.verdict==='insufficient_within_selected_corpus'&&(!a||a.in_scope&&a.original_meaning_preserved)||previous.reason_codes.includes('SOURCE_ENTAILMENT_UNCONFIRMED');
