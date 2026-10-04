@@ -1,4 +1,5 @@
 import type { Corpus, Verse } from './corpus';
+import { parseQuranReferences } from './citations';
 // Only query strings receive these transformations. Stored publisher text is never changed.
 export function normalizeQuery(query: string): string {
   return query.toLowerCase().normalize('NFKC').replace(/[\u064b-\u065f\u0670]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
@@ -21,8 +22,8 @@ export function queryTerms(query: string): string[] {
 export function retrieve(corpus: Corpus, query: string, limit = 8): Verse[] {
   const terms = queryTerms(query);
   // Search Simple Clean bytes directly. Arabic spelling variants expand the query, not corpus text.
-  const explicit = /(?:^|[^\d])(\d{1,3})\s*:\s*(\d{1,3})(?!\d)/.exec(query);
-  const exactLocator = explicit ? `${Number(explicit[1])}:${Number(explicit[2])}` : null;
-  return corpus.verses.map(verse => ({ verse, score: (verse.id === exactLocator ? 1000 : 0) + terms.reduce((score, term) => score + (verse.search.includes(term) ? Math.min(term.length, 8) : 0), 0) }))
+  const explicit = parseQuranReferences(query);
+  const exactLocators = new Set(explicit.references);
+  return corpus.verses.map(verse => ({ verse, score: (exactLocators.has(verse.id) ? 1000 : 0) + terms.reduce((score, term) => score + (verse.search.includes(term) ? Math.min(term.length, 8) : 0), 0) }))
     .filter(hit => hit.score > 0).sort((a, b) => b.score - a.score || a.verse.surah - b.verse.surah || a.verse.ayah - b.verse.ayah).slice(0, limit).map(hit => hit.verse);
 }

@@ -40,3 +40,7 @@ Lexical retrieval has limited English vocabulary and can miss relevant passages.
 ## Release gates still open
 
 Controlled model comparison; six-language semantic and immutable-field checks; untouched final evaluation after freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission.
+
+## Development probes
+
+With the local server running, `node scripts/validate-development.mjs` examines six Arabic/English development claims. This uses the configured paid provider only after existing authorization and budget checks; it is not an independent religious benchmark. Run a single case by adding its ID, for example `node scripts/validate-development.mjs fabricated-arabic-quote`. Full source-bearing records stay in ignored `artifacts/private`; commit-safe summaries contain verdicts, reasons, source locators, integrity checks and usage. A correct refusal must use the intended reason, not merely return the expected verdict.

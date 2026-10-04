@@ -11,3 +11,9 @@ Fresh verification requires a configured API key and paid-call authorization. Re
 The first increment implements Arabic and English interface views. Four additional output languages, renderer semantic invariants, deployment, independent semantic evaluation, release packaging and optional pilgrimage utilities remain later acceptance gates. None is advertised as complete.
 
 The HTTP route bounds request bytes, caps concurrent work and applies a single-process request limit. A trusted-edge durable limiter and persistent authorized spend budget are required before public operation. No personal claims are written to logs or disk.
+
+## Additional-language boundary
+
+Preparing display dictionaries does not extend claim-input coverage beyond Arabic and English. A display-language switch must retain the same original claim, verdict, evidence IDs, exact quotations, publisher metadata, record ID and audit hash. Translated interface labels are separate presentation data, with draft linguistic-review status until reviewed. Generated explanation translations, if added, must be identified as project explanations and kept outside the sealed original verification record; they are not admitted Quran translations. Showing a different official Hadith language edition requires an explicitly identified publisher record and its own integrity checks, never replacing the original evidence quotation silently.
+
+The modern Islamic visual direction is awaiting Redwan's review. Current functional work and separate language resources do not authorize changing the approved visual design boundary.

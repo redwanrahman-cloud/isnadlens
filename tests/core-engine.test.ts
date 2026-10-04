@@ -11,6 +11,7 @@ import { sealRecord, verifySeal, checkExplicitCitation, authenticateEvidence, ve
 import * as provider from '../src/lib/provider';
 import type { SemanticAssessment, VerificationRecord } from '../src/lib/contracts';
 import { loadHadith, retrieveHadith, authenticateHadith, validateHadith, checkHadithCitation } from '../src/lib/hadith';
+import { parseQuranReferences, parseHadithLinks } from '../src/lib/citations';
 
 const atom = { id: 'a1', text: 'A material assertion', material: true, relation: 'supports' as const, evidence_ids: ['e1'], direct: true, context_fit: true, negation_checked: true, modality_checked: true, qualifications_preserved: true, attribution_matched: true, scope_matched: true, contradiction_basis: 'none' as const, basis_evidence_id: null, basis_quotation: null };
 const assessment: SemanticAssessment = { in_scope: true, original_meaning_preserved: true, atomic_claims: [atom], all_material_claims_covered: true, summary_ar: 'تفسير', summary_en: 'Explanation', limitations: [] };
@@ -224,5 +225,66 @@ describe('admitted multilingual Hadith records', () => {
     expect(checkHadithCitation(corpus, `${record.fields.link} "invented quotation"`, 'en')).toBe('HADITH_EXPLICIT_QUOTATION_MISMATCH');
     expect(checkHadithCitation(corpus, record.fields.link!, 'ar')).toBe('HADITH_CITATION_LANGUAGE_MISMATCH');
     expect(checkHadithCitation(corpus, 'https://hadeethenc.com/en/browse/hadith/999999999', 'en')).toBe('HADITH_EXPLICIT_LOCATOR_INVALID');
+  });
+});
+describe('adversarial citation, selection and compound coverage regression', () => {
+  it.each(['2:9999', '-2:256', '2:abc', '2:256garbage', '2:256-259', '2:256:1'])('refuses malformed or unsupported citation %s instead of truncating it', reference => {
+    const corpus = loadCorpus();
+    expect(checkExplicitCitation(corpus, `The Quran at ${reference} mentions religion.`)).toBe('EXPLICIT_LOCATOR_MALFORMED_OR_RANGE_UNSUPPORTED');
+  });
+  it('supports Arabic and Persian citation digits through query-side parsing while keeping source text unchanged', () => {
+    const corpus = loadCorpus();
+    expect(parseQuranReferences('القرآن في ٢:٢٥٦')).toEqual({ references: ['2:256'], error: null });
+    expect(parseQuranReferences('القرآن في ۲:۲۵۶')).toEqual({ references: ['2:256'], error: null });
+    expect(checkExplicitCitation(corpus, 'القرآن في ٢:٢٥٦')).toBeNull();
+    expect(retrieve(corpus, 'القرآن في ٢:٢٥٦')[0].id).toBe('2:256');
+  });
+  it.each(['https://hadeethenc.com/en/browse/hadith/4560garbage', 'https://hadeethenc.com/xx/browse/hadith/4560', 'https://hadeethenc.com.evil/en/browse/hadith/4560', 'http://hadeethenc.com/en/browse/hadith/4560', 'https://hadeethenc.com/en/browse/hadith/4560?source=other'])('rejects malformed official-looking Hadith URL %s', url => {
+    expect(parseHadithLinks(`A hadith is cited at ${url}`)).toMatchObject({ error: 'HADITH_EXPLICIT_URL_MALFORMED' });
+  });
+  it.each([
+    { claim: 'The Quran says that fasting is prescribed.', corpusSelection: 'hadith' as const },
+    { claim: 'The Prophet said that actions are judged by intentions.', corpusSelection: 'quran' as const },
+    { claim: 'The Quran and a hadith say that prayer is prescribed.', corpusSelection: 'quran' as const },
+    { claim: 'Religion is described at 2:256.', corpusSelection: 'hadith' as const },
+    { claim: 'Prayer is described at https://hadeethenc.com/en/browse/hadith/4560.', corpusSelection: 'quran' as const },
+  ])('rejects cross-source attribution before provider calls: $claim', async ({ claim, corpusSelection }) => {
+    const mocked = vi.spyOn(provider, 'assessClaim');
+    try {
+      const record = await verifyClaim({ claim, inputLanguage: 'en', corpusSelection });
+      expect(record.verdict).toBe('not_evaluated');
+      expect(record.reason_codes).toContain('SOURCE_ATTRIBUTION_OR_SELECTION_MISMATCH');
+      expect(mocked).not.toHaveBeenCalled(); expect(verifySeal(record)).toBe(true);
+    } finally { mocked.mockRestore(); }
+  });
+  it.each([false, true])('does not label a compound claim supported when only the first atom has direct coverage, even if model all_material_claims_covered=%s', async coverageFlag => {
+    const corpus = loadCorpus(); const evidenceId = `${corpus.manifest.id}:2:185`;
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: { ...assessment, all_material_claims_covered: coverageFlag, atomic_claims: [{ ...atom, id: 'a1', evidence_ids: [evidenceId], text: 'The Quran mentions fasting in Ramadan.' }, { ...atom, id: 'a2', evidence_ids: [], text: 'The Quran explicitly commands using a smartphone app.', relation: 'unrelated', direct: false }] }, model: 'mock-only', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'The Quran mentions fasting in Ramadan and explicitly commands using a smartphone app.', inputLanguage: 'en' });
+      expect(record.verdict).toBe('insufficient_within_selected_corpus');
+      expect(record.reason_codes).toContain('INCOMPLETE_OR_INDIRECT_COVERAGE'); expect(verifySeal(record)).toBe(true);
+      expect(record.semantic_assessment).toMatchObject({ all_material_claims_covered: coverageFlag });
+    } finally { mocked.mockRestore(); }
+  });
+  it('rejects fabricated phone-related religious quotations through citation checks rather than personal-data heuristics', async () => {
+    const mocked = vi.spyOn(provider, 'assessClaim');
+    try {
+      const record = await verifyClaim({ claim: 'القرآن في 21:30 يقول "يجب استعمال الهاتف للصلاة".', inputLanguage: 'ar' });
+      expect(record.reason_codes).toContain('EXPLICIT_QUOTATION_MISMATCH'); expect(mocked).not.toHaveBeenCalled();
+      expect(scopeGate('A hadith mentions a phone app for prayer.')).toBeNull();
+      expect(scopeGate('The Quran says that Ali lives at 23 Example Street.')).toBe('PERSONAL_FACTS_REFERRAL');
+      expect(scopeGate('The Quran mentions a phone number +966501234567.')).toBe('PRIVATE_DATA_REFERRAL');
+      expect(scopeGate('The Quran and phone number ٠٥٠١٢٣٤٥٦٧')).toBe('PRIVATE_DATA_REFERRAL');
+      expect(scopeGate('The Quran and phone number ۰۵۰۱۲۳۴۵۶۷')).toBe('PRIVATE_DATA_REFERRAL');
+    } finally { mocked.mockRestore(); }
+  });
+  it('rejects a whitespace-only contradiction basis even though whitespace exists in the real source', async () => {
+    const corpus = loadCorpus(); const id = `${corpus.manifest.id}:2:185`;
+    const mocked = vi.spyOn(provider, 'assessClaim').mockResolvedValue({ assessment: { ...assessment, atomic_claims: [{ ...atom, relation: 'contradicts', evidence_ids: [id], contradiction_basis: 'explicit_negation_or_incompatible_statement', basis_evidence_id: id, basis_quotation: ' ' }] }, model: 'mock-only', usage: null });
+    try {
+      const record = await verifyClaim({ claim: 'The Quran never mentions Ramadan.', inputLanguage: 'en' });
+      expect(record.verdict).toBe('not_evaluated'); expect(record.reason_codes).toContain('SEMANTIC_BASIS_QUOTATION_INVALID');
+    } finally { mocked.mockRestore(); }
   });
 });

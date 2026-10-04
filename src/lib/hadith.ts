@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { sha256 } from './corpus';
 import { queryTerms } from './retrieval';
 import type { EvidenceItem } from './contracts';
+import { parseHadithLinks, extractClaimQuotes } from './citations';
 
 const languages = z.enum(['ar', 'en', 'bn', 'hi', 'ur', 'id']);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
@@ -47,7 +48,7 @@ export function loadHadith(): HadithCorpus {
 }
 const escapeRegex = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'ar' | 'en', limit = 8): HadithRecord[] {
-  const explicit = /https:\/\/hadeethenc\.com\/(ar|en|bn|hi|ur|id)\/browse\/hadith\/(\d+)/.exec(query);
+  const explicit = parseHadithLinks(query).links;
   const boilerplate = new Set(['prophet', 'messenger', 'muhammad', 'said', 'says', 'hadith', 'hadeeth', 'that', 'have', 'has', 'no', 'not', 'explicitly', 'نبي', 'النبي', 'رسول', 'الرسول', 'قال', 'حديث']);
   const lexicalSynonyms: Record<string, string[]> = { actions: ['deeds'], action: ['deed'], deeds: ['actions'], deed: ['action'], judged: ['rewarded', 'considered'] };
   const originalTerms = queryTerms(query).filter(t => !boilerplate.has(t) && (language === 'ar' ? /\p{Script=Arabic}/u.test(t) : /\p{Script=Latin}/u.test(t)));
@@ -61,17 +62,19 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   return selected.map(record => {
     // Publisher title/text remain unchanged. Explanations are not promoted into primary quotation support.
     const title = record.fields.title ?? ''; const text = record.fields.hadith_text ?? '';
-    const score = (explicit && record.language === explicit[1] && record.id === explicit[2] ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((pattern.test(text) ? 1 : 0) + (pattern.test(title) ? .5 : 0)), 0);
+    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((pattern.test(text) ? 1 : 0) + (pattern.test(title) ? .5 : 0)), 0);
     return { record, score };
   }).filter(hit => hit.score > 0).sort((a, b) => b.score - a.score || Number(a.record.id) - Number(b.record.id)).slice(0, limit).map(hit => hit.record);
 }
 export function checkHadithCitation(corpus: HadithCorpus, claim: string, language: 'ar' | 'en'): string | null {
-  const links = [...claim.matchAll(/https:\/\/hadeethenc\.com\/(ar|en|bn|hi|ur|id)\/browse\/hadith\/(\d+)/g)];
+  const parsed = parseHadithLinks(claim);
+  if (parsed.error) return parsed.error;
+  const links = parsed.links;
   if (!links.length) return null;
-  if (links.some(link => link[1] !== language)) return 'HADITH_CITATION_LANGUAGE_MISMATCH';
-  const cited = links.map(link => corpus.records.find(record => record.language === link[1] && record.id === link[2]));
+  if (links.some(link => link.language !== language)) return 'HADITH_CITATION_LANGUAGE_MISMATCH';
+  const cited = links.map(link => corpus.records.find(record => record.language === link.language && record.id === link.id));
   if (cited.some(record => !record)) return 'HADITH_EXPLICIT_LOCATOR_INVALID';
-  const quotes = [...claim.matchAll(/["“«]([^"”»]+)["”»]/g)].map(match => match[1]);
+  const quotes = extractClaimQuotes(claim);
   if (quotes.some(quote => !cited.some(record => record?.fields.hadith_text?.includes(quote)))) return 'HADITH_EXPLICIT_QUOTATION_MISMATCH';
   return null;
 }

@@ -1,0 +1,139 @@
+{
+  "purpose": "Development probes; provisional expected behavior, not independent scholarly evaluation.",
+  "cases": [
+    {
+      "id": "invalid-locator",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": true,
+      "reason_codes": [
+        "EXPLICIT_LOCATOR_INVALID"
+      ],
+      "record_id": "7c9b38f6-51cf-48a7-b52b-4c99961fe3da",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [],
+      "usage": null
+    },
+    {
+      "id": "source-mixup",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": true,
+      "reason_codes": [
+        "SOURCE_ATTRIBUTION_OR_SELECTION_MISMATCH"
+      ],
+      "record_id": "d62b5fea-198a-4f47-8a74-c96f4867d106",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [],
+      "usage": null
+    },
+    {
+      "id": "fabricated-arabic-quote",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "matched": false,
+      "reason_codes": [
+        "PRIVATE_OR_SENSITIVE_FACTS_REFERRAL"
+      ],
+      "record_id": "fd3fd3cc-d76a-4756-a99f-4b88b617eaed",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [],
+      "usage": null,
+      "expected_reason": "EXPLICIT_QUOTATION_MISMATCH",
+      "finding": "Correct refusal verdict but misleading privacy reason; targeted fix and retest required."
+    },
+    {
+      "id": "fasting-english",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "record_id": "d4f496ba-4825-4226-8e39-311bdb40a2a9",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        "2:185",
+        "2:183",
+        "2:187",
+        "2:196",
+        "4:92",
+        "5:89",
+        "5:95",
+        "58:4"
+      ],
+      "usage": {
+        "input_tokens": 6940,
+        "output_tokens": 348,
+        "estimated_cost_usd": 0.006771,
+        "reservation_id": "c8a20c2e-06ae-4da5-9567-d535a5f656d2"
+      }
+    },
+    {
+      "id": "compulsion-arabic",
+      "http_status": 200,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "matched": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "record_id": "7bd7e2c3-dfaf-4a6a-bd8e-56363ca21b28",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        "2:256",
+        "4:46",
+        "1:4",
+        "2:83",
+        "2:132",
+        "2:162",
+        "2:180",
+        "2:193"
+      ],
+      "usage": {
+        "input_tokens": 5060,
+        "output_tokens": 418,
+        "estimated_cost_usd": 0.005676,
+        "reservation_id": "d8aec8e7-d7cc-4bf5-b72b-fcb24de86321"
+      }
+    },
+    {
+      "id": "compound-modern-addition",
+      "http_status": 200,
+      "expected": "insufficient_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "matched": true,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "record_id": "def08e8c-dda7-4348-b641-aa515f6c29d6",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [
+        "2:185",
+        "2:183",
+        "2:187",
+        "2:196",
+        "4:92",
+        "5:89",
+        "5:95",
+        "58:4"
+      ],
+      "usage": {
+        "input_tokens": 6949,
+        "output_tokens": 565,
+        "estimated_cost_usd": 0.00775425,
+        "reservation_id": "6d99228c-99af-432a-b896-28b8ec870425"
+      }
+    }
+  ]
+}

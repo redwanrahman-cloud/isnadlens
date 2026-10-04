@@ -1,0 +1,21 @@
+{
+  "purpose": "Development probes; provisional expected behavior, not independent scholarly evaluation.",
+  "cases": [
+    {
+      "id": "fabricated-arabic-quote",
+      "http_status": 200,
+      "expected": "not_evaluated",
+      "expected_reason": "EXPLICIT_QUOTATION_MISMATCH",
+      "actual": "not_evaluated",
+      "matched": true,
+      "reason_codes": [
+        "EXPLICIT_QUOTATION_MISMATCH"
+      ],
+      "record_id": "9f33e3ac-1294-4e97-81e4-eabb8fd39564",
+      "seal_valid": true,
+      "evidence_integrity": true,
+      "locators": [],
+      "usage": null
+    }
+  ]
+}

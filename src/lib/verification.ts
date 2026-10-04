@@ -5,6 +5,7 @@ import { scopeGate, decideVerdict } from './policy';
 import { retrieve } from './retrieval';
 import { assessClaim, providerReady, PROMPT_VERSION, SCHEMA_VERSION, ProviderFailure } from './provider';
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation } from './hadith';
+import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './citations';
 
 export type { VerificationRecord } from './contracts';
 export function sealRecord(record: Omit<VerificationRecord, 'audit_hash'>): VerificationRecord {
@@ -42,11 +43,13 @@ export function getCoverage() {
   catch { return { hadith, approved: false, verse_count: 0, source: 'Tanzil Arabic Quran', version: 'not_admitted', provider_ready: providerReady(), available: false, verses: 0, semantic_provider_ready: providerReady(), limitations: ['Source edition is not admitted or failed integrity checks.'] }; }
 }
 export function checkExplicitCitation(corpus: Corpus, claim: string): string | null {
-  const references = [...claim.matchAll(/(?:^|[^\d])(\d{1,3})\s*:\s*(\d{1,3})(?!\d)/g)];
+  const parsed = parseQuranReferences(claim);
+  if (parsed.error) return parsed.error;
+  const references = parsed.references;
   if (!references.length) return null;
-  const verses = references.map(ref => corpus.verses.find(v => v.id === `${Number(ref[1])}:${Number(ref[2])}`));
+  const verses = references.map(ref => corpus.verses.find(v => v.id === ref));
   if (verses.some(v => !v)) return 'EXPLICIT_LOCATOR_INVALID';
-  const quotes = [...claim.matchAll(/["“«]([^"”»]+)["”»]/g)].map(match => match[1]);
+  const quotes = extractClaimQuotes(claim);
   const arabicQuotes = quotes.filter(quote => /[\u0600-\u06ff]/.test(quote));
   if (arabicQuotes.some(quote => !verses.some(v => v && (v.display.includes(quote) || v.search.includes(quote))))) return 'EXPLICIT_QUOTATION_MISMATCH';
   // English text is not an admitted Quran translation and cannot be authenticated as source quotation.
@@ -62,8 +65,8 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   if (!['quran', 'hadith'].includes(corpusSelection)) { base.corpus_selection = 'quran'; return fail('CORPUS_SELECTION_INVALID'); }
   const blocked = scopeGate(claim); if (blocked) return fail(blocked);
   if (inputLanguage === 'ar' && !/\p{Script=Arabic}/u.test(claim) || inputLanguage === 'en' && !/\p{Script=Latin}/u.test(claim)) return fail('INPUT_LANGUAGE_MISMATCH');
-  const explicitlyQuran = /\b(quran|qur'an|koran)\b|قرآن|القران/i.test(claim);
-  const explicitlyHadith = /\b(hadith|hadeeth|prophet said|muhammad said)\b|حديث|قال النبي|قال رسول/i.test(claim);
+  const explicitlyQuran = /\b(quran|qur'an|koran)\b|قرآن|القران/i.test(claim) || parseQuranReferences(claim).references.length > 0;
+  const explicitlyHadith = /\b(hadith|hadeeth|prophet said|muhammad said)\b|حديث|قال النبي|قال رسول/i.test(claim) || parseHadithLinks(claim).links.length > 0;
   if (explicitlyQuran && explicitlyHadith || corpusSelection === 'hadith' && explicitlyQuran || corpusSelection === 'quran' && explicitlyHadith) return fail('SOURCE_ATTRIBUTION_OR_SELECTION_MISMATCH');
   if (corpusSelection === 'quran') {
     let corpus: Corpus;
@@ -87,7 +90,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     base.model = model; base.usage = usage; base.semantic_assessment = assessment;
     const ids = new Set(base.evidence_items.map(e => e.evidence_id));
     if (assessment.atomic_claims.some(a => a.evidence_ids.some(id => !ids.has(id)))) return fail('SEMANTIC_REFERENCE_INVALID');
-    if (assessment.atomic_claims.some(a => a.contradiction_basis === 'explicit_negation_or_incompatible_statement' && (!a.basis_evidence_id || !a.basis_quotation || !base.evidence_items.some(e => e.evidence_id === a.basis_evidence_id && e.quotation.includes(a.basis_quotation!))))) return fail('SEMANTIC_BASIS_QUOTATION_INVALID');
+    if (assessment.atomic_claims.some(a => a.contradiction_basis === 'explicit_negation_or_incompatible_statement' && (!a.basis_evidence_id || !a.basis_quotation?.trim() || !base.evidence_items.some(e => e.evidence_id === a.basis_evidence_id && e.quotation.includes(a.basis_quotation!))))) return fail('SEMANTIC_BASIS_QUOTATION_INVALID');
     base.verdict = decideVerdict(assessment, ids);
     base.summary_ar = assessment.summary_ar; base.summary_en = assessment.summary_en;
     base.reason_codes = [base.verdict === 'supported_within_selected_corpus' ? 'COMPLETE_DIRECT_COVERAGE' : base.verdict === 'conflicting_within_selected_corpus' ? 'DIRECT_MATERIAL_CONTRADICTION' : base.verdict === 'not_evaluated' ? 'SEMANTIC_SCOPE_REFERRAL' : 'INCOMPLETE_OR_INDIRECT_COVERAGE'];
