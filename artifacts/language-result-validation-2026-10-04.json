@@ -1,0 +1,54 @@
+{
+  "purpose": "Development translation checks; structural integrity is not independent linguistic approval.",
+  "record_id": "d4f496ba-4825-4226-8e39-311bdb40a2a9",
+  "cases": [
+    {
+      "language": "bn",
+      "status": 200,
+      "latency_ms": 3339,
+      "record_id_matches": true,
+      "audit_hash_matches": true,
+      "original_record_unchanged": true,
+      "summary_present": true,
+      "limitation_count_preserved": true,
+      "review_status": "not_independently_reviewed",
+      "source_kind": "project_explanation_translation"
+    },
+    {
+      "language": "hi",
+      "status": 200,
+      "latency_ms": 1864,
+      "record_id_matches": true,
+      "audit_hash_matches": true,
+      "original_record_unchanged": true,
+      "summary_present": true,
+      "limitation_count_preserved": true,
+      "review_status": "not_independently_reviewed",
+      "source_kind": "project_explanation_translation"
+    },
+    {
+      "language": "ur",
+      "status": 200,
+      "latency_ms": 2266,
+      "record_id_matches": true,
+      "audit_hash_matches": true,
+      "original_record_unchanged": true,
+      "summary_present": true,
+      "limitation_count_preserved": true,
+      "review_status": "not_independently_reviewed",
+      "source_kind": "project_explanation_translation"
+    },
+    {
+      "language": "id",
+      "status": 200,
+      "latency_ms": 1612,
+      "record_id_matches": true,
+      "audit_hash_matches": true,
+      "original_record_unchanged": true,
+      "summary_present": true,
+      "limitation_count_preserved": true,
+      "review_status": "not_independently_reviewed",
+      "source_kind": "project_explanation_translation"
+    }
+  ]
+}

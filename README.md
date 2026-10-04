@@ -4,7 +4,7 @@ A source-first workbench for examining bounded Arabic and English Islamic claims
 
 ## Current increment
 
-Arabic/English responsive workbench, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in six languages, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment was successfully tested after funding and authorization under a persistent development spending cap. Four additional interface/output languages, model comparison, final evaluation, live hosting and the pilgrimage guide are not complete.
+Six selectable display languages (Arabic, English, Bangla, Hindi, Urdu, Indonesian), Arabic/English fresh claim input, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in six languages, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment and on-demand translations of project explanations were tested within the authorized persistent development spending cap. Explanations are labelled unreviewed; source quotations are never translated or overwritten by language switching. Model comparison, final evaluation, live hosting and the pilgrimage guide are not complete.
 
 The first repository commit was created during the authorized event window. See PRE_CHALLENGE_DISCLOSURE.md and docs/BUILD-LEDGER.md for the research disclosure and starting-state record. The GitHub repository is private during development.
 

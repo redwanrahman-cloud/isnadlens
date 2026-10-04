@@ -1,0 +1,74 @@
+[
+  {
+    "language": "bn",
+    "direction": "ltr",
+    "input": "en",
+    "claim_unchanged": true,
+    "verdict_unchanged": true,
+    "quotes_unchanged": true,
+    "links_unchanged": true,
+    "seal_unchanged": true,
+    "record_id": "f32c6331-0efc-425c-b272-c558ddf3dddd",
+    "overflow": false
+  },
+  {
+    "language": "hi",
+    "direction": "ltr",
+    "input": "en",
+    "claim_unchanged": true,
+    "verdict_unchanged": true,
+    "quotes_unchanged": true,
+    "links_unchanged": true,
+    "seal_unchanged": true,
+    "record_id": "f32c6331-0efc-425c-b272-c558ddf3dddd",
+    "overflow": false
+  },
+  {
+    "language": "ur",
+    "direction": "rtl",
+    "input": "en",
+    "claim_unchanged": true,
+    "verdict_unchanged": true,
+    "quotes_unchanged": true,
+    "links_unchanged": true,
+    "seal_unchanged": true,
+    "record_id": "f32c6331-0efc-425c-b272-c558ddf3dddd",
+    "overflow": false
+  },
+  {
+    "language": "id",
+    "direction": "ltr",
+    "input": "en",
+    "claim_unchanged": true,
+    "verdict_unchanged": true,
+    "quotes_unchanged": true,
+    "links_unchanged": true,
+    "seal_unchanged": true,
+    "record_id": "f32c6331-0efc-425c-b272-c558ddf3dddd",
+    "overflow": false
+  },
+  {
+    "language": "ar",
+    "direction": "rtl",
+    "input": "en",
+    "claim_unchanged": true,
+    "verdict_unchanged": true,
+    "quotes_unchanged": true,
+    "links_unchanged": true,
+    "seal_unchanged": true,
+    "record_id": "f32c6331-0efc-425c-b272-c558ddf3dddd",
+    "overflow": false
+  },
+  {
+    "language": "en",
+    "direction": "ltr",
+    "input": "en",
+    "claim_unchanged": true,
+    "verdict_unchanged": true,
+    "quotes_unchanged": true,
+    "links_unchanged": true,
+    "seal_unchanged": true,
+    "record_id": "f32c6331-0efc-425c-b272-c558ddf3dddd",
+    "overflow": false
+  }
+]
