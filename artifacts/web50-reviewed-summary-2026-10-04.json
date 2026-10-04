@@ -1,0 +1,946 @@
+{
+  "kind": "untouched_fresh50_principal_source_review_not_independent_certification",
+  "total": 50,
+  "counts": {
+    "total": 50,
+    "quran": 35,
+    "hadith": 15,
+    "supported": 34,
+    "contradicted": 16,
+    "languages": {
+      "en": 15,
+      "ar": 7,
+      "id": 4,
+      "es": 4,
+      "fr": 4,
+      "de": 4,
+      "bn": 4,
+      "hi": 4,
+      "ur": 4
+    }
+  },
+  "answer_label_matches": 22,
+  "fully_source_grounded": 22,
+  "wrong_decisive_answer_labels": 0,
+  "abstentions": 28,
+  "source_and_seal_checks_passed": 50,
+  "web_cases": 1,
+  "search_calls": 2,
+  "first_pass_settled_sar": 1.569864,
+  "conservative_total_development_sar": 19.023671437499985,
+  "development_cap_sar": 28,
+  "issue_families": {
+    "personal_or_health_overfilter": 5,
+    "keyword_scope_overfilter": 19,
+    "retrieval_and_publisher_locale": 1,
+    "decision_guard_false_abstention": 3
+  },
+  "cases": [
+    {
+      "id": "T01",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": null,
+      "expected_language": "en",
+      "language_match": false,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "Generic first-person question about permitted trade in Hajj was treated as a personal ruling before language routing. A personal-case guard must distinguish ordinary learning from individualized rulings."
+    },
+    {
+      "id": "T02",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "expected_language": "ar",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T03",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T04",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "expected_language": "id",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T05",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "expected_language": "es",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T06",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T07",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "expected_language": "fr",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T08",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T09",
+      "label_match": true,
+      "actual": "conflicting_within_selected_corpus",
+      "reasons": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "expected_language": "ar",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T10",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "expected_language": "de",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T11",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "PRIVATE_OR_SENSITIVE_FACTS_REFERRAL"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": null,
+      "expected_language": "en",
+      "language_match": false,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "Generic shaving-rule question mentions an illness exception without identifying a patient, but native health screening blocked it."
+    },
+    {
+      "id": "T12",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "expected_language": "bn",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T13",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "expected_language": "hi",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T14",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "expected_language": "ur",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T15",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T16",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "expected_language": "ar",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T17",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "expected_language": "id",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T18",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "expected_language": "es",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T19",
+      "label_match": true,
+      "actual": "conflicting_within_selected_corpus",
+      "reasons": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "expected_language": "fr",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T20",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "expected_language": "de",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T21",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "expected_language": "bn",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "The answer and atom cite the correct general treatment instruction. The summary mentions a manifest-indecency qualification in the surrounding context; future summaries should attach exceptions to their actual clause to avoid ambiguity."
+    },
+    {
+      "id": "T22",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "expected_language": "hi",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T23",
+      "label_match": false,
+      "actual": "insufficient_within_selected_corpus",
+      "reasons": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "expected_language": "ur",
+      "language_match": true,
+      "web_used": true,
+      "web_search_calls": 2,
+      "full_reasoning_grounded": false,
+      "issue_family": "retrieval_and_publisher_locale",
+      "note": "Local retrieval missed the directly relevant 24:15. Web search opened QuranEnc /fa/ and /as/ verse pages, but the adapter restricts publisher UI locales to the nine input languages, so these exact verse URLs supplied no locator. Distinguish source UI language from user input language."
+    },
+    {
+      "id": "T24",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T25",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "expected_language": "ar",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T26",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "expected_language": "id",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T27",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "expected_language": "es",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T28",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "expected_language": "fr",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T29",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "expected_language": "de",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "decision_guard_false_abstention",
+      "note": "Correct original German proposition and 28:77 contradiction reached the decision guard, which rejected the relationship. Public claim received no answer; do not disable the guard just to obtain a pass."
+    },
+    {
+      "id": "T30",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "expected_language": "bn",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T31",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "expected_language": "hi",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T32",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "expected_language": "ur",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T33",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T34",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "PRIVATE_OR_SENSITIVE_FACTS_REFERRAL"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": null,
+      "expected_language": "ar",
+      "language_match": false,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "Third-person generic pregnancy-maintenance question was screened as private health information before routing despite containing no identifiable patient facts."
+    },
+    {
+      "id": "T35",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T36",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "decision_guard_false_abstention",
+      "note": "Direct 6209 evidence distinguishes beauty from arrogance; the preserved original proposition was correctly contradicted but the additional decision guard rejected it."
+    },
+    {
+      "id": "T37",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "expected_language": "ar",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Main assertion is in the hadith quotation; the additional pure-devotion sentence is supplied publisher explanation, not an additional literal Prophetic quotation."
+    },
+    {
+      "id": "T38",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": null,
+      "expected_language": "en",
+      "language_match": false,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "A first-person ordinary shoe-order learning question was blocked as a personal ruling."
+    },
+    {
+      "id": "T39",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "expected_language": "id",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T40",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "expected_language": "es",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "The intake classified the Spanish source-based yawning question as textual, but its English first-person gloss was blocked as a personal ruling."
+    },
+    {
+      "id": "T41",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "expected_language": "fr",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T42",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "expected_language": "de",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "decision_guard_false_abstention",
+      "note": "The original German hard-versus-easy proposition was preserved and 5806 explicitly contradicts it; the additional decision guard rejected the relationship."
+    },
+    {
+      "id": "T43",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "expected_language": "bn",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T44",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "expected_language": "hi",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T45",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "expected_language": "ur",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T46",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "The intake accepted the public question, but the later keyword whitelist misses plural Muslims and rejected it."
+    },
+    {
+      "id": "T47",
+      "label_match": true,
+      "actual": "supported_within_selected_corpus",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "expected_language": "ar",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Accepted alternative admitted ar:10103 rather than requiring the frozen en:5653 witness. The answer preserves the eating-manners conditions and does not make blanket unsafe-food recommendations."
+    },
+    {
+      "id": "T48",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T49",
+      "label_match": false,
+      "actual": "not_evaluated",
+      "reasons": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "The routing gloss retained Islamic teaching, yet the later domain keyword gate rejected it; adjective Islamic is not handled consistently with Islam."
+    },
+    {
+      "id": "T50",
+      "label_match": true,
+      "actual": "conflicting_within_selected_corpus",
+      "reasons": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "expected_language": "en",
+      "language_match": true,
+      "web_used": false,
+      "web_search_calls": 0,
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "A directly evidenced report of the Prophet eating chicken contradicts categorical prohibition. The answer excludes personal slaughter and ingredient cases."
+    }
+  ],
+  "limits": [
+    "Not a measured most-asked ranking; no independent scholarly or native-language certification.",
+    "First-pass results are preserved. Any repairs or targeted replays must be reported separately.",
+    "Fresh questions can share a category, source or distinct facet with earlier cases.",
+    "An abstention is a usefulness failure in this source-answerable set; it is not a decisive false religious answer."
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "reviewer": "Principal agent, not independent scholar/native-language expert",
+  "reviewed_at": "2026-10-04T18:36:29.929Z",
+  "first_pass_unchanged": true,
+  "cases": [
+    {
+      "id": "T01",
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "Generic first-person question about permitted trade in Hajj was treated as a personal ruling before language routing. A personal-case guard must distinguish ordinary learning from individualized rulings."
+    },
+    {
+      "id": "T02",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T03",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T04",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T05",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T06",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T07",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T08",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T09",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T10",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T11",
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "Generic shaving-rule question mentions an illness exception without identifying a patient, but native health screening blocked it."
+    },
+    {
+      "id": "T12",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T13",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T14",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T15",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T16",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T17",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T18",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T19",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T20",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T21",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "The answer and atom cite the correct general treatment instruction. The summary mentions a manifest-indecency qualification in the surrounding context; future summaries should attach exceptions to their actual clause to avoid ambiguity."
+    },
+    {
+      "id": "T22",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T23",
+      "full_reasoning_grounded": false,
+      "issue_family": "retrieval_and_publisher_locale",
+      "note": "Local retrieval missed the directly relevant 24:15. Web search opened QuranEnc /fa/ and /as/ verse pages, but the adapter restricts publisher UI locales to the nine input languages, so these exact verse URLs supplied no locator. Distinguish source UI language from user input language."
+    },
+    {
+      "id": "T24",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T25",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T26",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T27",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T28",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T29",
+      "full_reasoning_grounded": false,
+      "issue_family": "decision_guard_false_abstention",
+      "note": "Correct original German proposition and 28:77 contradiction reached the decision guard, which rejected the relationship. Public claim received no answer; do not disable the guard just to obtain a pass."
+    },
+    {
+      "id": "T30",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T31",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T32",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T33",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T34",
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "Third-person generic pregnancy-maintenance question was screened as private health information before routing despite containing no identifiable patient facts."
+    },
+    {
+      "id": "T35",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T36",
+      "full_reasoning_grounded": false,
+      "issue_family": "decision_guard_false_abstention",
+      "note": "Direct 6209 evidence distinguishes beauty from arrogance; the preserved original proposition was correctly contradicted but the additional decision guard rejected it."
+    },
+    {
+      "id": "T37",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Main assertion is in the hadith quotation; the additional pure-devotion sentence is supplied publisher explanation, not an additional literal Prophetic quotation."
+    },
+    {
+      "id": "T38",
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "A first-person ordinary shoe-order learning question was blocked as a personal ruling."
+    },
+    {
+      "id": "T39",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T40",
+      "full_reasoning_grounded": false,
+      "issue_family": "personal_or_health_overfilter",
+      "note": "The intake classified the Spanish source-based yawning question as textual, but its English first-person gloss was blocked as a personal ruling."
+    },
+    {
+      "id": "T41",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T42",
+      "full_reasoning_grounded": false,
+      "issue_family": "decision_guard_false_abstention",
+      "note": "The original German hard-versus-easy proposition was preserved and 5806 explicitly contradicts it; the additional decision guard rejected the relationship."
+    },
+    {
+      "id": "T43",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T44",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Original proposition, cited passage and final answer align in principal review."
+    },
+    {
+      "id": "T45",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T46",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "The intake accepted the public question, but the later keyword whitelist misses plural Muslims and rejected it."
+    },
+    {
+      "id": "T47",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "Accepted alternative admitted ar:10103 rather than requiring the frozen en:5653 witness. The answer preserves the eating-manners conditions and does not make blanket unsafe-food recommendations."
+    },
+    {
+      "id": "T48",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "Language intake accepts the question as textual, but the later keyword domain gate blocks it before evidence verification."
+    },
+    {
+      "id": "T49",
+      "full_reasoning_grounded": false,
+      "issue_family": "keyword_scope_overfilter",
+      "note": "The routing gloss retained Islamic teaching, yet the later domain keyword gate rejected it; adjective Islamic is not handled consistently with Islam."
+    },
+    {
+      "id": "T50",
+      "full_reasoning_grounded": true,
+      "issue_family": "none",
+      "note": "A directly evidenced report of the Prophet eating chicken contradicts categorical prohibition. The answer excludes personal slaughter and ingredient cases."
+    }
+  ]
+}
