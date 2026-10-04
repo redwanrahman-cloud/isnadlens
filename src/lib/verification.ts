@@ -106,7 +106,7 @@ export function checkExplicitCitation(corpus: Corpus, claim: string): string | n
   if (quotes.some(quote => !/[\u0600-\u06ff]/.test(quote))) return 'TRANSLATED_QUOTATION_NOT_ADMITTED';
   return null;
 }
-export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides, scopeClaim, webLocators }: { claim: string; inputLanguage: ClaimLanguage; scopeClaim?: string; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides; webLocators?:{quran:string[];hadith:string[]} }): Promise<VerificationRecord> {
+export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides, scopeClaim, webLocators, admittedTextual = false }: { claim: string; inputLanguage: ClaimLanguage; scopeClaim?: string; admittedTextual?: boolean; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides; webLocators?:{quran:string[];hadith:string[]} }): Promise<VerificationRecord> {
   const base: Omit<VerificationRecord, 'audit_hash'> = { record_id: randomUUID(), original_claim: typeof claim === 'string' ? claim : '', verdict: 'not_evaluated', reason_codes: [], summary_ar: 'لم يتم تقييم الادعاء.', summary_en: 'This claim has not been evaluated.', evidence_items: [], limitations: ['Results apply only to retrieved evidence in the admitted Arabic Quran edition.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'English explanations are not authoritative Quran translations.'], created_at: new Date().toISOString(), model: 'none', technical_verification_status: 'not_run', human_scholarly_status: 'not_reviewed', linguistic_review_status: 'not_reviewed', input_language: CLAIM_LANGUAGES.includes(inputLanguage) ? inputLanguage : 'en', corpus_manifest: null, corpus_sha256: null, retrieval_ids: [], semantic_assessment: null, prompt_version: PROMPT_VERSION, schema_version: SCHEMA_VERSION, usage: null, corpus_selection: 'quran' };
   base.corpus_selection = corpusSelection;
   base.router_version = ROUTER_VERSION; base.assessment_attempts = [];
@@ -122,7 +122,8 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   if (!['quran', 'hadith', 'both'].includes(corpusSelection)) { base.corpus_selection = 'quran'; return fail('CORPUS_SELECTION_INVALID'); }
   const nativeBlocked = nativeSafetyGate(claim); if (nativeBlocked) return fail(nativeBlocked);
   const searchClaim = scopeClaim ?? claim;
-  const blocked = scopeGate(searchClaim);
+  // Server-only routing admission; the API never accepts this flag from clients.
+  const blocked = scopeGate(searchClaim, admittedTextual);
   const identifiedQuotation = sourceIdentification && (sourceIdentification.status === 'identified' && sourceIdentification.corpus === corpusSelection || corpusSelection === 'both' && sourceIdentification.status === 'ambiguous' && sourceIdentification.candidate_locators.length > 0) && ['exact_quotation', 'normalized_quotation'].includes(sourceIdentification.method);
   if (blocked && !(blocked === 'OUTSIDE_SUPPORTED_CLAIM_SCOPE' && identifiedQuotation)) return fail(blocked);
   if (inputLanguage === 'ar' && !/\p{Script=Arabic}/u.test(claim) || !['ar', 'ur', 'bn', 'hi'].includes(inputLanguage) && !/\p{Script=Latin}/u.test(claim) || inputLanguage === 'ur' && !/\p{Script=Arabic}/u.test(claim) || inputLanguage === 'bn' && !/\p{Script=Bengali}/u.test(claim) || inputLanguage === 'hi' && !/\p{Script=Devanagari}/u.test(claim)) return fail('INPUT_LANGUAGE_MISMATCH');
@@ -298,7 +299,7 @@ export async function verifyClaimWithRecovery(options:Parameters<typeof verifyCl
   const eligible=previous.verdict==='insufficient_within_selected_corpus'&&(!a||a.in_scope&&a.original_meaning_preserved)||previous.reason_codes.includes('SOURCE_ENTAILMENT_UNCONFIRMED');
   const operational=previous.reason_codes.some(r=>/BUDGET|SPEND|PROVIDER|INTEGRITY|REFERRAL|INPUT|MALFORMED|MISMATCH/.test(r))||previous.retrieval_recovery?.status==='unavailable';
   if(!eligible||operational)return previous;
-  const discovery=await discoverWebReferences(options.claim,options.scopeClaim??options.claim,options.corpusSelection??'quran');
+  const discovery=await discoverWebReferences(options.claim,options.scopeClaim??options.claim,options.corpusSelection??'quran',options.admittedTextual);
   const attempted=discovery.status==='completed'&&(discovery.quran_locators.length>0||discovery.hadith_locators.length>0);
   const result=attempted?await verifyClaim({...options,useQueryPlanner:false,webLocators:{quran:discovery.quran_locators,hadith:discovery.hadith_locators}}):previous;
   const {audit_hash:omitted,...payload}=result;void omitted;

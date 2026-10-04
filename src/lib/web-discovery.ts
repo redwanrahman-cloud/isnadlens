@@ -50,9 +50,9 @@ export function searchReferences(output:SearchOutput[]){
   }
   return [...urls].slice(0,3).map(([url,title])=>({url,title}));
 }
-export async function discoverWebReferences(claim:string, searchClaim=claim, selection:'quran'|'hadith'|'both'='both'):Promise<WebDiscovery>{
+export async function discoverWebReferences(claim:string, searchClaim=claim, selection:'quran'|'hadith'|'both'='both', admittedTextual=false):Promise<WebDiscovery>{
   const base:WebDiscovery={version:WEB_DISCOVERY_VERSION,status:'unavailable',reason:'WEB_DISCOVERY_UNAVAILABLE',search_calls:0,model:primaryModel(),usage:null,pages:[],quran_locators:[],hadith_locators:[]};
-  if(claim.length>1200||searchClaim.length>1400||nativeSafetyGate(claim)||scopeGate(searchClaim)){base.reason='WEB_SCOPE_REFERRAL';return base;}
+  if(claim.length>1200||searchClaim.length>1400||nativeSafetyGate(claim)||scopeGate(searchClaim, admittedTextual)){base.reason='WEB_SCOPE_REFERRAL';return base;}
   const cacheKey=sha256(JSON.stringify([WEB_DISCOVERY_VERSION,claim,searchClaim,selection]));
   const cached=discoveryCache.get(cacheKey);
   if(cached&&cached.expires>Date.now())return {...structuredClone(cached.result),usage:null,search_calls:0,cached:true};

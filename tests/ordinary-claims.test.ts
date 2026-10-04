@@ -8,7 +8,7 @@ import { loadHadith, retrieveHadith } from '../src/lib/hadith';
 test('admits general Islamic food claims while retaining personal, sensitive and unrelated referrals', () => {
   for (const claim of ['pig eating is haram', 'is eating pork forbidden?', 'pork is halal', 'هل أكل الخنزير حرام؟', 'أكل الخنزير محرم']) expect(scopeGate(claim)).toBeNull();
   expect(scopeGate('Can I eat pork because of my condition?')).toBe('PERSONAL_RULING_REFERRAL');
-  expect(scopeGate('هل يجوز لي أكل الخنزير؟')).toBe('PERSONAL_RULING_REFERRAL');
+  expect(scopeGate('هل يجوز لي أكل الخنزير؟')).toBeNull();
   expect(scopeGate('pig food recipe')).toBe('OUTSIDE_SUPPORTED_CLAIM_SCOPE');
   expect(scopeGate('How much food does a pig need?')).toBe('OUTSIDE_SUPPORTED_CLAIM_SCOPE');
   expect(scopeGate('Patient Ali has diabetes and asks whether pork is halal')).toBe('PRIVATE_OR_SENSITIVE_FACTS_REFERRAL');

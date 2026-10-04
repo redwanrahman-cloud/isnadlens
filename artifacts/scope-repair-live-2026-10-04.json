@@ -1,0 +1,397 @@
+{
+  "kind": "targeted_known_case_replay_not_new_holdout",
+  "started_at": "2026-10-04T18:49:16.674Z",
+  "cases": [
+    {
+      "id": "T01",
+      "claim": "Can I earn money through trade during Hajj, or is that forbidden?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "The selected source collection supports the permissibility of seeking earnings through trade during Hajj and does not present a general prohibition of it. This conclusion remains within the Hajj context and assumes otherwise lawful trade; the assessment is limited to the supplied texts, and detailed legal questions may require qualified scholarly review.",
+      "evidence": [
+        {
+          "locator": "2:275",
+          "integrity": true
+        },
+        {
+          "locator": "2:282",
+          "integrity": true
+        },
+        {
+          "locator": "2:196",
+          "integrity": true
+        },
+        {
+          "locator": "4:29",
+          "integrity": true
+        },
+        {
+          "locator": "en:4950",
+          "integrity": true
+        },
+        {
+          "locator": "en:58093",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65277",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65025",
+          "integrity": true
+        }
+      ],
+      "seal_valid": true,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 229,
+          "estimated_cost_usd": 0.00044755000000000006,
+          "reservation_id": "af6627d0-ce3f-48bf-b02b-fb8e2984132e"
+        },
+        {
+          "input_tokens": 9160,
+          "output_tokens": 819,
+          "estimated_cost_usd": 0.0032728,
+          "reservation_id": "49a8b762-926f-451f-9a19-8238152ba51c"
+        },
+        {
+          "input_tokens": 2455,
+          "output_tokens": 172,
+          "estimated_cost_usd": 0.00082015,
+          "reservation_id": "b432b04f-ebb0-4ffd-b1b7-089647f01403"
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "claim": "Apakah berburu binatang darat diperbolehkan ketika sedang ihram?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "evidence": [
+        {
+          "locator": "5:1",
+          "integrity": true
+        },
+        {
+          "locator": "5:96",
+          "integrity": true
+        },
+        {
+          "locator": "5:2",
+          "integrity": true
+        },
+        {
+          "locator": "6:59",
+          "integrity": true
+        },
+        {
+          "locator": "en:2956",
+          "integrity": true
+        },
+        {
+          "locator": "en:3496",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65868",
+          "integrity": true
+        },
+        {
+          "locator": "ar:66297",
+          "integrity": true
+        }
+      ],
+      "seal_valid": true,
+      "usage": [
+        {
+          "input_tokens": 693,
+          "output_tokens": 168,
+          "estimated_cost_usd": 0.00037485000000000003,
+          "reservation_id": "b5fa36e7-2533-41da-884e-a93111b42236"
+        },
+        {
+          "input_tokens": 9256,
+          "output_tokens": 541,
+          "estimated_cost_usd": 0.0029631999999999996,
+          "reservation_id": "fb63863f-9c92-400b-8f6c-c8bb4e1c1c9b"
+        },
+        {
+          "input_tokens": 9256,
+          "output_tokens": 525,
+          "estimated_cost_usd": 0.02944,
+          "reservation_id": "ed8b6856-8459-4151-bcd3-003bf51089da"
+        },
+        {
+          "input_tokens": 2335,
+          "output_tokens": 48,
+          "estimated_cost_usd": 0.0064135,
+          "reservation_id": "fb0c1d65-e8c7-4763-8cc3-a075456eea48"
+        }
+      ]
+    },
+    {
+      "id": "T34",
+      "claim": "هل يجب الإنفاق على المطلقة الحامل حتى تضع حملها؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "evidence": [
+        {
+          "locator": "22:2",
+          "integrity": true
+        },
+        {
+          "locator": "4:127",
+          "integrity": true
+        },
+        {
+          "locator": "35:11",
+          "integrity": true
+        },
+        {
+          "locator": "2:228",
+          "integrity": true
+        },
+        {
+          "locator": "ar:65965",
+          "integrity": true
+        },
+        {
+          "locator": "ar:6020",
+          "integrity": true
+        },
+        {
+          "locator": "en:6020",
+          "integrity": true
+        },
+        {
+          "locator": "en:58173",
+          "integrity": true
+        }
+      ],
+      "seal_valid": true,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 168,
+          "estimated_cost_usd": 0.00037435,
+          "reservation_id": "2fa7b456-a2d4-4452-a337-a5975e79e2c9"
+        },
+        {
+          "input_tokens": 9243,
+          "output_tokens": 632,
+          "estimated_cost_usd": 0.00306915,
+          "reservation_id": "27e4be7e-15a7-4602-b8b7-8cf764fa9540"
+        }
+      ]
+    },
+    {
+      "id": "T38",
+      "claim": "When putting shoes on, should I start with the left foot according to the prophetic instruction?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "summary": "This claim has not been evaluated.",
+      "evidence": [
+        {
+          "locator": "6:65",
+          "integrity": true
+        },
+        {
+          "locator": "33:19",
+          "integrity": true
+        },
+        {
+          "locator": "11:74",
+          "integrity": true
+        },
+        {
+          "locator": "2:42",
+          "integrity": true
+        },
+        {
+          "locator": "en:5357",
+          "integrity": true
+        },
+        {
+          "locator": "en:10407",
+          "integrity": true
+        },
+        {
+          "locator": "ar:3597",
+          "integrity": true
+        },
+        {
+          "locator": "ar:6145",
+          "integrity": true
+        }
+      ],
+      "seal_valid": true,
+      "usage": [
+        {
+          "input_tokens": 694,
+          "output_tokens": 189,
+          "estimated_cost_usd": 0.00040029999999999997,
+          "reservation_id": "0d2d799a-6aee-4a1b-ab04-96056bb62bfe"
+        },
+        {
+          "input_tokens": 8680,
+          "output_tokens": 554,
+          "estimated_cost_usd": 0.0028348,
+          "reservation_id": "27e6614b-023c-484f-a88e-d4d242d75885"
+        },
+        {
+          "input_tokens": 8680,
+          "output_tokens": 414,
+          "estimated_cost_usd": 0.026668,
+          "reservation_id": "6262d017-cdaf-4434-b461-5887bfd2e179"
+        },
+        {
+          "input_tokens": 889,
+          "output_tokens": 48,
+          "estimated_cost_usd": 0.0027985,
+          "reservation_id": "91b4ca2a-537c-427d-84bf-5ab3a41a0cbb"
+        }
+      ]
+    },
+    {
+      "id": "T46",
+      "claim": "Should Muslims greet only people they already know?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "evidence": [
+        {
+          "locator": "28:53",
+          "integrity": true
+        },
+        {
+          "locator": "9:62",
+          "integrity": true
+        },
+        {
+          "locator": "3:102",
+          "integrity": true
+        },
+        {
+          "locator": "68:35",
+          "integrity": true
+        },
+        {
+          "locator": "en:4820",
+          "integrity": true
+        },
+        {
+          "locator": "en:5343",
+          "integrity": true
+        },
+        {
+          "locator": "en:5365",
+          "integrity": true
+        },
+        {
+          "locator": "en:8346",
+          "integrity": true
+        }
+      ],
+      "seal_valid": true,
+      "usage": [
+        {
+          "input_tokens": 685,
+          "output_tokens": 157,
+          "estimated_cost_usd": 0.00035965,
+          "reservation_id": "e4fd85b9-06b5-40ab-b95a-2850a7da2baa"
+        },
+        {
+          "input_tokens": 19562,
+          "output_tokens": 619,
+          "estimated_cost_usd": 0.0056333,
+          "reservation_id": "bcf6412f-3cda-4c01-b220-cfedb84a05ff"
+        }
+      ]
+    },
+    {
+      "id": "T49",
+      "claim": "Does Islamic teaching warn that bad companionship can harm a person, like a blacksmith’s bellows?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports this meaning through the hadith of Abu Musa, which compares bad companionship to a blacksmith’s bellows and describes possible harm or bad influence. This assessment is limited to the supplied selected sources and does not replace broader scholarly review.",
+      "evidence": [
+        {
+          "locator": "7:188",
+          "integrity": true
+        },
+        {
+          "locator": "2:169",
+          "integrity": true
+        },
+        {
+          "locator": "13:16",
+          "integrity": true
+        },
+        {
+          "locator": "4:17",
+          "integrity": true
+        },
+        {
+          "locator": "en:8346",
+          "integrity": true
+        },
+        {
+          "locator": "en:4813",
+          "integrity": true
+        },
+        {
+          "locator": "ar:4182",
+          "integrity": true
+        },
+        {
+          "locator": "ar:3127",
+          "integrity": true
+        }
+      ],
+      "seal_valid": true,
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 117,
+          "estimated_cost_usd": 0.00031440000000000005,
+          "reservation_id": "96122909-34f9-4f09-b489-1cc1392d8763"
+        },
+        {
+          "input_tokens": 13269,
+          "output_tokens": 465,
+          "estimated_cost_usd": 0.00387525,
+          "reservation_id": "ed0d8734-590d-41a4-986d-01d359ab7fa2"
+        },
+        {
+          "input_tokens": 922,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0003097,
+          "reservation_id": "8fa08bfd-e76b-410d-993b-4431addef94f"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-04T18:50:57.929Z"
+}
