@@ -18,6 +18,15 @@ import { loadHadith, retrieveHadith, authenticateHadith, validateHadith, checkHa
 import { parseQuranReferences, parseHadithLinks } from '../src/lib/citations';
 
 const atom = { id: 'a1', text: 'A material assertion', material: true, relation: 'supports' as const, evidence_ids: ['e1'], direct: true, context_fit: true, negation_checked: true, modality_checked: true, qualifications_preserved: true, attribution_matched: true, scope_matched: true, contradiction_basis: 'none' as const, basis_evidence_id: null, basis_quotation: null };
+it('reserves hosted-search fees and context before calling, then settles actual search counts',()=>{
+ const directory=mkdtempSync(join(tmpdir(),'isnadlens-web-budget-'));
+ vi.stubEnv('ISNADLENS_PAID_CALLS_AUTHORIZED','true');vi.stubEnv('ISNADLENS_MAX_SPEND_USD','.1');
+ try{
+ const id=reserveSpend('gpt-5.6-luna','{}',2400,directory,{maximumCalls:3,inputTokenBound:128000});
+ expect(()=>reserveSpend('gpt-5.6-luna','{}',2400,directory,{maximumCalls:3,inputTokenBound:128000})).toThrow('SPEND_BUDGET_STOP');
+ expect(settleSpend(id,{input_tokens:2000,output_tokens:100},directory,1)).toBeCloseTo(priceUsage('gpt-5.6-luna',2000,100)+.01);
+ }finally{rmSync(directory,{recursive:true,force:true});}
+});
 const assessment: SemanticAssessment = { in_scope: true, original_meaning_preserved: true, atomic_claims: [atom], all_material_claims_covered: true, summary_ar: 'تفسير', summary_en: 'Explanation', limitations: [] };
 beforeEach(() => { vi.spyOn(provider, 'reviewPositiveEntailment').mockImplementation(async (_claim, assessed, cards) => ({ model: 'gpt-5.4-mini', usage: null, review: { atoms: assessed.atomic_claims.filter(a => a.material).map(a => ({ atom_id: a.id, entails: 'yes' as const, attribution_preserved: true, qualifications_preserved: true, evidence_id: a.evidence_ids[0] ?? null, context_locator: null, basis_quotation: cards.find(e => e.evidence_id === a.evidence_ids[0])?.quotation ?? null })) } })); });
 afterEach(() => { vi.restoreAllMocks(); });

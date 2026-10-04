@@ -23,13 +23,14 @@ const {verifySeal,validPositiveReview}=require(`../${privateRoot}/verification.j
 const {decideVerdict}=require(`../${privateRoot}/policy.js`);
 const {retrieveWithPublishedEnglishAid,retrieve}=require(`../${privateRoot}/retrieval.js`);
 const {loadHadith,retrieveHadith}=require(`../${privateRoot}/hadith.js`);
+const {requestedSourceFamily}=require(`../${privateRoot}/auto-verification.js`);
 const readJson=async path=>JSON.parse(await readFile(path,'utf8'));
 const budgetBytes=await readFile('artifacts/private/api-spend.json');
-const datasets=await Promise.all(['artifacts/common-question-baseline-50-2026-10-04.json','artifacts/holdout-question-set-50-2026-10-04.json'].map(readJson));
+const datasets=await Promise.all(['artifacts/common-question-baseline-50-2026-10-04.json','artifacts/holdout-question-set-50-2026-10-04.json','artifacts/fresh50-question-set-2026-10-04.json'].map(readJson));
 const cases=datasets.flatMap(d=>d.cases);
 const records=[];
 for(const item of cases){
- const path=item.id.startsWith('H')?`artifacts/private/holdout50-first-pass/${item.id}.json`:`artifacts/private/baseline50-${item.id}.json`;
+ const path=item.id.startsWith('N')?`artifacts/private/fresh50-first-pass/${item.id}.json`:item.id.startsWith('H')?`artifacts/private/holdout50-first-pass/${item.id}.json`:`artifacts/private/baseline50-${item.id}.json`;
  const record=await readJson(path);recordSchema.parse(record);
  if(!verifySeal(record)||record.original_claim!==item.claim)throw new Error(`INVALID_CAPTURE:${item.id}`);
  records.push({id:item.id,record});
@@ -67,23 +68,25 @@ const probeIds=process.argv.includes('--full-retrieval')?cases.filter(c=>c.refer
 const quran=loadCorpus();let hadith;
 for(const id of probeIds){
  const item=cases.find(c=>c.id===id),saved=records.find(r=>r.id===id).record;
- const hints=[...(saved.retrieval_plan?.arabic_terms??[]),...(saved.retrieval_plan?.english_terms??[])].slice(0,8);
+ const ar=saved.language_intake?.arabic_terms??saved.retrieval_plan?.arabic_terms??[],en=saved.language_intake?.english_terms??saved.retrieval_plan?.english_terms??[];
+ const hints=ar.flatMap((v,i)=>[v,...(en[i]?[en[i]]:[])]).concat(en.slice(ar.length)).slice(0,20);
+ const gloss=saved.language_intake?.english_gloss||item.claim,selection=requestedSourceFamily(item.claim,gloss);
  const variants=[['original',item.claim],['polite_prefix',`${item.input_language==='ar'?'من فضلك تحقق:':'Please check: '} ${item.claim}`],['unicode_form',item.claim.normalize('NFKC')]];
  for(const [variant,claim] of variants){
   const locators=[],contextLocators=[];
-  if(item.corpus_selection!=='hadith'){
-   const limit=item.corpus_selection==='both'?4:8;
-   const found=retrieveWithPublishedEnglishAid(quran,claim,limit,hints).verses;
+  if(selection!=='hadith'){
+   const limit=selection==='both'?4:8;
+   const found=retrieveWithPublishedEnglishAid(quran,claim,limit,hints,gloss).verses;
    locators.push(...found.map(v=>`quran:${v.id}`));
-   for(const verse of found)for(const offset of [-1,1])if(quran.verses.some(v=>v.surah===verse.surah&&v.ayah===verse.ayah+offset))contextLocators.push(`quran:${verse.surah}:${verse.ayah+offset}`);
+   for(const verse of found)for(const offset of [-2,-1,1,2])if(quran.verses.some(v=>v.surah===verse.surah&&v.ayah===verse.ayah+offset))contextLocators.push(`quran:${verse.surah}:${verse.ayah+offset}`);
   }
-  if(item.corpus_selection!=='quran'){
-   hadith??=loadHadith();const language=item.input_language==='ar'?'ar':'en',other=language==='ar'?'en':'ar',perLanguage=item.corpus_selection==='both'?2:4,limit=item.corpus_selection==='both'?4:8;
-   const found=[...retrieveHadith(hadith,claim,language,perLanguage,hints),...retrieveHadith(hadith,claim,other,perLanguage,hints)];
-   if(found.length<limit)for(const row of retrieveHadith(hadith,claim,language,limit,hints))if(found.length<limit&&!found.some(r=>r.id===row.id&&r.language===row.language))found.push(row);
+  if(selection!=='quran'){
+   hadith??=loadHadith();const perLanguage=selection==='both'?2:4,limit=selection==='both'?4:8;
+   const found=[...retrieveHadith(hadith,gloss,'en',perLanguage,en,claim),...retrieveHadith(hadith,claim,'ar',perLanguage,ar,claim)];
+   if(found.length<limit)for(const row of retrieveHadith(hadith,gloss,'en',limit,en,claim))if(found.length<limit&&!found.some(r=>r.id===row.id&&r.language===row.language))found.push(row);
    locators.push(...found.map(r=>`hadith:${r.language}:${r.id}`));
   }
-  const witnesses=item.reference_evidence_locators??item.reviewer_locators??[];
+  const witnesses=item.reference_evidence_locators??item.reviewer_locators??item.reference_witnesses?.map(w=>w.locator)??[];
   const primaryMatched=witnesses.filter(w=>locators.includes(w));
   const matched=witnesses.filter(w=>locators.includes(w)||contextLocators.includes(w));
   retrievalProbes.push({id,variant,claim,retrieved_locators:locators,supplied_context_locators:[...new Set(contextLocators)],reference_count:witnesses.length,reference_overlap_primary:primaryMatched.length,reference_overlap_including_context:matched.length,all_references_found:witnesses.length>0&&matched.length===witnesses.length,mode:'search_only_with_fixed_historical_hints_not_new_AI_planning'});

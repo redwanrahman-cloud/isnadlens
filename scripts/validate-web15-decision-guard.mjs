@@ -1,0 +1,11 @@
+import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
+import {createRequire} from 'node:module';
+import {transformSync} from 'next/dist/build/swc/index.js';
+if(!process.argv.includes('--live'))throw new Error('EXPLICIT_LIVE_FLAG_REQUIRED');
+const root='artifacts/private/decision-guard-runtime';await mkdir(root,{recursive:true});await writeFile(`${root}/package.json`,JSON.stringify({type:'commonjs'}));
+for(const name of await readdir('src/lib'))if(name.endsWith('.ts'))await writeFile(`${root}/${name.replace(/\.ts$/,'.js')}`,transformSync(await readFile(`src/lib/${name}`,'utf8'),{filename:name,jsc:{target:'es2022',parser:{syntax:'typescript'}},module:{type:'commonjs'}}).code);
+const require=createRequire(import.meta.url),{reviewPositiveEntailment}=require(`../${root}/provider.js`);
+const r=JSON.parse(await readFile('artifacts/private/web15-first-pass/W06.json','utf8'));
+const result=await reviewPositiveEntailment(r.original_claim,r.semantic_assessment,r.evidence_items,'decision');
+await writeFile('artifacts/web15-decision-guard-strong-probe-2026-10-04.json',JSON.stringify({kind:'targeted_live_check_of_frozen_bad_atom_not_new_accuracy',id:'W06',original_claim:r.original_claim,result},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify(result));

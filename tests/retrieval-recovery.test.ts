@@ -4,6 +4,7 @@ import {retrieveWithPublishedEnglishAid} from '../src/lib/retrieval';
 import {loadCorpus,sha256} from '../src/lib/corpus';
 import {verifyClaim,verifyClaimWithRecovery,verifySeal} from '../src/lib/verification';
 import {recordSchema,type SemanticAssessment} from '../src/lib/contracts';
+import * as webDiscovery from '../src/lib/web-discovery';
 import * as provider from '../src/lib/provider';
 import * as planner from '../src/lib/query-planner';
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllEnvs();});
@@ -51,6 +52,7 @@ it('does not retry budget errors, private requests or provider failures',async()
  expect(blocked.verdict).toBe('not_evaluated');expect(budget.reason_codes).toContain('SPEND_BUDGET_STOP');expect(plan).not.toHaveBeenCalled();
 });
 it.each([true,false])('confirms a proposed contradiction without forcing qualification flags: %s',async qualified=>{
+ vi.spyOn(provider,'reviewPositiveEntailment').mockImplementation(async (_claim,a,cards)=>({model:'fixture',usage:null,review:{atoms:a.atomic_claims.filter(x=>x.material).map(x=>({atom_id:x.id,entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:x.evidence_ids[0],context_locator:null,basis_quotation:cards.find(c=>c.evidence_id===x.evidence_ids[0])!.quotation}))}}));
  vi.stubEnv('OPENAI_MODEL','gpt-5.6-luna');vi.spyOn(provider,'providerReady').mockReturnValue(true);
  let calls=0;
  const assess=vi.spyOn(provider,'assessClaim').mockImplementation(async (claim,_language,cards,model)=>{
@@ -61,4 +63,28 @@ it.each([true,false])('confirms a proposed contradiction without forcing qualifi
  const result=await verifyClaim({claim:'The Quran at 24:24 says hands and feet never testify.',inputLanguage:'en'});
  expect(assess).toHaveBeenCalledTimes(2);expect(result.assessment_attempts?.[0].reason).toBe('CONTRADICTION_CONFIRMATION_REQUIRED');
  expect(result.verdict).toBe(qualified?'conflicting_within_selected_corpus':'insufficient_within_selected_corpus');expect(verifySeal(result)).toBe(true);
+});
+it('rejects a contradiction whose atom silently reverses the original German question',async()=>{
+ vi.stubEnv('OPENAI_MODEL','gpt-5.6-luna');vi.spyOn(provider,'providerReady').mockReturnValue(true);
+ vi.spyOn(provider,'assessClaim').mockImplementation(async (_claim,_language,cards,model)=>{
+ const source=cards.find(c=>c.locator==='18:23')!;const a=assessed('fixture');
+ Object.assign(a.atomic_claims[0],{text:'Man soll nicht versprechen, morgen etwas ohne wenn Allah will zu tun.',relation:'contradicts',direct:true,context_fit:true,evidence_ids:[source.evidence_id],qualifications_preserved:true,contradiction_basis:'explicit_negation_or_incompatible_statement',basis_evidence_id:source.evidence_id,basis_quotation:source.quotation});
+ return {model:model!,usage:null,assessment:a};
+ });
+ const review=vi.spyOn(provider,'reviewPositiveEntailment').mockResolvedValue({model:'fixture',usage:null,review:{atoms:[{atom_id:'a1',entails:'no',attribution_preserved:true,qualifications_preserved:false,evidence_id:null,context_locator:null,basis_quotation:null}]}});
+ const result=await verifyClaim({claim:'Soll man laut Koran eine Tat für morgen versprechen, ohne wenn Allah will zu sagen?',inputLanguage:'de',scopeClaim:'Does the Quran tell people to promise doing something tomorrow without saying if Allah wills?',queryOverrides:{arabic_terms:['غدا'],english_terms:['tomorrow']}});
+ expect(review.mock.calls[0][3]).toBe('decision');expect(result.verdict).toBe('not_evaluated');expect(result.reason_codes).toContain('CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED');expect(verifySeal(result)).toBe(true);
+});
+it('runs online discovery once after two local gaps and rechecks only immutable source cards',async()=>{
+ vi.stubEnv('ISNADLENS_WEB_SEARCH_ENABLED','true');vi.spyOn(provider,'providerReady').mockReturnValue(true);
+ vi.spyOn(planner,'planClaimQueries').mockResolvedValue({arabic_terms:['العبادة'],english_terms:['worship'],model:'fixture',usage:null,planner_version:'fixture'});
+ const discover=vi.spyOn(webDiscovery,'discoverWebReferences').mockResolvedValue({version:'trusted-reference-discovery-v1',status:'completed',reason:'PUBLISHER_REFERENCES_AUTHENTICATED',model:'fixture',usage:null,search_calls:1,pages:[],quran_locators:['51:56'],hadith_locators:[]});
+ let calls=0;const assess=vi.spyOn(provider,'assessClaim').mockImplementation(async (claim,_lang,cards)=>{
+ const a=assessed(claim);if(++calls===3){a.all_material_claims_covered=true;const source=cards.find(c=>c.locator==='51:56')!;Object.assign(a.atomic_claims[0],{relation:'supports',direct:true,context_fit:true,evidence_ids:[source.evidence_id]});}
+ return {model:'fixture',usage:null,assessment:a};
+ });
+ vi.spyOn(provider,'reviewPositiveEntailment').mockImplementation(async (_claim,a,cards)=>({model:'fixture',usage:null,review:{atoms:a.atomic_claims.map(x=>({atom_id:x.id,entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:x.evidence_ids[0],context_locator:null,basis_quotation:cards.find(c=>c.evidence_id===x.evidence_ids[0])!.quotation}))}}));
+ const claim='Does the Quran describe the purpose of worship?';const r=await verifyClaimWithRecovery({claim,inputLanguage:'en',corpusSelection:'quran'});
+ expect(discover).toHaveBeenCalledOnce();expect(assess).toHaveBeenCalledTimes(3);expect(assess.mock.calls.every(c=>c[0]===claim)).toBe(true);expect(r.web_discovery?.verification_attempted).toBe(true);expect(r.verdict).toBe('supported_within_selected_corpus');
+ expect(verifySeal(r)).toBe(true);expect(verifySeal(recordSchema.parse(r.web_discovery?.previous_record))).toBe(true);expect(r.evidence_items.find(e=>e.locator==='51:56')?.quotation).toBe(loadCorpus().verses.find(v=>v.id==='51:56')!.display);
 });

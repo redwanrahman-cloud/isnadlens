@@ -1,0 +1,126 @@
+{
+  "kind": "fresh15_first_pass_principal_review_not_independent_certification",
+  "cases": [
+    {
+      "id": "W01",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W02",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W03",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W04",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W05",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W06",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "correct_answer_label_but_internal_proposition_reversed",
+      "full_reasoning_grounded": false
+    },
+    {
+      "id": "W07",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W08",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W09",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W10",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W11",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W12",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W13",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W14",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    },
+    {
+      "id": "W15",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "principal_source_review": "supported_by_direct_original_source_with_context",
+      "full_reasoning_grounded": true
+    }
+  ],
+  "total": 15,
+  "answer_label_matches": 15,
+  "full_reasoning_grounded": 14,
+  "wrong_decisive_answer_labels": 0,
+  "abstentions": 0,
+  "web_used_in_fresh15": 0,
+  "first_pass_settled_sar": 0.9673704375,
+  "conservative_total_development_sar": 17.453807437499986,
+  "development_cap_sar": 18,
+  "limits": [
+    "15 cases across six languages; 14 Quran questions and one Hadith question. Not comprehensive coverage.",
+    "W11 overlaps an earlier private-charity topic but tests a new public-charity proposition.",
+    "The fresh15 answered locally; separate direct probes test web discovery.",
+    "W06 first pass remains frozen. A targeted stronger decision check rejects the malformed atom; not a rerun of the complete 15 on the final build.",
+    "No measured most-asked ranking, independent scholarly review or perfect-answer claim."
+  ]
+}

@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { CLAIM_LANGUAGES } from './claim-language';
+import { webDiscoverySchema } from './web-discovery';
 
 export const verdictSchema = z.enum(['supported_within_selected_corpus', 'conflicting_within_selected_corpus', 'insufficient_within_selected_corpus', 'not_evaluated']);
 export const relationSchema = z.enum(['supports', 'contradicts', 'partial', 'unrelated', 'not_assessed']);
@@ -25,6 +26,7 @@ export const recordSchema = z.object({
   prompt_version: z.string(), schema_version: z.string(), usage: usageSchema.nullable(),
   corpus_selection: z.enum(['quran', 'hadith', 'both']),
   router_version: z.string().optional(),
+  web_discovery: webDiscoverySchema.extend({previous_record:z.unknown(),verification_attempted:z.boolean()}).optional(),
   retrieval_recovery: z.object({ version: z.literal('bounded-retrieval-recovery-v1'), status: z.enum(['completed', 'unavailable']), reason: z.string(), first_record: z.unknown(), usage: usageSchema.nullable(), rejected_search_term_count: z.number().int().nonnegative().optional() }).optional(),
   assessment_attempts: z.array(z.object({ model: z.string(), reason: z.string(), raw_assessment: z.unknown().nullable(), usage: usageSchema.nullable() })).max(2).optional(),
   entailment_review: z.object({ version: z.string(), model: z.string(), status: z.enum(['passed', 'rejected', 'unavailable']), raw_review: z.unknown().nullable(), raw_provider_review: z.unknown().optional(), unit_provenance: z.array(z.object({ unit_id: z.string(), evidence_id: z.string(), source_id: z.string(), context_locator: z.string().nullable(), quotation_sha256: z.string() })).max(40).optional(), derivation: z.literal('whole_immutable_selected_source_unit').optional(), usage: usageSchema.nullable(), reason: z.string() }).optional(),

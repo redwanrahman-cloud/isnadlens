@@ -1,0 +1,83 @@
+{
+  "kind": "targeted_live_check_of_frozen_bad_atom_not_new_accuracy",
+  "id": "W06",
+  "original_claim": "Soll man laut Koran eine Tat für morgen versprechen, ohne „wenn Allah will“ zu sagen?",
+  "result": {
+    "review": {
+      "atoms": [
+        {
+          "atom_id": "claim_1",
+          "entails": "no",
+          "attribution_preserved": true,
+          "qualifications_preserved": true,
+          "evidence_id": null,
+          "context_locator": null,
+          "basis_quotation": null
+        }
+      ]
+    },
+    "raw_provider_review": {
+      "atoms": [
+        {
+          "atom_id": "claim_1",
+          "entails": "no",
+          "attribution_preserved": true,
+          "qualifications_preserved": true,
+          "basis_unit_id": null
+        }
+      ]
+    },
+    "unit_provenance": [
+      {
+        "unit_id": "tanzil-1.1-2026-10-04:18:23:primary",
+        "evidence_id": "tanzil-1.1-2026-10-04:18:23",
+        "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+        "context_locator": null,
+        "quotation_sha256": "c3d75dc92f633e350c17850c60ce9d87159c2115074ddca16705d09bd2e9545f"
+      },
+      {
+        "unit_id": "tanzil-1.1-2026-10-04:18:23:context:18:21",
+        "evidence_id": "tanzil-1.1-2026-10-04:18:23",
+        "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+        "context_locator": "18:21",
+        "quotation_sha256": "70b6acc0dcd03703bb2972efae2dc78808cb56a5fa830caf9f474d6e37f51d12"
+      },
+      {
+        "unit_id": "tanzil-1.1-2026-10-04:18:23:context:18:22",
+        "evidence_id": "tanzil-1.1-2026-10-04:18:23",
+        "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+        "context_locator": "18:22",
+        "quotation_sha256": "27096519b19ddb034ce72ffff70950961643d2db9220a2b793c3e647b421b97b"
+      },
+      {
+        "unit_id": "tanzil-1.1-2026-10-04:18:23:context:18:24",
+        "evidence_id": "tanzil-1.1-2026-10-04:18:23",
+        "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+        "context_locator": "18:24",
+        "quotation_sha256": "e9d3ec529acf417f09e281a0d6cf7e00f9764b27254635c3ab84320ec07c6fc8"
+      },
+      {
+        "unit_id": "tanzil-1.1-2026-10-04:18:23:context:18:25",
+        "evidence_id": "tanzil-1.1-2026-10-04:18:23",
+        "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+        "context_locator": "18:25",
+        "quotation_sha256": "630216c1dc139d4c5208ff7f7d93edb9dce4dc5507e02a322e25cf8043acc720"
+      }
+    ],
+    "model": "gpt-5.6-terra",
+    "usage": {
+      "input_tokens": 2118,
+      "input_tokens_details": {
+        "cache_write_tokens": 2115,
+        "cached_tokens": 0
+      },
+      "output_tokens": 128,
+      "output_tokens_details": {
+        "reasoning_tokens": 78
+      },
+      "total_tokens": 2246,
+      "estimated_cost_usd": 0.006831,
+      "reservation_id": "2ab8006e-a763-4136-bcd2-ccfed57a5717"
+    }
+  }
+}

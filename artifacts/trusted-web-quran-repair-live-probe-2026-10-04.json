@@ -1,0 +1,42 @@
+{
+  "kind": "direct_web_discovery_integration_not_fresh_answer_accuracy",
+  "claim": "Does the Quran command justice and ihsan?",
+  "result": {
+    "version": "trusted-reference-discovery-v1",
+    "status": "completed",
+    "reason": "NO_ADMITTED_REFERENCE_DISCOVERED",
+    "search_calls": 1,
+    "model": "gpt-5.6-luna",
+    "usage": {
+      "input_tokens": 8576,
+      "output_tokens": 197,
+      "estimated_cost_usd": 0.0123804,
+      "reservation_id": "594e9dba-f7ac-4a73-b3d1-21f95f249318"
+    },
+    "pages": [
+      {
+        "url": "https://quranenc.com/en/browse/english_saheeh/16/90",
+        "title": "Publisher source",
+        "status": "opened",
+        "content_sha256": "e6ffbaf3087f37ec06e142637e306ef821e92902f57fcac91816e2db7d5e25b0",
+        "role": "reference_discovery"
+      },
+      {
+        "url": "https://quranenc.com/en/browse/persian_mokhtasar/16/90",
+        "title": "Publisher source",
+        "status": "opened",
+        "content_sha256": "08db9deebdde4e258742444d3fdc9e7e4143c4487a6a9751e4f6665517597340",
+        "role": "reference_discovery"
+      },
+      {
+        "url": "https://quranenc.com/hi/browse/arabic_moyassar/16/90",
+        "title": "Publisher source",
+        "status": "opened",
+        "content_sha256": "d935db9346d24b3ae194b653141dfb461130afaf9f5040b801c5d277fc64439c",
+        "role": "reference_discovery"
+      }
+    ],
+    "quran_locators": [],
+    "hadith_locators": []
+  }
+}

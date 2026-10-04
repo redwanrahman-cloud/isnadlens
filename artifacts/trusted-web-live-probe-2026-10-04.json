@@ -1,0 +1,45 @@
+{
+  "kind": "direct_web_discovery_integration_not_fresh_answer_accuracy",
+  "claim": "Does Hadith say Allah looks at hearts and deeds rather than appearance and wealth?",
+  "result": {
+    "version": "trusted-reference-discovery-v1",
+    "status": "completed",
+    "reason": "PUBLISHER_REFERENCES_AUTHENTICATED",
+    "search_calls": 1,
+    "model": "gpt-5.6-luna",
+    "usage": {
+      "input_tokens": 8828,
+      "output_tokens": 239,
+      "estimated_cost_usd": 0.0124938,
+      "reservation_id": "5f8775ae-c46f-4f9b-a77f-e67e487ec354"
+    },
+    "pages": [
+      {
+        "url": "https://hadeethenc.com/en/browse/hadith/4555",
+        "title": "Publisher source",
+        "status": "opened",
+        "content_sha256": "538dd044d06c6fdd547b1967c4abe942e39d0bea62353b0b27ddc5dff250f401",
+        "role": "reference_discovery"
+      },
+      {
+        "url": "https://hadeethenc.com/en/browse/hadith/3880",
+        "title": "Publisher source",
+        "status": "opened",
+        "content_sha256": "de59f32e4679b9fc53bdb2c4822cfd0c29b153a4e37507ffcba95d03e6976a9c",
+        "role": "reference_discovery"
+      },
+      {
+        "url": "https://hadeethenc.com/en/browse/category/314",
+        "title": "Publisher source",
+        "status": "opened",
+        "content_sha256": "dcd5efc333a2e5da1fe4ad6deb17b44af87cd624264d61548401a85f782cf563",
+        "role": "reference_discovery"
+      }
+    ],
+    "quran_locators": [],
+    "hadith_locators": [
+      "en:4555",
+      "en:3880"
+    ]
+  }
+}

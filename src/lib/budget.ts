@@ -38,12 +38,13 @@ function updateLedger<T>(directory: string, mutate: (ledger: Ledger) => T): T {
     throw new Error('BUDGET_LEDGER_INVALID');
   } finally { closeSync(descriptor); unlinkSync(lockPath); }
 }
-export function reserveSpend(model: keyof typeof rates, serializedRequest: string, outputLimit: number, directory = defaultDirectory()): string {
+export function reserveSpend(model: keyof typeof rates, serializedRequest: string, outputLimit: number, directory = defaultDirectory(), tools?: { maximumCalls: number; inputTokenBound: number }): string {
   const cap = authorizedBudget();
   if (!cap) throw new Error('SPEND_BUDGET_UNAUTHORIZED');
   // A UTF-8 byte per input token is conservative for this text-only request; extra framing margin is explicit.
   const inputUpperBound = Buffer.byteLength(serializedRequest, 'utf8') + 4096;
-  const reserved = priceUsage(model, inputUpperBound, outputLimit);
+  if (tools && (!Number.isSafeInteger(tools.maximumCalls) || tools.maximumCalls < 0 || tools.maximumCalls > 3 || !Number.isSafeInteger(tools.inputTokenBound) || tools.inputTokenBound < 0)) throw new Error('BUDGET_USAGE_INVALID');
+  const reserved = priceUsage(model, inputUpperBound + (tools?.inputTokenBound ?? 0), outputLimit) + (tools?.maximumCalls ?? 0) * .01;
   return updateLedger(directory, ledger => {
     const committed = ledger.entries.reduce((sum, item) => sum + (item.status === 'settled' ? item.actual_usd! : item.reserved_usd), 0);
     if (committed + reserved > cap) throw new Error('SPEND_BUDGET_STOP');
@@ -52,12 +53,13 @@ export function reserveSpend(model: keyof typeof rates, serializedRequest: strin
     return id;
   });
 }
-export function settleSpend(id: string, usage: { input_tokens: number; output_tokens: number }, directory = defaultDirectory()): number {
+export function settleSpend(id: string, usage: { input_tokens: number; output_tokens: number }, directory = defaultDirectory(), toolCalls = 0): number {
   if (!Number.isSafeInteger(usage.input_tokens) || usage.input_tokens < 0 || !Number.isSafeInteger(usage.output_tokens) || usage.output_tokens < 0) throw new Error('BUDGET_USAGE_INVALID');
   return updateLedger(directory, ledger => {
     const entry = ledger.entries.find(item => item.id === id);
     if (!entry || entry.status !== 'reserved') throw new Error('BUDGET_RESERVATION_NOT_FOUND');
-    const actual = priceUsage(entry.model, usage.input_tokens, usage.output_tokens);
+  if (!Number.isSafeInteger(toolCalls) || toolCalls < 0 || toolCalls > 3) throw new Error('BUDGET_USAGE_INVALID');
+  const actual = priceUsage(entry.model, usage.input_tokens, usage.output_tokens) + toolCalls * .01;
     // If the assumed bound is violated, retain at least the actual charge and stop subsequent calls via the cap.
     entry.actual_usd = actual; entry.input_tokens = usage.input_tokens; entry.output_tokens = usage.output_tokens; entry.status = 'settled';
     return actual;

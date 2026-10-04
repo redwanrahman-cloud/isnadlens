@@ -9,6 +9,7 @@ import { assessClaim, reviewPositiveEntailment, ENTAILMENT_VERSION, providerRead
 import { loadHadith, retrieveHadith, authenticateHadith, getHadithCoverage, checkHadithCitation, type HadithCorpus } from './hadith';
 import { parseQuranReferences, parseHadithLinks, extractClaimQuotes } from './citations';
 import { planClaimQueries, validateQueryTerms, QUERY_PLANNER_VERSION, QueryPlannerFailure, type QueryOverrides } from './query-planner';
+import { discoverWebReferences } from './web-discovery';
 
 export type { VerificationRecord } from './contracts';
 export const ROUTER_VERSION = 'luna-terra-bounded-recovery-v7';
@@ -105,7 +106,7 @@ export function checkExplicitCitation(corpus: Corpus, claim: string): string | n
   if (quotes.some(quote => !/[\u0600-\u06ff]/.test(quote))) return 'TRANSLATED_QUOTATION_NOT_ADMITTED';
   return null;
 }
-export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides, scopeClaim }: { claim: string; inputLanguage: ClaimLanguage; scopeClaim?: string; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides }): Promise<VerificationRecord> {
+export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'quran', sourceIdentification, useQueryPlanner = false, queryOverrides, scopeClaim, webLocators }: { claim: string; inputLanguage: ClaimLanguage; scopeClaim?: string; corpusSelection?: 'quran' | 'hadith' | 'both'; sourceIdentification?: SourceIdentification; useQueryPlanner?: boolean; queryOverrides?: QueryOverrides; webLocators?:{quran:string[];hadith:string[]} }): Promise<VerificationRecord> {
   const base: Omit<VerificationRecord, 'audit_hash'> = { record_id: randomUUID(), original_claim: typeof claim === 'string' ? claim : '', verdict: 'not_evaluated', reason_codes: [], summary_ar: 'لم يتم تقييم الادعاء.', summary_en: 'This claim has not been evaluated.', evidence_items: [], limitations: ['Results apply only to retrieved evidence in the admitted Arabic Quran edition.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'English explanations are not authoritative Quran translations.'], created_at: new Date().toISOString(), model: 'none', technical_verification_status: 'not_run', human_scholarly_status: 'not_reviewed', linguistic_review_status: 'not_reviewed', input_language: CLAIM_LANGUAGES.includes(inputLanguage) ? inputLanguage : 'en', corpus_manifest: null, corpus_sha256: null, retrieval_ids: [], semantic_assessment: null, prompt_version: PROMPT_VERSION, schema_version: SCHEMA_VERSION, usage: null, corpus_selection: 'quran' };
   base.corpus_selection = corpusSelection;
   base.router_version = ROUTER_VERSION; base.assessment_attempts = [];
@@ -190,6 +191,13 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
       if (chosen.length < hadithLimit) for (const record of retrieveHadith(hadith, retrievalLanguage === 'en' ? searchClaim : claim, retrievalLanguage, hadithLimit, [...(retrievalLanguage === 'ar' ? overrides.arabic_terms : overrides.english_terms), ...fallbackQueries], claim)) if (chosen.length < hadithLimit && !chosen.some(item => item.language === record.language && item.id === record.id)) chosen.push(record);
       base.evidence_items.push(...chosen.map(record => authenticateHadith(hadith!, record)));
   }
+  // Internal-only discovered IDs seed existing immutable source cards, never generated web text.
+  if(webLocators){
+    const discovered:EvidenceItem[]=[];
+    if(quran)for(const id of webLocators.quran.slice(0,4)){const verse=quran.verses.find(v=>v.id===id);if(verse)discovered.push(authenticateEvidence(quran,verse));}
+    if(hadith)for(const id of webLocators.hadith.slice(0,4)){const record=hadith.records.find(r=>`${r.language}:${r.id}`===id&&['ar','en'].includes(r.language));if(record)discovered.push(authenticateHadith(hadith,record));}
+    base.evidence_items=[...new Map([...discovered,...base.evidence_items].map(e=>[e.evidence_id,e])).values()].slice(0,8);
+  }
   base.retrieval_ids = base.evidence_items.map(e => e.evidence_id);
   if (base.evidence_items.some(e => !e.integrity.passed)) return fail('CITATION_INTEGRITY_FAILURE');
   base.technical_verification_status = base.evidence_items.length ? 'passed' : 'no_candidates';
@@ -230,13 +238,14 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
     const assessment = result.assessment;
     const ids = new Set(base.evidence_items.map(e => e.evidence_id));
     base.verdict = decideVerdict(assessment, ids);
-    if (base.verdict === 'supported_within_selected_corpus') {
-      base.limitations.push('A separate source-focused model check evaluates proposed positive support; it is not independent scholarly review and can still err. Its additional usage is sealed separately.');
+    if (base.verdict === 'supported_within_selected_corpus' || base.verdict === 'conflicting_within_selected_corpus') {
+      const decisionMode=base.verdict==='conflicting_within_selected_corpus'?'decision':'support';
+      base.limitations.push('A separate source-focused model check evaluates proposed support or contradiction and preservation of the original question; it is not independent scholarly review and can still err. Its additional usage is sealed separately.');
       try {
-        const checked = await reviewPositiveEntailment(claim, assessment, base.evidence_items);
+        const checked = await reviewPositiveEntailment(claim, assessment, base.evidence_items, decisionMode);
         const passed = validPositiveReview(checked.review, assessment, base.evidence_items);
         base.entailment_review = { version: ENTAILMENT_VERSION, model: checked.model, status: passed ? 'passed' : 'rejected', raw_review: checked.review, raw_provider_review: checked.raw_provider_review, unit_provenance: checked.unit_provenance, derivation: 'whole_immutable_selected_source_unit', usage: checked.usage, reason: passed ? 'SOURCE_ENTAILMENT_CONFIRMED' : 'SOURCE_ENTAILMENT_UNCONFIRMED' };
-        if (!passed) { base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNCONFIRMED'); }
+        if (!passed) { base.verdict = 'not_evaluated'; return fail(decisionMode==='decision'?'CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED':'SOURCE_ENTAILMENT_UNCONFIRMED'); }
       } catch (error) {
         base.entailment_review = { version: ENTAILMENT_VERSION, model: error instanceof ProviderFailure ? error.model : primaryModel(), status: 'unavailable', raw_review: null, usage: error instanceof ProviderFailure ? error.usage : null, reason: error instanceof Error ? error.message : 'PROVIDER_UNAVAILABLE' };
         base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNAVAILABLE');
@@ -263,7 +272,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
 }
 
 /** One additional search plan for an evidence gap, never a recursive retry or a verdict override. */
-export async function verifyClaimWithRecovery(options: Parameters<typeof verifyClaim>[0]): Promise<VerificationRecord> {
+async function verifyClaimWithLocalRecovery(options: Parameters<typeof verifyClaim>[0]): Promise<VerificationRecord> {
   const first = await verifyClaim(options);
   const assessment = first.semantic_assessment as SemanticAssessment | null;
   const missing = first.verdict === 'insufficient_within_selected_corpus' &&
@@ -279,4 +288,19 @@ export async function verifyClaimWithRecovery(options: Parameters<typeof verifyC
   const second = await verifyClaim({...options,useQueryPlanner:false,queryOverrides:{arabic_terms:plan.arabic_terms,english_terms:plan.english_terms}});
   const {audit_hash: discarded,...payload} = second; void discarded;
   return sealRecord({...payload,retrieval_recovery:{version:'bounded-retrieval-recovery-v1',status:'completed',reason:'ONE_ALTERNATIVE_SEARCH_FOR_EVIDENCE_GAP',first_record:first,usage:plan.usage,rejected_search_term_count:plan.rejected_search_term_count},limitations:[...second.limitations,'One bounded alternative search was attempted after incomplete evidence. The complete first sealed result and extra planning usage are retained; no original verdict was rewritten.']});
+}
+
+/** At most one online discovery run, after eligible local evidence recovery. */
+export async function verifyClaimWithRecovery(options:Parameters<typeof verifyClaim>[0]):Promise<VerificationRecord>{
+  const previous=await verifyClaimWithLocalRecovery(options);
+  if(process.env.ISNADLENS_WEB_SEARCH_ENABLED!=='true'||!providerReady())return previous;
+  const a=previous.semantic_assessment as SemanticAssessment|null;
+  const eligible=previous.verdict==='insufficient_within_selected_corpus'&&(!a||a.in_scope&&a.original_meaning_preserved)||previous.reason_codes.includes('SOURCE_ENTAILMENT_UNCONFIRMED');
+  const operational=previous.reason_codes.some(r=>/BUDGET|SPEND|PROVIDER|INTEGRITY|REFERRAL|INPUT|MALFORMED|MISMATCH/.test(r))||previous.retrieval_recovery?.status==='unavailable';
+  if(!eligible||operational)return previous;
+  const discovery=await discoverWebReferences(options.claim,options.scopeClaim??options.claim,options.corpusSelection??'quran');
+  const attempted=discovery.status==='completed'&&(discovery.quran_locators.length>0||discovery.hadith_locators.length>0);
+  const result=attempted?await verifyClaim({...options,useQueryPlanner:false,webLocators:{quran:discovery.quran_locators,hadith:discovery.hadith_locators}}):previous;
+  const {audit_hash:omitted,...payload}=result;void omitted;
+  return sealRecord({...payload,web_discovery:{...discovery,previous_record:previous,verification_attempted:attempted},limitations:[...result.limitations,'Online search discovers references only. Quran and Hadith conclusions are rechecked against immutable admitted passages. Al-Ifta links are attributed guidance, not a verified scripture verdict.']});
 }

@@ -1,0 +1,7 @@
+{
+  "dataset_sha256": "6169930bb2a9ecf2f12c88d929b1da0d50c46b2a6120274c1d8975ae530db8e0",
+  "application_tree_sha256": "dec9463926e7b38aee03afdcff2137ab7a935523ffb0e390dedb53b4e076858b",
+  "build": "2k6sk0LONYlYX7VS_HfxA",
+  "frozen_at": "2026-10-04T17:04:36.957Z",
+  "acceptance": "Report decisive correct/incorrect, abstentions, unavailable calls, actual web usage and reviewed grounding separately. No perfect-coverage claim."
+}

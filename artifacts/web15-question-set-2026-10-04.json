@@ -1,0 +1,240 @@
+{
+  "kind": "fresh15_trusted_search_setup_evaluation",
+  "created_at": "2026-10-04T17:04:36.953Z",
+  "counts": {
+    "total": 15,
+    "supported": 9,
+    "contradicted": 6,
+    "quran": 14,
+    "hadith": 1
+  },
+  "novelty": "New propositions/facets compared with prior150; W11 adds explicit public-charity permissibility to previously tested private-charity preference. Not a measured most-searched ranking.",
+  "execution": "Only original claim, automatic language and automatic source selection go to app. References and expected answers are reviewer-only. No retuning during first pass.",
+  "cases": [
+    {
+      "id": "W01",
+      "language": "en",
+      "claim": "Does Islam praise spending moderately, neither extravagantly nor miserly?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "25:67",
+        "quotation": "وَٱلَّذِينَ إِذَآ أَنفَقُوا۟ لَمْ يُسْرِفُوا۟ وَلَمْ يَقْتُرُوا۟ وَكَانَ بَيْنَ ذَٰلِكَ قَوَامًا",
+        "sha256": "448b0424e219f9a05a8ad3185c867287d7f549ca17a927560dd1324b2129c13d",
+        "source_url": "https://tanzil.net/#25:67",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W02",
+      "language": "en",
+      "claim": "Does the Quran recommend donating bad goods that the donor would not willingly accept?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:267",
+        "quotation": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ أَنفِقُوا۟ مِن طَيِّبَـٰتِ مَا كَسَبْتُمْ وَمِمَّآ أَخْرَجْنَا لَكُم مِّنَ ٱلْأَرْضِ ۖ وَلَا تَيَمَّمُوا۟ ٱلْخَبِيثَ مِنْهُ تُنفِقُونَ وَلَسْتُم بِـَٔاخِذِيهِ إِلَّآ أَن تُغْمِضُوا۟ فِيهِ ۚ وَٱعْلَمُوٓا۟ أَنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌ",
+        "sha256": "d47dae73abbfd9352ba4c938dc0640accb499920cf2282d3e115e5368db59086",
+        "source_url": "https://tanzil.net/#2:267",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W03",
+      "language": "ar",
+      "claim": "هل يأمر القرآن بإيتاء حق الزرع يوم حصاده؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "6:141",
+        "quotation": "وَهُوَ ٱلَّذِىٓ أَنشَأَ جَنَّـٰتٍ مَّعْرُوشَـٰتٍ وَغَيْرَ مَعْرُوشَـٰتٍ وَٱلنَّخْلَ وَٱلزَّرْعَ مُخْتَلِفًا أُكُلُهُۥ وَٱلزَّيْتُونَ وَٱلرُّمَّانَ مُتَشَـٰبِهًا وَغَيْرَ مُتَشَـٰبِهٍ ۚ كُلُوا۟ مِن ثَمَرِهِۦٓ إِذَآ أَثْمَرَ وَءَاتُوا۟ حَقَّهُۥ يَوْمَ حَصَادِهِۦ ۖ وَلَا تُسْرِفُوٓا۟ ۚ إِنَّهُۥ لَا يُحِبُّ ٱلْمُسْرِفِينَ",
+        "sha256": "19d0749bbcf19eb0b20175d081e9449730321b4e739654921c1f9d5fe5854ddd",
+        "source_url": "https://tanzil.net/#6:141",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W04",
+      "language": "es",
+      "claim": "¿Dice el Corán que quienes saben y quienes no saben son iguales?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "39:9",
+        "quotation": "أَمَّنْ هُوَ قَـٰنِتٌ ءَانَآءَ ٱلَّيْلِ سَاجِدًا وَقَآئِمًا يَحْذَرُ ٱلْـَٔاخِرَةَ وَيَرْجُوا۟ رَحْمَةَ رَبِّهِۦ ۗ قُلْ هَلْ يَسْتَوِى ٱلَّذِينَ يَعْلَمُونَ وَٱلَّذِينَ لَا يَعْلَمُونَ ۗ إِنَّمَا يَتَذَكَّرُ أُو۟لُوا۟ ٱلْأَلْبَـٰبِ",
+        "sha256": "4df21872059d133408029d36d832b7575e2dbbb2186bc398e3d7bfa972e07223",
+        "source_url": "https://tanzil.net/#39:9",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W05",
+      "language": "fr",
+      "claim": "Le Coran dit-il que les enfants d’Adam ont été honorés?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "17:70",
+        "quotation": "وَلَقَدْ كَرَّمْنَا بَنِىٓ ءَادَمَ وَحَمَلْنَـٰهُمْ فِى ٱلْبَرِّ وَٱلْبَحْرِ وَرَزَقْنَـٰهُم مِّنَ ٱلطَّيِّبَـٰتِ وَفَضَّلْنَـٰهُمْ عَلَىٰ كَثِيرٍ مِّمَّنْ خَلَقْنَا تَفْضِيلًا",
+        "sha256": "5b6f67004d0d0901b003e3234f360913e0a0a7963ef53124d3e265556938179a",
+        "source_url": "https://tanzil.net/#17:70",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W06",
+      "language": "de",
+      "claim": "Soll man laut Koran eine Tat für morgen versprechen, ohne „wenn Allah will“ zu sagen?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "18:23",
+        "quotation": "وَلَا تَقُولَنَّ لِشَا۟ىْءٍ إِنِّى فَاعِلٌ ذَٰلِكَ غَدًا",
+        "sha256": "c3d75dc92f633e350c17850c60ce9d87159c2115074ddca16705d09bd2e9545f",
+        "source_url": "https://tanzil.net/#18:23",
+        "context": "إِلَّآ أَن يَشَآءَ ٱللَّهُ ۚ وَٱذْكُر رَّبَّكَ إِذَا نَسِيتَ وَقُلْ عَسَىٰٓ أَن يَهْدِيَنِ رَبِّى لِأَقْرَبَ مِنْ هَـٰذَا رَشَدًا"
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W07",
+      "language": "bn",
+      "claim": "কোরআন কি বলে যে প্রত্যেক প্রাণ মৃত্যুর স্বাদ গ্রহণ করবে?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "3:185",
+        "quotation": "كُلُّ نَفْسٍ ذَآئِقَةُ ٱلْمَوْتِ ۗ وَإِنَّمَا تُوَفَّوْنَ أُجُورَكُمْ يَوْمَ ٱلْقِيَـٰمَةِ ۖ فَمَن زُحْزِحَ عَنِ ٱلنَّارِ وَأُدْخِلَ ٱلْجَنَّةَ فَقَدْ فَازَ ۗ وَمَا ٱلْحَيَوٰةُ ٱلدُّنْيَآ إِلَّا مَتَـٰعُ ٱلْغُرُورِ",
+        "sha256": "3081ee3beee88cf7c4569f610daf322465bac149cfacd29f0660bfbd07716abe",
+        "source_url": "https://tanzil.net/#3:185",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W08",
+      "language": "en",
+      "claim": "Does the Quran say that race determines who is most noble before Allah?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "49:13",
+        "quotation": "يَـٰٓأَيُّهَا ٱلنَّاسُ إِنَّا خَلَقْنَـٰكُم مِّن ذَكَرٍ وَأُنثَىٰ وَجَعَلْنَـٰكُمْ شُعُوبًا وَقَبَآئِلَ لِتَعَارَفُوٓا۟ ۚ إِنَّ أَكْرَمَكُمْ عِندَ ٱللَّهِ أَتْقَىٰكُمْ ۚ إِنَّ ٱللَّهَ عَلِيمٌ خَبِيرٌ",
+        "sha256": "f2bac1388976aea218d38975297ee34955efd3785ddd0bb6d761c2b37710eb13",
+        "source_url": "https://tanzil.net/#49:13",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W09",
+      "language": "en",
+      "claim": "Does the Quran tell people to direct their family to prayer and remain steadfast in it?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "20:132",
+        "quotation": "وَأْمُرْ أَهْلَكَ بِٱلصَّلَوٰةِ وَٱصْطَبِرْ عَلَيْهَا ۖ لَا نَسْـَٔلُكَ رِزْقًا ۖ نَّحْنُ نَرْزُقُكَ ۗ وَٱلْعَـٰقِبَةُ لِلتَّقْوَىٰ",
+        "sha256": "ff47a65522d8d55dd85f96cf0ff74f08244733a333db942b0937bc76f1c89f8b",
+        "source_url": "https://tanzil.net/#20:132",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W10",
+      "language": "ar",
+      "claim": "هل يقول القرآن إن من يعمل مثقال ذرة خيرا يره؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "99:7",
+        "quotation": "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ",
+        "sha256": "8c1f9ed4036a2b49d15030a5821d280446681574cc921c6384df570bc41d5ffb",
+        "source_url": "https://tanzil.net/#99:7",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W11",
+      "language": "en",
+      "claim": "Does the Quran describe giving charity openly as good, even though giving secretly to the poor is better?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "2:271",
+        "quotation": "إِن تُبْدُوا۟ ٱلصَّدَقَـٰتِ فَنِعِمَّا هِىَ ۖ وَإِن تُخْفُوهَا وَتُؤْتُوهَا ٱلْفُقَرَآءَ فَهُوَ خَيْرٌ لَّكُمْ ۚ وَيُكَفِّرُ عَنكُم مِّن سَيِّـَٔاتِكُمْ ۗ وَٱللَّهُ بِمَا تَعْمَلُونَ خَبِيرٌ",
+        "sha256": "7849d846e46db309b1eb08cbe5b58add2e88fb9a0dae399831e3aaf851605fcf",
+        "source_url": "https://tanzil.net/#2:271",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W12",
+      "language": "en",
+      "claim": "Does the Quran instruct spending everything until one is left destitute?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "17:29",
+        "quotation": "وَلَا تَجْعَلْ يَدَكَ مَغْلُولَةً إِلَىٰ عُنُقِكَ وَلَا تَبْسُطْهَا كُلَّ ٱلْبَسْطِ فَتَقْعُدَ مَلُومًا مَّحْسُورًا",
+        "sha256": "b7be00f2363ddfe79ad3d1d6129d5b6518aeff05d04c87675491196c90d66a7d",
+        "source_url": "https://tanzil.net/#17:29",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W13",
+      "language": "en",
+      "claim": "Does the Quran say that wealth should circulate only among the rich?",
+      "expected_verdict": "conflicting_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "59:7",
+        "quotation": "مَّآ أَفَآءَ ٱللَّهُ عَلَىٰ رَسُولِهِۦ مِنْ أَهْلِ ٱلْقُرَىٰ فَلِلَّهِ وَلِلرَّسُولِ وَلِذِى ٱلْقُرْبَىٰ وَٱلْيَتَـٰمَىٰ وَٱلْمَسَـٰكِينِ وَٱبْنِ ٱلسَّبِيلِ كَىْ لَا يَكُونَ دُولَةًۢ بَيْنَ ٱلْأَغْنِيَآءِ مِنكُمْ ۚ وَمَآ ءَاتَىٰكُمُ ٱلرَّسُولُ فَخُذُوهُ وَمَا نَهَىٰكُمْ عَنْهُ فَٱنتَهُوا۟ ۚ وَٱتَّقُوا۟ ٱللَّهَ ۖ إِنَّ ٱللَّهَ شَدِيدُ ٱلْعِقَابِ",
+        "sha256": "f60448e1365775ea9c61c97fa00b3d90742815a6883e1f0b93125c337c495ca5",
+        "source_url": "https://tanzil.net/#59:7",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W14",
+      "language": "ar",
+      "claim": "هل يأمر القرآن بالعدل والإحسان؟",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "quran",
+        "locator": "16:90",
+        "quotation": "إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَـٰنِ وَإِيتَآئِ ذِى ٱلْقُرْبَىٰ وَيَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ وَٱلْبَغْىِ ۚ يَعِظُكُمْ لَعَلَّكُمْ تَذَكَّرُونَ",
+        "sha256": "903d2ef408dfcc29a437dae30f5980a593128ec192c8826ae60c49e49de59429",
+        "source_url": "https://tanzil.net/#16:90",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    },
+    {
+      "id": "W15",
+      "language": "en",
+      "claim": "Does Hadith say Allah looks at hearts and deeds rather than appearance and wealth?",
+      "expected_verdict": "supported_within_selected_corpus",
+      "reference": {
+        "kind": "hadith",
+        "locator": "en:4555",
+        "quotation": "Abu Hurayrah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Indeed, Allah does not look at your appearance and wealth, but He looks at your hearts and deeds.”",
+        "sha256": "92790ce6bb0cb0535bd8b37d412c035c9e82ddc59a9ceb42a324edda528b8052",
+        "source_url": "https://hadeethenc.com/en/browse/hadith/4555",
+        "context": null
+      },
+      "review": "Principal agent inspected original admitted passage before live run; not independent scholar review."
+    }
+  ]
+}

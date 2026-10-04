@@ -1,0 +1,22 @@
+{
+  "kind": "source_adapter_recheck_of_saved_web_urls_not_new_model_accuracy",
+  "new_api_calls": 0,
+  "budget_unchanged": true,
+  "results": [
+    {
+      "url": "https://quranenc.com/en/browse/english_saheeh/16/90",
+      "locator": "16:90",
+      "publisher_api_matches_admitted_display": true
+    },
+    {
+      "url": "https://quranenc.com/en/browse/persian_mokhtasar/16/90",
+      "locator": "16:90",
+      "publisher_api_matches_admitted_display": true
+    },
+    {
+      "url": "https://quranenc.com/hi/browse/arabic_moyassar/16/90",
+      "locator": "16:90",
+      "publisher_api_matches_admitted_display": true
+    }
+  ]
+}

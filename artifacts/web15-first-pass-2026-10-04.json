@@ -1,0 +1,566 @@
+{
+  "kind": "untouched_fresh15_live_first_pass",
+  "freeze": {
+    "dataset_sha256": "6169930bb2a9ecf2f12c88d929b1da0d50c46b2a6120274c1d8975ae530db8e0",
+    "application_tree_sha256": "dec9463926e7b38aee03afdcff2137ab7a935523ffb0e390dedb53b4e076858b",
+    "build": "2k6sk0LONYlYX7VS_HfxA",
+    "frozen_at": "2026-10-04T17:04:36.957Z",
+    "acceptance": "Report decisive correct/incorrect, abstentions, unavailable calls, actual web usage and reviewed grounding separately. No perfect-coverage claim."
+  },
+  "started_at": "2026-10-04T17:05:05.334Z",
+  "cases": [
+    {
+      "id": "W01",
+      "claim": "Does Islam praise spending moderately, neither extravagantly nor miserly?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Quran 25:67 supports the proposition that praiseworthy spending lies between extravagance and miserliness, although the passage does not specify a numerical amount or detailed threshold for moderation.",
+      "summary_ar": "نعم، تدعم الآية 25:67 من مجموعة المصادر المحددة أن الإنفاق المحمود يكون وسطًا بين الإسراف والتقتير. ولا تحدد الآية في هذا الموضع مقدارًا رقميًا أو معيارًا تفصيليًا للوسطية.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 689,
+          "output_tokens": 103,
+          "estimated_cost_usd": 0.00029585,
+          "reservation_id": "8c0d2efc-540e-406d-977a-9f8194ffe32f"
+        },
+        {
+          "input_tokens": 10709,
+          "output_tokens": 449,
+          "estimated_cost_usd": 0.0032160500000000002,
+          "reservation_id": "1fd1f444-b422-4b47-a1f7-45841629770e"
+        },
+        {
+          "input_tokens": 1661,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00049445,
+          "reservation_id": "86021e73-35fd-4934-a70b-67c2e47ba2b3"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W02",
+      "claim": "Does the Quran recommend donating bad goods that the donor would not willingly accept?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The selected sources directly contradict the proposition: Quran 2:267 addresses charitable spending and rejects directing bad goods toward donation when the donor would accept them only by overlooking their defects.",
+      "summary_ar": "لا، لا تؤيد مجموعة المصادر المحددة أن القرآن يوصي بالتبرع بالسلع الرديئة التي لا يقبلها المتبرع عادةً؛ بل إن آية البقرة 2:267 تناقض ذلك مباشرةً. الآية تتناول الإنفاق وتربط السلع الرديئة بما لا يُقبل إلا مع التغاضي عنه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 176,
+          "estimated_cost_usd": 0.00038395000000000004,
+          "reservation_id": "343eb6c3-b79a-4997-b0a5-8e7fb04e4e8c"
+        },
+        {
+          "input_tokens": 9983,
+          "output_tokens": 691,
+          "estimated_cost_usd": 0.0033249499999999997,
+          "reservation_id": "d64466d9-3a6a-4b6c-b18f-97c5c45314f3"
+        },
+        {
+          "input_tokens": 9983,
+          "output_tokens": 429,
+          "estimated_cost_usd": 0.0301055,
+          "reservation_id": "31f4d3f4-2c7b-46dd-a16e-0098d2176af5"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W03",
+      "claim": "هل يأمر القرآن بإيتاء حق الزرع يوم حصاده؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Al-An'am 6:141 directly supports this proposition within the selected source collection, addressing crops and linking the giving of their due to the day of harvest. The passage also includes a restriction concerning extravagance.",
+      "summary_ar": "نعم، تدعم آية الأنعام 6:141 هذا التقرير مباشرة ضمن مجموعة المصادر المحددة، إذ تتناول الزرع وتربط إيتاء حقه بيوم حصاده. كما تذكر الآية قيدًا متعلقًا بعدم الإسراف، وهو وارد في المصدر نفسه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 166,
+          "estimated_cost_usd": 0.00037195000000000007,
+          "reservation_id": "7a599e5f-4713-4bc2-bbd4-ad832027b510"
+        },
+        {
+          "input_tokens": 10947,
+          "output_tokens": 441,
+          "estimated_cost_usd": 0.0032659499999999997,
+          "reservation_id": "8422b2f8-5ea2-47f7-98a5-b5309f37ba8f"
+        },
+        {
+          "input_tokens": 2093,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00060245,
+          "reservation_id": "130a4374-3689-48a0-9b9f-1983f35d3cd9"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W04",
+      "claim": "¿Dice el Corán que quienes saben y quienes no saben son iguales?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The selected source collection contradicts the claim that those who know and those who do not know are equal: Quran 39:9 frames their equality as a negated proposition in its displayed context.",
+      "summary_ar": "لا؛ لا تدعم مجموعة المصادر المحددة القول بأن الذين يعلمون والذين لا يعلمون متساوون. فالآية 39:9 تطرح نفيَ هذا التساوي في سياقها المعروض.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 186,
+          "estimated_cost_usd": 0.00039595000000000006,
+          "reservation_id": "d623e91c-42eb-4af1-ae57-5800aa1f4e3e"
+        },
+        {
+          "input_tokens": 10268,
+          "output_tokens": 713,
+          "estimated_cost_usd": 0.0034226,
+          "reservation_id": "7d3972ad-913b-43d5-8eb7-f5634f676d65"
+        },
+        {
+          "input_tokens": 10268,
+          "output_tokens": 363,
+          "estimated_cost_usd": 0.030026,
+          "reservation_id": "012e4d8e-0a19-4d3b-8352-609f9a9c70c2"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W05",
+      "claim": "Le Coran dit-il que les enfants d’Adam ont été honorés?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Quran 17:70 in the selected source collection directly supports the claim that the children of Adam were honored, while also mentioning related forms of favor and provision.",
+      "summary_ar": "نعم، تدعم الآية 17:70 من مجموعة المصادر المحددة هذا المعنى، إذ تنسب إلى الله تكريم بني آدم. وتعرض الآية أيضًا وجوهًا من التفضيل والرزق، من دون أن تكون هذه النتيجة حكمًا على استحقاق كل فرد في كل حال.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 692,
+          "output_tokens": 151,
+          "estimated_cost_usd": 0.0003542,
+          "reservation_id": "73265874-53af-42fc-8203-5496d71f8185"
+        },
+        {
+          "input_tokens": 8868,
+          "output_tokens": 431,
+          "estimated_cost_usd": 0.0027342,
+          "reservation_id": "256d920d-4c03-42d7-9b6e-973dd5af97a3"
+        },
+        {
+          "input_tokens": 1830,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0005367000000000001,
+          "reservation_id": "473ef5fe-7ef5-4680-aa4c-3261115edfbd"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W06",
+      "claim": "Soll man laut Koran eine Tat für morgen versprechen, ohne „wenn Allah will“ zu sagen?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The supplied Quran passage at 18:23 contradicts doing this: it prohibits saying one will do something tomorrow, and the following verse supplies the qualification of Allah’s will.",
+      "summary_ar": "لا، لا تؤيد مجموعة المصادر المحددة فعل ذلك؛ فالقرآن في سورة الكهف 18:23 ينهى عن القول بفعل شيء غدًا، ويُقيَّد ذلك في الآية التالية بمشيئة الله.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 697,
+          "output_tokens": 189,
+          "estimated_cost_usd": 0.00040104999999999996,
+          "reservation_id": "e19725b0-545e-4a60-a52c-3e7320b1d7c3"
+        },
+        {
+          "input_tokens": 9675,
+          "output_tokens": 693,
+          "estimated_cost_usd": 0.00325035,
+          "reservation_id": "9d775a22-fe00-4f2a-88b9-40b5aa2fa4a7"
+        },
+        {
+          "input_tokens": 9675,
+          "output_tokens": 413,
+          "estimated_cost_usd": 0.0291435,
+          "reservation_id": "08240bdb-4c39-4e7b-8688-3edaa51b63dc"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W07",
+      "claim": "কোরআন কি বলে যে প্রত্যেক প্রাণ মৃত্যুর স্বাদ গ্রহণ করবে?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. The selected source collection directly supports that the Quran states that every soul will taste death, especially in 3:185, 21:35, and 29:57. This assessment is limited to the supplied Arabic Quran passages.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن يقرر أن كل نفس تذوق الموت، كما يظهر مباشرة في البقرة 3:185 والأنبياء 21:35 والعنكبوت 29:57. هذا التقييم محصور في النصوص القرآنية العربية المقدمة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 693,
+          "output_tokens": 159,
+          "estimated_cost_usd": 0.00036404999999999993,
+          "reservation_id": "4cbbf0b5-c276-4d35-a250-a1f9009ef943"
+        },
+        {
+          "input_tokens": 9312,
+          "output_tokens": 497,
+          "estimated_cost_usd": 0.0029244,
+          "reservation_id": "6c9ad5af-139f-46af-9232-768300e692b3"
+        },
+        {
+          "input_tokens": 4533,
+          "output_tokens": 98,
+          "estimated_cost_usd": 0.00125085,
+          "reservation_id": "caccb031-13da-4ad7-a8d5-fdcb367f0062"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W08",
+      "claim": "Does the Quran say that race determines who is most noble before Allah?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The selected source collection directly contradicts the claim: Quran 49:13 presents a different criterion for who is most noble before Allah, while mentioning peoples and tribes in the context of mutual recognition.",
+      "summary_ar": "لا؛ لا تدعم مجموعة المصادر المحددة أن العِرق هو ما يحدد الأكرم عند الله. بل يبيّن النص المعروض في سورة الحجرات 49:13 معيارًا آخر، مع ذكر الشعوب والقبائل في سياق التعارف.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 690,
+          "output_tokens": 83,
+          "estimated_cost_usd": 0.0002721,
+          "reservation_id": "3b1a1c58-db45-4d48-accc-e3ab618c4866"
+        },
+        {
+          "input_tokens": 10982,
+          "output_tokens": 620,
+          "estimated_cost_usd": 0.0034895,
+          "reservation_id": "063d5b71-6750-43c6-ad5a-8becd556957e"
+        },
+        {
+          "input_tokens": 10982,
+          "output_tokens": 360,
+          "estimated_cost_usd": 0.031775,
+          "reservation_id": "cfeb0f64-36e0-4856-858b-a9101de51071"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W09",
+      "claim": "Does the Quran tell people to direct their family to prayer and remain steadfast in it?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Quran 20:132 in the selected source collection directly supports the claim that one should direct one’s family to prayer and remain steadfast in it. The verse addresses the addressee with an imperative and joins both instructions in the same passage.",
+      "summary_ar": "نعم، تدعم الآية 20:132 من مجموعة المصادر المحددة القول بأن توجيه الأهل إلى الصلاة والثبات عليها وارد في القرآن. والآية موجّهة بصيغة الأمر إلى المخاطَب، مع جمعها بين الأمرين في سياق واحد.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 693,
+          "output_tokens": 154,
+          "estimated_cost_usd": 0.00035804999999999995,
+          "reservation_id": "22d34d06-a15a-41c0-ae71-8665c9c96211"
+        },
+        {
+          "input_tokens": 9295,
+          "output_tokens": 421,
+          "estimated_cost_usd": 0.0028289499999999998,
+          "reservation_id": "a70d0253-a989-44f6-ba00-3182c2c65eab"
+        },
+        {
+          "input_tokens": 1870,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0005467,
+          "reservation_id": "b64b7067-baee-4603-87b6-c1b597c6b6ae"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W10",
+      "claim": "هل يقول القرآن إن من يعمل مثقال ذرة خيرا يره؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. The selected source collection directly supports that the Quran says this in Surah Al-Zalzalah 99:7. The following verse presents a corresponding statement about evil, but it does not alter the support for the proposition asked.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن يقول ذلك في سورة الزلزلة، الآية 7. وتعرض الآية التالية أيضًا مقابلةً تتعلق بالعمل الشر، لكن ذلك لا يغيّر دعم الآية محل السؤال.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 691,
+          "output_tokens": 141,
+          "estimated_cost_usd": 0.00034195000000000004,
+          "reservation_id": "6cb40a21-0acb-4f11-adc5-855b9a28b9f8"
+        },
+        {
+          "input_tokens": 8221,
+          "output_tokens": 324,
+          "estimated_cost_usd": 0.00244405,
+          "reservation_id": "54517848-9bab-44f2-8bba-b881e7ee4367"
+        },
+        {
+          "input_tokens": 1282,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.00039970000000000007,
+          "reservation_id": "b647f223-0b1e-4fe2-b0a3-379841ed43bb"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W11",
+      "claim": "Does the Quran describe giving charity openly as good, even though giving secretly to the poor is better?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. Quran 2:271 in the selected source collection supports that giving charity openly is good, while concealing it and giving it to the poor is better for the giver. The textual qualification concerns concealed charity given to the poor, rather than every form of private spending.",
+      "summary_ar": "نعم، تدعم الآية 2:271 من مجموعة المصادر المحددة أن إظهار الصدقات حسن، وأن إخفاء الصدقة وإعطاءها للفقراء خير للمتصدِّق. ويظل الحكم في النص متعلقًا بصدقة تُخفى وتُعطى للفقراء، لا بكل صورة من صور الإنفاق سرًّا.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 696,
+          "output_tokens": 106,
+          "estimated_cost_usd": 0.00030120000000000006,
+          "reservation_id": "1192bb0f-0d50-4f3b-a40e-159771255345"
+        },
+        {
+          "input_tokens": 10771,
+          "output_tokens": 542,
+          "estimated_cost_usd": 0.0033431500000000005,
+          "reservation_id": "fc4b8da5-3edc-4615-a235-20d0bb772bec"
+        },
+        {
+          "input_tokens": 2134,
+          "output_tokens": 165,
+          "estimated_cost_usd": 0.0007315,
+          "reservation_id": "881f9827-3722-4730-a1ab-4a71ecf98296"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W12",
+      "claim": "Does the Quran instruct spending everything until one is left destitute?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The claim is contradicted by Quran 17:29 in the selected source collection, which prohibits excessive spending that leaves a person deprived; Quran 2:219 concerns spending from what is surplus, not exhausting all one’s wealth.",
+      "summary_ar": "لا؛ هذا الادعاء يخالف ما تدعمه آية القرآن 17:29 في مجموعة المصادر المحددة، إذ تنهى عن الإنفاق المفرط المؤدي إلى العوز. وتشير آية 2:219 إلى الإنفاق من العفو، لا إلى استنفاد المال كله.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 690,
+          "output_tokens": 175,
+          "estimated_cost_usd": 0.0003825,
+          "reservation_id": "6034a247-c966-4cbf-b54d-5a96801f563d"
+        },
+        {
+          "input_tokens": 11109,
+          "output_tokens": 562,
+          "estimated_cost_usd": 0.00345165,
+          "reservation_id": "b9f5012b-4532-45bc-ab09-f2dfb72f6818"
+        },
+        {
+          "input_tokens": 11109,
+          "output_tokens": 513,
+          "estimated_cost_usd": 0.0339285,
+          "reservation_id": "bdd8d3c0-35a9-4092-a0e3-6d027e75ff33"
+        },
+        {
+          "input_tokens": 335,
+          "output_tokens": 155,
+          "estimated_cost_usd": 0.00026975,
+          "reservation_id": "40efad65-1ba8-4175-9021-e89ece9bd74c"
+        },
+        {
+          "input_tokens": 11216,
+          "output_tokens": 502,
+          "estimated_cost_usd": 0.0034064000000000004,
+          "reservation_id": "0dbd8ed8-4973-42bc-9090-87e1dc9f6a3c"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W13",
+      "claim": "Does the Quran say that wealth should circulate only among the rich?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. Quran 59:7 in the selected source collection supports the opposite of this reading: the specified distribution is not to be confined to the rich. The passage concerns the particular property and recipient categories stated there.",
+      "summary_ar": "لا؛ تدعم الآية 59:7 من القرآن ضمن مجموعة المصادر المحددة نقيض هذا الفهم، إذ تبيّن أن توزيع الفيء المذكور فيها لا يكون محصورًا في الأغنياء. وهذا الحكم في الآية متعلق بالمال المبيّن فيها وتوزيعه على الفئات المذكورة.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 689,
+          "output_tokens": 148,
+          "estimated_cost_usd": 0.00034985,
+          "reservation_id": "dd15fe21-f1fd-4790-84b4-b00805c0ef8e"
+        },
+        {
+          "input_tokens": 11316,
+          "output_tokens": 917,
+          "estimated_cost_usd": 0.0039294,
+          "reservation_id": "ea9e6110-26e6-45c5-80e3-fdbaad8ee6a0"
+        },
+        {
+          "input_tokens": 11316,
+          "output_tokens": 901,
+          "estimated_cost_usd": 0.039102,
+          "reservation_id": "af625de0-a869-4825-aab1-60a1f0f0197b"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W14",
+      "claim": "هل يأمر القرآن بالعدل والإحسان؟",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. The selected source collection supports that the Quran commands justice and ihsan, as stated in 16:90. The verse also includes other commands and prohibitions in the same passage.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن يأمر بالعدل والإحسان، وذلك في الآية 16:90. وتذكر الآية إلى جانب ذلك أوامر ونواهي أخرى في السياق نفسه.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 686,
+          "output_tokens": 87,
+          "estimated_cost_usd": 0.00027590000000000004,
+          "reservation_id": "40da8031-c508-4155-8092-009dd6a16c29"
+        },
+        {
+          "input_tokens": 11408,
+          "output_tokens": 398,
+          "estimated_cost_usd": 0.0033296,
+          "reservation_id": "81c21f18-1614-4b59-aab3-1c55844c70b2"
+        },
+        {
+          "input_tokens": 2001,
+          "output_tokens": 67,
+          "estimated_cost_usd": 0.00058065,
+          "reservation_id": "a3866235-92b2-4ada-aa47-8d005709ad7d"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "W15",
+      "claim": "Does Hadith say Allah looks at hearts and deeds rather than appearance and wealth?",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "Yes. The supplied hadith directly supports this meaning by attributing to the Prophet the distinction between appearance and wealth on one side and hearts and deeds on the other; this assessment is limited to the selected source at en:4555.",
+      "summary_ar": "نعم، يدعم الحديث المحدد في مجموعة المصادر المحددة هذا المعنى مباشرة، إذ ينسب إلى النبي ﷺ التفريق بين المظهر والمال من جهة، والقلوب والأعمال من جهة أخرى. وتقتصر هذه النتيجة على نص الحديث المعروض في المصدر المحدد ورقمه en:4555.",
+      "seal_valid": true,
+      "original_preserved": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "web_discovery": null,
+      "usage": [
+        {
+          "input_tokens": 692,
+          "output_tokens": 169,
+          "estimated_cost_usd": 0.0003758,
+          "reservation_id": "5202d248-c6d8-4500-be5e-08fe4229e462"
+        },
+        {
+          "input_tokens": 16469,
+          "output_tokens": 431,
+          "estimated_cost_usd": 0.00463445,
+          "reservation_id": "e7bf5d2e-ac2a-4717-a2d2-b10accfcb1cb"
+        },
+        {
+          "input_tokens": 692,
+          "output_tokens": 66,
+          "estimated_cost_usd": 0.0002522,
+          "reservation_id": "131b5182-6231-4f64-b4c7-84025152904c"
+        }
+      ],
+      "review": "pending"
+    }
+  ],
+  "completed_at": "2026-10-04T17:08:48.800Z"
+}
