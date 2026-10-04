@@ -1,0 +1,180 @@
+{
+  "kind": "known_case_source_review_language_pairs_not_fresh_accuracy",
+  "started_at": "2026-10-04T23:12:59.527Z",
+  "application_tree_sha256": "5a3b4996332a74ae5fa0b4f0ea6901411bd1782336f403b1f39079929c275ca2",
+  "development_cap_sar": 37,
+  "starting_development_sar": 35.42737218750004,
+  "limits": [
+    "Source-review layer only; original retrieval, draft and sources are held constant. No end-to-end routing/retrieval comparison.",
+    "Each original/English pair is two separate model calls; stochastic variation remains a confounder.",
+    "Known-case repairs cannot revise the frozen 23/30 benchmark."
+  ],
+  "cases": [
+    {
+      "id": "W26-original",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_control": true,
+      "diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "relationship": [
+        "yes"
+      ],
+      "usage": {
+        "input_tokens": 10059,
+        "input_tokens_details": {
+          "cache_write_tokens": 10056,
+          "cached_tokens": 0
+        },
+        "output_tokens": 125,
+        "output_tokens_details": {
+          "reasoning_tokens": 22
+        },
+        "total_tokens": 10184,
+        "estimated_cost_usd": 0.0266475,
+        "reservation_id": "e76cc78b-5212-42ef-8ac2-bca2c286cced"
+      },
+      "draft_sha256": "c077c26e2f18b6786d8624bd4aa293bfcb3af246275faaba57dbcf1f156acf7c",
+      "evidence_sha256": "00523f1f6798edecfb5b8d687badc097baf92295d0d02891d7d82ab3f57f4315"
+    },
+    {
+      "id": "W26-english",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_control": true,
+      "diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "relationship": [
+        "yes"
+      ],
+      "usage": {
+        "input_tokens": 10045,
+        "input_tokens_details": {
+          "cache_write_tokens": 8691,
+          "cached_tokens": 1351
+        },
+        "output_tokens": 161,
+        "output_tokens_details": {
+          "reasoning_tokens": 58
+        },
+        "total_tokens": 10206,
+        "estimated_cost_usd": 0.0270445,
+        "reservation_id": "3d7a38a8-b481-475f-b6d7-08569e85cec0"
+      },
+      "draft_sha256": "60c83a72e15c2e566b0b53355e0e2184d30b00166e302f6bf1e4db6df06623bc",
+      "evidence_sha256": "00523f1f6798edecfb5b8d687badc097baf92295d0d02891d7d82ab3f57f4315"
+    },
+    {
+      "id": "W26-reversed-arabic-control",
+      "expected": "reject",
+      "actual": "reject",
+      "matches_control": true,
+      "diagnostic": {
+        "reason": "translation_mismatch",
+        "language": "ar",
+        "sentence": "نعم، يعلّم القرآن أن الله يظلم الناس وأن الناس لا يظلمون أنفسهم.",
+        "detail": "The Arabic draft reverses both material propositions: it says Allah wrongs people and people do not wrong themselves, contrary to the English draft and the cited verse."
+      },
+      "relationship": [
+        "yes"
+      ],
+      "usage": {
+        "input_tokens": 10023,
+        "input_tokens_details": {
+          "cache_write_tokens": 8669,
+          "cached_tokens": 1351
+        },
+        "output_tokens": 196,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 10219,
+        "estimated_cost_usd": 0.0274095,
+        "reservation_id": "3416ae2a-7acb-4837-94a9-dd0dec74283c"
+      },
+      "draft_sha256": "86dcb2b36c48bdccc65dbaeb8a0972bfa4657c415afcefc08830e95b80c54aa6",
+      "evidence_sha256": "00523f1f6798edecfb5b8d687badc097baf92295d0d02891d7d82ab3f57f4315"
+    },
+    {
+      "id": "W24-original",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_control": true,
+      "diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "relationship": [
+        "yes"
+      ],
+      "usage": {
+        "input_tokens": 4187,
+        "input_tokens_details": {
+          "cache_write_tokens": 4184,
+          "cached_tokens": 0
+        },
+        "output_tokens": 283,
+        "output_tokens_details": {
+          "reasoning_tokens": 180
+        },
+        "total_tokens": 4470,
+        "estimated_cost_usd": 0.0138635,
+        "reservation_id": "c68e2365-ba29-40a5-98d4-4c4aae6f4357"
+      },
+      "draft_sha256": "d8db9851410fc1e98156e66e4ce3e4ec41e5ed955deaa0058b0e6ac2a8e82c69",
+      "evidence_sha256": "2743829fc4b8062c84d05803f051fd2c723e167c9bc5eb6623c5a5df64f38352"
+    },
+    {
+      "id": "W24-english",
+      "expected": "pass",
+      "actual": "pass",
+      "matches_control": true,
+      "diagnostic": {
+        "reason": "none",
+        "language": null,
+        "sentence": null,
+        "detail": ""
+      },
+      "relationship": [
+        "yes"
+      ],
+      "usage": {
+        "input_tokens": 4181,
+        "input_tokens_details": {
+          "cache_write_tokens": 3027,
+          "cached_tokens": 1151
+        },
+        "output_tokens": 196,
+        "output_tokens_details": {
+          "reasoning_tokens": 93
+        },
+        "total_tokens": 4377,
+        "estimated_cost_usd": 0.0128045,
+        "reservation_id": "1deff8e3-50d4-4f5c-ae31-59221f238146"
+      },
+      "draft_sha256": "1a8ab9fc2cf26103ba6df4ccc0fc1c74c02e2701cf85b6516a585cb74ac08ca9",
+      "evidence_sha256": "2743829fc4b8062c84d05803f051fd2c723e167c9bc5eb6623c5a5df64f38352"
+    }
+  ],
+  "final_development_sar": 35.831507812500035,
+  "settled_sar": 0.404135625,
+  "previous_stops": [
+    {
+      "id": "W26-english",
+      "reason": "SPEND_BUDGET_STOP",
+      "completed_at": "2026-10-04T23:13:02.425Z",
+      "development_sar": 35.52730031250004
+    }
+  ],
+  "completed_at": "2026-10-04T23:14:52.679Z"
+}

@@ -72,6 +72,23 @@ it('sends BOTH final explanations to Terra without an additional paid reviewer c
  const f=vi.fn().mockResolvedValue(response({explanation_preserved:true,atoms:[{atom_id:'a',entails:'yes',attribution_preserved:true,qualifications_preserved:true,basis_unit_id:`${c.evidence_id}:primary`,additional_basis_unit_ids:[]}]},'gpt-5.6-terra'));vi.stubGlobal('fetch',f);
  const r=await provider.reviewPositiveEntailment('An original question',a,[c]);expect(r.review.explanation_preserved).toBe(true);expect(f).toHaveBeenCalledOnce();const b=JSON.parse(f.mock.calls[0][1].body);expect(b.model).toBe('gpt-5.6-terra');expect(JSON.parse(b.input).draft_explanation).toEqual({summary_en:a.summary_en,summary_ar:a.summary_ar});
 });
+it('shares extra prose citations and publisher commentary without expanding an atom proof',async()=>{
+ const c=card('10:44'),extra=card('4:49');extra.publisher_fields={explanation:'Publisher commentary only',grade:'Publisher grade only'};
+ const a=assessment('An original question',[c.evidence_id]);
+ const f=vi.fn().mockResolvedValue(response({explanation_preserved:true,explanation_diagnostic:{reason:'none',language:null,sentence:null,detail:''},atoms:[{atom_id:'a',entails:'yes',attribution_preserved:true,qualifications_preserved:true,basis_unit_id:`${c.evidence_id}:primary`,additional_basis_unit_ids:[]}]}));vi.stubGlobal('fetch',f);
+ const r=await provider.reviewPositiveEntailment('An original question',a,[c,extra]);const input=JSON.parse(JSON.parse(f.mock.calls[0][1].body).input);
+ expect(input.explanation_evidence).toEqual(provider.explanationEvidence([c,extra]));
+ expect(input.explanation_evidence[1].publisher_explanation).toBe('Publisher commentary only');
+ expect(input.source_units.some((u:{evidence_id:string})=>u.evidence_id===extra.evidence_id)).toBe(false);
+ expect(validPositiveReview(r.review,a,[c,extra])).toBe(true);
+ extra.quotation+='forged';expect(()=>provider.explanationEvidence([c,extra])).toThrow('PACKET_INTEGRITY_FAILURE');
+});
+it('preserves a rejected translation sentence and rejects contradictory diagnostics',()=>{
+ const c=card('10:44'),units=provider.buildSourceUnits([c]);
+ const raw={explanation_preserved:false,explanation_diagnostic:{reason:'translation_mismatch' as const,language:'ar' as const,sentence:'An altered Arabic sentence',detail:'Negation was reversed.'},atoms:[{atom_id:'a',entails:'yes' as const,attribution_preserved:true,qualifications_preserved:true,basis_unit_id:units[0].unit_id,additional_basis_unit_ids:[]}]};
+ expect(provider.resolveUnitReview(raw,units).explanation_diagnostic).toEqual(raw.explanation_diagnostic);
+ expect(()=>provider.resolveUnitReview({...raw,explanation_preserved:true},units)).toThrow('EXPLANATION_DIAGNOSTIC_INVALID');
+});
 it('repairs a rejected explanation once on identical evidence, retaining the first failed review',async()=>{
  const claim='Does the Quran prohibit eating pork?';const packets:string[][]=[];
  const assess=vi.spyOn(provider,'assessClaim').mockImplementation(async(_c,_l,cards,model)=>{packets.push(cards.map(c=>c.evidence_id));return {model:model!,usage:null,assessment:assessment(claim,[cards.find(c=>c.locator==='2:173')!.evidence_id])};});
