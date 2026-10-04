@@ -1,0 +1,13 @@
+{
+  "kind": "source_review_of_live_confirmation",
+  "reviewer": "primary_agent_separate_from_application_model",
+  "record_id": "d39f604e-daed-4479-9815-aa60f1cab91a",
+  "audit_hash": "cb65e06878992a9dd61ffb0bbee66ed087859a4d9b69e543bfc21e5b365b7832",
+  "principal_grounding_approved": true,
+  "source_locator": "2:275",
+  "source_url": "https://tanzil.net/#2:275",
+  "basis": "The unchanged primary verse expressly distinguishes permitted trade from prohibited riba, contradicting the proposition asked. Governing action and Quran attribution are preserved.",
+  "literal_basis_span_valid": true,
+  "original_claim_preserved": true,
+  "scope": "One development confirmation, not general model accuracy or scholarly certification"
+}

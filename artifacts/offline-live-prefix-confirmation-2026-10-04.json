@@ -1,0 +1,21 @@
+{
+  "kind": "provider_unavailable_attempt_not_confirmed_model_result",
+  "application_tree_sha256": "1f182a2007a42892f766cd0afbbbae2c47c7d4f7b0fb480318ebefc69be5a8a1",
+  "id": "B19",
+  "claim": "Please check:  Does the Quran permit riba?",
+  "http_status": 200,
+  "verdict": "not_evaluated",
+  "expected": "conflicting_within_selected_corpus",
+  "original_preserved": true,
+  "seal_valid": true,
+  "evidence_integrity": null,
+  "evidence": [],
+  "summary": "This request could not proceed to source verification.",
+  "reason_codes": [
+    "PROVIDER_UNAVAILABLE"
+  ],
+  "prompt_version": "claim-assessment-v2.3-qualified-exception-conjunctions",
+  "router_version": "reference-or-conflict-plus-positive-review-and-supplied-context-v4",
+  "model": "none",
+  "usage": []
+}

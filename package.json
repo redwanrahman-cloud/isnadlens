@@ -8,6 +8,7 @@
     "start": "next start --hostname 127.0.0.1 --port 3100",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:offline": "node scripts/offline-boundary-lab.mjs --full-retrieval",
     "corpus:prepare": "node scripts/prepare-corpus.mjs"
   },
   "dependencies": {

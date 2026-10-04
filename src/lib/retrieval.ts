@@ -6,7 +6,7 @@ export function normalizeQuery(query: string): string {
   return query.toLowerCase().normalize('NFKC').replace(/[\u064b-\u065f\u0670]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
 }
 export type QuranReadingAid = { source: 'QuranEnc'; key: 'english_rwwad'; version: string; language: 'en'; role: 'query_retrieval_only'; sha256:string; source_url:string };
-const englishStop = new Set('a an the does do did is are was were has have had what which who when where how why quran koran allah god say says describe describes tell tells teach teaches command commands instruct instructs forbid forbids forbidden prohibited permitted permissible lawful warn warns require requires state states mention mentions one another people believers of to for and or in on at as by with from that this it its be before after while until not no never'.split(' '));
+const englishStop = new Set('a an the does do did is are was were has have had what which who when where how why quran koran allah god say says describe describes tell tells teach teaches command commands instruct instructs forbid forbids forbidden prohibited permitted permissible lawful warn warns require requires state states mention mentions one another people believers of to for and or in on at as by with from that this it its be before after while until not no never please kindly check verify'.split(' '));
 export function englishWords(text: string): string[] {
   // Derived search tokens only; publisher strings and original negation remain intact.
   // Latin transliteration macrons (e.g. ā) are folded in the derived index only.

@@ -136,3 +136,12 @@ test('published English formal synonyms retain original subject over generic qua
   expect(result.verses.filter(verse=>['2:173','5:3','6:145','16:115'].includes(verse.id)).length).toBe(4);
   expect(retrieveWithPublishedEnglishAid(corpus,'Does the Quran discuss gambling under ordinary conditions?',8,['water','conditions']).verses.some(verse=>verse.id==='5:90')).toBe(true);
 });
+
+test('polite question wrappers do not displace the substantive source evidence', () => {
+  const corpus=loadCorpus();const before=sha256(JSON.stringify(corpus.verses));
+  const cases=[['The Quran explicitly permits riba.','2:275',['الربا','riba']],['Does the Quran forbid pork under ordinary conditions?','2:173',['pork','خنزير']],['Does the Quran mention Ramadan?','2:185',['Ramadan','رمضان']]] as const;
+  for(const [claim,locator,hints] of cases)for(const prefix of ['Please check: ','Kindly verify: ']){
+    expect(retrieveWithPublishedEnglishAid(corpus,prefix+claim,8,hints).verses.some(v=>v.id===locator)).toBe(true);
+  }
+  expect(sha256(JSON.stringify(corpus.verses))).toBe(before);
+});

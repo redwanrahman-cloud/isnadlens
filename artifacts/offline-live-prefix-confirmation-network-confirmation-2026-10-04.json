@@ -1,0 +1,95 @@
+{
+  "kind": "real_model_probe_of_offline_discovered_retrieval_gap",
+  "application_tree_sha256": "1f182a2007a42892f766cd0afbbbae2c47c7d4f7b0fb480318ebefc69be5a8a1",
+  "id": "B19",
+  "claim": "Please check:  Does the Quran permit riba?",
+  "http_status": 200,
+  "verdict": "conflicting_within_selected_corpus",
+  "expected": "conflicting_within_selected_corpus",
+  "original_preserved": true,
+  "seal_valid": true,
+  "evidence_integrity": true,
+  "evidence": [
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "16:84",
+      "quotation_sha256": "697ddf5866105a8f5bba67f6ecc3f875bb6b286e8d965071ff3a90d5cfc02564",
+      "relation": "unrelated"
+    },
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "18:1",
+      "quotation_sha256": "1dd17ae6125c6b045bf504fb5f9c3766e3608fe3b60d7d5317167e71ca890171",
+      "relation": "unrelated"
+    },
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "30:57",
+      "quotation_sha256": "7ec65bf9c57316ab1ba1c86070e4bc9c5ba1e72cb7352d1ebb09d5f9313924e3",
+      "relation": "unrelated"
+    },
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "41:24",
+      "quotation_sha256": "7ebcafd78e8ff9e638673ed98c435972f30aaaf3471f75c9d9877ba54ee615f3",
+      "relation": "unrelated"
+    },
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "57:14",
+      "quotation_sha256": "1d76c0b04dba2a08dca20c589efc15fdf826ab6df1cfd7bc166520fec486dd10",
+      "relation": "unrelated"
+    },
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "77:36",
+      "quotation_sha256": "4c322e721d90c21236c25d1f446f3e5fc8344cb427a90536a590bb795d5076fc",
+      "relation": "unrelated"
+    },
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "2:275",
+      "quotation_sha256": "e3daaaad119e8d53c1fb0161d6e9b0c79ca5cf7ef14475803fd59b13009eddde",
+      "relation": "contradicts"
+    },
+    {
+      "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+      "locator": "2:276",
+      "quotation_sha256": "4c26bd836f4dacc6d7e4304eebd15326f3e412019b56912c86f5ad0ecdec4fdc",
+      "relation": "unrelated"
+    }
+  ],
+  "summary": "Conclusion: No, the selected corpus directly contradicts this claim; the displayed Quran passage at 2:275 states that Allah forbade riba rather than permitting it. The nearby supplied passage at 2:276 also reinforces the negative treatment of riba.",
+  "reason_codes": [
+    "DIRECT_MATERIAL_CONTRADICTION"
+  ],
+  "prompt_version": "claim-assessment-v2.3-qualified-exception-conjunctions",
+  "router_version": "reference-or-conflict-plus-positive-review-and-supplied-context-v4",
+  "model": "gpt-5.4-2026-03-05",
+  "usage": [
+    {
+      "input_tokens": 623,
+      "output_tokens": 77,
+      "estimated_cost_usd": 0.00081375,
+      "reservation_id": "21ec6ccb-600b-4328-bf62-4212391915b6"
+    },
+    {
+      "input_tokens": 6082,
+      "output_tokens": 454,
+      "estimated_cost_usd": 0.0066045,
+      "reservation_id": "ab65bf7f-2b97-4e29-bb84-b7be3b954009"
+    },
+    {
+      "input_tokens": 6082,
+      "output_tokens": 394,
+      "estimated_cost_usd": 0.021115,
+      "reservation_id": "b2c01738-128d-4dd9-a3f3-b922fa1bab62"
+    },
+    {
+      "input_tokens": 6082,
+      "output_tokens": 394,
+      "estimated_cost_usd": 0.021115,
+      "reservation_id": "b2c01738-128d-4dd9-a3f3-b922fa1bab62"
+    }
+  ]
+}
