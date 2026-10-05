@@ -1,4 +1,5 @@
-export type SavedLocation={id:string;name:string;latitude:number;longitude:number};
+import {PRAYER_METHODS} from './daily-tools';
+export type SavedLocation={id:string;name:string;latitude:number;longitude:number;timezone?:string;method?:number;school?:number};
 export const LOCATION_PRESETS=[
   {id:'makkah',name:'Makkah · مكة',latitude:21.4225,longitude:39.8262,timezone:'Asia/Riyadh',method:4},
   {id:'madinah',name:'Madinah · المدينة',latitude:24.4672,longitude:39.6111,timezone:'Asia/Riyadh',method:4},
@@ -35,7 +36,11 @@ export function restoreLocations(serialized:string):SavedLocation[]|null{
     const seen=new Set<string>();const locations:SavedLocation[]=[];
     for(const location of data.locations){
       if(!location||typeof location.id!=='string'||!location.id||location.id.length>64||seen.has(location.id)||typeof location.name!=='string'||!location.name.trim()||location.name.length>60||!validCoordinates(location.latitude,location.longitude))return null;
-      seen.add(location.id);locations.push({id:location.id,name:location.name.trim(),latitude:location.latitude,longitude:location.longitude});
+      const profile:Pick<SavedLocation,'timezone'|'method'|'school'>={};
+      if(location.timezone!==undefined){if(typeof location.timezone!=='string'||location.timezone.length>80)return null;try{new Intl.DateTimeFormat('en',{timeZone:location.timezone});}catch{return null;}profile.timezone=location.timezone;}
+      if(location.method!==undefined){if(!PRAYER_METHODS.some(m=>m.id===location.method))return null;profile.method=location.method;}
+      if(location.school!==undefined){if(![0,1].includes(location.school))return null;profile.school=location.school;}
+      seen.add(location.id);locations.push({id:location.id,name:location.name.trim(),latitude:location.latitude,longitude:location.longitude,...profile});
     }
     return locations;
   }catch{return null;}

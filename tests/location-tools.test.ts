@@ -1,5 +1,13 @@
 import {expect,it} from 'vitest';
 import {qiblaBearing,restoreLocations,LOCATION_PRESETS} from '../src/lib/location-tools';
+it('restores a saved prayer profile and rejects invalid calculation settings',()=>{
+  const location={id:'london-home',name:'London home',latitude:51.5074,longitude:-.1278,timezone:'Europe/London',method:3,school:1};
+  const restore=(value:unknown)=>restoreLocations(JSON.stringify({version:1,locations:[value]}));
+  expect(restore(location)).toEqual([location]);
+  expect(restore({...location,timezone:'Not/AZone'})).toBeNull();
+  expect(restore({...location,method:999})).toBeNull();
+  expect(restore({...location,school:2})).toBeNull();
+});
 it('matches the public AlAdhan London bearing and keeps every preset in range',()=>{
   const london=qiblaBearing(51.5074,-.1278);expect(london.status).toBe('ready');if(london.status==='ready')expect(london.degrees).toBeCloseTo(118.98724251452296,3);
   for(const location of LOCATION_PRESETS){const result=qiblaBearing(location.latitude,location.longitude);if(result.status==='ready'){expect(result.degrees).toBeGreaterThanOrEqual(0);expect(result.degrees).toBeLessThan(360);expect(result.distanceKm).toBeGreaterThan(0);}}

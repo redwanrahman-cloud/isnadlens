@@ -23,7 +23,7 @@ const automaticCopy:Record<ClaimLanguage,[string,string]>={
  fr:['Parlez, puis arrêtez. Vos mots apparaîtront dans la question pour être relus avant l’examen des preuves.','45 secondes maximum. À l’arrêt, l’enregistrement est envoyé à Google ; son service gratuit peut utiliser le son pour améliorer ses produits.'],
  de:['Sprechen, dann stoppen. Ihre Worte erscheinen im Fragefeld zur Bearbeitung vor der Belegprüfung.','Bis zu 45 Sekunden. Beim Stoppen wird die Aufnahme zur Transkription an Google gesendet; der kostenlose Dienst kann Audio zur Produktverbesserung verwenden.']
 };
-export type VoiceInputHandle={start:()=>void};
+export type VoiceInputHandle={start:()=>void;cancel:()=>void};
 export const VoiceInput=forwardRef<VoiceInputHandle,{language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>void;onCancel:()=>void}>(function VoiceInput({language,inputLanguage,disabled,onText,onCancel}:{language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>void;onCancel:()=>void},ref){
  const t=words[language],autoCopy=automaticCopy[language];const [ready,setReady]=useState<boolean|null>(null);const [recording,setRecording]=useState(false);const [blob,setBlob]=useState<Blob|null>(null);const [busy,setBusy]=useState(false);const [error,setError]=useState('');const [seconds,setSeconds]=useState(0);const [levels,setLevels]=useState<number[]>(Array(42).fill(3));
  const meter=useRef<AudioContext|null>(null);const animation=useRef(0);const startedAt=useRef(0);const elapsedTimer=useRef<ReturnType<typeof setInterval>|null>(null);
@@ -56,7 +56,7 @@ export const VoiceInput=forwardRef<VoiceInputHandle,{language:ClaimLanguage;inpu
   try{const response=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':audio.type,'x-claim-language':inputLanguage},body:audio,signal:c.signal});const data=await response.json();if(!response.ok||typeof data.transcript!=='string'||!data.transcript.trim()||data.transcript.length>1200)throw new Error('failed');if(epoch===generation.current)onText(data.transcript);}
   catch{if(!c.signal.aborted&&epoch===generation.current)setError(t[8]);}finally{if(epoch===generation.current)setBusy(false);}
  }
- useImperativeHandle(ref,()=>({start:()=>void start()}));
+ useImperativeHandle(ref,()=>({start:()=>void start(),cancel:discard}));
  return <section className={`voice-capture voice-composer ${recording?'is-recording':''} ${busy?'is-transcribing':''}`} aria-label={t[0]}>
   <div className="voice-caption"><span role="status">{busy?t[9]:recording?t[11]:t[0]}</span><span className="voice-timer" dir="ltr">0:{String(seconds).padStart(2,'0')}</span></div>
   {ready===false?<p role="status">{t[12]}</p>:<div className="voice-bar"><button type="button" className="voice-cancel" aria-label={t[5]} title={t[5]} onClick={()=>{discard();onCancel();}}>×</button><div className="voice-wave" aria-hidden="true">{levels.map((height,index)=><i key={index} style={{height:height+'px'}}/>)}</div><button type="button" className="voice-finish" disabled={disabled||busy||(!recording&&ready===null)} aria-label={recording?t[2]:t[1]} title={recording?t[2]:t[1]} onClick={()=>recording?recorder.current?.stop():void start()}>{recording?<span className="finish-square"/>:<WorkspaceIcon name="voice"/>}</button></div>}

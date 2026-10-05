@@ -5,11 +5,11 @@ import {workspaceCopy} from '@/lib/workspace-copy';
 import {WorkspaceIcon} from './WorkspaceIcon';
 type ShareRecord={record_id:string;original_claim:string;created_at:string;evidence_items:{locator:string;source_url:string}[]};
 export function ShareCard({record,summary,verdict,language}:{record:ShareRecord;summary:string;verdict:string;language:DisplayLanguage}){
- const t=workspaceCopy(language);const dialog=useRef<HTMLDialogElement>(null);const canvas=useRef<HTMLCanvasElement>(null);const [open,setOpen]=useState(false);const [copied,setCopied]=useState('');const [preview,setPreview]=useState('');
+ const trigger=useRef<HTMLButtonElement>(null);const t=workspaceCopy(language);const dialog=useRef<HTMLDialogElement>(null);const canvas=useRef<HTMLCanvasElement>(null);const [open,setOpen]=useState(false);const [copied,setCopied]=useState('');const [preview,setPreview]=useState('');
  const excerpt=summary.length>650?summary.slice(0,650)+'…':summary;
  const references=record.evidence_items.slice(0,5).map(e=>`${e.locator} · ${e.source_url}`).join('\n');
  const text=`IsnadLens · ${t.excerpt}\n${verdict}\n\n${record.original_claim}\n\n${excerpt}\n\n${references}\n\n${t.excerptNote}\n${record.record_id} · ${record.created_at}`;
- useEffect(()=>{if(!open)return;const modal=dialog.current;modal?.showModal();return()=>{modal?.close();};},[open]);
+ useEffect(()=>{if(!open)return;const modal=dialog.current;modal?.showModal();return()=>{modal?.close();queueMicrotask(()=>trigger.current?.focus());};},[open]);
  useEffect(()=>{
   if(!open||!canvas.current)return;const c=canvas.current,ctx=c.getContext('2d');if(!ctx)return;
   const rtl=language==='ar'||language==='ur';const pad=64,width=1080;ctx.font='28px Tahoma, Arial, sans-serif';
@@ -22,5 +22,5 @@ export function ShareCard({record,summary,verdict,language}:{record:ShareRecord;
  },[open,summary,verdict,language,record,t.excerptNote]);
  function download(){if(!preview)return;const a=document.createElement('a');a.href=preview;a.download=`isnadlens-${record.record_id.replace(/[^a-z0-9-]/gi,'').slice(0,60)}.png`;a.click();}
  async function copy(){try{await navigator.clipboard.writeText(text);setCopied(t.copied);}catch{setCopied(t.copyFailed);}}
- return <><button className="share-button" type="button" onClick={()=>{setCopied('');setOpen(true);}}><WorkspaceIcon name="share"/>{t.share}</button>{open&&<dialog ref={dialog} className="share-dialog" aria-labelledby="share-title" onCancel={()=>setOpen(false)} onClick={event=>{if(event.target===event.currentTarget)setOpen(false);}}><div className="dialog-heading"><h2 id="share-title">{t.excerpt}</h2><button type="button" onClick={()=>setOpen(false)}>{t.close}</button></div><p>{t.excerptNote}</p><canvas ref={canvas} hidden/>{preview&&<img src={preview} alt={text}/>}<div className="report-actions"><button type="button" disabled={!preview} onClick={download}>{t.png}</button><button type="button" onClick={()=>void copy()}>{t.copy}</button></div>{copied&&<p role="status">{copied}</p>}<details><summary>{t.text}</summary><textarea readOnly value={text} rows={8}/></details></dialog>}</>;
+ return <><button ref={trigger} className="share-button" type="button" onClick={()=>{setCopied('');setOpen(true);}}><WorkspaceIcon name="share"/>{t.share}</button>{open&&<dialog ref={dialog} className="share-dialog" aria-labelledby="share-title" onCancel={()=>setOpen(false)} onClick={event=>{if(event.target===event.currentTarget)setOpen(false);}}><div className="dialog-heading"><h2 id="share-title">{t.excerpt}</h2><button type="button" onClick={()=>setOpen(false)}>{t.close}</button></div><p>{t.excerptNote}</p><canvas ref={canvas} hidden/>{preview&&<img src={preview} alt={text}/>}<div className="report-actions"><button type="button" disabled={!preview} onClick={download}>{t.png}</button><button type="button" onClick={()=>void copy()}>{t.copy}</button></div>{copied&&<p role="status">{copied}</p>}<details><summary>{t.text}</summary><textarea readOnly value={text} rows={8}/></details></dialog>}</>;
 }
