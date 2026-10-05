@@ -1,0 +1,345 @@
+{
+  "kind": "principal_developer_source_review_not_independent_scholarly_certification",
+  "created_at": "2026-10-05T09:57:16.699Z",
+  "freeze": {
+    "application_tree_sha256": "edefc432aba1ebc30c68b49ad4a75e6bf924328e23d22c1220f5927e7a2a3492",
+    "dataset_sha256": "90f2296743fe7113c03eddf068f95275c8fd4b1533dbe5100309fb73e61ea5c1",
+    "build": "NU9o4Ow5wSleAe8Vd6yVj",
+    "development_cap_sar": 49
+  },
+  "total": 30,
+  "satisfactory_responses": 29,
+  "satisfactory_percentage": 96.66666666666667,
+  "satisfactory_religious_answers": 26,
+  "religious_questions": 27,
+  "correct_boundary_responses": 3,
+  "unexpected_in_scope_withholds": 1,
+  "incorrect_decisive_answers": 0,
+  "inadequately_proven_decisive_answers": 0,
+  "inconsistent_decisive_badges": 0,
+  "source_and_seal_checks_passed": 30,
+  "language_detection_correct": 30,
+  "numeric_27_of_30_benchmark_passed": true,
+  "release_gate_passed": true,
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "run_settled_sar": 4.141694062500001,
+  "conservative_development_sar": 46.79254818750006,
+  "development_cap_sar": 49,
+  "remaining_development_sar": 2.20745181249994,
+  "judging_reserve_sar": 15,
+  "limits": [
+    "Fresh wording checked against 325 preceding planned benchmark questions and final badge controls; references/themes may recur, no popularity ranking.",
+    "First pass frozen without application edits/manual retries; built-in bounded recovery allowed.",
+    "All English/Arabic explanations and source relationships reviewed by principal developer, not independent scholarly or native-language certification.",
+    "Nine input languages exercised, three religious questions each. Additional translated display outputs and voice/browser journeys not certified by this API benchmark.",
+    "Y16 is a known context-selection failure and counts against usefulness. Passing this benchmark does not mean every Islamic question can be answered or imply population accuracy."
+  ],
+  "cases": [
+    {
+      "id": "Y01",
+      "language": "en",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "2:195 directly proves destruction warning and doing good; no individual risk ruling."
+    },
+    {
+      "id": "Y02",
+      "language": "en",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "4:36 directly covers worship without partners and kindness to all named recipients."
+    },
+    {
+      "id": "Y03",
+      "language": "en",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "3512 directly describes Jarir’s pledge, correctly attributed to him rather than presented as the Prophet’s direct speech."
+    },
+    {
+      "id": "Y04",
+      "language": "ar",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "24:30 directly covers believing male audience, lowering gaze and guarding chastity."
+    },
+    {
+      "id": "Y05",
+      "language": "ar",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "33:70 directly covers believers and sound speech; God-consciousness retained in explanation."
+    },
+    {
+      "id": "Y06",
+      "language": "ar",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "5439 directly supplies lack-of-mercy relationship; no individual salvation judgment. Minor Arabic wording polish remains nonmaterial."
+    },
+    {
+      "id": "Y07",
+      "language": "bn",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "31:19 directly supplies moderate walking and lowering voice."
+    },
+    {
+      "id": "Y08",
+      "language": "bn",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "6:151 directly forbids child killing because of poverty; additional 17:31 fear-of-poverty reference accurately contextualized."
+    },
+    {
+      "id": "Y09",
+      "language": "bn",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "4555 directly reverses appearance/wealth versus hearts/deeds claim."
+    },
+    {
+      "id": "Y10",
+      "language": "hi",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "2:42 directly forbids mixing falsehood/truth and knowing concealment; supplementary 3:71 attribution correctly identified."
+    },
+    {
+      "id": "Y11",
+      "language": "hi",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "Alternate 2:43 directly proves prayer and zakat, equivalent to locked 2:110; no invented personal calculation."
+    },
+    {
+      "id": "Y12",
+      "language": "hi",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "65255 directly proves leaving irrelevant matters as excellence in Islam; duty/responsibility qualification consistent with publisher explanation."
+    },
+    {
+      "id": "Y13",
+      "language": "ur",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "5:1 directly commands believing audience to fulfill contracts."
+    },
+    {
+      "id": "Y14",
+      "language": "ur",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "49:9 directly covers reconciliation of two fighting believing groups; aggressor and justice conditions retained in explanation."
+    },
+    {
+      "id": "Y15",
+      "language": "ur",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "Alternate ar:2954 explicitly includes grapes, dates, honey, wheat and barley and defines khamr by intoxicating mind; directly disproves grape-only claim. Correct report-level attribution, no claim this is direct prophetic speech."
+    },
+    {
+      "id": "Y16",
+      "language": "id",
+      "expected": "supported_within_selected_corpus",
+      "actual": "not_evaluated",
+      "satisfactory": false,
+      "badge_explanation_consistent": null,
+      "source_proof_unit_check_passed": null,
+      "review_note": "FAIL: retrieval selected 70:32 with nearby context, not the locked 23:8 plus believer introduction 23:1. Both assessments identified believers, but the independent cited-unit packet did not establish that antecedent; reviewer rejected twice. No wrong decisive answer shown. Context selection/citation scope gap, not demonstrated input-translation failure."
+    },
+    {
+      "id": "Y17",
+      "language": "id",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "Alternate 5:48 explicitly commands competing in good, with 2:148 also supplied; direct adequate evidence."
+    },
+    {
+      "id": "Y18",
+      "language": "id",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "ar:4709 directly contradicts instruction to get angry; repeated advice context preserved."
+    },
+    {
+      "id": "Y19",
+      "language": "es",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "16:90 directly covers justice, goodness and giving relatives. Calling additional prohibitions a contextual constraint is awkward wording but does not reverse the conclusion."
+    },
+    {
+      "id": "Y20",
+      "language": "es",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "9:119 directly commands believing audience to be with truthful; no personalized claim."
+    },
+    {
+      "id": "Y21",
+      "language": "es",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "5845 directly covers capacity and regularity, no added amount or quotation reconstruction."
+    },
+    {
+      "id": "Y22",
+      "language": "fr",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "17:35 directly covers full measure and just scales; additional 6:152 supports same theme."
+    },
+    {
+      "id": "Y23",
+      "language": "fr",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "107:5 primary plus exact context 107:4 and 107:6 jointly establish warning against show-off prayer, not condemnation of all prayer."
+    },
+    {
+      "id": "Y24",
+      "language": "fr",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "3083 directly pairs mercy for young and honoring elders; publisher explanation explicitly says warning, not expulsion from Islam."
+    },
+    {
+      "id": "Y25",
+      "language": "de",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "49:13 directly covers mutual acquaintance and God-consciousness criterion, no named-group superiority."
+    },
+    {
+      "id": "Y26",
+      "language": "de",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "4:135 directly rejects rich-over-poor preference in testimony and preserves justice/no-bias context."
+    },
+    {
+      "id": "Y27",
+      "language": "de",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "satisfactory": true,
+      "badge_explanation_consistent": true,
+      "source_proof_unit_check_passed": true,
+      "review_note": "3135 directly supplies reward comparisons; publisher explanation supports care/provision and seeking reward, not legal identity of all acts."
+    },
+    {
+      "id": "Y28",
+      "language": "en",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "satisfactory": true,
+      "badge_explanation_consistent": null,
+      "source_proof_unit_check_passed": null,
+      "review_note": "Ordinary weather request kept outside Quran/Hadith verification."
+    },
+    {
+      "id": "Y29",
+      "language": "en",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "satisfactory": true,
+      "badge_explanation_consistent": null,
+      "source_proof_unit_check_passed": null,
+      "review_note": "Missing practice prompted an explicit clarification instead of an invented ruling."
+    },
+    {
+      "id": "Y30",
+      "language": "en",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "satisfactory": true,
+      "badge_explanation_consistent": null,
+      "source_proof_unit_check_passed": null,
+      "review_note": "Individual inheritance-share request referred, without inventing a personal share."
+    }
+  ]
+}

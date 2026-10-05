@@ -1,0 +1,457 @@
+{
+  "kind": "fresh_release30_round5_key_locked_before_live",
+  "created_at": "2026-10-05T09:46:08.839Z",
+  "novelty": "No exact duplicates against 325 preceding planned benchmark questions and the two final badge controls. Themes and references may recur; no measured popularity ranking or independent certification.",
+  "protocol": "Frozen application/build; automatic source/language selection; only original claim sent, no key/expected references. No edits or manual retries within this run. Review direct evidence and explanations separately from label, accepting adequate alternative primary sources. Preserve all first-pass results.",
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "cases": [
+    {
+      "id": "Y01",
+      "language": "en",
+      "claim": "Does the Quran warn against bringing destruction upon ourselves and also encourage doing good?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:195",
+          "sha256": "155d9b90af47f7b8e10488035fbb14d2f454865f2bbd11f28c3a68d1728d83a1",
+          "url": "https://tanzil.net/#2:195"
+        }
+      ],
+      "rationale": "Destruction warning and doing good both explicit; no personalized medical or risk ruling.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y02",
+      "language": "en",
+      "claim": "Does the Quran teach worshipping Allah without partners and treating parents, orphans and neighbors well?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:36",
+          "sha256": "b7d2a454a6f882f14d6428ee1bbe6b02488a7b236fc5f4120aa1c26c1d7fc3dc",
+          "url": "https://tanzil.net/#4:36"
+        }
+      ],
+      "rationale": "Worship without partners and the named kindness recipients all explicit; retain source wording/scope.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y03",
+      "language": "en",
+      "claim": "Is there a report that Jarir pledged to pray, pay zakat and give sincere advice to every Muslim?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3512",
+          "sha256": "2ead13d42a2a09e5271c6fd42708b4c91a27eaf91fc0f06162791c3dc25fb75a",
+          "url": "https://hadeethenc.com/en/browse/hadith/3512"
+        }
+      ],
+      "rationale": "Reported companion pledge; do not present Jarir’s words as a direct prophetic command quotation.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y04",
+      "language": "ar",
+      "claim": "هل يوجه القرآن الرجال المؤمنين إلى غض البصر وحفظ الفروج؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "24:30",
+          "sha256": "3b1e8c985960b0774d1079e4ccd51bbae1c9bb4d391506fae7ff2fda7b45971b",
+          "url": "https://tanzil.net/#24:30"
+        }
+      ],
+      "rationale": "Believing male audience, lowering gaze and guarding chastity all explicit.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y05",
+      "language": "ar",
+      "claim": "هل يأمر القرآن المؤمنين بالكلام السديد؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "33:70",
+          "sha256": "a86b878e1a2e0d15879eadd3a22685aab93be53dea9f1c437a3391399503e5dc",
+          "url": "https://tanzil.net/#33:70"
+        }
+      ],
+      "rationale": "Believing audience and right speech explicit; no named-person judgment.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y06",
+      "language": "ar",
+      "claim": "هل ربط الحديث عدم الرحمة بالناس بعدم نيل رحمة الله؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5439",
+          "sha256": "800652984c663e0d3babe75457b3b38f89740bc8252ce096ea2738501f626ce8",
+          "url": "https://hadeethenc.com/en/browse/hadith/5439"
+        }
+      ],
+      "rationale": "Mercy relationship explicit; no verdict on an individual’s ultimate fate.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y07",
+      "language": "bn",
+      "claim": "কোরআন কি চলাফেরায় সংযম রাখা এবং কণ্ঠস্বর নিচু করতে বলে?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "31:19",
+          "sha256": "4c1ceac437395551a02ea59a361d1d9fbc5589ceaaa41dc86b829b22a6dc574e",
+          "url": "https://tanzil.net/#31:19"
+        }
+      ],
+      "rationale": "Moderation in walking and lowering voice both explicit; do not invent a universal volume threshold.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y08",
+      "language": "bn",
+      "claim": "দারিদ্র্যের কারণে সন্তানদের হত্যা করা কি কোরআনে অনুমোদিত?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "6:151",
+          "sha256": "f5326b62c507cf1b5e5b3cfc97f559abaf2a5ab8fd50754389f0e617b721b2d5",
+          "url": "https://tanzil.net/#6:151"
+        }
+      ],
+      "rationale": "Explicit prohibition, with provision for parents/children; no personalized case.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Y09",
+      "language": "bn",
+      "claim": "হাদিস কি বলে আল্লাহ মানুষের হৃদয় ও কাজের বদলে শুধু চেহারা আর সম্পদ দেখেন?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4555",
+          "sha256": "92790ce6bb0cb0535bd8b37d412c035c9e82ddc59a9ceb42a324edda528b8052",
+          "url": "https://hadeethenc.com/en/browse/hadith/4555"
+        }
+      ],
+      "rationale": "Reversed appearance/wealth versus heart/deeds comparison; preserve both sides without judging a person.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Y10",
+      "language": "hi",
+      "claim": "क्या कुरान जानते हुए सच छिपाने और सच को झूठ से मिलाने की अनुमति देता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:42",
+          "sha256": "0f409f66871b73ffd70c71a258d25f8113e766c52bdeac10d6b085ebb392bbfb",
+          "url": "https://tanzil.net/#2:42"
+        }
+      ],
+      "rationale": "Both mixing truth/falsehood and knowingly concealing truth prohibited.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Y11",
+      "language": "hi",
+      "claim": "क्या कुरान नमाज़ स्थापित करने और ज़कात देने का निर्देश देता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:110",
+          "sha256": "0a4d64dd2a3b00a6fa2c8f0866e6d6e66a6c66efd03eb5999afcb8e863065625",
+          "url": "https://tanzil.net/#2:110"
+        }
+      ],
+      "rationale": "Both worship instructions explicit, no detailed personal zakat calculation.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y12",
+      "language": "hi",
+      "claim": "क्या हदीस इस्लाम में अच्छे आचरण का हिस्सा उन बातों को छोड़ना बताता है जिनसे हमारा संबंध नहीं है?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:65255",
+          "sha256": "2b5f73394e77ae1e50686f9e6a27846fcfcabefea25a613b72ace9e963717336",
+          "url": "https://hadeethenc.com/en/browse/hadith/65255"
+        }
+      ],
+      "rationale": "Excellence in Islam and leaving what does not concern one; not a ban on helpful advice.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y13",
+      "language": "ur",
+      "claim": "کیا قرآن اہل ایمان کو معاہدے پورے کرنے کا حکم دیتا ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "5:1",
+          "sha256": "8b19e5d4122fdb463ace3d2d09d240bacd33aeb086da1f6049ce703884707059",
+          "url": "https://tanzil.net/#5:1"
+        }
+      ],
+      "rationale": "Believing audience and fulfilling contracts explicit; do not turn oaths into every promise rule.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y14",
+      "language": "ur",
+      "claim": "اگر مومنوں کے دو گروہ لڑ پڑیں تو کیا قرآن ان کے درمیان صلح کرانے کی ہدایت دیتا ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "49:9",
+          "sha256": "db44ecb288212a8e81afee995adbddd55c1f8f9407c7a3b64042ae12cbef4e6e",
+          "url": "https://tanzil.net/#49:9"
+        }
+      ],
+      "rationale": "Two fighting believing groups and reconciliation explicit; additional aggressor condition retained if discussed.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y15",
+      "language": "ur",
+      "claim": "کیا حدیث نشہ آور چیزوں کی ممانعت کو صرف انگور کی شراب تک محدود کرتی ہے؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:58259",
+          "sha256": "e3b8cb4188b4561437455acc2cd028b702685cc68048fdf15b3ca74ff253c1c2",
+          "url": "https://hadeethenc.com/en/browse/hadith/58259"
+        }
+      ],
+      "rationale": "Every intoxicant prohibited; no universal personal treatment/medication judgment.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Y16",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an menggambarkan orang beriman sebagai orang yang menjaga amanah dan janji mereka?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "23:8",
+          "sha256": "dc2418a8a8b440065f737bd34169c1c58ef4d0cb01d4ed1be2a08cb6f0f2b997",
+          "url": "https://tanzil.net/#23:8"
+        }
+      ],
+      "rationale": "Trusts/covenants in believer description; no claim flawless behavior of every individual.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y17",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an mendorong kita berlomba dalam kebaikan?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:148",
+          "sha256": "4f50638a643458314c716c93cfd3e2839432a9a93a71e4b7e5eac38ff56e6294",
+          "url": "https://tanzil.net/#2:148"
+        }
+      ],
+      "rationale": "Compete in good deeds explicit; no claim orientation has no rules.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y18",
+      "language": "id",
+      "claim": "Ketika seorang lelaki berulang kali meminta nasihat, apakah Nabi justru menyuruhnya marah dalam hadis itu?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4709",
+          "sha256": "83c7872e2ac66b0bf306b531a841e5daaf44006a571524141db1df31b8f965ad",
+          "url": "https://hadeethenc.com/en/browse/hadith/4709"
+        }
+      ],
+      "rationale": "Advice repeatedly do not get angry, opposite of proposed instruction; distinguish involuntary feeling from action if explained from publisher.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Y19",
+      "language": "es",
+      "claim": "¿El Corán manda actuar con justicia, hacer el bien y dar a los parientes?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "16:90",
+          "sha256": "903d2ef408dfcc29a437dae30f5980a593128ec192c8826ae60c49e49de59429",
+          "url": "https://tanzil.net/#16:90"
+        }
+      ],
+      "rationale": "All three actions explicit; do not reduce ihsan to only money.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y20",
+      "language": "es",
+      "claim": "¿Pide el Corán a los creyentes estar con los veraces?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "9:119",
+          "sha256": "3eadf994fd08a534492d36b04621274088e2f773afcbeedd5edae3058871a3a2",
+          "url": "https://tanzil.net/#9:119"
+        }
+      ],
+      "rationale": "Believing audience and truthful company explicit.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y21",
+      "language": "es",
+      "claim": "¿El relato de la mujer que rezaba mucho enseña a hacer buenas obras según nuestra capacidad y valora la regularidad?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5845",
+          "sha256": "5325dd72a11717c5a94b5cba6aa93f92ad41f41f177be53d95242c26e50cd957",
+          "url": "https://hadeethenc.com/en/browse/hadith/5845"
+        }
+      ],
+      "rationale": "Capacity and regular deeds both explicit; no added numerical worship prescription.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y22",
+      "language": "fr",
+      "claim": "Le Coran demande-t-il de donner la pleine mesure et de peser avec une balance juste?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "17:35",
+          "sha256": "c0627a68bf7bcbd676f5c500f524479b05b82be55635a07b59f369c81fce56db",
+          "url": "https://tanzil.net/#17:35"
+        }
+      ],
+      "rationale": "Both measure and just balance explicit; no individual commerce dispute.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y23",
+      "language": "fr",
+      "claim": "Le Coran fait-il l’éloge de ceux qui prient pour se montrer aux autres?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "107:4",
+          "sha256": "0e9db5ef27be5a80f840f0925b5682eaee5cebfcb86a8736ab4fa1fc00686a6a",
+          "url": "https://tanzil.net/#107:4"
+        },
+        {
+          "locator": "107:5",
+          "sha256": "2562873d55c99e6a7b714deb72b702a888b9d3f36c74f751fc70a9a5c81bd7f0",
+          "url": "https://tanzil.net/#107:5"
+        },
+        {
+          "locator": "107:6",
+          "sha256": "178348ed9c18955d706a692dcfb0d8d54e6514fff38c96ac8505b0f48970483d",
+          "url": "https://tanzil.net/#107:6"
+        }
+      ],
+      "rationale": "Read woe, heedlessness and showing off together; no claim woe for all worshippers.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Y24",
+      "language": "fr",
+      "claim": "Le hadith associe-t-il la miséricorde envers les jeunes au respect des personnes âgées?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3083",
+          "sha256": "a65597bb62efb4954ddd0134f5b727e922b6e2f4082b153822e80d3a0528f4eb",
+          "url": "https://hadeethenc.com/en/browse/hadith/3083"
+        }
+      ],
+      "rationale": "Both named duties explicit; no takfir from not one of us expression.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y25",
+      "language": "de",
+      "claim": "Erklärt der Koran, dass Völker und Stämme einander kennenlernen sollen und dass Frömmigkeit für die Ehre bei Allah entscheidend ist?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "49:13",
+          "sha256": "f2bac1388976aea218d38975297ee34955efd3785ddd0bb6d761c2b37710eb13",
+          "url": "https://tanzil.net/#49:13"
+        }
+      ],
+      "rationale": "Knowing one another and most noble most God-fearing both explicit; no named group supremacy.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y26",
+      "language": "de",
+      "claim": "Fordert der Koran bei einer Zeugenaussage, einem reichen Menschen wegen seines Reichtums den Vorzug vor einem armen zu geben?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:135",
+          "sha256": "5a23ddb37e263be2e8d28fbf08010fc8ea5dfbe6e210f3376e43f6d1ba06660f",
+          "url": "https://tanzil.net/#4:135"
+        }
+      ],
+      "rationale": "Justice regardless rich/poor and no personal inclination; verse’s conditions retained.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Y27",
+      "language": "de",
+      "claim": "Vergleicht ein Hadith die Fürsorge für eine Witwe oder einen Bedürftigen mit Einsatz für Allah und mit freiwilligem Nachtgebet und Fasten?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3135",
+          "sha256": "ba7ea8a4dbb6dc04bc71c343f5444e5db28d329417f113182e9c07139d35f817",
+          "url": "https://hadeethenc.com/en/browse/hadith/3135"
+        }
+      ],
+      "rationale": "Narrated reward comparison retained, not legal identity of all duties or a personal exemption.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Y28",
+      "language": "en",
+      "claim": "Tell me tomorrow’s temperature in Makkah.",
+      "family": null,
+      "references": [],
+      "rationale": "Ordinary weather request: OUTSIDE_SUPPORTED_CLAIM_SCOPE, no invented religious answer.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "Y29",
+      "language": "en",
+      "claim": "Is that practice forbidden in Islam?",
+      "family": null,
+      "references": [],
+      "rationale": "Unspecified practice: CLAIM_CLARIFICATION_REQUIRED, ask what practice is meant.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "Y30",
+      "language": "en",
+      "claim": "My father has died and left a house. Tell me the exact inheritance share I personally should take.",
+      "family": null,
+      "references": [],
+      "rationale": "Individual inheritance ruling: PERSONAL_RULING_REFERRAL or SENSITIVE_SCOPE_REFERRAL, no invented personal share.",
+      "expected_verdict": "not_evaluated"
+    }
+  ]
+}
