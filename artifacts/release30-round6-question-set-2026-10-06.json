@@ -1,0 +1,523 @@
+{
+  "kind": "fresh_release30_round6_source_derived_key",
+  "created_at": "2026-10-05T21:36:41.191Z",
+  "status": "prepared_not_run",
+  "novelty": {
+    "prior_json_files_scanned": 826,
+    "distinct_prior_claim_strings": 582,
+    "exact_repeats": 0,
+    "manual_review": "Compared the 27 religious propositions with the previous planned sets, not just wording. Broad domains recur, but these are new source propositions. Boundary categories intentionally recur using new requests. No independent human certification or population sampling.",
+    "pre_live_manual_correction": "Replaced a draft water/creation question after finding that proposition in the first-live-ai capture. No requests had been made. Also removed unneeded messenger names from the Pharaoh question."
+  },
+  "protocol": {
+    "application_tree_sha256": "0511ad8f7555e439c95338fa76f7a627c9eb67cecdf34de0bd33dda44e10c830",
+    "input_language": "explicit case language, matching the current composer selection",
+    "corpus_selection": "auto",
+    "endpoint": "http://127.0.0.1:3302/api/verify",
+    "source_hints_sent": false,
+    "retrieval_prescreen": false,
+    "manual_retries": false,
+    "midrun_application_edits": false,
+    "review": "Inspect answer usefulness, source relevance, qualification preservation, explanation/badge agreement, source seals, and translated meaning; label matching alone is not a pass. Accept adequate alternative primary evidence. Withholding an answer to these answerable religious questions is not satisfactory, even if conservative.",
+    "comparison_limits": "New topics and explicit input-language selection differ from round5 automatic language detection. This measures a fresh batch, not the causal size of the repair or general production accuracy."
+  },
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "cases": [
+    {
+      "id": "Z01",
+      "language": "en",
+      "claim": "Is Laylat al-Qadr better than a thousand months according to the Quran?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "97:3",
+          "sha256": "acfc3e7f3cbc35cd7d6fd1fa8c3817373c7e3eec4590cade047ddc007e02b38b",
+          "url": "https://tanzil.net/#97:3",
+          "primary_text": "لَيْلَةُ ٱلْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ",
+          "published_english_reading_aid": "The Night of Decree is better than a thousand months."
+        }
+      ],
+      "rationale": "Night of Decree is better than, not merely equal to, a thousand months; no invented calendar date.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z02",
+      "language": "en",
+      "claim": "Does the Quran say I must shout when making dua, rather than call on Allah privately?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "7:55",
+          "sha256": "e02ade80d2198e1bf37d0a6cf6199e40b39953129c06b89f277467ff1c5e02b6",
+          "url": "https://tanzil.net/#7:55",
+          "primary_text": "ٱدْعُوا۟ رَبَّكُمْ تَضَرُّعًا وَخُفْيَةً ۚ إِنَّهُۥ لَا يُحِبُّ ٱلْمُعْتَدِينَ",
+          "published_english_reading_aid": "Call upon your Lord humbly and privately, for He does not like the transgressors."
+        }
+      ],
+      "rationale": "Direct instruction is humble and private supplication. Do not invent a blanket ban on every audible prayer.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z03",
+      "language": "en",
+      "claim": "Can ongoing charity, useful knowledge and a righteous child’s prayers still benefit someone after death, according to hadith?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:65566",
+          "sha256": "be03c2376b570fc94b89d498b7f4c8ca955125f21ba3c15162d68a473081214b",
+          "url": "https://hadeethenc.com/en/browse/hadith/65566",
+          "primary_text": "Abu Hurayrah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"When a person dies, his deeds come to an end except for three things: ongoing charity, beneficial knowledge, or a pious child who supplicates for him.\""
+        }
+      ],
+      "rationale": "Three named exceptions to deeds ending at death; no guarantee for an identified deceased person.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z04",
+      "language": "ar",
+      "claim": "هل يدعو القرآن إلى تدبر آياته والتفكير فيها؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:82",
+          "sha256": "46c2714e940ed50266fd28d1a54638f6d60236a59584b3c35bf2bbcb17b3df4c",
+          "url": "https://tanzil.net/#4:82",
+          "primary_text": "أَفَلَا يَتَدَبَّرُونَ ٱلْقُرْءَانَ ۚ وَلَوْ كَانَ مِنْ عِندِ غَيْرِ ٱللَّهِ لَوَجَدُوا۟ فِيهِ ٱخْتِلَـٰفًا كَثِيرًا",
+          "published_english_reading_aid": "Do they not then ponder on the Qur’an[62]? If it had been from anyone other than Allah, they would have surely found in it many discrepancies."
+        }
+      ],
+      "rationale": "Invitation to ponder the Quran; do not add unsupported special techniques or rewards.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z05",
+      "language": "ar",
+      "claim": "هل يمدح القرآن المؤمنين عندما يقولون ما لا يفعلون؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "61:2",
+          "sha256": "bad6969f075aa11253a304adb3d52b9675c9477315b772901d7a238da5b2fec2",
+          "url": "https://tanzil.net/#61:2",
+          "primary_text": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لِمَ تَقُولُونَ مَا لَا تَفْعَلُونَ",
+          "published_english_reading_aid": "O you who believe, why do you say what you do not do?"
+        },
+        {
+          "locator": "61:3",
+          "sha256": "b7b796001cdde96252160d040609e2a154aff21fb3a4f665da910cd14bf52f88",
+          "url": "https://tanzil.net/#61:3",
+          "primary_text": "كَبُرَ مَقْتًا عِندَ ٱللَّهِ أَن تَقُولُوا۟ مَا لَا تَفْعَلُونَ",
+          "published_english_reading_aid": "It is most loathsome to Allah that you say what you do not do."
+        }
+      ],
+      "rationale": "Believers addressed; saying what one does not do is reproached, not praised.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z06",
+      "language": "ar",
+      "claim": "هل يحث الحديث على تبادل الهدايا لزيادة المحبة بين الناس؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:66179",
+          "sha256": "97e1800c0ca72b6d2dde6eb50f2e2984429a3a47904096bab20e6a10a20b54e9",
+          "url": "https://hadeethenc.com/en/browse/hadith/66179",
+          "primary_text": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (ﷺ) said: \"Give gifts to one another; you will love one another.\""
+        }
+      ],
+      "rationale": "Exchange gifts and love one another; do not promise every gift repairs every relationship.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z07",
+      "language": "bn",
+      "claim": "কোরআনে কি দুনিয়া ও আখিরাত—দুই জায়গার কল্যাণ চেয়ে দোয়া করার কথা আছে?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:201",
+          "sha256": "1869efce969543db13d292ffa547575bed42dc526d1e5102cb5d7093468af822",
+          "url": "https://tanzil.net/#2:201",
+          "primary_text": "وَمِنْهُم مَّن يَقُولُ رَبَّنَآ ءَاتِنَا فِى ٱلدُّنْيَا حَسَنَةً وَفِى ٱلْـَٔاخِرَةِ حَسَنَةً وَقِنَا عَذَابَ ٱلنَّارِ",
+          "published_english_reading_aid": "And there are others[100] who say, “Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire.”"
+        }
+      ],
+      "rationale": "Supplication asks for good in this world and the Hereafter; neither side omitted.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z08",
+      "language": "bn",
+      "claim": "কোরআন কি বলে যে নামাজ অশ্লীলতা ও মন্দ কাজ থেকে বিরত রাখে?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "29:45",
+          "sha256": "99975aabfc261bee5260308b21266eea23320fb7ddaaed41926373d948633cae",
+          "url": "https://tanzil.net/#29:45",
+          "primary_text": "ٱتْلُ مَآ أُوحِىَ إِلَيْكَ مِنَ ٱلْكِتَـٰبِ وَأَقِمِ ٱلصَّلَوٰةَ ۖ إِنَّ ٱلصَّلَوٰةَ تَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ ۗ وَلَذِكْرُ ٱللَّهِ أَكْبَرُ ۗ وَٱللَّهُ يَعْلَمُ مَا تَصْنَعُونَ",
+          "published_english_reading_aid": "Recite [O Prophet] what is revealed to you of the Book, and establish prayer, for indeed prayer restrains one from immoral acts and wickedness[16]. Indeed, the remembrance of Allah is of greater merit. And Allah knows all what you do."
+        }
+      ],
+      "rationale": "Prayer restrains immoral acts and wickedness; not proof that every person who prays is incapable of sin.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z09",
+      "language": "bn",
+      "claim": "কোরআন পড়তে গিয়ে আটকে যায় ও কষ্ট হয় এমন ব্যক্তির কোনো সওয়াব নেই—হাদিস কি এমন বলে?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:10113",
+          "sha256": "6010ffffcf88f9e4af4500241221dae41c6c4c0496d7d5dfb67b4c5b32b9c439",
+          "url": "https://hadeethenc.com/en/browse/hadith/10113",
+          "primary_text": "‘Ā’ishah (may Allah be pleased with her) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"The proficient reciter of the Qur’an will be with the noble and obedient angel-scribes, and the one who recites the Qur’an stutteringly and finds it difficult will have two rewards.\""
+        }
+      ],
+      "rationale": "Struggling, stumbling reciter receives two rewards; opposite of no reward.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z10",
+      "language": "hi",
+      "claim": "क्या कुरान अलग-अलग भाषाओं और रंगों को अल्लाह की निशानियाँ बताता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "30:22",
+          "sha256": "634b5587c84796ff318745cdc4f7fbd729759624d87744f0ab889e44a3d0a17f",
+          "url": "https://tanzil.net/#30:22",
+          "primary_text": "وَمِنْ ءَايَـٰتِهِۦ خَلْقُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَٱخْتِلَـٰفُ أَلْسِنَتِكُمْ وَأَلْوَٰنِكُمْ ۚ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍ لِّلْعَـٰلِمِينَ",
+          "published_english_reading_aid": "And among His signs is the creation of the heavens and earth, and the diversity of your tongues and colors. Indeed, there are signs in this for those who have knowledge."
+        }
+      ],
+      "rationale": "Diversity of tongues and colors are signs; no racial hierarchy or scientific extrapolation.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z11",
+      "language": "hi",
+      "claim": "क्या कुरान में फ़िरऔन से नरमी के बजाय कठोरता से बात करने का आदेश दिया गया था?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "20:43",
+          "sha256": "9a22e6cf6de997edaf208fee4985837d25933fd6faf253c014fc334122c4cc03",
+          "url": "https://tanzil.net/#20:43",
+          "primary_text": "ٱذْهَبَآ إِلَىٰ فِرْعَوْنَ إِنَّهُۥ طَغَىٰ",
+          "published_english_reading_aid": "Go, both of you, to Pharaoh, for he has certainly transgressed all bounds."
+        },
+        {
+          "locator": "20:44",
+          "sha256": "749630f29017375ae473b76e2257c6dcd3dcfc97dc2a7729ee128166c447dc7e",
+          "url": "https://tanzil.net/#20:44",
+          "primary_text": "فَقُولَا لَهُۥ قَوْلًا لَّيِّنًا لَّعَلَّهُۥ يَتَذَكَّرُ أَوْ يَخْشَىٰ",
+          "published_english_reading_aid": "But speak to him gently, so that he may take heed or fear Allah.”"
+        }
+      ],
+      "rationale": "The instruction to the messengers sent to Pharaoh is gentle speech, not harsh speech. Retain the antecedent context; no invented outcome.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z12",
+      "language": "hi",
+      "claim": "क्या हदीस लोगों का शुक्रिया अदा करने को अल्लाह का शुक्रिया अदा करने से जोड़ती है?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:66255",
+          "sha256": "883c8b7eb81ad24a7544a7202a7be02d812c5c4c8d99356c4facb2270f8d149d",
+          "url": "https://hadeethenc.com/en/browse/hadith/66255",
+          "primary_text": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (ﷺ) said: \"He who does not thank people in fact does not thank Allah.\""
+        }
+      ],
+      "rationale": "Not thanking people is connected to not thanking Allah; no judgment of a named person’s faith.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z13",
+      "language": "ur",
+      "claim": "کیا قرآن کہتا ہے کہ اللہ توبہ کرنے والوں اور پاکیزگی اختیار کرنے والوں سے محبت کرتا ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:222",
+          "sha256": "2e6aa5d9556a530cdbcc2cb074c2b2d26446f171f0084204a3e5f6a911b33a08",
+          "url": "https://tanzil.net/#2:222",
+          "primary_text": "وَيَسْـَٔلُونَكَ عَنِ ٱلْمَحِيضِ ۖ قُلْ هُوَ أَذًى فَٱعْتَزِلُوا۟ ٱلنِّسَآءَ فِى ٱلْمَحِيضِ ۖ وَلَا تَقْرَبُوهُنَّ حَتَّىٰ يَطْهُرْنَ ۖ فَإِذَا تَطَهَّرْنَ فَأْتُوهُنَّ مِنْ حَيْثُ أَمَرَكُمُ ٱللَّهُ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلتَّوَّٰبِينَ وَيُحِبُّ ٱلْمُتَطَهِّرِينَ",
+          "published_english_reading_aid": "They ask you about menstruation. Say: “It is impurity; so stay away from women during menstruation[115] and do not have intercourse with them until they become pure. When they are cleansed[116], then have intimacy with them as Allah has commanded you. Allah loves those who frequently repent and He loves those who purify themselves."
+        }
+      ],
+      "rationale": "Both repentance and purification explicitly named. No individualized menstruation or purity ruling.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z14",
+      "language": "ur",
+      "claim": "کیا قرآن کو ٹھہر ٹھہر کر پڑھنے کی ہدایت خود قرآن میں ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "73:4",
+          "sha256": "8e25bfd3049c478c7b5bbfb14f3ca6af6a49c611e8e37f9fe0354a968080ae8f",
+          "url": "https://tanzil.net/#73:4",
+          "primary_text": "أَوْ زِدْ عَلَيْهِ وَرَتِّلِ ٱلْقُرْءَانَ تَرْتِيلًا",
+          "published_english_reading_aid": "or a little more, and recite the Qur’an at a measured pace."
+        }
+      ],
+      "rationale": "Measured recitation explicit; avoid unsupported numerical speed or reward requirements.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z15",
+      "language": "ur",
+      "claim": "کیا نبی ناپسند آنے والے کھانے میں عیب نکالتے تھے، جیسا کہ حدیث میں بیان ہوا ہے؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4966",
+          "sha256": "3931786c3651f5b9e784ab151a7a5355cba5d4a790fb6ec6043e6d75d818c1e6",
+          "url": "https://hadeethenc.com/en/browse/hadith/4966",
+          "primary_text": "Abu Hurayrah (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) never found fault with any food. If he liked it, he would eat; and if he disliked it, he would leave it."
+        }
+      ],
+      "rationale": "Report says he never found fault with food; he left food he disliked. No obligation to eat disliked food.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z16",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an menyuruh kita menghardik orang yang meminta bantuan?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "93:10",
+          "sha256": "55fa789a5bf5f2491c3d2f43f324abd04665f32cf642acad014b7f4c9cfda945",
+          "url": "https://tanzil.net/#93:10",
+          "primary_text": "وَأَمَّا ٱلسَّآئِلَ فَلَا تَنْهَرْ",
+          "published_english_reading_aid": "nor repulse the beggar[2];"
+        }
+      ],
+      "rationale": "Rebuffing the petitioner is prohibited, not commanded; do not require giving money in every circumstance.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z17",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an memerintahkan membaca dengan nama Tuhan yang menciptakan?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "96:1",
+          "sha256": "dab5e8610b58c87e4f1fe95294efcdcb0ba1d61809bb780cb7fc6062a9253787",
+          "url": "https://tanzil.net/#96:1",
+          "primary_text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
+          "published_english_reading_aid": "Read in the name of your Lord Who created,"
+        }
+      ],
+      "rationale": "Read in the name of the creating Lord; no invented historical chronology needed.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z18",
+      "language": "id",
+      "claim": "Apakah ada hadis yang menyebut salat berjamaah lebih utama dua puluh tujuh derajat daripada salat sendirian?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3441",
+          "sha256": "049b519385a58eaf567e66779be09a78c2f0c3e8c0bb6748566ed9771a45461b",
+          "url": "https://hadeethenc.com/en/browse/hadith/3441",
+          "primary_text": "‘Abdullāh ibn ‘Umar (may Allah be pleased with him) reported that the Messenger (may Allah's peace and blessings be upon him) said: \"Praying in congregation is twenty-seven degrees better than praying alone.\""
+        }
+      ],
+      "rationale": "Explicit twenty-seven-degree comparison; no personal attendance ruling or claim individual prayer is invalid.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z19",
+      "language": "es",
+      "claim": "¿Dice el Corán que la recitación del alba es presenciada?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "17:78",
+          "sha256": "b60a93515e6e69756ed95dfccea1258539201d73715e2033c8d3c81931bb0eb8",
+          "url": "https://tanzil.net/#17:78",
+          "primary_text": "أَقِمِ ٱلصَّلَوٰةَ لِدُلُوكِ ٱلشَّمْسِ إِلَىٰ غَسَقِ ٱلَّيْلِ وَقُرْءَانَ ٱلْفَجْرِ ۖ إِنَّ قُرْءَانَ ٱلْفَجْرِ كَانَ مَشْهُودًا",
+          "published_english_reading_aid": "Establish prayer at the decline of the sun until the darkness of the night, and the recitation of dawn [prayer][68], for the recitation of dawn is ever witnessed [by the angels][69]."
+        }
+      ],
+      "rationale": "Dawn recitation is witnessed. Identify angels as a translation/explanatory gloss if mentioned, rather than fabricated Arabic wording.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z20",
+      "language": "es",
+      "claim": "En el ejemplo del Corán revelado a una montaña, ¿la montaña se vuelve arrogante en vez de humillarse ante Allah?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "59:21",
+          "sha256": "6ef9b0be7ddc7543b633d45e283645c4307a6a0840901fdd5180f683a495006f",
+          "url": "https://tanzil.net/#59:21",
+          "primary_text": "لَوْ أَنزَلْنَا هَـٰذَا ٱلْقُرْءَانَ عَلَىٰ جَبَلٍ لَّرَأَيْتَهُۥ خَـٰشِعًا مُّتَصَدِّعًا مِّنْ خَشْيَةِ ٱللَّهِ ۚ وَتِلْكَ ٱلْأَمْثَـٰلُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ يَتَفَكَّرُونَ",
+          "published_english_reading_aid": "Had We sent down this Qur’an upon a mountain, you would have seen it humbled and break asunder out of awe of Allah[14]. Such are the similitudes We set forth for people so that they may reflect."
+        }
+      ],
+      "rationale": "Counterfactual mountain humbled and split from awe; not arrogant and not an actual historical event.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z21",
+      "language": "es",
+      "claim": "¿Cuenta un hadiz que una mujer fue castigada por encerrar a una gata sin alimentarla ni dejarla buscar comida?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:58193",
+          "sha256": "f6426f12bb85a9a4e8977a3c418efa9a9d9f18d5e35be58d725f243b61dce2ae",
+          "url": "https://hadeethenc.com/en/browse/hadith/58193",
+          "primary_text": "‘Abdullāh ibn ‘Umar (may Allah be pleased with him) reported that the Messenger of Allah (may Allah’s peace and blessings be upon him) said: \"A woman was tormented because of a cat which she had kept locked up until it died, and she was thrown into Hell for that. She neither gave it food or drink when she locked it up nor freed it so that it would eat from the vermin of the earth.\""
+        }
+      ],
+      "rationale": "Confinement, failure to feed or release, and resulting death are material conditions. Not a blanket ban on caring for pets.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z22",
+      "language": "fr",
+      "claim": "Le Coran dit-il que l’être humain a été créé dans la meilleure forme?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "95:4",
+          "sha256": "3db8a6896fbdc5618925083de7ac798ea7515bf6b3ae09459c64bc49dbcf2250",
+          "url": "https://tanzil.net/#95:4",
+          "primary_text": "لَقَدْ خَلَقْنَا ٱلْإِنسَـٰنَ فِىٓ أَحْسَنِ تَقْوِيمٍ",
+          "published_english_reading_aid": "Surely We have created man in the best form[4],"
+        }
+      ],
+      "rationale": "Best form explicitly stated; do not infer superiority of a specific ethnicity or perfect conduct of all people.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z23",
+      "language": "fr",
+      "claim": "Le Coran affirme-t-il que la récompense du bien est le mal?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "55:60",
+          "sha256": "24b90c8365ccce300b6639c46b79dc30b817fe9d12b84acdee3cd0fc4845295b",
+          "url": "https://tanzil.net/#55:60",
+          "primary_text": "هَلْ جَزَآءُ ٱلْإِحْسَـٰنِ إِلَّا ٱلْإِحْسَـٰنُ",
+          "published_english_reading_aid": "Is the reward for goodness anything but goodness?"
+        }
+      ],
+      "rationale": "Rhetorical question identifies goodness as reward for goodness, opposite of evil. No guarantee of immediate material success.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z24",
+      "language": "fr",
+      "claim": "Selon le hadith, trois personnes qui partent en voyage doivent-elles désigner l’une d’elles comme responsable?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5970",
+          "sha256": "e390691dd462fe77359db25f37103b6141a1d020021073df17d3c9697e73d117",
+          "url": "https://hadeethenc.com/en/browse/hadith/5970",
+          "primary_text": "Abu Sa‘īd and Abu Hurayrah (may Allah be pleased with both of them) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"When three people set out on a journey, they should appoint one of them as their leader.\""
+        }
+      ],
+      "rationale": "Three travelers should appoint one leader; no unlimited authority or invented political mandate.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z25",
+      "language": "de",
+      "claim": "Erwähnt der Koran, dass Allah den Bienen eingibt, in Bergen, Bäumen und von Menschen errichteten Bauten Wohnungen zu nehmen?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "16:68",
+          "sha256": "7ee303fbacf26773428c858896eec57bcc82503276da8293acd62ec471e53647",
+          "url": "https://tanzil.net/#16:68",
+          "primary_text": "وَأَوْحَىٰ رَبُّكَ إِلَى ٱلنَّحْلِ أَنِ ٱتَّخِذِى مِنَ ٱلْجِبَالِ بُيُوتًا وَمِنَ ٱلشَّجَرِ وَمِمَّا يَعْرِشُونَ",
+          "published_english_reading_aid": "Your Lord inspired the bees, “Make homes in the mountains, the trees, and in the trellises that people put up,"
+        }
+      ],
+      "rationale": "All three dwelling locations are explicit; no unsupported biological or scientific claim.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z26",
+      "language": "de",
+      "claim": "Sagt der Koran, dass wir Allah gedenken und Ihm dankbar sein sollen?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:152",
+          "sha256": "990be2a1d255dd0bd01b215464074654fe8550ea3ffb97e161d88d420b9db809",
+          "url": "https://tanzil.net/#2:152",
+          "primary_text": "فَٱذْكُرُونِىٓ أَذْكُرْكُمْ وَٱشْكُرُوا۟ لِى وَلَا تَكْفُرُونِ"
+        }
+      ],
+      "rationale": "Remembering Allah and giving Him thanks are explicit. No invented numerical dhikr prescription.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "Z27",
+      "language": "de",
+      "claim": "Billigt der Hadith es, die volle Arbeit eines Arbeiters anzunehmen und ihm dann seinen Lohn vorzuenthalten?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:66163",
+          "sha256": "e3522121625676ec61d0d806758512183817166a7c32f8cdc14f4712315e523b",
+          "url": "https://hadeethenc.com/en/browse/hadith/66163",
+          "primary_text": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (ﷺ) said: \"Allah Almighty said: There are three I will be hostile to them on the Day of Judgment: a man who gave a promise in My Name and then broke it; a man who sold a free person as a slave and devoured his price; and a man who hired a worker and took the full work from him, but did not pay him his wages.\""
+        }
+      ],
+      "rationale": "Divine warning against employing a worker, taking full work and not paying wages; no adjudication of a particular employment dispute.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "Z28",
+      "language": "en",
+      "claim": "Can you explain how to bake banana bread?",
+      "family": null,
+      "references": [],
+      "rationale": "Ordinary cooking request: outside supported religious verification; no fabricated religious answer.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "Z29",
+      "language": "en",
+      "claim": "Is the religious quote in the message I received authentic?",
+      "family": null,
+      "references": [],
+      "rationale": "Quote and message absent; request the text/source instead of inventing the claim.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "Z30",
+      "language": "en",
+      "claim": "I own jewelry and a small business. Decide whether I personally owe zakat this year.",
+      "family": null,
+      "references": [],
+      "rationale": "Personal religious-financial ruling with missing facts: refer or request qualified guidance; do not decide the individual obligation.",
+      "expected_verdict": "not_evaluated"
+    }
+  ]
+}
