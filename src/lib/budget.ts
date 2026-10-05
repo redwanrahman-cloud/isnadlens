@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { z } from 'zod';
 import { MODEL_IDS } from './model-config';
+import { privateDirectory } from './private-directory';
 
 const entrySchema = z.object({ id: z.string(), model: z.enum(MODEL_IDS), reserved_usd: z.number().nonnegative(), actual_usd: z.number().nonnegative().nullable(), status: z.enum(['reserved', 'settled']), created_at: z.string(), input_tokens: z.number().int().nonnegative().nullable(), output_tokens: z.number().int().nonnegative().nullable() });
 const ledgerSchema = z.object({ version: z.literal(1), entries: z.array(entrySchema) });
@@ -17,7 +18,7 @@ export function priceUsage(model: keyof typeof rates, input: number, output: num
   // Ledger estimates can exceed invoices; cache discounts never expand the authorization cap.
   return (input * rates[model].input * (model.startsWith('gpt-5.6-') ? 1.25 : 1) + output * rates[model].output) / 1_000_000;
 }
-const defaultDirectory = () => join(process.cwd(), 'artifacts', 'private');
+const defaultDirectory = privateDirectory;
 function updateLedger<T>(directory: string, mutate: (ledger: Ledger) => T): T {
   mkdirSync(directory, { recursive: true });
   const lockPath = join(directory, 'api-spend.lock');

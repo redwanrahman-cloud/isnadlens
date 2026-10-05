@@ -1,14 +1,15 @@
 import {createHash, randomUUID} from 'node:crypto';
 import {mkdirSync,readFileSync,writeFileSync,renameSync,openSync,closeSync,unlinkSync,existsSync} from 'node:fs';
 import {join} from 'node:path';
+import {privateDirectory} from './private-directory';
 
 export const SPEECH_MODEL='gemini-3.8-flash-tts';
 export const SPEECH_VOICES=['Achernar','Algieba','Sulafat'] as const;
 export const SPEECH_LANGUAGES=['ar','en','bn','hi','ur','id','es','fr','de'] as const;
 let active=0;
-const directory=()=>join(process.cwd(),'artifacts','private','speech');
+const directory=()=>join(privateDirectory(),'speech');
 export function speechConfiguration(){
-  const path=join(process.cwd(),'artifacts','private','google-speech.env');
+  const path=join(privateDirectory(),'google-speech.env');
   const file=existsSync(path)?readFileSync(path,'utf8'):'';
   const settings=Object.fromEntries(file.split(/\r?\n/).filter(line=>/^[A-Z_]+=/.test(line)).map(line=>{const index=line.indexOf('=');return [line.slice(0,index),line.slice(index+1).trim()];}));
   return {key:process.env.GEMINI_API_KEY||settings.GEMINI_API_KEY||'',confirmed:(process.env.ISNADLENS_GOOGLE_FREE_TIER_CONFIRMED||settings.ISNADLENS_GOOGLE_FREE_TIER_CONFIRMED)==='true'};
