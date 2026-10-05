@@ -1,0 +1,164 @@
+{
+  "kind": "targeted_badge_repair_and_opposite_polarity_control_not_fresh_benchmark",
+  "created_at": "2026-10-05T00:25:10.968Z",
+  "freeze": {
+    "app": "edefc432aba1ebc30c68b49ad4a75e6bf924328e23d22c1220f5927e7a2a3492",
+    "build": "NU9o4Ow5wSleAe8Vd6yVj"
+  },
+  "starting_development_sar": 42.428666250000035,
+  "development_cap_sar": 44,
+  "cases": [
+    {
+      "id": "B01",
+      "claim": "Selon le hadith, une noble lignée suffit-elle à faire avancer celui que ses actes ont retardé?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "summary": "No. The supplied hadith in the selected source collection directly states that lineage does not move forward a person whose deeds have held them back (Hadith en:4801).",
+      "summary_ar": "لا، العبارة تخالف الحديث المعروض في مجموعة المصادر المحددة: فالنسب لا يرفع من أخّرته أعماله. الدليل من الحديث المنسوب إلى النبي في بطاقة الحديث en:4801.",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "detected_language": "fr",
+      "original_preserved": true,
+      "seal_valid": true,
+      "locators": [
+        "en:3745",
+        "en:6637",
+        "en:4801",
+        "en:66184",
+        "ar:6361",
+        "ar:65130",
+        "ar:5859",
+        "ar:66227"
+      ],
+      "assessment_attempt_reasons": [
+        "CONTRADICTION_CONFIRMATION_REQUIRED",
+        "SEMANTIC_VALIDATION_PASSED"
+      ],
+      "source_review": {
+        "explanation_preserved": true,
+        "explanation_diagnostic": {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        },
+        "atoms": [
+          {
+            "atom_id": "claim_1",
+            "source_relationship": "contradicts",
+            "entails": "yes",
+            "attribution_preserved": true,
+            "qualifications_preserved": true,
+            "evidence_id": "hadeethenc-official-2026-10-04:en:4801",
+            "context_locator": null,
+            "basis_quotation": "Abu Hurayrah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Whoever relieves a believer from one of the hardships of this world, Allah will relieve him from one of the hardships of the Day of Judgment. Whoever makes things easy for someone in difficulty, Allah will make things easy for him in this world and the Hereafter. Whoever covers a Muslim, Allah will cover him in this world and the Hereafter. Allah is in the aid of the slave as long as the slave is in the aid of his brother. Whoever treads a path seeking knowledge, Allah will make easy for him a path to Paradise. No group of people gather in one of the houses of Allah, reciting the Book of Allah and studying it among themselves, except that tranquility descends upon them, mercy envelops them, the angels surround them, and Allah mentions them to those near Him. And whoever is slowed down by his deeds will not be hastened forward by his lineage.\"",
+            "additional_basis": []
+          }
+        ]
+      },
+      "review_version": "source-focused-decision-v15-independent-relationship",
+      "usage": [
+        {
+          "input_tokens": 867,
+          "output_tokens": 209,
+          "estimated_cost_usd": 0.00046754999999999995,
+          "reservation_id": "0208b2d0-af11-4763-b301-268edae44763"
+        },
+        {
+          "input_tokens": 5609,
+          "output_tokens": 220,
+          "estimated_cost_usd": 0.0166625,
+          "reservation_id": "33d73c77-4ea0-45d1-8858-0eaf0a54a7c0"
+        },
+        {
+          "input_tokens": 6480,
+          "output_tokens": 522,
+          "estimated_cost_usd": 0.0022464,
+          "reservation_id": "80cbf2a1-be58-41a5-8ac7-dc31496bb7de"
+        },
+        {
+          "input_tokens": 6480,
+          "output_tokens": 428,
+          "estimated_cost_usd": 0.021336,
+          "reservation_id": "439d30ef-a775-43a3-ad15-71c833ce32f9"
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "claim": "Selon le hadith, une noble lignée ne fait pas avancer celui que ses actes ont retardé.",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "summary": "The selected source collection directly supports this meaning in the hadith recorded at en:4801: noble lineage does not advance someone whose deeds have held him back. The statement concerns the insufficiency of lineage without adequate deeds, within the scope of that hadith.",
+      "summary_ar": "تدعم مجموعة المصادر المحددة هذا المعنى مباشرة في الحديث الوارد في السجل المحدد: لا يرفع النسبُ من أخّرته أعماله. ويظل المعنى متعلقًا بتقديم الأعمال الصالحة، لا بإثبات حكم مستقل يتجاوز نص الحديث.",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "detected_language": "fr",
+      "original_preserved": true,
+      "seal_valid": true,
+      "locators": [
+        "en:3745",
+        "en:6637",
+        "en:4801",
+        "en:66184",
+        "ar:6361",
+        "ar:65130",
+        "ar:5859",
+        "ar:66227"
+      ],
+      "assessment_attempt_reasons": [
+        "SEMANTIC_VALIDATION_PASSED"
+      ],
+      "source_review": {
+        "explanation_preserved": true,
+        "explanation_diagnostic": {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        },
+        "atoms": [
+          {
+            "atom_id": "c1",
+            "source_relationship": "supports",
+            "entails": "yes",
+            "attribution_preserved": true,
+            "qualifications_preserved": true,
+            "evidence_id": "hadeethenc-official-2026-10-04:en:4801",
+            "context_locator": null,
+            "basis_quotation": "Abu Hurayrah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Whoever relieves a believer from one of the hardships of this world, Allah will relieve him from one of the hardships of the Day of Judgment. Whoever makes things easy for someone in difficulty, Allah will make things easy for him in this world and the Hereafter. Whoever covers a Muslim, Allah will cover him in this world and the Hereafter. Allah is in the aid of the slave as long as the slave is in the aid of his brother. Whoever treads a path seeking knowledge, Allah will make easy for him a path to Paradise. No group of people gather in one of the houses of Allah, reciting the Book of Allah and studying it among themselves, except that tranquility descends upon them, mercy envelops them, the angels surround them, and Allah mentions them to those near Him. And whoever is slowed down by his deeds will not be hastened forward by his lineage.\"",
+            "additional_basis": []
+          }
+        ]
+      },
+      "review_version": "source-focused-decision-v15-independent-relationship",
+      "usage": [
+        {
+          "input_tokens": 865,
+          "output_tokens": 165,
+          "estimated_cost_usd": 0.00041425,
+          "reservation_id": "f566273b-1e71-4ecd-a983-8752e4e8ec24"
+        },
+        {
+          "input_tokens": 5559,
+          "output_tokens": 171,
+          "estimated_cost_usd": 0.0159495,
+          "reservation_id": "e18b3c95-9a38-4c5e-963b-001c74899145"
+        },
+        {
+          "input_tokens": 6478,
+          "output_tokens": 462,
+          "estimated_cost_usd": 0.0021739,
+          "reservation_id": "b9d0236a-0d53-4439-a5a7-e421fb2cff6f"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-05T00:25:44.264Z",
+  "final_development_sar": 42.65085412500004,
+  "run_sar": 0.22218787500000303
+}

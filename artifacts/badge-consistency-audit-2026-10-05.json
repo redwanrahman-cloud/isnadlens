@@ -1,0 +1,84 @@
+{
+  "kind": "targeted_repair_source_and_principal_review_not_fresh_accuracy_benchmark",
+  "created_at": "2026-10-05T00:26:44.479Z",
+  "source_and_seal_checks_passed": 4,
+  "total_captured": 4,
+  "after_repair_satisfactory": 2,
+  "after_repair_total": 2,
+  "original_fresh30_satisfactory": 29,
+  "original_fresh30_total": 30,
+  "total_targeted_cost_sar": 0.3951594375000056,
+  "conservative_development_sar": 42.65085412500004,
+  "development_cap_sar": 44,
+  "remaining_development_sar": 1.3491458749999623,
+  "judging_reserve_sar": 15,
+  "limits": [
+    "Principal developer review, not independent scholarly certification.",
+    "Only the original failing question and one negative-proposition control were checked live. No updated population accuracy or fresh 30/30 claim.",
+    "Initial failed retrieval controls retained; subsequent bounded targeted rerun is explicitly a repair check."
+  ],
+  "phases": [
+    {
+      "phase": "before_retrieval_repair",
+      "freeze": {
+        "app": "a0009e3a317f865a8237fc6304b7d5fee66be3968acac3d6e06e9c2a85d13e21",
+        "build": "Muvc9VnM57nswjistxG68"
+      },
+      "cases": [
+        {
+          "id": "B01",
+          "expected": "conflicting_within_selected_corpus",
+          "actual": "insufficient_within_selected_corpus",
+          "source_bytes_and_seals_passed": true,
+          "original_preserved": true,
+          "independent_relationship_and_proof_confirmed": false,
+          "satisfactory": false,
+          "review_note": "Retrieval did not include en:4801; insufficient response, not validation of the badge layer."
+        },
+        {
+          "id": "B02",
+          "expected": "supported_within_selected_corpus",
+          "actual": "insufficient_within_selected_corpus",
+          "source_bytes_and_seals_passed": true,
+          "original_preserved": true,
+          "independent_relationship_and_proof_confirmed": false,
+          "satisfactory": false,
+          "review_note": "Retrieval did not include en:4801; insufficient response, not validation of the badge layer."
+        }
+      ],
+      "run_sar": 0.17297156250000256,
+      "development_sar": 42.428666250000035
+    },
+    {
+      "phase": "-after-retrieval",
+      "freeze": {
+        "app": "edefc432aba1ebc30c68b49ad4a75e6bf924328e23d22c1220f5927e7a2a3492",
+        "build": "NU9o4Ow5wSleAe8Vd6yVj"
+      },
+      "cases": [
+        {
+          "id": "B01",
+          "expected": "conflicting_within_selected_corpus",
+          "actual": "conflicting_within_selected_corpus",
+          "source_bytes_and_seals_passed": true,
+          "original_preserved": true,
+          "independent_relationship_and_proof_confirmed": true,
+          "satisfactory": true,
+          "review_note": "Original affirmative question is directly contradicted by the final lineage sentence in en:4801. English/Arabic explanations correctly answer No and badge now agrees."
+        },
+        {
+          "id": "B02",
+          "expected": "supported_within_selected_corpus",
+          "actual": "supported_within_selected_corpus",
+          "source_bytes_and_seals_passed": true,
+          "original_preserved": true,
+          "independent_relationship_and_proof_confirmed": true,
+          "satisfactory": true,
+          "review_note": "Negative proposition is directly supported by the same sentence. English/Arabic explanations preserve the negation and badge now agrees."
+        }
+      ],
+      "run_sar": 0.22218787500000303,
+      "development_sar": 42.65085412500004
+    }
+  ]
+}

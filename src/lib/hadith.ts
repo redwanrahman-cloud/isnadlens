@@ -100,15 +100,23 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   const englishSets = new Map(language === 'en' ? selected.map(record => [record, {text:new Set(englishWords(record.fields.hadith_text??'')),title:new Set(englishWords(record.fields.title??''))}] as const) : []);
   const originalConcepts=[...new Set(englishWords(query))].filter(t=>!boilerplate.has(t));
   const matches = (record: HadithRecord, index:number, title=false) => language==='en' ? Boolean(englishSets.get(record)?.[title?'title':'text'].has(terms[index])) : patterns[index].test(record.fields[title?'title':'hadith_text']??'');
-  const weights = patterns.map((pattern,index) => {
-    const frequency = selected.filter(record => matches(record,index) || matches(record,index,true)).length;
-    return 1 + Math.log((selected.length + 1) / (frequency + 1));
-  });
+  const frequencies = patterns.map((_,index)=>selected.filter(record => matches(record,index) || matches(record,index,true)).length);
+  const weights = frequencies.map(frequency=>1 + Math.log((selected.length + 1) / (frequency + 1)));
+  // A precise original-query concept must not disappear merely because its
+  // proving sentence is inside a long multi-topic narration. Require another
+  // original concept in the same sentence; hint-only words cannot earn this bonus.
+  const rareOriginal = terms.map((term,index)=>({term,index,frequency:frequencies[index]}))
+    .filter(t=>originalConcepts.includes(t.term)&&t.frequency>0&&t.frequency<=Math.max(2,selected.length*.01));
   return selected.map(record => {
     // Publisher title/text remain unchanged. Explanations are not promoted into primary quotation support.
     const title = record.fields.title ?? ''; const text = record.fields.hadith_text ?? '';
     const originalCoverage=language==='en'&&originalConcepts.length?originalConcepts.filter(t=>englishSets.get(record)?.text.has(t)||englishSets.get(record)?.title.has(t)).length/originalConcepts.length:0;
-    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((matches(record,index) ? lengthWeight(record,'text') : 0) + (matches(record,index,true) ? .5 * lengthWeight(record,'title') : 0)), 0) + 12*originalCoverage**2;
+    const preciseSentence=language==='en'?text.split(/[.!?\n]+/u).reduce((best,sentence)=>{
+      const words=new Set(englishWords(sentence));
+      if(originalConcepts.filter(t=>words.has(t)).length<2)return best;
+      return Math.max(best,...rareOriginal.filter(t=>words.has(t.term)).map(t=>3*weights[t.index]));
+    },0):0;
+    const score = (explicit.some(link => record.language === link.language && record.id === link.id) ? 1000 : 0) + patterns.reduce((n, pattern, index) => n + weights[index] * ((matches(record,index) ? lengthWeight(record,'text') : 0) + (matches(record,index,true) ? .5 * lengthWeight(record,'title') : 0)), 0) + 12*originalCoverage**2 + preciseSentence;
     return { record, score };
   }).filter(hit => hit.score > 0).sort((a, b) => b.score - a.score || Number(a.record.id) - Number(b.record.id)).slice(0, limit).map(hit => hit.record);
 }

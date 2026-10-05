@@ -89,7 +89,7 @@ describe('mandatory independent positive source check', () => {
       const fetchMock = vi.fn(); vi.stubGlobal('fetch', fetchMock);
       await expect(provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card])).rejects.toThrow('PROVIDER_UNAVAILABLE'); expect(fetchMock).not.toHaveBeenCalled();
       vi.stubEnv('ISNADLENS_PAID_CALLS_AUTHORIZED', 'true'); vi.stubEnv('ISNADLENS_MAX_SPEND_USD', '.2'); vi.stubEnv('ISNADLENS_MAX_CALLS', '1000'); vi.stubEnv('OPENAI_API_KEY', 'mock-key');
-      const review = { explanation_preserved:true, atoms: [{ atom_id: 'a1', entails: 'yes', attribution_preserved: true, qualifications_preserved: true, basis_unit_id: `${card.evidence_id}:primary` }] };
+      const review = { explanation_preserved:true, atoms: [{ atom_id: 'a1', source_relationship: 'supports', entails: 'yes', attribution_preserved: true, qualifications_preserved: true, basis_unit_id: `${card.evidence_id}:primary` }] };
       const response = (text: string) => new Response(JSON.stringify({ status: 'completed', usage: { input_tokens: 100, output_tokens: 40 }, output: [{ content: [{ type: 'output_text', text }] }] }), { status: 200 });
       fetchMock.mockResolvedValueOnce(response('{"faithful":"yes"}')).mockResolvedValueOnce(response(JSON.stringify(review))).mockResolvedValueOnce(response('{malformed'));
       const result = await provider.reviewPositiveEntailment('The Quran prescribes fasting.', assessed, [card]); expect(result.usage?.reservation_id).toBeTruthy();

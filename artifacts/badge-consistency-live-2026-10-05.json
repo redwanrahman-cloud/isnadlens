@@ -1,0 +1,135 @@
+{
+  "kind": "targeted_badge_repair_and_opposite_polarity_control_not_fresh_benchmark",
+  "created_at": "2026-10-05T00:19:15.562Z",
+  "freeze": {
+    "app": "a0009e3a317f865a8237fc6304b7d5fee66be3968acac3d6e06e9c2a85d13e21",
+    "build": "Muvc9VnM57nswjistxG68"
+  },
+  "starting_development_sar": 42.25569468750003,
+  "development_cap_sar": 44,
+  "cases": [
+    {
+      "id": "B01",
+      "claim": "Selon le hadith, une noble lignée suffit-elle à faire avancer celui que ses actes ont retardé?",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "detected_language": "fr",
+      "original_preserved": true,
+      "seal_valid": true,
+      "locators": [
+        "en:3574",
+        "en:5512",
+        "en:6361",
+        "en:4970",
+        "ar:6255",
+        "ar:11203",
+        "ar:66270",
+        "ar:2759"
+      ],
+      "assessment_attempt_reasons": [
+        "SEMANTIC_VALIDATION_PASSED"
+      ],
+      "usage": [
+        {
+          "input_tokens": 867,
+          "output_tokens": 197,
+          "estimated_cost_usd": 0.00045315,
+          "reservation_id": "fc273f8b-ae9f-4aa8-847d-c71c2008e8d5"
+        },
+        {
+          "input_tokens": 5478,
+          "output_tokens": 506,
+          "estimated_cost_usd": 0.0019767,
+          "reservation_id": "65941a29-f232-4c6c-9af1-bf8deb67dd7c"
+        },
+        {
+          "input_tokens": 335,
+          "output_tokens": 136,
+          "estimated_cost_usd": 0.00024695,
+          "reservation_id": "86338235-62d2-4442-b7a2-65b6c7aeee7c"
+        },
+        {
+          "input_tokens": 8441,
+          "output_tokens": 380,
+          "estimated_cost_usd": 0.012566250000000001,
+          "reservation_id": "59ea09b9-e644-4eda-a6df-e4276661aad5"
+        },
+        {
+          "input_tokens": 5692,
+          "output_tokens": 541,
+          "estimated_cost_usd": 0.0020721999999999997,
+          "reservation_id": "83bf04d2-3d6c-4d4c-a411-8e114e6c5de0"
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "claim": "Selon le hadith, une noble lignée ne fait pas avancer celui que ses actes ont retardé.",
+      "expected": "supported_within_selected_corpus",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "detected_language": "fr",
+      "original_preserved": true,
+      "seal_valid": true,
+      "locators": [
+        "en:58148",
+        "en:65869",
+        "en:6361",
+        "en:5908",
+        "ar:66270",
+        "ar:6361",
+        "ar:65130",
+        "ar:65255"
+      ],
+      "assessment_attempt_reasons": [
+        "SEMANTIC_VALIDATION_PASSED"
+      ],
+      "usage": [
+        {
+          "input_tokens": 865,
+          "output_tokens": 209,
+          "estimated_cost_usd": 0.00046704999999999994,
+          "reservation_id": "4fa6482a-702b-4fca-8462-18fe27e557c3"
+        },
+        {
+          "input_tokens": 5703,
+          "output_tokens": 547,
+          "estimated_cost_usd": 0.00208215,
+          "reservation_id": "7577d498-1e25-4f05-9d72-5a15fdfc970f"
+        },
+        {
+          "input_tokens": 347,
+          "output_tokens": 195,
+          "estimated_cost_usd": 0.00032075,
+          "reservation_id": "66634178-6200-4574-a49e-70e3c8427c2c"
+        },
+        {
+          "input_tokens": 12715,
+          "output_tokens": 445,
+          "estimated_cost_usd": 0.02371275,
+          "reservation_id": "68b2288e-bb65-4800-af90-a1f5df34e78f"
+        },
+        {
+          "input_tokens": 5892,
+          "output_tokens": 629,
+          "estimated_cost_usd": 0.0022278000000000003,
+          "reservation_id": "0cd93b91-35b7-4ff6-a9f3-9b5cdfe8ee35"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-05T00:20:56.270Z",
+  "final_development_sar": 42.428666250000035,
+  "run_sar": 0.17297156250000256
+}

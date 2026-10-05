@@ -21,6 +21,7 @@ export function validPositiveReview(review: EntailmentReview, assessment: Semant
   if (review.atoms.length !== atoms.length || new Set(review.atoms.map(a => a.atom_id)).size !== atoms.length) return false;
   return atoms.every(atom => {
     const check = review.atoms.find(a => a.atom_id === atom.id);
+    if(check?.source_relationship!==undefined&&check.source_relationship!==atom.relation)return false;
     if (!check || check.entails !== 'yes' || !check.attribution_preserved || !check.qualifications_preserved || !check.evidence_id || !atom.evidence_ids.includes(check.evidence_id) || !check.basis_quotation?.trim()) return false;
     const card = evidence.find(e => e.evidence_id === check.evidence_id);
     const text = check.context_locator === null ? card?.quotation : card?.source_context.find(c => c.locator === check.context_locator && c.integrity_passed)?.quotation;
@@ -286,12 +287,12 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
           base.source_review_attempts=[...(base.source_review_attempts??[]),{assessment_model:base.model,mode:decisionMode,version:ENTAILMENT_VERSION,input_assessment:assessment,review:checked.review,raw_provider_review:checked.raw_provider_review,unit_provenance:checked.unit_provenance,model:checked.model,usage:checked.usage}];
         };
         recordMeaning();
-        // Prose failure is not a retrieval failure. Reassess once on the SAME
+        // Prose or badge/answer disagreement is not a retrieval failure. Reassess once on the SAME
         // authenticated evidence, then independently review the replacement.
         if(checked.review.explanation_preserved===false && base.assessment_attempts?.length===1 && assessmentModels().length>1){
           const strong=assessmentModels()[1];
           const revised=await assessClaim(claim,inputLanguage,base.evidence_items,strong);
-          base.assessment_attempts.push({model:revised.model,reason:'FINAL_EXPLANATION_REASSESSMENT',raw_assessment:revised.assessment,usage:revised.usage});
+          base.assessment_attempts.push({model:revised.model,reason:checked.review.explanation_diagnostic?.reason==='relationship_mismatch'?'VERDICT_EXPLANATION_REASSESSMENT':'FINAL_EXPLANATION_REASSESSMENT',raw_assessment:revised.assessment,usage:revised.usage});
           const revisedVerdict=decideVerdict(revised.assessment,new Set(base.retrieval_ids));
           if(semanticReferenceError(revised.assessment,base.evidence_items)||!['supported_within_selected_corpus','conflicting_within_selected_corpus'].includes(revisedVerdict))return fail('FINAL_EXPLANATION_UNCONFIRMED');
           assessment=revised.assessment;base.semantic_assessment=assessment;base.model=revised.model;base.usage=revised.usage;base.verdict=revisedVerdict;

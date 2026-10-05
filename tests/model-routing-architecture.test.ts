@@ -69,13 +69,13 @@ it('combines exact separately attributed units and rejects forged, uncited, dupl
 });
 it('sends BOTH final explanations to Terra without an additional paid reviewer call',async()=>{
  const c=card('2:173'),a=assessment('An original question',[c.evidence_id]);
- const f=vi.fn().mockResolvedValue(response({explanation_preserved:true,atoms:[{atom_id:'a',entails:'yes',attribution_preserved:true,qualifications_preserved:true,basis_unit_id:`${c.evidence_id}:primary`,additional_basis_unit_ids:[]}]},'gpt-5.6-terra'));vi.stubGlobal('fetch',f);
+ const f=vi.fn().mockResolvedValue(response({explanation_preserved:true,atoms:[{atom_id:'a',source_relationship:'supports',entails:'yes',attribution_preserved:true,qualifications_preserved:true,basis_unit_id:`${c.evidence_id}:primary`,additional_basis_unit_ids:[]}]},'gpt-5.6-terra'));vi.stubGlobal('fetch',f);
  const r=await provider.reviewPositiveEntailment('An original question',a,[c]);expect(r.review.explanation_preserved).toBe(true);expect(f).toHaveBeenCalledOnce();const b=JSON.parse(f.mock.calls[0][1].body);expect(b.model).toBe('gpt-5.6-terra');expect(JSON.parse(b.input).draft_explanation).toEqual({summary_en:a.summary_en,summary_ar:a.summary_ar});
 });
 it('shares extra prose citations and publisher commentary without expanding an atom proof',async()=>{
  const c=card('10:44'),extra=card('4:49');extra.publisher_fields={explanation:'Publisher commentary only',grade:'Publisher grade only'};
  const a=assessment('An original question',[c.evidence_id]);
- const f=vi.fn().mockResolvedValue(response({explanation_preserved:true,explanation_diagnostic:{reason:'none',language:null,sentence:null,detail:''},atoms:[{atom_id:'a',entails:'yes',attribution_preserved:true,qualifications_preserved:true,basis_unit_id:`${c.evidence_id}:primary`,additional_basis_unit_ids:[]}]}));vi.stubGlobal('fetch',f);
+ const f=vi.fn().mockResolvedValue(response({explanation_preserved:true,explanation_diagnostic:{reason:'none',language:null,sentence:null,detail:''},atoms:[{atom_id:'a',source_relationship:'supports',entails:'yes',attribution_preserved:true,qualifications_preserved:true,basis_unit_id:`${c.evidence_id}:primary`,additional_basis_unit_ids:[]}]}));vi.stubGlobal('fetch',f);
  const r=await provider.reviewPositiveEntailment('An original question',a,[c,extra]);const input=JSON.parse(JSON.parse(f.mock.calls[0][1].body).input);
  expect(input.explanation_evidence).toEqual(provider.explanationEvidence([c,extra]));
  expect(input.explanation_evidence[1].publisher_explanation).toBe('Publisher commentary only');
