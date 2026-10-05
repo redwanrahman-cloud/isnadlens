@@ -1,0 +1,250 @@
+{
+  "kind": "offline_display_replay_not_new_inference",
+  "date": "2026-10-06",
+  "cases_checked": 30,
+  "targeted_regressions_fixed": 4,
+  "new_api_calls": 0,
+  "new_cost_sar": 0,
+  "cases": [
+    {
+      "id": "N01",
+      "previous_first": "12:4",
+      "display_first": "12:4",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N02",
+      "previous_first": "20:25",
+      "display_first": "20:25",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N03",
+      "previous_first": null,
+      "display_first": null,
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N04",
+      "previous_first": "22:46",
+      "display_first": "22:46",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N05",
+      "previous_first": "2:189",
+      "display_first": "2:189",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N06",
+      "previous_first": "19:25",
+      "display_first": "19:25",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N07",
+      "previous_first": "91:9",
+      "display_first": "91:9",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N08",
+      "previous_first": "en:3433",
+      "display_first": "en:3433",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N09",
+      "previous_first": "27:30",
+      "display_first": "27:30",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N10",
+      "previous_first": null,
+      "display_first": null,
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N11",
+      "previous_first": "21:83",
+      "display_first": "21:83",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N12",
+      "previous_first": "en:8365",
+      "display_first": "en:2985",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N13",
+      "previous_first": "18:11",
+      "display_first": "18:25",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": true
+    },
+    {
+      "id": "N14",
+      "previous_first": "2:197",
+      "display_first": "2:197",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N15",
+      "previous_first": null,
+      "display_first": null,
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N16",
+      "previous_first": "5:23",
+      "display_first": "en:3131",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": true
+    },
+    {
+      "id": "N17",
+      "previous_first": "25:47",
+      "display_first": "25:47",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N18",
+      "previous_first": "ar:66242",
+      "display_first": "en:5350",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": true
+    },
+    {
+      "id": "N19",
+      "previous_first": "16:81",
+      "display_first": "16:81",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N20",
+      "previous_first": "en:3586",
+      "display_first": "ar:3586",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N21",
+      "previous_first": null,
+      "display_first": null,
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N22",
+      "previous_first": "en:3143",
+      "display_first": "en:3143",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N23",
+      "previous_first": "10:5",
+      "display_first": "10:5",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N24",
+      "previous_first": "en:3111",
+      "display_first": "en:3111",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N25",
+      "previous_first": "27:18",
+      "display_first": "27:18",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N26",
+      "previous_first": null,
+      "display_first": null,
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N27",
+      "previous_first": "en:5880",
+      "display_first": "en:5880",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N28",
+      "previous_first": "en:5453",
+      "display_first": "en:5453",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N29",
+      "previous_first": null,
+      "display_first": null,
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": null
+    },
+    {
+      "id": "N30",
+      "previous_first": "90:14",
+      "display_first": "76:8",
+      "original_record_unchanged": true,
+      "all_sources_retained": true,
+      "targeted_regression_fixed": true
+    }
+  ]
+}
