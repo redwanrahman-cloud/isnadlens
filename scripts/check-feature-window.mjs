@@ -49,7 +49,7 @@ try {
     await page.screenshot({path:`${directory}/tools-${viewport.width}.png`,fullPage:true});
     const toolsWidth=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
     results.push({viewport,journeyNavigation:true,evidenceDownload:true,nextPrayerCountdown:true,qiblaBearing:true,savedLocationResume:true,progressResumeUndo:true,referralTransfersOriginalWithoutAutoSubmit:true,prayer:true,conversion:true,month:true,pilgrimageWidth,toolsWidth,errors});
-    await page.goto('http://127.0.0.1:3100/evaluation/latest');await page.getByRole('heading',{name:'29/30 satisfactory responses.',exact:true}).waitFor();
+    await page.goto('http://127.0.0.1:3100/evaluation/latest');await page.getByRole('heading',{name:'96.7% benchmark success.',exact:true}).waitFor();
     if(await page.locator('article').count()!==30)throw new Error('BENCHMARK_CASES_MISSING');
     await context.close();
   }

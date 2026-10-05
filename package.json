@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start --hostname 127.0.0.1 --port 3100",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --maxWorkers=2",
     "test:offline": "node scripts/offline-boundary-lab.mjs --full-retrieval",
     "corpus:prepare": "node scripts/prepare-corpus.mjs"
   },

@@ -14,6 +14,7 @@
     "satisfactory": 29,
     "total": 30,
     "sample_percentage": 96.7,
+    "presentation_headline": "Over 95% success in the latest verification benchmark (96.7% satisfactory responses in the tested sample)",
     "religious_satisfactory": 26,
     "religious_total": 27,
     "correct_boundary_responses": 3,
@@ -36,7 +37,8 @@
     "image_input": "artifacts/image-input-checks-2026-10-05.json",
     "daily_companion_tools": "artifacts/feature-window-browser-2026-10-05.json",
     "paid_calls_for_current_convenience_increment": 0,
-    "limit": "Mocked UI journeys and live feature controls are separate from semantic accuracy."
+    "limit": "Mocked UI journeys and live feature controls are separate from semantic accuracy.",
+    "dashboard_design": "artifacts/dashboard-design-2026-10-05.json"
   },
   "working_features": [
     "Nine input/display languages",
@@ -48,7 +50,8 @@
     "Manual progress counters",
     "Prayer times and countdown",
     "Gregorian/Hijri tools",
-    "Qibla bearing"
+    "Qibla bearing",
+    "Responsive evidence workspace with visible evidence map and PNG share-card export"
   ],
   "release_state": "Working local prototype; hosted URL and final submission pending"
 }

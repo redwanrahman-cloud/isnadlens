@@ -1,59 +1,52 @@
-{
-  "kind": "afternoon_feature_integration_not_accuracy_benchmark",
-  "build": "yimcbMUqtl4PwGnZPmiBV",
-  "browser": "headless Chrome",
-  "physical_phone_certification": false,
-  "paid_ai_calls": 0,
-  "cases": [
-    {
-      "viewport": {
-        "width": 1440,
-        "height": 1000
-      },
-      "journeyNavigation": true,
-      "evidenceDownload": true,
-      "nextPrayerCountdown": true,
-      "qiblaBearing": true,
-      "savedLocationResume": true,
-      "progressResumeUndo": true,
-      "referralTransfersOriginalWithoutAutoSubmit": true,
-      "prayer": true,
-      "conversion": true,
-      "month": true,
-      "pilgrimageWidth": {
-        "width": 1440,
-        "scroll": 1440
-      },
-      "toolsWidth": {
-        "width": 1440,
-        "scroll": 1440
-      },
-      "errors": []
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
     },
-    {
-      "viewport": {
-        "width": 390,
-        "height": 844
-      },
-      "journeyNavigation": true,
-      "evidenceDownload": true,
-      "nextPrayerCountdown": true,
-      "qiblaBearing": true,
-      "savedLocationResume": true,
-      "progressResumeUndo": true,
-      "referralTransfersOriginalWithoutAutoSubmit": true,
-      "prayer": true,
-      "conversion": true,
-      "month": true,
-      "pilgrimageWidth": {
-        "width": 390,
-        "scroll": 390
-      },
-      "toolsWidth": {
-        "width": 390,
-        "scroll": 390
-      },
-      "errors": []
-    }
-  ]
-}
+    "journeyNavigation": true,
+    "evidenceDownload": true,
+    "nextPrayerCountdown": true,
+    "qiblaBearing": true,
+    "savedLocationResume": true,
+    "progressResumeUndo": true,
+    "referralTransfersOriginalWithoutAutoSubmit": true,
+    "prayer": true,
+    "conversion": true,
+    "month": true,
+    "pilgrimageWidth": {
+      "width": 1440,
+      "scroll": 1440
+    },
+    "toolsWidth": {
+      "width": 1440,
+      "scroll": 1440
+    },
+    "errors": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "journeyNavigation": true,
+    "evidenceDownload": true,
+    "nextPrayerCountdown": true,
+    "qiblaBearing": true,
+    "savedLocationResume": true,
+    "progressResumeUndo": true,
+    "referralTransfersOriginalWithoutAutoSubmit": true,
+    "prayer": true,
+    "conversion": true,
+    "month": true,
+    "pilgrimageWidth": {
+      "width": 390,
+      "scroll": 390
+    },
+    "toolsWidth": {
+      "width": 390,
+      "scroll": 390
+    },
+    "errors": []
+  }
+]

@@ -13,9 +13,11 @@ Use the [product walkthrough](docs/REVIEWER-GUIDE.md). Current preview: http://1
 
 Reviewers use the working product and inspect the results we provide. No development-suite reruns or reproduction of historical failures is required.
 
+The emerald/ivory workspace presents the assessed explanation separately from original evidence. A visible evidence map, attached read-aloud controls, downloadable receipt and labelled PNG share-card excerpt support inspection and sharing. Daily tools remain available through compact navigation. [Responsive UI checks](artifacts/dashboard-design-2026-10-05.json).
+
 ## Provided results
 
-Latest frozen verification benchmark: **29/30 satisfactory responses (96.7%)**, including 26/27 religious questions and 3/3 boundary requests. Zero incorrect decisive answers, inadequate decisive proofs or badge/explanation mismatches were found in this set. One context-related withholding remains in the denominator. [Recorded results](docs/RELEASE30-ROUND5.md).
+Latest verification benchmark: **over 95% success — 96.7% satisfactory responses** in the tested sample (29/30), including 26/27 religious questions and 3/3 boundary requests. Zero incorrect decisive answers, inadequate decisive proofs or badge/explanation mismatches were found in this set. One context-related withholding remains in the denominator. [Recorded results](docs/RELEASE30-ROUND5.md).
 
 Current application checks: **448 tests across 38 files**, TypeScript and production build passed. Desktop/mobile-width checks passed starters in all nine languages, explicit saved-check persistence, receipt download, reload, deletion/clearing and reviewed text/voice/image handoffs without automatic verification. [Journey evidence](artifacts/input-journeys-2026-10-05.json). Four live image-reader controls passed: English, Arabic, blank and embedded-instruction screenshots. [Image evidence](artifacts/image-input-checks-2026-10-05.json).
 

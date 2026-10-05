@@ -2,6 +2,7 @@
 
 import {useEffect, useRef, useState} from 'react';
 import {matchingVoices, speechChunks} from '@/lib/speech';
+import {WorkspaceIcon} from './components/WorkspaceIcon';
 import {passageVoiceCopy, type DisplayLanguage} from '@/lib/display-copy';
 
 // Each instance owns its session. Starting another reader cancels the previous one.
@@ -25,10 +26,10 @@ export function SpeechPlayer(props:ReaderProps){
   const [ready,setReady]=useState(false);const [mode,setMode]=useState<'natural'|'device'>('device');
   const copy=cloudCopy[props.language];
   useEffect(()=>{let mounted=true;readiness??=fetch('/api/speech').then(response=>response.ok?response.json():null).then(data=>Boolean(data?.available)).catch(()=>false);readiness.then(value=>{if(mounted){setReady(value);if(value)setMode('natural');}});return()=>{mounted=false;};},[]);
-  return <div style={{maxWidth:'100%'}}>
+  return <details className="speech-reader" style={{maxWidth:'100%'}}><summary><WorkspaceIcon name="voice"/>{passageVoiceCopy[props.language].listen}</summary><div>
     {ready&&<label style={{display:'block',maxWidth:'100%'}}>{copy.reader}<select style={{display:'block',maxWidth:'100%'}} value={mode} onChange={event=>{window.dispatchEvent(new Event(cancelEvent));setMode(event.target.value as 'natural'|'device');}}><option value="natural">{copy.natural}</option><option value="device">{copy.device}</option></select></label>}
     {mode==='natural'&&ready?<NaturalSpeechPlayer {...props}/>:<DeviceSpeechPlayer {...props}/>}
-  </div>;
+  </div></details>;
 }
 function NaturalSpeechPlayer({text,spokenLanguage,language}:ReaderProps){
   const [voice,setVoice]=useState('Achernar');const [url,setUrl]=useState('');const [preparing,setPreparing]=useState(false);const [failed,setFailed]=useState(false);
