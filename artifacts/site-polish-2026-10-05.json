@@ -1,0 +1,57 @@
+{
+  "kind": "independent-site-polish-browser-audit",
+  "paidAIcalls": 0,
+  "newSemanticAssessments": 0,
+  "checks": [
+    {
+      "width": 1440,
+      "languages": 9,
+      "persistenceRoutes": 4,
+      "reloadPersists": true,
+      "samplePdf": true,
+      "samplePng": true,
+      "accessibleAudioIcons": true,
+      "journeyHandoff": true,
+      "counterResumeUndo": true,
+      "savedLocationResume": true,
+      "staticRoutes": 3,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "width": 390,
+      "languages": 9,
+      "persistenceRoutes": 4,
+      "reloadPersists": true,
+      "samplePdf": true,
+      "samplePng": true,
+      "accessibleAudioIcons": true,
+      "journeyHandoff": true,
+      "counterResumeUndo": true,
+      "savedLocationResume": true,
+      "staticRoutes": 3,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    },
+    {
+      "width": 320,
+      "languages": 9,
+      "persistenceRoutes": 4,
+      "reloadPersists": true,
+      "samplePdf": true,
+      "samplePng": true,
+      "accessibleAudioIcons": true,
+      "journeyHandoff": true,
+      "counterResumeUndo": true,
+      "savedLocationResume": true,
+      "staticRoutes": 3,
+      "horizontalOverflow": false,
+      "browserErrors": []
+    }
+  ],
+  "blockedStorageTyping": true,
+  "notes": [
+    "This checks UI, navigation, exports and saved local state; it is not a new semantic accuracy benchmark.",
+    "Audio presence and accessibility are tested here; actual playback and dictation have separate media tests."
+  ]
+}

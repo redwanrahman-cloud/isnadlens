@@ -29,8 +29,8 @@
     "limit": "Reviewed sample result, not general accuracy or independent scholarly certification."
   },
   "current_application_checks": {
-    "tests_passed": 448,
-    "test_files": 38,
+    "tests_passed": 459,
+    "test_files": 40,
     "typecheck": "passed",
     "production_build": "passed",
     "desktop_mobile_journeys": "artifacts/input-journeys-2026-10-05.json",
@@ -45,7 +45,8 @@
       "passed": 14,
       "files": 3,
       "scope": "Receipt escaping, recitation locators, preserved receipt content and speech utilities; separate from the earlier full-suite result."
-    }
+    },
+    "site_polish": "artifacts/site-polish-2026-10-05.json"
   },
   "working_features": [
     "Nine input/display languages",

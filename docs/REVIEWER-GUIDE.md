@@ -38,3 +38,5 @@ Open `/tools`. Choose a city or your coordinates, check the calculation method a
 ## Supporting evidence
 
 The app's `/evaluation/latest` page shows the latest provided benchmark. [Current results packet](../artifacts/reviewer-evidence-index.json). Reviewers can inspect these results and use the working product; no historical test reruns are required.
+
+The current interface retains your selected display language across the verification workspace, companion, daily tools and reloads. The saved landing example includes separate branded PDF receipt and PNG share exports. Its exports identify the historical abridged example. Attached audio icons provide explanation reading and separately recorded Quran recitation. Current UI audit: `artifacts/site-polish-2026-10-05.json`; automated suite: 459 passing checks across 40 files. These interface checks do not change the reported semantic benchmark. Predefined journey questions outside Arabic remain explicitly labelled English; navigation and counter controls support all nine display languages.

@@ -34,7 +34,7 @@ try {
     await page.waitForURL('http://127.0.0.1:3100/');
     await page.waitForFunction(claim=>document.querySelector('#claim')?.value===claim,referral.original_claim);
     await page.unroute('**/api/verify');
-    await page.goto('http://127.0.0.1:3100/tools');await page.getByRole('button',{name:'English',exact:true}).click();
+    await page.goto('http://127.0.0.1:3100/tools');await page.locator('#display-language').selectOption('en');
     await page.getByRole('button',{name:'Show times',exact:true}).click();await page.getByText('04:57',{exact:true}).waitFor();
     await page.getByTestId('next-prayer').getByText('01:33:00',{exact:true}).waitFor();
     await page.getByRole('button',{name:'Convert date',exact:true}).click();await page.getByText('05-10-2026',{exact:true}).last().waitFor();
@@ -44,7 +44,7 @@ try {
     await page.getByRole('button',{name:'Show times',exact:true}).click();await page.getByText('Europe/London',{exact:true}).first().waitFor();
     await page.getByText('My locations saved on this device',{exact:true}).click();
     await page.getByLabel('Location name').fill('Office');await page.getByRole('button',{name:'Save current location',exact:true}).click();
-    await page.reload();await page.getByRole('button',{name:'English',exact:true}).click();await page.getByText('My locations saved on this device',{exact:true}).click();
+    await page.reload();await page.locator('#display-language').selectOption('en');await page.getByText('My locations saved on this device',{exact:true}).click();
     await page.getByRole('button',{name:'Office',exact:true}).click();await page.getByText('119.0°',{exact:true}).waitFor();
     await page.screenshot({path:`${directory}/tools-${viewport.width}.png`,fullPage:true});
     const toolsWidth=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));

@@ -1,5 +1,6 @@
 'use client';
 import {workspaceCopy} from '@/lib/workspace-copy';
+import {useDisplayLanguage} from '@/lib/use-display-language';
 import {WorkspaceIcon,BrandMark} from './components/WorkspaceIcon';
 import {AnswerText} from './components/AnswerText';
 import {QuranRecitation} from './components/QuranRecitation';
@@ -75,7 +76,7 @@ function SourceContext({item, language}: {item:Evidence; language:Language}) {
   return <details className="source-context"><summary>{language === 'ar' ? 'اقرأ السياق: الآية السابقة والتالية' : 'Read context: preceding and following verses'}</summary><p className="context-note">{language === 'ar' ? 'نصوص مجاورة من المصدر نفسه لفهم السياق؛ ليست حكماً مستقلاً على الادعاء.' : 'Neighbouring text from the same source provides context; it is not an independent verdict on the claim.'}</p>{item.source_context.map(context => <div className="context-passage" key={context.locator}><div><span>{context.position === 'preceding' ? language === 'ar' ? 'الآية السابقة' : 'Preceding verse' : language === 'ar' ? 'الآية التالية' : 'Following verse'}</span><bdi>{context.locator}</bdi></div><blockquote lang="ar" dir="rtl">{context.quotation}</blockquote><p>{context.integrity_passed ? language === 'ar' ? '✓ مطابق للنص المقبول' : '✓ Matches admitted source text' : language === 'ar' ? 'لم يجتز فحص السلامة' : 'Integrity check failed'}</p><code dir="ltr">SHA-256 {context.quotation_sha256}</code></div>)}</details>;
 }
 export default function Workbench({service='main'}:{service?:'main'|'pilgrimage'}) {
-  const [language, setLanguage] = useState<Language>('ar');
+  const [language, setLanguage] = useDisplayLanguage();
   const [claimInputLanguage,setClaimInputLanguage]=useState<ClaimInputSelection>('auto');
   const [autoInputMode,setAutoInputMode]=useState(true);
   const [summaryTranslationRequested,setSummaryTranslationRequested]=useState(false);
