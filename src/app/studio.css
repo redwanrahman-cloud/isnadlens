@@ -469,3 +469,6 @@ html[data-motion=paused] .studio *,html[data-motion=paused] .studio *::before,ht
 .studio .composer-language:hover{background:#e4eee7}
 .studio .composer-language:focus-within{outline:2px solid #a3823c;outline-offset:3px}
 @media(max-width:420px){.studio .composer-count{display:none}.studio .composer-send-actions{gap:6px}}
+
+.studio .studio-diagnostic-download{min-height:44px;padding:10px 14px;border:1px solid #bad0c1;border-radius:10px;background:#edf5ef;color:#17553b;font:inherit;font-size:13px;cursor:pointer}
+.studio .studio-diagnostic-download:hover{background:#dfeee4;border-color:#78a88b}

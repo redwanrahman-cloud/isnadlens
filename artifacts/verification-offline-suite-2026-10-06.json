@@ -1,0 +1,23 @@
+{
+  "kind": "offline_verification_suite_not_model_accuracy",
+  "date_riyadh": "2026-10-06",
+  "network_policy": "Native fetch/http/https blocked; credentials removed; provider calls mocked in unit tests; no .env.local loaded by tests",
+  "before": {
+    "numTotalTests": 478,
+    "numPassedTests": 478,
+    "numFailedTests": 0,
+    "success": true
+  },
+  "after": {
+    "numTotalTests": 490,
+    "numPassedTests": 490,
+    "numFailedTests": 0,
+    "success": true
+  },
+  "new_tests": 12,
+  "new_api_calls": 0,
+  "limits": [
+    "Passing unit tests does not establish fresh semantic accuracy.",
+    "Earlier intermediate failures: two expected router-version strings needed updating; one new mock needed explicit test-only authorization; one mock return needed its complete TypeScript contract. Final checks pass."
+  ]
+}

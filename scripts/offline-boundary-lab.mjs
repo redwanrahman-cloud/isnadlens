@@ -1,4 +1,5 @@
 import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
+import {join} from 'node:path';
 import {createRequire} from 'node:module';
 import {transformSync} from 'next/dist/build/swc/index.js';
 import {createReplayStore,requestFromRecord,fingerprint} from './lib/offline-replay.mjs';
@@ -25,12 +26,14 @@ const {retrieveWithPublishedEnglishAid,retrieve}=require(`../${privateRoot}/retr
 const {loadHadith,retrieveHadith}=require(`../${privateRoot}/hadith.js`);
 const {requestedSourceFamily}=require(`../${privateRoot}/auto-verification.js`);
 const readJson=async path=>JSON.parse(await readFile(path,'utf8'));
-const budgetBytes=await readFile('artifacts/private/api-spend.json');
+const captureRoot=process.argv.find(arg=>arg.startsWith('--captures='))?.slice(11)??'artifacts/private';
+const ledgerPath=join(captureRoot,'api-spend.json');
+const budgetBytes=await readFile(ledgerPath);
 const datasets=await Promise.all(['artifacts/common-question-baseline-50-2026-10-04.json','artifacts/holdout-question-set-50-2026-10-04.json','artifacts/fresh50-question-set-2026-10-04.json'].map(readJson));
 const cases=datasets.flatMap(d=>d.cases);
 const records=[];
 for(const item of cases){
- const path=item.id.startsWith('N')?`artifacts/private/fresh50-first-pass/${item.id}.json`:item.id.startsWith('H')?`artifacts/private/holdout50-first-pass/${item.id}.json`:`artifacts/private/baseline50-${item.id}.json`;
+ const path=item.id.startsWith('N')?join(captureRoot,`fresh50-first-pass/${item.id}.json`):item.id.startsWith('H')?join(captureRoot,`holdout50-first-pass/${item.id}.json`):join(captureRoot,`baseline50-${item.id}.json`);
  const record=await readJson(path);recordSchema.parse(record);
  if(!verifySeal(record)||record.original_claim!==item.claim)throw new Error(`INVALID_CAPTURE:${item.id}`);
  records.push({id:item.id,record});
@@ -53,7 +56,7 @@ for(const {id,record} of records){
  const current=decideVerdict(assessed,new Set(record.evidence_items.map(e=>e.evidence_id)));
  if(current!==record.verdict)deltas.push({id,historical:record.verdict,current_policy_on_saved_response:current,note:'Policy-only replay; no new interpretation or positive review.'});
  if(current!=='supported_within_selected_corpus')continue;
- const review={atoms:assessed.atomic_claims.filter(a=>a.material).map(a=>({atom_id:a.id,entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:a.evidence_ids[0]??null,context_locator:null,basis_quotation:record.evidence_items.find(e=>e.evidence_id===a.evidence_ids[0])?.quotation??null}))};
+ const review={explanation_preserved:true,atoms:assessed.atomic_claims.filter(a=>a.material).map(a=>({atom_id:a.id,entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:a.evidence_ids[0]??null,context_locator:null,basis_quotation:record.evidence_items.find(e=>e.evidence_id===a.evidence_ids[0])?.quotation??null}))};
  if(!validPositiveReview(review,assessed,record.evidence_items)){queue.push({id,reason:'SAVED_POSITIVE_PACKET_MECHANICALLY_INCOMPLETE',priority:'high',needs_real_model:true});continue;}
  // Injected reviews deliberately assume semantic yes; this does NOT approve the assertion.
  check('injected_guard_control',id,'well_formed_injected_yes',true);
@@ -98,9 +101,9 @@ const bad=records.find(row=>row.id==='H42').record;
 const badAssessment=semanticSchema.parse(bad.semantic_assessment);
 const badAtom=badAssessment.atomic_claims.find(a=>a.material);
 const badCard=bad.evidence_items.find(e=>badAtom.evidence_ids.includes(e.evidence_id));
-const falseYes={atoms:[{atom_id:badAtom.id,entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:badCard.evidence_id,context_locator:null,basis_quotation:badCard.quotation}]};
+const falseYes={explanation_preserved:true,atoms:[{atom_id:badAtom.id,entails:'yes',attribution_preserved:true,qualifications_preserved:true,evidence_id:badCard.evidence_id,context_locator:null,basis_quotation:badCard.quotation}]};
 const falseSemanticYesCanPassMechanics=validPositiveReview(falseYes,badAssessment,bad.evidence_items);
-const budgetUnchanged=fingerprint(await readFile('artifacts/private/api-spend.json'))===fingerprint(budgetBytes);
+const budgetUnchanged=fingerprint(await readFile(ledgerPath))===fingerprint(budgetBytes);
 check('offline_isolation','run','no_network_attempts',networkAttempts===0);check('offline_isolation','run','spending_ledger_unchanged',budgetUnchanged);
 const failures=checks.filter(c=>!c.passed),groups=Object.fromEntries([...new Set(checks.map(c=>c.group))].map(group=>[group,{checks:checks.filter(c=>c.group===group).length,passed:checks.filter(c=>c.group===group&&c.passed).length}]));
 const report={kind:'offline_engineering_lab_not_model_accuracy',created_at:new Date().toISOString(),application_tree_sha256:await applicationTreeHash(),historical_records:records.length,checks:checks.length,passed:checks.length-failures.length,failures,groups,new_api_calls:0,new_api_cost_usd:0,network_attempts:networkAttempts,budget_unchanged:budgetUnchanged,policy_replay_deltas:deltas,retrieval_probes:retrievalProbes,live_validation_queue:queue,known_remaining_boundary:{incorrect_semantic_yes_with_real_unrelated_text_passes_pure_mechanics:falseSemanticYesCanPassMechanics,note:'A model can still incorrectly assert entailment of genuine unrelated text. Offline guards do not establish religious meaning; this historical error requires real source-focused review and independent reference audit.'},limits:['Historical replay returns captured outputs only for the full exact packet and versions.','Fault injection checks robustness, not fresh model behavior or religious accuracy.','Query variations are not additional independent questions.','Search probes reuse fixed historical hints; multilingual AI detection and new planning are not simulated.','No app verdict or expected-answer database is used as a production fallback.']};

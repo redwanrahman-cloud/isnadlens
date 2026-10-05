@@ -1,0 +1,92 @@
+{
+  "kind": "proposed_known_case_live_diagnostic_not_new_benchmark",
+  "approval_required": true,
+  "status": "not_executed",
+  "date_riyadh": "2026-10-06",
+  "limit": "Six end-to-end questions; current budget cap and existing bounded recovery only; no manual retries, no cap increase, stop on budget/provider failure.",
+  "protocol": [
+    "Only claim, inputLanguage, corpusSelection=auto and service=main go to the API; no answer keys or source hints.",
+    "Save every complete first-pass response and diagnostic, including failures.",
+    "Score direct source/condition accuracy, helpfulness, unjustified withholding, integrity, latency and cost separately.",
+    "A correct source-grounded qualified answer can be useful without approving the entire broad proposition.",
+    "Any contradictory/unsupported decisive answer fails the check. No revised accuracy percentage replaces the frozen 29/30 score."
+  ],
+  "cases": [
+    {
+      "id": "L01",
+      "claim": "Is it good to eat while fasting?",
+      "inputLanguage": "en",
+      "source_witnesses": [
+        {
+          "locator": "2:187",
+          "sha256": "b8cc1604cff8690d60e2e7771ff6d18a81065a4f0f780a445a69b391735dfd21"
+        }
+      ],
+      "review_criterion": "Explain the source time boundary. A useful qualified answer is acceptable; do not invent an unqualified rule for every circumstance."
+    },
+    {
+      "id": "L02",
+      "claim": "Can I eat and drink before dawn when preparing to fast?",
+      "inputLanguage": "en",
+      "source_witnesses": [
+        {
+          "locator": "2:187",
+          "sha256": "b8cc1604cff8690d60e2e7771ff6d18a81065a4f0f780a445a69b391735dfd21"
+        }
+      ],
+      "review_criterion": "Preserve the dawn/nightfall time boundaries."
+    },
+    {
+      "id": "L03",
+      "claim": "Does fasting mean I can never eat or drink, even after sunset?",
+      "inputLanguage": "en",
+      "source_witnesses": [
+        {
+          "locator": "2:187",
+          "sha256": "b8cc1604cff8690d60e2e7771ff6d18a81065a4f0f780a445a69b391735dfd21"
+        }
+      ],
+      "review_criterion": "Preserve the explicit never/even-after-sunset wording; do not mark a corrected proposition as supported."
+    },
+    {
+      "id": "L04",
+      "claim": "Does trusting Allah mean I should stop planning and taking practical steps?",
+      "inputLanguage": "en",
+      "source_witnesses": [
+        {
+          "locator": "3:159",
+          "sha256": "ee8242de033279250083431f82e4b63da8a00066a723e409574404f6e64dfa27"
+        }
+      ],
+      "review_criterion": "Keep consultation/decision and trust together; do not add unsupported guarantees."
+    },
+    {
+      "id": "L05",
+      "claim": "Apakah Al-Qur’an menggambarkan orang beriman sebagai orang yang menjaga amanah dan janji mereka?",
+      "inputLanguage": "id",
+      "source_witnesses": [
+        {
+          "locator": "23:1",
+          "sha256": "f1aa5905741b15687f8df91c010552d6614ffed8b28494e8732f71dada593ea0"
+        },
+        {
+          "locator": "23:8",
+          "sha256": "dc2418a8a8b440065f737bd34169c1c58ef4d0cb01d4ed1be2a08cb6f0f2b997"
+        }
+      ],
+      "review_criterion": "Address the known Y16 audience-context gap. Direct alternatives or a genuinely helpful reviewed qualification may count; generic withholding does not."
+    },
+    {
+      "id": "L06",
+      "claim": "Does the Quran warn against following what one has no knowledge of?",
+      "inputLanguage": "en",
+      "source_witnesses": [
+        {
+          "locator": "17:36",
+          "sha256": "d939445898bf393a292d9c49803e8a2d31d9c69e072b5378123a808eaabeba64"
+        }
+      ],
+      "review_criterion": "Known B42 witness-retrieval gap. Assess usefulness and direct proof, not just a safe abstention."
+    }
+  ]
+}

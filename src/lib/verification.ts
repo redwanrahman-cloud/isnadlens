@@ -14,7 +14,7 @@ import {preserveWholeQuestion} from './source-decision';
 import {vagueExceptionSummary} from './condition-summary';
 
 export type { VerificationRecord } from './contracts';
-export const ROUTER_VERSION = 'luna-terra-model-routing-v12-reviewed-explanation';
+export const ROUTER_VERSION = 'luna-terra-model-routing-v13-feedback-and-failure-status';
 export function validPositiveReview(review: EntailmentReview, assessment: SemanticAssessment, evidence: EvidenceItem[]): boolean {
   const atoms = assessment.atomic_claims.filter(a => a.material);
   if (review.explanation_preserved !== true) return false;
@@ -126,7 +126,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
   if (sourceIdentification) base.source_identification = sourceIdentificationSchema.parse(sourceIdentification);
   if (corpusSelection === 'hadith') base.limitations = ['Results apply only to bounded retrieved records from the admitted Arabic and English HadeethEnc editions; other published languages are separate display editions.', 'Publisher supplied grading and references are preserved; this tool does not independently authenticate hadith.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.', 'Arabic and English editions have different coverage; each record remains separately attributed and is never silently merged.'];
   if (corpusSelection === 'both') base.limitations = ['Search covers the admitted Arabic Quran edition and selected Arabic/English HadeethEnc records; it is not all Islamic literature.', 'Quran and Hadith evidence remain separately attributed; their quotations are never merged or silently substituted.', 'Publisher hadith grades are preserved, not independently authenticated.', 'A bounded retrieval can miss relevant passages; absence is not proof of a religious conclusion.', 'Model-assisted interpretation requires qualified human review; this is not a fatwa.'];
-  const fail = (reason: string) => sealRecord({ ...base, reason_codes: [reason], ...(reason === 'OUTSIDE_SUPPORTED_CLAIM_SCOPE' ? {
+  const fail = (reason: string) => sealRecord({ ...base, verdict:'not_evaluated', reason_codes: [reason], ...(reason === 'OUTSIDE_SUPPORTED_CLAIM_SCOPE' ? {
     summary_ar: 'عدسة الإسناد مخصّصة للتحقق من الادعاءات المتعلقة بالقرآن والحديث، ولا تجيب عن الأسئلة العامة أو الطقس. اكتب ادعاءً واضحاً تريد فحصه في المصدر المحدد.',
     summary_en: 'IsnadLens verifies claims about the Quran and Hadith. It does not answer general questions or provide weather updates. Enter a clear claim to examine against the selected source.',
   } : {}) });
@@ -272,7 +272,7 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         base.assessment_selection_reason='previous_contradiction_after_flag_disagreement';
       }
     }
-    if (base.verdict === 'supported_within_selected_corpus' || base.verdict === 'conflicting_within_selected_corpus') {
+    decisiveReview: if (base.verdict === 'supported_within_selected_corpus' || base.verdict === 'conflicting_within_selected_corpus') {
       let decisionMode:'decision'|'support'=base.verdict==='conflicting_within_selected_corpus'?'decision':'support';
       base.limitations.push('A separate source-focused model check evaluates proposed support or contradiction and preservation of the original question; it is not independent scholarly review and can still err. Its additional usage is sealed separately.');
       try {
@@ -291,11 +291,14 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         // authenticated evidence, then independently review the replacement.
         if(checked.review.explanation_preserved===false && base.assessment_attempts?.length===1 && assessmentModels().length>1){
           const strong=assessmentModels()[1];
-          const revised=await assessClaim(claim,inputLanguage,base.evidence_items,strong);
+          const revised=await assessClaim(claim,inputLanguage,base.evidence_items,strong,{previous_summary_en:assessment.summary_en,previous_summary_ar:assessment.summary_ar,review:checked.review,...(checked.raw_provider_review?.explanation_diagnostic?{original_diagnostic:checked.raw_provider_review.explanation_diagnostic}:{})});
           base.assessment_attempts.push({model:revised.model,reason:checked.review.explanation_diagnostic?.reason==='relationship_mismatch'?'VERDICT_EXPLANATION_REASSESSMENT':'FINAL_EXPLANATION_REASSESSMENT',raw_assessment:revised.assessment,usage:revised.usage});
           const revisedVerdict=decideVerdict(revised.assessment,new Set(base.retrieval_ids));
-          if(semanticReferenceError(revised.assessment,base.evidence_items)||!['supported_within_selected_corpus','conflicting_within_selected_corpus'].includes(revisedVerdict))return fail('FINAL_EXPLANATION_UNCONFIRMED');
+          if(semanticReferenceError(revised.assessment,base.evidence_items)||revisedVerdict==='not_evaluated')return fail('FINAL_EXPLANATION_UNCONFIRMED');
           assessment=revised.assessment;base.semantic_assessment=assessment;base.model=revised.model;base.usage=revised.usage;base.verdict=revisedVerdict;
+          // A narrower, useful answer can enter the existing independent qualified
+          // review below. Do not require a decisive verdict or start another retry.
+          if(revisedVerdict==='insufficient_within_selected_corpus')break decisiveReview;
           restoredFirstCandidate=true;
           decisionMode=revisedVerdict==='conflicting_within_selected_corpus'?'decision':'support';
           preserveCandidate();
@@ -320,7 +323,10 @@ export async function verifyClaim({ claim, inputLanguage, corpusSelection = 'qur
         }
         const passed = validPositiveReview(checked.review, assessment, base.evidence_items);
         base.entailment_review = { version: ENTAILMENT_VERSION, model: checked.model, status: passed ? 'passed' : 'rejected', raw_review: checked.review, raw_provider_review: checked.raw_provider_review, unit_provenance: checked.unit_provenance, derivation: 'whole_immutable_selected_source_unit', usage: checked.usage, reason: passed ? 'SOURCE_ENTAILMENT_CONFIRMED' : 'SOURCE_ENTAILMENT_UNCONFIRMED' };
-        if (!passed) { base.verdict = 'not_evaluated'; return fail(checked.review.explanation_preserved!==true?'FINAL_EXPLANATION_UNCONFIRMED':decisionMode==='decision'?'CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED':'SOURCE_ENTAILMENT_UNCONFIRMED'); }
+        if (!passed) {
+          const meaningRejected=checked.meaning_check&&checked.meaning_check.review.faithful!=='yes';
+          return fail(meaningRejected?'CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED':checked.review.explanation_preserved===false?'FINAL_EXPLANATION_UNCONFIRMED':decisionMode==='decision'?'CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED':'SOURCE_ENTAILMENT_UNCONFIRMED');
+        }
       } catch (error) {
         base.entailment_review = { version: ENTAILMENT_VERSION, model: error instanceof ProviderFailure ? error.model : primaryModel(), status: 'unavailable', raw_review: null, usage: error instanceof ProviderFailure ? error.usage : null, reason: error instanceof Error ? error.message : 'PROVIDER_UNAVAILABLE' };
         base.verdict = 'not_evaluated'; return fail('SOURCE_ENTAILMENT_UNAVAILABLE');

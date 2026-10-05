@@ -1,0 +1,2188 @@
+{
+  "kind": "saved_release_record_integrity_audit_not_new_model_accuracy",
+  "created_at": "2026-10-05T21:15:07.014Z",
+  "total": 150,
+  "passed": 150,
+  "new_api_calls": 0,
+  "historical_inputs": [
+    {
+      "path": "artifacts/release30-first-pass-2026-10-04.json",
+      "sha256": "948d284cc2fd5b0d6ed0758b5e75aea2121bc1cf444e5b337a3564fdd09a2578"
+    },
+    {
+      "path": "artifacts/release30-round2-first-pass-2026-10-05.json",
+      "sha256": "3ef780631fa9b7468b2cbdc8349d680d7d9f70fa28f53bd00c6169516d87439f"
+    },
+    {
+      "path": "artifacts/release30-round3-first-pass-2026-10-05.json",
+      "sha256": "c9127ad17b56ca27e110203f1ff4581fdfe7d7fe3f58423387c2aef874a87af4"
+    },
+    {
+      "path": "artifacts/release30-round4-first-pass-2026-10-05.json",
+      "sha256": "bd23d4b12f6e606f688b9bcff0b4ba7bd025d1239639e749f439f4caa42bb84f"
+    },
+    {
+      "path": "artifacts/release30-round5-first-pass-2026-10-05.json",
+      "sha256": "73b125160efbbda5cab47f9ded3ea18095b9ff73751b5bc3bbc2984a3e4e2c06"
+    }
+  ],
+  "cases": [
+    {
+      "id": "R01",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R02",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R03",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R04",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R05",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R06",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R07",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R08",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R09",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R10",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R11",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R12",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R13",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R14",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R15",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R16",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R17",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R18",
+      "verdict": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R19",
+      "verdict": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R20",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R21",
+      "verdict": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R22",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R23",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R24",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R25",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R26",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R27",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R28",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R29",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "R30",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "PRIVATE_OR_SENSITIVE_FACTS_REFERRAL"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "V01",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "SOURCE_ENTAILMENT_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V02",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V03",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V04",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V05",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V06",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V07",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V08",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V09",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V10",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V11",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V12",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "V13",
+      "verdict": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "V14",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V15",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V16",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V17",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V18",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V19",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V20",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V21",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V22",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V23",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V24",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V25",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "V26",
+      "verdict": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "V27",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_MEANING_OR_CONTRADICTION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "V28",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "V29",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "INPUT_LANGUAGE_NOT_SUPPORTED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "V30",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "W01",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W02",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W03",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "FINAL_EXPLANATION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W04",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W05",
+      "verdict": "insufficient_within_selected_corpus",
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "W06",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W07",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W08",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "W09",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W10",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "W11",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W12",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W13",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W14",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W15",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "W16",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W17",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W18",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W19",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W20",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W21",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "FINAL_EXPLANATION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "W22",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W23",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W24",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "FINAL_EXPLANATION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "W25",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "FINAL_EXPLANATION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        null
+      ]
+    },
+    {
+      "id": "W26",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "FINAL_EXPLANATION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "W27",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "FINAL_EXPLANATION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "W28",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_CLARIFICATION_REQUIRED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "W29",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "W30",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "X01",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        {
+          "reason": "missing_qualification",
+          "language": "ar",
+          "sentence": "ويُفهم ذلك ضمن القيد المذكور، مع اختلاف حكم من يقاتل أو يشارك في الإخراج كما تبيّن الآية 60:9.",
+          "detail": "This describes the contrasting category with an “or,” whereas 60:9 specifies those who fought over religion and expelled, or assisted in the expulsion. It therefore does not preserve the source’s conditions and materially differs from the English summary."
+        },
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X02",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X03",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X04",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X05",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X06",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X07",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X08",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X09",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X10",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X11",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X12",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X13",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X14",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X15",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X16",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X17",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X18",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X19",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X20",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X21",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X22",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X23",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X24",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X25",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X26",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        {
+          "reason": "wrong_reference",
+          "language": "ar",
+          "sentence": "لا؛ هذا الادعاء يناقض النص القرآني المعروض في 6:164، وتؤكده أيضًا الآيتان 35:18 و17:15:18 في مجموعة المصادر المحددة.",
+          "detail": "The Arabic summary gives the locator “17:15:18,” which is not the supplied locator; the cited passage is 17:15."
+        },
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X27",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "X28",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "X29",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_CLARIFICATION_REQUIRED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "X30",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "Y01",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y02",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y03",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y04",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y05",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y06",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y07",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y08",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y09",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y10",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y11",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y12",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y13",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y14",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y15",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y16",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "FINAL_EXPLANATION_UNCONFIRMED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 2,
+      "recorded_diagnostics": [
+        {
+          "reason": "relationship_mismatch",
+          "language": "both",
+          "sentence": null,
+          "detail": "Independent source relationship does not confirm the proposed verdict for the original proposition."
+        },
+        {
+          "reason": "relationship_mismatch",
+          "language": "both",
+          "sentence": null,
+          "detail": "Independent source relationship does not confirm the proposed verdict for the original proposition."
+        }
+      ]
+    },
+    {
+      "id": "Y17",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y18",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y19",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y20",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y21",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y22",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y23",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y24",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y25",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y26",
+      "verdict": "conflicting_within_selected_corpus",
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y27",
+      "verdict": "supported_within_selected_corpus",
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 1,
+      "recorded_diagnostics": [
+        {
+          "reason": "none",
+          "language": null,
+          "sentence": null,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "id": "Y28",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "Y29",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "CLAIM_CLARIFICATION_REQUIRED"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    },
+    {
+      "id": "Y30",
+      "verdict": "not_evaluated",
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "source_and_nested_seals_passed": true,
+      "published_verdict_matches": true,
+      "review_attempts": 0,
+      "recorded_diagnostics": []
+    }
+  ]
+}
