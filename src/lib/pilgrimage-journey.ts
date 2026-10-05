@@ -1,0 +1,16 @@
+export type JourneyItem={id:string;label_en:string;label_ar:string;question_en:string;question_ar:string;reference:string;counter?:'tawaf'|'sai'};
+export const UMRAH_TOPICS:JourneyItem[]=[
+  {id:'ihram',label_en:'Ihram & intention',label_ar:'الإحرام والنية',question_en:'What do the Hadith sources say about the places for entering Ihram for Hajj and Umrah?',question_ar:'ماذا تقول الأحاديث عن مواقيت الإحرام للحج والعمرة؟',reference:'https://umrah.nusuk.sa/Journey'},
+  {id:'tawaf',label_en:'Tawaf',label_ar:'الطواف',question_en:'What does the Hadith report about the number of circuits in Tawaf?',question_ar:'ماذا يذكر الحديث عن عدد أشواط الطواف؟',reference:'https://hadeethenc.com/en/browse/hadith/3309',counter:'tawaf'},
+  {id:'sai',label_en:'Sai · Safa & Marwah',label_ar:'السعي بين الصفا والمروة',question_en:'What do the Hadith sources say about starting Sai at Safa and finishing at Marwah?',question_ar:'ماذا تقول الأحاديث عن بدء السعي من الصفا وانتهائه عند المروة؟',reference:'https://hadeethenc.com/en/browse/hadith/10622',counter:'sai'},
+  {id:'completion',label_en:'Shaving or shortening hair',label_ar:'الحلق أو التقصير',question_en:'What do the Hadith sources say about shaving or shortening hair after the pilgrimage rites?',question_ar:'ماذا تقول الأحاديث عن الحلق أو التقصير بعد المناسك؟',reference:'https://umrah.nusuk.sa/Journey'},
+];
+export const HAJJ_TOPICS:JourneyItem[]=[
+  {id:'forms',label_en:'Tamattu, Qiran & Ifrad',label_ar:'التمتع والقران والإفراد',question_en:'What do the Hadith sources say about the forms of Hajj: Tamattu, Qiran and Ifrad?',question_ar:'ماذا تقول الأحاديث عن أنواع الحج: التمتع والقران والإفراد؟',reference:'https://hadeethenc.com/en/browse/hadith/3309'},
+  {id:'mina',label_en:'Mina',label_ar:'منى',question_en:'What does the Hadith report about going to Mina during Hajj?',question_ar:'ماذا يذكر الحديث عن الذهاب إلى منى أثناء الحج؟',reference:'https://hajj.nusuk.sa/Journey'},
+  {id:'arafah',label_en:'Arafah',label_ar:'عرفة',question_en:'What does the Hadith report about standing at Arafah during Hajj?',question_ar:'ماذا يذكر الحديث عن الوقوف بعرفة أثناء الحج؟',reference:'https://hadeethenc.com/en/browse/hadith/10622'},
+  {id:'muzdalifah',label_en:'Muzdalifah',label_ar:'مزدلفة',question_en:'What does the Quran say about remembering Allah after departing from Arafat?',question_ar:'ماذا يقول القرآن عن ذكر الله بعد الإفاضة من عرفات؟',reference:'https://hajj.nusuk.sa/Journey'},
+  {id:'jamarat',label_en:'Jamarat',label_ar:'الجمرات',question_en:'What do the Hadith sources report about the Jamarat during Hajj?',question_ar:'ماذا تذكر الأحاديث عن رمي الجمرات في الحج؟',reference:'https://hajj.nusuk.sa/Journey'},
+  {id:'ifada',label_en:'Tawaf al-Ifadah',label_ar:'طواف الإفاضة',question_en:'What do the Hadith sources report about Tawaf al-Ifadah during Hajj?',question_ar:'ماذا تذكر الأحاديث عن طواف الإفاضة في الحج؟',reference:'https://hajj.nusuk.sa/nusuk/hajj-rituals',counter:'tawaf'},
+  {id:'farewell',label_en:'Farewell Tawaf',label_ar:'طواف الوداع',question_en:'What do the Hadith sources say about the farewell Tawaf?',question_ar:'ماذا تقول الأحاديث عن طواف الوداع؟',reference:'https://hajj.nusuk.sa/nusuk/hajj-rituals',counter:'tawaf'},
+];

@@ -15,7 +15,7 @@ export function PilgrimageProgress({language}:{language:DisplayLanguage}) {
     <p>{ar?'سجّل كل شوط مكتمل بنفسك. الحفظ على هذا الجهاز فقط؛ لا يثبت العداد صحة النسك.':'Record each completed circuit or Sai leg yourself. Progress stays on this device; the counter does not certify ritual validity.'}</p>
     <div className="desk-grid">{(['tawaf','sai'] as PilgrimageActivity[]).map(activity=>{
       const summary=progressSummary(state,activity);
-      return <div key={activity}>
+      return <div key={activity} id={`progress-${activity}`}>
         <h3>{activity==='tawaf'?(ar?'الطواف':'Tawaf'):(ar?'السعي':'Sai')}</h3>
         <p aria-live="polite">{ar?'المسجّل':'Recorded'}: <bdi>{summary.completed} / 7</bdi> · {ar?'المتبقي حسب السجل':'Remaining from your record'}: <bdi>{summary.remaining}</bdi></p>
         <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>

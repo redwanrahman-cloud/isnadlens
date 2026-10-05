@@ -1,5 +1,6 @@
+import {nextDay} from '../../../lib/prayer-clock';
 import {NextRequest,NextResponse} from 'next/server';
-import {convertDate,monthCalendar,prayerTimes,type CalendarMethod} from '@/lib/daily-tools';
+import {convertDate,monthCalendar,prayerTimes,type CalendarMethod} from '../../../lib/daily-tools';
 export const runtime='nodejs';
 export const dynamic='force-dynamic';
 let active=0;
@@ -20,7 +21,13 @@ export async function GET(request:NextRequest) {
     else if (params.get('kind')==='calendar') result=await monthCalendar(Number(params.get('year')),Number(params.get('month')),method);
     else if (params.get('kind')==='prayer') {
       if (['latitude','longitude','method','school'].some(key=>params.get(key)===null||params.get(key)==='')) throw new Error('INPUT_INVALID');
-      result=await prayerTimes({date:params.get('date')??'',latitude:Number(params.get('latitude')),longitude:Number(params.get('longitude')),method:Number(params.get('method')),school:Number(params.get('school')),calendarMethod:method});
+      const input={date:params.get('date')??'',latitude:Number(params.get('latitude')),longitude:Number(params.get('longitude')),method:Number(params.get('method')),school:Number(params.get('school')),calendarMethod:method};
+      const current=await prayerTimes(input);
+      if(params.get('nextDay')==='1'){
+        let following=null;
+        try{following=await prayerTimes({...input,date:nextDay(input.date)});}catch{/* Today's validated times remain useful if tomorrow is unavailable. */}
+        result={...current,next_day:following};
+      }else result=current;
     } else throw new Error('INPUT_INVALID');
     return NextResponse.json(result,{headers:{'Cache-Control':'no-store'}});
   } catch(error) {

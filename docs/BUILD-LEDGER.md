@@ -218,3 +218,10 @@ Added /pilgrimage as an optional scoped mode of the existing verified multilingu
 419/419 automated checks, type checking and production build passed. Desktop/mobile viewport journeys passed counter resume/undo, referral transfer, prayers, conversion and monthly calendar without page errors or overflow. Free provider checks passed Makkah, London and Jakarta and date round trip. Three bounded live companion cases passed with direct Quran references and an off-topic referral; audited source bytes and nested seals. These integration checks are not a fresh accuracy benchmark. Details: docs/COMPANION-AND-DAILY-TOOLS.md.
 
 Live companion checks cost 0.261675375 SAR; conservative development commitment 47.0542235625/49 SAR, leaving 1.9457764375 SAR. Separate 15 SAR judging reserve preserved. Modern Islamic UI/UX, daily-tool localization and deployment follow.
+
+
+## Afternoon feature window before evening UI/UX — 5 October 2026 Riyadh
+
+Redwan authorized further useful features and deferred visual redesign until after 18:00 Riyadh. Added location-timezone next-prayer countdown with real next-day Fajr, twelve city presets, optional on-device saved locations, locally computed Qibla bearing, bounded Umrah/Hajj topic navigation, downloadable source evidence receipts and the latest frozen 29/30 benchmark page. No universal Hajj sequence or live compass claim.
+
+434/434 automated checks, final focused clock checks, type checking and production build passed. Desktop/mobile-width browser journeys passed, including saved-location resume, countdown, topic selection, download and all 30 benchmark cases. Qibla matched public API reference bearings for London, Jakarta and Sydney to finer than display precision. No additional paid AI calls; development remains 47.0542235625/49 SAR, with 15 SAR judging reserve protected. Details: docs/FEATURE-WINDOW-2026-10-05.md. Evening UI/UX awaits the user’s visual direction.

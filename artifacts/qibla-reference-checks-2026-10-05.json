@@ -1,0 +1,23 @@
+{
+  "source": "AlAdhan qibla API",
+  "cases": [
+    {
+      "name": "London",
+      "provider_degrees": 118.98724251452296,
+      "local_degrees": 118.98721949633443,
+      "matching_to_display_precision": true
+    },
+    {
+      "name": "Jakarta",
+      "provider_degrees": 295.15174505875416,
+      "local_degrees": 295.15173626224407,
+      "matching_to_display_precision": true
+    },
+    {
+      "name": "Sydney",
+      "provider_degrees": 277.499589412883,
+      "local_degrees": 277.4995891209515,
+      "matching_to_display_precision": true
+    }
+  ]
+}
