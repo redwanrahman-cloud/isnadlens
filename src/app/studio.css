@@ -461,3 +461,11 @@ html[data-motion=paused] .studio *,html[data-motion=paused] .studio *::before,ht
 .studio .composer-attachment-menu{position:absolute;bottom:64px;inset-inline-start:12px;max-width:calc(100% - 24px);z-index:3;padding:6px;background:#fff;border:1px solid #c7d8cc;border-radius:14px;box-shadow:0 8px 24px #103e2d1f}
 .studio .composer-attachment-menu button{display:flex;align-items:center;gap:10px;padding:10px 14px;min-height:44px;width:100%;border:0;border-radius:9px;background:white;color:#24583c;font-size:13px;text-align:start}
 .studio .composer-attachment-menu button:hover{background:#edf5ef}
+
+/* Compact input-language override; follows the page language by default. */
+.studio .composer-language{position:relative;display:grid;place-items:center;flex:none;width:62px;height:44px;margin:0;border-radius:12px;color:#285a43;background:#f1f5f2;cursor:pointer}
+.studio .composer-language>span{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:650;letter-spacing:.04em;pointer-events:none}
+.studio .composer-language>select{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.studio .composer-language:hover{background:#e4eee7}
+.studio .composer-language:focus-within{outline:2px solid #a3823c;outline-offset:3px}
+@media(max-width:420px){.studio .composer-count{display:none}.studio .composer-send-actions{gap:6px}}

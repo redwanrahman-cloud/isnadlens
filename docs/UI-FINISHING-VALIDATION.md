@@ -261,3 +261,22 @@ the menu opens, a second plus click closes it, and the mobile view has no
 horizontal overflow. The isolated fixture recorded no provider POSTs or unexpected
 requests. Camera capture behavior is unchanged; native desktop browsers may use
 a file picker for the capture input rather than a webcam.
+
+## Simple input language — 5 October
+
+Input now defaults to the selected page language, including its persisted initial
+selection. A compact EN/BN/AR/etc. native selector beside the microphone allows an
+explicit override, with full native language names in its options. Removed the
+input-language accordion and automatic detection choice from the composer. Source
+selection remains available inside Source coverage. Changing the page language
+resets the override and cancels active dictation so a recording is not silently
+reinterpreted. Typed and dictated questions send the explicit input language.
+
+Validation: production build/TypeScript and eight focused voice/draft tests passed.
+The isolated real-component fixture confirmed Bengali and Arabic page defaults
+sent `bn` and `ar` in simulated transcription headers; selecting French on the
+Arabic page sent `fr` while the page stayed Arabic. Three simulated recordings
+released their streams, and the unexpected-request count stayed zero. All nine
+page languages matched the composer language at 390 CSS pixels without horizontal
+overflow. The native selector retains a translated accessible name and 44px height.
+No physical microphone, provider or verification testing was performed.
