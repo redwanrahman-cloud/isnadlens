@@ -1,4 +1,5 @@
 'use client';
+import {WorkspaceIcon} from './components/WorkspaceIcon';
 import {useEffect,useState} from 'react';
 import {createProgress,progressSummary,recordProgress,undoProgress,resetProgress,restoreProgress,PROGRESS_REFERENCE,type PilgrimageActivity} from '@/lib/pilgrimage-progress';
 import {progressCopy} from '@/lib/progress-copy';
@@ -12,12 +13,12 @@ export function PilgrimageProgress({language}:{language:DisplayLanguage}) {
   useEffect(()=>{try{const stored=localStorage.getItem(STORAGE_KEY);if(stored){const resumed=restoreProgress(stored);if(resumed)setState(resumed);else setSaved(false);}}catch{setSaved(false);}setReady(true);},[]);
   useEffect(()=>{if(!ready)return;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));setSaved(true);}catch{setSaved(false);}},[state,ready]);
   return <section id="journey-counting" className="coverage-box journey-progress" aria-label={t.counter}>
-    <h2>{t.heading}</h2>
+    <h2><WorkspaceIcon name="compass"/>{t.heading}</h2>
     <p>{t.intro}</p>
     <div className="desk-grid">{(['tawaf','sai'] as PilgrimageActivity[]).map(activity=>{
       const summary=progressSummary(state,activity);
       return <div className="circuit-card" key={activity} id={`progress-${activity}`}>
-        <h3>{activity==='tawaf'?t.tawaf:t.sai}</h3>
+        <div className="circuit-heading"><WorkspaceIcon name="compass"/><h3>{activity==='tawaf'?t.tawaf:t.sai}</h3><strong className="circuit-count" key={summary.completed}>{summary.completed}<small>/7</small></strong></div>
         <p aria-live="polite">{t.recorded}: <bdi>{summary.completed} / 7</bdi> · {t.remaining}: <bdi>{summary.remaining}</bdi></p>
         <div className="circuit-track" aria-hidden="true">{Array.from({length:7},(_,index)=><span key={index} className={index<summary.completed?'complete':''}>{index+1}</span>)}</div>
         <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>

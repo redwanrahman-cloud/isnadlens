@@ -1,31 +1,38 @@
 'use client';
-import type {ReactNode} from 'react';
+import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {displayLanguages,displayLanguageMetadata,displayCopy,type DisplayLanguage} from '@/lib/display-copy';
 import {workspaceCopy} from '@/lib/workspace-copy';
 import {studioCopy} from '@/lib/studio-copy';
 import {BrandMark,WorkspaceIcon} from './components/WorkspaceIcon';
+import {MotionControl} from './components/MotionControl';
 import styles from './studio.module.css';
 
 export function StudioShell({language,onLanguage,service='main',saved=false,onHome,onSaved,children}:{language:DisplayLanguage;onLanguage:(language:DisplayLanguage)=>void;service?:'main'|'pilgrimage'|'daily';saved?:boolean;onHome?:()=>void;onSaved?:()=>void;children:ReactNode}){
  const ui=workspaceCopy(language),t=studioCopy(language);
- return <div className={`${styles.app} studio studio-${service}`} dir={displayLanguageMetadata[language].direction} lang={language}>
+ const [sidebarOpen,setSidebarOpen]=useState(false);
+ const menuButton=useRef<HTMLButtonElement>(null);
+ const menuLabels=({ar:['فتح القائمة','إغلاق القائمة'],en:['Open navigation','Close navigation'],bn:['মেনু খুলুন','মেনু বন্ধ করুন'],hi:['मेनू खोलें','मेनू बंद करें'],ur:['مینو کھولیں','مینو بند کریں'],id:['Buka navigasi','Tutup navigasi'],es:['Abrir navegación','Cerrar navegación'],fr:['Ouvrir la navigation','Fermer la navigation'],de:['Navigation öffnen','Navigation schließen']})[language];
+ useEffect(()=>{try{setSidebarOpen(localStorage.getItem('isnadlens:sidebar')==='open');}catch{}},[]);
+ function setMenu(open:boolean){setSidebarOpen(open);try{localStorage.setItem('isnadlens:sidebar',open?'open':'closed');}catch{}}
+ useEffect(()=>{if(!sidebarOpen)return;const close=(event:KeyboardEvent)=>{if(event.key==='Escape'){setMenu(false);menuButton.current?.focus();}};window.addEventListener('keydown',close);return()=>window.removeEventListener('keydown',close);},[sidebarOpen]);
+ return <div className={`${styles.app} studio studio-${service}`} data-sidebar={sidebarOpen?"open":"closed"} dir={displayLanguageMetadata[language].direction} lang={language}>
   <a className={styles.skip} href="#studio-main">{ui.ask}</a>
-  <aside className={styles.sidebar}>
-   <a className={styles.brand} href="/" aria-label="IsnadLens"><span className={styles.mark}><BrandMark/></span><span>IsnadLens<small>عدسة الإسناد</small></span></a>
-   <div className={styles.navLabel}>{t.workspace}</div>
+  <aside id="studio-navigation" onClick={event=>{if((event.target as Element).closest('a')&&window.matchMedia('(max-width:700px)').matches)setMenu(false);}} hidden={!sidebarOpen} className={`${styles.sidebar} studio-sidebar`}>
+   <a className={`${styles.brand} studio-brand`} href="/" aria-label="IsnadLens"><span className={styles.mark}><BrandMark/></span><span>IsnadLens<small>عدسة الإسناد</small></span></a>
+   <div className={`${styles.navLabel} studio-nav-label`}>{t.workspace}</div>
    <nav className={styles.nav} aria-label={t.workspace}>
     <a className={service==='main'&&!saved?styles.active:''} href="/" onClick={onHome?event=>{event.preventDefault();onHome();}:undefined} aria-current={service==='main'&&!saved?'page':undefined} aria-label={ui.main} title={ui.main}><WorkspaceIcon name="spark"/><span>{ui.main}</span></a>
     <a className={saved?styles.active:''} href="/#recent-checks" onClick={onSaved?event=>{event.preventDefault();onSaved();}:undefined} aria-current={saved?'page':undefined} aria-label={ui.saved} title={ui.saved}><WorkspaceIcon name="save"/><span>{ui.saved}</span></a>
    </nav>
-   <div className={styles.navLabel}>{t.explore}</div>
+   <div className={`${styles.navLabel} studio-nav-label`}>{t.explore}</div>
    <nav className={styles.nav} aria-label={t.tools}>
     <a href="/pilgrimage" className={service==='pilgrimage'?styles.active:''} aria-current={service==='pilgrimage'?'page':undefined} aria-label={ui.companion} title={ui.companion}><WorkspaceIcon name="compass"/><span>{ui.companion}</span></a>
     <a href="/tools" className={service==='daily'?styles.active:''} aria-current={service==='daily'?'page':undefined} aria-label={t.daily} title={t.daily}><WorkspaceIcon name="calendar"/><span>{t.daily}</span></a>
    </nav>
-   <div className={styles.sidebarBottom}><div className={styles.sidePattern}><BrandMark/></div><p>{t.motto}</p><a href="/method">{t.method}<WorkspaceIcon name="arrow"/></a><a href="/evaluation/latest">{({ar:'نتائج الاختبار',en:'Test results',bn:'পরীক্ষার ফলাফল',hi:'परीक्षण परिणाम',ur:'ٹیسٹ کے نتائج',id:'Hasil pengujian',es:'Resultados',fr:'Résultats',de:'Testergebnisse'})[language]}</a></div>
+   <div className={`${styles.sidebarBottom} studio-sidebar-bottom`}><div className={styles.sidePattern}><BrandMark/></div><p>{t.motto}</p><a href="/method">{t.method}<WorkspaceIcon name="arrow"/></a><a href="/evaluation/latest">{({ar:'نتائج الاختبار',en:'Test results',bn:'পরীক্ষার ফলাফল',hi:'परीक्षण परिणाम',ur:'ٹیسٹ کے نتائج',id:'Hasil pengujian',es:'Resultados',fr:'Résultats',de:'Testergebnisse'})[language]}</a></div>
   </aside>
-  <div className={styles.workspace}>
-   <header className={styles.topbar}><div className={styles.breadcrumb}><span>{t.workspace}</span><span>/</span><strong>{saved?ui.saved:service==='main'?ui.main:service==='pilgrimage'?ui.companion:t.daily}</strong></div><label className="studio-language"><span className="sr-only">{displayCopy[language].langs}</span><select id="display-language" value={language} onChange={event=>onLanguage(event.target.value as DisplayLanguage)}>{displayLanguages.map(code=><option key={code} value={code}>{displayLanguageMetadata[code].nativeName}</option>)}</select></label></header>
+  <div className={`${styles.workspace} studio-workspace`}>
+   <header className={`${styles.topbar} studio-topbar`}><div className="studio-navigation-heading"><button ref={menuButton} type="button" className="studio-menu-toggle" aria-expanded={sidebarOpen} aria-controls="studio-navigation" aria-label={menuLabels[sidebarOpen?1:0]} title={menuLabels[sidebarOpen?1:0]} onClick={()=>setMenu(!sidebarOpen)}><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d={sidebarOpen?"M6 6L18 18M18 6L6 18":"M4 6H20M4 12H20M4 18H20"}/></svg></button><div className={styles.breadcrumb}><a className="studio-compact-brand" href="/" aria-label="IsnadLens"><BrandMark/><span>IsnadLens</span></a><span>/</span><strong>{saved?ui.saved:service==='main'?ui.main:service==='pilgrimage'?ui.companion:t.daily}</strong></div></div><div className="studio-header-controls"><MotionControl language={language}/><label className="studio-language"><span className="sr-only">{displayCopy[language].langs}</span><select id="display-language" value={language} onChange={event=>onLanguage(event.target.value as DisplayLanguage)}>{displayLanguages.map(code=><option key={code} value={code}>{displayLanguageMetadata[code].nativeName}</option>)}</select></label></div></header>
    <div className="studio-content">{children}</div>
   </div>
  </div>;

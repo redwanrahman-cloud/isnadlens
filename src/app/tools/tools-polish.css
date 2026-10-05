@@ -11,3 +11,41 @@
 @media(max-width:480px){.daily-tools .brand strong{font-size:27px}.daily-tools .header-actions{width:100%}.daily-tools .tool-language{margin-inline-start:auto}.daily-tools .tool-language select{max-width:140px}.daily-tools .result-panel{padding:18px;border-radius:14px}.daily-tools h2{font-size:22px}.daily-tools .qibla-panel{display:block;padding:20px}.daily-tools .qibla-panel>svg{display:block;margin:18px auto}.daily-tools .qibla-panel>p{text-align:start}.daily-tools .tool-shortcuts a{padding:0 10px}.daily-tools .tools-clock{font-size:12px}.daily-tools #calendar th{font-size:10px;padding-inline:1px}.daily-tools #calendar td{padding-inline:1px}.daily-tools .tools-main{padding-inline:12px}}
 @media(prefers-reduced-motion:reduce){.daily-tools *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .daily-tools .qibla-panel:not(:has(>svg)){grid-template-columns:1fr}.daily-tools .qibla-panel:not(:has(>svg))>h2,.daily-tools .qibla-panel:not(:has(>svg))>p{grid-column:1}
+/* Shared location first; the three utilities each have their own focused card. */
+.studio .tool-location-card{background:#fffdf7;border:1px solid #d9e1d2;border-radius:18px;padding:24px;margin-bottom:24px}
+.studio .tool-location-title{display:flex;align-items:center;gap:13px}
+.studio .tool-location-title h2{margin:0;font-size:23px}
+.studio .location-controls{display:grid;grid-template-columns:minmax(230px,1.2fr) minmax(190px,1fr);gap:0 24px;align-items:start}
+.studio .location-controls>div:first-child{grid-row:1/span 4}
+.studio .location-controls>p:first-of-type{font-size:12px;color:#536e59;background:#eff3e8;border-radius:20px;padding:8px 14px;justify-self:start;margin-top:20px}
+.studio .coordinates-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.studio .tools-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.studio .tools-grid #calendar{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.studio .tools-grid #calendar>h2,.studio .tools-grid #calendar>p{grid-column:1/-1}
+.studio .tools-grid #calendar>form{grid-column:1;grid-row:3/span 4}
+.studio .tools-grid #calendar>label:first-of-type{grid-column:1}
+.studio .tools-grid #calendar>h3{grid-column:2;grid-row:2;margin-top:14px}
+.studio .tools-grid #calendar>label:nth-of-type(2),.studio .tools-grid #calendar>button,.studio .tools-grid #calendar>div:has(table){grid-column:2}
+.studio .tools-grid .qibla-panel{display:flex;flex-direction:column;text-align:center;align-items:center;margin:0;padding:26px;background:radial-gradient(ellipse at 50% 35%,#fffdf1,#edf2e7);border:1px solid #cddac8;border-radius:18px;min-height:100%}
+.studio .tools-grid .qibla-panel h2{font-size:24px;justify-content:center}
+.studio .qibla-panel>p{max-width:340px;margin-block:6px}
+.studio .qibla-location-link{display:inline-flex;align-items:center;padding:10px 17px;margin-top:15px;border:1px solid #c8d5c1;border-radius:25px;background:#fffdf6;color:#225445;font-size:13px}
+.studio .compass-dial{width:240px;max-width:100%;aspect-ratio:1;margin:16px 0;color:#315d4c;filter:drop-shadow(0 8px 15px #36533b10)}
+.studio .compass-dial svg{width:100%;height:auto}
+.studio .compass-rim{fill:#fffdf3;stroke:#b9ba93;stroke-width:1.2}
+.studio .compass-inner{fill:#f5f3e6;stroke:#dcdcca;stroke-width:1}
+.studio .compass-dial .major{stroke:#788875;stroke-width:1.4}
+.studio .compass-dial .minor{stroke:#b1b8a2;stroke-width:1}
+.studio .compass-dial text{font:15px Georgia,serif;fill:#465d44}
+.studio .compass-cross{stroke:#a0ad91;stroke-width:1}
+.studio .compass-needle{transform-origin:120px 120px;fill:#174d3f}
+.studio .compass-needle .needle-tail{fill:#b49a59}
+.studio .compass-pin{fill:#e8d899;stroke:#fefced;stroke-width:2}
+.studio .compass-kaaba rect{fill:#24473c;stroke:#a68c4a;stroke-width:1.5}
+.studio .compass-kaaba path{stroke:#ceb670;stroke-width:4}
+@media(max-width:850px){.studio .tools-grid{grid-template-columns:1fr}.studio .location-controls{grid-template-columns:1fr}.studio .location-controls>div:first-child{grid-row:auto}.studio .tools-grid #calendar{display:block}.studio .tool-location-card{padding:20px}.studio .tools-grid .qibla-panel{min-height:0}}
+.studio .location-badge{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0 10px;background:#f0f3e8;padding:12px 16px;border-radius:12px;color:#355945}
+.studio .location-badge>span{font-size:11px;border:1px solid #d2dcc8;border-radius:20px;padding:2px 9px;color:#607751}
+.studio .location-editor{background:transparent;border:0;padding:0;margin:0}
+.studio .location-editor>summary{display:list-item;list-style-position:inside;color:#346a52;font-size:13px;padding:8px 0;min-height:40px;text-decoration:underline;text-underline-offset:4px}
+.studio .location-editor[open]>summary{margin-bottom:12px}
