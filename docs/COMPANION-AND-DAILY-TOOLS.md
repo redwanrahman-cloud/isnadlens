@@ -1,0 +1,24 @@
+# Umrah/Hajj companion and daily tools — 5 October 2026 Riyadh
+
+The new `/pilgrimage` page is a focused version of the main verification tool. An optional model topic classification is added to the existing multilingual intake call; it does not create a parallel answer generator or require literal Hajj/Umrah keywords. Off-topic and mixed requests are referred to the main tool before source assessment. Unclear pilgrimage context prompts clarification. Personal ritual-validity cases retain qualified referral. The main tool's default routing prompt and required response schema remain unchanged.
+
+The companion shares the existing nine input/display languages, reviewed Quran/Hadith verification, attributed passage translations, voice dictation and read-aloud components. Its source picker and general process strip are hidden. The main-tool handoff preserves the original question in temporary same-origin session storage and fills it without submitting automatically. It does not place the question in a URL. The manual Tawaf/Sai counter supports separate seven-count logs, undo, uncertainty, reset confirmation and validated local resume. The count reference remains admitted HadeethEnc en:3309, with its Farewell Hajj context explicitly distinguished from a full standalone Umrah guide.
+
+`/tools` adds worldwide prayer calculations by explicit coordinates, an optional browser location request, a date picker, selectable prayer/Asr methods, location timezone clock, a monthly Gregorian/Hijri calendar and conversion in both directions. Initial daily-tool labels are Arabic/English; broader UI localization is still a design/localization milestone. It uses the public AlAdhan API without an AI call or API key. No paid daily-tools subscription was created. Coordinates are disclosed as sent to AlAdhan on the requested calculation; no account location database is introduced.
+
+Coordinates were selected instead of a city-name endpoint because a live Makkah city lookup returned unexpected location metadata. The adapter rejects mismatched coordinates, requested date, method, Asr school, calendar method, malformed timezone, normalized invalid dates and incomplete/duplicated calendar months. Unavailable high-latitude times are retained as unavailable. Prayer times are calculations rather than mosque iqamah times; calendar dates do not replace local moon-sighting/authority announcements.
+
+Provider documentation: https://aladhan.com/prayer-times-api and https://aladhan.com/islamic-calendar-api. Calendar methods: UAQ, HJCoSA, DIYANET and MATHEMATICAL. Prayer methods include Makkah, MWL, ISNA, Egypt, Karachi, Diyanet, UOIF, Kemenag and Moonsighting Committee.
+
+## Validation
+
+- 419/419 automated checks passed with two workers, including 27 progress/topic/daily-tool tests. The initial unrestricted worker run hit corpus-loading timeouts and exposed an endpoint compatibility issue; the endpoint was fixed, and the final run passed without relaxing assertions or test time limits.
+- Type checking and production build passed. Desktop 1440px and mobile 390px headless Chrome journeys passed: count/resume/undo, referral with original-question transfer, prayer lookup, date conversion and full month view. No JavaScript errors or horizontal overflow found. These are emulated viewport checks, not physical iPhone/Android certification.
+- Live free-provider checks returned validated times for Makkah, London/Hanafi and Jakarta/Kemenag, correct timezones, Gregorian/Hijri round trip and a complete 31-day October month. Invalid 2026-02-29 was rejected.
+- Three bounded live AI integration cases passed: Quran 2:158 for Safa/Marwah, Quran 2:198 for livelihood during Hajj, and an unrelated pork question referred to the main tool. Principal developer reviewed both EN/AR explanations against those direct references. Source bytes, original inputs and nested record seals audited separately. This is integration evidence, not a new accuracy benchmark for all pilgrimage questions or independent scholarly approval.
+
+Evidence: `artifacts/companion-smoke-2026-10-05.json`, `artifacts/companion-smoke-audit-2026-10-05.json`, and `artifacts/companion-browser-2026-10-05.json`. Provider records and screenshots remain under ignored `artifacts/private/`.
+
+Live companion checks cost 0.261675375 SAR. Conservative development commitment is 47.0542235625/49 SAR, leaving 1.9457764375 SAR. Separate 15 SAR judging reserve remains protected. No additional paid benchmark was started.
+
+These features use the existing visual system so Redwan can review behavior before the requested modern Islamic UI/UX design. A complete contextual pilgrimage curriculum, physical-phone voice checks, final localized daily-tool labels and deployment remain separate work; no complete all-scenario Hajj guide is claimed.

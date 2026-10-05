@@ -209,3 +209,12 @@ Total targeted cost 0.3951594375 SAR; conservative development commitment 42.650
 Redwan resumed work on October 5 and reported today’s attendance already handled. Approved development cap 49 SAR. Frozen fresh ROUND5 completed 30/30 cases: 29/30 satisfactory (96.7%), 26/27 religious answers and 3/3 boundaries. Zero incorrect decisive answers, inadequate decisive proofs or badge/explanation mismatches found; source/seal checks and language detection 30/30. This passes the documented 27/30 verification benchmark gate, not all deployment/product acceptance gates. One Indonesian withhold remains: similar 70:32 selected but its short cited context lacked the believer antecedent. Context-selection backlog recorded; no mid-run edits or manual retries. Details: docs/RELEASE30-ROUND5.md.
 
 Run cost 4.1416940625 SAR; conservative development commitment 46.7925481875/49 SAR, leaving 2.2074518125 SAR. Separate 15 SAR judging reserve preserved. Move to the next scoped product milestone; design preference requested before UI changes. No additional paid batch.
+
+
+## Focused pilgrimage companion and daily tools — 5 October 2026 Riyadh
+
+Added /pilgrimage as an optional scoped mode of the existing verified multilingual workflow, with off-topic referral preserving the original question for manual main-tool submission, separate local Tawaf/Sai counting and retained source boundaries. Added /tools for coordinate-based worldwide prayer calculations, location timezone clock, monthly Gregorian/Hijri calendar and conversion in both directions using AlAdhan. Existing visual system retained pending Redwan’s UI/UX direction.
+
+419/419 automated checks, type checking and production build passed. Desktop/mobile viewport journeys passed counter resume/undo, referral transfer, prayers, conversion and monthly calendar without page errors or overflow. Free provider checks passed Makkah, London and Jakarta and date round trip. Three bounded live companion cases passed with direct Quran references and an off-topic referral; audited source bytes and nested seals. These integration checks are not a fresh accuracy benchmark. Details: docs/COMPANION-AND-DAILY-TOOLS.md.
+
+Live companion checks cost 0.261675375 SAR; conservative development commitment 47.0542235625/49 SAR, leaving 1.9457764375 SAR. Separate 15 SAR judging reserve preserved. Modern Islamic UI/UX, daily-tool localization and deployment follow.

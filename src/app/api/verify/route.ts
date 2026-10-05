@@ -39,9 +39,10 @@ export async function POST(request: NextRequest) {
   if (body.corpusSelection !== undefined && !['auto', 'quran', 'hadith'].includes(body.corpusSelection)) {
     return NextResponse.json({error:'INVALID_INPUT'}, {status:400});
   }
+  if (body.service !== undefined && !['main','pilgrimage'].includes(body.service)) return NextResponse.json({error:'INVALID_INPUT'}, {status:400});
   active++;
   try {
-    const record = await verifyMultilingualClaim({claim:body.claim,inputLanguage:body.inputLanguage,corpusSelection:body.corpusSelection ?? 'auto'});
+    const record = await verifyMultilingualClaim({claim:body.claim,inputLanguage:body.inputLanguage,corpusSelection:body.corpusSelection ?? 'auto',...(body.service==='pilgrimage'?{focus:'pilgrimage' as const}:{})});
     return NextResponse.json(record,{headers:{'Cache-Control':'no-store'}});
   } catch {
     return NextResponse.json({error:'VERIFICATION_UNAVAILABLE'},{status:503});

@@ -1,0 +1,32 @@
+{
+  "kind": "companion_integration_audit_not_population_accuracy",
+  "application_tree_sha256": "d1c9a294ecbe7bee2f9d13de39c0934581ee45562b937ba1ed8482909971f6ee",
+  "build": "hWxDMBqynmriZ7I5ouMww",
+  "cases": [
+    {
+      "id": "P01",
+      "label_matches": true,
+      "source_and_nested_seals": true,
+      "original_preserved": true,
+      "expected_direct_reference_found": true
+    },
+    {
+      "id": "P02",
+      "label_matches": true,
+      "source_and_nested_seals": true,
+      "original_preserved": true,
+      "expected_direct_reference_found": true
+    },
+    {
+      "id": "P03",
+      "label_matches": true,
+      "source_and_nested_seals": true,
+      "original_preserved": true,
+      "expected_direct_reference_found": true
+    }
+  ],
+  "passed": true,
+  "cost_sar": 0.26167537500000293,
+  "development_sar": 47.05422356250006,
+  "remaining_sar": 1.9457764374999371
+}
