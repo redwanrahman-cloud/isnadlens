@@ -1,0 +1,90 @@
+{
+  "tool": "axe-core",
+  "scope": "Automated WCAG checks, not complete usability or meaning review",
+  "results": [
+    {
+      "route": "/",
+      "width": 1440,
+      "language": "en",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/pilgrimage",
+      "width": 1440,
+      "language": "en",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/tools",
+      "width": 1440,
+      "language": "en",
+      "violations": [],
+      "passes": 24
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "language": "ar",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/pilgrimage",
+      "width": 1440,
+      "language": "ar",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/tools",
+      "width": 1440,
+      "language": "ar",
+      "violations": [],
+      "passes": 24
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "language": "en",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/pilgrimage",
+      "width": 390,
+      "language": "en",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/tools",
+      "width": 390,
+      "language": "en",
+      "violations": [],
+      "passes": 24
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "language": "ar",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/pilgrimage",
+      "width": 390,
+      "language": "ar",
+      "violations": [],
+      "passes": 28
+    },
+    {
+      "route": "/tools",
+      "width": 390,
+      "language": "ar",
+      "violations": [],
+      "passes": 24
+    }
+  ]
+}

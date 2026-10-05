@@ -4,6 +4,7 @@ import {downloadReceiptPdf} from '@/lib/download-receipt';
 import {checkedExampleReceipt} from '@/lib/checked-example-receipt';
 import {ShareCard} from './ShareCard';
 import example from '@/lib/checked-example.json';
+import {landingExample as sample,landingExampleCopy} from '@/lib/landing-example';
 import {workspaceCopy} from '@/lib/workspace-copy';
 import type {DisplayLanguage} from '@/lib/display-copy';
 import {WorkspaceIcon} from './WorkspaceIcon';
@@ -21,23 +22,23 @@ const exportCopy:Record<DisplayLanguage,{download:string;preparing:string;failed
  de:{download:'PDF-Beleg herunterladen',preparing:'PDF wird vorbereitet…',failed:'Das PDF konnte nicht erstellt werden. Bitte erneut versuchen.'},
 };
 export function CheckedExample({language,onQuestion}:{language:DisplayLanguage;onQuestion:(text:string)=>void}){
- const ar=language==='ar';const ui=workspaceCopy(language);const exports=exportCopy[language];
+ const copy=landingExampleCopy(language);const ar=language==='ar';const ui=workspaceCopy(language);const exports=exportCopy[language];
  const [exporting,setExporting]=useState(false),[exportError,setExportError]=useState('');
- async function download(){setExporting(true);setExportError('');try{await downloadReceiptPdf(checkedExampleReceipt(),example.record_id);}catch{setExportError(exports.failed);}finally{setExporting(false);}}
+ async function download(){setExporting(true);setExportError('');try{await downloadReceiptPdf(checkedExampleReceipt(language),sample.id);}catch{setExportError(exports.failed);}finally{setExporting(false);}}
  const source=example.evidence;
  const start=source.quotation.indexOf('فَإِذَا');const end=source.quotation.indexOf(' ۚ',start);
  const excerpt=start>=0&&end>start?source.quotation.slice(start,end):source.quotation;
  const translation=example.translation.quotation;
  const translatedStart=translation.indexOf('But once');const translatedEnd=translation.indexOf(', for Allah',translatedStart);
  const translatedExcerpt=translatedStart>=0&&translatedEnd>translatedStart?translation.slice(translatedStart,translatedEnd):translation;
- const summary=ar?example.summary_ar:example.summary_en;
- return <section className="checked-example" aria-label={ar?'مثال مسجل سابقاً':'Previously checked example'}>
-  <div className="sample-banner"><span>{ar?'مثال مسجل سابقاً · ليس فحصاً لسؤالك الحالي':'Previously checked example · not a result for your current question'}</span></div>
-  <div className="sample-answer"><span className="answer-label">{ui.answer}{!ar&&language!=='en'?' · English':''}</span><h2>{ar?'العزم على القرار، ثم التوكل على الله':'Make a decision. Then put your trust in Allah.'}</h2><p>{summary}</p><SpeechPlayer text={summary} spokenLanguage={ar?'ar':'en'} language={language}/></div>
+ const summary=copy.summary;
+ return <section className="checked-example" aria-label={copy.banner}>
+  <div className="sample-banner"><span>{copy.banner}</span></div>
+  <p className="sample-question" lang={language}>{copy.question}</p><div className="sample-answer" lang={language}><span className="answer-label">{ui.answer}</span><h2>{copy.headline}</h2><p>{summary}</p><SpeechPlayer text={summary} spokenLanguage={language} language={language}/></div>
   <article className="sample-source"><div className="source-label">{ui.original} · {ar?'مقتطف':'Excerpt'}</div><blockquote dir="rtl" lang="ar">{excerpt}</blockquote><QuranRecitation sourceId={source.source_id} locator={source.locator} language={language}/>{!ar&&<><span className="source-label">{ar?'ترجمة منشورة · مقتطف':'Published translation · excerpt · English'}</span><p className="sample-translation" lang="en">{translatedExcerpt}</p></>}<div className="sample-reference"><bdi>Quran 3:159 · Ali ‘Imran</bdi><a href={source.source_url} target="_blank" rel="noopener noreferrer">{ar?'اقرأ الآية كاملة':'Read full verse'} ↗</a></div></article>
-  <section className="evidence-map" aria-label={ui.map}><h3>{ui.map}</h3><ol><li><WorkspaceIcon name="text"/><strong>{ui.question}</strong><small>{ar?'العزم والتوكل':'Decision and trust'}</small></li><li><WorkspaceIcon name="book"/><strong>{ui.sources}</strong><small>Quran 3:159</small></li><li><WorkspaceIcon name="spark"/><strong>{ui.context}</strong><small>{ar?'المشاورة ثم القرار':'Consultation, then decision'}</small></li><li><WorkspaceIcon name="check"/><strong>{ui.conclusion}</strong><small>{ar?'يدعمه النص المستشهد به':'Supported by cited text'}</small></li></ol></section>
-  <button type="button" className="example-question" onClick={()=>onQuestion(ar?'هل يربط القرآن العزم على القرار بالتوكل على الله بعده؟':'Does the Quran connect making a firm decision with trusting Allah afterwards?')}>{ar?'استخدم سؤال المثال':'Use this example question'} <WorkspaceIcon name="arrow"/></button>
-  <div className="report-actions sample-export-actions"><button type="button" className="receipt-button" disabled={exporting} onClick={()=>void download()}><WorkspaceIcon name="download"/>{exporting?exports.preparing:exports.download}</button><ShareCard record={{record_id:example.record_id,original_claim:example.original_claim,created_at:example.created_at,evidence_items:[source,example.translation]}} summary={summary} verdict={ar?'مثال مسجل سابقاً':'Previously checked example'} language={language}/></div>{exportError&&<p role="alert">{exportError}</p>}
-  <details className="sample-details"><summary>{ar?'النص الكامل وتفاصيل المثال':'Full source and example details'}</summary><p>{ar?'يعرض هذا المثال شرحاً مسجلاً سابقاً واقتباساً حرفياً من الآية. لا تُجرى مكالمة ذكاء اصطناعي عند فتحه.':'This example displays a previously recorded explanation and verbatim excerpts. Opening it makes no AI call.'}</p><p>{example.original_claim}</p><blockquote dir="rtl" lang="ar">{source.quotation}</blockquote><p>{source.attribution} · {source.version} · <a href="https://tanzil.net/docs/Text_License" target="_blank" rel="noopener noreferrer">Tanzil licence ↗</a></p><p lang="en">{translation}</p><p>{example.translation.attribution} · {example.translation.version} · <a href={example.translation.source_url} target="_blank" rel="noopener noreferrer">QuranEnc ↗</a></p><p>{example.record_id} · {example.created_at}</p></details>
+  <section className="evidence-map" aria-label={ui.map}><h3>{ui.map}</h3><ol><li><WorkspaceIcon name="text"/><strong>{ui.question}</strong><small>{ar?'العزم والتوكل':'Decision and trust'}</small></li><li><WorkspaceIcon name="book"/><strong>{ui.sources}</strong><small>Quran 3:159</small></li><li><WorkspaceIcon name="spark"/><strong>{ui.context}</strong><small>{ar?'المشاورة ثم القرار':'Consultation, then decision'}</small></li><li><WorkspaceIcon name="check"/><strong>{ui.conclusion}</strong><small>{copy.headline}</small></li></ol></section>
+  <button type="button" className="example-question" onClick={()=>onQuestion(copy.question)}>{copy.use} <WorkspaceIcon name="arrow"/></button>
+  <div className="report-actions sample-export-actions"><button type="button" className="receipt-button" disabled={exporting} onClick={()=>void download()}><WorkspaceIcon name="download"/>{exporting?exports.preparing:exports.download}</button><ShareCard record={{record_id:sample.id,original_claim:copy.question,created_at:example.created_at,evidence_items:[source,example.translation]}} summary={summary} verdict={copy.banner} language={language}/></div>{exportError&&<p role="alert">{exportError}</p>}
+  <details className="sample-details"><summary>{ar?'النص الكامل وتفاصيل المثال':'Full source and example details'}</summary><p>{ar?'يعرض هذا المثال شرحاً توضيحياً واقتباساً حرفياً من الآية. لا تُجرى مكالمة ذكاء اصطناعي عند فتحه.':'This example displays a curated explanation and verbatim excerpts, using evidence retained from an earlier assessment. Opening it makes no AI call.'}</p><p>{copy.question}</p><blockquote dir="rtl" lang="ar">{source.quotation}</blockquote><p>{source.attribution} · {source.version} · <a href="https://tanzil.net/docs/Text_License" target="_blank" rel="noopener noreferrer">Tanzil licence ↗</a></p><p lang="en">{translation}</p><p>{example.translation.attribution} · {example.translation.version} · <a href={example.translation.source_url} target="_blank" rel="noopener noreferrer">QuranEnc ↗</a></p><p>{example.record_id} · {example.created_at}</p></details>
  </section>;
 }

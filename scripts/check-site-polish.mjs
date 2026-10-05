@@ -19,10 +19,14 @@ try{
   for(const language of languages){
    await page.goto(origin+'/');await page.locator('#display-language').selectOption(language);await languageCheck(page,language);
    for(const path of ['/pilgrimage','/tools','/']){await page.goto(origin+path);await languageCheck(page,language);await widthCheck(page,`${path} ${language} ${width}`);}
-   await page.reload();await languageCheck(page,language);
+   await page.reload();await languageCheck(page,language);assert(await page.locator('.sample-answer').getAttribute('lang')===language,'Sample answer language mismatch');assert(await page.locator('.sample-question').getAttribute('lang')===language,'Sample question language mismatch');
   }
   await page.locator('#display-language').selectOption('en');
   const sample=page.locator('.checked-example');await sample.waitFor();
+  const expectedQuestion='Does trusting Allah mean I should stop planning and taking practical steps?';
+  assert((await sample.locator('.sample-question').textContent())===expectedQuestion,'Sample answers a different question');
+  assert((await sample.locator('.sample-answer h2').textContent()).startsWith('No.'),'Sample reversed the answer polarity');
+  assert((await sample.locator('.sample-answer > p').textContent()).startsWith('No.'),'Sample explanation reversed the answer polarity');
   assert(example.evidence.quotation.includes((await sample.locator('.sample-source blockquote').textContent()).trim()),'Sample source quotation changed');
   const readers=sample.locator('.speech-controls > button,.recitation-player > button');assert(await readers.count()>=2,'Attached audio controls missing');
   for(const reader of await readers.all()){
@@ -35,6 +39,7 @@ try{
   await sample.getByRole('button',{name:'Create share card',exact:true}).click();const dialog=page.getByRole('dialog');await dialog.locator('img').waitFor();await widthCheck(page,`Share modal ${width}`);
   const pngPromise=page.waitForEvent('download');await dialog.getByRole('button',{name:'Download PNG',exact:true}).click();const png=await pngPromise;await png.saveAs(`${directory}/sample-${width}.png`);assert(readFileSync(`${directory}/sample-${width}.png`).subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])),'Invalid share PNG');await page.keyboard.press('Escape');assert(await dialog.count()===0,'Share Escape dismissal failed');
   await page.screenshot({path:`${directory}/main-${width}.png`,fullPage:true});
+  await sample.getByRole('button',{name:'Use this example question',exact:true}).click();assert(await page.locator('#claim').inputValue()===expectedQuestion,'Example button changed the question');await page.locator('#claim').fill('');
   await page.locator('.brand').click();await languageCheck(page,'en');
   await page.goto(origin+'/pilgrimage');await languageCheck(page,'en');
   await page.getByRole('button',{name:'Completed one',exact:true}).first().click();await page.getByText('Recorded: 1 / 7').waitFor();await page.reload();await languageCheck(page,'en');await page.getByText('Recorded: 1 / 7').waitFor();await page.getByRole('button',{name:'Undo',exact:true}).first().click();

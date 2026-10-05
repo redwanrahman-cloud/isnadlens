@@ -8,7 +8,7 @@ try{for(const width of [1440,1037,768,390,320]){
  await page.route('**/api/verify',r=>{calls++;return r.fulfill({json:source.quran});});
  await page.route('**/api/speech',r=>r.fulfill({json:{available:false}}));
  await page.goto('http://127.0.0.1:3100/');await page.locator('#display-language').selectOption('en');
- await page.getByRole('region',{name:'Previously checked example',exact:true}).waitFor();
+ await page.getByRole('region',{name:'Source-based illustrative example',exact:true}).waitFor();
  const example=JSON.parse(readFileSync('src/lib/checked-example.json','utf8'));
  const shownExcerpt=await page.locator('.sample-source blockquote').textContent();
  const shownTranslation=await page.locator('.sample-translation').textContent();

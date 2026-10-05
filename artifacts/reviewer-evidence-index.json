@@ -42,11 +42,13 @@
     "audio_interactions": "artifacts/media-polish-2026-10-05.json",
     "pdf_receipts": "artifacts/receipt-pdf-2026-10-05.json",
     "latest_targeted_unit_checks": {
-      "passed": 14,
+      "passed": 16,
       "files": 3,
-      "scope": "Receipt escaping, recitation locators, preserved receipt content and speech utilities; separate from the earlier full-suite result."
+      "scope": "Sample question/answer polarity, nine-language exports, disclosure preservation, receipt fidelity and recitation locators; separate from earlier full-suite result."
     },
-    "site_polish": "artifacts/site-polish-2026-10-05.json"
+    "site_polish": "artifacts/site-polish-2026-10-05.json",
+    "accessibility": "artifacts/accessibility-audit-2026-10-05.json",
+    "visual_regression": "qa/playwright.config.mjs (4 reviewed sample baselines)"
   },
   "working_features": [
     "Nine input/display languages",

@@ -4,7 +4,7 @@ const escape=(text:string)=>text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;',
 export const receiptLogo='<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="#b6924c" stroke-width="1.4"><path d="M10 10h28v28H10z M24 4l20 20-20 20L4 24z M24 10l14 14-14 14-14-14z"/><circle cx="24" cy="24" r="8"/></svg>';
 export function receiptHtml(receipt:string){
  const groups=receipt.split(/\n\s*\n/);const body=groups.map((group,index)=>{
-  const lines=group.split('\n');if(index===0)return `<section class="metadata">${lines.slice(2).map(line=>`<p dir="auto">${escape(line)}</p>`).join('')}</section>`;
+  const lines=group.split('\n');if(index===0)return `<section class="metadata">${lines.slice(1).map(line=>`<p dir="auto">${escape(line)}</p>`).join('')}</section>`;
   const heading=/^(Original question:|English explanation:|Arabic explanation:|Original verification record seal:|Source \d+:|Original source quotation:|Source context |Limits of this result:)/.test(lines[0]);
   const cls=lines[0]==='Original source quotation:'||lines[0].startsWith('Source context ')?'source':lines[0].includes('explanation:')?'explanation':'';
   return `<section class="${cls}">${lines.map((line,n)=>heading&&n===0?`<h2 dir="auto">${escape(line.replace(/:$/,''))}</h2>`:`<p dir="auto" class="${/^[a-f0-9]{64}$|SHA-256:/.test(line)?'hash':''}">${escape(line)}</p>`).join('')}</section>`;
