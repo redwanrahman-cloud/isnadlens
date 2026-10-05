@@ -1,0 +1,10 @@
+import {afterEach,expect,it,vi} from 'vitest';
+import {NextRequest} from 'next/server';
+const mocks=vi.hoisted(()=>({read:vi.fn(),ready:vi.fn(()=>true)}));
+vi.mock('../src/lib/cloud-speech',()=>({cloudSpeechReady:mocks.ready}));
+vi.mock('../src/lib/image-input',()=>({readClaimImage:mocks.read,MAX_IMAGE_BYTES:10_000_000,IMAGE_READER_MODEL:'gemini-3.5-flash-lite'}));
+import {GET,POST} from '../src/app/api/image-input/route';
+afterEach(()=>vi.clearAllMocks());
+it('reports availability without uploading anything',async()=>{const response=await GET();expect((await response.json()).available).toBe(true);expect(mocks.read).not.toHaveBeenCalled();expect(response.headers.get('Cache-Control')).toBe('no-store');});
+it('refuses oversized declared bodies before reading or calling the provider',async()=>{const response=await POST(new NextRequest('http://localhost/api/image-input',{method:'POST',body:'x',headers:{'Content-Length':'10000001','Content-Type':'image/png'}}));expect(response.status).toBe(400);expect(mocks.read).not.toHaveBeenCalled();});
+it('returns only reading results, sanitizes provider errors and reports quota exhaustion',async()=>{const req=()=>new NextRequest('http://localhost/api/image-input',{method:'POST',body:'image',headers:{'Content-Type':'image/png'}});mocks.read.mockResolvedValueOnce({status:'read',transcript:'quote',claims:['quote'],note:''});expect((await (await POST(req())).json()).transcript).toBe('quote');mocks.read.mockRejectedValueOnce(new Error('secret provider details'));expect(await (await POST(req())).json()).toEqual({error:'IMAGE_READING_UNAVAILABLE'});mocks.read.mockRejectedValueOnce(new Error('IMAGE_PROVIDER_QUOTA_STOP'));expect((await POST(req())).status).toBe(429);});

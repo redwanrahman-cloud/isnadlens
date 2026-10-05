@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-05",
+  "model": "gemini-3.5-flash-lite",
+  "paidAIcalls": 0,
+  "automaticVerification": false,
+  "build": "production",
+  "browser": {
+    "kind": "mocked-browser-workflow",
+    "paidAIcalls": 0,
+    "cases": [
+      {
+        "width": 1440,
+        "explicitUpload": true,
+        "reviewedOriginalHandoff": true,
+        "noAutomaticVerification": true,
+        "invalidFormatRejected": true,
+        "pilgrimageAvailable": true,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "width": 390,
+        "explicitUpload": true,
+        "reviewedOriginalHandoff": true,
+        "noAutomaticVerification": true,
+        "invalidFormatRejected": true,
+        "pilgrimageAvailable": true,
+        "overflow": false,
+        "errors": []
+      }
+    ]
+  },
+  "live": {
+    "kind": "live-free-image-reader",
+    "paidAIcalls": 0,
+    "cases": [
+      {
+        "id": "en",
+        "http": 200,
+        "status": "read",
+        "preserved": true,
+        "model": "gemini-3.5-flash-lite"
+      },
+      {
+        "id": "ar",
+        "http": 200,
+        "status": "read",
+        "preserved": true,
+        "model": "gemini-3.5-flash-lite"
+      }
+    ]
+  },
+  "controls": {
+    "kind": "live-free-image-reader",
+    "paidAIcalls": 0,
+    "cases": [
+      {
+        "id": "blank",
+        "http": 200,
+        "status": "no_text",
+        "preserved": true,
+        "model": "gemini-3.5-flash-lite"
+      },
+      {
+        "id": "injection",
+        "http": 200,
+        "status": "read",
+        "preserved": true,
+        "model": "gemini-3.5-flash-lite"
+      }
+    ]
+  },
+  "automatedSuite": {
+    "passed": true,
+    "tests": 443,
+    "files": 37
+  },
+  "limitations": [
+    "Live image reading checked in English and Arabic only",
+    "Browser provider responses are mocked",
+    "This is not an OCR accuracy benchmark or image-authenticity assessment"
+  ]
+}
