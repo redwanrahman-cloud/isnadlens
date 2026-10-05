@@ -6,7 +6,7 @@ Current preview: http://127.0.0.1:3100 (local prototype). A hosted competition U
 
 ## Main verification
 
-1. Open the main workbench. Choose a starter question or type an Islamic source question in your own words, such as “Does trusting Allah mean I should stop planning and taking practical steps?”
+1. Open the main workbench. A clearly labelled previously checked example shows the evidence report immediately; it is not an answer to a newly typed question. Choose a starter question or type an Islamic source question in your own words, such as “Does trusting Allah mean I should stop planning and taking practical steps?”
 2. Leave automatic language and Quran/Hadith selection enabled, or select the source you want to examine.
 3. Press **Examine the evidence**.
 4. Read the answer and its evidence. Each passage has its source reference, original wording and attribution. Published passage translations appear separately. **Listen** reads the explanation or passage aloud.

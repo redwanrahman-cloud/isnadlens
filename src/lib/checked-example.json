@@ -1,0 +1,115 @@
+{
+  "record_id": "359970fc-71c0-4786-8c5a-572871548b82",
+  "original_claim": "¿Relaciona el Corán tomar una decisión firme con confiar después en Allah?",
+  "created_at": "2026-10-04T21:26:37.390Z",
+  "summary_ar": "نعم، تدعم الآية 3:159 من مجموعة المصادر المحددة العلاقة بين العزم على القرار والتوكل على الله بعده. ويَرِد ذلك ضمن سياق المشاورة ثم اتخاذ القرار.",
+  "summary_en": "Yes. Quran 3:159 in the selected source collection directly supports a connection between making a firm decision and then relying on Allah. The statement appears in a context that includes consultation before the decision.",
+  "evidence": {
+    "evidence_id": "tanzil-1.1-2026-10-04:3:159",
+    "source_id": "QURAN-AR-TANZIL-UTHMANI-V1.1",
+    "title": "Quran — Tanzil Uthmani",
+    "version": "1.1",
+    "locator": "3:159",
+    "quotation": "فَبِمَا رَحْمَةٍ مِّنَ ٱللَّهِ لِنتَ لَهُمْ ۖ وَلَوْ كُنتَ فَظًّا غَلِيظَ ٱلْقَلْبِ لَٱنفَضُّوا۟ مِنْ حَوْلِكَ ۖ فَٱعْفُ عَنْهُمْ وَٱسْتَغْفِرْ لَهُمْ وَشَاوِرْهُمْ فِى ٱلْأَمْرِ ۖ فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى ٱللَّهِ ۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُتَوَكِّلِينَ",
+    "quotation_sha256": "ee8242de033279250083431f82e4b63da8a00066a723e409574404f6e64dfa27",
+    "source_url": "https://tanzil.net/#3:159",
+    "attribution": "Source: Tanzil Project",
+    "integrity": {
+      "passed": true,
+      "checks": [
+        {
+          "id": "locator",
+          "passed": true,
+          "reason": "Locator belongs to the admitted complete edition."
+        },
+        {
+          "id": "exact_quotation",
+          "passed": true,
+          "reason": "Quotation matches immutable publisher display text exactly."
+        },
+        {
+          "id": "quotation_sha256",
+          "passed": true,
+          "reason": "UTF-8 quotation SHA-256 matches the admitted record."
+        },
+        {
+          "id": "corpus_sha256",
+          "passed": true,
+          "reason": "Complete joined corpus matches its manifest hash."
+        },
+        {
+          "id": "neighbor_context",
+          "passed": true,
+          "reason": "Bounded two-verse same-surah context matches admitted exact display hashes."
+        }
+      ]
+    },
+    "semantic_relation": "supports",
+    "source_context": [
+      {
+        "position": "preceding",
+        "locator": "3:157",
+        "quotation": "وَلَئِن قُتِلْتُمْ فِى سَبِيلِ ٱللَّهِ أَوْ مُتُّمْ لَمَغْفِرَةٌ مِّنَ ٱللَّهِ وَرَحْمَةٌ خَيْرٌ مِّمَّا يَجْمَعُونَ",
+        "quotation_sha256": "d0efb463f12a0ee9896c782510e395902425c367cb815929c700be9797c7e798",
+        "integrity_passed": true
+      },
+      {
+        "position": "preceding",
+        "locator": "3:158",
+        "quotation": "وَلَئِن مُّتُّمْ أَوْ قُتِلْتُمْ لَإِلَى ٱللَّهِ تُحْشَرُونَ",
+        "quotation_sha256": "f887f4d3521ef40e001294c820158df45037123d94b3de93e74c348ef7ae15f7",
+        "integrity_passed": true
+      },
+      {
+        "position": "following",
+        "locator": "3:160",
+        "quotation": "إِن يَنصُرْكُمُ ٱللَّهُ فَلَا غَالِبَ لَكُمْ ۖ وَإِن يَخْذُلْكُمْ فَمَن ذَا ٱلَّذِى يَنصُرُكُم مِّنۢ بَعْدِهِۦ ۗ وَعَلَى ٱللَّهِ فَلْيَتَوَكَّلِ ٱلْمُؤْمِنُونَ",
+        "quotation_sha256": "68d332ec0fd5ef04a9a31602fb64b46386e1b3d82a8750c9ba7f4c2b87322b71",
+        "integrity_passed": true
+      },
+      {
+        "position": "following",
+        "locator": "3:161",
+        "quotation": "وَمَا كَانَ لِنَبِىٍّ أَن يَغُلَّ ۚ وَمَن يَغْلُلْ يَأْتِ بِمَا غَلَّ يَوْمَ ٱلْقِيَـٰمَةِ ۚ ثُمَّ تُوَفَّىٰ كُلُّ نَفْسٍ مَّا كَسَبَتْ وَهُمْ لَا يُظْلَمُونَ",
+        "quotation_sha256": "9c05a6562c19ede1e34b3005e8fa612e37b62ea70b3f844916db6a18bfa18c73",
+        "integrity_passed": true
+      }
+    ]
+  },
+  "translation": {
+    "evidence_id": "quranenc:english_rwwad:1.0.19:3:159",
+    "source_id": "QURANENC-english_rwwad",
+    "title": "English Translation - Rowwad Translation Center",
+    "version": "1.0.19",
+    "locator": "3:159",
+    "quotation": "It is by Allah’s mercy that you [O Prophet] became lenient to them[74]. If you had been harsh and hard-hearted, they would have dispersed from you. So pardon them, seek forgiveness for them, and consult them in important matters[75]. But once you have made a decision, put your trust in Allah, for Allah loves those who put their trust in Him.",
+    "quotation_sha256": "e526e5b6d1470874c965d7611623523b3e3d966729552bb34d2a00918aa6a906",
+    "source_url": "https://quranenc.com/en/browse/english_rwwad/3/159",
+    "attribution": "Source: QuranEnc.com — English Translation - Rowwad Translation Center",
+    "source_language": "en",
+    "publisher_fields": {
+      "translation": "It is by Allah’s mercy that you [O Prophet] became lenient to them[74]. If you had been harsh and hard-hearted, they would have dispersed from you. So pardon them, seek forgiveness for them, and consult them in important matters[75]. But once you have made a decision, put your trust in Allah, for Allah loves those who put their trust in Him.",
+      "footnotes": "[74] In the Battle of Uhud, the Prophet (ﷺ) was made to show leniency to the believers who disobeyed his commands.\n [75] The principle of shūra (consultation) is a cornerstone and one of the greatest traits of the Islamic community.",
+      "description": "Translated by the team of the Rowwad Translation Center, in cooperation with the Rabwah Dawah Association, the Islamic Content Service Association in Languages, and the IslamHouse.com website.",
+      "publisher": "English Translation - Rowwad Translation Center"
+    },
+    "publisher_notice": "Contents of the translations can be downloaded and re-published, with the following terms and conditions:\n1. No modification, addition, or deletion of the content.\n2. Clearly referring to the publisher and the source (QuranEnc.com).\n3. Mentioning the version number when re-publishing the translation.\n4. Keeping the transcript information inside the document.\n5. Notifying the source (QuranEnc.com) of any note on the translation.\n6. Updating the translation according to the latest version issued from the source (QuranEnc.com).\n7. Inappropriate advertisements must not be included when displaying translations of the meanings of the Noble Quran.",
+    "source_context": [],
+    "semantic_relation": "not_assessed",
+    "integrity": {
+      "passed": true,
+      "checks": [
+        {
+          "id": "translation_edition_hash",
+          "passed": true,
+          "reason": "Exact publisher edition and original SQLite match committed admission pins."
+        },
+        {
+          "id": "translation_locator",
+          "passed": true,
+          "reason": "Surah and ayah join to the admitted Arabic original by numeric identity."
+        }
+      ]
+    }
+  }
+}

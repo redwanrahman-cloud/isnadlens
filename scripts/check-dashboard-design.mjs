@@ -3,13 +3,19 @@ import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 const out='artifacts/private/dashboard-design-2026-10-05';mkdirSync(out,{recursive:true});
 const source=JSON.parse(readFileSync('tests/fixtures/dashboard-records.json','utf8'));
 const browser=await chromium.launch({channel:'chrome',headless:true});const cases=[];
-try{for(const width of [1440,768,390,320]){
- const context=await browser.newContext({viewport:{width,height:1000}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));let calls=0;
+try{for(const width of [1440,1037,768,390,320]){
+ const context=await browser.newContext({viewport:{width,height:width===1037?670:1000}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));let calls=0;
  await page.route('**/api/verify',r=>{calls++;return r.fulfill({json:source.quran});});
  await page.route('**/api/speech',r=>r.fulfill({json:{available:false}}));
  await page.goto('http://127.0.0.1:3100/');await page.locator('#display-language').selectOption('en');
+ await page.getByRole('region',{name:'Previously checked example',exact:true}).waitFor();
+ const example=JSON.parse(readFileSync('src/lib/checked-example.json','utf8'));
+ const shownExcerpt=await page.locator('.sample-source blockquote').textContent();
+ const shownTranslation=await page.locator('.sample-translation').textContent();
+ if(!example.evidence.quotation.includes(shownExcerpt)||!example.translation.quotation.includes(shownTranslation)||calls)throw Error('EXAMPLE_TEXT_OR_AUTOCALL');
+ if(width===1037){const compact=await page.evaluate(()=>({header:document.querySelector('.topbar').getBoundingClientRect().height,button:document.querySelector('button[type=submit]').getBoundingClientRect().bottom,height:innerHeight}));if(compact.header>85||compact.button>compact.height)throw Error('ABOVE_FOLD_FAILURE');}
  await page.screenshot({path:`${out}/empty-${width}.png`,fullPage:true});
- await page.locator('#claim').fill(source.quran.original_claim);await page.getByRole('button',{name:'Examine the evidence',exact:true}).click();await page.locator('.result-content').waitFor();
+ await page.locator('#claim').fill(source.quran.original_claim);if(await page.locator('.checked-example').count())throw Error('EXAMPLE_MISTAKEN_FOR_TYPED_QUERY');await page.getByRole('button',{name:'Examine the evidence',exact:true}).click();await page.locator('.result-content').waitFor();
  await page.getByRole('region',{name:'Evidence map',exact:true}).waitFor();
  if((await page.locator('.evidence-card blockquote').first().textContent())!==source.quran.evidence_items[0].quotation)throw Error('SOURCE_MUTATED');
  if(await page.locator('.verdict h2').textContent()!==source.quran.summary_en)throw Error('SUMMARY_MUTATED');
