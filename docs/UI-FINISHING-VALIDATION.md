@@ -251,3 +251,13 @@ No real camera/microphone capture, OCR, transcription provider or verification
 test was performed. Native camera behavior depends on the phone/browser and
 remains part of the deferred live-device check. This change does not modify the
 verification engine, corpus, provider settings or competition benchmark results.
+
+## Consistent attachment menu — 5 October
+
+The plus button now toggles Choose an image / Take a photo on every screen size.
+Removed the desktop shortcut that immediately opened the file picker. Production
+build and TypeScript passed. Browser checks at 1441 and 390 CSS pixels confirmed
+the menu opens, a second plus click closes it, and the mobile view has no
+horizontal overflow. The isolated fixture recorded no provider POSTs or unexpected
+requests. Camera capture behavior is unchanged; native desktop browsers may use
+a file picker for the capture input rather than a webcam.
