@@ -1,0 +1,22 @@
+{
+  "kind": "release30_round7_offline_preflight",
+  "created_at": "2026-10-05T22:50:45.041Z",
+  "cases": 30,
+  "question_repeats": 0,
+  "key_sources_valid": true,
+  "offline_tests_passed": 521,
+  "freeze": {
+    "application_tree_sha256": "a8cc2be8fe91316ed02c0137bfd1b18e705dd113b59ad1641ac60b587c128931",
+    "dataset_sha256": "dae7e98e8323d494d70b43e2b033d0ddfc4903f30b165c7f7d37608b3d03b809",
+    "build": "KmPamoJNyKcenBSxyzp08",
+    "configuration_sha256": "7495105b004bb758290afe792552a17976d57c7f4c0f4944c3aea48dfb1381b7",
+    "development_cap_sar": 60,
+    "corpus_sha256": "f6f490558db286aa17cfef4d4af5da20eb8670b866337bcca636f17953ce2d23",
+    "hadith_sha256": "1939676c7d7d64ec2affb517b367216faed90ef069e877acbff504f275c067ac"
+  },
+  "starting_development_sar": 52.866786375000046,
+  "remaining_sar": 7.133213624999954,
+  "minimum_headroom_sar": 6,
+  "ready": true,
+  "new_api_calls": 0
+}

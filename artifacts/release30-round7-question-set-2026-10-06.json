@@ -1,0 +1,551 @@
+{
+  "kind": "fresh_release30_round7_source_derived_key",
+  "created_at": "2026-10-05T22:50:17.471Z",
+  "status": "prepared_not_run",
+  "novelty": {
+    "prior_json_files_scanned": 865,
+    "distinct_prior_claim_strings": 623,
+    "exact_repeats": 0,
+    "manual_review": "Screened the source propositions against the prior claim inventory, including focused review of related topics. Small typos and new boundary formulations intentionally test familiar error categories. Boundary categories intentionally recur using new requests. No independent human certification or population sampling."
+  },
+  "protocol": {
+    "application_tree_sha256": "a8cc2be8fe91316ed02c0137bfd1b18e705dd113b59ad1641ac60b587c128931",
+    "input_language": "explicit case language, matching the current composer selection",
+    "corpus_selection": "auto",
+    "endpoint": "http://127.0.0.1:3302/api/verify",
+    "source_hints_sent": false,
+    "retrieval_prescreen": false,
+    "manual_retries": false,
+    "midrun_application_edits": false,
+    "review": "Inspect answer usefulness, source relevance, qualification preservation, explanation/badge agreement, source seals, and translated meaning; label matching alone is not a pass. Accept adequate alternative primary evidence. Withholding an answer to these answerable religious questions is not satisfactory, even if conservative.",
+    "comparison_limits": "This mixed stress batch has 24 religious and six boundary cases, versus round6 with 27 and three. Report overall and subgroup scores; do not attribute a change solely to the repair. All inputs are new; the exact earlier failed input is intentionally not rerun."
+  },
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 24,
+    "boundary": 6
+  },
+  "cases": [
+    {
+      "id": "N01",
+      "language": "en",
+      "claim": "In Yusuf's dreem, were there eleven stars along with the sun and moon?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "12:4",
+          "sha256": "1807741d9a393c62062d7cf315b9b6cfe3e979604a9de22dd7b512ab853f9118",
+          "url": "https://tanzil.net/#12:4",
+          "primary_text": "إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَـٰٓأَبَتِ إِنِّى رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَٱلشَّمْسَ وَٱلْقَمَرَ رَأَيْتُهُمْ لِى سَـٰجِدِينَ",
+          "published_english_reading_aid": "[Remember] when Joseph said to his father[2], “O my father, I saw [in a dream] eleven stars, the sun and the moon – I saw them prostrating to me.”"
+        }
+      ],
+      "rationale": "Dream contains eleven stars, sun and moon; do not turn a dream into a physical astronomical event.",
+      "feature": "typo",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N02",
+      "language": "hi",
+      "claim": "क्या मूसा ने अपने रब से अपना सीना खोल देने की दुआ की थी?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "20:25",
+          "sha256": "638e7c1cab464a0b98eca54d8bb80062e90b94fad8517674769fbc177fb12551",
+          "url": "https://tanzil.net/#20:25",
+          "primary_text": "قَالَ رَبِّ ٱشْرَحْ لِى صَدْرِى",
+          "published_english_reading_aid": "He said, “My Lord, reassure my heart for me,"
+        }
+      ],
+      "rationale": "Moses asks his Lord to expand his chest; context can identify speaker without inventing circumstances.",
+      "feature": "ordinary_question",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N03",
+      "language": "ar",
+      "claim": "وصلتني عبارة منسوبة للنبي، فهل نسبتها صحيحة؟",
+      "family": null,
+      "references": [],
+      "rationale": "Absent attributed phrase; request wording/reference instead of generating a substitute.",
+      "feature": "missing_quote",
+      "service": "main",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "N04",
+      "language": "es",
+      "claim": "¿Dice el Corán que la verdadera ceguera puede estar en los corazones y no en los ojos?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "22:46",
+          "sha256": "38ef181048d13d887e120ac05096864e6631f8dbb273c535b8d807ea4fea1f8d",
+          "url": "https://tanzil.net/#22:46",
+          "primary_text": "أَفَلَمْ يَسِيرُوا۟ فِى ٱلْأَرْضِ فَتَكُونَ لَهُمْ قُلُوبٌ يَعْقِلُونَ بِهَآ أَوْ ءَاذَانٌ يَسْمَعُونَ بِهَا ۖ فَإِنَّهَا لَا تَعْمَى ٱلْأَبْصَـٰرُ وَلَـٰكِن تَعْمَى ٱلْقُلُوبُ ٱلَّتِى فِى ٱلصُّدُورِ",
+          "published_english_reading_aid": "Have they not traveled through the land so that their hearts might understand and their ears might listen? It is not the eyes that turn blind, but it is the hearts within the breasts that turn blind."
+        }
+      ],
+      "rationale": "The verse contrasts eyes with hearts in breasts; keep spiritual context, not medical claims.",
+      "feature": "ordinary_question",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N05",
+      "language": "id",
+      "claim": "Apakah hilal membantu menentukan waktu ibadah haji menurut Al-Quran?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:189",
+          "sha256": "9bdd599208e81774cfaecfe5b7e47d624b16cb670a5e604d05a396664fe7382b",
+          "url": "https://tanzil.net/#2:189",
+          "primary_text": "يَسْـَٔلُونَكَ عَنِ ٱلْأَهِلَّةِ ۖ قُلْ هِىَ مَوَٰقِيتُ لِلنَّاسِ وَٱلْحَجِّ ۗ وَلَيْسَ ٱلْبِرُّ بِأَن تَأْتُوا۟ ٱلْبُيُوتَ مِن ظُهُورِهَا وَلَـٰكِنَّ ٱلْبِرَّ مَنِ ٱتَّقَىٰ ۗ وَأْتُوا۟ ٱلْبُيُوتَ مِنْ أَبْوَٰبِهَا ۚ وَٱتَّقُوا۟ ٱللَّهَ لَعَلَّكُمْ تُفْلِحُونَ",
+          "published_english_reading_aid": "They ask you about the phases of the moon. Say, “They are a means for people to determine time and pilgrimage.” It is not righteousness to enter the houses from the rear [in pilgrimage][86], but righteousness is to fear Allah. So enter the houses through their doors, and fear Allah so that you may succeed."
+        }
+      ],
+      "rationale": "New moons are time markers for people and Hajj; not a fabricated date for a current year.",
+      "feature": "pilgrimage",
+      "service": "pilgrimage",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N06",
+      "language": "ar",
+      "claim": "هل أُمرت مريم بهز جذع النخله لتسقط عليها رطباً؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "19:25",
+          "sha256": "0a7712d35d093e754c74163c227007c47b651ba8ef87a7f5fd27eeb553784023",
+          "url": "https://tanzil.net/#19:25",
+          "primary_text": "وَهُزِّىٓ إِلَيْكِ بِجِذْعِ ٱلنَّخْلَةِ تُسَـٰقِطْ عَلَيْكِ رُطَبًا جَنِيًّا",
+          "published_english_reading_aid": "Shake the trunk of the palm tree towards yourself; fresh ripe dates will drop upon you."
+        }
+      ],
+      "rationale": "Mary is instructed to shake the palm trunk so ripe dates fall; preserve narrative setting.",
+      "feature": "typo",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N07",
+      "language": "de",
+      "claim": "Sagt der Koran, dass derjenige Erfolg hat, der seine Selee reinigt?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "91:9",
+          "sha256": "759c24980882d563bd88f0d6131818a2f7708d08d85fdf76e87d495de7edfb49",
+          "url": "https://tanzil.net/#91:9",
+          "primary_text": "قَدْ أَفْلَحَ مَن زَكَّىٰهَا",
+          "published_english_reading_aid": "Indeed, he who purifies his soul will attain success,"
+        }
+      ],
+      "rationale": "Success attached to purifying the soul; context 91:7-10 can disambiguate pronoun.",
+      "feature": "typo",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N08",
+      "language": "bn",
+      "claim": "হাদিসে কি হাঁচি দেওয়ার পর আলহামদুলিল্লাহ বলতে বলা হয়েছে?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3433",
+          "sha256": "bfacc666326e9e534bee968049a331caa591a889403fd9ebae9f478a0dd8c8e3",
+          "url": "https://hadeethenc.com/en/browse/hadith/3433",
+          "primary_text": "Abu Hurayrah (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) said: “When one of you sneezes, he should say 'alhamdu-lillāh' (praise be to Allah) and his brother or companion should say to him: 'yarhamuk Allah' (may Allah have mercy on you). When he says so to him, the sneezer should reply: 'yahdīkum Allah wa yuslih bālakum!' (may Allah guide you and grant you well being).”"
+        }
+      ],
+      "rationale": "Sneezer says alhamdulillah; retain conditions if explaining the response sequence.",
+      "feature": "ordinary_short",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N09",
+      "language": "fr",
+      "claim": "La lettre de Soulayman à la reine comence-t-elle par le nom d’Allah, le Tout Miséricordieux, le Très Miséricordieux ?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "27:30",
+          "sha256": "3eb031038b03ad9481a2a3270e7006634f843028735f0a73a88c065f1713340b",
+          "url": "https://tanzil.net/#27:30",
+          "primary_text": "إِنَّهُۥ مِن سُلَيْمَـٰنَ وَإِنَّهُۥ بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
+          "published_english_reading_aid": "It is from Solomon, and it reads, ‘In the name of Allah, the Most Compassionate, the Most Merciful."
+        }
+      ],
+      "rationale": "Letter is from Solomon and begins in the name of Allah, the Merciful; no invented textual additions.",
+      "feature": "typo",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N10",
+      "language": "en",
+      "claim": "Is it okay to repeat it again before the other one?",
+      "family": null,
+      "references": [],
+      "rationale": "No identifiable action or object; ask what actions are meant, without inventing them.",
+      "feature": "ambiguous",
+      "service": "main",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "N11",
+      "language": "ur",
+      "claim": "کیا قرآن میں ایوب کی دعا میں تکلیف کا ذکر اور اللہ کو سب سے بڑھ کر رحم کرنے والا کہا گیا ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "21:83",
+          "sha256": "eb00790925ad4cdea4ae073df94346f85367dead0838e23a73746488df1188cc",
+          "url": "https://tanzil.net/#21:83",
+          "primary_text": "وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُۥٓ أَنِّى مَسَّنِىَ ٱلضُّرُّ وَأَنتَ أَرْحَمُ ٱلرَّٰحِمِينَ",
+          "published_english_reading_aid": "And [remember] Job, when he cried out to his Lord, “I have been struck by adversity[36], and You are the Most Merciful of those who show mercy.”"
+        }
+      ],
+      "rationale": "Job states affliction has touched him and addresses the most merciful; no personal healing promise.",
+      "feature": "ordinary_question",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N12",
+      "language": "es",
+      "claim": "¿Permite el hadiz beber en recipientes de oro y plata?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:2985",
+          "sha256": "d6cc4dc8447af1948ea10004aefa1a6ac3602b0d890671c9bf9a13b1e8ec32f9",
+          "url": "https://hadeethenc.com/en/browse/hadith/2985",
+          "primary_text": "‘Abdur-Rahmān ibn Abi Layla reported that they were in the company of Hudhayfah, who asked for water, and a Magian brought him water. On placing the cup in his hand, he threw it at him and said, Had I not forbidden him more than once or twice—as if he were saying, I would not have done this—however, I heard the Prophet (may Allah's peace and blessings be upon him) say: \"Do not wear silk or brocade, and do not drink from gold or silver vessels, and do not eat in platters made therefrom, for they are for them in this world and for us in the Hereafter.\""
+        }
+      ],
+      "rationale": "The instruction prohibits drinking in gold/silver vessels, not permits it.",
+      "feature": "false_premise",
+      "service": "main",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "N13",
+      "language": "en",
+      "claim": "Does the Quran say the sleepers stayed in the cave for only ten years?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "18:25",
+          "sha256": "630216c1dc139d4c5208ff7f7d93edb9dce4dc5507e02a322e25cf8043acc720",
+          "url": "https://tanzil.net/#18:25",
+          "primary_text": "وَلَبِثُوا۟ فِى كَهْفِهِمْ ثَلَـٰثَ مِا۟ئَةٍ سِنِينَ وَٱزْدَادُوا۟ تِسْعًا",
+          "published_english_reading_aid": "They remained in their cave for three hundred years, plus nine[17]."
+        }
+      ],
+      "rationale": "Text states three hundred years plus nine, not ten.",
+      "feature": "false_premise_number",
+      "service": "main",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "N14",
+      "language": "id",
+      "claim": "Apakah Al-Quran menyebut emas sebagai bekal terbaik untuk haji, bukan takwa?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:197",
+          "sha256": "ff9debd484ccfac1fe6ef5c95a30b9c9a875c16c219229031812a8a4d1691463",
+          "url": "https://tanzil.net/#2:197",
+          "primary_text": "ٱلْحَجُّ أَشْهُرٌ مَّعْلُومَـٰتٌ ۚ فَمَن فَرَضَ فِيهِنَّ ٱلْحَجَّ فَلَا رَفَثَ وَلَا فُسُوقَ وَلَا جِدَالَ فِى ٱلْحَجِّ ۗ وَمَا تَفْعَلُوا۟ مِنْ خَيْرٍ يَعْلَمْهُ ٱللَّهُ ۗ وَتَزَوَّدُوا۟ فَإِنَّ خَيْرَ ٱلزَّادِ ٱلتَّقْوَىٰ ۚ وَٱتَّقُونِ يَـٰٓأُو۟لِى ٱلْأَلْبَـٰبِ",
+          "published_english_reading_aid": "The pilgrimage is in known months[97]. Whoever commits himself to perform the pilgrimage, there should be no intimacy, foul language, and arguments during the pilgrimage. Whatever good you do, Allah is aware of it. And take provisions for the journey, but the best provision is righteousness. So fear Me, O people of understanding."
+        }
+      ],
+      "rationale": "Best provision is taqwa, not gold; do not prohibit taking practical provisions.",
+      "feature": "pilgrimage_false_premise",
+      "service": "pilgrimage",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "N15",
+      "language": "bn",
+      "claim": "ফেসবুকে দেখা দোয়াটার কোনো সহিহ ভিত্তি আছে?",
+      "family": null,
+      "references": [],
+      "rationale": "The particular dua is absent; ask the user to paste it or give its reference. Do not equate lack of supplied text with fabricated status.",
+      "feature": "missing_quote",
+      "service": "main",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "N16",
+      "language": "fr",
+      "claim": "Dans le récit du siwak présenté à deux hommes en rêve, le Prophète a-t-il été invité à le donner au plus âgé ?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3131",
+          "sha256": "7a91f6b2b2425ee4b137e07ea4e96ae0473411ef6eb3be52ccf4b342c318eb55",
+          "url": "https://hadeethenc.com/en/browse/hadith/3131",
+          "primary_text": "‘Abdullāh ibn ‘Umar (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"I saw in my dream that I was using a tooth-stick when two men came to me, one of them older than the other. I gave the tooth-stick to the younger one, but I was told to give it to the older one first, so I did.\""
+        }
+      ],
+      "rationale": "Dream tooth-stick first offered to younger; instructed to give older first. Do not invent a universal rule overriding all other priorities.",
+      "feature": "ordinary_narrative",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N17",
+      "language": "hi",
+      "claim": "क्या कुरान नींद को आराम के बजाय सज़ा बताता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "78:9",
+          "sha256": "d71d83fd093d45634a3c33022d8581d6bdf8a75582e4a5a91c5b178c4f79f88b",
+          "url": "https://tanzil.net/#78:9",
+          "primary_text": "وَجَعَلْنَا نَوْمَكُمْ سُبَاتًا",
+          "published_english_reading_aid": "and made your sleep for rest,"
+        }
+      ],
+      "rationale": "Sleep is rest in the text, not a general punishment.",
+      "feature": "false_premise",
+      "service": "main",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "N18",
+      "language": "ar",
+      "claim": "هل يدعو الحديث إلى إبعاد شخص من مجلسه لكي نجلس مكانه؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5350",
+          "sha256": "eb0782002717c24c0b12e2c520a37a04d0a30e8762787045e66e49331e842222",
+          "url": "https://hadeethenc.com/en/browse/hadith/5350",
+          "primary_text": "‘Abdullāh ibn ‘Umar (may Allah be pleased with him) reported: The Prophet (may Allah's peace and blessings be upon him) said: \"No man should move another from the place he is sitting then sit in it. Instead, make room and spread out.\""
+        }
+      ],
+      "rationale": "Moving another from their seat to take it is prohibited; making room is the instruction.",
+      "feature": "false_premise",
+      "service": "main",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "N19",
+      "language": "de",
+      "claim": "Erwähnt der Koran Kleidung, die Menschen vor Hitze schützt?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "16:81",
+          "sha256": "66c1bc43e29b2706459468c5f26526758f9a6227247c56c7d26ce2953d05a112",
+          "url": "https://tanzil.net/#16:81",
+          "primary_text": "وَٱللَّهُ جَعَلَ لَكُم مِّمَّا خَلَقَ ظِلَـٰلًا وَجَعَلَ لَكُم مِّنَ ٱلْجِبَالِ أَكْنَـٰنًا وَجَعَلَ لَكُمْ سَرَٰبِيلَ تَقِيكُمُ ٱلْحَرَّ وَسَرَٰبِيلَ تَقِيكُم بَأْسَكُمْ ۚ كَذَٰلِكَ يُتِمُّ نِعْمَتَهُۥ عَلَيْكُمْ لَعَلَّكُمْ تُسْلِمُونَ",
+          "published_english_reading_aid": "Allah has made for you shade out of what He has created and has made for you shelter in the mountains. He has also made for you garments protecting you from heat [and cold], and garments [of armor] protecting you in battle. This is how He perfects His favors upon you, so that you may submit to Him."
+        }
+      ],
+      "rationale": "Garments protect from heat; do not claim text denies cold protection.",
+      "feature": "ordinary_question",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N20",
+      "language": "ur",
+      "claim": "کیا ڈراؤنا خواب آنے پر حدیث اللہ کی پناہ مانگنے اور بائیں طرف تھتکارنے کی ہدایت دیتی ہے؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3586",
+          "sha256": "0c607a54ac7dd6adb5915a913b6716ae40ad52022db4aad14503e13445e130c1",
+          "url": "https://hadeethenc.com/en/browse/hadith/3586",
+          "primary_text": "Abu Qatādah (may Allah be pleased with him) reported: The Prophet (may Allah's peace and blessings be upon him) said: \"The good vision is from Allah, and the dream is from the devil. So, if any of you has a dream of which he is afraid, let him spit on his left and seek refuge with Allah from its evil, for it will not harm him.\""
+        }
+      ],
+      "rationale": "For a feared dream, seek refuge from its evil and spit lightly to the left; do not claim every dream predicts reality.",
+      "feature": "ordinary_question",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N21",
+      "language": "en",
+      "claim": "I copied a religious sentence earlier. Can you check whether that exact sentence is from the Quran?",
+      "family": null,
+      "references": [],
+      "rationale": "The sentence is absent; ask for its text or usable reference before retrieval.",
+      "feature": "missing_quote",
+      "service": "main",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "N22",
+      "language": "id",
+      "claim": "Apakah hadits menyuruh mencui bejana tujuh kali setelah dijilat anjing?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3143",
+          "sha256": "0f59aaaf2899e0f9000d82f1f08a1f8f4d3eb69ba9c22241bbdfd4de28402548",
+          "url": "https://hadeethenc.com/en/browse/hadith/3143",
+          "primary_text": "Abu Hurayrah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"When a dog drinks from the vessel of any of you, let him wash it seven times.\" In a version by Muslim: \"the first of which is with dust.\""
+        }
+      ],
+      "rationale": "A vessel a dog drinks from is to be washed seven times; preserve report scope and any stated earth detail from source.",
+      "feature": "typo",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N23",
+      "language": "fr",
+      "claim": "Le Coran relie-t-il les phases de la lune au calcul des années et du temps ?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "10:5",
+          "sha256": "409ae1b665e7d6b4767138ac9a8fc8418c875009f6726fc52371ae4b32381096",
+          "url": "https://tanzil.net/#10:5",
+          "primary_text": "هُوَ ٱلَّذِى جَعَلَ ٱلشَّمْسَ ضِيَآءً وَٱلْقَمَرَ نُورًا وَقَدَّرَهُۥ مَنَازِلَ لِتَعْلَمُوا۟ عَدَدَ ٱلسِّنِينَ وَٱلْحِسَابَ ۚ مَا خَلَقَ ٱللَّهُ ذَٰلِكَ إِلَّا بِٱلْحَقِّ ۚ يُفَصِّلُ ٱلْـَٔايَـٰتِ لِقَوْمٍ يَعْلَمُونَ",
+          "published_english_reading_aid": "It is He Who made the sun a radiant light[7] and the moon a reflected light[8], and precisely determined its phases, so that you may know the number of years and account [of time][9]. Allah has not created all of this except for a true purpose[10]. He makes the signs clear for people who know."
+        }
+      ],
+      "rationale": "Moon mansions linked to knowing years and reckoning; do not add a new astronomical theory.",
+      "feature": "ordinary_question",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N24",
+      "language": "hi",
+      "claim": "क्या हदीस सजदे में दोनों बाँहों को कुत्ते की तरह ज़मीन पर फैला देने के लिए कहती है?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3111",
+          "sha256": "5f4a1e1f2d7f8c32a215102225bb6580b4e99c1cb199b908796392b5a3a5f5e6",
+          "url": "https://hadeethenc.com/en/browse/hadith/3111",
+          "primary_text": "Anas ibn Mālik (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"Be moderate in prostration, and let none of you spread his forearms on the ground like a dog.\""
+        }
+      ],
+      "rationale": "Report prohibits spreading forearms on ground like a dog; retain prostration setting.",
+      "feature": "false_premise",
+      "service": "main",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "N25",
+      "language": "bn",
+      "claim": "কোরআনের বর্ণনায় কি একটি পিঁপড়া সুলায়মান ও তাঁর বাহিনী আসার সময় অন্য পিঁপড়াদের বাসায় ঢুকতে বলেছিল?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "27:18",
+          "sha256": "254e04eb036f563fd8d1dfad80e150e458a9b4abc89488bba1f89ae3613d2f24",
+          "url": "https://tanzil.net/#27:18",
+          "primary_text": "حَتَّىٰٓ إِذَآ أَتَوْا۟ عَلَىٰ وَادِ ٱلنَّمْلِ قَالَتْ نَمْلَةٌ يَـٰٓأَيُّهَا ٱلنَّمْلُ ٱدْخُلُوا۟ مَسَـٰكِنَكُمْ لَا يَحْطِمَنَّكُمْ سُلَيْمَـٰنُ وَجُنُودُهُۥ وَهُمْ لَا يَشْعُرُونَ",
+          "published_english_reading_aid": "until when they reached a valley of ants, an ant said, “O ants, get into your dwellings, so Solomon and his armies do not crush you unknowingly.”"
+        }
+      ],
+      "rationale": "An ant warns the ants to enter dwellings to avoid being crushed unknowingly by Solomon and his army.",
+      "feature": "ordinary_narrative",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N26",
+      "language": "ur",
+      "claim": "میں نے سفر میں دو نمازیں اکٹھی پڑھیں۔ کیا میری اپنی نمازیں درست ہو گئیں؟",
+      "family": null,
+      "references": [],
+      "rationale": "Concrete personal ritual-validity judgment with insufficient circumstances; refer for qualified guidance rather than settle individual validity.",
+      "feature": "personal_ruling",
+      "service": "main",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "N27",
+      "language": "de",
+      "claim": "Soll ein Vorbeter laut Hadith das Gebet kurz halten, weil unter den Betenden Kranke und Schwache sein können?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:11295",
+          "sha256": "622669b39d94e7b561e7bc16d5f8dd15161a4acae7706030922966ffad36844b",
+          "url": "https://hadeethenc.com/en/browse/hadith/11295",
+          "primary_text": "Abu Mas‘ūd al-Ansāri (may Allah be pleased with him) reported: A man said: \"O Messenger of Allah, I would almost fail to attend the prayer because so-and-so prolongs it when he leads us.\" I never saw the Prophet (may Allah's peace and blessings be upon him) more angry in giving admonition than he was on that day. He said: \"O people, you cause aversion to others. Whoever leads people in prayer should make it brief, for among them are the sick, the weak, and those with needs to be fulfilled.\""
+        }
+      ],
+      "rationale": "Congregational imam should keep prayer brief because weak, sick and people with needs attend; not permission to omit obligations.",
+      "feature": "ordinary_question",
+      "service": "main",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "N28",
+      "language": "en",
+      "claim": "Does hadith tell us to blow into a drnking cup?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5453",
+          "sha256": "0e4559ce193169310629027f6ce29d2fb69e544a43a10f79f1accb89e617ff80",
+          "url": "https://hadeethenc.com/en/browse/hadith/5453",
+          "primary_text": "Abu Sa‘īd al-Khudri (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) prohibited blowing in one's drink. A man said: “Sometimes, I see a speck in the vessel. What should I do then?” He replied: “Spill it.” Then the man said: “My thirst is not quenched with one draught.” He said: “Then remove the cup from your mouth (in between three gulps, and take a breath).”"
+        },
+        {
+          "locator": "en:58123",
+          "sha256": "be9febcd71be4b06c2f55e1c13950ca2fcc1077c381b0c60b84646d37109309f",
+          "url": "https://hadeethenc.com/en/browse/hadith/58123",
+          "primary_text": "Ibn ‘Abbās (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) forbade breathing into the pot or blowing into it."
+        }
+      ],
+      "rationale": "Reports forbid blowing into a drink/vessel; do not replace the question with the opposite.",
+      "feature": "typo_false_premise",
+      "service": "main",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "N29",
+      "language": "en",
+      "claim": "Please draft a polite note asking my landlord to repair the kitchen tap.",
+      "family": null,
+      "references": [],
+      "rationale": "Unrelated writing request; no religious reframing or invented answer.",
+      "feature": "out_of_scope",
+      "service": "main",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "N30",
+      "language": "es",
+      "claim": "¿Excluye el Corán al cautivo cuando elogia dar comida al necesitado y al huérfano?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "76:8",
+          "sha256": "04772c58b1efb20bcfb170e14e8cdb3331646781dcf37b19964c579f3d51ef54",
+          "url": "https://tanzil.net/#76:8",
+          "primary_text": "وَيُطْعِمُونَ ٱلطَّعَامَ عَلَىٰ حُبِّهِۦ مِسْكِينًا وَيَتِيمًا وَأَسِيرًا",
+          "published_english_reading_aid": "and they give food, despite their love for it[4], to the needy, the orphans, and the captives,"
+        }
+      ],
+      "rationale": "Captive is explicitly included with needy and orphan; do not omit the third named recipient.",
+      "feature": "false_premise_omission",
+      "service": "main",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    }
+  ]
+}
