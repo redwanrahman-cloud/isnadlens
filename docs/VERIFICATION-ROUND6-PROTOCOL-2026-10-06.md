@@ -1,6 +1,6 @@
 # Fresh 30-question verification batch
 
-Status: prepared for the user-authorized live run. The user explicitly approved raising the total development cap from 49 to 55 SAR on 6 October 2026 (Riyadh). No provider calls were made during preparation.
+Status: completed. The user explicitly approved raising the total development cap from 49 to 55 SAR on 6 October 2026 (Riyadh). No provider calls were made during preparation; the subsequent live batch retained all 30 first responses.
 
 ## Candidate and questions
 
@@ -33,4 +33,18 @@ Keep the existing gate: at least 27/30 satisfactory responses and zero incorrect
 - Prepare script: `scripts/prepare-release30-round6.mjs`
 - Runner: `scripts/validate-release30-round6.mjs`
 
-No first-pass score exists until live execution and answer review are complete.
+## First-pass outcome
+
+29/30 satisfactory (96.7%), matching the previous overall score. The subtotals changed from 26/27 religious and 3/3 boundary to **27/27 religious and 2/3 boundary**. No incorrect decisive conclusions, inadequately proven decisive answers, inconsistent badges or unnecessary religious withholds were found. All 30 source/seal and input-language checks passed.
+
+Z29 failed: “Is the religious quote in the message I received authentic?” supplied no quotation. Intake accepted it as a high-confidence textual request, searched, and returned generic insufficient-evidence text rather than asking for the missing quote. The internal assessment recognized the absent wording, but the final visible summary did not preserve that explanation. This is a clarification-routing gap, not proof that the evidence reviewer is too rigid. No product correction has been applied after the batch.
+
+Z24 has a minor wording defect: its Arabic explanation calls `en:5970` and `ar:5970` two hadiths, although they are two language records of the same report. Its conclusion and proof are correct, so it counts as satisfactory, but not entirely clean. The separate entirely-clean count is 28/30; that stricter wording subtotal was not separately reported for the previous round.
+
+Z12 and Z22 exercised the new feedback repair successfully. Review caught an unsupported added qualification in Z12 and an English/Arabic mismatch in Z22. Both revised explanations passed a new source review. These were built-in recoveries, not manual retries. No final qualified-answer path was exercised live. The source key's exact witnesses were absent for Z04 and Z23, but their alternative proof at 2:219 and 6:160 was adequate and accepted.
+
+Captured batch spend: **4.4639325 SAR** over 118 provider usage reservations, matching the shared-ledger delta. Total committed development spend: 52.261540875 SAR, leaving 2.738459125 SAR of the 55 SAR cap. The separate 15 SAR judging reserve was not reassigned. Religious-answer median: 13.483 seconds; nearest-rank p95: 41.466; maximum: 49.066.
+
+Scores come from substantive source/answer review, not label matching alone. They are not independent scholarly certification. The nine input languages and English/Arabic explanations were reviewed; browser-triggered display translations, voice, camera and rendering were not exercised. Thus the preparation's requested-language readability criterion is limited here to intake fidelity and the API's English/Arabic output contract; it does not certify the separate Lingo endpoint. The original fasting failure and old Y16 were excluded from this fresh set and their individual live outcomes remain unconfirmed.
+
+First-pass records: `artifacts/release30-round6-first-pass-2026-10-06.json`. Per-case principal review: `artifacts/release30-round6-principal-review-2026-10-06.json`. Raw responses remain in ignored private storage with their hashes included in the review. Offline source-audit/review script: `scripts/review-release30-round6.mjs`.

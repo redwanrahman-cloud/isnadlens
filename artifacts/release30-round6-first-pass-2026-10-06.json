@@ -1,0 +1,1751 @@
+{
+  "kind": "untouched_release30_round6_frozen_first_pass",
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "protocol": {
+    "application_tree_sha256": "0511ad8f7555e439c95338fa76f7a627c9eb67cecdf34de0bd33dda44e10c830",
+    "input_language": "explicit case language, matching the current composer selection",
+    "corpus_selection": "auto",
+    "endpoint": "http://127.0.0.1:3302/api/verify",
+    "source_hints_sent": false,
+    "retrieval_prescreen": false,
+    "manual_retries": false,
+    "midrun_application_edits": false,
+    "review": "Inspect answer usefulness, source relevance, qualification preservation, explanation/badge agreement, source seals, and translated meaning; label matching alone is not a pass. Accept adequate alternative primary evidence. Withholding an answer to these answerable religious questions is not satisfactory, even if conservative.",
+    "comparison_limits": "New topics and explicit input-language selection differ from round5 automatic language detection. This measures a fresh batch, not the causal size of the repair or general production accuracy."
+  },
+  "freeze": {
+    "application_tree_sha256": "0511ad8f7555e439c95338fa76f7a627c9eb67cecdf34de0bd33dda44e10c830",
+    "dataset_sha256": "78c8010cad6bb50c74796f325504068f8fa8cbc40b01963d5bd264629ded1cd4",
+    "build": "QwcZqQ-aOAJI7NcFqnA75",
+    "configuration_sha256": "f1d6d41da6711acdd05266a0d3956699c0a864b11df952b6ca02e2f4ffa3a4fb",
+    "development_cap_sar": 55,
+    "corpus_sha256": "f6f490558db286aa17cfef4d4af5da20eb8670b866337bcca636f17953ce2d23",
+    "hadith_sha256": "1939676c7d7d64ec2affb517b367216faed90ef069e877acbff504f275c067ac"
+  },
+  "started_at": "2026-10-05T21:42:33.691Z",
+  "starting_development_sar": 47.79760837500006,
+  "cases": [
+    {
+      "id": "Z01",
+      "claim": "Is Laylat al-Qadr better than a thousand months according to the Quran?",
+      "language": "en",
+      "http_status": 200,
+      "elapsed_ms": 13474,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 97:3 directly supports that Laylat al-Qadr is better than a thousand months, with no additional condition stated in the cited passage.",
+      "summary_ar": "نعم، تدعم الآية 97:3 من مجموعة المصادر المحددة أن ليلة القدر خير من ألف شهر. وهذا الحكم وارد في القرآن بصيغة مباشرة، دون شروط إضافية في النص المقتبس.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "97:3",
+        "2:217",
+        "2:96",
+        "2:185",
+        "2:138",
+        "2:221",
+        "2:263",
+        "7:39"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 861,
+          "output_tokens": 203,
+          "estimated_cost_usd": 0.00045885,
+          "reservation_id": "b0cd1141-7b62-402a-82f1-ac0b5fc1613d"
+        },
+        {
+          "input_tokens": 11435,
+          "output_tokens": 143,
+          "estimated_cost_usd": 0.0303035,
+          "reservation_id": "e6913a8b-9c96-4f61-a797-3919dc22418e"
+        },
+        {
+          "input_tokens": 11640,
+          "output_tokens": 320,
+          "estimated_cost_usd": 0.003294,
+          "reservation_id": "1c79881a-4220-42ce-8761-14607c79bdac"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z02",
+      "claim": "Does the Quran say I must shout when making dua, rather than call on Allah privately?",
+      "language": "en",
+      "http_status": 200,
+      "elapsed_ms": 32070,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 7:55 in the selected source collection contradicts the claim: it directs calling upon Allah with humility and privately, not shouting instead of private dua. This is a textual assessment within the supplied sources, not a personal fatwa.",
+      "summary_ar": "لا، هذا الادعاء مخالف لما تدعمه الآية القرآنية 7:55 في مجموعة المصادر المحددة؛ فهي تأمر بدعاء الله بتضرع وخفية، لا بالصياح بدل الدعاء الخاص. هذه نتيجة نصية ضمن المصادر المعروضة وليست فتوى شخصية.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "7:55",
+        "2:196",
+        "7:27",
+        "2:171",
+        "71:9",
+        "24:62",
+        "2:83",
+        "5:12"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 863,
+          "output_tokens": 202,
+          "estimated_cost_usd": 0.00045815,
+          "reservation_id": "9f9baf08-1d40-4217-a490-05b35dc3654f"
+        },
+        {
+          "input_tokens": 12257,
+          "output_tokens": 215,
+          "estimated_cost_usd": 0.0332225,
+          "reservation_id": "4ed14677-ba16-4228-a63d-c3d128912115"
+        },
+        {
+          "input_tokens": 11786,
+          "output_tokens": 556,
+          "estimated_cost_usd": 0.0036137,
+          "reservation_id": "cb7027bf-c0ce-430d-9486-4b59a23eeea8"
+        },
+        {
+          "input_tokens": 11786,
+          "output_tokens": 465,
+          "estimated_cost_usd": 0.035045,
+          "reservation_id": "a74da015-9651-4d50-8546-da5d3f359fcd"
+        },
+        {
+          "input_tokens": 335,
+          "output_tokens": 225,
+          "estimated_cost_usd": 0.00035375,
+          "reservation_id": "3c67eb18-1a93-47fd-8a00-01fad9176b6b"
+        },
+        {
+          "input_tokens": 11012,
+          "output_tokens": 492,
+          "estimated_cost_usd": 0.0033434000000000003,
+          "reservation_id": "0c16865e-0f5d-46fd-a706-e97c1d54842f"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z03",
+      "claim": "Can ongoing charity, useful knowledge and a righteous child’s prayers still benefit someone after death, according to hadith?",
+      "language": "en",
+      "http_status": 200,
+      "elapsed_ms": 12258,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source supports this hadith-based claim: ongoing charity, beneficial knowledge, and a pious child’s supplication continue to benefit the deceased, with those stated qualifications.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى في الحديث المذكور: يستمر نفع الصدقة الجارية والعلم النافع، كما ينتفع المتوفى بدعاء الولد الصالح له. وتبقى هذه الصور مقيّدة بكون الصدقة جارية، والعلم نافعًا، والولد صالحًا داعيًا.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "en:65566",
+        "en:6007",
+        "en:3024",
+        "en:5878",
+        "ar:66252",
+        "ar:64667",
+        "ar:65597",
+        "ar:65055"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 868,
+          "output_tokens": 184,
+          "estimated_cost_usd": 0.0004378,
+          "reservation_id": "5eb9ebdf-af5a-47a7-80db-c71f42887b93"
+        },
+        {
+          "input_tokens": 4332,
+          "output_tokens": 226,
+          "estimated_cost_usd": 0.013542,
+          "reservation_id": "1ec0608a-c533-46d7-a4b7-9d6183651dcd"
+        },
+        {
+          "input_tokens": 5463,
+          "output_tokens": 451,
+          "estimated_cost_usd": 0.0019069500000000004,
+          "reservation_id": "c248ce23-3336-457b-9879-15f9c9bada86"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z04",
+      "claim": "هل يدعو القرآن إلى تدبر آياته والتفكير فيها؟",
+      "language": "ar",
+      "http_status": 200,
+      "elapsed_ms": 25527,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports this meaning: the Quran presents its verses in a way that encourages reflection, as shown in Al-Baqarah 2:219. The supplied passage establishes this general invitation to think, without specifying every detail or method of pondering.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى؛ فالقرآن يبيّن آياته بما يحفّز على التفكر فيها، كما يظهر في البقرة 2:219. وهذا يثبت الدعوة إلى التفكر إجمالًا، دون أن يقرر النص المعروض كل تفاصيل معنى التدبر أو مناهجه.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "45:32",
+        "2:273",
+        "3:78",
+        "7:30",
+        "10:59",
+        "7:31",
+        "2:217",
+        "7:32"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 860,
+          "output_tokens": 167,
+          "estimated_cost_usd": 0.00041539999999999996,
+          "reservation_id": "42b32365-3ab9-411d-a089-be1a85ce8625"
+        },
+        {
+          "input_tokens": 11542,
+          "output_tokens": 393,
+          "estimated_cost_usd": 0.033571,
+          "reservation_id": "4964d99e-280d-4350-9857-7ce65de25d1b"
+        },
+        {
+          "input_tokens": 10972,
+          "output_tokens": 470,
+          "estimated_cost_usd": 0.003307,
+          "reservation_id": "3e50dc27-347f-4307-8f28-7f751a7a4602"
+        },
+        {
+          "input_tokens": 328,
+          "output_tokens": 120,
+          "estimated_cost_usd": 0.000226,
+          "reservation_id": "8282ec38-4c02-4d7c-865d-ee35b5568fdc"
+        },
+        {
+          "input_tokens": 10620,
+          "output_tokens": 595,
+          "estimated_cost_usd": 0.003369,
+          "reservation_id": "0abd3e91-15fc-400f-b82f-4644155aadbf"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z05",
+      "claim": "هل يمدح القرآن المؤمنين عندما يقولون ما لا يفعلون؟",
+      "language": "ar",
+      "http_status": 200,
+      "elapsed_ms": 49066,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 61:2–3 presents saying what one does not do as abhorrent to God, rather than praiseworthy; the selected source collection praises believers who do righteous deeds, not this conduct.",
+      "summary_ar": "لا، لا يمدح القرآن المؤمنين على قول ما لا يفعلون؛ بل يعرض ذلك في سورة الصف 61:2–3 على أنه ممقوت عند الله. وتذكر مجموعة المصادر المحددة مدح المؤمنين العاملين بالصالحات، لا هذا السلوك.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "26:226",
+        "27:15",
+        "39:75",
+        "27:59",
+        "18:1",
+        "61:2",
+        "34:10",
+        "18:2"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 861,
+          "output_tokens": 197,
+          "estimated_cost_usd": 0.00045165,
+          "reservation_id": "6aa0e7f3-36ed-4c81-91d4-811b557c2d3e"
+        },
+        {
+          "input_tokens": 7710,
+          "output_tokens": 202,
+          "estimated_cost_usd": 0.021699,
+          "reservation_id": "1ee6c3fb-434b-4e8f-a284-de8c0c2c2251"
+        },
+        {
+          "input_tokens": 7995,
+          "output_tokens": 544,
+          "estimated_cost_usd": 0.0026515500000000003,
+          "reservation_id": "98b82efe-f40b-4439-8375-f04b856a7d54"
+        },
+        {
+          "input_tokens": 7995,
+          "output_tokens": 386,
+          "estimated_cost_usd": 0.0246195,
+          "reservation_id": "a83399d5-8f1f-4945-9788-86243b258f0c"
+        },
+        {
+          "input_tokens": 329,
+          "output_tokens": 141,
+          "estimated_cost_usd": 0.00025145,
+          "reservation_id": "83ff7b5f-eaf0-43ca-941d-686fba0fe414"
+        },
+        {
+          "input_tokens": 8851,
+          "output_tokens": 797,
+          "estimated_cost_usd": 0.00316915,
+          "reservation_id": "156562e9-057e-4b91-b302-2aea61e0c43b"
+        },
+        {
+          "input_tokens": 8404,
+          "output_tokens": 922,
+          "estimated_cost_usd": 0.032074,
+          "reservation_id": "a967555c-858b-452d-9926-b608c681649c"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z06",
+      "claim": "هل يحث الحديث على تبادل الهدايا لزيادة المحبة بين الناس؟",
+      "language": "ar",
+      "http_status": 200,
+      "elapsed_ms": 11621,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports this meaning: the hadith encourages exchanging gifts and links this practice to increased love between people. The assessment is limited to the supplied source card and selected corpus.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرة؛ فالحديث يحث على تبادل الهدايا ويربط ذلك بزيادة المحبة بين الناس. هذه النتيجة مبنية على بطاقة الحديث الإنجليزية المحددة، مع بقاء التقييم محصورًا في المصادر المعروضة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "ar",
+      "evidence_locators": [
+        "ar:66258",
+        "ar:10960",
+        "ar:5332",
+        "ar:3414",
+        "en:66179",
+        "en:5825",
+        "en:5382",
+        "en:5336"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 862,
+          "output_tokens": 156,
+          "estimated_cost_usd": 0.0004027,
+          "reservation_id": "541c07db-5d3f-4d8f-9163-79414e606753"
+        },
+        {
+          "input_tokens": 4249,
+          "output_tokens": 170,
+          "estimated_cost_usd": 0.0126625,
+          "reservation_id": "4b639e7b-a145-4b05-973d-17d64921f957"
+        },
+        {
+          "input_tokens": 5425,
+          "output_tokens": 408,
+          "estimated_cost_usd": 0.00184585,
+          "reservation_id": "bc1774ae-ab10-438c-97bf-9c7372e7f247"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z07",
+      "claim": "কোরআনে কি দুনিয়া ও আখিরাত—দুই জায়গার কল্যাণ চেয়ে দোয়া করার কথা আছে?",
+      "language": "bn",
+      "http_status": 200,
+      "elapsed_ms": 11974,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 2:201 in the selected source collection directly supports that the Quran presents a supplication seeking good in both this world and the Hereafter, together with protection from the punishment of the Fire. This conclusion is bounded by the selected source collection and does not replace broader scholarly review if needed.",
+      "summary_ar": "نعم، تدعم الآية 2:201 من مجموعة المصادر المحددة أن في القرآن دعاءً لطلب الحسنة في الدنيا والحسنة في الآخرة، مع طلب الوقاية من عذاب النار. وهذا استنتاج مدعوم ضمن مجموعة المصادر المحددة، ولا يغني عن مراجعة علمية أوسع عند الحاجة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "22:11",
+        "2:114",
+        "2:130",
+        "2:86",
+        "4:132",
+        "9:38",
+        "2:200",
+        "4:133"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 877,
+          "output_tokens": 218,
+          "estimated_cost_usd": 0.00048084999999999995,
+          "reservation_id": "3fd1aaff-bdb0-4fa0-8669-28c62c70d9dd"
+        },
+        {
+          "input_tokens": 10856,
+          "output_tokens": 195,
+          "estimated_cost_usd": 0.02948,
+          "reservation_id": "eac3941a-0672-4867-945a-60bc72b672fa"
+        },
+        {
+          "input_tokens": 10694,
+          "output_tokens": 479,
+          "estimated_cost_usd": 0.0032483,
+          "reservation_id": "abaefb1f-8a41-4353-9653-7a06258fdb12"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z08",
+      "claim": "কোরআন কি বলে যে নামাজ অশ্লীলতা ও মন্দ কাজ থেকে বিরত রাখে?",
+      "language": "bn",
+      "http_status": 200,
+      "elapsed_ms": 9047,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports this Quranic claim in 29:45, attributing to prayer the prevention of indecency and wrongdoing. The supplied verse adds no qualification that changes this basic meaning.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا القول مباشرة في القرآن، في الآية 29:45، حيث تُسند إلى الصلاة النهي عن الفحشاء والمنكر. ولا تضيف الآية المعروضة هنا قيدًا آخر يغيّر هذا المعنى الأساسي.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "29:45",
+        "4:77",
+        "24:37",
+        "24:21",
+        "9:71",
+        "22:41",
+        "2:110",
+        "28:19"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 869,
+          "output_tokens": 178,
+          "estimated_cost_usd": 0.00043085000000000004,
+          "reservation_id": "c48840c4-d731-46d5-aeb0-5a9a36a50d72"
+        },
+        {
+          "input_tokens": 11375,
+          "output_tokens": 105,
+          "estimated_cost_usd": 0.0296975,
+          "reservation_id": "5e11b106-0f16-4d46-b2d1-d0af5c5ebd40"
+        },
+        {
+          "input_tokens": 11187,
+          "output_tokens": 326,
+          "estimated_cost_usd": 0.0031879499999999997,
+          "reservation_id": "2e019300-aadb-4bb2-a07f-e7436d49b56e"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z09",
+      "claim": "কোরআন পড়তে গিয়ে আটকে যায় ও কষ্ট হয় এমন ব্যক্তির কোনো সওয়াব নেই—হাদিস কি এমন বলে?",
+      "language": "bn",
+      "http_status": 200,
+      "elapsed_ms": 22234,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied hadith at 10113 directly states the opposite: a person who recites the Qur’an with difficulty receives two rewards. This assessment is limited to the selected source collection.",
+      "summary_ar": "لا، هذا الادعاء مخالف للحديث المعروض في المصدر 10113؛ فهو يقرر ثوابين لمن يقرأ القرآن متعثراً ويجد فيه مشقة. وهذا التقييم يقتصر على مجموعة المصادر المحددة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "bn",
+      "evidence_locators": [
+        "4:100",
+        "28:27",
+        "28:25",
+        "28:26",
+        "en:10113",
+        "en:3734",
+        "ar:10113",
+        "ar:10847"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 877,
+          "output_tokens": 214,
+          "estimated_cost_usd": 0.00047605,
+          "reservation_id": "e2b53452-c86f-40c7-b52d-cb86ef0fbece"
+        },
+        {
+          "input_tokens": 7232,
+          "output_tokens": 202,
+          "estimated_cost_usd": 0.020504,
+          "reservation_id": "6588921b-ccd0-4974-8a2e-179e94f37171"
+        },
+        {
+          "input_tokens": 8295,
+          "output_tokens": 600,
+          "estimated_cost_usd": 0.00279375,
+          "reservation_id": "00f38795-85a4-42a3-ade9-f95f899c0022"
+        },
+        {
+          "input_tokens": 8295,
+          "output_tokens": 572,
+          "estimated_cost_usd": 0.0276015,
+          "reservation_id": "937a9ade-79f1-4b8f-9e05-ddf27cc3d1d1"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z10",
+      "claim": "क्या कुरान अलग-अलग भाषाओं और रंगों को अल्लाह की निशानियाँ बताता है?",
+      "language": "hi",
+      "http_status": 200,
+      "elapsed_ms": 10343,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports this Quranic claim: 30:22 identifies differences in languages and colors among Allah’s signs. This assessment is limited to the supplied Quranic evidence.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرة في القرآن، إذ يذكر الموضع 30:22 اختلاف الألسنة والألوان ضمن آيات الله. يقتصر هذا التقييم على النص القرآني المقدم في مجموعة المصادر المحددة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "30:22",
+        "16:69",
+        "2:164",
+        "10:19",
+        "10:6",
+        "3:190",
+        "10:18",
+        "45:5"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 867,
+          "output_tokens": 183,
+          "estimated_cost_usd": 0.00043635,
+          "reservation_id": "15835a1f-d0a5-44a1-9a62-0a8671d6e209"
+        },
+        {
+          "input_tokens": 10115,
+          "output_tokens": 105,
+          "estimated_cost_usd": 0.0265475,
+          "reservation_id": "443d6a79-14e2-48d1-af97-0261399646fc"
+        },
+        {
+          "input_tokens": 9985,
+          "output_tokens": 401,
+          "estimated_cost_usd": 0.00297745,
+          "reservation_id": "982731a4-061c-406c-abe9-feec5351dac1"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z11",
+      "claim": "क्या कुरान में फ़िरऔन से नरमी के बजाय कठोरता से बात करने का आदेश दिया गया था?",
+      "language": "hi",
+      "http_status": 200,
+      "elapsed_ms": 20374,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The Quran passage at Surah Taha 20:44 directs Moses and Aaron to speak gently to Pharaoh, rather than commanding harsh speech, and states a possible purpose for that approach. This assessment is limited to the supplied selected source collection and does not replace broader scholarly review where needed.",
+      "summary_ar": "لا، هذا الفهم مخالف لمجموعة المصادر المحددة: فالقرآن في سورة طه 20:44 يأمر موسى وهارون أن يكلّما فرعون بلين، مع بيان غاية محتملة لهذا الأسلوب. هذا التقييم مقصور على النصوص المعروضة في مجموعة المصادر المحددة ولا يغني عن مراجعة علمية أوسع عند الحاجة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "20:43",
+        "20:44",
+        "20:42",
+        "20:7",
+        "33:32",
+        "20:45",
+        "21:27",
+        "49:2"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 870,
+          "output_tokens": 214,
+          "estimated_cost_usd": 0.00047430000000000004,
+          "reservation_id": "816b0402-6cd6-4a64-86dd-6521efd78d5e"
+        },
+        {
+          "input_tokens": 8142,
+          "output_tokens": 168,
+          "estimated_cost_usd": 0.022371,
+          "reservation_id": "c833efbd-a4b1-45f8-a19c-6421f7fdacf8"
+        },
+        {
+          "input_tokens": 8231,
+          "output_tokens": 574,
+          "estimated_cost_usd": 0.0027465500000000004,
+          "reservation_id": "bcb3a849-9d5e-44cb-9624-89b06f830d14"
+        },
+        {
+          "input_tokens": 8231,
+          "output_tokens": 457,
+          "estimated_cost_usd": 0.0260615,
+          "reservation_id": "cd1ac624-7382-4d9d-852c-c6eecaa4d019"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z12",
+      "claim": "क्या हदीस लोगों का शुक्रिया अदा करने को अल्लाह का शुक्रिया अदा करने से जोड़ती है?",
+      "language": "hi",
+      "http_status": 200,
+      "elapsed_ms": 20416,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection supports that the hadith links thanking people with thanking Allah, presenting failure to thank people as connected to failure to thank Allah.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن الحديث يربط شكر الناس بشكر الله. ويعرض النص ترك شكر الناس بوصفه متصلاً بترك شكر الله.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "hi",
+      "evidence_locators": [
+        "en:66255",
+        "en:6469",
+        "en:11244",
+        "en:3518",
+        "ar:66255",
+        "ar:3344",
+        "ar:6180",
+        "ar:65759"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 871,
+          "output_tokens": 186,
+          "estimated_cost_usd": 0.00044095000000000007,
+          "reservation_id": "a164a494-129c-427e-ba05-9ea5c2985ec8"
+        },
+        {
+          "input_tokens": 3956,
+          "output_tokens": 296,
+          "estimated_cost_usd": 0.013442,
+          "reservation_id": "3a60281a-d796-4654-9707-87a5281c3994"
+        },
+        {
+          "input_tokens": 3731,
+          "output_tokens": 203,
+          "estimated_cost_usd": 0.0117635,
+          "reservation_id": "0c4985af-78c7-4caa-9765-82e78132125e"
+        },
+        {
+          "input_tokens": 4926,
+          "output_tokens": 497,
+          "estimated_cost_usd": 0.0018279000000000001,
+          "reservation_id": "d2042738-2d61-467d-b556-f928797d3939"
+        },
+        {
+          "input_tokens": 5172,
+          "output_tokens": 293,
+          "estimated_cost_usd": 0.016446,
+          "reservation_id": "a808efe9-7123-4b30-92b9-e9d63e9dac4c"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z13",
+      "claim": "کیا قرآن کہتا ہے کہ اللہ توبہ کرنے والوں اور پاکیزگی اختیار کرنے والوں سے محبت کرتا ہے؟",
+      "language": "ur",
+      "http_status": 200,
+      "elapsed_ms": 12379,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 2:222 directly supports the claim that Allah loves those who repent and those who purify themselves, within the verse’s context concerning menstruation and purification.",
+      "summary_ar": "نعم، تدعم الآية 2:222 من مجموعة المصادر المحددة أن الله يحب التوابين والمتطهرين. يَرِد ذلك ضمن سياق أحكام المحيض والتطهر في الآية.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "2:222",
+        "3:159",
+        "4:49",
+        "2:220",
+        "28:42",
+        "2:221",
+        "4:17",
+        "2:223"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 870,
+          "output_tokens": 294,
+          "estimated_cost_usd": 0.0005702999999999999,
+          "reservation_id": "7e51236e-4a14-4f67-84d1-8929ec235b8b"
+        },
+        {
+          "input_tokens": 11975,
+          "output_tokens": 164,
+          "estimated_cost_usd": 0.0319055,
+          "reservation_id": "383c7c80-f424-4f3a-a022-992fad559bf0"
+        },
+        {
+          "input_tokens": 11504,
+          "output_tokens": 398,
+          "estimated_cost_usd": 0.0033536,
+          "reservation_id": "e79005a9-826b-4c58-bfb1-07c938063326"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z14",
+      "claim": "کیا قرآن کو ٹھہر ٹھہر کر پڑھنے کی ہدایت خود قرآن میں ہے؟",
+      "language": "ur",
+      "http_status": 200,
+      "elapsed_ms": 11735,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection contains direct Quranic evidence for the instruction to recite the Quran with measured, deliberate recitation in Surah al-Muzzammil 73:4. The verse presents this as a directive; this assessment does not add further legal details.",
+      "summary_ar": "نعم، مجموعة المصادر المحددة تتضمن دليلاً قرآنياً مباشراً على توجيه قراءة القرآن بترتيل، وذلك في سورة المزمل، الآية 4. والآية تذكر هذا التوجيه بصيغة الأمر، دون أن يضيف هذا التقييم تفاصيل فقهية أخرى.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "4:12",
+        "2:44",
+        "2:254",
+        "73:4",
+        "2:187",
+        "2:256",
+        "3:30",
+        "12:21"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 865,
+          "output_tokens": 187,
+          "estimated_cost_usd": 0.00044065,
+          "reservation_id": "19502d46-1892-4f77-8307-9780c11c0f7f"
+        },
+        {
+          "input_tokens": 11436,
+          "output_tokens": 172,
+          "estimated_cost_usd": 0.030654,
+          "reservation_id": "f5cfb2ac-0773-4363-b5a7-952870fc2d98"
+        },
+        {
+          "input_tokens": 11664,
+          "output_tokens": 405,
+          "estimated_cost_usd": 0.003402,
+          "reservation_id": "ce8995c8-881b-4b08-a5b9-c0481996945f"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z15",
+      "claim": "کیا نبی ناپسند آنے والے کھانے میں عیب نکالتے تھے، جیسا کہ حدیث میں بیان ہوا ہے؟",
+      "language": "ur",
+      "http_status": 200,
+      "elapsed_ms": 21481,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied hadith directly contradicts the claim: it states that the Prophet did not find fault with food and would leave food he disliked.",
+      "summary_ar": "لا، هذا الادعاء مخالف للمصدر المحدد. فالحديث في المصدر المحدد يذكر أن النبي ﷺ لم يكن يعيب الطعام، بل كان يترك ما لا يرغب فيه.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "ur",
+      "evidence_locators": [
+        "en:4966",
+        "en:4244",
+        "en:4960",
+        "en:3072",
+        "ar:58121",
+        "ar:5332",
+        "ar:5808",
+        "ar:3088"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 874,
+          "output_tokens": 205,
+          "estimated_cost_usd": 0.0004645,
+          "reservation_id": "863585b2-89fe-4d29-b0f7-5b5ed73153e2"
+        },
+        {
+          "input_tokens": 4568,
+          "output_tokens": 177,
+          "estimated_cost_usd": 0.013544,
+          "reservation_id": "747ff4df-92c4-40c9-a703-d7b6256f43fe"
+        },
+        {
+          "input_tokens": 5667,
+          "output_tokens": 636,
+          "estimated_cost_usd": 0.00217995,
+          "reservation_id": "87c2706c-c1ef-4f2b-acda-8047420690e8"
+        },
+        {
+          "input_tokens": 5667,
+          "output_tokens": 543,
+          "estimated_cost_usd": 0.0206835,
+          "reservation_id": "835e6713-705a-4d47-b068-2a073ce1c26e"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z16",
+      "claim": "Apakah Al-Qur’an menyuruh kita menghardik orang yang meminta bantuan?",
+      "language": "id",
+      "http_status": 200,
+      "elapsed_ms": 41466,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 93:10 in the selected source collection directly instructs that a person who asks is not to be rebuked, rather than commanding such rebuke.",
+      "summary_ar": "لا. تدعم الآية 93:10 من مجموعة المصادر المحددة نقيض هذا الادعاء: فهي تنهى عن نهر السائل، لا تأمر به.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "93:10",
+        "93:9",
+        "59:12",
+        "2:153",
+        "7:128",
+        "8:72",
+        "2:45",
+        "8:9"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 862,
+          "output_tokens": 202,
+          "estimated_cost_usd": 0.00045789999999999996,
+          "reservation_id": "d3e4a7b6-37c5-4e0a-b546-139185bfff23"
+        },
+        {
+          "input_tokens": 8546,
+          "output_tokens": 154,
+          "estimated_cost_usd": 0.023213,
+          "reservation_id": "6276c85b-a4da-4b44-84b4-a561ffb78d52"
+        },
+        {
+          "input_tokens": 9009,
+          "output_tokens": 535,
+          "estimated_cost_usd": 0.00289425,
+          "reservation_id": "86a87763-a40f-4b03-9e96-f55c9662b191"
+        },
+        {
+          "input_tokens": 9009,
+          "output_tokens": 311,
+          "estimated_cost_usd": 0.0262545,
+          "reservation_id": "9022e140-a260-42f3-9739-2e570fb2885c"
+        },
+        {
+          "input_tokens": 12840,
+          "output_tokens": 330,
+          "estimated_cost_usd": 0.023606000000000002,
+          "reservation_id": "acc346b1-06a9-422b-b80b-ff5fe65c1217"
+        },
+        {
+          "input_tokens": 9646,
+          "output_tokens": 416,
+          "estimated_cost_usd": 0.0029107,
+          "reservation_id": "6dcf8976-f609-4423-9590-eca4ea6861d7"
+        },
+        {
+          "input_tokens": 329,
+          "output_tokens": 154,
+          "estimated_cost_usd": 0.00026704999999999996,
+          "reservation_id": "bd1883f9-166d-414d-aff0-ea4e2a9ecc5d"
+        },
+        {
+          "input_tokens": 9779,
+          "output_tokens": 429,
+          "estimated_cost_usd": 0.00295955,
+          "reservation_id": "8c005071-4ec4-4034-a5d2-d8e5177a2b78"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z17",
+      "claim": "Apakah Al-Qur’an memerintahkan membaca dengan nama Tuhan yang menciptakan?",
+      "language": "id",
+      "http_status": 200,
+      "elapsed_ms": 9898,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 96:1 directly supports the claim that reading is commanded in the name of the Lord who created. This assessment is limited to the selected source collection.",
+      "summary_ar": "نعم، تدعم الآية 96:1 من القرآن هذا المعنى مباشرةً، إذ تتضمن أمرًا بالقراءة باسم الرب الخالق. يقتصر هذا التقييم على مجموعة المصادر المحددة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "96:1",
+        "4:1",
+        "96:2",
+        "96:3",
+        "2:29",
+        "27:30",
+        "27:28",
+        "2:21"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 864,
+          "output_tokens": 171,
+          "estimated_cost_usd": 0.0004212,
+          "reservation_id": "522112df-8449-4522-80c9-a9015f95ed19"
+        },
+        {
+          "input_tokens": 7265,
+          "output_tokens": 142,
+          "estimated_cost_usd": 0.0198665,
+          "reservation_id": "f593e02a-ec3d-428b-b5f3-2ef62ab97cea"
+        },
+        {
+          "input_tokens": 7987,
+          "output_tokens": 363,
+          "estimated_cost_usd": 0.00243235,
+          "reservation_id": "a7d1d0c5-dee7-4d41-a0e4-32dbfb63fe4b"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z18",
+      "claim": "Apakah ada hadis yang menyebut salat berjamaah lebih utama dua puluh tujuh derajat daripada salat sendirian?",
+      "language": "id",
+      "http_status": 200,
+      "elapsed_ms": 12920,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports the existence of a hadith stating that congregational prayer is twenty-seven degrees better than praying alone, particularly in the two source cards identified by 3441. Other supplied reports mention twenty-five degrees or an unspecified number, so the variation in wording should be retained.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة وجود حديث يذكر أن صلاة الجماعة أفضل من صلاة المنفرد بسبع وعشرين درجة، ولا سيما في البطاقتين ذواتي المعرّف 3441. وتوجد في مجموعة المصادر المحددة روايات أخرى تذكر خمسًا وعشرين درجة أو عددًا غير محدد، لذلك ينبغي حفظ اختلاف ألفاظ الروايات.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "id",
+      "evidence_locators": [
+        "en:3441",
+        "en:11286",
+        "en:4566",
+        "en:66252",
+        "ar:3441",
+        "ar:66188",
+        "ar:66252",
+        "ar:5355"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 873,
+          "output_tokens": 187,
+          "estimated_cost_usd": 0.00044265000000000005,
+          "reservation_id": "0a09b966-0b27-4150-b80c-083c4db3fdf0"
+        },
+        {
+          "input_tokens": 4412,
+          "output_tokens": 195,
+          "estimated_cost_usd": 0.01337,
+          "reservation_id": "836881e0-ddae-4a27-a3f3-590fe2902f89"
+        },
+        {
+          "input_tokens": 5290,
+          "output_tokens": 526,
+          "estimated_cost_usd": 0.0019536999999999996,
+          "reservation_id": "256bd8e0-b0d2-473a-a659-e40d12a2adae"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z19",
+      "claim": "¿Dice el Corán que la recitación del alba es presenciada?",
+      "language": "es",
+      "http_status": 200,
+      "elapsed_ms": 8765,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 17:78 in the selected source collection supports that the dawn recitation is witnessed. The passage places it among the prayer times but does not specify in this excerpt who witnesses it or how the witnessing occurs.",
+      "summary_ar": "نعم، تدعم الآية 17:78 من مجموعة المصادر المحددة أن تلاوة الفجر مشهودة. ويتعلق ذلك بقراءة الفجر المذكورة ضمن سياق أوقات الصلاة، دون أن تحدد الآية في هذا المقتطف هوية الشاهدين أو كيفية الشهادة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "17:78",
+        "2:187",
+        "24:58",
+        "17:76",
+        "17:77",
+        "17:79",
+        "17:80",
+        "89:1"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 860,
+          "output_tokens": 146,
+          "estimated_cost_usd": 0.0003902,
+          "reservation_id": "ef9e164a-03f2-457d-bdf9-eab825a6ba14"
+        },
+        {
+          "input_tokens": 9377,
+          "output_tokens": 105,
+          "estimated_cost_usd": 0.0247025,
+          "reservation_id": "f6277a54-2e05-4b71-9171-9b28ab3170e2"
+        },
+        {
+          "input_tokens": 9392,
+          "output_tokens": 332,
+          "estimated_cost_usd": 0.0027464,
+          "reservation_id": "defe1cfa-2d68-4e51-b618-d74374b3231b"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z20",
+      "claim": "En el ejemplo del Corán revelado a una montaña, ¿la montaña se vuelve arrogante en vez de humillarse ante Allah?",
+      "language": "es",
+      "http_status": 200,
+      "elapsed_ms": 38242,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 59:21 directly presents the mountain in this example as humbled and shattered out of fear of Allah, not arrogant; the example is conditional on the Quran being sent down upon it.",
+      "summary_ar": "لا، هذا الادعاء يخالف المثال القرآني في سورة الحشر 59:21؛ فالمثال يصف الجبل بالخضوع والتصدع من خشية الله، لا بالتكبر. وتدعم مجموعة المصادر المحددة هذا الجواب مباشرة ضمن هذا المثال المشروط بنزول القرآن على الجبل.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "59:21",
+        "7:145",
+        "3:30",
+        "3:28",
+        "3:29",
+        "37:35",
+        "57:16",
+        "22:54"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 873,
+          "output_tokens": 271,
+          "estimated_cost_usd": 0.00054345,
+          "reservation_id": "034c3cf1-5812-49e8-b6b8-f732a91e5aa9"
+        },
+        {
+          "input_tokens": 10552,
+          "output_tokens": 108,
+          "estimated_cost_usd": 0.027676,
+          "reservation_id": "b206ddeb-ac94-4dff-94d5-b76804e97c28"
+        },
+        {
+          "input_tokens": 10336,
+          "output_tokens": 610,
+          "estimated_cost_usd": 0.0033160000000000004,
+          "reservation_id": "2cdcdc3a-e744-48c5-b5da-9e0488dc8bd6"
+        },
+        {
+          "input_tokens": 10336,
+          "output_tokens": 423,
+          "estimated_cost_usd": 0.030916,
+          "reservation_id": "b5390844-350a-47c3-ba3c-aa8a10979642"
+        },
+        {
+          "input_tokens": 341,
+          "output_tokens": 95,
+          "estimated_cost_usd": 0.00019925,
+          "reservation_id": "f5561ae7-6940-4170-9766-f1f2c8dff7af"
+        },
+        {
+          "input_tokens": 11267,
+          "output_tokens": 848,
+          "estimated_cost_usd": 0.00383435,
+          "reservation_id": "cbe8373b-c36f-459d-b8a2-3b5d8dd85ab6"
+        },
+        {
+          "input_tokens": 11267,
+          "output_tokens": 454,
+          "estimated_cost_usd": 0.0336155,
+          "reservation_id": "4f9d3023-422e-4ad7-9c13-df6cb6ac8643"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z21",
+      "claim": "¿Cuenta un hadiz que una mujer fue castigada por encerrar a una gata sin alimentarla ni dejarla buscar comida?",
+      "language": "es",
+      "http_status": 200,
+      "elapsed_ms": 14114,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports this account: the hadith describes a woman being punished after confining a cat until it died, without feeding or watering it or allowing it to seek food. The record labels it authentic as a publisher-supplied grade; that grading remains attributed to the publisher.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا المعنى مباشرةً في حديث يروي تعذيب امرأة بسبب حبس هرة حتى ماتت، مع عدم إطعامها أو سقيها وعدم تركها تبحث عن طعامها. ويَعرض سجل الحديث الناشرُ حكمَه بوصفه صحيحًا، مع بقاء هذا التقييم منسوبًا إلى الناشر.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "es",
+      "evidence_locators": [
+        "en:58193",
+        "en:65416",
+        "en:8282",
+        "en:3150",
+        "ar:11179",
+        "ar:58193",
+        "ar:3088",
+        "ar:58121"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 871,
+          "output_tokens": 275,
+          "estimated_cost_usd": 0.00054775,
+          "reservation_id": "447916f1-0b73-467b-ad5e-17e52a52e81e"
+        },
+        {
+          "input_tokens": 4470,
+          "output_tokens": 212,
+          "estimated_cost_usd": 0.013719,
+          "reservation_id": "935c0464-f6e8-4e46-bbc2-fd2f890cd142"
+        },
+        {
+          "input_tokens": 5283,
+          "output_tokens": 522,
+          "estimated_cost_usd": 0.0019471500000000001,
+          "reservation_id": "f23ca243-3cb5-44b0-8ae9-967ce63d1d04"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z22",
+      "claim": "Le Coran dit-il que l’être humain a été créé dans la meilleure forme?",
+      "language": "fr",
+      "http_status": 200,
+      "elapsed_ms": 26175,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports that the Quran describes the human being as created in the best form in Quran 95:4; Quran 64:3 also describes the human form as made excellent.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن يقرر خلق الإنسان في أحسن تقويم في سورة التين 95:4. وتؤيد الآية 64:3 من سورة التغابن وصف تحسين صورة الإنسان.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "95:4",
+        "64:3",
+        "11:7",
+        "67:2",
+        "64:4",
+        "19:17",
+        "64:5",
+        "22:5"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 862,
+          "output_tokens": 177,
+          "estimated_cost_usd": 0.0004279,
+          "reservation_id": "c7cf696f-1616-493c-b356-7296f719641d"
+        },
+        {
+          "input_tokens": 10107,
+          "output_tokens": 546,
+          "estimated_cost_usd": 0.0318195,
+          "reservation_id": "2957fa53-7c91-4775-943b-f9681c536071"
+        },
+        {
+          "input_tokens": 8687,
+          "output_tokens": 218,
+          "estimated_cost_usd": 0.0243335,
+          "reservation_id": "092e0cf9-9e57-435d-9200-d00fe1f9480f"
+        },
+        {
+          "input_tokens": 8946,
+          "output_tokens": 449,
+          "estimated_cost_usd": 0.0027753,
+          "reservation_id": "75162c62-0bd5-4cfe-acdf-def844673de8"
+        },
+        {
+          "input_tokens": 9206,
+          "output_tokens": 447,
+          "estimated_cost_usd": 0.028379,
+          "reservation_id": "4234995a-f9ee-4be6-a25e-ca6d87708a08"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z23",
+      "claim": "Le Coran affirme-t-il que la récompense du bien est le mal?",
+      "language": "fr",
+      "http_status": 200,
+      "elapsed_ms": 18770,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. Quran 6:160 directly conflicts with the claim: it presents a multiplied good reward for a good deed and distinguishes this from the recompense for an evil deed. This is an assessment of the supplied passages within the selected corpus.",
+      "summary_ar": "لا، لا تؤيد مجموعة المصادر المحددة أن جزاء الحسنة هو السوء؛ فالآية 6:160 تقرر جزاءً حسناً مضاعفاً لمن جاء بالحسنة، وتفصل بينه وبين جزاء السيئة. هذا تقييم للنصوص المعروضة ضمن مجموعة المصادر المحددة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "17:11",
+        "10:11",
+        "41:49",
+        "3:179",
+        "4:85",
+        "6:160",
+        "28:54",
+        "7:188"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 861,
+          "output_tokens": 162,
+          "estimated_cost_usd": 0.00040965,
+          "reservation_id": "4eea3ac8-3f94-43be-9519-69f13121ae5e"
+        },
+        {
+          "input_tokens": 10569,
+          "output_tokens": 208,
+          "estimated_cost_usd": 0.0289185,
+          "reservation_id": "9c33b925-67a4-4bd1-afe8-f13febb91cdd"
+        },
+        {
+          "input_tokens": 10336,
+          "output_tokens": 596,
+          "estimated_cost_usd": 0.0032992000000000004,
+          "reservation_id": "cc149fbc-47fc-4760-9b71-802b5f1049be"
+        },
+        {
+          "input_tokens": 10336,
+          "output_tokens": 374,
+          "estimated_cost_usd": 0.030328,
+          "reservation_id": "1803b9da-8163-45b5-b2a4-78d1c1613154"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z24",
+      "claim": "Selon le hadith, trois personnes qui partent en voyage doivent-elles désigner l’une d’elles comme responsable?",
+      "language": "fr",
+      "http_status": 200,
+      "elapsed_ms": 13483,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. The selected source collection directly supports that when three people set out on a journey, they should appoint one of them as their leader, as shown by the records en:5970 and ar:5970.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة هذا الحكم: إذا خرج ثلاثة أشخاص في سفر، يعيّنون واحدًا منهم قائدًا أو مسؤولًا عنهم. ويستند ذلك مباشرة إلى الحديثين الواردين في المصدرين ذوي المعرّفين en:5970 وar:5970.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "fr",
+      "evidence_locators": [
+        "en:5970",
+        "en:66184",
+        "en:10406",
+        "en:7200",
+        "ar:8946",
+        "ar:5970",
+        "ar:5404",
+        "ar:65226"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 868,
+          "output_tokens": 224,
+          "estimated_cost_usd": 0.00048580000000000004,
+          "reservation_id": "899de226-97b0-44f8-919a-0dd4943521be"
+        },
+        {
+          "input_tokens": 4858,
+          "output_tokens": 232,
+          "estimated_cost_usd": 0.014929,
+          "reservation_id": "96126127-52fe-4b1a-90cc-e4817dcc3489"
+        },
+        {
+          "input_tokens": 5806,
+          "output_tokens": 487,
+          "estimated_cost_usd": 0.0020359,
+          "reservation_id": "3445c082-59d3-4f87-9988-59be8298f546"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z25",
+      "claim": "Erwähnt der Koran, dass Allah den Bienen eingibt, in Bergen, Bäumen und von Menschen errichteten Bauten Wohnungen zu nehmen?",
+      "language": "de",
+      "http_status": 200,
+      "elapsed_ms": 11773,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Qur’an 16:68 directly supports this claim: it attributes to the Lord the instruction for bees to take dwellings in mountains, trees, and structures made by people. The supplied text does not add a qualification that this applies to every bee or every dwelling.",
+      "summary_ar": "نعم، تدعم الآية 16:68 من مجموعة المصادر المحددة هذا المعنى مباشرة؛ فهي تنسب إلى الرب إيحاء النحل باتخاذ بيوت في الجبال والأشجار وما يبنيه الناس. ولا يضيف النص المعروض قيدًا بأن ذلك يشمل كل نحلة أو كل مسكن.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "16:68",
+        "22:18",
+        "14:46",
+        "16:66",
+        "27:18",
+        "16:67",
+        "16:69",
+        "7:74"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 878,
+          "output_tokens": 189,
+          "estimated_cost_usd": 0.0004463,
+          "reservation_id": "f7d1c615-ffcf-4f4a-abc3-f0e240b6314a"
+        },
+        {
+          "input_tokens": 10156,
+          "output_tokens": 191,
+          "estimated_cost_usd": 0.027682,
+          "reservation_id": "aa1c1210-191e-4f7b-bdc7-a276088b716e"
+        },
+        {
+          "input_tokens": 9999,
+          "output_tokens": 442,
+          "estimated_cost_usd": 0.00303015,
+          "reservation_id": "05272268-d507-4862-9a05-7126ef6bfcf2"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z26",
+      "claim": "Sagt der Koran, dass wir Allah gedenken und Ihm dankbar sein sollen?",
+      "language": "de",
+      "http_status": 200,
+      "elapsed_ms": 11353,
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "summary": "Yes. Quran 2:152 directly supports the claim that people should remember Allah and be grateful to Him. This assessment is limited to the supplied selected source collection.",
+      "summary_ar": "نعم، تدعم الآية 2:152 من القرآن هذا المعنى مباشرة؛ فهي تجمع بين ذكر الله وشكره. ولا يضيف هذا التقييم حكماً يتجاوز مضمون الآية المحددة في مجموعة المصادر المحددة.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "2:152",
+        "2:198",
+        "14:7",
+        "2:203",
+        "34:13",
+        "2:172",
+        "3:144",
+        "16:114"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 864,
+          "output_tokens": 194,
+          "estimated_cost_usd": 0.00044879999999999996,
+          "reservation_id": "1740727c-fffc-4379-870f-ee22ecb381eb"
+        },
+        {
+          "input_tokens": 10851,
+          "output_tokens": 147,
+          "estimated_cost_usd": 0.0288915,
+          "reservation_id": "a053bc53-979e-4852-aac7-249ae9164929"
+        },
+        {
+          "input_tokens": 10771,
+          "output_tokens": 398,
+          "estimated_cost_usd": 0.00317035,
+          "reservation_id": "e0f4fd64-7f05-46ce-ba3c-b4657022350d"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z27",
+      "claim": "Billigt der Hadith es, die volle Arbeit eines Arbeiters anzunehmen und ihm dann seinen Lohn vorzuenthalten?",
+      "language": "de",
+      "http_status": 200,
+      "elapsed_ms": 19991,
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ],
+      "summary": "No. The supplied hadith directly condemns taking a worker’s full labor and then withholding his wages, placing it among acts subject to a severe warning in the selected source collection. The direct evidence is hadith card en:66163, attributed to the Prophet ﷺ reporting from Allah.",
+      "summary_ar": "لا، لا يقرّ الحديث أخذ عمل العامل كاملًا ثم حجب أجره عنه؛ بل يذكره ضمن أفعالٍ يترتب عليها وعيد شديد في المصدر المحدد. الدليل المباشر هو بطاقة الحديث en:66163 المنسوبة إلى النبي ﷺ عن الله تعالى.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "de",
+      "evidence_locators": [
+        "en:66163",
+        "en:10417",
+        "en:4322",
+        "en:6380",
+        "ar:65511",
+        "ar:4439",
+        "ar:3068",
+        "ar:3373"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 871,
+          "output_tokens": 194,
+          "estimated_cost_usd": 0.00045055000000000003,
+          "reservation_id": "8e31f87b-43cb-4bab-a6b9-af3befb8952f"
+        },
+        {
+          "input_tokens": 7109,
+          "output_tokens": 207,
+          "estimated_cost_usd": 0.0202565,
+          "reservation_id": "65ca3165-91bb-467a-a0a7-971a14f1bb3c"
+        },
+        {
+          "input_tokens": 8132,
+          "output_tokens": 608,
+          "estimated_cost_usd": 0.0027626,
+          "reservation_id": "4155d14e-8a48-4249-b663-735013ca62f6"
+        },
+        {
+          "input_tokens": 8132,
+          "output_tokens": 445,
+          "estimated_cost_usd": 0.02567,
+          "reservation_id": "3b4800f9-1142-4efe-8c0c-ff5ecc21a3cc"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z28",
+      "claim": "Can you explain how to bake banana bread?",
+      "language": "en",
+      "http_status": 200,
+      "elapsed_ms": 3661,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 854,
+          "output_tokens": 105,
+          "estimated_cost_usd": 0.0003395,
+          "reservation_id": "31da446e-4d34-4e29-af52-00fd9c830612"
+        },
+        {
+          "input_tokens": 854,
+          "output_tokens": 72,
+          "estimated_cost_usd": 0.002999,
+          "reservation_id": "26a8c53b-4f03-447a-9d73-a3d11b590330"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z29",
+      "claim": "Is the religious quote in the message I received authentic?",
+      "language": "en",
+      "http_status": 200,
+      "elapsed_ms": 35396,
+      "expected": "not_evaluated",
+      "actual": "insufficient_within_selected_corpus",
+      "label_match": false,
+      "reason_codes": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "summary": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [
+        "en:4564",
+        "18:6",
+        "39:23",
+        "68:44",
+        "2:37",
+        "en:11244",
+        "en:10841",
+        "ar:65061"
+      ],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 856,
+          "output_tokens": 110,
+          "estimated_cost_usd": 0.000346,
+          "reservation_id": "7aa3be56-c3dc-4bd6-8e3f-12eb39894c8e"
+        },
+        {
+          "input_tokens": 7084,
+          "output_tokens": 468,
+          "estimated_cost_usd": 0.0023326,
+          "reservation_id": "f5a6badf-f0df-4897-83fa-f017fdc2c947"
+        },
+        {
+          "input_tokens": 8679,
+          "output_tokens": 218,
+          "estimated_cost_usd": 0.01243135,
+          "reservation_id": "ec7bdd9c-1a90-4c8a-a339-2ae4a0a2ce3f"
+        },
+        {
+          "input_tokens": 7340,
+          "output_tokens": 428,
+          "estimated_cost_usd": 0.0023485999999999997,
+          "reservation_id": "77e5d61f-6b6b-4b71-952a-04dc55ae5ca4"
+        },
+        {
+          "input_tokens": 329,
+          "output_tokens": 121,
+          "estimated_cost_usd": 0.00022745,
+          "reservation_id": "3facdb12-b83f-4934-8ca8-669c72ae8ab7"
+        },
+        {
+          "input_tokens": 7420,
+          "output_tokens": 439,
+          "estimated_cost_usd": 0.0023818000000000003,
+          "reservation_id": "5b511bda-f668-456e-b06a-13c90536620c"
+        }
+      ],
+      "review": "pending"
+    },
+    {
+      "id": "Z30",
+      "claim": "I own jewelry and a small business. Decide whether I personally owe zakat this year.",
+      "language": "en",
+      "http_status": 200,
+      "elapsed_ms": 4377,
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ],
+      "summary": "This request could not proceed to source verification.",
+      "summary_ar": "لم ينتقل هذا الطلب إلى التحقق من المصادر.",
+      "source_and_nested_seals_valid": true,
+      "original_preserved": true,
+      "detected_language": "en",
+      "evidence_locators": [],
+      "router_version": "luna-terra-model-routing-v13-feedback-and-failure-status",
+      "prompt_version": "claim-assessment-v3.1-review-feedback",
+      "qualified_review_status": null,
+      "usage": [
+        {
+          "input_tokens": 862,
+          "output_tokens": 156,
+          "estimated_cost_usd": 0.0004027,
+          "reservation_id": "7d89bbb9-b223-4eec-a7f6-c10170f3f6ba"
+        },
+        {
+          "input_tokens": 862,
+          "output_tokens": 78,
+          "estimated_cost_usd": 0.003091,
+          "reservation_id": "b3b2e085-e11a-45ab-bba1-43cfeb2b4274"
+        }
+      ],
+      "review": "pending"
+    }
+  ],
+  "review_status": "pending_source_and_answer_review",
+  "ended_at": "2026-10-05T21:52:06.202Z",
+  "completed_all_30": true,
+  "final_development_sar": 52.26154087500005,
+  "shared_ledger_delta_sar": 4.463932499999991,
+  "cost_note": "Shared-ledger delta may include concurrent user requests; sum captured usage separately before attributing batch cost."
+}
