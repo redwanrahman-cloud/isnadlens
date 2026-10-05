@@ -2,10 +2,11 @@ import { clarificationCopy } from '@/lib/clarification';
 import type { DisplayLanguage } from '@/lib/display-copy';
 import { WorkspaceIcon } from './WorkspaceIcon';
 
-export function ClarificationCard({ language, proposal, question, disabled, onConfirm, onEdit }: {
+export function ClarificationCard({ language, proposal, question, questionLanguage, disabled, onConfirm, onEdit }: {
   language: DisplayLanguage;
   proposal: { question: string; language: DisplayLanguage } | null;
   question: string;
+  questionLanguage: DisplayLanguage;
   disabled: boolean;
   onConfirm: () => void;
   onEdit: () => void;
@@ -14,7 +15,7 @@ export function ClarificationCard({ language, proposal, question, disabled, onCo
   return <section className="clarification-card" aria-labelledby="clarification-heading">
     <span className="clarification-badge"><WorkspaceIcon name="text"/>{copy.badge}</span>
     <h3 id="clarification-heading" tabIndex={-1}>{proposal ? copy.title : copy.missing}</h3>
-    <blockquote dir="auto" lang={proposal?.language ?? (language === 'ar' ? 'ar' : 'en')}>{proposal?.question ?? question}</blockquote>
+    <blockquote dir="auto" lang={proposal?.language ?? questionLanguage}>{proposal?.question ?? question}</blockquote>
     {proposal && <p>{copy.note}</p>}
     <div className="clarification-actions">
       {proposal && <button className="primary-button" type="button" disabled={disabled} onClick={onConfirm}><WorkspaceIcon name="check"/>{copy.yes}</button>}

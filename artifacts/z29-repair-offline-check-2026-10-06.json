@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-06",
+  "defect": "Z29 accepted a request about an unspecified religious quote, retrieved irrelevant sources, and returned insufficient evidence instead of clarification.",
+  "repair": "The existing intake call separately reports referenced_content_missing. Coherent textual/clarification routes with this flag cannot be accepted directly. The existing stronger routing review can reconsider the flag. Final flagged requests return a sealed clarification without retrieval; fixed missing-content copy supports all nine languages.",
+  "not_changed": "Source meaning/quotation checks and evidence thresholds; historical 29/30 result.",
+  "offline_tests_passed": 521,
+  "test_files": 48,
+  "production_build": "passed",
+  "browser_fixture_checks": {
+    "all_nine_missing_content_messages": true,
+    "all_nine_language_attributes": true,
+    "edit_only_no_confirmation_button": true,
+    "all_api_requests_intercepted_locally": true
+  },
+  "new_paid_calls": 0,
+  "live_status": "Not yet tested. Mocked routing tests verify downstream behavior, not whether the real model will always set the flag correctly.",
+  "pending": "Explicit approval for the saved 12-case targeted live plan."
+}

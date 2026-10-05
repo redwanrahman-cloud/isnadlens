@@ -5,6 +5,9 @@ describe('clarification confirmation boundary',()=>{
   it('submits only the structured question, never a yes/no answer or parsed summary',()=>{
     expect(clarificationProposal(record)).toEqual({question:record.language_intake.clarification_proposal,language:'en'});
   });
+  it('never offers Yes as a substitute for missing source content',()=>{
+    expect(clarificationProposal({...record,language_intake:{...record.language_intake,referenced_content_missing:true}})).toBeNull();
+  });
   it('keeps older records editable without inventing a suggestion from prose',()=>{
     expect(needsClarification({...record,language_intake:undefined})).toBe(true);
     expect(clarificationProposal({...record,language_intake:undefined})).toBeNull();

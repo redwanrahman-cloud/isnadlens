@@ -62,6 +62,59 @@ describe('multilingual intake provider boundaries', () => {
     const intake=await detectAndRouteClaim('what is most evil ting','en');
     expect(intake.clarification_proposal).toBeNull();
   });
+  it.each([
+    ['en','Is the religious quote in the message I received authentic?'],
+    ['ar','هل الاقتباس الديني في الرسالة التي وصلتني صحيح؟'],
+    ['bn','আমার পাওয়া বার্তার ধর্মীয় উদ্ধৃতিটি কি সঠিক?'],
+    ['hi','मुझे मिले संदेश का धार्मिक उद्धरण क्या प्रमाणित है?'],
+    ['ur','مجھے موصول ہونے والے پیغام کا دینی اقتباس مستند ہے؟'],
+    ['id','Apakah kutipan agama dalam pesan yang saya terima itu sahih?'],
+    ['es','¿Es auténtica la cita religiosa del mensaje que recibí?'],
+    ['fr','La citation religieuse du message que j’ai reçu est-elle authentique ?'],
+    ['de','Ist das religiöse Zitat in der Nachricht, die ich erhalten habe, authentisch?'],
+  ] as const)('blocks the Z29 path before retrieval when the model identifies absent content: %s',async(language,claim)=>{
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(mockResponse(output(language,{
+      scope_category:'textual',scope_confidence:'high',referenced_content_missing:true,
+      clarification_proposal:claim+'?',english_gloss:'Is the religious quote in the received message authentic?',
+    }))));
+    const assessed=vi.spyOn(provider,'assessClaim');
+    const record=await verifyMultilingualClaim({claim,inputLanguage:language});
+    expect(record.reason_codes).toEqual(['CLAIM_CLARIFICATION_REQUIRED']);
+    expect(record.summary_en).toContain('paste the quote');
+    expect(record.language_intake).toMatchObject({referenced_content_missing:true,status:'referred',clarification_proposal:null,arabic_terms:[],english_terms:[]});
+    expect(record.evidence_items).toEqual([]);expect(assessed).not.toHaveBeenCalled();
+    expect(record.original_claim).toBe(claim);expect(verifySeal(record)).toBe(true);
+    expect(recordSchema.safeParse(record).success).toBe(true);
+  });
+  it.each([
+    'What does the Quran say about fasting?',
+    'The Quran says fasting is forbidden in Ramadan.',
+    'Explain Quran 2:185.',
+    'I received this message: fasting is prescribed during Ramadan. Is that correct?',
+  ])('keeps self-contained questions and usable references admitted: %s',async claim=>{
+    vi.stubEnv('ISNADLENS_WEB_SEARCH_ENABLED','false');
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(mockResponse(output('en',{referenced_content_missing:false}))));
+    const assessed=vi.spyOn(provider,'assessClaim').mockResolvedValue({assessment,model:'gpt-5.4-mini',usage:null});
+    const record=await verifyMultilingualClaim({claim,inputLanguage:'en'});
+    expect(record.reason_codes).not.toContain('CLAIM_CLARIFICATION_REQUIRED');
+    expect(assessed).toHaveBeenCalled();expect(verifySeal(record)).toBe(true);
+  });
+  it('lets the existing stronger router reconsider an initial missing-content flag',async()=>{
+    vi.stubEnv('OPENAI_MODEL','gpt-5.6-luna');
+    const fetchMock=vi.fn()
+      .mockResolvedValueOnce(mockResponse(output('en',{referenced_content_missing:true})))
+      .mockResolvedValueOnce(mockResponse(output('en',{referenced_content_missing:false})));
+    vi.stubGlobal('fetch',fetchMock);
+    const intake=await detectAndRouteClaim('What does the Quran say about fasting?','en');
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(intake).toMatchObject({status:'accepted',referenced_content_missing:false});
+  });
+  it('does not use missing content to override unrelated request routing',async()=>{
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(mockResponse(output('en',{scope_category:'general',referenced_content_missing:true}))));
+    const record=await verifyMultilingualClaim({claim:'What is the weather in my town?',inputLanguage:'en'});
+    expect(record.reason_codes).toEqual(['OUTSIDE_SUPPORTED_CLAIM_SCOPE']);
+    expect(record.language_intake?.referenced_content_missing).toBe(false);
+  });
   it('lets a validated keyword-free gloss reach verification, including explicit English selection', async () => {
     vi.stubEnv('ISNADLENS_WEB_SEARCH_ENABLED', 'false');
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(mockResponse(output('en', { english_gloss: 'Should one greet only acquaintances?', arabic_terms: ['السلام'], english_terms: ['greeting'] }))));

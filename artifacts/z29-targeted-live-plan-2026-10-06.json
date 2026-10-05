@@ -1,0 +1,164 @@
+{
+  "kind": "targeted_z29_regression_plan",
+  "date": "2026-10-06",
+  "status": "awaiting_explicit_live_approval",
+  "new_live_calls": 0,
+  "purpose": "Check the known missing-quote defect in all nine languages and preserve admission of self-contained questions; not a fresh accuracy benchmark.",
+  "intake_version": "nine-language-routing-v2.2-missing-referenced-content",
+  "budget": {
+    "total_development_cap_sar": 55,
+    "observed_committed_sar": 52.866786375,
+    "observed_remaining_sar": 2.133213625,
+    "judging_reserve_reallocated": false,
+    "rule": "Recheck shared ledger immediately before starting; do not increase cap; preserve reservations and stop on budget/provider/integrity errors. No automatic reruns."
+  },
+  "cases": [
+    {
+      "id": "M01",
+      "language": "en",
+      "claim": "Is the religious quote in the message I received authentic?",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M02",
+      "language": "ar",
+      "claim": "هل الاقتباس الديني في الرسالة التي وصلتني صحيح؟",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M03",
+      "language": "bn",
+      "claim": "আমার পাওয়া বার্তার ধর্মীয় উদ্ধৃতিটি কি সঠিক?",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M04",
+      "language": "hi",
+      "claim": "मुझे मिले संदेश का धार्मिक उद्धरण क्या प्रमाणित है?",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M05",
+      "language": "ur",
+      "claim": "مجھے موصول ہونے والے پیغام کا دینی اقتباس مستند ہے؟",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M06",
+      "language": "id",
+      "claim": "Apakah kutipan agama dalam pesan yang saya terima itu sahih?",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M07",
+      "language": "es",
+      "claim": "¿Es auténtica la cita religiosa del mensaje que recibí?",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M08",
+      "language": "fr",
+      "claim": "La citation religieuse du message que j’ai reçu est-elle authentique ?",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M09",
+      "language": "de",
+      "claim": "Ist das religiöse Zitat in der Nachricht, die ich erhalten habe, authentisch?",
+      "expected": "not_evaluated",
+      "reason": "CLAIM_CLARIFICATION_REQUIRED",
+      "must": [
+        "Ask for quote text or usable reference",
+        "Retrieve zero irrelevant passages",
+        "Offer Edit, never Yes as a substitute for missing content",
+        "Preserve the original input and valid audit seal"
+      ]
+    },
+    {
+      "id": "M10",
+      "language": "en",
+      "claim": "What does the Quran say about fasting?",
+      "expected": "supported_within_selected_corpus",
+      "must": [
+        "Give a useful source-grounded answer rather than ask for a missing quote"
+      ],
+      "primary_reference": "2:183 / 2:185"
+    },
+    {
+      "id": "M11",
+      "language": "en",
+      "claim": "The Quran says fasting is forbidden in Ramadan.",
+      "expected": "conflicting_within_selected_corpus",
+      "must": [
+        "Check the false claim as written; do not rewrite it into a true claim"
+      ],
+      "primary_reference": "2:185"
+    },
+    {
+      "id": "M12",
+      "language": "en",
+      "claim": "I received this message: fasting is prescribed for you. Does Quran 2:183 support it?",
+      "expected": "supported_within_selected_corpus",
+      "must": [
+        "Recognize the supplied substantive statement and reference; do not demand missing message text"
+      ],
+      "primary_reference": "2:183"
+    }
+  ]
+}

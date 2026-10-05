@@ -5,6 +5,7 @@ type ClarificationRecord = {
   verdict: string;
   reason_codes: string[];
   language_intake?: {
+    referenced_content_missing?: boolean;
     clarification_proposal?: string | null;
     detected_language: DisplayLanguage | null;
     confidence: string;
@@ -36,7 +37,7 @@ export function needsClarification(record: ClarificationRecord | null): boolean 
 export function clarificationProposal(record: ClarificationRecord | null): { question: string; language: DisplayLanguage } | null {
   const intake = record?.language_intake;
   const question = intake?.clarification_proposal?.trim();
-  if (!record || !needsClarification(record) || intake?.scope_category !== 'clarification' || intake.confidence !== 'high' || !intake.detected_language || !question || !closeWordingRepair(record.original_claim, question)) return null;
+  if (!record || !needsClarification(record) || intake?.referenced_content_missing || intake?.scope_category !== 'clarification' || intake.confidence !== 'high' || !intake.detected_language || !question || !closeWordingRepair(record.original_claim, question)) return null;
   return { question, language: intake.detected_language };
 }
 
@@ -50,4 +51,16 @@ export const clarificationCopy: Record<DisplayLanguage, { badge: string; title: 
   es: { badge: 'Una breve aclaración', title: '¿Es esto lo que quieres decir?', missing: 'Necesitamos un poco más de detalle', note: 'Confirma esta pregunta para comprobar sus fuentes o edita tu pregunta original.', yes: 'Sí, compruébalo', no: 'No, quiero editar', edit: 'Editar mi pregunta' },
   fr: { badge: 'Une petite précision', title: 'Est-ce bien ce que vous voulez dire ?', missing: 'Un peu plus de détails nous aiderait', note: 'Confirmez cette formulation pour vérifier ses sources, ou modifiez votre question initiale.', yes: 'Oui, vérifier', no: 'Non, je veux modifier', edit: 'Modifier ma question' },
   de: { badge: 'Kurze Rückfrage', title: 'Meinen Sie das?', missing: 'Ein paar weitere Details helfen', note: 'Bestätigen Sie diese Frage, um ihre Quellen zu prüfen, oder bearbeiten Sie Ihre ursprüngliche Frage.', yes: 'Ja, das prüfen', no: 'Nein, bearbeiten', edit: 'Meine Frage bearbeiten' },
+};
+
+export const missingContentCopy: Record<DisplayLanguage,string> = {
+  en: 'Please paste the quote or message you want to check, or provide its reference.',
+  ar: 'أرسل نص الاقتباس أو الرسالة التي تريد التحقق منها، أو اذكر مرجعها.',
+  bn: 'যে উদ্ধৃতি বা বার্তাটি যাচাই করতে চান সেটি লিখুন, অথবা তার সূত্র দিন।',
+  hi: 'जिस उद्धरण या संदेश की जाँच करना चाहते हैं, उसे यहाँ लिखें या उसका संदर्भ दें।',
+  ur: 'جس اقتباس یا پیغام کی جانچ کرنا چاہتے ہیں اس کا متن بھیجیں، یا اس کا حوالہ دیں۔',
+  id: 'Tempelkan kutipan atau pesan yang ingin Anda periksa, atau berikan rujukannya.',
+  es: 'Pega la cita o el mensaje que quieres comprobar, o proporciona su referencia.',
+  fr: 'Collez la citation ou le message à vérifier, ou indiquez sa référence.',
+  de: 'Fügen Sie das Zitat oder die Nachricht ein, die Sie prüfen möchten, oder nennen Sie die Fundstelle.',
 };
