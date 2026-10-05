@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-06",
+  "change": "AI-assisted close wording clarification with explicit confirmation",
+  "intake_version": "nine-language-routing-v2.1-confirmable-clarification",
+  "behavior": [
+    "Clear misspellings are instructed to proceed without needless clarification.",
+    "Clear false, strange or nonsensical source claims remain the original claim to check; unrelated requests keep their existing scope boundary.",
+    "AI can supply a standalone question in the detected input language only as a close wording repair; missing quotes/facts are never supplied by the suggestion.",
+    "A deterministic edit-distance guard limits the Yes shortcut, not retrieval or verification admission.",
+    "Yes submits the exact visible proposal and its language through the unchanged verification endpoint; No focuses and preserves the original composer text.",
+    "Editing the composer clears stale clarification; missing or legacy proposals expose Edit my question only.",
+    "Clarification shows a compact card instead of an empty evidence report."
+  ],
+  "checks": {
+    "offline_tests": {
+      "passed": 505,
+      "files": 48
+    },
+    "production_build": "passed after final mobile focus adjustment",
+    "desktop_yes_exact_submitted_input": "What is most evil thing?",
+    "desktop_no_preserved_original_and_focus": true,
+    "missing_content_edit_only": true,
+    "stale_card_cleared_on_input_edit": true,
+    "confirmed_input_preserved_after_simulated_server_failure": true,
+    "arabic_yes_exact_submitted_input": "ما هو أشد شيء شراً؟",
+    "arabic_yes_input_language": "ar",
+    "mobile_no_preserved_original_and_focus": true,
+    "mobile_390px_all_nine_button_localizations_no_overflow": true,
+    "mobile_final_settled_heading_top_px": 114.6,
+    "mobile_final_settled_button_bottoms_px": [
+      367.05,
+      427.15
+    ],
+    "mobile_viewport_height_px": 844,
+    "viewport_reset": true,
+    "test_api_proxy": "All /api routes intercepted locally, no provider requests forwarded",
+    "new_paid_calls": 0
+  },
+  "limitations": [
+    "New model prompt behavior has not been live-tested; offline fixtures check contracts and UI, not actual model decisions.",
+    "Edit distance restricts rewrite size but cannot prove semantic equivalence; the user explicitly confirms the full proposed question.",
+    "Open-ended model clarification text retains existing English/Arabic summaries; interface controls cover all nine languages.",
+    "Previous 30-question score is for its frozen earlier candidate; no claim that this change improves that live score."
+  ]
+}

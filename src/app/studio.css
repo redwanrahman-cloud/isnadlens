@@ -519,3 +519,20 @@ html[data-motion=paused] .studio *,html[data-motion=paused] .studio *::before,ht
 @keyframes evidence-trail{from{background-position:220% 0}to{background-position:0 0}}
 @media(max-width:700px){.studio .evidence-loading{padding:23px 18px 18px;min-height:440px}.studio .evidence-loading-art{height:190px}.studio .evidence-loading-route{margin-top:21px}.studio .evidence-loading-route ol{gap:8px}}
 @media(max-width:850px){.studio .evidence-loading{scroll-margin-block-start:125px}}
+
+/* Clarification is a question to resolve, not an empty evidence report. */
+.studio .clarification-card{padding:clamp(24px,4vw,44px);min-height:340px;background:linear-gradient(135deg,#fffef9,#f3faf6);border-radius:0 0 20px 20px}
+.studio .clarification-badge{display:inline-flex;align-items:center;gap:8px;color:#176348;background:#e4f3eb;border:1px solid #c7e3d4;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:650}
+.studio .clarification-badge svg{width:17px;height:17px}
+.studio .clarification-card h3{scroll-margin-block-start:115px;font-size:clamp(23px,2.4vw,31px);line-height:1.35;color:#123f32;margin:22px 0 18px}
+.studio .clarification-card blockquote{margin:0;padding:20px 22px;background:#fff;border:1px solid #c9dfd4;border-inline-start:3px solid #b3914d;border-radius:12px;color:#204f40;font-size:clamp(18px,1.7vw,23px);line-height:1.55;overflow-wrap:anywhere}
+.studio .clarification-card p{color:#526c61;line-height:1.6;margin:16px 0 0}
+.studio .clarification-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.studio .clarification-actions button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer}
+.studio .clarification-actions .primary-button{background:#00694f;color:#fff;border:1px solid #00694f;box-shadow:0 4px 12px #005c3f16}
+.studio .clarification-actions svg{width:18px;height:18px}
+.studio .clarification-edit{background:#fff;color:#245343;border:1px solid #bdd6c9}
+.studio .clarification-actions button:hover{filter:brightness(.96)}
+.studio .clarification-actions button:focus-visible{outline:3px solid #b3914d;outline-offset:3px}
+.studio .clarification-actions button:disabled{opacity:.5;cursor:not-allowed}
+@media(max-width:540px){.studio .clarification-actions{flex-direction:column}.studio .clarification-actions button{width:100%}}

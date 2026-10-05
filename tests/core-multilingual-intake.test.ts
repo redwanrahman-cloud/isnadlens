@@ -25,6 +25,43 @@ beforeEach(() => {
 });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 describe('multilingual intake provider boundaries', () => {
+  it('returns a sealed confirmation proposal without retrieving or assessing it', async () => {
+    const question='What is most evil thing?';
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(mockResponse(output('en',{
+      scope_category:'clarification',scope_confidence:'medium',clarification_proposal:question,
+      clarification_en:'Do you mean the most evil thing according to Islamic texts?',clarification_ar:'هل تقصد أشد الأمور شراً وفق النصوص الإسلامية؟',arabic_terms:[],english_terms:[],
+    }))));
+    const assessed=vi.spyOn(provider,'assessClaim');
+    const record=await verifyMultilingualClaim({claim:'what is most evil ting',inputLanguage:'en'});
+    expect(record.reason_codes).toEqual(['CLAIM_CLARIFICATION_REQUIRED']);
+    expect(record.original_claim).toBe('what is most evil ting');
+    expect(record.language_intake?.clarification_proposal).toBe(question);
+    expect(record.evidence_items).toEqual([]);expect(assessed).not.toHaveBeenCalled();
+    expect(recordSchema.safeParse(record).success).toBe(true);expect(verifySeal(record)).toBe(true);
+  });
+  it('keeps missing-content clarification open ended', async () => {
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(mockResponse(output('en',{
+      scope_category:'clarification',scope_confidence:'medium',clarification_proposal:null,
+      clarification_en:'Please paste the quote you want to check.',clarification_ar:'أرسل نص الاقتباس الذي تريد التحقق منه.',arabic_terms:[],english_terms:[],
+    }))));
+    const assessed=vi.spyOn(provider,'assessClaim');
+    const record=await verifyMultilingualClaim({claim:'Is the religious quote in my message authentic?',inputLanguage:'en'});
+    expect(record.reason_codes).toEqual(['CLAIM_CLARIFICATION_REQUIRED']);
+    expect(record.language_intake?.clarification_proposal).toBeNull();
+    expect(assessed).not.toHaveBeenCalled();expect(verifySeal(record)).toBe(true);
+  });
+  it.each([
+    {scope_category:'textual'},
+    {scope_category:'personal'},
+    {scope_category:'clarification',confidence:'low'},
+    {scope_category:'clarification',detected_language:'fr'},
+  ])('does not expose a confirmable proposal on an incompatible route: %j', async overrides => {
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(mockResponse(output('en',{
+      clarification_proposal:'A suggested question?', ...overrides,
+    }))));
+    const intake=await detectAndRouteClaim('what is most evil ting','en');
+    expect(intake.clarification_proposal).toBeNull();
+  });
   it('lets a validated keyword-free gloss reach verification, including explicit English selection', async () => {
     vi.stubEnv('ISNADLENS_WEB_SEARCH_ENABLED', 'false');
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(mockResponse(output('en', { english_gloss: 'Should one greet only acquaintances?', arabic_terms: ['السلام'], english_terms: ['greeting'] }))));
@@ -42,6 +79,9 @@ describe('multilingual intake provider boundaries', () => {
     const posted = JSON.parse(fetchMock.mock.calls[0][1].body);
     expect(posted.store).toBe(false); expect(posted.max_output_tokens).toBe(1200); expect(posted.text.format.strict).toBe(true);
     expect(JSON.parse(posted.input).original_claim).toBe('Le jeûne est prescrit pendant le Ramadan.');
+    expect(posted.instructions).toContain('Make only the smallest wording change');
+    expect(posted.instructions).toContain('correct a false premise');
+    expect(posted.instructions).toContain('Ordinary spelling mistakes with a clear meaning remain textual');
     expect(posted.instructions).toContain('not script alone'); expect(posted.instructions).toContain('Do not answer');
     expect(posted.instructions).toContain('Merely discussing a source command, prohibition, permission');
     expect(posted.instructions).toContain('Never put Urdu vocabulary into Arabic search terms');
