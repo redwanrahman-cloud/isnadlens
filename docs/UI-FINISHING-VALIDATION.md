@@ -162,3 +162,29 @@ Translated receipt-content parity and broader diagnostic localization from the
 earlier review remain separate follow-ups; this pass fixes UI errors, not every
 historical receipt's language. No deployment, push or competition submission was
 performed.
+
+## First-use visual usability refinement — 5 October
+
+The user reported that the interface looked faded and worn despite the emerald
+palette. This pass was an agent usability walkthrough, not research with human
+participants. Findings: weak separation between surfaces, small primary reading
+text, insufficiently distinct control states, and an example placeholder that
+could be mistaken for an already entered question.
+
+The workspace now has a deep emerald navigation header, neutral off-white canvas,
+white working cards, stronger selected/action states, and restrained ivory/gold
+source cards. Primary report text and secondary controls are larger. Disabled
+actions use an explicit neutral treatment rather than transparent green. The
+question label is visible and the placeholder is a short typing instruction in
+each of the nine languages. The dual workspace and visible sources are retained.
+
+Production build/TypeScript passed. The example-to-editor flow was checked:
+it focuses the input and enables the emerald action without submitting it.
+Twenty-seven narrow-layout checks (three workspaces times nine languages) found
+no horizontal overflow, correct direction, and visible question labels where
+applicable. Desktop rendering was visually inspected. Embedded-browser Arabic
+screenshot capture had clipping/compositing issues, so this pass claims DOM bounds
+checks for RTL, not a new visual certification on a physical Arabic device.
+No verification submissions or real provider requests were made. Next validation
+should include observing a person complete their first question and find its
+source without coaching; that has not occurred in this pass.
