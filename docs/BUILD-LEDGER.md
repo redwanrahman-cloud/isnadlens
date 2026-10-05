@@ -228,3 +228,12 @@ Redwan authorized further useful features and deferred visual redesign until aft
 
 ### October 5 afternoon — reviewed image input
 Added screenshot/photo text reading to both workbenches, with original-language review and explicit transfer into the existing verifier. Google free Flash-Lite passed four feature controls; nine new contract/route tests passed, complete suite 443/443 and desktop/mobile-width browser journeys passed. No paid AI calls. Details: IMAGE-INPUT-2026-10-05.md. UI/UX remains the evening phase.
+### October 5 afternoon — saved checks, input journeys and reviewer evidence
+
+Redwan requested recent checks, starter questions and reviewed text/voice/image journeys, plus a repository trail for automated and human inspection. Added explicit on-device saving, eight bounded entries per tool, historical receipt view/download, question loading without paid calls, delete/clear and graceful storage-denial behavior. Added project-written starter questions in all nine display languages for the main and pilgrimage workbenches. Editing/selecting a new question clears the old result; the editor is disabled during verification.
+
+Five new pure tests passed; complete suite 448/448 across 38 files passed, TypeScript and production build passed. Desktop/mobile-width browser journeys passed nine-language starter coverage, explicit save/no automatic persistence, receipt download, reload, load without re-verifying, delete/clear, blocked-storage typing and reviewed voice/image handoffs without automatic calls. Providers and microphone are mocked for these journey checks; a public trimmed real-record fixture makes the runner reproducible without private captures. Zero new paid calls.
+
+Found stale README milestone/budget wording and updated the front page. Added docs/REVIEWER-GUIDE.md and artifacts/reviewer-evidence-index.json linking source admission, baseline/holdout/fresh testing, retained regressions, routing/evidence changes, language diagnosis, badge repair, latest frozen benchmark and feature checks. Earlier failed first-pass scores remain unchanged. This evidence organization does not guarantee competition acceptance. Visual design and hosting remain pending.
+
+Redwan clarified that competition reviewers assess the working product, not historical failures. The product walkthrough and README now lead with working features; optional engineering history remains separate and is not a reviewer test requirement.

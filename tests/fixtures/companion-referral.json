@@ -1,0 +1,92 @@
+{
+  "kind": "captured-ui-fixture",
+  "note": "Trimmed UI fields from a preserved real companion referral. The seal belongs to the full original record, not this fixture. Used only by mocked browser tests.",
+  "record": {
+    "record_id": "e1a04c08-78bd-4751-8d59-41a93f75fdfd",
+    "original_claim": "What does Islam say about eating pork?",
+    "verdict": "not_evaluated",
+    "reason_codes": [
+      "PILGRIMAGE_MAIN_TOOL_REFERRAL"
+    ],
+    "summary_ar": "يجيب هذا المرافق عن أسئلة العمرة والحج. افتح أداة التحقق الرئيسية لهذا السؤال.",
+    "summary_en": "This companion answers Umrah and Hajj questions. Open the main verification tool for this request.",
+    "evidence_items": [],
+    "limitations": [
+      "Search covers the admitted Arabic Quran edition and selected Arabic/English HadeethEnc records; it is not all Islamic literature.",
+      "Quran and Hadith evidence remain separately attributed; their quotations are never merged or silently substituted.",
+      "Publisher hadith grades are preserved, not independently authenticated.",
+      "A bounded retrieval can miss relevant passages; absence is not proof of a religious conclusion.",
+      "Model-assisted interpretation requires qualified human review; this is not a fatwa."
+    ],
+    "created_at": "2026-10-05T11:05:46.596Z",
+    "model": "none",
+    "technical_verification_status": "not_run",
+    "human_scholarly_status": "not_reviewed",
+    "linguistic_review_status": "not_reviewed",
+    "audit_hash": "72727bea1c00c76b7c24f69504bd3db2d89627f779fdb29339c83561e02c21ae",
+    "input_language": "en",
+    "language_intake": {
+      "pilgrimage_topic": "other",
+      "scope_confidence": "high",
+      "clarification_en": null,
+      "clarification_ar": null,
+      "routing_attempts": [
+        {
+          "model": "gpt-5.6-luna",
+          "status": "accepted",
+          "detected_language": "en",
+          "confidence": "high",
+          "scope_category": "textual",
+          "english_gloss": "The user asks what Islam says about eating pork.",
+          "usage": {
+            "input_tokens": 1040,
+            "output_tokens": 168,
+            "estimated_cost_usd": 0.0004616,
+            "reservation_id": "dba098a8-8fa2-43b3-ae40-066cc3143787"
+          },
+          "reason": "INITIAL_ROUTE"
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "status": "accepted",
+          "detected_language": "en",
+          "confidence": "high",
+          "scope_category": "textual",
+          "english_gloss": "The user asks what Islam says about eating pork.",
+          "usage": {
+            "input_tokens": 1040,
+            "output_tokens": 102,
+            "estimated_cost_usd": 0.003824,
+            "reservation_id": "04fd566c-58e6-4d5f-a264-b57949c1f737"
+          },
+          "reason": "STRONGER_ROUTE_REVIEW"
+        }
+      ],
+      "requested_language": "auto",
+      "detected_language": "en",
+      "confidence": "high",
+      "scope_category": "textual",
+      "english_gloss": "The user asks what Islam says about eating pork.",
+      "arabic_terms": [
+        "أكل لحم الخنزير",
+        "تحريم لحم الخنزير"
+      ],
+      "english_terms": [
+        "eating pork",
+        "prohibition of pork"
+      ],
+      "model": "gpt-5.6-terra",
+      "usage": {
+        "input_tokens": 1040,
+        "output_tokens": 102,
+        "estimated_cost_usd": 0.003824,
+        "reservation_id": "04fd566c-58e6-4d5f-a264-b57949c1f737"
+      },
+      "status": "accepted",
+      "version": "nine-language-routing-v2.0-model-scope-review",
+      "rejected_search_term_count": 0,
+      "search_terms_status": "validated"
+    },
+    "corpus_selection": "both"
+  }
+}

@@ -1,0 +1,46 @@
+# IsnadLens engineering archive
+
+This optional archive preserves development provenance. Product reviewers can use REVIEWER-GUIDE.md; they are not asked to reproduce historical failures or run the development suites. It documents observed work, including failures; it does not certify religious correctness, general accuracy or competition acceptance. The [build ledger](BUILD-LEDGER.md) and Git history preserve the sequence. The [machine-readable evidence index](../artifacts/engineering-evidence-index.json) lists the same milestones.
+
+## Current state — 5 October 2026
+
+The local application provides a main Quran/Hadith verification workbench, a scoped Umrah/Hajj companion, nine input/display languages, reviewed voice and image inputs, read-aloud, prayer calculations, calendars, Qibla bearing, progress counters and optional saved checks. Latest frozen semantic evaluation: 29/30 satisfactory responses, with zero incorrect decisive conclusions found on that set and one retained context-related withholding. It predates the later companion and convenience features; feature tests do not silently change its score. `/evaluation/latest` exposes all thirty cases and their references.
+
+Implementation began after the authorized event gate. [Starting-state disclosure](../PRE_CHALLENGE_DISCLOSURE.md). Research and planning existed earlier and are disclosed. Models, frameworks and source editions are named in the README and [architecture](ARCHITECTURE.md).
+
+## Problems, decisions and evidence
+
+| Stage | Observed problem or requirement | Work and evidence |
+| --- | --- | --- |
+| Source admission | Need genuine quotations, editions, reference IDs and usage notices | [Tanzil admission](source-rights/TANZIL-ADMISSION.md), [Hadith admission](source-rights/HADEETHENC-ADMISSION.md), [QuranEnc passage display](source-rights/quranenc/ADMISSION.md). Exact bytes and hashes are checked; publisher grades remain attributed. |
+| Language and ordinary questions | People ask paraphrased questions rather than paste exact scripture | [Auto source identification](AUTO-SOURCE-IDENTIFICATION.md), [everyday evidence repairs](EVERYDAY-EVIDENCE-REPAIRS.md). Original input is retained; search hints are not proof. |
+| Interpretation and model policy | A matching quotation does not by itself resolve an interpretation | [Policy and model change](INTERPRETATION-AND-MODEL-POLICY.md), [bounded model comparison](MODEL-COMPARISON.md). Luna/Terra with low reasoning; direct Quran evidence is sufficient when it proves the proposition. |
+| First development fifty | Initial 27/44 established-answer matches | [Baseline and retained initial failures](BASELINE50-RESULTS.md), [reference witnesses](COMMON50-SOURCES.md). Targeted development retests later reached 44/44; six cases excluded from factual accuracy. This is not an untouched 50/50 success claim. |
+| Separate holdout fifty | Five abstentions and one correct label using unsupported evidence | [Frozen first pass](HOLDOUT50-RESULTS.md), [source-grounding audit](HOLDOUT50-GROUNDING.md), [separate repairs](HOLDOUT50-REPAIRS.md). First-pass grounded result remains 44/50. |
+| Fresh multilingual fifty | 27/50 grounded matches and 23 abstentions despite correct detection | [First pass](FRESH50-RESULTS.md), [failure analysis](FRESH50-FINDINGS.md), [repairs](FRESH50-REPAIRS.md). This set cannot isolate model effects from retrieval and prompt changes. |
+| Offline diagnosis | Repeated live calls consumed credit | [Offline lab](OFFLINE-TESTING.md), [recorded lab results](OFFLINE-LAB-RESULTS.md). Replay and fault injection check application boundaries, not a simulated model's semantic accuracy. |
+| Trusted online discovery | Admitted retrieval could miss established evidence | [Bounded three-domain search](TRUSTED-SEARCH-AND-WEB15.md). Discovered references must map back to admitted text; web-generated scripture is not accepted as evidence. |
+| Fifty with discovery | Adding search did not fix over-restrictive acceptance | [Frozen 22/50 first pass](WEB50-FIRST-PASS.md), [semantic scope repair](SEMANTIC-SCOPE-REPAIR.md), [gap repairs](FINAL-GAP-REPAIR.md). Withholding remains a usefulness failure when the question is answerable. |
+| Retrieval and routing | Generic hints outranked relevant passages; early keyword vetoes rejected useful questions | [Sa’i retrieval and release protocol](RELEASE30-VALIDATION.md), [round-two repairs](ROUND2-GAP-REPAIRS.md), [model-led routing architecture](MODEL-ROUTING-ARCHITECTURE.md). Application still enforces sizes, source integrity and budget. |
+| Thirty-question regressions | Later questions exposed meaning, context and explanation gaps | [Round two](RELEASE30-ROUND2.md), [round three: 23/30](RELEASE30-ROUND3.md). Separate frozen sets, not rescoring one dataset. |
+| Language diagnosis | Was explanation rejection a translation failure? | [Paired language controls](EXPLANATION-LANGUAGE-DIAGNOSTICS.md). Two known German/French pairs accepted after evidence/review changes; deliberately reversed Arabic rejected. Narrow diagnostic evidence, not all-language certification. |
+| Badge mismatch | Correct prose could coexist with an incorrect supported badge | [Round four: 29/30 numeric target, strict release gate failed](RELEASE30-ROUND4.md), [badge repair](BADGE-CONSISTENCY-REPAIR.md). The wrong badge remains recorded. |
+| Latest fresh thirty | One answerable Indonesian case still lacked proving antecedent context | [Round five: 29/30](RELEASE30-ROUND5.md), [locked questions](../artifacts/release30-round5-question-set-2026-10-05.json), [principal review](../artifacts/release30-round5-principal-review-2026-10-05.json), [mechanical audit](../artifacts/release30-round5-mechanical-audit-2026-10-05.json). Retained failure Y16; 26/27 religious answers and 3/3 boundary responses. |
+| Speech and dictation | Device voices differ; users need to review recognized wording | [Free speech](FREE-SPEECH.md), [read-aloud boundaries](READ-ALOUD.md), [voice input](VOICE-INPUT.md). Google unpaid-project confirmation, quota stop, no paid speech fallback. Physical-phone and pronunciation checks remain open. |
+| Pilgrimage and daily tools | Need relevant questions, manual progress and useful calculations | [Companion and daily tools](COMPANION-AND-DAILY-TOOLS.md), [progress foundation](PILGRIMAGE-PROGRESS-FOUNDATION.md), [afternoon additions](FEATURE-WINDOW-2026-10-05.md). No automatic ritual-validity claim or live compass claim. |
+| Image input | Need original-language text, not visual appearance treated as proof | [Image feature](IMAGE-INPUT-2026-10-05.md), [test evidence](../artifacts/image-input-checks-2026-10-05.json). Flash returned high-demand errors; free Flash-Lite passed English/Arabic, blank and embedded-instruction controls. Upload shortcut was added after Redwan could not find the control. |
+| Recent checks and starter journey | Need easy reuse without accidental paid calls | [Current increment](RECENT-CHECKS-AND-JOURNEYS.md), [browser evidence](../artifacts/input-journeys-2026-10-05.json). Explicit save, delete/clear, historical receipt, original-language question load and starters in all nine languages. Voice/image handoffs do not auto-submit. |
+
+## Optional developer reproduction
+
+1. Read this guide, the README, source admissions and the build ledger.
+2. Use Git commits to compare implementations rather than treating the latest code as evidence of every earlier run. Recorded run hashes and question-set hashes identify freezes where supplied.
+3. Install dependencies and prepare the pinned sources using the README. Run `npm test`, `npm run typecheck` and `npm run build`. Source preparation needs network access; normal tests use fixtures/mocks and do not need paid provider calls.
+4. For local browser tests, run the preview and the documented scripts. `scripts/check-input-journeys.mjs` simulates microphone data and mocks providers while replaying the trimmed public `tests/fixtures/companion-referral.json` capture. Its source seal identifies the full original record, not the fixture. The script creates its own synthetic image; no private capture or paid call is required. Install Chrome for the script's browser channel.
+5. Inspect frozen semantic datasets separately from mechanical and UI tests. Expected answers and reference locators are reviewer inputs, not production request hints. Targeted reruns are separate from frozen first-pass results.
+
+Private API keys, uploaded user images, audio and development captures are excluded from Git. Public JSON summaries and reports remain inspectable. Source material is reproducible under documented notices and pins, rather than published as a secret-bearing development folder.
+
+## Remaining work
+
+Evening visual design with Redwan's direction, physical-device checks, deployment and durable shared spending/rate controls, reproducible clean checkout, competition presentation/video and final submission. Local filesystem guards do not yet establish safe multi-instance hosting. [Hosting readiness](HOSTING-READINESS.md) and [release checklist](RELEASE-CHECKLIST.md) retain the remaining gates. Independent scholarly and linguistic certification is not claimed. Explanations translated from English are labelled accordingly.

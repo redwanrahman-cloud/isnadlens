@@ -1,0 +1,35 @@
+{
+  "kind": "mocked-browser-input-and-history-journeys",
+  "paidAIcalls": 0,
+  "providerResponses": "mocked; preserved real verification record replayed",
+  "microphone": "simulated, not physical-device certification",
+  "storageFailureTyping": true,
+  "cases": [
+    {
+      "width": 1440,
+      "starterLanguages": 9,
+      "manualSave": true,
+      "receiptDownload": true,
+      "reload": true,
+      "delete": true,
+      "clear": true,
+      "textVoiceImageReviewedHandoffs": true,
+      "noAutomaticVerification": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "starterLanguages": 9,
+      "manualSave": true,
+      "receiptDownload": true,
+      "reload": true,
+      "delete": true,
+      "clear": true,
+      "textVoiceImageReviewedHandoffs": true,
+      "noAutomaticVerification": true,
+      "overflow": false,
+      "errors": []
+    }
+  ]
+}

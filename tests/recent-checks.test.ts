@@ -1,0 +1,12 @@
+import {describe,expect,it} from 'vitest';
+import {encodeChecks,insertCheck,restoreChecks,MAX_RECENT_CHECKS} from '../src/lib/recent-checks';
+import {CLAIM_LANGUAGES} from '../src/lib/claim-language';
+import {starterQuestions} from '../src/lib/starter-questions';
+const sample={record_id:'test-1',claim:'کیا سور کا گوشت حرام ہے؟',created_at:'2026-10-05T12:00:00.000Z',input_language:'ur' as const,corpus_selection:'auto' as const,receipt:'Original question: کیا سور کا گوشت حرام ہے؟'};
+describe('optional local recent checks',()=>{
+ it('preserves original-language input and receipt without rewriting it',()=>{expect(restoreChecks(encodeChecks(insertCheck([],sample)))).toEqual([sample]);expect(restoreChecks(null)).toEqual([]);});
+ it('bounds history and deduplicates the same original record',()=>{let checks=[] as typeof sample[];for(let i=0;i<12;i++)checks=insertCheck(checks,{...sample,record_id:`test-${i}`}) as typeof sample[];expect(checks).toHaveLength(MAX_RECENT_CHECKS);expect(insertCheck(checks,{...sample,record_id:'test-11'})).toHaveLength(MAX_RECENT_CHECKS);});
+ it('rejects malformed, oversized, duplicate and unknown-version stored data',()=>{for(const raw of ['bad json','x'.repeat(600001),JSON.stringify({version:2,checks:[]}),JSON.stringify({version:1,checks:[sample,sample]}),JSON.stringify({version:1,checks:[{...sample,input_language:'xx'}]})])expect(()=>restoreChecks(raw)).toThrow('INVALID');});
+ it('evicts oldest receipts to respect the byte bound in multibyte scripts',()=>{const value={...sample,receipt:'ع'.repeat(90000)};let checks=[] as typeof value[];for(let i=0;i<8;i++)checks=insertCheck(checks,{...value,record_id:`test-${i}`}) as typeof value[];expect(new TextEncoder().encode(encodeChecks(checks)).length).toBeLessThanOrEqual(600000);expect(checks[0].record_id).toBe('test-7');});
+ it('offers bounded questions in every display language and selected tool',()=>{for(const language of CLAIM_LANGUAGES)for(const corpus of ['auto','quran','hadith'] as const)for(const service of ['main','pilgrimage'] as const){const questions=starterQuestions(language,service,corpus);expect(questions.length).toBeGreaterThanOrEqual(3);expect(new Set(questions).size).toBe(questions.length);expect(questions.every(question=>question.trim()&&question.length<1200)).toBe(true);}expect(starterQuestions('de','pilgrimage','auto')[0]).toContain('Safa');expect(starterQuestions('bn','main','auto')[0]).toMatch(/\p{Script=Bengali}/u);});
+});

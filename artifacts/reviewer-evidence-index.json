@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "project": "IsnadLens",
+  "review_scope": "Use the working product and inspect the provided current results. Historical failures and developer reruns are not required.",
+  "product_walkthrough": "docs/REVIEWER-GUIDE.md",
+  "local_routes": [
+    "/",
+    "/pilgrimage",
+    "/tools",
+    "/evaluation/latest"
+  ],
+  "verification_results": {
+    "satisfactory": 29,
+    "total": 30,
+    "sample_percentage": 96.7,
+    "religious_satisfactory": 26,
+    "religious_total": 27,
+    "correct_boundary_responses": 3,
+    "incorrect_decisive_found": 0,
+    "badge_mismatches_found": 0,
+    "retained_current_withhold": 1,
+    "report": "docs/RELEASE30-ROUND5.md",
+    "evidence": [
+      "artifacts/release30-round5-principal-review-2026-10-05.json",
+      "artifacts/release30-round5-mechanical-audit-2026-10-05.json"
+    ],
+    "limit": "Reviewed sample result, not general accuracy or independent scholarly certification."
+  },
+  "current_application_checks": {
+    "tests_passed": 448,
+    "test_files": 38,
+    "typecheck": "passed",
+    "production_build": "passed",
+    "desktop_mobile_journeys": "artifacts/input-journeys-2026-10-05.json",
+    "image_input": "artifacts/image-input-checks-2026-10-05.json",
+    "daily_companion_tools": "artifacts/feature-window-browser-2026-10-05.json",
+    "paid_calls_for_current_convenience_increment": 0,
+    "limit": "Mocked UI journeys and live feature controls are separate from semantic accuracy."
+  },
+  "working_features": [
+    "Nine input/display languages",
+    "Quran/Hadith source verification",
+    "Reviewed voice and image input",
+    "Read-aloud",
+    "Recent checks and source receipts",
+    "Scoped Umrah/Hajj companion",
+    "Manual progress counters",
+    "Prayer times and countdown",
+    "Gregorian/Hijri tools",
+    "Qibla bearing"
+  ],
+  "release_state": "Working local prototype; hosted URL and final submission pending"
+}

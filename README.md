@@ -1,67 +1,53 @@
 # IsnadLens · عدسة الإسناد
 
-A source-first workbench for examining bounded Islamic claims in nine languages. Citation integrity and model-assisted interpretation are separate. This is not a fatwa or scholarly approval.
+An evidence assistant for Islamic questions in nine languages. Ask in your own words, review the explanation and inspect the original Quran/Hadith sources. Text, reviewed voice dictation and screenshot/photo text input are available.
 
-The current app checks people's interpretations and general source questions against immutable Quran/Hadith evidence. It defaults to GPT-5.6 Luna with low reasoning and one bounded Terra reassessment for specified ambiguous/inconsistent cases. See [interpretation and model policy](docs/INTERPRETATION-AND-MODEL-POLICY.md) for the researched evidence hierarchy, source boundaries, spending controls and targeted validation.
+## Review the working product
 
-## Current increment
+Use the [product walkthrough](docs/REVIEWER-GUIDE.md). Current preview: http://127.0.0.1:3100. A hosted competition URL will be added after deployment.
 
-Nine selectable input/display languages (Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French, German), automatic language detection, immutable Tanzil Arabic Quran editions, official HadeethEnc workbooks in nine languages, bounded AI-assisted bilingual search expansion, lexical retrieval, exact raw/quotation/locator/hash validation, scope referral, sealed evidence records and a structured semantic-provider adapter. Real OpenAI assessment and translations of project explanations were tested within the authorized persistent development spending cap. Explanations are labelled unreviewed; original source quotations are never overwritten by language switching; separate published translations are identified alongside them. Detection and routing do not establish independent linguistic or religious approval. Further untouched evaluation, live hosting and the pilgrimage guide remain open.
+- `/` — verification, source evidence, published passage translations, read-aloud, reviewed voice/image inputs and optional recent checks.
+- `/pilgrimage` — focused Umrah/Hajj source questions, topic shortcuts and manual Tawaf/Sa’i progress.
+- `/tools` — prayer calculations and countdown, saved locations, Gregorian/Hijri calendars/conversion and Qibla bearing.
+- `/evaluation/latest` — the provided latest verification results.
 
-The first repository commit was created during the authorized event window. See PRE_CHALLENGE_DISCLOSURE.md and docs/BUILD-LEDGER.md for the research disclosure and starting-state record. The GitHub repository is private during development.
+Reviewers use the working product and inspect the results we provide. No development-suite reruns or reproduction of historical failures is required.
 
-## Local setup
+## Provided results
 
-Requires Node.js 24 LTS and npm for the complete source-preparation workflow (QuranEnc uses node:sqlite).
+Latest frozen verification benchmark: **29/30 satisfactory responses (96.7%)**, including 26/27 religious questions and 3/3 boundary requests. Zero incorrect decisive answers, inadequate decisive proofs or badge/explanation mismatches were found in this set. One context-related withholding remains in the denominator. [Recorded results](docs/RELEASE30-ROUND5.md).
+
+Current application checks: **448 tests across 38 files**, TypeScript and production build passed. Desktop/mobile-width checks passed starters in all nine languages, explicit saved-check persistence, receipt download, reload, deletion/clearing and reviewed text/voice/image handoffs without automatic verification. [Journey evidence](artifacts/input-journeys-2026-10-05.json). Four live image-reader controls passed: English, Arabic, blank and embedded-instruction screenshots. [Image evidence](artifacts/image-input-checks-2026-10-05.json).
+
+[Current results packet](artifacts/reviewer-evidence-index.json) is the compact machine-readable index. UI/microphone mocks and feature controls are disclosed separately from the semantic benchmark. These are observed results, not general accuracy, physical-device certification or independent scholarly approval. Later convenience additions do not change the frozen benchmark score.
+
+## Product behavior and sources
+
+Nine input/display languages: Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French and German. Original input and source quotations are retained. Published passage translations appear separately; project explanations translated from English are labelled as such. Automatic language/source routing supports ordinary questions rather than requiring exact quotations.
+
+Direct Quran evidence is sufficient where it proves the proposition. Hadith grades and references remain publisher-attributed. The app examines meaning against bounded evidence, preserves source conditions and refers personal rulings. It is not a personal fatwa service.
+
+- [Tanzil Arabic Quran](docs/source-rights/TANZIL-ADMISSION.md): unchanged Uthmani/Simple Clean v1.1 editions and notices.
+- [Official HadeethEnc editions](docs/source-rights/HADEETHENC-ADMISSION.md): nine language workbooks, publisher references and grading.
+- [QuranEnc passage translations](docs/source-rights/quranenc/ADMISSION.md): separate published translations of meanings; no replacement of Arabic evidence.
+
+Frameworks: Next.js 16.3.8, React 19.3, TypeScript 7, Zod 4, Sharp 0.35.5; Vitest 5 and Playwright 1.63 for checks. Luna handles initial understanding/assessment; Terra independently reviews decisive interpretation. Google free-tier services provide natural speech, dictation and image transcription. Voice/image inputs require review and an explicit verification click. No paid Google fallback is used.
+
+## Developer setup
+
+This is optional setup for running the repository, not a reviewer testing requirement. Node.js 24 LTS, npm, Python/openpyxl for Hadith preparation and network access for source preparation are needed.
 
 ```sh
 npm ci
 npm run corpus:prepare
-npm test
-npm run typecheck
-npm run build
+node scripts/download-hadeethenc.mjs
+python scripts/prepare-hadeethenc.py
+node scripts/prepare-quranenc.mjs
 npm run dev
 ```
 
-Open http://127.0.0.1:3100. Corpus preparation downloads only the two authorized Arabic Tanzil editions with normal TLS validation, retains their complete notices, validates all 6,236 locators and hashes, and writes private local data. Do not substitute translations or transformed source text. Network access is required for preparation and dependency installation. Raw files and joined source text are excluded from Git; source notices, provenance and a reproducible acquisition script are included.
+Source acquisitions must match the documented pins and notices. Changed publisher files require deliberate re-admission rather than bypassing integrity checks. Joined corpora are excluded from Git and prepared locally. Configure server-side keys with `.env.example` and ignored `.env.local`; never publish keys. Paid OpenAI requests need an authorized spending cap; Google features need the confirmed unpaid project. Local filesystem spending guards require durable shared controls before multi-instance hosting.
 
-## API boundary
+Developers can run `npm test`, `npm run typecheck` and `npm run build`. `scripts/check-input-journeys.mjs` uses installed Chrome, mocked providers/microphone and a public trimmed UI fixture; it makes no paid calls and creates its own synthetic image. Private user images, audio and development captures remain excluded from Git.
 
-Copy .env.example to .env.local for local configuration. Never paste API keys into chat or commit secrets. Paid requests require both an API key and explicit authorization; disabling authorization leaves a useful authentic passage search with a truthful not-evaluated state. It never substitutes canned successful verdicts.
-
-The interface and mechanical tests can run without an API key. OpenAI model availability, billing and account rate limits must be verified before inference. Paid development calls are authorized up to 13 SAR (including the explicitly approved additional 3 SAR), while at least 15 SAR is reserved for judging. There is no deployment or public publication yet. The local spending ledger requires durable shared atomic storage before enabling calls on multiple hosted instances.
-
-## Sources and trust
-
-Source: [Tanzil Project](https://tanzil.net). Arabic display: Uthmani v1.1. Exact search: the separate official Simple Clean v1.1 edition. Text is unchanged; editions join only by surah:ayah. [Licence and admission](docs/source-rights/TANZIL-ADMISSION.md).
-
-Hadith: [HadeethEnc.com](https://hadeethenc.com/en/home), official unchanged Arabic, English, Bangla, Hindi, Urdu, Indonesian, Spanish, French and German workbooks acquired 4 October 2026. [Source conditions and admission](docs/source-rights/HADEETHENC-ADMISSION.md). Publisher grades are attributed, never independently assigned. To reproduce, run `node scripts/download-hadeethenc.mjs`, then `python scripts/prepare-hadeethenc.py` with openpyxl installed. Different acquisitions can change hashes and require deliberate re-admission of pins. Seven QuranEnc translations of meanings are admitted for separate passage display, with exact footnotes, metadata, versions and notices; they do not extend the semantic-verification corpus. [Admission](docs/source-rights/quranenc/ADMISSION.md). Reproduce with `node scripts/prepare-quranenc.mjs` after preparing the Arabic Quran. Bangla Quran translations remain direct publisher links until their required version is verified. No pilgrimage corpus is admitted.
-
-Auto examines ordinary claims and general source questions across Quran and Hadith without requiring an exact quotation. A budgeted multilingual intake detects language and supplies a neutral English routing gloss plus Arabic/English search terms; the original claim is preserved and assessed. Uncertain detection requests explicit selection. Search terms cannot supply scripture, locators, grades or a verdict. Retrieved publisher records must pass source checks before semantic assessment. Direct Quran support is sufficient for a generic claim; irrelevant Hadith does not require additional corroboration. Source attribution, conditions and unsupported additional assertions remain material. Every mini-model contradiction requires a bounded strong-model confirmation on the same input/evidence. Retrieval can still miss relevant passages. AI judgments are provisional; mechanical tests do not measure religious correctness. See [development evaluation](docs/COMMON-QUERY-EVALUATION.md).
-
-## Release gates still open
-
-Independent linguistic review; broader untouched evaluation after the recorded new50 freeze; durable deployment controls; clean public clone; hosting; presentation; 115-second video; final human approval and submission.
-
-## Development probes
-
-With the local server running, `node scripts/validate-development.mjs` examines six Arabic/English development claims. This uses the configured paid provider only after existing authorization and budget checks; it is not an independent religious benchmark. Run a single case by adding its ID, for example `node scripts/validate-development.mjs fabricated-arabic-quote`. Full source-bearing records stay in ignored `artifacts/private`; commit-safe summaries contain verdicts, reasons, source locators, integrity checks and usage. A correct refusal must use the intended reason, not merely return the expected verdict.
-
-## Passage translations and read-aloud
-
-Nine input/display languages are selectable. Published passage translations appear separately alongside the unchanged original. Explanation translations remain unreviewed project text. Browser Listen/Stop controls use matching available device voices. An optional server-side Google free-tier reader produces WAV audio with native browser playback, cache and quota stops; it requires a locally configured key and confirmation of an unpaid project. No paid speech fallback is used. Live English/Arabic audio generation and identical-byte cache reuse passed; physical-phone playback and pronunciation quality remain unverified. Synthesis is assistive reading rather than recorded Quran recitation. [Free reader setup](docs/FREE-SPEECH.md), [read-aloud boundary](docs/READ-ALOUD.md).
-
-## Voice input and source-answer evaluation
-Voice input supports nine language settings and automatic recognition, with local recording preview, explicit free-Google transcription and an editable transcript before use. Live synthetic English and Arabic probes passed; human microphone and physical-device accuracy are not yet independently verified. [Voice input setup and boundaries](docs/VOICE-INPUT.md).
-
-The 50 distinct-question development baseline compares app answers with separately reviewed, linked primary-source answers. Missing an established answer is a coverage failure, never a correct answer. Six unresolved or outside-scope cases are excluded from factual accuracy. [Results and initial failures](docs/BASELINE50-RESULTS.md), [reference witnesses](docs/COMMON50-SOURCES.md); the local /evaluation page exposes every question and comparison. These are representative topics, not a measured top-search list or scholarly approval.
-
-Published English Quran translation now also supplies hash-checked query-ranking assistance, mapped back to immutable Arabic evidence. Hadith ordinary search includes both admitted Arabic and English records where appropriate; grades remain publisher-attributed.
-
-## New fifty-question frozen evaluation
-A second, non-duplicate set was frozen with primary-source witnesses and a separate source review before any app calls. All 50 completed against unchanged application code: 44/50 principal answers were independently source-grounded, five abstained and one reached the correct yes label using unrelated evidence. The 40-yes/10-no distribution and 80% always-yes baseline are disclosed. These findings are not scholarly certification or proof of general accuracy. The original first-pass records remain immutable, with subsequent repairs reported separately. Together the two sets contain 100 distinct questions, not 100 flawless answers. [New50 results](docs/HOLDOUT50-RESULTS.md), [source audit](docs/HOLDOUT50-GROUNDING.md), local `/evaluation/holdout`.
-
-Every proposed supported verdict now requires a separate source-focused entailment review of its material assertions and cited primary text. A missing, inconclusive or mechanically invalid review prevents publication of a supported verdict. It uses the same spending ledger and adds a bounded paid call; its real unrelated-evidence probe rejected the original wrong-source packet. This is an additional model-based check, not a correctness guarantee. Insufficient/not-evaluated summaries now agree with the sealed final status.
-
-## Free offline boundary lab
-Run `npm run test:offline` to replay100 captured records, exercise2,062 deterministic guard checks and run282 search probes without provider access. The search probes contain188 distinct strings over94 original source-answer-eligible questions; they are not282 new Islamic questions. Exact replay refuses changed claims, evidence, languages or versions. Fault injection models known response failures, not the LLM's reasoning. A separate real-model confirmation verified a polite-prefix retrieval repair; current accuracy and unresolved evidence questions still require live/source review. [Workflow and limits](docs/OFFLINE-TESTING.md), [offline results](docs/OFFLINE-LAB-RESULTS.md).
+Implementation began during the authorized competition window; [pre-challenge disclosure](PRE_CHALLENGE_DISCLOSURE.md). Git commits and the development archive preserve engineering provenance. Current work is a local prototype; evening visual design, physical-device checks, hosting controls, deployment, presentation/video and final submission remain pending.

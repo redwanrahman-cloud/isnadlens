@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "project": "IsnadLens",
+  "state": "local prototype; deployment and final submission pending",
+  "product_review": ["README.md", "docs/REVIEWER-GUIDE.md"],
+  "engineering_archive": ["docs/ENGINEERING-HISTORY.md", "docs/BUILD-LEDGER.md", "PRE_CHALLENGE_DISCLOSURE.md"],
+  "review_scope": "Reviewers use the working product; historical failures and developer test reruns are not required.",
+  "latest_frozen_semantic_benchmark": {
+    "satisfactory": 29, "total": 30, "religious_satisfactory": 26, "religious_total": 27,
+    "boundary_satisfactory": 3, "boundary_total": 3,
+    "incorrect_decisive_found": 0, "inadequate_decisive_proofs_found": 0, "badge_mismatches_found": 0,
+    "retained_failure": "Y16: selected source packet lacked the antecedent context supporting its believer attribution; withheld, not counted as helpful",
+    "report": "docs/RELEASE30-ROUND5.md",
+    "evidence": ["artifacts/release30-round5-question-set-2026-10-05.json", "artifacts/release30-round5-first-pass-2026-10-05.json", "artifacts/release30-round5-principal-review-2026-10-05.json", "artifacts/release30-round5-mechanical-audit-2026-10-05.json"],
+    "limits": "Developer source-grounded evaluation, not independent scholarly certification or general accuracy; predates later convenience features."
+  },
+  "latest_application_checks": {"tests_passed": 448, "test_files": 38, "typecheck": "passed", "production_build": "passed", "browser_evidence": "artifacts/input-journeys-2026-10-05.json", "paid_calls_for_this_increment": 0},
+  "milestones": [
+    {"id":"source-admission","problem":"Immutable genuine sources and usage notices","documents":["docs/source-rights/TANZIL-ADMISSION.md","docs/source-rights/HADEETHENC-ADMISSION.md","docs/source-rights/quranenc/ADMISSION.md"]},
+    {"id":"ordinary-question-intake","problem":"Users do not know exact quotations","documents":["docs/AUTO-SOURCE-IDENTIFICATION.md","docs/EVERYDAY-EVIDENCE-REPAIRS.md"]},
+    {"id":"interpretation-model-policy","problem":"Matching words is not sufficient interpretation proof","documents":["docs/INTERPRETATION-AND-MODEL-POLICY.md","docs/MODEL-COMPARISON.md"]},
+    {"id":"baseline50","problem":"Initial 27 of 44 established-answer matches","documents":["docs/BASELINE50-RESULTS.md","docs/COMMON50-SOURCES.md"],"note":"Later 44/44 targeted development retests, six exclusions; not an untouched 50/50."},
+    {"id":"holdout50","problem":"Five withholds and one unsupported decisive packet","documents":["docs/HOLDOUT50-RESULTS.md","docs/HOLDOUT50-GROUNDING.md","docs/HOLDOUT50-REPAIRS.md"],"first_pass_grounded":"44/50"},
+    {"id":"fresh50","problem":"Retrieval and interpretation gaps across languages","documents":["docs/FRESH50-RESULTS.md","docs/FRESH50-FINDINGS.md","docs/FRESH50-REPAIRS.md"],"first_pass_grounded":"27/50"},
+    {"id":"offline-lab","problem":"Repeated paid testing and known application faults","documents":["docs/OFFLINE-TESTING.md","docs/OFFLINE-LAB-RESULTS.md"],"note":"Replay/fault injection is not a simulated LLM accuracy result."},
+    {"id":"trusted-discovery","problem":"Admitted retrieval can miss evidence","documents":["docs/TRUSTED-SEARCH-AND-WEB15.md"]},
+    {"id":"web50","problem":"Search did not resolve rigid scope acceptance","documents":["docs/WEB50-FIRST-PASS.md","docs/SEMANTIC-SCOPE-REPAIR.md","docs/FINAL-GAP-REPAIR.md"],"first_pass_grounded":"22/50"},
+    {"id":"release30-original","problem":"Answer meaning and explanation quality gaps","documents":["docs/RELEASE30-VALIDATION.md"],"first_pass_satisfactory":"25/30"},
+    {"id":"release30-round2","problem":"Remaining retrieval and collective meaning gaps","documents":["docs/RELEASE30-ROUND2.md","docs/ROUND2-GAP-REPAIRS.md"],"first_pass_satisfactory":"26/30"},
+    {"id":"model-led-routing","problem":"Keyword vetoes and incomplete proof packets","documents":["docs/MODEL-ROUTING-ARCHITECTURE.md"]},
+    {"id":"release30-round3","problem":"Six withholds and one inadequately proven decisive result","documents":["docs/RELEASE30-ROUND3.md"],"first_pass_satisfactory":"23/30"},
+    {"id":"language-diagnostics","problem":"Is rejected explanation a translation failure?","documents":["docs/EXPLANATION-LANGUAGE-DIAGNOSTICS.md"],"note":"Two paired known cases and one deliberately faulty Arabic draft; not broad language certification."},
+    {"id":"release30-round4","problem":"Correct explanation with wrong decision badge","documents":["docs/RELEASE30-ROUND4.md","docs/BADGE-CONSISTENCY-REPAIR.md"],"first_pass_satisfactory":"29/30","strict_release_gate":"failed due to one badge mismatch"},
+    {"id":"release30-round5","problem":"Prove repaired behavior on another frozen set","documents":["docs/RELEASE30-ROUND5.md"],"first_pass_satisfactory":"29/30","retained_failure":"Y16"},
+    {"id":"speech-and-voice","problem":"Device voice variation and reviewed dictation","documents":["docs/FREE-SPEECH.md","docs/READ-ALOUD.md","docs/VOICE-INPUT.md"]},
+    {"id":"pilgrimage-daily-tools","problem":"Focused assistance and practical tools","documents":["docs/COMPANION-AND-DAILY-TOOLS.md","docs/PILGRIMAGE-PROGRESS-FOUNDATION.md","docs/FEATURE-WINDOW-2026-10-05.md"]},
+    {"id":"image-input","problem":"Read screenshot claims without treating images as proof; upload was hard to find","documents":["docs/IMAGE-INPUT-2026-10-05.md"],"evidence":["artifacts/image-input-checks-2026-10-05.json"]},
+    {"id":"recent-checks-input-journeys","problem":"Reusable questions and receipts without accidental calls","documents":["docs/RECENT-CHECKS-AND-JOURNEYS.md"],"evidence":["artifacts/input-journeys-2026-10-05.json","tests/recent-checks.test.ts","scripts/check-input-journeys.mjs"]}
+  ],
+  "remaining_work": ["Agreed visual design", "Physical-device checks", "Durable shared hosting controls", "Clean source reproduction and deployment", "Competition video and final submission"],
+  "reporting_rules": ["Preserve frozen first-pass failures", "Keep repaired-case retests separate", "Separate mechanical, mocked UI and live semantic evidence", "Never infer independent scholarly or linguistic certification", "No guarantee of automated competition acceptance", "Keep API keys and private user captures out of Git"]
+}
