@@ -1,4 +1,5 @@
 'use client';
+import {StudioShell} from '../StudioShell';
 import {useEffect,useState} from 'react';
 import {BrandMark,WorkspaceIcon} from '../components/WorkspaceIcon';
 import {useDisplayLanguage} from '@/lib/use-display-language';
@@ -63,10 +64,9 @@ export default function DailyToolsPage(){
   const pair=(value:DatePair)=><p><bdi>{value.gregorian.date}</bdi> · <span lang={ar?'ar':'en'}>{value.hijri.day} {ar?value.hijri.month.ar:value.hijri.month.en} {value.hijri.year}</span></p>;
   const calendarCells=calendar?[...Array(new Date(Date.UTC(calendar.year,calendar.month-1,1)).getUTCDay()).fill(null),...calendar.days]:[];
   while(calendarCells.length%7)calendarCells.push(null);
-  return <div className="site-shell daily-tools" dir={rtl?'rtl':'ltr'}>
-    <header className="topbar"><a className="brand" href="/"><span className="brand-mark"><BrandMark/></span><strong>IsnadLens</strong></a><nav className="header-actions"><a className="method-link" href="/">{t('التحقق','Verification')}</a><a className="method-link" href="/pilgrimage">{t('مرافق العمرة والحج','Umrah & Hajj Companion')}</a><label className="tool-language"><span className="sr-only">{t('لغة العرض','Display language')}</span><select id="display-language" aria-label={t('لغة العرض','Display language')} value={language} onChange={event=>setLanguage(event.target.value as DisplayLanguage)}>{displayLanguages.map(code=><option key={code} value={code}>{({ar:'العربية',en:'English',bn:'বাংলা',hi:'हिन्दी',ur:'اردو',id:'Bahasa Indonesia',es:'Español',fr:'Français',de:'Deutsch'})[code]}</option>)}</select></label></nav></header>
+  return <StudioShell language={language} onLanguage={setLanguage} service="daily"><div className="daily-tools">
     <nav className="tool-shortcuts" aria-label={t('الأدوات','Tools')}><a href="#prayer"><WorkspaceIcon name="prayer"/>{copy.prayer}</a><a href="#qibla"><WorkspaceIcon name="compass"/>{copy.qibla}</a><a href="#calendar"><WorkspaceIcon name="calendar"/>{copy.calendar}</a></nav>
-    <main className="tools-main">
+    <main id="studio-main" className="tools-main">
       <section className="hero tools-hero"><div className="hero-copy"><span className="tools-eyebrow">{t('أدوات يومية','Everyday tools')}</span><h1>{t('المواقيت والتقويم','Prayer times & calendar')}</h1><p className="hero-intro">{t('المواقيت حسب الموقع وطريقة الحساب المختارة. تحويل التاريخ وفق التقويم المحدد، وقد تختلف بداية الشهر بالرؤية المحلية.','Prayer times use your chosen location and calculation method. Date conversion uses the selected calendar; local moon sighting may give a different month start.')}</p><p className="tools-clock"><WorkspaceIcon name="compass"/><time suppressHydrationWarning>{clock}</time> · <bdi>{zone??(t('ستحدد المنطقة الزمنية بعد طلب المواقيت','Timezone determined after lookup'))}</bdi></p></div></section>
       {error&&<p className="tools-error" role="alert">{error}</p>}
       <fieldset disabled={Boolean(busy)} style={{border:0,padding:0,minWidth:0}}>
@@ -75,7 +75,7 @@ export default function DailyToolsPage(){
             <form onSubmit={event=>{event.preventDefault();void load('prayer');}}>
               <label>{t('التاريخ الميلادي','Gregorian date')}<input required type="date" min="1900-01-01" max="2100-12-31" value={date} onChange={event=>{setDate(event.target.value);setCalendar(null);setPrayers(null);}}/></label>
               <LocationPicker ar={ar} language={language} latitude={latitude} longitude={longitude} timezone={locationTimezone} method={method} school={school} onPick={location=>{setLatitude(String(location.latitude));setLongitude(String(location.longitude));setLocationTimezone(location.timezone??null);if(location.timezone)setDate(today(location.timezone));if(location.method)setMethod(location.method);setSchool(location.school??0);setPrayers(null);setCalendar(null);}}/>
-              <p>{t('الموقع الافتراضي: مكة. استخدم موقعك أو أدخل أي إحداثيات عالمية.','Default location: Makkah. Use your location or enter coordinates anywhere worldwide.')}</p>
+              <p><bdi>{latitude}, {longitude} · {locationTimezone??'—'}</bdi></p>
               <label>{t('خط العرض','Latitude')}<input required type="number" min="-90" max="90" step="any" value={latitude} onChange={event=>{setLatitude(event.target.value);setPrayers(null);setLocationTimezone(null);}}/></label>
               <label>{t('خط الطول','Longitude')}<input required type="number" min="-180" max="180" step="any" value={longitude} onChange={event=>{setLongitude(event.target.value);setPrayers(null);setLocationTimezone(null);}}/></label>
               <button className="locate-button" type="button" disabled={locating} onClick={locate}><WorkspaceIcon name="compass"/>{locating?(t('جارٍ تحديد الموقع…','Locating…')):(t('استخدم موقعي','Use my location'))}</button>
@@ -106,5 +106,5 @@ export default function DailyToolsPage(){
       </fieldset>
       <p className="tools-source-links"><a href="https://aladhan.com/prayer-times-api" target="_blank" rel="noopener noreferrer">AlAdhan · {t('مصدر المواقيت','Prayer source')} ↗</a> · <a href="https://aladhan.com/islamic-calendar-api" target="_blank" rel="noopener noreferrer">{t('مصدر التقويم','Calendar source')} ↗</a></p>
     </main>
-  </div>;
+  </div></StudioShell>;
 }

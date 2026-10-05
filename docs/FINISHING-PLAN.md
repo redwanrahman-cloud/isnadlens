@@ -4,8 +4,11 @@
 
 Redwan selected the independent navy/blue, light-surface design shown in the
 interactive `/design` preview, then asked this chat to take over finishing the
-original project. This approval supersedes the earlier emerald visual direction;
-it does not replace the verification engine or its evidence policy.
+original project. Redwan subsequently refined that direction: retain its modern polish, restore
+emerald/ivory/gold, and keep the question, explanation and primary source visible
+together. Source badges communicate text integrity; they do not certify the
+interpretation. This final direction supersedes the blue, tabbed result layout.
+It does not replace the verification engine or its evidence policy.
 
 Work continues on `design/competition-finish`, a branch of the original
 repository starting at `6af76583d812e9982cc07311198152f5ddd19adc`. A separate Git
@@ -50,8 +53,10 @@ and the current code for completed verification work.
 
 1. Carry the approved visual design into the real application: persistent desktop
    navigation, compact mobile navigation, clear question entry and comfortable reading.
-2. Keep verification primary. Present a focused result with explanation, original
-   evidence, an inspectable evidence map and recoverable export states.
+2. Keep verification primary in a single dual-panel workspace. Show the explanation,
+   primary original passage and published translation together, without result
+   tabs. Use an integrity badge and a horizontal, inspectable evidence flow;
+   technical metadata and additional passages may expand on demand.
 3. Preserve all nine languages and explicit display preferences, RTL, keyboard
    focus, source attribution, limits and review labels.
 4. Repair the independently reproduced application issues: receipt failure hiding

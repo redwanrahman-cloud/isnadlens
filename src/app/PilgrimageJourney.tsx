@@ -7,7 +7,7 @@ export function PilgrimageJourney({language,onQuestion}:{language:DisplayLanguag
   const ar=language==='ar';const t=journeyCopy(language);const [ritual,setRitual]=useState<'umrah'|'hajj'>('umrah');const [selected,setSelected]=useState('ihram');
   const topics=ritual==='umrah'?UMRAH_TOPICS:HAJJ_TOPICS;
   const topic=topics.find(item=>item.id===selected)??topics[0];
-  return <section className="coverage-box journey-topics">
+  return <section id="journey-learning" className="coverage-box journey-topics">
     <h2>{t.heading}</h2>
     <label>{t.ritual}<select aria-label={t.ritual} value={ritual} onChange={event=>{const value=event.target.value as typeof ritual;setRitual(value);setSelected(value==='umrah'?'ihram':'forms');}}><option value="umrah">{t.umrah}</option><option value="hajj">{t.hajj}</option></select></label>
     {!ar&&language!=='en'&&<p className="context-note">{t.fallback}</p>}

@@ -60,6 +60,6 @@ export const VoiceInput=forwardRef<VoiceInputHandle,{language:ClaimLanguage;inpu
  return <section className={`voice-capture voice-composer ${recording?'is-recording':''} ${busy?'is-transcribing':''}`} aria-label={t[0]}>
   <div className="voice-caption"><span role="status">{busy?t[9]:recording?t[11]:t[0]}</span><span className="voice-timer" dir="ltr">0:{String(seconds).padStart(2,'0')}</span></div>
   {ready===false?<p role="status">{t[12]}</p>:<div className="voice-bar"><button type="button" className="voice-cancel" aria-label={t[5]} title={t[5]} onClick={()=>{discard();onCancel();}}>×</button><div className="voice-wave" aria-hidden="true">{levels.map((height,index)=><i key={index} style={{height:height+'px'}}/>)}</div><button type="button" className="voice-finish" disabled={disabled||busy||(!recording&&ready===null)} aria-label={recording?t[2]:t[1]} title={recording?t[2]:t[1]} onClick={()=>recording?recorder.current?.stop():void start()}>{recording?<span className="finish-square"/>:<WorkspaceIcon name="voice"/>}</button></div>}
-  {error&&<p role="alert">{error}</p>}<details className="voice-help"><summary>{t[0]} · {language==='ar'?'التفاصيل':'Details'}</summary><p>{autoCopy[0]}</p><small>{autoCopy[1]}</small></details>
+  {error&&<p role="alert">{error}</p>}<p className="voice-privacy">{autoCopy[1]}</p><details className="voice-help"><summary>{t[0]} · {language==='ar'?'التفاصيل':'Details'}</summary><p>{autoCopy[0]}</p></details>
  </section>;
 });

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './workspace.css';
+import './studio.css';
 import {LanguagePreference} from './components/LanguagePreference';
 
 export const metadata: Metadata = { title: 'عدسة الإسناد · IsnadLens', description: 'An evidence desk for tracing claims to their sources.' };

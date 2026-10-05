@@ -11,7 +11,7 @@ export function PilgrimageProgress({language}:{language:DisplayLanguage}) {
   const [saved,setSaved]=useState(true);
   useEffect(()=>{try{const stored=localStorage.getItem(STORAGE_KEY);if(stored){const resumed=restoreProgress(stored);if(resumed)setState(resumed);else setSaved(false);}}catch{setSaved(false);}setReady(true);},[]);
   useEffect(()=>{if(!ready)return;try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));setSaved(true);}catch{setSaved(false);}},[state,ready]);
-  return <section className="coverage-box journey-progress" aria-label={t.counter}>
+  return <section id="journey-counting" className="coverage-box journey-progress" aria-label={t.counter}>
     <h2>{t.heading}</h2>
     <p>{t.intro}</p>
     <div className="desk-grid">{(['tawaf','sai'] as PilgrimageActivity[]).map(activity=>{
