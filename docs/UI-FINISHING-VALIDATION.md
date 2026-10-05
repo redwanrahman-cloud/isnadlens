@@ -188,3 +188,38 @@ checks for RTL, not a new visual certification on a physical Arabic device.
 No verification submissions or real provider requests were made. Next validation
 should include observing a person complete their first question and find its
 source without coaching; that has not occurred in this pass.
+
+## Voice dictation on the question surface — 5 October
+
+Voice no longer hides the editor or introduces a separate recorder above the
+form. A compact recording bar sits inside the question box, with cancel, stop,
+elapsed time and actual microphone level samples. The editor remains visible and
+temporarily read-only. Recording/transcription never submits verification.
+
+The lifecycle now distinguishes microphone opening, recording, transcription and
+failure. Stop immediately becomes a disabled progress control; repeated Voice
+clicks cannot start another recording. Cancel releases tracks, aborts the pending
+request and invalidates late responses. Escape closes the bar and restores editor
+focus, including error states. The existing 45-second/size limits remain and the
+client transcription request is bounded to 60 seconds.
+
+Dictation inserts at the captured cursor/selection and preserves the surrounding
+draft. Overlong combined questions are rejected without truncation. The user's
+manual input-language choice is retained. Successful dictation returns keyboard
+focus to the editor; it does not verify the text automatically. Provider/privacy
+details remain available from the bar's disclosure.
+
+Validation: eight focused tests passed (five provider-boundary tests with mocked
+network, three new draft-insertion regressions). Final production build and
+TypeScript passed. A separate local fixture bundled the real Workbench/VoiceInput
+components with simulated MediaRecorder, permission and fetch responses. Browser
+checks confirmed one start/stop/transcription, no extra start when clicking Voice
+again, unchanged composer height, preserved draft on cancel, ignored late replies,
+editable inserted text/focus, permission denial, transcription failure and Escape.
+Nine mobile language cases kept the bar inside the editor without horizontal
+overflow; Stop retained a nominal 44px target. The fixture's unexpected-request
+counter stayed zero. Simulated fixture code is outside the production project.
+
+No actual microphone capture, provider transcription or verification was performed.
+The recording screenshot is explicitly labelled simulated. Live microphone/browser
+compatibility and provider accuracy remain for the user's deferred real-API pass.

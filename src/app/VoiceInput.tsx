@@ -24,43 +24,63 @@ const automaticCopy:Record<ClaimLanguage,[string,string]>={
  fr:['Parlez, puis arrêtez. Vos mots apparaîtront dans la question pour être relus avant l’examen des preuves.','45 secondes maximum. À l’arrêt, l’enregistrement est envoyé à Google ; son service gratuit peut utiliser le son pour améliorer ses produits.'],
  de:['Sprechen, dann stoppen. Ihre Worte erscheinen im Fragefeld zur Bearbeitung vor der Belegprüfung.','Bis zu 45 Sekunden. Beim Stoppen wird die Aufnahme zur Transkription an Google gesendet; der kostenlose Dienst kann Audio zur Produktverbesserung verwenden.']
 };
+type Phase='idle'|'starting'|'recording'|'transcribing'|'error';
+const openingCopy:Record<ClaimLanguage,string>={en:'Opening microphone…',ar:'جارٍ فتح الميكروفون…',bn:'মাইক্রোফোন চালু হচ্ছে…',hi:'माइक्रोफ़ोन खुल रहा है…',ur:'مائیکروفون کھل رہا ہے…',id:'Membuka mikrofon…',es:'Abriendo el micrófono…',fr:'Ouverture du microphone…',de:'Mikrofon wird geöffnet…'};
+const lengthCopy:Record<ClaimLanguage,string>={en:'The combined question exceeds 1,200 characters. Your draft is unchanged. Shorten it before dictating again.',ar:'يتجاوز السؤال 1200 حرف. لم تتغير مسودتك؛ اختصرها قبل الإملاء مجدداً.',bn:'মোট প্রশ্ন ১,২০০ অক্ষরের বেশি। খসড়া অপরিবর্তিত আছে। আবার বলার আগে ছোট করুন।',hi:'पूरा प्रश्न 1,200 अक्षरों से अधिक है। मसौदा सुरक्षित है। फिर बोलने से पहले छोटा करें।',ur:'سوال 1,200 حروف سے بڑھ گیا ہے۔ مسودہ محفوظ ہے؛ دوبارہ بولنے سے پہلے مختصر کریں۔',id:'Pertanyaan melebihi 1.200 karakter. Draf tidak berubah. Persingkat sebelum mendikte lagi.',es:'La pregunta supera los 1.200 caracteres. El borrador sigue intacto. Acórtalo antes de dictar de nuevo.',fr:'La question dépasse 1 200 caractères. Votre brouillon est conservé. Raccourcissez-le avant de dicter à nouveau.',de:'Die Frage überschreitet 1.200 Zeichen. Ihr Entwurf bleibt erhalten. Kürzen Sie ihn vor dem erneuten Diktieren.'};
 export type VoiceInputHandle={start:()=>void;cancel:()=>void};
-export const VoiceInput=forwardRef<VoiceInputHandle,{language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>void;onCancel:()=>void}>(function VoiceInput({language,inputLanguage,disabled,onText,onCancel}:{language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>void;onCancel:()=>void},ref){
- const t=words[language],autoCopy=automaticCopy[language];const [ready,setReady]=useState<boolean|null>(null);const [recording,setRecording]=useState(false);const [blob,setBlob]=useState<Blob|null>(null);const [busy,setBusy]=useState(false);const [error,setError]=useState('');const [seconds,setSeconds]=useState(0);const [levels,setLevels]=useState<number[]>(Array(42).fill(3));
- const meter=useRef<AudioContext|null>(null);const animation=useRef(0);const startedAt=useRef(0);const elapsedTimer=useRef<ReturnType<typeof setInterval>|null>(null);
- const recorder=useRef<MediaRecorder|null>(null);const stream=useRef<MediaStream|null>(null);const timer=useRef<ReturnType<typeof setTimeout>|null>(null);const controller=useRef<AbortController|null>(null);const generation=useRef(0);const starting=useRef(false);
+type Props={language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>boolean;onCancel:()=>void};
+export const VoiceInput=forwardRef<VoiceInputHandle,Props>(function VoiceInput({language,inputLanguage,disabled,onText,onCancel},ref){
+ const t=words[language],autoCopy=automaticCopy[language];
+ const [ready,setReady]=useState<boolean|null>(null),[requested,setRequested]=useState(false);
+ const [phase,setPhase]=useState<Phase>('idle');const phaseRef=useRef<Phase>('idle');
+ const [error,setError]=useState<''|'mic'|'transcribe'|'length'>('');
+ const [seconds,setSeconds]=useState(0),[levels,setLevels]=useState<number[]>(Array(32).fill(3));
+ const meter=useRef<AudioContext|null>(null),animation=useRef(0),startedAt=useRef(0);
+ const elapsedTimer=useRef<ReturnType<typeof setInterval>|null>(null),timer=useRef<ReturnType<typeof setTimeout>|null>(null);
+ const recorder=useRef<MediaRecorder|null>(null),stream=useRef<MediaStream|null>(null);
+ const controller=useRef<AbortController|null>(null),generation=useRef(0),stopButton=useRef<HTMLButtonElement>(null),cancelButton=useRef<HTMLButtonElement>(null);
+ function move(next:Phase){phaseRef.current=next;setPhase(next);}
  function release(){cancelAnimationFrame(animation.current);if(elapsedTimer.current)clearInterval(elapsedTimer.current);elapsedTimer.current=null;void meter.current?.close().catch(()=>{});meter.current=null;if(timer.current)clearTimeout(timer.current);timer.current=null;stream.current?.getTracks().forEach(track=>track.stop());stream.current=null;}
- function discard(){generation.current++;controller.current?.abort();if(recorder.current){recorder.current.onstop=null;if(recorder.current.state!=='inactive')recorder.current.stop();}release();starting.current=false;setRecording(false);setBusy(false);setBlob(null);setSeconds(0);setLevels(Array(42).fill(3));setError('');}
- useEffect(()=>{const c=new AbortController();fetch('/api/transcribe',{signal:c.signal}).then(r=>r.json()).then(data=>setReady(Boolean(data.available))).catch(()=>{if(!c.signal.aborted)setReady(false);});return()=>c.abort();},[]);
-
- useEffect(()=>{if(disabled)discard();},[disabled]);
- useEffect(()=>{if(ready===false)discard();},[ready]); // Prevent a recording competing with an active verification.
+ function discard(){generation.current++;controller.current?.abort();if(recorder.current){recorder.current.onstop=null;if(recorder.current.state!=='inactive')recorder.current.stop();}recorder.current=null;release();setRequested(false);move('idle');setSeconds(0);setLevels(Array(32).fill(3));setError('');}
+ function cancel(){discard();onCancel();}
+ useEffect(()=>{const c=new AbortController();fetch('/api/transcribe',{signal:c.signal}).then(r=>r.json()).then(data=>{if(!c.signal.aborted)setReady(Boolean(data.available));}).catch(()=>{if(!c.signal.aborted)setReady(false);});return()=>c.abort();},[]);
+ useEffect(()=>{if(disabled)discard();else cancelButton.current?.focus({preventScroll:true});},[disabled]);
+ useEffect(()=>{if(ready===false)discard();},[ready]);
+ useEffect(()=>{if(requested&&ready===true&&!disabled){setRequested(false);void start();}},[requested,ready,disabled]);
+ useEffect(()=>{if(phase==='recording')stopButton.current?.focus({preventScroll:true});},[phase]);
  useEffect(()=>()=>{generation.current++;controller.current?.abort();if(recorder.current){recorder.current.onstop=null;if(recorder.current.state!=='inactive')recorder.current.stop();}release();},[]);
+ function stop(){if(phaseRef.current!=='recording')return;move('transcribing');if(recorder.current?.state==='recording')recorder.current.stop();}
  async function start(){
-  if(starting.current||recording||busy||ready===false)return;window.dispatchEvent(new Event('isnadlens:speech-cancel'));discard();starting.current=true;const epoch=generation.current;
+  if(disabled||ready!==true||!['idle','error'].includes(phaseRef.current))return;
+  window.dispatchEvent(new Event('isnadlens:speech-cancel'));discard();move('starting');const epoch=generation.current;
   try{
    if(!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder==='undefined')throw new Error('unsupported');
-   try{meter.current=new AudioContext();void meter.current.resume().catch(()=>{});}catch{/* Recording can work even when the level meter is unavailable. */}
+   try{meter.current=new AudioContext();void meter.current.resume().catch(()=>{});}catch{}
    const media=await navigator.mediaDevices.getUserMedia({audio:true});if(epoch!==generation.current){media.getTracks().forEach(track=>track.stop());return;}stream.current=media;
    const mime=['audio/webm;codecs=opus','audio/mp4','audio/ogg;codecs=opus'].find(type=>MediaRecorder.isTypeSupported(type));if(!mime)throw new Error('unsupported');
    const r=new MediaRecorder(media,{mimeType:mime,audioBitsPerSecond:32000});recorder.current=r;const chunks:Blob[]=[];let size=0;
-   r.ondataavailable=e=>{if(e.data.size){chunks.push(e.data);size+=e.data.size;if(size>1_000_000&&r.state!=='inactive')r.stop();}};
-   r.onerror=()=>{discard();setError(t[7]);};r.onstop=()=>{release();setRecording(false);if(epoch!==generation.current)return;const audio=new Blob(chunks,{type:r.mimeType});if(!audio.size||audio.size>1_000_000)setError(t[8]);else {setBlob(audio);void transcribe(audio);}};
-   r.start(1000);setRecording(true);startedAt.current=Date.now();elapsedTimer.current=setInterval(()=>setSeconds(Math.floor((Date.now()-startedAt.current)/1000)),250);
+   r.ondataavailable=e=>{if(epoch!==generation.current)return;if(e.data.size){chunks.push(e.data);size+=e.data.size;if(size>1_000_000)stop();}};
+   r.onerror=()=>{if(epoch!==generation.current)return;discard();move('error');setError('mic');};
+   r.onstop=()=>{if(epoch!==generation.current)return;release();move('transcribing');const audio=new Blob(chunks,{type:r.mimeType});if(!audio.size||audio.size>1_000_000){move('error');setError('transcribe');}else void transcribe(audio,epoch);};
+   r.start(1000);move('recording');startedAt.current=Date.now();elapsedTimer.current=setInterval(()=>setSeconds(Math.min(45,Math.floor((Date.now()-startedAt.current)/1000))),250);
    try{if(meter.current){const analyser=meter.current.createAnalyser();analyser.fftSize=256;meter.current.createMediaStreamSource(media).connect(analyser);const samples=new Uint8Array(analyser.fftSize);let last=0;
-   const draw=(time:number)=>{if(epoch!==generation.current||r.state!=='recording')return;if(time-last>75){last=time;analyser.getByteTimeDomainData(samples);const rms=Math.sqrt(samples.reduce((sum,value)=>sum+((value-128)/128)**2,0)/samples.length);const height=Math.min(38,Math.max(3,rms*160));setLevels(previous=>[...previous.slice(1),height]);}animation.current=requestAnimationFrame(draw);};animation.current=requestAnimationFrame(draw);}}
-   catch{/* No animated substitute: a flat meter indicates that live levels are unavailable. */}
-   timer.current=setTimeout(()=>{if(r.state!=='inactive')r.stop();},45000);
-  }catch{if(epoch===generation.current){release();setError(t[7]);}}finally{if(epoch===generation.current)starting.current=false;}
+    const draw=(time:number)=>{if(epoch!==generation.current||r.state!=='recording')return;if(time-last>75){last=time;analyser.getByteTimeDomainData(samples);const rms=Math.sqrt(samples.reduce((sum,value)=>sum+((value-128)/128)**2,0)/samples.length);const height=Math.min(30,Math.max(3,rms*160));setLevels(previous=>[...previous.slice(1),height]);}animation.current=requestAnimationFrame(draw);};animation.current=requestAnimationFrame(draw);}}
+   catch{/* Keep the level meter flat when audio analysis is unavailable. */}
+   timer.current=setTimeout(stop,45000);
+  }catch{if(epoch===generation.current){release();move('error');setError('mic');}}
  }
- async function transcribe(audio:Blob){if(busy)return;setBusy(true);setError('');const c=new AbortController();controller.current=c;const epoch=generation.current;
-  try{const response=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':audio.type,'x-claim-language':inputLanguage},body:audio,signal:c.signal});const data=await response.json();if(!response.ok||typeof data.transcript!=='string'||!data.transcript.trim()||data.transcript.length>1200)throw new Error('failed');if(epoch===generation.current)onText(data.transcript);}
-  catch{if(!c.signal.aborted&&epoch===generation.current)setError(t[8]);}finally{if(epoch===generation.current)setBusy(false);}
+ async function transcribe(audio:Blob,epoch:number){
+  const c=new AbortController();controller.current=c;const timeout=setTimeout(()=>c.abort(),60000);
+  try{const response=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':audio.type,'x-claim-language':inputLanguage},body:audio,signal:c.signal});const data=await response.json();if(!response.ok||typeof data.transcript!=='string'||!data.transcript.trim()||data.transcript.length>1200)throw new Error('failed');if(epoch===generation.current){if(onText(data.transcript))move('idle');else{move('error');setError('length');}}}
+  catch{if(epoch===generation.current){move('error');setError('transcribe');}}finally{clearTimeout(timeout);}
  }
- useImperativeHandle(ref,()=>({start:()=>void start(),cancel:discard}));
- return <section className={`voice-capture voice-composer ${recording?'is-recording':''} ${busy?'is-transcribing':''}`} aria-label={t[0]}>
-  <div className="voice-caption"><span role="status">{busy?t[9]:recording?t[11]:t[0]}</span><span className="voice-timer" dir="ltr">0:{String(seconds).padStart(2,'0')}</span></div>
-  {ready===false?<p role="status">{t[12]}</p>:<div className="voice-bar"><button type="button" className="voice-cancel" aria-label={t[5]} title={t[5]} onClick={()=>{discard();onCancel();}}>×</button><div className="voice-wave" aria-hidden="true">{levels.map((height,index)=><i key={index} style={{height:height+'px'}}/>)}</div><button type="button" className="voice-finish" disabled={disabled||busy||(!recording&&ready===null)} aria-label={recording?t[2]:t[1]} title={recording?t[2]:t[1]} onClick={()=>recording?recorder.current?.stop():void start()}>{recording?<span className="finish-square"/>:<WorkspaceIcon name="voice"/>}</button></div>}
-  {error&&<p role="alert">{error}</p>}<p className="voice-privacy">{autoCopy[1]}</p><details className="voice-help"><summary>{t[0]} · {interfaceText(language,'التفاصيل','Details')}</summary><p>{autoCopy[0]}</p></details>
+ useImperativeHandle(ref,()=>({start:()=>{if(phaseRef.current==='idle'||phaseRef.current==='error')setRequested(true);},cancel:discard}));
+ const recording=phase==='recording',busy=phase==='transcribing',opening=phase==='starting'||(requested&&ready===null);
+ const status=ready===false?t[12]:busy?t[9]:opening?openingCopy[language]:recording?t[11]:t[0];
+ return <section className={`voice-capture voice-composer ${recording?'is-recording':''} ${busy?'is-transcribing':''}`} aria-label={t[0]} onKeyDown={event=>{if(event.key==='Escape'){event.preventDefault();event.stopPropagation();cancel();}}}>
+  <div className="voice-caption"><span role="status">{status}</span>{ready!==false&&<span className="voice-timer" dir="ltr">0:{String(seconds).padStart(2,'0')} / 0:45</span>}</div>
+  <div className="voice-bar"><button ref={cancelButton} type="button" className="voice-cancel" aria-label={t[5]} title={t[5]} onClick={cancel}>×</button><div className="voice-wave" aria-hidden="true">{levels.map((height,index)=><i key={index} style={{height:height+'px'}}/>)}</div><button ref={stopButton} type="button" className="voice-finish" disabled={disabled||busy||opening||ready!==true} aria-label={busy?t[9]:opening?openingCopy[language]:recording?t[2]:t[1]} title={recording?t[2]:t[1]} onClick={()=>recording?stop():void start()}>{busy||opening?<span className="voice-spinner"/>:recording?<span className="finish-square"/>:<WorkspaceIcon name="voice"/>}</button></div>
+  {error&&<p role="alert">{error==='mic'?t[7]:error==='length'?lengthCopy[language]:t[8]}</p>}
+  <details className="voice-help"><summary>{t[0]} · {interfaceText(language,'التفاصيل','Details')}</summary><p>{autoCopy[0]}</p><p>{autoCopy[1]}</p></details>
  </section>;
 });
