@@ -1,0 +1,28 @@
+{
+  "kind": "offline_browser_ui_check_not_live_verification",
+  "created_at": "2026-10-05T22:09:47.905073+00:00",
+  "build": "passed production build and TypeScript",
+  "new_paid_calls": 0,
+  "development_sar_before": 52.261540875,
+  "development_sar_after": 52.261540875,
+  "checks": {
+    "desktop_animation_visible": true,
+    "orbit_animation_active": true,
+    "pause_motion_disables_orbit_and_trail": true,
+    "long_wait_message_after_25_seconds": true,
+    "nine_languages_switch_without_overflow_at_390px": true,
+    "arabic_rtl_layout": true,
+    "phone_submission_scrolls_to_panel": true,
+    "result_clears_loader": true,
+    "error_clears_loader_and_preserves_question": true,
+    "phone_error_is_visible_and_retry_enabled": true,
+    "temporary_viewport_reset": true
+  },
+  "implementation_limits": [
+    "Indeterminate animation, not server stage telemetry or a percentage.",
+    "Source search, context and answer labels describe the workflow; there are no timed completed-step claims.",
+    "Operating-system reduced motion follows the existing global CSS rule; the app pause control was exercised in-browser.",
+    "Verification API and model behavior unchanged. No live verification, translation or media calls were used for this UI check."
+  ],
+  "fixtures": "Temporary localhost proxy intercepted every /api/ route; delayed saved response and simulated error, never forwarded verification."
+}
