@@ -223,3 +223,31 @@ counter stayed zero. Simulated fixture code is outside the production project.
 No actual microphone capture, provider transcription or verification was performed.
 The recording screenshot is explicitly labelled simulated. Live microphone/browser
 compatibility and provider accuracy remain for the user's deferred real-API pass.
+
+## Unified composer and phone camera — 5 October
+
+Replaced the Text/Voice/Image tabs with a rounded, growing question box. Image
+attachment, microphone and send controls sit along its bottom edge; dictation
+reuses that same footer. Source and input-language settings remain in a compact
+disclosure below the box. Icon controls retain translated accessible names.
+
+Desktop attachment opens the image picker directly. On narrow or touch screens,
+the plus button offers Choose an image and Take a photo. The latter uses the
+browser's image capture input with a rear-camera preference. Both routes reuse
+the existing image preview, size/type validation and explicit Read image step;
+selecting an image does not automatically call OCR or verification.
+
+Validation: 17 focused dictation, voice, image and mocked image-route tests passed;
+production build and TypeScript passed. In the isolated browser fixture, the native
+image picker displayed a local test PNG while preserving the typed draft and
+making no POST request. Simulated dictation inserted text into that same draft
+with one start/stop/transcription and no unexpected requests. At 390 CSS pixels,
+all nine display languages translated both attachment choices, with no horizontal
+overflow and the menu inside the viewport. Escape closed the menu and restored
+focus to the plus button. The camera input's environment capture preference was
+checked, but physical phone capture has not been tested.
+
+No real camera/microphone capture, OCR, transcription provider or verification
+test was performed. Native camera behavior depends on the phone/browser and
+remains part of the deferred live-device check. This change does not modify the
+verification engine, corpus, provider settings or competition benchmark results.

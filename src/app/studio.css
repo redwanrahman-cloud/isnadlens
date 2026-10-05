@@ -420,3 +420,44 @@ html[data-motion=paused] .studio *,html[data-motion=paused] .studio *::before,ht
 .studio .voice-spinner{width:17px;height:17px;border:2px solid currentColor;border-inline-end-color:transparent;border-radius:50%;animation:voice-wait 1s linear infinite}
 .studio .studio-editor[data-voice=open] textarea:focus-visible{outline:none}
 @media(prefers-reduced-motion:reduce){.studio .voice-spinner{animation:none}}
+
+/* One chat composer: typing above, attachments and dictation in the bottom row. */
+.studio .chat-composer{border-radius:24px;border:1px solid #bdcec4;background:#fff;box-shadow:0 5px 24px #103e2d0b}
+.studio .chat-composer .studio-editor textarea{min-height:140px;max-height:300px;padding:22px 22px 8px;font-size:17px;line-height:1.65;resize:none;background:transparent;border-radius:22px 22px 0 0}
+.studio .chat-composer .studio-editor textarea:focus-visible{outline:none;box-shadow:none}
+.studio .chat-composer .composer-bottom{padding:8px 14px 12px;min-height:72px}
+.studio .composer-idle-actions{display:flex;align-items:center;gap:10px;min-height:48px}
+.studio .composer-send-actions{margin-inline-start:auto;display:flex;gap:8px;align-items:center}
+.studio .composer-icon,.studio .composer-send{display:grid;place-items:center;width:44px;height:44px;min-width:44px;padding:0;border:0;border-radius:50%;margin:0;color:#24553e;background:transparent}
+.studio .composer-icon:hover:not(:disabled){background:#e7f1ea}
+.studio .composer-mic{background:#edf3ef}
+.studio .composer-send{background:#006b50;color:white;box-shadow:0 2px 6px #006b5020}
+.studio .composer-send:hover:not(:disabled){background:#004e3b}
+.studio .composer-send:disabled{opacity:1;background:#e3ebe6;color:#7c8e81;box-shadow:none}
+.studio .composer-count{font-size:11px;color:#66786d;font-variant-numeric:tabular-nums}
+.studio .composer-settings{border:0;background:transparent;padding:0 4px;margin-top:6px}
+.studio .composer-settings>summary{font-size:12px;padding-block:8px}
+.studio .composer-settings[open]{padding:0 14px 10px;background:#eef4ef;border-radius:12px}
+.studio .composer-source-setting{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.studio .composer-dictation .voice-composer{margin:0;padding:0;background:none;border:0;color:#254535;border-radius:0}
+.studio .composer-dictation .voice-caption{margin-bottom:3px;color:#235c40;font-size:11px}
+.studio .composer-dictation .voice-timer{color:#4c6f58}
+.studio .composer-dictation .voice-bar{min-height:44px;gap:12px}
+.studio .composer-dictation .voice-wave i{background:#158057}
+.studio .composer-dictation .voice-cancel{background:#edf3ef;border:0;color:#335a43}
+.studio .composer-dictation .voice-finish{background:#006b50;color:white;border-color:#006b50}
+.studio .composer-dictation .voice-finish:disabled{background:#e3ebe6;color:#476c55;border-color:#d6e3d9}
+.studio .studio-content .composer-dictation .voice-composer .voice-help summary{color:#4c6c57;font-size:10px;padding:1px 0;min-height:20px}
+.studio .studio-content .composer-dictation .voice-composer .voice-help p,.studio .studio-content .composer-dictation .voice-composer p[role=alert]{color:#79522a}
+.studio .chat-composer .image-attachment{margin:12px 12px 0!important;padding:12px;border:1px solid #d2e0d6;border-radius:14px;background:#f3f7f4}
+.studio .attachment-heading{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.studio .attachment-heading h3{font-size:13px;margin:0;overflow-wrap:anywhere;min-width:0}
+.studio .attachment-heading>button{width:32px;height:32px;flex:none;border:0;border-radius:50%;background:#e5eee8;color:#24573c;font-size:22px}
+.studio .image-attachment>img{max-height:140px!important;border-radius:8px}
+.studio .image-attachment button:not(.attachment-heading>button){border:1px solid #b9cebf;background:white;border-radius:8px;color:#285a3c;min-height:38px;padding:7px 11px;font-size:12px;margin:4px}
+.studio .image-attachment .context-note{font-size:11px;line-height:1.6;margin-block:8px}
+@media(max-width:700px){.studio .chat-composer{border-radius:22px}.studio .chat-composer .studio-editor textarea{padding:19px 18px 8px;min-height:130px;font-size:16px}.studio .chat-composer .composer-bottom{padding-inline:12px}}
+.studio .chat-composer .composer-bottom{position:relative}
+.studio .composer-attachment-menu{position:absolute;bottom:64px;inset-inline-start:12px;max-width:calc(100% - 24px);z-index:3;padding:6px;background:#fff;border:1px solid #c7d8cc;border-radius:14px;box-shadow:0 8px 24px #103e2d1f}
+.studio .composer-attachment-menu button{display:flex;align-items:center;gap:10px;padding:10px 14px;min-height:44px;width:100%;border:0;border-radius:9px;background:white;color:#24583c;font-size:13px;text-align:start}
+.studio .composer-attachment-menu button:hover{background:#edf5ef}
