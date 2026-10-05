@@ -1,0 +1,42 @@
+{
+  "kind": "media-interaction-regression",
+  "paidAIcalls": 0,
+  "playbackAndMicrophone": "simulated browser controls; not physical-device certification",
+  "liveRecitationMetadata": {
+    "loaded": true,
+    "duration": 33.123265,
+    "url": "https://everyayah.com/data/Alafasy_64kbps/003159.mp3"
+  },
+  "cases": [
+    {
+      "width": 1440,
+      "oneTapDefaultMaleCloudVoice": true,
+      "automaticPlayback": true,
+      "cachedReplay": true,
+      "automaticDeviceDefaultFallback": true,
+      "recordedRecitationSeparate": true,
+      "dictationStartsOnTab": true,
+      "waveformReflectsSimulatedMicrophoneLevel": true,
+      "questionBoxHiddenWhileRecording": true,
+      "cancelDoesNotUpload": true,
+      "failedTranscriptionKeepsTyping": true,
+      "noAutomaticVerification": true,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "oneTapDefaultMaleCloudVoice": true,
+      "automaticPlayback": true,
+      "cachedReplay": true,
+      "automaticDeviceDefaultFallback": true,
+      "recordedRecitationSeparate": true,
+      "dictationStartsOnTab": true,
+      "waveformReflectsSimulatedMicrophoneLevel": true,
+      "questionBoxHiddenWhileRecording": true,
+      "cancelDoesNotUpload": true,
+      "failedTranscriptionKeepsTyping": true,
+      "noAutomaticVerification": true,
+      "errors": []
+    }
+  ]
+}

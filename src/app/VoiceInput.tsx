@@ -1,5 +1,6 @@
 'use client';
-import {useEffect,useRef,useState} from 'react';
+import {useEffect,useRef,useState,useImperativeHandle,forwardRef} from 'react';
+import {WorkspaceIcon} from './components/WorkspaceIcon';
 import type {ClaimInputSelection,ClaimLanguage} from '@/lib/claim-language';
 const words:Record<ClaimLanguage,string[]>={
  en:['Voice input','Record','Stop','Transcribe','Use this text','Discard','Review and edit before verification. Recording is limited to 45 seconds. Google receives audio only when you press Transcribe; its free service may use audio to improve its products. Avoid private information.','Microphone or recording is unavailable. You can still type.','Speech could not be transcribed. Try a shorter, clearer recording or type.','Transcribing…','Review the transcript','Recording…','Free voice input is unavailable. You can still type.'],
@@ -11,30 +12,54 @@ const words:Record<ClaimLanguage,string[]>={
  es:['Entrada de voz','Grabar','Detener','Transcribir','Usar este texto','Descartar','Revisa el texto antes de verificar. Máximo 45 segundos. El audio se envía a Google solo al pulsar Transcribir; el servicio gratuito puede usarlo para mejorar sus productos. Evita información privada.','Micrófono o grabación no disponible. Puedes escribir.','No se pudo transcribir. Graba más breve y claro o escribe.','Transcribiendo…','Revisar transcripción','Grabando…','Entrada de voz gratuita no disponible. Puedes escribir.'],
  fr:['Saisie vocale','Enregistrer','Arrêter','Transcrire','Utiliser ce texte','Supprimer','Relisez avant vérification. Maximum 45 secondes. Google reçoit le son uniquement après Transcrire ; le service gratuit peut l’utiliser pour améliorer ses produits. Évitez les informations privées.','Microphone ou enregistrement indisponible. Vous pouvez écrire.','Transcription impossible. Enregistrez plus brièvement et clairement ou écrivez.','Transcription…','Relire la transcription','Enregistrement…','Saisie vocale gratuite indisponible. Vous pouvez écrire.'],
  de:['Spracheingabe','Aufnehmen','Stoppen','Transkribieren','Diesen Text verwenden','Verwerfen','Vor der Prüfung den Text kontrollieren. Höchstens 45 Sekunden. Audio wird erst bei Transkribieren an Google gesendet; der kostenlose Dienst kann es zur Produktverbesserung nutzen. Keine privaten Angaben.','Mikrofon oder Aufnahme nicht verfügbar. Sie können tippen.','Transkription fehlgeschlagen. Kürzer und deutlicher aufnehmen oder tippen.','Transkription…','Transkript prüfen','Aufnahme…','Kostenlose Spracheingabe nicht verfügbar. Sie können tippen.']};
-export function VoiceInput({language,inputLanguage,disabled,onText}:{language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>void}){
- const t=words[language];const [ready,setReady]=useState<boolean|null>(null);const [recording,setRecording]=useState(false);const [blob,setBlob]=useState<Blob|null>(null);const [url,setUrl]=useState('');const [transcript,setTranscript]=useState('');const [busy,setBusy]=useState(false);const [error,setError]=useState('');
+const automaticCopy:Record<ClaimLanguage,[string,string]>={
+ en:['Speak, then stop. Your words appear in the question box for editing before you examine the evidence.','Up to 45 seconds. Stopping sends the recording to Google for transcription; its free service may use audio to improve its products.'],
+ ar:['تحدث ثم اضغط إيقاف. يوضع النص تلقائياً في السؤال لتعديله قبل الفحص.','45 ثانية كحد أقصى. عند الإيقاف يُرسل التسجيل إلى Google لتحويله إلى نص؛ قد تستخدم الخدمة المجانية الصوت لتحسين منتجاتها.'],
+ bn:['কথা বলুন, তারপর থামান। যাচাইয়ের আগে সম্পাদনার জন্য আপনার কথা প্রশ্নের ঘরে আসবে।','সর্বোচ্চ ৪৫ সেকেন্ড। থামালে রেকর্ডিং Google-এ পাঠানো হয়; বিনামূল্যের পরিষেবা পণ্য উন্নয়নে অডিও ব্যবহার করতে পারে।'],
+ hi:['बोलें, फिर रोकें। जाँच से पहले संपादन के लिए आपके शब्द प्रश्न में आ जाएँगे।','अधिकतम 45 सेकंड। रोकने पर रिकॉर्डिंग Google को भेजी जाती है; निःशुल्क सेवा उत्पाद सुधार के लिए ऑडियो उपयोग कर सकती है।'],
+ ur:['بولیں، پھر روکیں۔ جانچ سے پہلے ترمیم کے لیے آپ کے الفاظ سوال میں آ جائیں گے۔','زیادہ سے زیادہ 45 سیکنڈ۔ روکنے پر ریکارڈنگ Google کو بھیجی جاتی ہے؛ مفت خدمت مصنوعات بہتر بنانے کے لیے آڈیو استعمال کر سکتی ہے۔'],
+ id:['Bicara, lalu berhenti. Kata-kata Anda masuk ke kotak pertanyaan untuk diedit sebelum memeriksa bukti.','Maksimal 45 detik. Saat berhenti, rekaman dikirim ke Google untuk transkripsi; layanan gratis dapat memakai audio untuk meningkatkan produk.'],
+ es:['Habla y detén la grabación. Tus palabras aparecerán en la pregunta para editarlas antes de examinar las pruebas.','Hasta 45 segundos. Al detener, Google recibe la grabación para transcribirla; su servicio gratuito puede usar el audio para mejorar sus productos.'],
+ fr:['Parlez, puis arrêtez. Vos mots apparaîtront dans la question pour être relus avant l’examen des preuves.','45 secondes maximum. À l’arrêt, l’enregistrement est envoyé à Google ; son service gratuit peut utiliser le son pour améliorer ses produits.'],
+ de:['Sprechen, dann stoppen. Ihre Worte erscheinen im Fragefeld zur Bearbeitung vor der Belegprüfung.','Bis zu 45 Sekunden. Beim Stoppen wird die Aufnahme zur Transkription an Google gesendet; der kostenlose Dienst kann Audio zur Produktverbesserung verwenden.']
+};
+export type VoiceInputHandle={start:()=>void};
+export const VoiceInput=forwardRef<VoiceInputHandle,{language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>void;onCancel:()=>void}>(function VoiceInput({language,inputLanguage,disabled,onText,onCancel}:{language:ClaimLanguage;inputLanguage:ClaimInputSelection;disabled:boolean;onText:(text:string)=>void;onCancel:()=>void},ref){
+ const t=words[language],autoCopy=automaticCopy[language];const [ready,setReady]=useState<boolean|null>(null);const [recording,setRecording]=useState(false);const [blob,setBlob]=useState<Blob|null>(null);const [busy,setBusy]=useState(false);const [error,setError]=useState('');const [seconds,setSeconds]=useState(0);const [levels,setLevels]=useState<number[]>(Array(42).fill(3));
+ const meter=useRef<AudioContext|null>(null);const animation=useRef(0);const startedAt=useRef(0);const elapsedTimer=useRef<ReturnType<typeof setInterval>|null>(null);
  const recorder=useRef<MediaRecorder|null>(null);const stream=useRef<MediaStream|null>(null);const timer=useRef<ReturnType<typeof setTimeout>|null>(null);const controller=useRef<AbortController|null>(null);const generation=useRef(0);const starting=useRef(false);
- function release(){if(timer.current)clearTimeout(timer.current);timer.current=null;stream.current?.getTracks().forEach(track=>track.stop());stream.current=null;}
- function discard(){generation.current++;controller.current?.abort();if(recorder.current){recorder.current.onstop=null;if(recorder.current.state!=='inactive')recorder.current.stop();}release();starting.current=false;setRecording(false);setBusy(false);setBlob(null);setTranscript('');setError('');}
+ function release(){cancelAnimationFrame(animation.current);if(elapsedTimer.current)clearInterval(elapsedTimer.current);elapsedTimer.current=null;void meter.current?.close().catch(()=>{});meter.current=null;if(timer.current)clearTimeout(timer.current);timer.current=null;stream.current?.getTracks().forEach(track=>track.stop());stream.current=null;}
+ function discard(){generation.current++;controller.current?.abort();if(recorder.current){recorder.current.onstop=null;if(recorder.current.state!=='inactive')recorder.current.stop();}release();starting.current=false;setRecording(false);setBusy(false);setBlob(null);setSeconds(0);setLevels(Array(42).fill(3));setError('');}
  useEffect(()=>{const c=new AbortController();fetch('/api/transcribe',{signal:c.signal}).then(r=>r.json()).then(data=>setReady(Boolean(data.available))).catch(()=>{if(!c.signal.aborted)setReady(false);});return()=>c.abort();},[]);
- useEffect(()=>{if(!blob){setUrl('');return;}const u=URL.createObjectURL(blob);setUrl(u);return()=>URL.revokeObjectURL(u);},[blob]);
- useEffect(()=>{if(disabled)discard();},[disabled]); // Prevent a recording competing with an active verification.
+
+ useEffect(()=>{if(disabled)discard();},[disabled]);
+ useEffect(()=>{if(ready===false)discard();},[ready]); // Prevent a recording competing with an active verification.
  useEffect(()=>()=>{generation.current++;controller.current?.abort();if(recorder.current){recorder.current.onstop=null;if(recorder.current.state!=='inactive')recorder.current.stop();}release();},[]);
  async function start(){
-  if(starting.current||recording||busy||disabled)return;discard();starting.current=true;const epoch=generation.current;
+  if(starting.current||recording||busy||ready===false)return;discard();starting.current=true;const epoch=generation.current;
   try{
    if(!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder==='undefined')throw new Error('unsupported');
+   try{meter.current=new AudioContext();void meter.current.resume().catch(()=>{});}catch{/* Recording can work even when the level meter is unavailable. */}
    const media=await navigator.mediaDevices.getUserMedia({audio:true});if(epoch!==generation.current){media.getTracks().forEach(track=>track.stop());return;}stream.current=media;
    const mime=['audio/webm;codecs=opus','audio/mp4','audio/ogg;codecs=opus'].find(type=>MediaRecorder.isTypeSupported(type));if(!mime)throw new Error('unsupported');
    const r=new MediaRecorder(media,{mimeType:mime,audioBitsPerSecond:32000});recorder.current=r;const chunks:Blob[]=[];let size=0;
    r.ondataavailable=e=>{if(e.data.size){chunks.push(e.data);size+=e.data.size;if(size>1_000_000&&r.state!=='inactive')r.stop();}};
-   r.onerror=()=>{discard();setError(t[7]);};r.onstop=()=>{release();setRecording(false);if(epoch!==generation.current)return;const audio=new Blob(chunks,{type:r.mimeType});if(!audio.size||audio.size>1_000_000)setError(t[8]);else setBlob(audio);};
-   r.start(1000);setRecording(true);timer.current=setTimeout(()=>{if(r.state!=='inactive')r.stop();},45000);
-  }catch{release();setError(t[7]);}finally{starting.current=false;}
+   r.onerror=()=>{discard();setError(t[7]);};r.onstop=()=>{release();setRecording(false);if(epoch!==generation.current)return;const audio=new Blob(chunks,{type:r.mimeType});if(!audio.size||audio.size>1_000_000)setError(t[8]);else {setBlob(audio);void transcribe(audio);}};
+   r.start(1000);setRecording(true);startedAt.current=Date.now();elapsedTimer.current=setInterval(()=>setSeconds(Math.floor((Date.now()-startedAt.current)/1000)),250);
+   try{if(meter.current){const analyser=meter.current.createAnalyser();analyser.fftSize=256;meter.current.createMediaStreamSource(media).connect(analyser);const samples=new Uint8Array(analyser.fftSize);let last=0;
+   const draw=(time:number)=>{if(epoch!==generation.current||r.state!=='recording')return;if(time-last>75){last=time;analyser.getByteTimeDomainData(samples);const rms=Math.sqrt(samples.reduce((sum,value)=>sum+((value-128)/128)**2,0)/samples.length);const height=Math.min(38,Math.max(3,rms*160));setLevels(previous=>[...previous.slice(1),height]);}animation.current=requestAnimationFrame(draw);};animation.current=requestAnimationFrame(draw);}}
+   catch{/* No animated substitute: a flat meter indicates that live levels are unavailable. */}
+   timer.current=setTimeout(()=>{if(r.state!=='inactive')r.stop();},45000);
+  }catch{if(epoch===generation.current){release();setError(t[7]);}}finally{if(epoch===generation.current)starting.current=false;}
  }
- async function transcribe(){if(!blob||busy)return;setBusy(true);setError('');const c=new AbortController();controller.current=c;const epoch=generation.current;
-  try{const response=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':blob.type,'x-claim-language':inputLanguage},body:blob,signal:c.signal});const data=await response.json();if(!response.ok||typeof data.transcript!=='string'||!data.transcript.trim()||data.transcript.length>1200)throw new Error('failed');if(epoch===generation.current)setTranscript(data.transcript);}
+ async function transcribe(audio:Blob){if(busy)return;setBusy(true);setError('');const c=new AbortController();controller.current=c;const epoch=generation.current;
+  try{const response=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':audio.type,'x-claim-language':inputLanguage},body:audio,signal:c.signal});const data=await response.json();if(!response.ok||typeof data.transcript!=='string'||!data.transcript.trim()||data.transcript.length>1200)throw new Error('failed');if(epoch===generation.current)onText(data.transcript);}
   catch{if(!c.signal.aborted&&epoch===generation.current)setError(t[8]);}finally{if(epoch===generation.current)setBusy(false);}
  }
- return <section style={{marginBlock:'1rem',maxWidth:'100%'}} aria-label={t[0]}><h3>{t[0]}</h3><p className="context-note">{t[6]}</p>{ready===false?<p role="status">{t[12]}</p>:<><button type="button" disabled={!ready||disabled||busy} onClick={()=>recording?recorder.current?.stop():void start()}>{recording?t[2]:t[1]}</button>{recording&&<span role="status"> {t[11]}</span>}{blob&&<><audio controls src={url||undefined} style={{display:'block',width:'100%',marginBlock:8}}/><button type="button" disabled={busy||disabled} onClick={()=>void transcribe()}>{busy?t[9]:t[3]}</button></>}{(blob||recording||busy)&&<button type="button" onClick={discard}>{t[5]}</button>}{transcript&&<><label style={{display:'block'}}>{t[10]}<textarea value={transcript} onChange={e=>setTranscript(e.target.value)} maxLength={1200} dir="auto" style={{minHeight:100,width:'100%'}}/></label><button type="button" disabled={disabled||!transcript.trim()} onClick={()=>{onText(transcript);discard();}}>{t[4]}</button></>}</>}{error&&<p role="alert">{error}</p>}</section>;
-}
+ useImperativeHandle(ref,()=>({start:()=>void start()}));
+ return <section className={`voice-capture voice-composer ${recording?'is-recording':''} ${busy?'is-transcribing':''}`} aria-label={t[0]}>
+  <div className="voice-caption"><span role="status">{busy?t[9]:recording?t[11]:t[0]}</span><span className="voice-timer" dir="ltr">0:{String(seconds).padStart(2,'0')}</span></div>
+  {ready===false?<p role="status">{t[12]}</p>:<div className="voice-bar"><button type="button" className="voice-cancel" aria-label={t[5]} title={t[5]} onClick={()=>{discard();onCancel();}}>×</button><div className="voice-wave" aria-hidden="true">{levels.map((height,index)=><i key={index} style={{height:height+'px'}}/>)}</div><button type="button" className="voice-finish" disabled={disabled||busy||(!recording&&ready===null)} aria-label={recording?t[2]:t[1]} title={recording?t[2]:t[1]} onClick={()=>recording?recorder.current?.stop():void start()}>{recording?<span className="finish-square"/>:<WorkspaceIcon name="voice"/>}</button></div>}
+  {error&&<p role="alert">{error}</p>}<details className="voice-help"><summary>{t[0]} · {language==='ar'?'التفاصيل':'Details'}</summary><p>{autoCopy[0]}</p><small>{autoCopy[1]}</small></details>
+ </section>;
+});

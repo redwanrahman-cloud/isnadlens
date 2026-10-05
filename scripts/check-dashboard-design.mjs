@@ -18,10 +18,10 @@ try{for(const width of [1440,1037,768,390,320]){
  await page.locator('#claim').fill(source.quran.original_claim);if(await page.locator('.checked-example').count())throw Error('EXAMPLE_MISTAKEN_FOR_TYPED_QUERY');await page.getByRole('button',{name:'Examine the evidence',exact:true}).click();await page.locator('.result-content').waitFor();
  await page.getByRole('region',{name:'Evidence map',exact:true}).waitFor();
  if((await page.locator('.evidence-card blockquote').first().textContent())!==source.quran.evidence_items[0].quotation)throw Error('SOURCE_MUTATED');
- if(await page.locator('.verdict h2').textContent()!==source.quran.summary_en)throw Error('SUMMARY_MUTATED');
+ if(await page.locator('.verdict .answer-text').textContent()!==source.quran.summary_en)throw Error('SUMMARY_MUTATED');
  const firstTranslation=page.locator('.passage-translation').first();await firstTranslation.locator('select').selectOption('en');await firstTranslation.getByRole('blockquote').waitFor();
  if(!await firstTranslation.getByRole('blockquote').textContent())throw Error('TRANSLATION_EMPTY');
- await page.locator('.verdict .speech-reader>summary').click();await page.locator('.verdict .speech-controls').waitFor();
+ await page.locator('.verdict .speech-controls button').waitFor();if(await page.locator('.speech-controls select').count())throw Error('VOICE_PICKER_REMAINS');await page.locator('.evidence-card .recitation-player').first().waitFor();
  await page.getByRole('button',{name:'Create share card',exact:true}).click();const dialog=page.getByRole('dialog');await dialog.waitFor();await dialog.locator('img').waitFor();
  if(!await dialog.locator('img').getAttribute('src'))throw Error('SHARE_PREVIEW');
  const downloadPromise=page.waitForEvent('download');await dialog.getByRole('button',{name:'Download PNG',exact:true}).click();const file=await downloadPromise;await file.saveAs(`${out}/share-${width}.png`);

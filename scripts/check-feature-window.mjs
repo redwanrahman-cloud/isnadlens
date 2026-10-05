@@ -28,8 +28,8 @@ try {
     await page.getByRole('button',{name:'Examine the evidence',exact:false}).click();
     const downloadPromise=page.waitForEvent('download');
     await page.getByRole('button',{name:'Download evidence receipt',exact:true}).click();
-    const download=await downloadPromise;await download.saveAs(`${directory}/receipt-${viewport.width}.txt`);
-    if(!readFileSync(`${directory}/receipt-${viewport.width}.txt`,'utf8').includes(referral.original_claim))throw new Error('RECEIPT_ORIGINAL_MISSING');
+    const download=await downloadPromise;await download.saveAs(`${directory}/receipt-${viewport.width}.pdf`);
+    if(readFileSync(`${directory}/receipt-${viewport.width}.pdf`).subarray(0,5).toString()!=='%PDF-')throw new Error('RECEIPT_ORIGINAL_MISSING');
     await page.locator('.result-content a.primary-button').click();
     await page.waitForURL('http://127.0.0.1:3100/');
     await page.waitForFunction(claim=>document.querySelector('#claim')?.value===claim,referral.original_claim);

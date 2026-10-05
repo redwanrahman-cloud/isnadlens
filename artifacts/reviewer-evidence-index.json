@@ -38,14 +38,21 @@
     "daily_companion_tools": "artifacts/feature-window-browser-2026-10-05.json",
     "paid_calls_for_current_convenience_increment": 0,
     "limit": "Mocked UI journeys and live feature controls are separate from semantic accuracy.",
-    "dashboard_design": "artifacts/dashboard-design-2026-10-05.json"
+    "dashboard_design": "artifacts/dashboard-design-2026-10-05.json",
+    "audio_interactions": "artifacts/media-polish-2026-10-05.json",
+    "pdf_receipts": "artifacts/receipt-pdf-2026-10-05.json",
+    "latest_targeted_unit_checks": {
+      "passed": 14,
+      "files": 3,
+      "scope": "Receipt escaping, recitation locators, preserved receipt content and speech utilities; separate from the earlier full-suite result."
+    }
   },
   "working_features": [
     "Nine input/display languages",
     "Quran/Hadith source verification",
-    "Reviewed voice and image input",
-    "Read-aloud",
-    "Recent checks and source receipts",
+    "Automatic voice dictation and reviewed image input",
+    "One-tap default read-aloud and recorded Quran recitation",
+    "Recent checks and branded PDF evidence receipts",
     "Scoped Umrah/Hajj companion",
     "Manual progress counters",
     "Prayer times and countdown",

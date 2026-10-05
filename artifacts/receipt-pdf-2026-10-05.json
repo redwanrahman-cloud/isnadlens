@@ -1,0 +1,10 @@
+{
+  "kind": "branded-pdf-receipt-validation",
+  "paidAIcalls": 0,
+  "pages": 10,
+  "questionPreserved": true,
+  "explanationPreserved": true,
+  "recordSealPreserved": true,
+  "arabicExtractable": true,
+  "visualReview": "All ten rendered pages inspected; Arabic joining, quotations, logo, margins and numbered footers legible."
+}

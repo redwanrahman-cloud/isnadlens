@@ -1,0 +1,33 @@
+import {chromium} from '@playwright/test';
+import {mkdirSync,writeFileSync} from 'node:fs';
+mkdirSync('artifacts/private/media-polish',{recursive:true});
+const browser=await chromium.launch({headless:true,channel:'chrome'});const cases=[];
+try{for(const width of [1440,390]){
+ const context=await browser.newContext({viewport:{width,height:900}});
+ await context.addInitScript(()=>{
+  window.mediaProof={plays:[],utterances:[],stops:0,tracks:0};
+  HTMLMediaElement.prototype.play=async function(){window.mediaProof.plays.push(this.src);};HTMLMediaElement.prototype.pause=function(){window.mediaProof.stops++;};
+  window.SpeechSynthesisUtterance=class{constructor(text){this.text=text;}};
+  Object.defineProperty(window,'speechSynthesis',{value:{cancel(){window.mediaProof.stops++;},getVoices(){return [{lang:'en-US',name:'Other',localService:true,default:false},{lang:'en-US',name:'Device default',localService:true,default:true}];},speak(u){window.mediaProof.utterances.push({text:u.text,lang:u.lang,voice:u.voice?.name});}}});
+  Object.defineProperty(navigator,'mediaDevices',{configurable:true,value:{getUserMedia:async()=>({getTracks:()=>[{stop(){window.mediaProof.tracks++;}}]})}});
+  window.AudioContext=class{resume(){return Promise.resolve();}close(){return Promise.resolve();}createMediaStreamSource(){return {connect(){}};}createAnalyser(){return {fftSize:256,getByteTimeDomainData(values){values.fill(160);}};}};
+  window.MediaRecorder=class{state='inactive';mimeType='audio/webm';static isTypeSupported(){return true;}start(){this.state='recording';}stop(){this.state='inactive';this.ondataavailable?.({data:new Blob(['simulated'],{type:'audio/webm'})});this.onstop?.();}};
+ });
+ const page=await context.newPage();let speechRequests=0;let fail=false;let voicePayload;let transcriptions=0;let verifications=0;const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.route('**/api/speech',r=>{if(r.request().method()==='GET')return r.fulfill({json:{available:true}});speechRequests++;voicePayload=r.request().postDataJSON();return fail?r.fulfill({status:429,json:{error:'quota'}}):r.fulfill({contentType:'audio/wav',body:Buffer.from('simulated wav')});});
+ await page.route('**/api/transcribe',r=>{if(r.request().method()==='GET')return r.fulfill({json:{available:true}});transcriptions++;return r.fulfill({status:503,json:{error:'unavailable'}});});
+ await page.route('**/api/verify',r=>{verifications++;return r.fulfill({status:503});});
+ await page.goto('http://127.0.0.1:3100/');await page.locator('#display-language').selectOption('en');
+ const reader=page.locator('.sample-answer .speech-reader');await reader.getByRole('button',{name:'Listen',exact:true}).click();await reader.getByRole('button',{name:'Stop',exact:true}).waitFor();await page.waitForFunction(()=>mediaProof.plays.length>0);
+ if(speechRequests!==1||voicePayload.voice!=='Algieba'||(await page.evaluate(()=>mediaProof.plays)).length!==1||await reader.locator('select').count())throw Error('ONE_TAP_DEFAULT_AUDIO');
+ await reader.getByRole('button',{name:'Stop',exact:true}).click();await reader.getByRole('button',{name:'Listen',exact:true}).click();await reader.getByRole('button',{name:'Stop',exact:true}).waitFor();if(speechRequests!==1)throw Error('NO_AUDIO_REUSE');
+ await page.locator('.sample-source .recitation-player button').click();if(!(await page.evaluate(()=>mediaProof.plays)).some(url=>url.endsWith('/003159.mp3'))||speechRequests!==1)throw Error('RECITATION_IS_NOT_SEPARATE');
+ fail=true;await page.reload();await page.locator('#display-language').selectOption('en');await page.locator('.sample-answer .speech-reader button').click();await page.waitForFunction(()=>mediaProof.utterances.length>0);if((await page.evaluate(()=>mediaProof.utterances[0])).voice!=='Device default')throw Error('NO_AUTOMATIC_DEVICE_FALLBACK');
+ await page.locator('.input-tabs').getByRole('button',{name:'Voice',exact:true}).click();const voice=page.getByRole('region',{name:'Voice input',exact:true});await voice.getByRole('button',{name:'Stop',exact:true}).waitFor();await page.waitForFunction(()=>Array.from(document.querySelectorAll('.voice-wave i')).some(bar=>parseFloat(bar.style.height)>3));if(await page.locator('#claim').isVisible())throw Error('DUPLICATE_TEXTBOX_DURING_RECORDING');if(await page.getByRole('button',{name:'Examine the evidence',exact:true}).isEnabled())throw Error('SUBMIT_DURING_RECORDING');await page.screenshot({path:`artifacts/private/media-polish/recording-${width}.png`,fullPage:false});await page.locator('.input-tabs').getByRole('button',{name:'Text',exact:true}).click();if(transcriptions!==0)throw Error('CANCEL_SENT_AUDIO');
+ await page.locator('.input-tabs').getByRole('button',{name:'Voice',exact:true}).click();await voice.getByRole('button',{name:'Stop',exact:true}).click();await voice.getByRole('alert').waitFor();if(transcriptions!==1||verifications)throw Error('ERROR_AUTO_VERIFIED');await page.locator('.input-tabs').getByRole('button',{name:'Text',exact:true}).click();await page.locator('#claim').fill('Typed question still works');if(errors.length)throw Error(errors.join('\n'));
+ cases.push({width,oneTapDefaultMaleCloudVoice:true,automaticPlayback:true,cachedReplay:true,automaticDeviceDefaultFallback:true,recordedRecitationSeparate:true,dictationStartsOnTab:true,waveformReflectsSimulatedMicrophoneLevel:true,questionBoxHiddenWhileRecording:true,cancelDoesNotUpload:true,failedTranscriptionKeepsTyping:true,noAutomaticVerification:true,errors});await context.close();
+}
+ // This check loads metadata from the real remote recording, rather than a mocked URL.
+ const page=await browser.newPage();await page.goto('http://127.0.0.1:3100/');await page.locator('#display-language').selectOption('en');const recording=await page.locator('.sample-source audio').evaluate(async audio=>{audio.preload='metadata';audio.load();return await new Promise(resolve=>{const timeout=setTimeout(()=>resolve({loaded:false,reason:'timeout'}),15000);audio.onloadedmetadata=()=>{clearTimeout(timeout);resolve({loaded:true,duration:audio.duration,url:audio.src});};audio.onerror=()=>{clearTimeout(timeout);resolve({loaded:false,reason:'media-error'});};});});if(!recording.loaded||recording.duration<=0)throw Error('REAL_RECITATION_METADATA_FAILED:'+JSON.stringify(recording));
+ mkdirSync('artifacts/private/media-polish',{recursive:true});const report={kind:'media-interaction-regression',paidAIcalls:0,playbackAndMicrophone:'simulated browser controls; not physical-device certification',liveRecitationMetadata:recording,cases};writeFileSync('artifacts/media-polish-2026-10-05.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+}finally{await browser.close();}

@@ -21,107 +21,29 @@ const cloudCopy:Record<DisplayLanguage,CloudCopy>={
  fr:{reader:'Voix de lecture',natural:'Voix naturelle Google',device:'Voix de l’appareil',preparing:'Préparation de l’audio…',unavailable:'La voix naturelle est temporairement indisponible. Utilisez la voix de l’appareil.',remote:'Google génère cet audio en ligne ; son service gratuit peut utiliser le texte pour améliorer ses produits.',play:'Lire l’audio préparé',voice:'Voix'},
  de:{reader:'Vorlesestimme',natural:'Natürliche Google-Stimme',device:'Gerätestimme',preparing:'Audio wird vorbereitet…',unavailable:'Die natürliche Stimme ist vorübergehend nicht verfügbar. Nutze die Gerätestimme.',remote:'Google erzeugt dieses Audio online; der kostenlose Dienst kann den Text zur Produktverbesserung verwenden.',play:'Vorbereitetes Audio abspielen',voice:'Stimme'},
 };
+
 let readiness:Promise<boolean>|undefined;
-export function SpeechPlayer(props:ReaderProps){
-  const [ready,setReady]=useState(false);const [mode,setMode]=useState<'natural'|'device'>('device');
-  const copy=cloudCopy[props.language];
-  useEffect(()=>{let mounted=true;readiness??=fetch('/api/speech').then(response=>response.ok?response.json():null).then(data=>Boolean(data?.available)).catch(()=>false);readiness.then(value=>{if(mounted){setReady(value);if(value)setMode('natural');}});return()=>{mounted=false;};},[]);
-  return <details className="speech-reader" style={{maxWidth:'100%'}}><summary><WorkspaceIcon name="voice"/>{passageVoiceCopy[props.language].listen}</summary><div>
-    {ready&&<label style={{display:'block',maxWidth:'100%'}}>{copy.reader}<select style={{display:'block',maxWidth:'100%'}} value={mode} onChange={event=>{window.dispatchEvent(new Event(cancelEvent));setMode(event.target.value as 'natural'|'device');}}><option value="natural">{copy.natural}</option><option value="device">{copy.device}</option></select></label>}
-    {mode==='natural'&&ready?<NaturalSpeechPlayer {...props}/>:<DeviceSpeechPlayer {...props}/>}
-  </div></details>;
-}
-function NaturalSpeechPlayer({text,spokenLanguage,language}:ReaderProps){
-  const [voice,setVoice]=useState('Achernar');const [url,setUrl]=useState('');const [preparing,setPreparing]=useState(false);const [failed,setFailed]=useState(false);
-  const audio=useRef<HTMLAudioElement|null>(null);const request=useRef<AbortController|null>(null);const generation=useRef(0);const retainedUrl=useRef('');const identity=useRef(Symbol('natural-speech'));
-  const copy=cloudCopy[language];const speechCopy=passageVoiceCopy[language];
-  useEffect(()=>{const cancel=(event?:Event)=>{if(event instanceof CustomEvent&&event.detail===identity.current)return;generation.current++;request.current?.abort();audio.current?.pause();setPreparing(false);};window.addEventListener(cancelEvent,cancel);return()=>{window.removeEventListener(cancelEvent,cancel);cancel();if(retainedUrl.current)URL.revokeObjectURL(retainedUrl.current);};},[]);
-  useEffect(()=>{generation.current++;request.current?.abort();audio.current?.pause();if(retainedUrl.current)URL.revokeObjectURL(retainedUrl.current);retainedUrl.current='';setUrl('');setPreparing(false);setFailed(false);},[text,spokenLanguage,voice]);
-  async function prepare(){
-    window.dispatchEvent(new Event(cancelEvent));if('speechSynthesis'in window)window.speechSynthesis.cancel();
-    const session=++generation.current;const controller=new AbortController();request.current=controller;setPreparing(true);setFailed(false);
-    try{
-      const response=await fetch('/api/speech',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,language:spokenLanguage.split(/[-_]/)[0],voice}),signal:controller.signal});
-      if(!response.ok||!response.headers.get('Content-Type')?.includes('audio/wav'))throw new Error('SPEECH_UNAVAILABLE');
-      const blob=await response.blob();if(generation.current!==session)return;
-      if(retainedUrl.current)URL.revokeObjectURL(retainedUrl.current);const next=URL.createObjectURL(blob);retainedUrl.current=next;setUrl(next);setPreparing(false);
-      // Keep native audio controls visible: mobile browsers may require a second user tap after async generation.
-    }catch{if(generation.current===session){setPreparing(false);setFailed(true);}}
-  }
-  return <div className="speech-controls" style={{maxWidth:'100%'}}>
-    <label style={{display:'block',maxWidth:'100%'}}>{copy.voice}<select style={{display:'block',maxWidth:'100%'}} value={voice} onChange={event=>setVoice(event.target.value)}><option value="Achernar">Achernar</option><option value="Algieba">Algieba</option><option value="Sulafat">Sulafat</option></select></label>
-    {!url&&<button type="button" onClick={preparing?()=>{generation.current++;request.current?.abort();setPreparing(false);}:prepare} disabled={!text.trim()||text.length>2400}>{preparing?speechCopy.stop:speechCopy.listen}</button>}
-    {preparing&&<p role="status">{copy.preparing}</p>}
-    {url&&<audio ref={audio} src={url} controls preload="metadata" aria-label={copy.play} style={{display:'block',width:'100%',maxWidth:'100%'}} onPlay={()=>{window.dispatchEvent(new CustomEvent(cancelEvent,{detail:identity.current}));if('speechSynthesis'in window)window.speechSynthesis.cancel();}}/>}
-    <small>{speechCopy.synthesizedNotRecitation}</small><small>{copy.remote}</small>
-    {(failed||text.length>2400)&&<p role="status">{copy.unavailable}</p>}
-  </div>;
-}
-function DeviceSpeechPlayer({text, spokenLanguage, language}: ReaderProps) {
-  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-  const [supported, setSupported] = useState(false);
-  const [playing, setPlaying] = useState(false);
-  const [failed, setFailed] = useState(false);
-  const [voiceURI, setVoiceURI] = useState('');
-  const owner = useRef(Symbol('speech'));
-  const generation = useRef(0);
-  const retainedUtterance = useRef<SpeechSynthesisUtterance | null>(null);
-  const copy = passageVoiceCopy[language];
-  useEffect(() => {
-    if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) return;
-    setSupported(true);
-    const synth = window.speechSynthesis;
-    const refresh = () => setVoices(synth.getVoices());
-    const cancelled = () => { generation.current++; retainedUtterance.current = null; setPlaying(false); };
-    refresh(); synth.addEventListener('voiceschanged', refresh);
-    window.addEventListener(cancelEvent, cancelled);
-    const identity = owner.current;
-    return () => {
-      synth.removeEventListener('voiceschanged', refresh); window.removeEventListener(cancelEvent, cancelled);
-      generation.current++;
-      if (currentOwner === identity) { synth.cancel(); currentOwner = undefined; }
-      retainedUtterance.current = null;
-    };
-  }, []);
-  useEffect(() => {
-    generation.current++; setPlaying(false); setFailed(false);
-    if (currentOwner === owner.current && 'speechSynthesis' in window) { window.speechSynthesis.cancel(); currentOwner = undefined; }
-    retainedUtterance.current = null;
-  }, [text, spokenLanguage]);
-  const available = matchingVoices(voices, spokenLanguage);
-  const selected = available.find(voice => voice.voiceURI === voiceURI) || available[0];
-  function stop() {
-    generation.current++; setPlaying(false); retainedUtterance.current = null;
-    if (currentOwner === owner.current) { window.speechSynthesis.cancel(); currentOwner = undefined; }
-  }
-  function start() {
-    if (!selected || !text.trim()) return;
-    // Cancellation and the first speak call stay inside the user gesture for mobile browsers.
-    window.dispatchEvent(new Event(cancelEvent));
-    window.speechSynthesis.cancel(); currentOwner = owner.current;
-    const session = ++generation.current;
-    const chunks = speechChunks(text); let index = 0;
-    setFailed(false); setPlaying(true);
-    function next() {
-      if (generation.current !== session || currentOwner !== owner.current) return;
-      if (index >= chunks.length) { setPlaying(false); retainedUtterance.current = null; currentOwner = undefined; return; }
-      const utterance = new SpeechSynthesisUtterance(chunks[index++]);
-      utterance.lang = selected.lang; utterance.voice = selected; utterance.rate = 0.95;
-      utterance.onend = next;
-      utterance.onerror = event => {
-        if (generation.current !== session) return;
-        setPlaying(false); setFailed(event.error !== 'canceled' && event.error !== 'interrupted');
-        retainedUtterance.current = null; if (currentOwner === owner.current) currentOwner = undefined;
-      };
-      retainedUtterance.current = utterance; window.speechSynthesis.speak(utterance);
-    }
-    next();
-  }
-  return <div className="speech-controls">
-    <button type="button" onClick={playing ? stop : start} disabled={!supported || !selected || !text.trim()}>{playing ? copy.stop : copy.listen}</button>
-    {available.length > 1 && <label style={{display:'block',maxWidth:'100%'}}>{copy.voice} <select style={{display:'block',maxWidth:'100%'}} value={selected?.voiceURI || ''} onChange={event => {stop(); setVoiceURI(event.target.value);}}>{available.map(voice => <option key={voice.voiceURI} value={voice.voiceURI}>{voice.name} · {voice.lang}</option>)}</select></label>}
-    <small>{copy.synthesizedNotRecitation}</small>
-    {selected && !selected.localService && <small>{copy.remoteVoiceNotice}</small>}
-    {(!supported || !selected || failed) && <p role="status">{copy.unavailableVoice}</p>}
-  </div>;
+export function SpeechPlayer({text,spokenLanguage,language}:ReaderProps){
+ const [ready,setReady]=useState(false);const [state,setState]=useState<'idle'|'preparing'|'playing'|'paused'|'failed'>('idle');
+ const audio=useRef<HTMLAudioElement>(null);const retainedUrl=useRef('');const request=useRef<AbortController|null>(null);const generation=useRef(0);const owner=useRef(Symbol('reader'));
+ const copy=cloudCopy[language],t=passageVoiceCopy[language];
+ function cancel(){generation.current++;request.current?.abort();audio.current?.pause();if(currentOwner===owner.current&&'speechSynthesis'in window)window.speechSynthesis.cancel();setState('idle');}
+ useEffect(()=>{let mounted=true;readiness??=fetch('/api/speech').then(r=>r.ok?r.json():null).then(d=>Boolean(d?.available)).catch(()=>false);readiness.then(v=>{if(mounted)setReady(v);});return()=>{mounted=false;};},[]);
+ useEffect(()=>{function other(e:Event){if(e instanceof CustomEvent&&e.detail===owner.current)return;cancel();}window.addEventListener(cancelEvent,other);return()=>{window.removeEventListener(cancelEvent,other);cancel();if(retainedUrl.current)URL.revokeObjectURL(retainedUrl.current);};},[]);
+ useEffect(()=>{cancel();if(retainedUrl.current)URL.revokeObjectURL(retainedUrl.current);retainedUrl.current='';audio.current?.removeAttribute('src');},[text,spokenLanguage]);
+ function device(session:number){
+  if(!('speechSynthesis'in window)){setState('failed');return;}
+  currentOwner=owner.current;const available=matchingVoices(window.speechSynthesis.getVoices(),spokenLanguage);const voice=available.find(v=>v.default)||available[0];const chunks=speechChunks(text);let index=0;
+  function next(){if(generation.current!==session||currentOwner!==owner.current)return;if(index===chunks.length){setState('idle');return;}const utterance=new SpeechSynthesisUtterance(chunks[index++]);utterance.lang=spokenLanguage;if(voice)utterance.voice=voice;utterance.rate=0.95;utterance.onend=next;utterance.onerror=()=>{if(generation.current===session)setState('failed');};setState('playing');window.speechSynthesis.speak(utterance);}next();
+ }
+ async function play(){
+  if(state==='preparing'||state==='playing'){cancel();return;}
+  window.dispatchEvent(new CustomEvent(cancelEvent,{detail:owner.current}));if('speechSynthesis'in window)window.speechSynthesis.cancel();currentOwner=owner.current;const session=++generation.current;
+  if(retainedUrl.current&&audio.current){try{await audio.current.play();setState('playing');}catch{setState('paused');}return;}
+  if(!ready||text.length>2400){device(session);return;}
+  setState('preparing');const c=new AbortController();request.current=c;
+  try{const r=await fetch('/api/speech',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,language:spokenLanguage.split(/[-_]/)[0],voice:'Algieba'}),signal:c.signal});if(!r.ok||!r.headers.get('Content-Type')?.includes('audio/wav'))throw new Error('unavailable');const blob=await r.blob();if(generation.current!==session)return;retainedUrl.current=URL.createObjectURL(blob);if(!audio.current)return;audio.current.src=retainedUrl.current;try{await audio.current.play();if(generation.current===session)setState('playing');}catch{if(generation.current===session)setState('paused');}}
+  catch{if(generation.current===session&&!c.signal.aborted)device(session);}
+ }
+ return <div className="speech-reader speech-controls"><button type="button" onClick={()=>void play()} disabled={!text.trim()}><WorkspaceIcon name="voice"/>{state==='playing'||state==='preparing'?t.stop:t.listen}</button><audio ref={audio} preload="none" onEnded={()=>setState('idle')} onError={()=>{if(state==='playing')device(generation.current);}}/>{state==='preparing'&&<small role="status">{copy.preparing}</small>}{state==='paused'&&<small role="status">{copy.play}</small>}{state==='failed'&&<small role="status">{t.unavailableVoice}</small>}<details className="reader-info"><summary>{language==='ar'?'عن الصوت':'About audio'}</summary><small>{t.synthesizedNotRecitation}</small>{ready&&<small>{copy.remote}</small>}</details></div>;
 }

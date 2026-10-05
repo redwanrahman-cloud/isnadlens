@@ -13,7 +13,8 @@
       "reload": true,
       "delete": true,
       "clear": true,
-      "textVoiceImageReviewedHandoffs": true,
+      "automaticVoiceHandoff": true,
+      "imageReviewedHandoff": true,
       "noAutomaticVerification": true,
       "overflow": false,
       "errors": []
@@ -26,7 +27,8 @@
       "reload": true,
       "delete": true,
       "clear": true,
-      "textVoiceImageReviewedHandoffs": true,
+      "automaticVoiceHandoff": true,
+      "imageReviewedHandoff": true,
       "noAutomaticVerification": true,
       "overflow": false,
       "errors": []

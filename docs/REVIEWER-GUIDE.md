@@ -21,7 +21,7 @@ Current preview: http://127.0.0.1:3100 (local prototype). A hosted competition U
 - Image: choose the **Image** tab, then **Choose an image**. Select or paste a screenshot or photographed quote, press **Read image**, select and edit the extracted claim, then **Use this claim**.
 - Both methods place reviewed text in the claim box. Press **Examine the evidence** when ready. Choosing a file or recording does not automatically verify it.
 
-Text, PNG/JPEG/WebP images and short recordings are supported. The free Google reader can pause at quota; typing remains available. Reading a screenshot extracts its claim rather than proving the photograph's authenticity.
+Text, PNG/JPEG/WebP images and short recordings are supported. Tap Voice to record, then Stop to place the transcription in the editable question. Tap Listen for automatic speech; Quran Arabic has a separate full-verse recitation control. Download evidence receipt produces a branded PDF. The free Google reader can pause at quota; typing remains available. Reading a screenshot extracts its claim rather than proving the photograph's authenticity.
 
 ## Recent checks
 

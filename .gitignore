@@ -12,3 +12,6 @@ data/quranenc/
 artifacts/hadeethenc-workbook-inspection.json
 artifacts/hadeethenc-validation.json
 artifacts/live-hadith-*.json
+
+tmp/
+output/pdf/
