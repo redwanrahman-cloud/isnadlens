@@ -14,7 +14,7 @@
     "satisfactory": 29,
     "total": 30,
     "sample_percentage": 96.7,
-    "presentation_headline": "Over 95% success in the latest verification benchmark (96.7% satisfactory responses in the tested sample)",
+    "presentation_headline": "365 distinct questions across10 documented development evaluation sets; latest frozen benchmark29/30 satisfactory (96.7%).",
     "religious_satisfactory": 26,
     "religious_total": 27,
     "correct_boundary_responses": 3,
@@ -63,5 +63,13 @@
     "Qibla bearing",
     "Responsive evidence workspace with visible evidence map and PNG share-card export"
   ],
-  "release_state": "Working local prototype; hosted URL and final submission pending"
+  "release_state": "Working local prototype; hosted URL and final submission pending",
+  "development_testing_coverage": {
+    "documented_distinct_question_texts": 365,
+    "major_evaluation_sets": 10,
+    "count_is_lower_bound": true,
+    "targeted_reruns_and_offline_checks": "Additional; not counted in this conservative total",
+    "current_version_accuracy_claim": false,
+    "artifact": "artifacts/cumulative-evaluation-history-2026-10-05.json"
+  }
 }

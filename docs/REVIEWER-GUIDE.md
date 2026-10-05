@@ -13,7 +13,7 @@ Current preview: http://127.0.0.1:3100 (local prototype). A hosted competition U
 5. The visible **Evidence map** connects the question, retrieved sources, available context and actual result. **Create share card** previews an explicitly labelled excerpt, downloads a PNG or copies text.
 6. **Download evidence receipt** saves the displayed question, answer and sources. **Save this check on this device** keeps a historical receipt and the question in this browser.
 
-**Over 95% success in the latest verification benchmark: 96.7% satisfactory responses.** The recorded sample contained 30 questions, with 29 satisfactory responses. The product is an evidence assistant, not personal scholarly certification.
+**365 distinct questions across 10 documented development evaluation sets, plus targeted reruns and offline/application checks. Latest frozen benchmark: 29/30 satisfactory responses (96.7%).** The 30-question final run is one part of the development history. Earlier versions and different datasets are counted as coverage, not pooled into a current-version accuracy claim. The product is an evidence assistant, not personal scholarly certification.
 
 ## Voice and image input
 

@@ -1,0 +1,33 @@
+{
+  "kind": "evaluation-presentation-ui",
+  "paidAIcalls": 0,
+  "rows": [
+    {
+      "width": 1440,
+      "cumulativeQuestions": 365,
+      "sets": 10,
+      "latest": 29,
+      "latestTotal": 30,
+      "progression": true,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "cumulativeQuestions": 365,
+      "sets": 10,
+      "latest": 29,
+      "latestTotal": 30,
+      "progression": true,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "cumulativeQuestions": 365,
+      "sets": 10,
+      "latest": 29,
+      "latestTotal": 30,
+      "progression": true,
+      "overflow": false
+    }
+  ]
+}

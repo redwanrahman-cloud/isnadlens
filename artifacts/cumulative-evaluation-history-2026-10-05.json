@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "kind": "audited_cumulative_development_question_coverage",
+  "major_evaluation_sets": 10,
+  "question_requests_in_major_sets": 365,
+  "distinct_normalized_question_texts": 365,
+  "count_is_lower_bound": true,
+  "runs": [
+    {
+      "name": "Baseline development set",
+      "artifact": "common-question-baseline-50-initial-live-2026-10-04.json",
+      "sha256": "b8ec2c5de29de3f8273b4b362d96686ec5dcc57bb1746a934f19c8762c2b2654",
+      "questions": 50,
+      "distinct_question_texts": 50,
+      "started_at": null,
+      "application_version": null,
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "New50 holdout",
+      "artifact": "holdout50-first-pass-results-2026-10-04.json",
+      "sha256": "0a62b5e5b34bc99900c0b1e32dfc2d6afee81c5e82fd0fdea4ebed2257ce943e",
+      "questions": 50,
+      "distinct_question_texts": 50,
+      "started_at": "2026-10-04T13:20:30.243Z",
+      "application_version": "a4a141ea48393f2c70cec60323bd20eba11b4fd4d92436754791da93e02f75b4",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "New50 model-routing set",
+      "artifact": "fresh50-first-pass-results-2026-10-04.json",
+      "sha256": "d6cf6d6e369e8f31d70f9d8e7e3e4aa5890030dc09c905bc32abd24518e1d567",
+      "questions": 50,
+      "distinct_question_texts": 50,
+      "started_at": "2026-10-04T15:42:46.843Z",
+      "application_version": "98cb1e01b046d420c4688c795e7451d81cfbea7733f50cd0e8f59a8ed0fc6028",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "Bounded-discovery15",
+      "artifact": "web15-first-pass-2026-10-04.json",
+      "sha256": "d516f8a4480c09f1f86067e8b3c04345d80caf388ba537efcb9b0dd006e8b8fd",
+      "questions": 15,
+      "distinct_question_texts": 15,
+      "started_at": "2026-10-04T17:05:05.334Z",
+      "application_version": "dec9463926e7b38aee03afdcff2137ab7a935523ffb0e390dedb53b4e076858b",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "Bounded-discovery50",
+      "artifact": "web50-first-pass-2026-10-04.json",
+      "sha256": "a1b63cdd068d998b36dac43e5ad8eb7ddfcc35a843773560faa885af9a03c23b",
+      "questions": 50,
+      "distinct_question_texts": 50,
+      "started_at": "2026-10-04T18:26:15.064Z",
+      "application_version": "a7f80c0455fadacbc20d0b94704550644d6f534e1440bae4d47c0281092d5c43",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "Release round1",
+      "artifact": "release30-first-pass-2026-10-04.json",
+      "sha256": "948d284cc2fd5b0d6ed0758b5e75aea2121bc1cf444e5b337a3564fdd09a2578",
+      "questions": 30,
+      "distinct_question_texts": 30,
+      "started_at": "2026-10-04T20:15:54.408Z",
+      "application_version": "7526308a8e2fe1dead872023c389c3865181445957ddf09d00da608b28f981bc",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "Release round2",
+      "artifact": "release30-round2-first-pass-2026-10-05.json",
+      "sha256": "3ef780631fa9b7468b2cbdc8349d680d7d9f70fa28f53bd00c6169516d87439f",
+      "questions": 30,
+      "distinct_question_texts": 30,
+      "started_at": "2026-10-04T21:20:09.352Z",
+      "application_version": "16c5664523aac7b63bedce6ee72290fc34242eb43ae52427a89cb6cdc9f6c2d5",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "Release round3",
+      "artifact": "release30-round3-first-pass-2026-10-05.json",
+      "sha256": "c9127ad17b56ca27e110203f1ff4581fdfe7d7fe3f58423387c2aef874a87af4",
+      "questions": 30,
+      "distinct_question_texts": 30,
+      "started_at": "2026-10-04T22:48:25.440Z",
+      "application_version": "2d28749aed96641d1841fde84e0121de37198aa9bfe226d0134c02b12be3a77c",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "Release round4",
+      "artifact": "release30-round4-first-pass-2026-10-05.json",
+      "sha256": "bd23d4b12f6e606f688b9bcff0b4ba7bd025d1239639e749f439f4caa42bb84f",
+      "questions": 30,
+      "distinct_question_texts": 30,
+      "started_at": "2026-10-04T23:57:17.122Z",
+      "application_version": "5118ffc539d2fcc78a588d0083bd8f2f72a7cfc3f3368998e91a42addfb56270",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    },
+    {
+      "name": "Release round5",
+      "artifact": "release30-round5-first-pass-2026-10-05.json",
+      "sha256": "73b125160efbbda5cab47f9ded3ea18095b9ff73751b5bc3bbc2984a3e4e2c06",
+      "questions": 30,
+      "distinct_question_texts": 30,
+      "started_at": "2026-10-05T09:46:53.603Z",
+      "application_version": "edefc432aba1ebc30c68b49ad4a75e6bf924328e23d22c1220f5927e7a2a3492",
+      "scope": "Live application evaluation requests; failures and withheld answers remain counted."
+    }
+  ],
+  "release_progression": [
+    {
+      "round": 1,
+      "satisfactory": 25,
+      "total": 30,
+      "percentage": 83.3,
+      "artifact": "release30-principal-review-2026-10-04.json",
+      "scope": "Per-round reviewed usefulness on different question sets and application versions."
+    },
+    {
+      "round": 2,
+      "satisfactory": 26,
+      "total": 30,
+      "percentage": 86.7,
+      "artifact": "release30-round2-principal-review-2026-10-05.json",
+      "scope": "Per-round reviewed usefulness on different question sets and application versions."
+    },
+    {
+      "round": 3,
+      "satisfactory": 23,
+      "total": 30,
+      "percentage": 76.7,
+      "artifact": "release30-round3-principal-review-2026-10-05.json",
+      "scope": "Per-round reviewed usefulness on different question sets and application versions."
+    },
+    {
+      "round": 4,
+      "satisfactory": 29,
+      "total": 30,
+      "percentage": 96.7,
+      "artifact": "release30-round4-principal-review-2026-10-05.json",
+      "scope": "Per-round reviewed usefulness on different question sets and application versions."
+    },
+    {
+      "round": 5,
+      "satisfactory": 29,
+      "total": 30,
+      "percentage": 96.7,
+      "artifact": "release30-round5-principal-review-2026-10-05.json",
+      "scope": "Per-round reviewed usefulness on different question sets and application versions."
+    }
+  ],
+  "latest_frozen_benchmark": {
+    "satisfactory": 29,
+    "total": 30,
+    "percentage": 96.7,
+    "review_artifact": "release30-round5-principal-review-2026-10-05.json"
+  },
+  "counting_rules": [
+    "Each primary run artifact counted once; summaries/reviews of the same run are not extra questions.",
+    "Count includes unsuccessful and withheld application responses.",
+    "Targeted reruns, probes, incomplete pilots, earlier29-query set, source checks, browser tests and offline replay checks are excluded from this conservative coverage total.",
+    "Unique text is normalized with NFKC and casefold, not unique religious topics.",
+    "Historical runs used changing app versions and criteria; cumulative volume is not current-version accuracy."
+  ],
+  "limitations": [
+    "No claim that all365 questions passed or were rerun on the final version.",
+    "No measured search-popularity ranking or independent scholarly certification."
+  ]
+}
