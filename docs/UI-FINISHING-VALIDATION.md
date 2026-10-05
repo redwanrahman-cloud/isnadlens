@@ -92,3 +92,73 @@ This is browser emulation, not physical-device or native-language certification.
 Earlier limits still applicable: translated export parity and broader diagnostic
 text localization need a separate pass; paid end-to-end model calls were not
 retested. Public hosting, final video/deck and submission are separate release work.
+
+## Non-verification QA — 5 October, late evening
+
+The user requested broad testing while explicitly deferring verification and real
+API testing. This pass used a local proxy: verification and result translation
+were blocked, daily tools returned controlled fixtures, and media readiness was
+set unavailable. Coverage, admitted passage translations and PDF generation used
+local application code. The request log contained zero `/api/verify` and zero
+`/api/translate-result` requests. No provider inference, transcription, image
+reading, recitation playback or external daily-tools request was made.
+
+### Findings fixed
+
+- Calendar month navigation no longer changes the prayer date or clears the
+  displayed prayer timetable. An empty month cannot be submitted.
+- Daily-tool and example-PDF errors follow a language change while still visible.
+- Counter reset uses an in-page dialog with a safe initial focus, cancel/Escape,
+  and focus restoration. The embedded browser stalled at its former native prompt;
+  the new confirmation was exercised successfully.
+- Secondary interface text has stronger contrast; audio controls have 44px targets.
+- PNG share cards retain source URLs and the record timestamp. Long URLs wrap
+  within the card, including Unicode text. PDF requests have a 30-second timeout.
+
+### Validation performed
+
+- 92 supporting-feature tests passed in 17 files, covering daily-tool parsing and
+  routes, prayer clocks, location/Qibla, counters, saved records, display copy,
+  receipt generation/routes, media boundaries, and share-card wrapping. Provider
+  calls in route tests were mocked. No verification test suite was run.
+- The final production build and TypeScript check passed. The affected counter
+  and share-text suites were repeated after the dialog change: 9 tests passed.
+- 81 browser cases: three workspaces times nine languages times three requested
+  viewport settings. Actual measured widths ranged from 358 to 1441 CSS pixels
+  because the embedded browser applies zoom/minimum sizing. Each case had the
+  expected document language/direction, a heading, labelled visible controls, and
+  no document-wide horizontal overflow. This is not a physical-device test.
+- All eleven Umrah/Hajj topic buttons populated the question and focused the
+  editor without submitting it. Counter cap, undo, uncertainty freeze, reload
+  persistence, cancel, confirmed reset and Escape were exercised.
+- Navigation collapse/reopen and saved-question loading were exercised. An existing
+  saved receipt remained readable. Only the temporary QA location record was
+  deleted; existing saved checks were preserved. Location/profile restoration was
+  exercised with London, calculation method and Asr settings.
+- Fixture prayer timetable/countdown, Qibla bearing, both conversion directions,
+  month display and service-failure recovery were exercised. These validate UI
+  wiring, not the accuracy/availability of live prayer or calendar providers.
+- Example PDF returned 200/application-pdf (112,694 bytes); all three rendered A4
+  pages were visually inspected, including Arabic shaping, page breaks and source
+  notices. The browser download-event waiter stalled, so PDF response bytes and
+  rendering were used as evidence; OS download completion was not certified.
+- Share preview, source links in the PNG, copy feedback, viewport fit and Escape
+  focus return were checked. The preview PNG was visually inspected.
+- Method, sources, evaluation, latest evaluation, holdout and 404 pages rendered
+  without narrow-screen overflow. These existing information/audit documents keep
+  their authored Arabic/English content; they are not nine translated editions.
+- Final browser console inspection showed no captured warnings/errors. The
+  original main worktree remained clean; source corpus, verification engine and
+  frozen assessment artifacts were not modified.
+
+### Explicit limits
+
+Real verification/translation, external providers, microphone capture, image OCR,
+audio playback, browser location permission and physical phones remain for the
+separately authorized final pass. This audit is not a native-speaker review, a
+formal accessibility certification, a full adversarial/security/load test or an
+updated semantic benchmark. The historical benchmark numbers are unchanged.
+Translated receipt-content parity and broader diagnostic localization from the
+earlier review remain separate follow-ups; this pass fixes UI errors, not every
+historical receipt's language. No deployment, push or competition submission was
+performed.

@@ -1,4 +1,5 @@
 'use client';
+import {wrapShareText} from '@/lib/share-text';
 import {useEffect,useRef,useState} from 'react';
 import type {DisplayLanguage} from '@/lib/display-copy';
 import {workspaceCopy} from '@/lib/workspace-copy';
@@ -13,8 +14,8 @@ export function ShareCard({record,summary,verdict,language}:{record:ShareRecord;
  useEffect(()=>{
   if(!open||!canvas.current)return;const c=canvas.current,ctx=c.getContext('2d');if(!ctx)return;
   const rtl=language==='ar'||language==='ur';const pad=64,width=1080;ctx.font='28px Tahoma, Arial, sans-serif';
-  function lines(value:string,max:number){const result:string[]=[];for(const paragraph of value.split('\n')){let line='';for(const word of paragraph.split(' ')){const next=line?line+' '+word:word;if(ctx!.measureText(next).width>max&&line){result.push(line);line=word;}else line=next;}result.push(line);}return result;}
-  const sections=[{text:verdict,size:27,color:'#174c45'},{text:record.original_claim,size:32,color:'#123f38'},{text:excerpt,size:28,color:'#173d39'},{text:record.evidence_items.slice(0,5).map(e=>e.locator).join(' · '),size:24,color:'#685535'},{text:t.excerptNote,size:23,color:'#505f57'},{text:record.record_id,size:19,color:'#505f57'}];
+  const lines=(value:string,max:number)=>wrapShareText(value,max,text=>ctx.measureText(text).width);
+  const sections=[{text:verdict,size:27,color:'#174c45'},{text:record.original_claim,size:32,color:'#123f38'},{text:excerpt,size:28,color:'#173d39'},{text:references,size:24,color:'#685535'},{text:t.excerptNote,size:23,color:'#505f57'},{text:record.record_id+' · '+record.created_at,size:19,color:'#505f57'}];
   const wrapped=sections.map(s=>{ctx.font=`${s.size}px Tahoma, Arial, sans-serif`;return {...s,lines:lines(s.text,width-pad*2)};});
   c.width=width;c.height=170+wrapped.reduce((sum,s)=>sum+s.lines.length*s.size*1.65+28,0)+50;
   ctx.fillStyle='#f7f4eb';ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#123f38';ctx.fillRect(0,0,width,116);ctx.fillStyle='#ffffff';ctx.font='bold 40px Georgia, serif';ctx.textAlign='left';ctx.fillText('IsnadLens',pad,73);ctx.strokeStyle='#b79858';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(pad,137);ctx.lineTo(width-pad,137);ctx.stroke();

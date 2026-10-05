@@ -314,3 +314,10 @@ html[data-motion=paused] .studio *,html[data-motion=paused] .studio *::before,ht
 .studio[data-sidebar=open] .studio-sidebar nav a span{display:inline}
 .studio[data-sidebar=open] .studio-sidebar-bottom{margin-top:auto;padding-top:24px}
 @media(max-width:700px){.studio[data-sidebar=open]>.studio-sidebar{position:fixed;inset-inline-start:0;inset-block-start:57px;height:calc(100dvh - 57px);z-index:7}.studio[data-sidebar=open] .studio-nav-label{margin-top:24px}.studio[data-sidebar=open] .studio-sidebar-bottom{padding-top:26px}.studio[data-sidebar=open] .studio-sidebar-bottom>div,.studio[data-sidebar=open] .studio-sidebar-bottom>p{display:none}}
+/* Preserve the quiet palette while keeping small text readable on ivory. */
+.studio .studio-content p:not([role=alert]):not(.tools-error),.studio .studio-content .checked-example p:not([role=alert]),.studio .studio-content small,.studio .studio-content label,.studio .studio-content summary,.studio .studio-content .answer-label,.studio .studio-content .input-footer>span,.studio .studio-content .evidence-map small,.studio .studio-content .evidence-map h3{color:#4c624d}
+.studio .studio-content a:not(.primary-button),.studio .studio-content .input-tabs button,.studio .studio-content .presets button,.studio .studio-content .coverage-drawer>summary,.studio .studio-content .report-actions button{color:#45614d}
+.studio .studio-content .mode-label,.studio .studio-content .sample-banner,.studio .studio-trust-row>div>span{color:#755b2f}
+.studio .studio-navigation-heading>div>span{color:#506a58}
+.studio .studio-content .audio-icon-button{min-width:44px;min-height:44px}
+.studio .studio-content .sample-reference{color:#4c624d}

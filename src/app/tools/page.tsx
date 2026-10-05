@@ -23,6 +23,7 @@ export default function DailyToolsPage(){
   const locationLabels=({ar:['الموقع','تعديل الموقع','افتراضي','الموقع الحالي'],en:['Location','Edit location','Default','Current location'],bn:['অবস্থান','অবস্থান বদলান','ডিফল্ট','বর্তমান অবস্থান'],hi:['स्थान','स्थान बदलें','डिफ़ॉल्ट','वर्तमान स्थान'],ur:['مقام','مقام بدلیں','ابتدائی','موجودہ مقام'],id:['Lokasi','Ubah lokasi','Bawaan','Lokasi saat ini'],es:['Ubicación','Editar ubicación','Predeterminada','Ubicación actual'],fr:['Position','Modifier la position','Par défaut','Position actuelle'],de:['Standort','Standort ändern','Voreinstellung','Aktueller Standort']})[language];
   const [locationChanged,setLocationChanged]=useState(false);
   const [date,setDate]=useState('');
+  const [calendarMonth,setCalendarMonth]=useState('');
   const [latitude,setLatitude]=useState('21.4225');
   const [longitude,setLongitude]=useState('39.8262');
   const [method,setMethod]=useState(4);
@@ -34,7 +35,8 @@ export default function DailyToolsPage(){
   const [direction,setDirection]=useState<'gToH'|'hToG'>('gToH');
   const [conversionDate,setConversionDate]=useState('');
   const [busy,setBusy]=useState('');
-  const [error,setError]=useState('');
+  const [error,setError]=useState<''|'input'|'load'|'noLocation'|'locationDenied'>('');
+  const errorMessages={input:t('راجع التاريخ والإحداثيات وطريقة الحساب.','Check the date, coordinates and calculation settings.'),load:t('تعذّر تحميل البيانات. حاول مجدداً؛ لم نعرض أوقاتاً أو تواريخ بديلة.','Data could not be loaded. Try again; no substitute times or dates are shown.'),noLocation:t('الموقع غير متاح؛ أدخل الإحداثيات.','Location is unavailable; enter coordinates.'),locationDenied:t('لم يُحدد الموقع. يمكنك إدخاله يدوياً.','Location was not obtained. You can enter it manually.')};
   const [clock,setClock]=useState('');
   const [locating,setLocating]=useState(false);
   const [locationTimezone,setLocationTimezone]=useState<string|null>('Asia/Riyadh');
@@ -42,7 +44,7 @@ export default function DailyToolsPage(){
   const zone=prayers?.timezone??locationTimezone;
   const upcoming=prayers&&now?nextPrayer(prayers,new Date(now)):null;
   const qibla=latitude.trim()&&longitude.trim()&&validCoordinates(Number(latitude),Number(longitude))?qiblaBearing(Number(latitude),Number(longitude)):null;
-  useEffect(()=>{const current=today('Asia/Riyadh');setDate(current);setConversionDate(current);},[]);
+  useEffect(()=>{const current=today('Asia/Riyadh');setDate(current);setCalendarMonth(current.slice(0,7));setConversionDate(current);},[]);
   useEffect(()=>{const update=()=>{setNow(Date.now());setClock(zone?new Intl.DateTimeFormat(language,{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date()):'');};update();const timer=setInterval(update,1000);return()=>clearInterval(timer);},[zone,language]);
   async function load(kind:'prayer'|'calendar'|'convert'){
     setBusy(kind);setError('');
@@ -51,18 +53,18 @@ export default function DailyToolsPage(){
       const params=new URLSearchParams({kind,calendarMethod});
       if(kind==='prayer')params.set('nextDay','1');
       if(kind==='prayer')for(const [key,value] of Object.entries({date,latitude,longitude,method:String(method),school:String(school)}))params.set(key,value);
-      if(kind==='calendar'){const [year,month]=date.split('-');params.set('year',year);params.set('month',month);}
+      if(kind==='calendar'){const [year,month]=calendarMonth.split('-');params.set('year',year);params.set('month',month);}
       if(kind==='convert'){params.set('date',conversionDate);params.set('direction',direction);}
       const response=await fetch(`/api/daily-tools?${params}`,{signal:AbortSignal.timeout(30000)});const data=await response.json();
       if(!response.ok)throw new Error(data.error);
       if(kind==='prayer')setPrayers(data);if(kind==='calendar')setCalendar(data);if(kind==='convert')setConverted(data);
-    }catch(err){setError(err instanceof Error&&err.message==='INPUT_INVALID'?(t('راجع التاريخ والإحداثيات وطريقة الحساب.','Check the date, coordinates and calculation settings.')):(t('تعذّر تحميل البيانات. حاول مجدداً؛ لم نعرض أوقاتاً أو تواريخ بديلة.','Data could not be loaded. Try again; no substitute times or dates are shown.')));}
+    }catch(err){setError(err instanceof Error&&err.message==='INPUT_INVALID'?'input':'load');}
     finally{setBusy('');}
   }
   function locate(){
-    if(!navigator.geolocation){setError(t('الموقع غير متاح؛ أدخل الإحداثيات.','Location is unavailable; enter coordinates.'));return;}
+    if(!navigator.geolocation){setError('noLocation');return;}
     setLocating(true);setError('');
-    navigator.geolocation.getCurrentPosition(position=>{setLocationChanged(true);setLatitude(position.coords.latitude.toFixed(6));setLongitude(position.coords.longitude.toFixed(6));setPrayers(null);setLocationTimezone(null);setLocating(false);},()=>{setError(t('لم يُحدد الموقع. يمكنك إدخاله يدوياً.','Location was not obtained. You can enter it manually.'));setLocating(false);},{timeout:10000,maximumAge:60000,enableHighAccuracy:false});
+    navigator.geolocation.getCurrentPosition(position=>{setLocationChanged(true);setLatitude(position.coords.latitude.toFixed(6));setLongitude(position.coords.longitude.toFixed(6));setPrayers(null);setLocationTimezone(null);setLocating(false);},()=>{setError('locationDenied');setLocating(false);},{timeout:10000,maximumAge:60000,enableHighAccuracy:false});
   }
   const pair=(value:DatePair)=><p><bdi>{value.gregorian.date}</bdi> · <span lang={ar?'ar':'en'}>{value.hijri.day} {ar?value.hijri.month.ar:value.hijri.month.en} {value.hijri.year}</span></p>;
   const calendarCells=calendar?[...Array(new Date(Date.UTC(calendar.year,calendar.month-1,1)).getUTCDay()).fill(null),...calendar.days]:[];
@@ -71,7 +73,7 @@ export default function DailyToolsPage(){
     <nav className="tool-shortcuts" aria-label={t('الأدوات','Tools')}><a href="#prayer"><WorkspaceIcon name="prayer"/>{copy.prayer}</a><a href="#qibla"><WorkspaceIcon name="compass"/>{copy.qibla}</a><a href="#calendar"><WorkspaceIcon name="calendar"/>{copy.calendar}</a></nav>
     <main id="studio-main" className="tools-main">
       <section className="hero tools-hero"><div className="hero-copy"><span className="tools-eyebrow">{t('أدوات يومية','Everyday tools')}</span><h1>{t('المواقيت والتقويم','Prayer times & calendar')}</h1><p className="hero-intro">{t('المواقيت حسب الموقع وطريقة الحساب المختارة. تحويل التاريخ وفق التقويم المحدد، وقد تختلف بداية الشهر بالرؤية المحلية.','Prayer times use your chosen location and calculation method. Date conversion uses the selected calendar; local moon sighting may give a different month start.')}</p><p className="tools-clock"><WorkspaceIcon name="compass"/><time suppressHydrationWarning>{clock}</time> · <bdi>{zone??(t('ستحدد المنطقة الزمنية بعد طلب المواقيت','Timezone determined after lookup'))}</bdi></p></div></section>
-      {error&&<p className="tools-error" role="alert">{error}</p>}
+      {error&&<p className="tools-error" role="alert">{errorMessages[error]}</p>}
       <fieldset disabled={Boolean(busy)} style={{border:0,padding:0,minWidth:0}}>
         <section className="tool-location-card" id="tool-location"><div className="tool-location-title"><span className="tool-heading-icon"><WorkspaceIcon name="compass"/></span><h2>{t('الموقع والحساب','Location and calculation')}</h2></div><p className="location-badge"><WorkspaceIcon name="compass"/><strong>{locationLabels[0]}: {LOCATION_PRESETS.find(item=>item.latitude===Number(latitude)&&item.longitude===Number(longitude))?.name??locationLabels[3]}</strong>{!locationChanged&&<span>{locationLabels[2]}</span>}</p><details className="location-editor"><summary>{locationLabels[1]}</summary><div className="location-controls">              <LocationPicker ar={ar} language={language} latitude={latitude} longitude={longitude} timezone={locationTimezone} method={method} school={school} onPick={location=>{setLocationChanged(true);setLatitude(String(location.latitude));setLongitude(String(location.longitude));setLocationTimezone(location.timezone??null);if(location.timezone)setDate(today(location.timezone));if(location.method)setMethod(location.method);setSchool(location.school??0);setPrayers(null);setCalendar(null);}}/>
               
@@ -100,8 +102,8 @@ export default function DailyToolsPage(){
             </form>
             {converted&&<div aria-live="polite">{pair(converted)}<p>{calendarMethod} · AlAdhan</p></div>}
             <h3>{t('تقويم الشهر','Month calendar')}</h3>
-            <label>{t('الشهر الميلادي','Gregorian month')}<input type="month" min="1900-01" max="2100-12" value={date.slice(0,7)} onChange={event=>{setDate(`${event.target.value}-01`);setCalendar(null);setPrayers(null);}}/></label>
-            <button type="button" className="primary-button" onClick={()=>void load('calendar')}>{busy==='calendar'?(t('جارٍ التحميل…','Loading…')):(t('اعرض الشهر','Show month'))}</button>
+            <label>{t('الشهر الميلادي','Gregorian month')}<input type="month" min="1900-01" max="2100-12" value={calendarMonth} onChange={event=>{setCalendarMonth(event.target.value);setCalendar(null);}}/></label>
+            <button type="button" className="primary-button" disabled={!calendarMonth} onClick={()=>void load('calendar')}>{busy==='calendar'?(t('جارٍ التحميل…','Loading…')):(t('اعرض الشهر','Show month'))}</button>
             {calendar&&<div aria-live="polite"><p><bdi>{calendar.year}-{String(calendar.month).padStart(2,'0')}</bdi> · {calendar.method}</p><table style={{width:'100%',tableLayout:'fixed',direction:'ltr'}}><thead><tr>{Array.from({length:7},(_,index)=>new Intl.DateTimeFormat(language,{weekday:'short'}).format(new Date(2026,9,4+index))).map((day,index)=><th key={index} scope="col">{day}</th>)}</tr></thead><tbody>{Array.from({length:calendarCells.length/7},(_,row)=><tr key={row}>{calendarCells.slice(row*7,row*7+7).map((day:DatePair|null,index)=><td key={index} style={{textAlign:'center',padding:'8px 1px',borderBottom:'1px solid var(--line)'}}>{day&&<><bdi>{Number(day.gregorian.day)}</bdi><small style={{display:'block'}}>{day.hijri.day}/{day.hijri.month.number}</small></>}</td>)}</tr>)}</tbody></table><p>{t('الرقم الكبير ميلادي، والصغير اليوم/الشهر الهجري.','Large number: Gregorian day. Small number: Hijri day/month.')}</p></div>}
             <p>{t('التاريخ المحوّل حساب تقويمي؛ لا يعلن دخول رمضان أو العيد ولا يستبدل إعلان الجهة المحلية.','Converted dates are calendar calculations; they do not announce Ramadan or Eid and do not replace local authority announcements.')}</p>
           </section>
