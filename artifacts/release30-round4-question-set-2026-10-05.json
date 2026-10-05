@@ -1,0 +1,447 @@
+{
+  "kind": "fresh_release30_round4_key_locked_before_live",
+  "created_at": "2026-10-04T23:56:39.167Z",
+  "novelty": "No exact duplicate among 295 preceding planned benchmark questions, including all five stopped-pilot items. New wording/facets; themes and references may recur. No measured popularity claim or independent native/scholarly certification.",
+  "protocol": "Application/build frozen throughout live run. Automatic language/source selection; no expected locators or answer keys sent. No retries or edits mid-run. Principal review checks meaning and direct evidence, not label alone; qualified useful answers may pass with label mismatch disclosed.",
+  "threshold": {
+    "maximum_wrong_decisive_answers": 0,
+    "minimum_satisfactory_responses": 27,
+    "total": 30,
+    "in_scope": 27,
+    "boundary": 3
+  },
+  "cases": [
+    {
+      "id": "X01",
+      "language": "en",
+      "claim": "Does the Quran permit kindness and fairness toward people who neither fight us over religion nor drive us from our homes?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "60:8",
+          "sha256": "ca4a51a3796e9ea3de89f074f274fd2a59e4363518058a5e131d53baef388e4c",
+          "url": "https://tanzil.net/#60:8"
+        }
+      ],
+      "rationale": "Retain both stated conditions; no unconditional conclusion about all groups.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X02",
+      "language": "en",
+      "claim": "Is giving entrusted property back to its rightful owners a Quranic instruction?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:58",
+          "sha256": "eca58cc9f0eaa37cfa9b473106dfa990d2251199a66273445db96ae665c97928",
+          "url": "https://tanzil.net/#4:58"
+        }
+      ],
+      "rationale": "Return trusts to their owners; no individual dispute ruling.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X03",
+      "language": "en",
+      "claim": "According to the backbiting hadith, if something an absent brother dislikes hearing about himself is true, does that mean it cannot be backbiting?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5326",
+          "sha256": "bea8783d8e00b6bc20a4bf044db28b4439a7fc7d1d83c39016a1f48d6a6a3257",
+          "url": "https://hadeethenc.com/en/browse/hadith/5326"
+        }
+      ],
+      "rationale": "Truth does not remove backbiting in the stated definition. Do not claim every legitimate warning is prohibited.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X04",
+      "language": "ar",
+      "claim": "هل يوجه القرآن إلى الأكل والشرب مع تجنب الإسراف؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "7:31",
+          "sha256": "8ea30463dc91283278ec73559a8fc3726267e338cf94eed50b402a8eff6f0c07",
+          "url": "https://tanzil.net/#7:31"
+        }
+      ],
+      "rationale": "Eating and drinking with the prohibition of excess are explicit.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X05",
+      "language": "ar",
+      "claim": "هل تكون الدعوة إلى سبيل الله بالحكمة والموعظة الحسنة بحسب القرآن؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "16:125",
+          "sha256": "ca9159ffd89024c0274fe88aed64b2ee41d28975b124e55c51aaeb32ce16892e",
+          "url": "https://tanzil.net/#16:125"
+        }
+      ],
+      "rationale": "Wisdom and good admonition are explicit; no personalized preaching judgment.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X06",
+      "language": "ar",
+      "claim": "هل ربط الحديث كمال الإيمان بأن يحب المسلم لأخيه ما يحب لنفسه من الخير؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4717",
+          "sha256": "68dd7649da4af9680e7d34c21d3a0f71dd0ab977afcc84edeb8ad0116e72ce39",
+          "url": "https://hadeethenc.com/en/browse/hadith/4717"
+        }
+      ],
+      "rationale": "Publisher explanation interprets complete faith; do not declare a person outside Islam.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X07",
+      "language": "bn",
+      "claim": "বৃদ্ধ বাবা-মাকে উফ বলা বা ধমক দেওয়ার অনুমতি কি কোরআন দেয়?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "17:23",
+          "sha256": "9d056a115115420f881499b76d1dcf583812fbd83d58cc49a518df2fe3be3887",
+          "url": "https://tanzil.net/#17:23"
+        }
+      ],
+      "rationale": "Old-age condition retained; the verse forbids uff and rebuking.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X08",
+      "language": "bn",
+      "claim": "কোরআনে কি দয়াময়ের বান্দাদের নম্রভাবে চলা এবং অজ্ঞরা কথা বললে শান্তির কথা বলা বর্ণিত আছে?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "25:63",
+          "sha256": "145e8078d4910f7e0c5ca06cc0e470ff8ffd185d3bf42b3637e4cad1b1d88e84",
+          "url": "https://tanzil.net/#25:63"
+        }
+      ],
+      "rationale": "Both walking humbly and peaceful response are in the description.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X09",
+      "language": "bn",
+      "claim": "ভাইয়ের সঙ্গে হাসিমুখে দেখা করার মতো ছোট ভালো কাজকেও কি হাদিস তুচ্ছ না করতে বলে?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5348",
+          "sha256": "e7bacf63cf3121e4fb04ef4f36ad86333f77967d012a5f03a1dcf9c22b44fbc3",
+          "url": "https://hadeethenc.com/en/browse/hadith/5348"
+        }
+      ],
+      "rationale": "Do not belittle good deeds, including meeting a brother with a cheerful face.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X10",
+      "language": "hi",
+      "claim": "क्या कुरान अन्याय से धन खाने के बजाय आपसी सहमति के व्यापार को स्वीकार करता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:29",
+          "sha256": "5c37355033d17cca9bd8c4079d8f239503be4e3462a564c71a2f622ac641f79c",
+          "url": "https://tanzil.net/#4:29"
+        }
+      ],
+      "rationale": "Unjust consumption forbidden, mutual-consent trade exception. Not all consent legalizes every transaction.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X11",
+      "language": "hi",
+      "claim": "क्या कुरान बहुत अधिक शक करने, जासूसी करने और पीठ पीछे बुराई करने का आदेश देता है?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "49:12",
+          "sha256": "6a3472196fd9cbc525e9e7b84aca3c99ec0ad1f1ce849087980a8f0b767fe004",
+          "url": "https://tanzil.net/#49:12"
+        }
+      ],
+      "rationale": "The verse prohibits spying/backbiting and directs avoidance of much suspicion; not every suspicion sinful.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X12",
+      "language": "hi",
+      "claim": "क्या हदीस में अल्लाह के सामने सबसे अच्छा पड़ोसी वह बताया गया है जो अपने पड़ोसी के लिए सबसे अच्छा हो?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3709",
+          "sha256": "da9dfa626d87d8f5c9d6d5c1b069e1fc4adc5dfb8189d08cb44011dc4fdd7d55",
+          "url": "https://hadeethenc.com/en/browse/hadith/3709"
+        }
+      ],
+      "rationale": "Best neighbor is best to his neighbor; no wealth-based judgment.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X13",
+      "language": "ur",
+      "claim": "کیا قرآن کہتا ہے کہ دین میں جبر ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:256",
+          "sha256": "43ccff3d670b2e749e4e01c6edb97cb60befd9a9714d7f0337582fd2e0726106",
+          "url": "https://tanzil.net/#2:256"
+        }
+      ],
+      "rationale": "No compulsion in religion is explicit; no individualized legal advice.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X14",
+      "language": "ur",
+      "claim": "کیا قرآن لوگوں سے تکبر کے ساتھ منہ پھیرنے اور زمین پر اکڑ کر چلنے سے روکتا ہے؟",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "31:18",
+          "sha256": "87c1d9c78e130f574f1ae55455f7986702698bbe183bb9962a9e0b14c3b202f1",
+          "url": "https://tanzil.net/#31:18"
+        }
+      ],
+      "rationale": "Both arrogant turning away and walking arrogantly addressed.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X15",
+      "language": "ur",
+      "claim": "کیا حدیث حق کے راستے میں مال خرچ کرنے والے اور حکمت سے فیصلہ کرنے اور سکھانے والے کی طرح بننے کی خواہش کو سراہتی ہے؟",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3772",
+          "sha256": "3e8030e4bff414cb882707efe7238578498c92ee27058aa4b0e1947b5b21a834",
+          "url": "https://hadeethenc.com/en/browse/hadith/3772"
+        }
+      ],
+      "rationale": "Praiseworthy emulation, not wishing their blessing removed; both wealth and wisdom examples.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X16",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an menyatakan bahwa kebajikan hanya berarti menghadap ke timur atau barat?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:177",
+          "sha256": "ec19c5d930af74c6e1725061355dfec1b27da8ecabcf5718b8846fc9e25b6079",
+          "url": "https://tanzil.net/#2:177"
+        }
+      ],
+      "rationale": "Righteousness not merely direction; do not deny prescribed prayer orientation.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X17",
+      "language": "id",
+      "claim": "Apakah Al-Qur’an melarang mengikuti sesuatu tanpa pengetahuan dan menyebut pendengaran, penglihatan serta hati akan dimintai pertanggungjawaban?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "17:36",
+          "sha256": "d939445898bf393a292d9c49803e8a2d31d9c69e072b5378123a808eaabeba64",
+          "url": "https://tanzil.net/#17:36"
+        }
+      ],
+      "rationale": "Both no pursuit without knowledge and accountability are explicit.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X18",
+      "language": "id",
+      "claim": "Apakah hadis menyebut bersuci sebagai setengah iman?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:65004",
+          "sha256": "b0530eeaf152e71f2c82523593a6f282f95dbe254c36809ce1afbffaa26a7b22",
+          "url": "https://hadeethenc.com/en/browse/hadith/65004"
+        }
+      ],
+      "rationale": "Purity half faith; no claim bodily cleanliness alone replaces worship.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X19",
+      "language": "es",
+      "claim": "¿Enseña el Corán a responder a una mala acción con lo que es mejor?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "41:34",
+          "sha256": "8fc7c65a33b2d2c223ed483635454afecaf16772a530022afca61f7ca2c03ca3",
+          "url": "https://tanzil.net/#41:34"
+        }
+      ],
+      "rationale": "Repel with what is better; do not abolish every legal remedy.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X20",
+      "language": "es",
+      "claim": "¿Pide el Corán dar testimonio justo incluso cuando sea contra uno mismo, sus padres o sus familiares?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "4:135",
+          "sha256": "5a23ddb37e263be2e8d28fbf08010fc8ea5dfbe6e210f3376e43f6d1ba06660f",
+          "url": "https://tanzil.net/#4:135"
+        }
+      ],
+      "rationale": "Justice/testimony even against self, parents and relatives; no individual court advice.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X21",
+      "language": "es",
+      "claim": "En el relato del beduino que orinó en la mezquita, ¿dijo el Profeta que habían sido enviados para facilitar y no para dificultar?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:5806",
+          "sha256": "ce7f2ff6b9cc84440185eef3bc0fd6f11fd161e17e3509230fbe2d4dd11d601e",
+          "url": "https://hadeethenc.com/en/browse/hadith/5806"
+        }
+      ],
+      "rationale": "Specific incident and narrated instruction; not all religious duties optional.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X22",
+      "language": "fr",
+      "claim": "Le Coran autorise-t-il les croyants à trahir sciemment les dépôts qui leur sont confiés?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "8:27",
+          "sha256": "6174e34e0836ca35c0fbb211f1d2f071fad0c941615c1635f63ade70e976dd7a",
+          "url": "https://tanzil.net/#8:27"
+        }
+      ],
+      "rationale": "Knowing betrayal forbidden; believing audience retained.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X23",
+      "language": "fr",
+      "claim": "Le Coran invite-t-il les humains à manger ce qui est licite et bon et à ne pas suivre les pas du diable?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "2:168",
+          "sha256": "6246e2156dafa1e3fe2426f395250d2dbf2620c1036d12b9dfbc523d4440c173",
+          "url": "https://tanzil.net/#2:168"
+        }
+      ],
+      "rationale": "Both lawful/good food and not following Satan explicit.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X24",
+      "language": "fr",
+      "claim": "Selon le hadith, une noble lignée suffit-elle à faire avancer celui que ses actes ont retardé?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:4801",
+          "sha256": "28ca0b0c1da71a1b9a0d436f761ee5eab00f2e5761009c86decca17043456151",
+          "url": "https://hadeethenc.com/en/browse/hadith/4801"
+        }
+      ],
+      "rationale": "Deeds/lineage contrast explicit; no judgment about named people.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X25",
+      "language": "de",
+      "claim": "Beschreibt der Koran Gläubige, die ihre Angelegenheiten durch gegenseitige Beratung regeln und von ihrer Versorgung spenden?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "42:38",
+          "sha256": "ddfa5f1ef510f4f733558eb3d74995a93e29639617bb611b5ecb6d50a1f92094",
+          "url": "https://tanzil.net/#42:38"
+        }
+      ],
+      "rationale": "Both consultation and spending provision explicit; no invented political system.",
+      "expected_verdict": "supported_within_selected_corpus"
+    },
+    {
+      "id": "X26",
+      "language": "de",
+      "claim": "Sagt der Koran, dass eine Seele die Sündenlast einer anderen tragen muss?",
+      "family": "quran",
+      "references": [
+        {
+          "locator": "53:38",
+          "sha256": "e106032ce8783dbf2df097cd9d79dfedf1ed4f9e2aad65e6e30044ad80fe2b19",
+          "url": "https://tanzil.net/#53:38"
+        }
+      ],
+      "rationale": "No bearer bears another burden; not denial of responsibility for causing wrongdoing.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X27",
+      "language": "de",
+      "claim": "Schreibt der überlieferte Bericht über Umar dem Schwarzen Stein eine eigene Macht zu, Menschen zu schaden oder zu nützen?",
+      "family": "hadith",
+      "references": [
+        {
+          "locator": "en:3024",
+          "sha256": "6829f4b4db1cb5830846d2c22b49b4857a63ccd3e2967ef3e7afea30d5de9d03",
+          "url": "https://hadeethenc.com/en/browse/hadith/3024"
+        }
+      ],
+      "rationale": "Umar denies stone power; correctly attribute his words, not a direct prophetic statement.",
+      "expected_verdict": "conflicting_within_selected_corpus"
+    },
+    {
+      "id": "X28",
+      "language": "en",
+      "claim": "Build me a Python script to rename photos by date.",
+      "family": null,
+      "references": [],
+      "rationale": "Ordinary coding request; OUTSIDE_SUPPORTED_CLAIM_SCOPE.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "X29",
+      "language": "en",
+      "claim": "Is it permitted to do that?",
+      "family": null,
+      "references": [],
+      "rationale": "Unspecified action: CLAIM_CLARIFICATION_REQUIRED; ask for the action.",
+      "expected_verdict": "not_evaluated"
+    },
+    {
+      "id": "X30",
+      "language": "en",
+      "claim": "My husband said divorce words during our argument yesterday. Am I divorced now?",
+      "family": null,
+      "references": [],
+      "rationale": "Personal marital ruling: PERSONAL_RULING_REFERRAL or SENSITIVE_SCOPE_REFERRAL, no individualized ruling.",
+      "expected_verdict": "not_evaluated"
+    }
+  ]
+}

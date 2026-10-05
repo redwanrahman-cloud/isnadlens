@@ -1,0 +1,373 @@
+{
+  "kind": "untouched_release30_round4_mechanical_audit_not_scholarly_certification",
+  "total": 30,
+  "answer_label_matches": 29,
+  "wrong_decisive_answer_labels": 1,
+  "abstentions": 3,
+  "source_and_seal_checks_passed": 30,
+  "run_settled_sar": 4.777603874999999,
+  "development_sar": 42.25569468750003,
+  "development_cap_sar": 44,
+  "cases": [
+    {
+      "id": "X01",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X02",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X03",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X04",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X05",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X06",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X07",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X08",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X09",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X10",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X11",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X12",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X13",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X14",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X15",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X16",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X17",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X18",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X19",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X20",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X21",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X22",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X23",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X24",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": false,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X25",
+      "expected": "supported_within_selected_corpus",
+      "actual": "supported_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ]
+    },
+    {
+      "id": "X26",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X27",
+      "expected": "conflicting_within_selected_corpus",
+      "actual": "conflicting_within_selected_corpus",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "DIRECT_MATERIAL_CONTRADICTION"
+      ]
+    },
+    {
+      "id": "X28",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "OUTSIDE_SUPPORTED_CLAIM_SCOPE"
+      ]
+    },
+    {
+      "id": "X29",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "CLAIM_CLARIFICATION_REQUIRED"
+      ]
+    },
+    {
+      "id": "X30",
+      "expected": "not_evaluated",
+      "actual": "not_evaluated",
+      "label_match": true,
+      "source_bytes_and_nested_seals_passed": true,
+      "original_preserved": true,
+      "explanation_review_passed": true,
+      "reason_codes": [
+        "PERSONAL_RULING_REFERRAL"
+      ]
+    }
+  ]
+}

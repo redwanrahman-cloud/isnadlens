@@ -191,3 +191,9 @@ All seven original failure cases pass the end-to-end live repair check, with 7/7
 ## Limited five-question pilot — 5 October 2026 Riyadh
 
 User authorized a small fresh pilot. Enforced 0.75 SAR pilot commitment cap within existing 39 SAR approval. Two answers passed source/prose review; third retrieved correct evidence but stopped at SPEND_BUDGET_STOP before a complete answer; last two not attempted. Source audits passed 3/3 captured records. No five-question score, larger run or fresh baseline success claimed. Pilot cost 0.289726875 SAR; conservative development 37.4780908125/39 SAR. Broader approved budget configuration restored after stopping; no further paid calls. Details: docs/PILOT5-2026-10-05.md.
+
+## Fresh 30-question benchmark after repairs — 5 October 2026 Riyadh
+
+User resumed testing and approved development cap 44 SAR. Frozen ROUND4 completed 30/30 fresh questions across nine input languages, with 29/30 satisfactory responses (96.7%), exceeding the numeric 27/30 baseline. No unexpected religious withholds; 26/27 satisfactory religious answers and 3/3 correct boundaries. Source/seal audits and input detection passed 30/30. All explanations were reviewed against the original sources; no incorrect religious explanation found. X24 failed because its supported badge contradicts its correct No explanation and directly contrary lineage hadith. Zero-wrong-decisive release gate remains unmet. No application changes, manual failure retries or further paid tests during this frozen run.
+
+Run cost 4.777603875 SAR; conservative development commitment 42.2556946875/44 SAR, leaving 1.7443053125 SAR. Separate 15 SAR judging reserve preserved. Next targeted repair: distinguish source support for an answer from support for the proposition being asked. Details and per-case evidence: docs/RELEASE30-ROUND4.md.
