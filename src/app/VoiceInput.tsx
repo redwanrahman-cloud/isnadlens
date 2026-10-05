@@ -36,7 +36,7 @@ export const VoiceInput=forwardRef<VoiceInputHandle,{language:ClaimLanguage;inpu
  useEffect(()=>{if(ready===false)discard();},[ready]); // Prevent a recording competing with an active verification.
  useEffect(()=>()=>{generation.current++;controller.current?.abort();if(recorder.current){recorder.current.onstop=null;if(recorder.current.state!=='inactive')recorder.current.stop();}release();},[]);
  async function start(){
-  if(starting.current||recording||busy||ready===false)return;discard();starting.current=true;const epoch=generation.current;
+  if(starting.current||recording||busy||ready===false)return;window.dispatchEvent(new Event('isnadlens:speech-cancel'));discard();starting.current=true;const epoch=generation.current;
   try{
    if(!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder==='undefined')throw new Error('unsupported');
    try{meter.current=new AudioContext();void meter.current.resume().catch(()=>{});}catch{/* Recording can work even when the level meter is unavailable. */}
