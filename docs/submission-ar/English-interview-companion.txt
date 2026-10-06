@@ -20,7 +20,7 @@ What was the hardest problem?
 Finding an authentic passage was not enough. The passage also had to prove the answer, and the final explanation had to preserve its conditions. At other times, overly rigid review withheld a useful answer even after retrieval succeeded. I improved source context, recorded rejection reasons and bounded explanation repair without bypassing evidence review. I also fixed a badge that disagreed with a correct explanation and a route that searched before asking for a missing quotation.
 
 How did results progress?
-The seven 30-question rounds scored 25, 26, 23, 29, 29, 29 and 29 satisfactory responses. Round four still failed my zero-wrong-decisive gate because of the badge inconsistency. These were different questions and versions, so the sequence is development history, not a controlled before/after accuracy experiment.
+The seven 30-question rounds scored 25, 26, 23, 29, 29, 29 and 29 satisfactory responses. Round four did not meet my zero-wrong-decisive criterion because of the badge inconsistency. These were different questions and versions, so the sequence is development history, not a controlled before/after accuracy experiment.
 
 What is the user benefit?
 The user can see the question, explanation and original evidence together and follow the reference. They can correct an unclear question or supply a missing quote without silently changing their intent. I have early positive feedback from one mentor after two questions. I have not yet measured time saved against ordinary search or run a large usability study.
