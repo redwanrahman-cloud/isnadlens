@@ -37,8 +37,12 @@ Open `/tools`. Choose a city or your coordinates, check the calculation method a
 
 ## Supporting evidence
 
-The app's `/evaluation/latest` dashboard retains earlier evaluation history. The [round-seven report](VERIFICATION-ROUND7-MIXED-2026-10-06.md) and [current results packet](../artifacts/reviewer-evidence-index.json) identify the latest complete benchmark. Reviewers can inspect these results and use the working product; no historical test reruns are required.
+The app's `/evaluation/latest` dashboard shows the current round-seven result and preserves clearly labelled earlier evaluation history. The [round-seven report](VERIFICATION-ROUND7-MIXED-2026-10-06.md) and [current results packet](../artifacts/reviewer-evidence-index.json) identify the latest complete benchmark. Reviewers can inspect these results and use the working product; no historical test reruns are required.
 
 The interface retains your selected display language across the verification workspace, companion, daily tools and reloads. The landing example includes branded PDF receipt and PNG share exports, labelled as a curated illustration. Attached audio controls provide explanation reading and separately recorded Quran recitation. Historical UI audit: `artifacts/site-polish-2026-10-05.json`. Latest recorded full offline regression: 542 passing checks across 51 files after the tawaf repair. These checks do not change the frozen semantic benchmark. Predefined journey questions outside Arabic remain explicitly labelled English; navigation and counter controls support all nine display languages.
 
 The landing example is now a curated source-based illustration answering the displayed planning question with No. Question, explanation, audio, share card and PDF use the selected language. The stored earlier assessment remains unchanged as evidence provenance. Automated accessibility results: `artifacts/accessibility-audit-2026-10-05.json` (12 tested views, zero detected WCAG violations; not a complete UX/content review). Reviewed screenshot regression tests are in `qa/`; run the Playwright test configuration without updating snapshots to detect unintended visual changes. The original semantic benchmark remains unchanged.
+
+## Run the submitted source version
+
+The GitHub repository is public. The [developer setup](../README.md#developer-setup) restores all 27 pinned runtime source files from the included [source snapshot](../resources/README.md). Restoration requires no model calls or separate source access. Live verification requires the reviewer’s own server-side API key and explicit budget authorization; the hosted application remains available for product review.

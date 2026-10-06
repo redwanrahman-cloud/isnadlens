@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-06",
+  "source": "fresh Git archive plus candidate snapshot/restore helper",
+  "runtime_files": 27,
+  "runtime_bytes": 163542719,
+  "clean_restore_passed": true,
+  "repeat_restore_passed": true,
+  "changed_existing_source_rejected": true,
+  "corrupted_archive_rejected": true,
+  "runtime_admission_checker_passed": true,
+  "model_calls": 0,
+  "limits": "This audit tests exact source restoration, not a new inference benchmark or a fresh dependency install/build."
+}

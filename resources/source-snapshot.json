@@ -1,0 +1,170 @@
+{
+  "archive": "isnadlens-sources-2026-10-06.zip",
+  "bytes": 61016133,
+  "sha256": "c6ba08b9ef3205518d29e37e74b0de547fd6788ace29a84124fdb8f4b94b35ee",
+  "source_files": [
+    {
+      "path": "data/corpus.json",
+      "bytes": 2994988,
+      "sha256": "f6f490558db286aa17cfef4d4af5da20eb8670b866337bcca636f17953ce2d23",
+      "in_git": false
+    },
+    {
+      "path": "data/hadeethenc.json",
+      "bytes": 100266945,
+      "sha256": "1939676c7d7d64ec2affb517b367216faed90ef069e877acbff504f275c067ac",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/uthmani.txt",
+      "bytes": 1396087,
+      "sha256": "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/simple-clean.txt",
+      "bytes": 781176,
+      "sha256": "228df2a717671aeb9d2ff573002bd28d6b3f973f4bc7153554e3a81663d67610",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-ar.xlsx",
+      "bytes": 2769366,
+      "sha256": "088f818de5131fb91ddee5778665d4a324608bd2afd5ac01b98fc9687852b2ee",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-en.xlsx",
+      "bytes": 3232481,
+      "sha256": "339d148eb7425b7f2d48dd7521a969e4aa4a35b5d35a7c4a1c1b67043b5ee218",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-bn.xlsx",
+      "bytes": 2997262,
+      "sha256": "f593d5a5707f6b39f43431db9263100a7032b8dd1775c17b4e7fde201e4864c4",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-hi.xlsx",
+      "bytes": 3162518,
+      "sha256": "2058c3866f607e3d6ac1ea432a3abddb9de294cc414a2aa47ce8f54eacfaefc5",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-ur.xlsx",
+      "bytes": 3194454,
+      "sha256": "0f5afc97215b14563134c9ef67f3d146a5395d5d90bfb5bec95e9220fa072041",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-id.xlsx",
+      "bytes": 3109308,
+      "sha256": "f266f1dd4f60a1512717afa162ec657da42b2282f930dd189110f13fa319dd06",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-es.xlsx",
+      "bytes": 2675095,
+      "sha256": "acf1212e7ceb02ceb7fd77d634fade2f8fe812fca0fd27c8983c8f040dfe5050",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-fr.xlsx",
+      "bytes": 2604327,
+      "sha256": "d532a5f1c9e1746554e232c41fbc3df3ceec32382827e3ec89dd892233f15144",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/hadeethenc/hadeethenc-de.xlsx",
+      "bytes": 872420,
+      "sha256": "db6d94156bde20343fcc257adbf97c3f213ef72a3645b2657dc6b45e0c7fc4f3",
+      "in_git": false
+    },
+    {
+      "path": "data/quranenc/de.json",
+      "bytes": 1388442,
+      "sha256": "2622706595c96e790beb39cc9ed0ba9fff970325ecba3ad6b5ad9ee18d448ded",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/quranenc/german_rwwad.sqlite",
+      "bytes": 1179648,
+      "sha256": "32c6a6e0e45b4ece65f3b85094fa6f4c0a9b9bdc5c94a7933e8fe711efb5125e",
+      "in_git": false
+    },
+    {
+      "path": "data/quranenc/en.json",
+      "bytes": 1473105,
+      "sha256": "e23dec2efd635ff0351baff96a863a231a5a0a7a748b7586e7b477681379a04b",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/quranenc/english_rwwad.sqlite",
+      "bytes": 1245184,
+      "sha256": "77e2ede3d8e6d6b5c6e16ff78eda2d2b6cc0a6b7489c94a5dde4f7481f5fdee8",
+      "in_git": false
+    },
+    {
+      "path": "data/quranenc/es.json",
+      "bytes": 1536386,
+      "sha256": "e0c8391df900c84dc9d677f915f97da42670bbd8214112865ac59dc1e075e09f",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/quranenc/spanish_garcia.sqlite",
+      "bytes": 1310720,
+      "sha256": "63fb0541378f48feb7e9bde6216c85f36a50bda73d0082d21a18a3289bc1aa10",
+      "in_git": false
+    },
+    {
+      "path": "data/quranenc/fr.json",
+      "bytes": 1572783,
+      "sha256": "fa9a6a0baf06956131c2682934e0408d6b8fb92b484b0ad7d95b1177ca7c00d4",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/quranenc/french_rashid.sqlite",
+      "bytes": 1376256,
+      "sha256": "1c8d1f66f3ab8d708ba84db79b8c069dede23a3e40fff253d3ca14deafba87bf",
+      "in_git": false
+    },
+    {
+      "path": "data/quranenc/hi.json",
+      "bytes": 3554213,
+      "sha256": "3ecbcb0f78160b520e6e7b092c0bd495326cdf860665e09f5d85c485bb633210",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/quranenc/hindi_omari.sqlite",
+      "bytes": 3407872,
+      "sha256": "9f5208ae22da5b6af4a9be95438cf5f35e0e195a91f217aa26b336f58efed31b",
+      "in_git": false
+    },
+    {
+      "path": "data/quranenc/id.json",
+      "bytes": 1652935,
+      "sha256": "92552ef7d836bc7f7eede2e871de0ab69b5aa7c805b3859c164a9daaf2a595b7",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/quranenc/indonesian_sabiq.sqlite",
+      "bytes": 1441792,
+      "sha256": "589f39e8e61ef0bd828ca1323d5ee77ef3db53554230ae5018a3cd4775b5ad50",
+      "in_git": false
+    },
+    {
+      "path": "data/quranenc/ur.json",
+      "bytes": 6186572,
+      "sha256": "181114065444806e86a1ef36cd4929a4e56908e7340946a5c3577d4e8e23a04c",
+      "in_git": false
+    },
+    {
+      "path": "data/raw/quranenc/urdu_junagarhi.sqlite",
+      "bytes": 6160384,
+      "sha256": "20ccc96bd25e481ca248e8a02d354a316bda2b6fc325fd2aeb5cdd26f7fb11bb",
+      "in_git": false
+    }
+  ],
+  "purpose": "Exact competition runtime snapshot. Publisher text, versions and notices remain unchanged. No credentials or user input files."
+}

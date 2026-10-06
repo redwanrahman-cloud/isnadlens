@@ -1,0 +1,34 @@
+ISNADLENS — ENGLISH VIDEO NARRATION
+First-person English adaptation of the Arabic submission script.
+Target: approximately 110 seconds. Measure the actual recording; maximum 120 seconds.
+
+Imagine I read a post saying: “If I trust Allah, I don't need to plan or take practical steps.”
+
+It sounds confident. But before I believe it or share it, I want to know: where is the evidence, and does it support that meaning?
+
+Searching gives me quotations and explanations. Connecting them to my question is harder.
+
+That's why I built IsnadLens, as a solo project with assistance from AI tools.
+
+I ask in my own words: “Does trusting Allah mean I should stop planning?”
+
+Here is a clearly labelled, prepared example. I can read the explanation beside the original Arabic evidence, inspect its reference, and open the source. This demonstrates the experience; it is not a new live test.
+
+Behind the screen, IsnadLens retrieves sources, checks quotation integrity, and reviews whether the evidence supports the conclusion. When essential information is missing, it asks for clarification. When the evidence is insufficient, it says so.
+
+During development, I evaluated 425 distinct questions across 12 main test sets, alongside thousands of separate offline software checks.
+
+I improved evidence ordering, clarification, and overly restrictive review, then tested new question sets.
+
+In the latest complete benchmark, 29 of 30 responses met the predefined expectations. That is a result for this sample, not a guarantee for every question or independent scholarly approval.
+
+My goal is simple: help me move from a circulating claim to evidence I can read and understand myself.
+
+IsnadLens: an evidence-tracing tool, not a fatwa.
+
+RECORDING NOTES — DO NOT READ ALOUD
+- Keep the app in Arabic for the submission demonstration.
+- Keep the prepared-example label visible; do not present it as a fresh API response.
+- Show the evidence and reference, then the 425/12 and 29/30 results.
+- End with the live application address.
+- Read naturally and time the recording. Shorten pauses if needed; do not exceed two minutes.

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-06",
+  "slide_7_title": "425 سؤالاً موثقاً وراء رحلة التطوير",
+  "speaker_note_seconds": [
+    15,
+    25,
+    30,
+    35,
+    25,
+    30,
+    15,
+    15,
+    20,
+    15,
+    25,
+    20
+  ],
+  "speaker_total_seconds": 270,
+  "report_technology_line": "Next.js + React",
+  "public_github_anonymous_check": true,
+  "visual_review": [
+    "corrected slide 7",
+    "report pages 7 and 9"
+  ],
+  "other_slide_designs_unchanged": true,
+  "files": {
+    "IsnadLens-Arabic-Presentation.pdf": "1cbd5ceebf7f105bb9ee1985fd8c300e27b385c96434ed82af8e3bffee136efc",
+    "IsnadLens-Arabic-Presentation.pptx": "b5e4852167e27f3abec9f1d4a183e5c5b2aa07e2e65a437bb0fc495abe8a381c",
+    "IsnadLens-Arabic-Submission-and-Testing.pdf": "c5fb109de5f7a557a91f2843fe774055f5e6b7fa2706d8b2e4b2ceb2724cb0c5"
+  }
+}

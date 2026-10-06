@@ -39,6 +39,6 @@ Independent scholarly review, broader user testing, measured benefit against ord
 
 Submission checks still requiring completion
 - The Arabic deck is prepared. Record and verify a video no longer than two minutes.
-- Public reviewer access to GitHub, with credentials/private artifacts excluded and source setup checked.
+- Public GitHub access is verified without authentication. The source snapshot restoration passed on a clean Git export, including all 27 file checksums.
 - Correct live, video and repository links in the portal, followed by the final submission receipt.
 - The official guide permits Arabic or English presentation material. Rehearse the English interview answers, and confirm any session-specific language arrangements with the organizer.

@@ -17,7 +17,7 @@ and updating as needed; this does not waive completeness requirements.
 Portal-project-description-ar.txt contains the prepared Arabic project summary.
 README.md, docs/REVIEWER-GUIDE.md and docs/source-rights/ provide operating,
 reviewing and source/licence documentation. Preparation is not submission;
-the video, public access, reviewer setup and portal receipt must be verified.
+public GitHub access and exact source restoration are now verified. The video and portal receipt remain pending.
 
 Official form: https://islamicaich.org/dashboard/submission/11/create
 Official participant guide:

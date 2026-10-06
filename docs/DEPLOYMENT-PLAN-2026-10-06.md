@@ -48,7 +48,7 @@ The initial archive SHA-256 was `08a019da70096af7190af65aa512079871d5b88d4cd3ad1
 
 To prepare a release from a clean checkout:
 
-1. Restore the 27 exact runtime source files from the retained operator bundle into their paths listed in `artifacts/deployment-audit-2026-10-06.json`. These files are Git-ignored; a GitHub ZIP alone is incomplete. An authorized reviewer bundle delivery is still required before claiming clean-checkout reproducibility. Do not refresh publisher data or regenerate pins silently.
+1. Run `python scripts/restore-sources.py` to restore the 27 exact runtime source files from the committed `resources/isnadlens-sources-2026-10-06.zip`. A normal GitHub clone/ZIP now includes the snapshot and its publisher notices. The helper validates archive/file hashes and refuses mismatching existing files. Do not refresh publisher data or regenerate pins silently.
 2. Run `node deploy/check-source-bundle.mjs`. Package with `python deploy/package-release.py /outside/repository/release.tar.gz`; this includes the nine imported public evaluation reports and excludes secrets, private state and build output.
 3. Extract into a fresh server release directory and run `docker build -t isnadlens:RELEASE .`. Keep the image ID for that qualified release; Debian system-package resolution may change on a later rebuild even though Node is pinned.
 4. Provision protected runtime variables and **existing** accounting before startup. Never initialize a fresh hosted allowance from the same development allocation.
@@ -77,6 +77,6 @@ Machine-readable HTTP results are in `artifacts/hosted-qualification-2026-10-06.
 3. Test actual human microphone/camera/phone playback and unpaid Google-project availability. Image/transcription/uncached speech share the app's two-per-minute and sixty-per-day quota.
 4. Add/qualify a bounded retention policy for generated WAV cache before extended public traffic; current cache has no eviction. The hosted media switch is now enabled; retention still needs to be bounded before extended public traffic.
 5. Prayer provider lookup and countdown passed. Physical-device location remains untested. Qibla has been removed from the released tools UI.
-6. Complete reviewer corpus delivery, public-repository decision, presentation/video, and official submission receipt. Deployment does not itself satisfy these competition deliverables.
+6. Public GitHub access and reviewer corpus delivery are now implemented. Finish the video and official submission receipt; the presentation is prepared. Deployment does not itself satisfy these competition deliverables.
 
 The earlier hosting comparison and 4 October estimates are historical. This approved Lightsail deployment supersedes recommendations for Railway, Render, Workers-only hosting and the temporary sslip.io hostname.

@@ -9,7 +9,7 @@ Open the [live application](https://isnadlens.alfarrajpolyclinic.com) and the [p
 - `/` — verification, source evidence, published passage translations, read-aloud, reviewed voice/image inputs and optional recent checks.
 - `/pilgrimage` — focused Umrah/Hajj source questions, topic shortcuts and manual Tawaf/Sa’i progress.
 - `/tools` — prayer calculations and countdown, saved locations and Gregorian/Hijri calendars/conversion. The Qibla interface has been removed.
-- `/evaluation/latest` — historical evaluation dashboard. Use the round-seven report below for the most recent complete benchmark.
+- `/evaluation/latest` — current round-seven results, the 425-question development audit and clearly labelled earlier evaluation history.
 
 Reviewers use the working product and inspect the recorded results. No development-suite reruns or reproduction of historical failures is required.
 
@@ -21,7 +21,7 @@ Latest complete verification benchmark: **29/30 satisfactory responses (96.7%)**
 
 Development coverage: **425 distinct normalized question texts across 12 completed major live sets**. This conservative count excludes targeted reruns and smaller probes. Earlier versions and datasets are not pooled into a current-version accuracy estimate. [Audited inputs and hashes](docs/submission-ar/testing-volume-audit.json). A separate offline lab passed 2,924 replay/integrity checks around 150 historical records; these are not additional live religious answers.
 
-Latest recorded full offline regression: **542 tests across 51 files**, with TypeScript passed after the tawaf retrieval repair. [Hosted smoke test and targeted repair](docs/HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md). The later favicon production build passed as recorded in the [deployment log](docs/DEPLOYMENT-PLAN-2026-10-06.md). Earlier desktop/mobile and image checks remain available as historical evidence: [input journeys](artifacts/input-journeys-2026-10-05.json), [image controls](artifacts/image-input-checks-2026-10-05.json). They do not certify every physical device or every current hosted media interaction.
+Latest recorded full offline regression: **542 tests across 51 files**, with TypeScript passed after the tawaf retrieval repair. [Hosted smoke test and targeted repair](docs/HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md). The later content-review Linux production build and public route checks passed; see the [final website review](docs/FINAL-WEBSITE-REVIEW-2026-10-06.md). Earlier desktop/mobile and image checks remain available as historical evidence: [input journeys](artifacts/input-journeys-2026-10-05.json), [image controls](artifacts/image-input-checks-2026-10-05.json). They do not certify every physical device or every current hosted media interaction.
 
 [Current results packet](artifacts/reviewer-evidence-index.json) is the compact machine-readable index. UI/microphone mocks and feature controls are disclosed separately from the semantic benchmark. These are observed results, not general accuracy, physical-device certification or independent scholarly approval. Later convenience additions do not change the frozen benchmark score.
 
@@ -39,18 +39,16 @@ Frameworks: Next.js 16.3.8, React 19.3, TypeScript 7, Zod 4, Sharp 0.35.5; Vites
 
 ## Developer setup
 
-This is optional setup for running the repository, not a reviewer testing requirement. Node.js 24 LTS, npm, Python/openpyxl for Hadith preparation and network access for source preparation are needed.
+The repository is public. To reproduce the submitted build, use Node.js 24 LTS, npm and Python 3.10+ (standard library only). The pinned source snapshot is included in a normal clone or GitHub source ZIP; no separate corpus access request is needed.
 
 ```sh
+python scripts/restore-sources.py
+node deploy/check-source-bundle.mjs
 npm ci
-npm run corpus:prepare
-node scripts/download-hadeethenc.mjs
-python scripts/prepare-hadeethenc.py
-node scripts/prepare-quranenc.mjs
 npm run dev
 ```
 
-Source acquisitions must match the documented pins and notices. Changed publisher files require deliberate re-admission rather than bypassing integrity checks. Joined corpora are excluded from Git and prepared locally. Configure server-side keys with `.env.example` and ignored `.env.local`; never publish keys. Paid OpenAI requests need an authorized spending cap; Google features need the confirmed unpaid project. Local filesystem spending guards require durable shared controls before multi-instance hosting.
+Restoration checks all 27 immutable runtime files before writing and makes no model or network calls. See [snapshot contents, versions and publisher rights](resources/README.md). Extracted corpora remain Git-ignored; the compressed, checksummed snapshot is committed. The older acquisition scripts are for future source admission, not this quick start. Changed publisher files require deliberate re-admission rather than bypassing integrity checks. The interface, prepared example and offline checks do not require model keys. For live verification, copy `.env.example` to ignored `.env.local`, supply your own server-side keys and explicitly enable an authorized spending cap; live inference is off by default. Never publish keys. Paid OpenAI requests need an authorized spending cap; Google features need the confirmed unpaid project. Local filesystem spending guards require durable shared controls before multi-instance hosting.
 
 Developers can run `npm test`, `npm run typecheck` and `npm run build`. `scripts/check-input-journeys.mjs` uses installed Chrome, mocked providers/microphone and a public trimmed UI fixture; it makes no paid calls and creates its own synthetic image. Private user images, audio and development captures remain excluded from Git.
 
