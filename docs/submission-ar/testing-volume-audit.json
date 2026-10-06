@@ -1,0 +1,115 @@
+{
+  "as_of": "2026-10-06",
+  "major_sets": 12,
+  "first_pass_questions": 425,
+  "distinct_normalized_texts": 425,
+  "runs": [
+    {
+      "name": "Baseline development set",
+      "artifact": "common-question-baseline-50-initial-live-2026-10-04.json",
+      "sha256": "b8ec2c5de29de3f8273b4b362d96686ec5dcc57bb1746a934f19c8762c2b2654",
+      "questions": 50
+    },
+    {
+      "name": "New50 holdout",
+      "artifact": "holdout50-first-pass-results-2026-10-04.json",
+      "sha256": "0a62b5e5b34bc99900c0b1e32dfc2d6afee81c5e82fd0fdea4ebed2257ce943e",
+      "questions": 50
+    },
+    {
+      "name": "New50 model-routing set",
+      "artifact": "fresh50-first-pass-results-2026-10-04.json",
+      "sha256": "d6cf6d6e369e8f31d70f9d8e7e3e4aa5890030dc09c905bc32abd24518e1d567",
+      "questions": 50
+    },
+    {
+      "name": "Bounded-discovery15",
+      "artifact": "web15-first-pass-2026-10-04.json",
+      "sha256": "d516f8a4480c09f1f86067e8b3c04345d80caf388ba537efcb9b0dd006e8b8fd",
+      "questions": 15
+    },
+    {
+      "name": "Bounded-discovery50",
+      "artifact": "web50-first-pass-2026-10-04.json",
+      "sha256": "a1b63cdd068d998b36dac43e5ad8eb7ddfcc35a843773560faa885af9a03c23b",
+      "questions": 50
+    },
+    {
+      "name": "Release round1",
+      "artifact": "release30-first-pass-2026-10-04.json",
+      "sha256": "948d284cc2fd5b0d6ed0758b5e75aea2121bc1cf444e5b337a3564fdd09a2578",
+      "questions": 30
+    },
+    {
+      "name": "Release round2",
+      "artifact": "release30-round2-first-pass-2026-10-05.json",
+      "sha256": "3ef780631fa9b7468b2cbdc8349d680d7d9f70fa28f53bd00c6169516d87439f",
+      "questions": 30
+    },
+    {
+      "name": "Release round3",
+      "artifact": "release30-round3-first-pass-2026-10-05.json",
+      "sha256": "c9127ad17b56ca27e110203f1ff4581fdfe7d7fe3f58423387c2aef874a87af4",
+      "questions": 30
+    },
+    {
+      "name": "Release round4",
+      "artifact": "release30-round4-first-pass-2026-10-05.json",
+      "sha256": "bd23d4b12f6e606f688b9bcff0b4ba7bd025d1239639e749f439f4caa42bb84f",
+      "questions": 30
+    },
+    {
+      "name": "Release round5",
+      "artifact": "release30-round5-first-pass-2026-10-05.json",
+      "sha256": "73b125160efbbda5cab47f9ded3ea18095b9ff73751b5bc3bbc2984a3e4e2c06",
+      "questions": 30
+    },
+    {
+      "name": "Release round6",
+      "artifact": "release30-round6-first-pass-2026-10-06.json",
+      "sha256": "043796f93b1bf5f3ff6b710d1304bfda2e43fcd98203e652a262f0156df54e60",
+      "questions": 30
+    },
+    {
+      "name": "Release round7",
+      "artifact": "release30-round7-first-pass-2026-10-06.json",
+      "sha256": "4f8001eb33416f6bb91883a96d4aa53570f4c6eafec6e995ee01ba914cefebdd",
+      "questions": 30
+    }
+  ],
+  "latest_result": {
+    "satisfactory": 29,
+    "total": 30,
+    "source": "VERIFICATION-ROUND7-MIXED-2026-10-06.md"
+  },
+  "offline": {
+    "replay_integrity_checks": 2924,
+    "historical_records": 150,
+    "retrieval_probes": 432,
+    "regression_suite": 542,
+    "regression_files": 51
+  },
+  "limits": [
+    "A conservative lower bound of completed major sets, not total provider calls.",
+    "Targeted retests, pilots, planned questions, browser fixtures and mentor questions excluded.",
+    "Distinct texts are not necessarily distinct topics.",
+    "Offline checks do not establish model accuracy. No summation across overlapping suites.",
+    "Historic app versions and question sets vary; cumulative volume is not final-version accuracy."
+  ],
+  "cost_estimates": {
+    "currency": "SAR",
+    "round6_30_questions": 4.4639325,
+    "round7_30_questions": 3.3256400625,
+    "round6_per100": 14.879775,
+    "round7_per100": 11.085466875,
+    "basis": "Extrapolation of captured usage estimates, not provider invoices, a standalone 100-question trial, or a guaranteed price.",
+    "exclusions": [
+      "Hosting",
+      "Optional voice/image services and display translation outside the measured path"
+    ],
+    "source_files": [
+      "release30-round6-principal-review-2026-10-06.json",
+      "release30-round7-principal-review-2026-10-06.json"
+    ]
+  }
+}

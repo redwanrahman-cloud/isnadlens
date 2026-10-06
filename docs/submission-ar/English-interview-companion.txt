@@ -1,0 +1,41 @@
+ISNADLENS — ENGLISH INTERVIEW COMPANION
+6 October 2026
+
+Opening, in my voice
+Imagine I see a post saying that trusting Allah means I do not need to plan or take practical steps. Before I believe it or share it, I want to know where it comes from and whether the source actually supports that meaning. IsnadLens lets me ask naturally and read the explanation beside the original Arabic evidence and its reference.
+
+What did you achieve?
+Our latest complete 30-question batch met the frozen expectations in 29 cases. We reviewed usefulness, direct evidence, preserved qualifications, explanation/badge agreement and source integrity. That is the result on this batch, not a general accuracy claim. One qualified answer did not meet the frozen key. We retained it rather than changing the score.
+
+How much did you test?
+We audited 425 distinct normalized question texts across 12 completed major live evaluation sets. This conservative total excludes targeted reruns, small probes, plans that were not executed and the mentor's two questions. It does not mean all 425 passed or were rerun on the final deployed version.
+
+What do thousands of offline tests mean?
+One recorded offline lab passed 2,924 replay, integrity, tamper and guard checks around 150 historical records. These are software checks, not thousands of fresh religious answers. A separate later regression suite passed 542 tests across 51 files. We report these separately because the scopes overlap.
+
+What was the hardest problem?
+Finding an authentic passage was not enough. The passage also had to prove the answer, and the final explanation had to preserve its conditions. At other times, overly rigid review withheld a useful answer even after retrieval succeeded. We improved source context, recorded rejection reasons and bounded explanation repair without bypassing evidence review. We also fixed a badge that disagreed with a correct explanation and a route that searched before asking for a missing quotation.
+
+How did results progress?
+The seven 30-question rounds scored 25, 26, 23, 29, 29, 29 and 29 satisfactory responses. Round four still failed our zero-wrong-decisive gate because of the badge inconsistency. These were different questions and versions, so the sequence is development history, not a controlled before/after accuracy experiment.
+
+What is the user benefit?
+The user can see the question, explanation and original evidence together and follow the reference. They can correct an unclear question or supply a missing quote without silently changing their intent. We have early positive feedback from one mentor after two questions. We have not yet measured time saved against ordinary search or run a large usability study.
+
+What does it cost?
+The latest two 30-question batches recorded estimated provider costs of 3.325640 SAR and 4.4639325 SAR. Scaling those observed mixes gives approximately 11–15 SAR per 100 text verification questions. This includes recorded model review and bounded recovery in those batches. It excludes hosting and optional services outside that measured path. It is not a fixed price, a provider invoice, or a separate 100-question trial. Our chosen server package is 24 USD per month, plus usage-related costs.
+
+How is this different from a normal chat answer?
+The product makes the source visible and distinguishes quotation integrity from interpretation. It preserves the original question, traces citations and can withhold an unsupported conclusion or request missing content. We have not run a controlled comparison against other products, so I would demonstrate these features rather than claim a quantified advantage over a competitor.
+
+Does it give fatwas or independently authenticate hadith?
+No. It helps trace and assess evidence within its admitted sources. Source grades and translations remain attributed to their publishers. Personal rulings and independent scholarly authentication are outside its role.
+
+What remains?
+Independent scholarly review, broader user testing, measured benefit against ordinary search and continuing retrieval/language audits. Arabic and English are our immediate presentation focus. The remaining display languages have not received independent native-speaker certification.
+
+Submission checks still requiring completion
+- A final deck and a video no longer than two minutes, if not already produced separately.
+- Public reviewer access to GitHub, with credentials/private artifacts excluded and source setup checked.
+- Correct live, video and repository links in the portal, followed by the final submission receipt.
+- The official guide permits Arabic or English presentation material. Rehearse the English interview answers, and confirm any session-specific language arrangements with the organizer.
