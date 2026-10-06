@@ -1,8 +1,6 @@
 # Hosting readiness review — 4 October 2026
 
-> Superseded for deployment decisions by the [6 October current-code reassessment](DEPLOYMENT-PLAN-2026-10-06.md). The remainder is historical; its sizes and multi-instance recommendations must not be treated as the current release plan. An unchanged snapshot is preserved in `HOSTING-READINESS-2026-10-04.md`.
-
-Historical status as of 4 October: no deployment or hosting purchase had occurred. The approved Lightsail deployment completed on 6 October; see the current record above.
+No deployment or hosting purchase has occurred.
 
 The current HadeethEnc JSON is 77,908,605 bytes; raw source workbooks total 18,465,389 bytes. A local Node microbenchmark measured about 265 MiB RSS after parsing and 354 MiB during serialization/hash. These are partial local measurements, not hosted benchmarks. Current loaders repeatedly validate full files; even homepage coverage loads the Hadith source.
 

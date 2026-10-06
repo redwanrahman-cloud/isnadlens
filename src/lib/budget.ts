@@ -28,6 +28,7 @@ function updateLedger<T>(directory: string, mutate: (ledger: Ledger) => T): T {
   const ledgerPath = join(directory, 'api-spend.json');
   const tempPath = join(directory, `api-spend-${randomUUID()}.tmp`);
   try {
+    if (process.env.ISNADLENS_REQUIRE_EXISTING_LEDGER === 'true' && !existsSync(ledgerPath)) throw new Error('BUDGET_LEDGER_INVALID');
     const ledger = existsSync(ledgerPath) ? ledgerSchema.parse(JSON.parse(readFileSync(ledgerPath, 'utf8'))) : { version: 1 as const, entries: [] };
     const result = mutate(ledger);
     writeFileSync(tempPath, JSON.stringify(ledger, null, 2), { flag: 'wx' });

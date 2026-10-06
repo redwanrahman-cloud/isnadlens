@@ -2,3 +2,9 @@
 docs/source-rights/quranenc/api-and-terms.html -text -whitespace
 *.mjs text eol=lf
 *.py text eol=lf
+*.sh text eol=lf
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+deploy/*.conf text eol=lf
+deploy/*.template text eol=lf
+deploy/*.example text eol=lf

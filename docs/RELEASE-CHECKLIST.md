@@ -1,6 +1,15 @@
 # Release checklist
 
-## Latest verified increment — 4 October 2026
+> Deployment requirements were reassessed on [6 October](DEPLOYMENT-PLAN-2026-10-06.md). Historical milestones below are not current hosted acceptance. A single container may retain filesystem accounting with tested persistent state; multiple independent instances require shared durable controls.
+
+## Latest hosted increment — 6 October 2026
+
+- Approved Lightsail deployment is available at https://isnadlens.alfarrajpolyclinic.com.
+- Cloudflare subdomain-only Strict SSL, origin certificate, private application port, accounting persistence, Linux build and multilingual PDF qualified.
+- 537 offline tests passed; hosted readiness and public page checks passed. No new live inference or benchmark was performed. Provider activation and allocated hosted smoke test remain approval gates.
+- See the [current deployment record](DEPLOYMENT-PLAN-2026-10-06.md) for measured results and remaining gates.
+
+## Historical increment — 4 October 2026
 
 - Nine fresh input languages, automatic detection, original-preserving routing and native explanation requests.
 - Quran direct support sufficient; every mini-model conflict requires strong confirmation, preserving attribution and explicit conditions.
@@ -9,7 +18,7 @@
 - Google unpaid-project speech connected after Redwan's confirmation; real English/Arabic WAV generation and identical-byte cached reuse passed. Browser generated-result audio reached readyState 4, played and paused without media errors. Narrow page width 309px had no horizontal overflow; native audio width about222px. Physical iPhone/Android playback and pronunciation review remain open.
 - Proof: parent outputs/isnadlens-google-natural-voice-2026-10-04.jpg. Private keys, caches and full development records are excluded from Git.
 
-This tracks actual completion, not promised capabilities. Visual redesign requires Redwan's approval of its direction first.
+Historical milestones below retain their original context; they do not override subsequent design, hosting or spending approvals.
 
 ## Verified local milestones
 
@@ -26,7 +35,7 @@ This tracks actual completion, not promised capabilities. Visual redesign requir
 - Explanation translations are separate drafts, not Quran translations or scholarly approval.
 - Translation failure must preserve the original explanation and show that translation is unavailable.
 
-## Before a public working URL
+## Historical pre-deployment checklist (superseded by the 6 October record)
 
 - Measure actual corpus memory, cold-start latency and host compatibility. Current 100.3 MB joined Hadith source cannot simply be moved to the planned Workers Free runtime.
 - Confirm fallback free-plan eligibility and account access; no paid hosting authorized.

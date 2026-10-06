@@ -28,6 +28,7 @@ export function reserveFreeRequest(){
   try{handle=openSync(lock,'wx');}catch{throw new Error('SPEECH_BUSY');}
   const path=join(directory(),'quota.json');const temporary=join(directory(),`quota-${randomUUID()}.tmp`);
   try{
+    if(process.env.ISNADLENS_REQUIRE_EXISTING_LEDGER==='true'&&!existsSync(path))throw new Error('SPEECH_QUOTA_INVALID');
     const now=Date.now();const day=new Date().toISOString().slice(0,10);
     const previous=existsSync(path)?JSON.parse(readFileSync(path,'utf8')):{day,requests:0,recent:[]};
     if(typeof previous.day!=='string'||!Number.isInteger(previous.requests)||previous.requests<0||!Array.isArray(previous.recent)||previous.recent.some((n:unknown)=>typeof n!=='number'||!Number.isFinite(n)))throw new Error('SPEECH_QUOTA_INVALID');

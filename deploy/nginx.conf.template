@@ -1,0 +1,57 @@
+# Installed as /etc/nginx/conf.d/isnadlens.conf. Application port is loopback-only.
+include /etc/nginx/snippets/isnadlens-cloudflare.conf;
+limit_req_zone $binary_remote_addr zone=isnad_api:10m rate=30r/m;
+limit_req_zone $binary_remote_addr zone=isnad_verify:10m rate=6r/m;
+limit_conn_zone $binary_remote_addr zone=isnad_connections:10m;
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name HOSTNAME_PLACEHOLDER;
+    location /.well-known/acme-challenge/ { root /var/www/acme; }
+    location / { return 301 https://HOSTNAME_PLACEHOLDER$request_uri; }
+}
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name HOSTNAME_PLACEHOLDER;
+    ssl_certificate /etc/letsencrypt/live/HOSTNAME_PLACEHOLDER/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/HOSTNAME_PLACEHOLDER/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    # Deny direct-origin requests; only Cloudflare and local release checks reach the app.
+    if ($isnadlens_cf_edge = 0) { return 403; }
+    server_tokens off;
+    client_max_body_size 11m;
+    client_body_timeout 20s;
+    client_header_timeout 15s;
+    send_timeout 60s;
+    limit_conn isnad_connections 20;
+    limit_req_status 429;
+    limit_conn_status 429;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header X-Frame-Options SAMEORIGIN always;
+    add_header Strict-Transport-Security "max-age=86400" always;
+
+    # Never trust client-supplied forwarding identity.
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 240s;
+    proxy_send_timeout 30s;
+    proxy_request_buffering on;
+    proxy_buffering off;
+    proxy_http_version 1.1;
+    location = /api/verify {
+        client_max_body_size 8k;
+        limit_req zone=isnad_verify burst=5 nodelay;
+        proxy_pass http://127.0.0.1:3100;
+    }
+    location /api/ {
+        limit_req zone=isnad_api burst=10 nodelay;
+        proxy_pass http://127.0.0.1:3100;
+    }
+    location / { proxy_pass http://127.0.0.1:3100; }
+}

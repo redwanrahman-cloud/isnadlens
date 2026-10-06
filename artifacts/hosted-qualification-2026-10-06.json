@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-06",
+  "url": "https://isnadlens.alfarrajpolyclinic.com",
+  "inference_enabled": false,
+  "image_id": "sha256:41beb648175bde692d55d0f27a559b95148820ed6421d1311146f7f71486cb1b",
+  "http_checks": [
+    {
+      "path": "/",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.91,
+      "bytes": 33589
+    },
+    {
+      "path": "/pilgrimage",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.83,
+      "bytes": 30308
+    },
+    {
+      "path": "/tools",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.59,
+      "bytes": 25246
+    },
+    {
+      "path": "/sources",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.59,
+      "bytes": 38867
+    },
+    {
+      "path": "/method",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.73,
+      "bytes": 16284
+    },
+    {
+      "path": "/evaluation",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.81,
+      "bytes": 173097
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.69,
+      "bytes": 62,
+      "response": {
+        "status": "ready",
+        "sources": "admitted",
+        "inference": "disabled"
+      }
+    },
+    {
+      "path": "/api/coverage",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.72,
+      "bytes": 1734,
+      "response": {
+        "available": true
+      }
+    },
+    {
+      "path": "/api/image-input",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.5,
+      "bytes": 71,
+      "response": {
+        "available": false,
+        "model": "gemini-3.5-flash-lite",
+        "maxBytes": 10000000
+      }
+    },
+    {
+      "path": "/api/transcribe",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.48,
+      "bytes": 51,
+      "response": {
+        "available": false,
+        "model": "gemini-3.5-transcribe"
+      }
+    },
+    {
+      "path": "/api/speech",
+      "method": "GET",
+      "status": 200,
+      "expected": 200,
+      "seconds": 0.45,
+      "bytes": 210,
+      "response": {
+        "available": false,
+        "provider": "Google Gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voices": [
+          "Achernar",
+          "Algieba",
+          "Sulafat"
+        ],
+        "languages": [
+          "ar",
+          "en",
+          "bn",
+          "hi",
+          "ur",
+          "id",
+          "es",
+          "fr",
+          "de"
+        ],
+        "reason": "SPEECH_NOT_CONNECTED"
+      }
+    },
+    {
+      "path": "/api/image-input",
+      "method": "POST",
+      "status": 400,
+      "expected": 400,
+      "seconds": 0.45,
+      "bytes": 36,
+      "response": {
+        "error": "IMAGE_FORMAT_UNSUPPORTED"
+      }
+    },
+    {
+      "path": "/api/receipt",
+      "method": "POST",
+      "status": 400,
+      "expected": 400,
+      "seconds": 0.83,
+      "bytes": 27,
+      "response": {
+        "error": "Invalid receipt"
+      }
+    },
+    {
+      "path": "/api/receipt",
+      "method": "POST",
+      "status": 200,
+      "expected": 200,
+      "seconds": 2.62,
+      "bytes": 56526
+    }
+  ],
+  "additional_checks": {
+    "latest_evaluation": 200,
+    "http_redirect": 301,
+    "direct_origin": 403,
+    "spoofed_origin_headers": 403,
+    "restart_ledger_unchanged": true,
+    "restart_quota_unchanged": true,
+    "container_health": "healthy",
+    "pdf_visual_review": "passed",
+    "browser_languages": [
+      "ar",
+      "en",
+      "bn"
+    ]
+  },
+  "limits": [
+    "No live inference/media test",
+    "No physical mobile/sensor test",
+    "No concurrent inference load test"
+  ]
+}
