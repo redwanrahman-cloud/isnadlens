@@ -6,7 +6,7 @@
 
 - Approved Lightsail deployment is available at https://isnadlens.alfarrajpolyclinic.com.
 - Cloudflare subdomain-only Strict SSL, origin certificate, private application port, accounting persistence, Linux build and multilingual PDF qualified.
-- 537 offline tests passed; hosted readiness and public page checks passed. No new live inference or benchmark was performed. Provider activation and allocated hosted smoke test remain approval gates.
+- Latest increment: 542 offline tests passed, hosted providers enabled within the existing cap, three initial supported smoke answers plus a separately successful tawaf repair retest. Synthetic voice generation/transcription passed. This does not replace the frozen 30-question benchmark. See [smoke and repair evidence](HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md).
 - See the [current deployment record](DEPLOYMENT-PLAN-2026-10-06.md) for measured results and remaining gates.
 
 ## Historical increment — 4 October 2026

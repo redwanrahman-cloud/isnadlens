@@ -19,7 +19,7 @@
 .studio .location-controls>div:first-child{grid-row:1/span 4}
 .studio .location-controls>p:first-of-type{font-size:12px;color:#536e59;background:#eff3e8;border-radius:20px;padding:8px 14px;justify-self:start;margin-top:20px}
 .studio .coordinates-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.studio .tools-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.studio .tools-grid{grid-template-columns:minmax(0,1fr)}
 .studio .tools-grid #calendar{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
 .studio .tools-grid #calendar>h2,.studio .tools-grid #calendar>p{grid-column:1/-1}
 .studio .tools-grid #calendar>form{grid-column:1;grid-row:3/span 4}

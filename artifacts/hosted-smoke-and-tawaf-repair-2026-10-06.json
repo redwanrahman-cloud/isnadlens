@@ -1,0 +1,180 @@
+{
+  "kind": "hosted_smoke_and_targeted_repair_not_accuracy_benchmark",
+  "date": "2026-10-06",
+  "webinar_languages": [
+    "ar",
+    "en"
+  ],
+  "initial_four_cases": [
+    {
+      "id": "HOST-EN",
+      "claim": "Does the Quran tell people to be kind to their parents?",
+      "language": "en",
+      "service": "main",
+      "http_status": 200,
+      "seconds": 16.444,
+      "verdict": "supported_within_selected_corpus",
+      "summary_en": "Yes. The selected source collection directly supports that the Quran tells people to treat their parents with kindness and honor. It also specifies respectful conduct, including avoiding harsh speech and speaking to them graciously in 17:23, with compassionate humility in 17:24.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن يأمر بالإحسان إلى الوالدين، وهو معنى يوافق معاملة الوالدين بلطف وكرامة. وتعرض الآيات ذلك ضمن توجيهات أوسع، مثل النهي عن التأفف ونهرهما والأمر بالقول الكريم في سورة الإسراء 17:23، وخفض جناح الرحمة في 17:24.",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "original_preserved": true,
+      "integrity": true,
+      "evidence": [
+        "2:83",
+        "4:36",
+        "17:23",
+        "12:100",
+        "4:135",
+        "6:151",
+        "4:33",
+        "17:24"
+      ]
+    },
+    {
+      "id": "HOST-AR",
+      "claim": "هل يحث القرآن على مساعدة الفقراء؟",
+      "language": "ar",
+      "service": "main",
+      "http_status": 200,
+      "seconds": 14.861,
+      "verdict": "supported_within_selected_corpus",
+      "summary_en": "Yes. The selected source collection supports that the Quran encourages helping the poor by directing charity and spending toward them and including them among eligible recipients. Some passages present this within specific contexts or categories, such as charity and war-booty allocations.",
+      "summary_ar": "نعم، تدعم مجموعة المصادر المحددة أن القرآن يحث على مساعدة الفقراء، من خلال توجيه الصدقات والإنفاق إليهم وإدراجهم ضمن المستحقين. وتعرض بعض الآيات ذلك ضمن سياقات أو فئات محددة، مثل الصدقات وأموال الفيء.",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "original_preserved": true,
+      "integrity": true,
+      "evidence": [
+        "59:7",
+        "59:8",
+        "9:60",
+        "2:271",
+        "7:128",
+        "69:34",
+        "2:273",
+        "7:129"
+      ]
+    },
+    {
+      "id": "HOST-BN",
+      "claim": "কুরআনে কি ধৈর্য ও নামাজের মাধ্যমে সাহায্য চাইতে বলা হয়েছে?",
+      "language": "bn",
+      "service": "main",
+      "http_status": 200,
+      "seconds": 12.915,
+      "verdict": "supported_within_selected_corpus",
+      "summary_en": "Yes. Quran 2:45 and 2:153 in the selected source collection directly support the claim by instructing people to seek help through patience and prayer. Verse 2:45 also notes a qualification concerning this being difficult except for the humble.",
+      "summary_ar": "نعم، تدعم الآيتان 2:45 و2:153 من مجموعة المصادر المحددة هذا المعنى مباشرة، بذكر طلب العون بالصبر والصلاة. وتذكر آية 2:45 قيدًا متعلقًا بكون ذلك شاقًّا إلا على الخاشعين.",
+      "reasons": [
+        "COMPLETE_DIRECT_COVERAGE"
+      ],
+      "original_preserved": true,
+      "integrity": true,
+      "evidence": [
+        "2:45",
+        "2:153",
+        "2:43",
+        "13:22",
+        "2:44",
+        "2:46",
+        "2:47",
+        "4:43"
+      ]
+    },
+    {
+      "id": "HOST-HAJJ",
+      "claim": "How many circuits are performed in tawaf around the Kaaba?",
+      "language": "en",
+      "service": "pilgrimage",
+      "http_status": 200,
+      "seconds": 23.211,
+      "verdict": "insufficient_within_selected_corpus",
+      "summary_en": "The retrieved evidence is insufficient to establish or contradict the complete claim within the selected corpus. This does not mean evidence is absent elsewhere.",
+      "summary_ar": "الأدلة المسترجعة لا تكفي لإثبات الادعاء كاملًا أو نقضه ضمن مجموعة المصادر المحددة. هذا لا يعني عدم وجود دليل في موضع آخر.",
+      "reasons": [
+        "INCOMPLETE_OR_INDIRECT_COVERAGE"
+      ],
+      "original_preserved": true,
+      "integrity": true,
+      "evidence": [
+        "2:125",
+        "31:27",
+        "2:158",
+        "2:197",
+        "en:3229",
+        "en:10010",
+        "ar:8361",
+        "ar:65679"
+      ]
+    }
+  ],
+  "targeted_retest": {
+    "id": "HOST-HAJJ-RETEST",
+    "claim": "How many circuits are performed in tawaf around the Kaaba?",
+    "language": "en",
+    "service": "pilgrimage",
+    "http_status": 200,
+    "seconds": 17.762,
+    "verdict": "supported_within_selected_corpus",
+    "summary_en": "Seven circuits are performed for Tawaf around the Kaaba, as stated in the selected hadith evidence. The passage describes the Prophet’s Tawaf around the Kaaba.",
+    "summary_ar": "الجواب: تُؤدَّى أشواط الطواف حول الكعبة سبعة أشواط، وفق الحديث المحدد في مجموعة المصادر المحددة. ويتعلق النص بطواف النبي صلى الله عليه وسلم حول الكعبة.",
+    "reasons": [
+      "COMPLETE_DIRECT_COVERAGE"
+    ],
+    "original_preserved": true,
+    "integrity": true,
+    "evidence": [
+      "2:17",
+      "6:92",
+      "9:101",
+      "9:120",
+      "en:3229",
+      "en:3309",
+      "ar:8361",
+      "ar:65679"
+    ]
+  },
+  "primary_support_locator": "en:3309",
+  "independent_model_review": "passed",
+  "record_id": "bd2ea286-a792-49fa-b18b-733a23ec13b1",
+  "record_seal": "30d48905def66d0c95d96424b7fcda36f37775d36a9597b3aa3e38ce61e71d58",
+  "image": "sha256:9dfcef6ab1810dd51dcbd795f982cb183e9e708e65c6e2da38ad6c1d4ba62db6",
+  "offline_tests": 542,
+  "offline_files": 51,
+  "typecheck": "passed",
+  "development_committed_sar": 56.7618646875,
+  "development_cap_sar": 60,
+  "remaining_sar": 3.2381353125,
+  "targeted_retest_cost_sar": 0.1014020625,
+  "hosted_activation_total_sar": 0.56943825,
+  "new_unsettled_reservations": 0,
+  "judging_reserve_activated": false,
+  "media": {
+    "speech": {
+      "feature": "speech",
+      "status": 200,
+      "seconds": 4.83,
+      "bytes": 169314,
+      "valid_wav_header": true
+    },
+    "transcribe": {
+      "feature": "transcribe",
+      "status": 200,
+      "seconds": 3.42,
+      "bytes": 97,
+      "response": {
+        "transcript": "Does trusting Allah mean I should stop planning?",
+        "model": "gemini-3.5-transcribe"
+      }
+    }
+  },
+  "limits": [
+    "One targeted retest, not a fresh 30-question benchmark",
+    "Physical microphone/camera not tested",
+    "Live OCR test not completed before pause",
+    "Independent scholarly/native-language review not claimed"
+  ]
+}

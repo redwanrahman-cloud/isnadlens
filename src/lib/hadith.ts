@@ -77,14 +77,25 @@ export function loadHadith(): HadithCorpus {
   return frozen;
 }
 const escapeRegex = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+// Search vocabulary only: equivalent units and transliterations must match in
+// both the question and derived index. Never modify authenticated source bytes,
+// inject a circuit count, or treat a lexical match as semantic support.
+function hadithEnglishWords(text: string): string[] {
+  const joined = text.replace(/\bka(?:a|['‘’ʿʻ])?bah?\b/gi, 'kaaba');
+  return englishWords(joined).map(word => {
+    if (word === 'circuit' || word === 'lap') return 'round';
+    if (['circumambulation','circumambulate','circumambulat'].includes(word)) return 'tawaf';
+    return word;
+  });
+}
 export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'ar' | 'en', limit = 8, additionalQueries: readonly string[] = [], originalClaim = query): HadithRecord[] {
   const explicit = parseHadithLinks(originalClaim).links;
   const boilerplate = new Set(['prophet', 'messenger', 'muhammad', 'said', 'says', 'hadith', 'hadeeth', 'that', 'have', 'has', 'no', 'not', 'explicitly', 'نبي', 'النبي', 'رسول', 'الرسول', 'قال', 'حديث']);
   const lexicalSynonyms: Record<string, string[]> = { actions: ['deeds'], action: ['deed'], deeds: ['actions'], deed: ['action'], judged: ['rewarded', 'considered'] };
   const searchForms = [query, ...additionalQueries.slice(0, 20).filter(term => typeof term === 'string' && term.length <= 160)];
-  const originalTerms = [...new Set(searchForms.flatMap(form => language==='en' ? [...englishWords(form),...englishWords(queryTerms(form).join(' '))] : queryTerms(form)))].filter(t => !boilerplate.has(t) && (language === 'ar' ? /\p{Script=Arabic}/u.test(t) : /\p{Script=Latin}/u.test(t)));
+  const originalTerms = [...new Set(searchForms.flatMap(form => language==='en' ? [...hadithEnglishWords(form),...hadithEnglishWords(queryTerms(form).join(' '))] : queryTerms(form)))].filter(t => !boilerplate.has(t) && (language === 'ar' ? /\p{Script=Arabic}/u.test(t) : /\p{Script=Latin}/u.test(t)));
   const expandedTerms=[...originalTerms,...originalTerms.flatMap(term => lexicalSynonyms[term]??[])];
-  const terms = [...new Set(language==='en'?expandedTerms.flatMap(englishWords):expandedTerms)].slice(0, 48);
+  const terms = [...new Set(language==='en'?expandedTerms.flatMap(hadithEnglishWords):expandedTerms)].slice(0, 48);
   const patterns = terms.map(term => language === 'ar' ? new RegExp([...term].map(char => /[اأإآٱ]/.test(char) ? '[اأإآٱ]' : escapeRegex(char)).join('[\u064b-\u065f\u0670]*'), 'u') : new RegExp(`\\b${escapeRegex(term.length > 3 && term.endsWith('s') ? term.slice(0, -1) : term)}s?\\b`, 'i'));
   const selected = corpus.records.filter(record => record.language === language);
   const lengths = new Map(selected.map(record => [record, {
@@ -97,8 +108,8 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
   const lengthWeight = (record: HadithRecord, field: 'text' | 'title') => 2.2 / (1 + 1.2 * (.25 + .75 * lengths.get(record)![field] / Math.max(1,averages[field])));
   // English derived tokens handle inflection and ordinary paraphrases, while
   // the retained publisher strings remain the authenticated quotation bytes.
-  const englishSets = new Map(language === 'en' ? selected.map(record => [record, {text:new Set(englishWords(record.fields.hadith_text??'')),title:new Set(englishWords(record.fields.title??''))}] as const) : []);
-  const originalConcepts=[...new Set(englishWords(query))].filter(t=>!boilerplate.has(t));
+  const englishSets = new Map(language === 'en' ? selected.map(record => [record, {text:new Set(hadithEnglishWords(record.fields.hadith_text??'')),title:new Set(hadithEnglishWords(record.fields.title??''))}] as const) : []);
+  const originalConcepts=[...new Set(hadithEnglishWords(query))].filter(t=>!boilerplate.has(t));
   const matches = (record: HadithRecord, index:number, title=false) => language==='en' ? Boolean(englishSets.get(record)?.[title?'title':'text'].has(terms[index])) : patterns[index].test(record.fields[title?'title':'hadith_text']??'');
   const frequencies = patterns.map((_,index)=>selected.filter(record => matches(record,index) || matches(record,index,true)).length);
   const weights = frequencies.map(frequency=>1 + Math.log((selected.length + 1) / (frequency + 1)));
@@ -112,7 +123,7 @@ export function retrieveHadith(corpus: HadithCorpus, query: string, language: 'a
     const title = record.fields.title ?? ''; const text = record.fields.hadith_text ?? '';
     const originalCoverage=language==='en'&&originalConcepts.length?originalConcepts.filter(t=>englishSets.get(record)?.text.has(t)||englishSets.get(record)?.title.has(t)).length/originalConcepts.length:0;
     const preciseSentence=language==='en'?text.split(/[.!?\n]+/u).reduce((best,sentence)=>{
-      const words=new Set(englishWords(sentence));
+      const words=new Set(hadithEnglishWords(sentence));
       if(originalConcepts.filter(t=>words.has(t)).length<2)return best;
       return Math.max(best,...rareOriginal.filter(t=>words.has(t.term)).map(t=>3*weights[t.index]));
     },0):0;

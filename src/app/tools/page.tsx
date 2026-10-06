@@ -1,5 +1,4 @@
 'use client';
-import {QiblaCompass} from './QiblaCompass';
 import {StudioShell} from '../StudioShell';
 import {useEffect,useState} from 'react';
 import {BrandMark,WorkspaceIcon} from '../components/WorkspaceIcon';
@@ -9,7 +8,7 @@ import {workspaceCopy} from '@/lib/workspace-copy';
 import {toolLabel} from './tools-copy';
 import './tools-polish.css';
 import {LocationPicker} from '../LocationPicker';
-import {qiblaBearing,validCoordinates,LOCATION_PRESETS} from '@/lib/location-tools';
+import {LOCATION_PRESETS} from '@/lib/location-tools';
 import {nextPrayer,countdownText,type PrayerSchedule} from '@/lib/prayer-clock';
 import {CALENDAR_METHODS,PRAYER_METHODS,PRAYER_NAMES,type DatePair,type MonthCalendar} from '@/lib/daily-tools';
 function today(zone:string){const parts=new Intl.DateTimeFormat('en',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());return ['year','month','day'].map(type=>parts.find(part=>part.type===type)!.value).join('-');}
@@ -43,7 +42,6 @@ export default function DailyToolsPage(){
   const [now,setNow]=useState(0);
   const zone=prayers?.timezone??locationTimezone;
   const upcoming=prayers&&now?nextPrayer(prayers,new Date(now)):null;
-  const qibla=latitude.trim()&&longitude.trim()&&validCoordinates(Number(latitude),Number(longitude))?qiblaBearing(Number(latitude),Number(longitude)):null;
   useEffect(()=>{const current=today('Asia/Riyadh');setDate(current);setCalendarMonth(current.slice(0,7));setConversionDate(current);},[]);
   useEffect(()=>{const update=()=>{setNow(Date.now());setClock(zone?new Intl.DateTimeFormat(language,{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date()):'');};update();const timer=setInterval(update,1000);return()=>clearInterval(timer);},[zone,language]);
   async function load(kind:'prayer'|'calendar'|'convert'){
@@ -70,7 +68,7 @@ export default function DailyToolsPage(){
   const calendarCells=calendar?[...Array(new Date(Date.UTC(calendar.year,calendar.month-1,1)).getUTCDay()).fill(null),...calendar.days]:[];
   while(calendarCells.length%7)calendarCells.push(null);
   return <StudioShell language={language} onLanguage={setLanguage} service="daily"><div className="daily-tools">
-    <nav className="tool-shortcuts" aria-label={t('الأدوات','Tools')}><a href="#prayer"><WorkspaceIcon name="prayer"/>{copy.prayer}</a><a href="#qibla"><WorkspaceIcon name="compass"/>{copy.qibla}</a><a href="#calendar"><WorkspaceIcon name="calendar"/>{copy.calendar}</a></nav>
+    <nav className="tool-shortcuts" aria-label={t('الأدوات','Tools')}><a href="#prayer"><WorkspaceIcon name="prayer"/>{copy.prayer}</a><a href="#calendar"><WorkspaceIcon name="calendar"/>{copy.calendar}</a></nav>
     <main id="studio-main" className="tools-main">
       <section className="hero tools-hero"><div className="hero-copy"><span className="tools-eyebrow">{t('أدوات يومية','Everyday tools')}</span><h1>{t('المواقيت والتقويم','Prayer times & calendar')}</h1><p className="hero-intro">{t('المواقيت حسب الموقع وطريقة الحساب المختارة. تحويل التاريخ وفق التقويم المحدد، وقد تختلف بداية الشهر بالرؤية المحلية.','Prayer times use your chosen location and calculation method. Date conversion uses the selected calendar; local moon sighting may give a different month start.')}</p><p className="tools-clock"><WorkspaceIcon name="compass"/><time suppressHydrationWarning>{clock}</time> · <bdi>{zone??(t('ستحدد المنطقة الزمنية بعد طلب المواقيت','Timezone determined after lookup'))}</bdi></p></div></section>
       {error&&<p className="tools-error" role="alert">{errorMessages[error]}</p>}
@@ -92,7 +90,6 @@ export default function DailyToolsPage(){
             {upcoming&&<div className="next-prayer-card" data-testid="next-prayer"><h3>{upcoming.status==='ready'?(t('موعد الصلاة التالي المحسوب','Next calculated prayer time')):(t('العد التنازلي','Countdown'))}</h3>{upcoming.status==='ready'?<><p>{t(arabicNames[upcoming.name],upcoming.name)} · <bdi>{upcoming.time}</bdi> · <bdi>{upcoming.date}</bdi></p><p><output aria-label={t('الوقت المتبقي','Time remaining')}><bdi>{countdownText(upcoming.seconds)}</bdi></output></p>{upcoming.incomplete&&<p>{t('بعض المواقيت غير متاحة؛ هذا الموعد التالي المتاح فقط.','Some times are unavailable; this is the next available time only.')}</p>}</>:<p>{upcoming.status==='different_date'?(t('اختر تاريخ اليوم في منطقة الموقع لعرض العد التنازلي.','Choose today at the location to show a countdown.')):(t('أعد تحميل المواقيت للحصول على اليوم التالي.','Reload times to get the following day.'))}</p>}</div>}
             {prayers&&<div aria-live="polite">{pair(prayers.date)}<p>{prayers.method.name} · {prayers.school==='HANAFI'?t('الحنفي','Hanafi'):t('القياسي','Standard')} · <bdi>{prayers.timezone}</bdi></p><table style={{width:'100%'}}><tbody>{PRAYER_NAMES.map(name=><tr key={name}><th scope="row" style={{textAlign:'start',padding:8}}>{t(arabicNames[name],name)}</th><td><bdi>{prayers.timings[name]??(t('غير متاح','Unavailable'))}</bdi></td></tr>)}</tbody></table><p>{t('هذه أوقات محسوبة، وليست مواعيد إقامة المسجد. الشروق ليس صلاة مفروضة. راجع جدول مسجدك المحلي.','These are calculated times, not mosque iqamah times. Sunrise is not an obligatory prayer. Check your local mosque timetable.')}</p><details><summary>{t('الموقع والحساب','Location and calculation')}</summary><p><bdi>{prayers.latitude}, {prayers.longitude}</bdi> · {prayers.highLatitudeRule}</p></details></div>}
           </section>
-        <section id="qibla" className="coverage-box qibla-panel"><h2><span className="tool-heading-icon"><WorkspaceIcon name="compass"/></span>{t('اتجاه القبلة','Qibla direction')}</h2><p>{t('يستخدم الإحداثيات المحددة أعلاه، ويحسب على جهازك.','Uses the coordinates selected above and calculates on your device.')}</p><QiblaCompass qibla={qibla} language={language}/>{qibla?.status==='ready'?<><p><bdi>{qibla.degrees.toFixed(1)}°</bdi> · {t('باتجاه عقارب الساعة من الشمال الحقيقي','clockwise from true north')}</p><p>{t('ليست بوصلة هاتف حية. وجّه الشمال الحقيقي أولاً؛ قد يختلف الشمال المغناطيسي.','This is not a live phone compass. Orient true north first; magnetic north may differ.')}</p></>:<p>{qibla?.status==='near_kaaba'?(t('الإحداثيات المحددة قريبة جداً من الكعبة؛ اتبع الاتجاه المشاهد والإرشاد المحلي.','The selected coordinates are very close to the Kaaba; use its visible direction and local guidance.')):(t('يلزم موقع صالح لحساب الاتجاه.','A valid location is needed to calculate a bearing.'))}</p>}<a className="qibla-location-link" href="#tool-location" onClick={()=>{const editor=document.querySelector<HTMLDetailsElement>('.location-editor');if(editor)editor.open=true;}}>{t('اختر مدينة','Choose a city')} ↑</a></section>
           <section id="calendar" className="result-panel" style={{minHeight:0}}><h2><span className="tool-heading-icon"><WorkspaceIcon name="calendar"/></span>{t('التقويم وتحويل التاريخ','Calendar & date conversion')}</h2>
             <label>{t('طريقة التقويم الهجري','Hijri calendar method')}<select value={calendarMethod} onChange={event=>{setCalendarMethod(event.target.value as typeof calendarMethod);setConverted(null);setCalendar(null);setPrayers(null);}}>{CALENDAR_METHODS.map(item=><option value={item} key={item}>{item==='UAQ'?(t('أم القرى · UAQ','Umm al-Qura · UAQ')):item}</option>)}</select></label>
             <form onSubmit={event=>{event.preventDefault();void load('convert');}} onChange={()=>setConverted(null)}>

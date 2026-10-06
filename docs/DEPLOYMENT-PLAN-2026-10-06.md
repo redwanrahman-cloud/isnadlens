@@ -2,6 +2,10 @@
 
 ## Current status
 
+**6 October activation update:** the user subsequently approved enabling live services under the existing 60 SAR development cap. OpenAI and unpaid-project Google media are now enabled. The current live image is `isnadlens:20261006-tawaf-fix`. Four hosted verification smoke cases produced three supported answers and one safe abstention; the tawaf retrieval miss was repaired and its single targeted retest passed. Read-aloud/transcription passed with a synthetic fixture. Qibla UI was removed at the user's request. Current commitment: 56.7618646875 SAR; judging reserve untouched. Arabic and English are the webinar focus. See [the complete smoke/repair record](HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md).
+
+## Initial deployment status (before live activation)
+
 The application is deployed at https://isnadlens.alfarrajpolyclinic.com on the approved AWS Lightsail Ubuntu 24.04 instance in Mumbai (4 GB RAM, 2 vCPU, 80 GB SSD, $24/month). Public HTTPS and offline hosted qualification passed. **OpenAI inference and Google media calls remain disabled.** This is a hosted preview, not a completed real-provider acceptance test.
 
 The release starts from `d47cae34cc6d076862777d32db45e5e4129bee5a`, with the deployment files and accounting guards committed in this increment. No verification prompts, models, evidence rules or source pins changed. The existing round-7 result remains 29/30; no new live benchmark was run.
@@ -53,13 +57,13 @@ There is no older hosted application release before this first deployment. Retai
 
 Machine-readable HTTP results are in `artifacts/hosted-qualification-2026-10-06.json`. Browser/PDF proof is retained in the operator workspace outputs.
 
-## Remaining gates before judging
+## Remaining gates before judging (updated after activation)
 
-1. Obtain a concrete hosted live-test allowance and enable providers only against the preserved ledger. Local and hosted processes do not share accounting: stop concurrent local paid tests or allocate non-overlapping limits. The separately reserved judging allowance is not activated by this deployment.
+1. Hosted live-test activation is complete against the preserved ledger. Keep local paid tests disabled; local and hosted processes do not share accounting. The separately reserved judging allowance has not been activated.
 2. Qualify real verification/translation latency through Cloudflare, including a long request; Nginx's 240-second read timeout does not override Cloudflare's separate proxy limits. The previous 63.7-second case is useful historical evidence, not hosted acceptance.
 3. Test actual human microphone/camera/phone playback and unpaid Google-project availability. Image/transcription/uncached speech share the app's two-per-minute and sixty-per-day quota.
-4. Add/qualify a bounded retention policy for generated WAV cache before extended public traffic; current cache has no eviction. No media is generated while the hosted provider switch is off.
-5. Validate prayer provider access and physical-device Qibla behavior. A successful tools-page render is not a location/sensor/provider test.
+4. Add/qualify a bounded retention policy for generated WAV cache before extended public traffic; current cache has no eviction. The hosted media switch is now enabled; retention still needs to be bounded before extended public traffic.
+5. Prayer provider lookup and countdown passed. Physical-device location remains untested. Qibla has been removed from the released tools UI.
 6. Complete reviewer corpus delivery, public-repository decision, presentation/video, and official submission receipt. Deployment does not itself satisfy these competition deliverables.
 
 The earlier hosting comparison and 4 October estimates are historical. This approved Lightsail deployment supersedes recommendations for Railway, Render, Workers-only hosting and the temporary sslip.io hostname.
