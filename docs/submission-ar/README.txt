@@ -30,3 +30,14 @@ Quality review
 All nine PDF pages were rendered and visually reviewed for Arabic direction,
 legibility and page overflow. Dataset counts were recomputed from saved primary
 first-pass records. No new live verification requests were made for this report.
+
+Solo-submission wording review
+The report, narration, presentation and interview companion identify one human
+participant and explicitly acknowledge AI assistance. Original test questions
+and historical evaluation records retain their original wording.
+
+IsnadLens-Arabic-Presentation.pptx / .pdf
+Twelve-slide Arabic presentation, separate from the nine-page supporting report.
+The PPTX contains editable text and a native chart with its source values.
+The PDF preserves the visually reviewed slide rendering. Rehearse delivery
+and check the recorded video duration before submitting.

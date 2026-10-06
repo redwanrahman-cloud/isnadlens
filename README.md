@@ -11,7 +11,7 @@ Open the [live application](https://isnadlens.alfarrajpolyclinic.com) and the [p
 - `/tools` — prayer calculations and countdown, saved locations and Gregorian/Hijri calendars/conversion. The Qibla interface has been removed.
 - `/evaluation/latest` — historical evaluation dashboard. Use the round-seven report below for the most recent complete benchmark.
 
-Reviewers use the working product and inspect the results we provide. No development-suite reruns or reproduction of historical failures is required.
+Reviewers use the working product and inspect the recorded results. No development-suite reruns or reproduction of historical failures is required.
 
 The emerald/ivory workspace presents the assessed explanation separately from original evidence. A visible evidence map, attached read-aloud controls, downloadable receipt and labelled PNG share-card excerpt support inspection and sharing. Daily tools remain available through compact navigation. [Responsive UI checks](artifacts/dashboard-design-2026-10-05.json).
 
