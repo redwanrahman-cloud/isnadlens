@@ -77,7 +77,9 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   // Fuse independent Arabic and English rankings rather than allowing a
   // dictionary subject or foreign Latin token to veto the other channel.
   const phrases = hints.map(normalizeQuery).filter(s=>/\p{Script=Arabic}/u.test(s)&&s.split(' ').length>=3);
-  const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + .14*Math.pow(comparisonSearch?(sentenceCoverage.get(verse.id)??0):0,2) + .06*(conceptCoverage.get(verse.id)??0) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
+  // A soft original-subject boost also applies to routed Arabic questions;
+  // incidental gloss words must not crowd out the subject. It is not a filter.
+  const rankScore = (verse:Verse) => 1/(20+(englishRanks.get(verse.id)??Infinity)) + 1/(20+(lexicalRanks.get(verse.id)??Infinity)) + .14*Math.pow(comparisonSearch?(sentenceCoverage.get(verse.id)??0):0,2) + .06*(conceptCoverage.get(verse.id)??0) + (subjectMatches(verse)?.04:0) + (phrases.some(p=>normalizeQuery(verse.search).includes(p))?.1:0);
   const verses = corpus.verses.filter(verse=>explicit.has(verse.id)||(englishScores.get(verse.id)??0)>0||lexicalRanks.has(verse.id))
     .sort((a,b)=>Number(explicit.has(b.id))-Number(explicit.has(a.id)) || (!routedSearch ? Number(subjectMatches(b))-Number(subjectMatches(a)) || (englishScores.get(b.id)??0)-(englishScores.get(a.id)??0) || (lexicalRanks.get(a.id)??Infinity)-(lexicalRanks.get(b.id)??Infinity) : rankScore(b)-rankScore(a)) || a.surah-b.surah || a.ayah-b.ayah).slice(0,limit);
   const pin=getQuranTranslationAdmission().sources.find(source=>source.key==='english_rwwad');
@@ -85,6 +87,7 @@ export function retrieveWithPublishedEnglishAid(corpus: Corpus, originalClaim: s
   return {verses,reading_aid:{source:'QuranEnc',key:'english_rwwad',version:edition.metadata.version,language:'en',role:'query_retrieval_only',sha256:pin.json_sha256,source_url:'https://quranenc.com/en/browse/english_rwwad'}};
 }
 const topics: Record<string, string[]> = {
+  توكل: ['يتوكل', 'توكل', 'reliance', 'trust'], tawakkul: ['توكل', 'يتوكل', 'reliance'], reliance: ['توكل', 'يتوكل', 'trust'],
   prayer: ['الصلاة', 'صلوة'], pray: ['الصلاة'], fasting: ['الصيام', 'صيام'], fast: ['صيام'], ramadan: ['رمضان'],
   mosque: ['المسجد'], sacred: ['الحرام'], qibla: ['قبلة', 'القبلة'], friday: ['الجمعة'],
   trading: ['البيع', 'تجارة'], trade: ['البيع', 'تجارة'], intoxicated: ['سكارى', 'سكاري'], drunk: ['سكارى', 'سكاري'], سكران: ['سكارى', 'سكاري'],
