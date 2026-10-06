@@ -1,0 +1,51 @@
+{
+  "kind": "independent_application_and_submission_review",
+  "date": "2026-10-06",
+  "reviewed_commit": "6f335feee5a2d6366fc5d9a444cb1e482ca59efe",
+  "offline_regression": {
+    "command": "node node_modules/vitest/vitest.mjs run --maxWorkers=2 --reporter=dot",
+    "exit_code": 0,
+    "passed_tests": 543,
+    "passed_files": 52,
+    "duration_seconds": 78.83
+  },
+  "evaluation_audit": {
+    "major_sets": 12,
+    "recorded_question_texts": 425,
+    "distinct_normalized_question_texts": 425,
+    "normalization": "Unicode NFKC, casefold and collapsed whitespace",
+    "all_12_artifact_sha256_values_match": true,
+    "new_live_semantic_run": false,
+    "frozen_latest_benchmark": "29/30"
+  },
+  "submission": {
+    "saved_portal_entry_inspected": true,
+    "track": 4,
+    "required_demo_repository_video_and_presentation_fields_present": true,
+    "portal_attachment_matches_local_presentation_sha256": "1cbd5ceebf7f105bb9ee1985fd8c300e27b385c96434ed82af8e3bffee136efc",
+    "presentation_pages": 12,
+    "supporting_report_pages": 9,
+    "public_github_latest_commit_confirmed": true,
+    "video_duration_seconds": 118.401,
+    "video_unlisted_link_accessible": true
+  },
+  "browser_checks": [
+    "Arabic and English workspace/navigation",
+    "English preference retained through tools and pilgrimage navigation",
+    "Arabic preference retained on reload",
+    "390px Arabic and English browser widths without horizontal document overflow",
+    "branded share-card preview",
+    "Makkah prayer times and next-prayer countdown",
+    "Gregorian to Umm al-Qura conversion",
+    "Tawaf count increment and undo",
+    "latest evaluation and preserved case disclosures"
+  ],
+  "limits": [
+    "No new paid verification or Google media inference calls",
+    "No physical-device, microphone or camera certification",
+    "Share-card download automation timed out; preview checked, completed download not independently confirmed",
+    "No independent scholarly or native-speaker-panel approval",
+    "Presentation is image-only; supporting PDF report has extractable text",
+    "Historical question volume is not pooled current-version accuracy"
+  ]
+}
