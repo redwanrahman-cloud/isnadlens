@@ -39,5 +39,16 @@ and historical evaluation records retain their original wording.
 IsnadLens-Arabic-Presentation.pptx / .pdf
 Twelve-slide Arabic presentation, separate from the nine-page supporting report.
 The PPTX contains editable text and a native chart with its source values.
-The PDF preserves the visually reviewed slide rendering. Rehearse delivery
-and check the recorded video duration before submitting.
+The PDF preserves the visually reviewed slide rendering and includes searchable
+Unicode text. The final presentation clarifies the problem, benefit and evidence
+support review; slide 3 enlarges the answer and original source.
+
+Final submission figures
+425 distinct development question texts across 12 main sets; latest complete
+live benchmark 29/30; latest independent application checks 543 across 52 files.
+These are separate measures, not a pooled accuracy percentage. Earlier reports
+retain their dated historical check counts. No additional live benchmark was run.
+
+IsnadLens-Arabic-Captions.srt
+Arabic captions matching the final 1:58 video narration, including nine-language
+support, edited waiting time and the sample-specific benchmark qualification.
