@@ -2,7 +2,13 @@
 
 ## Current status
 
-**6 October activation update:** the user subsequently approved enabling live services under the existing 60 SAR development cap. OpenAI and unpaid-project Google media are now enabled. The current live image is `isnadlens:20261006-tawaf-fix`. Four hosted verification smoke cases produced three supported answers and one safe abstention; the tawaf retrieval miss was repaired and its single targeted retest passed. Read-aloud/transcription passed with a synthetic fixture. Qibla UI was removed at the user's request. Current commitment: 56.7618646875 SAR; judging reserve untouched. Arabic and English are the webinar focus. See [the complete smoke/repair record](HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md).
+**6 October activation update:** the user subsequently approved enabling live services under the existing 60 SAR development cap. OpenAI and unpaid-project Google media are now enabled. The current live image is `isnadlens:20261006-language-grid` (interface follow-up below). Four hosted verification smoke cases produced three supported answers and one safe abstention; the tawaf retrieval miss was repaired and its single targeted retest passed. Read-aloud/transcription passed with a synthetic fixture. Qibla UI was removed at the user's request. Current commitment: 56.7618646875 SAR; judging reserve untouched. Arabic and English are the webinar focus. See [the complete smoke/repair record](HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md).
+
+## Language menu follow-up
+
+The shared workspace header now uses a compact round badge and a two-letter language code. Its dropdown presents all nine languages in a three-by-three badge/code grid, with native names retained in accessible labels and tooltips. Arabic and English remain first. The menu supports arrow-key navigation, Home/End, Escape with focus restoration, and dismissal when focus or a pointer moves outside. Existing language persistence and verification behavior are unchanged.
+
+Local checks covered Arabic/English, Bengali selection and persistence, French, keyboard selection, Escape, outside-click dismissal, and the shared verification/companion/tools headers. A 390-pixel browser viewport confirmed the Arabic popup stays inside the page without horizontal overflow; this is browser emulation, not a physical-phone test. TypeScript and the Linux production build passed. No new verification, speech, or image model tests were run for this interface change. The live image is `isnadlens:20261006-language-grid` (`sha256:fd818af4ddff350cecd2418d261cf058c0b202da69bbf5bb9efbd02a971f5130`). Origin and public HTTPS readiness returned ready/admitted/enabled after activation. The earlier native-select build was not activated; the prior tawaf-fix release is retained for rollback.
 
 ## Initial deployment status (before live activation)
 

@@ -1,0 +1,37 @@
+.root { position: relative; flex-shrink: 0; }
+.control {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  border: 1px solid #ffffff38;
+  border-radius: 999px;
+  background: #ffffff12;
+  color: #fffdf6;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease;
+}
+.control:hover { background: #ffffff24; border-color: #ffffff80; }
+.control:focus-visible { outline: 3px solid #e6c875; outline-offset: 3px; }
+.face { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 0 12px 0 9px; font-size: 12px; font-weight: 700; letter-spacing: .07em; pointer-events: none; }
+.badge { display: block; width: 23px; height: 23px; flex: 0 0 23px; border-radius: 50%; box-shadow: 0 0 0 1px #ffffff55, inset 0 0 0 1px #00000012; }
+/* Decorative, flag-inspired colors; the language code and native name carry meaning. */
+.ar { background: linear-gradient(145deg, #19a17c, #006647); position: relative; }
+.ar::after { content: ''; position: absolute; inset: 10px 5px; border-block: 1px solid #fff; }
+.en { background: linear-gradient(0deg, transparent 40%, #d84052 40% 60%, transparent 60%), linear-gradient(90deg, transparent 40%, #d84052 40% 60%, transparent 60%), linear-gradient(0deg, transparent 31%, #fff 31% 69%, transparent 69%), linear-gradient(90deg, #294d8f 31%, #fff 31% 69%, #294d8f 69%); }
+.bn { background: radial-gradient(circle at 46% 50%, #ed4751 0 31%, transparent 33%), #08795c; }
+.hi { background: radial-gradient(circle, #2853a2 0 12%, transparent 14%), linear-gradient(#f19b4b 33%, #fff 33% 67%, #238451 67%); }
+.ur { background: radial-gradient(circle at 60% 42%, #12794e 0 24%, transparent 26%), radial-gradient(circle at 50% 50%, #fff 0 28%, transparent 30%), linear-gradient(90deg, #fff 24%, #12794e 24%); }
+.id { background: linear-gradient(#e64650 50%, #fff 50%); }
+.es { background: linear-gradient(#cd3549 25%, #f4c955 25% 75%, #cd3549 75%); }
+.fr { background: linear-gradient(90deg, #315eb5 33%, #fff 33% 67%, #e04d5b 67%); }
+.de { background: linear-gradient(#292c31 33%, #d74649 33% 67%, #f0c854 67%); }
+.menu { position: absolute; inset-block-start: calc(100% + 10px); inset-inline-end: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; padding: 8px; width: 248px; max-width: calc(100vw - 32px); border: 1px solid #c7d8cf; border-radius: 18px; background: #fffdf7; box-shadow: 0 12px 35px #002d342b; z-index: 30; }
+:global([dir=rtl]) .menu { left: 0; right: auto; }
+.choice { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 43px; padding: 7px; border: 1px solid transparent; border-radius: 11px; background: transparent; color: #194638; font: inherit; font-size: 12px; font-weight: 700; letter-spacing: .04em; cursor: pointer; }
+.choice:hover { background: #edf5ef; }
+.choice[aria-checked=true] { background: #deeee3; border-color: #77a28d; }
+.choice:focus-visible { outline: 2px solid #007a5c; outline-offset: -2px; }
+@media (prefers-reduced-motion: reduce) { .control { transition: none; } }
+@media (forced-colors: active) { .control { border-color: ButtonText; color: ButtonText; } .control:focus-visible,.choice:focus-visible { outline-color: Highlight; } .choice[aria-checked=true] { border-color: Highlight; } }
