@@ -10,8 +10,17 @@ const ledgerSchema = z.object({ version: z.literal(1), entries: z.array(entrySch
 type Ledger = z.infer<typeof ledgerSchema>;
 const rates = { 'gpt-5.4-mini': { input: .75, output: 4.5 }, 'gpt-5.4': { input: 2.5, output: 15 }, 'gpt-5.6-luna': { input: .20, output: 1.20 }, 'gpt-5.6-terra': { input: 2, output: 12 } } as const;
 export function authorizedBudget(): number {
+  if (process.env.ISNADLENS_PAID_CALLS_AUTHORIZED !== 'true') return 0;
+  if (process.env.ISNADLENS_PROVIDER_CREDIT_ONLY === 'true') return Infinity;
   const cap = Number(process.env.ISNADLENS_MAX_SPEND_USD ?? '0');
-  return process.env.ISNADLENS_PAID_CALLS_AUTHORIZED === 'true' && Number.isFinite(cap) && cap > 0 ? cap : 0;
+  return Number.isFinite(cap) && cap > 0 ? cap : 0;
+}
+// Explicit hosted mode delegates the spending stop to the provider's prepaid
+// balance. It does not disable accounting, request limits or concurrency limits.
+export function testCallLimitReached(calls: number): boolean {
+  if (process.env.ISNADLENS_PAID_CALLS_AUTHORIZED === 'true' && process.env.ISNADLENS_PROVIDER_CREDIT_ONLY === 'true') return false;
+  const cap = Math.min(1000, Math.max(0, Number(process.env.ISNADLENS_MAX_CALLS ?? 20)));
+  return !Number.isFinite(cap) || calls >= cap;
 }
 export function priceUsage(model: keyof typeof rates, input: number, output: number): number {
   // Conservatively cover possible 5.6 cache-write billing on every input token.

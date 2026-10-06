@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { primaryModel, modelReasoning, outputLimit, type AppModel } from './model-config';
 import { semanticSchema, type EvidenceItem, type SemanticAssessment } from './contracts';
-import { authorizedBudget, reserveSpend, settleSpend } from './budget';
+import { authorizedBudget, reserveSpend, settleSpend, testCallLimitReached } from './budget';
 import type { ClaimLanguage } from './claim-language';
 import { sha256 } from './corpus';
 import { sourceDecisionInstructions, collectiveMeaningInstructions, meaningInstructions, meaningPacket, clearPolarityMismatch, explanationReviewInstructions, everydayMeaningInstructions } from './source-decision';
@@ -19,8 +19,7 @@ export async function reviewOriginalMeaning(claim:string, assessment:SemanticAss
   const model=primaryModel()==='gpt-5.6-luna'?'gpt-5.6-terra':primaryModel();
   const limit=outputLimit(model,400,1000);
   if(!providerReady())throw new ProviderFailure('PROVIDER_UNAVAILABLE',model,null);
-  const cap=Math.min(1000,Math.max(0,Number(process.env.ISNADLENS_MAX_CALLS??20)));
-  if(!Number.isFinite(cap)||calls>=cap||inFlight>=2)throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP',model,null);
+  if(testCallLimitReached(calls)||inFlight>=2)throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP',model,null);
   const packet=meaningPacket(claim,assessment.atomic_claims);
   if(claim.length>1200||!packet.propositions_under_test.length||packet.propositions_under_test.length>12||packet.propositions_under_test.some(a=>a.text.length>2400))throw new ProviderFailure('PACKET_LIMIT',model,null);
   const body=JSON.stringify({model,store:false,max_output_tokens:limit,reasoning:modelReasoning(model),instructions:collectiveMeaningInstructions+meaningInstructions,input:JSON.stringify(packet),text:{format:{type:'json_schema',name:'original_meaning_only',strict:true,schema:{type:'object',properties:{faithful:{type:'string',enum:['yes','no','uncertain']}},required:['faithful'],additionalProperties:false}}}});
@@ -74,8 +73,7 @@ export async function reviewPositiveEntailment(claim: string, assessment: Semant
   const model = primaryModel()==='gpt-5.6-luna'?'gpt-5.6-terra':primaryModel();
   const limit = outputLimit(model, 1800, 5000);
   if (!providerReady()) throw new ProviderFailure('PROVIDER_UNAVAILABLE', model, null);
-  const cap = Math.min(1000, Math.max(0, Number(process.env.ISNADLENS_MAX_CALLS ?? 20)));
-  if (!Number.isFinite(cap) || calls >= cap || inFlight >= 2) throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP', model, null);
+  if (testCallLimitReached(calls) || inFlight >= 2) throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP', model, null);
   const atoms = assessment.atomic_claims.filter(a => a.material);
   const ids = new Set(atoms.flatMap(a => a.evidence_ids));
   const cards = evidence.filter(e => ids.has(e.evidence_id));
@@ -84,7 +82,7 @@ export async function reviewPositiveEntailment(claim: string, assessment: Semant
   const units = buildSourceUnits(cards);
   const meaning_check=await reviewOriginalMeaning(claim,assessment);
   if(meaning_check.review.faithful!=='yes')return {meaning_check,model:meaning_check.model,usage:null,review:{atoms:atoms.map(a=>({atom_id:a.id,entails:meaning_check.review.faithful==='no'?'no':'uncertain',attribution_preserved:false,qualifications_preserved:false,evidence_id:null,context_locator:null,basis_quotation:null}))}};
-  if(calls>=cap||inFlight>=2)throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP',model,meaning_check.usage);
+  if(testCallLimitReached(calls)||inFlight>=2)throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP',model,meaning_check.usage);
   const schema = { type: 'object', properties: { explanation_preserved:{type:'boolean'},explanation_diagnostic:explanationDiagnosticOutput, atoms: { type: 'array', minItems: atoms.length, maxItems: atoms.length, items: { type: 'object', properties: { atom_id: { type: 'string', enum: atoms.map(a => a.id) }, source_relationship:{type:'string',enum:['supports','contradicts','unproven']}, entails: { type: 'string', enum: ['yes', 'no', 'uncertain'] }, attribution_preserved: { type: 'boolean' }, qualifications_preserved: { type: 'boolean' }, basis_unit_id: { anyOf: [{ type: 'string', enum: units.map(u => u.unit_id) }, { type: 'null' }] } , additional_basis_unit_ids:{type:'array',maxItems:7,items:{type:'string',enum:units.map(u=>u.unit_id)}} }, required: ['atom_id', 'source_relationship', 'entails', 'attribution_preserved', 'qualifications_preserved', 'basis_unit_id','additional_basis_unit_ids'], additionalProperties: false } } }, required: ['explanation_preserved','explanation_diagnostic','atoms'], additionalProperties: false };
   const body = JSON.stringify({ model, store: false, max_output_tokens: limit, reasoning: modelReasoning(model), instructions: sourceDecisionInstructions(decisionMode), input: JSON.stringify({ decision_mode: decisionMode, original_claim: claim, atoms: atoms.map(a => ({ atom_id: a.id, assertion: a.text, proposed_relation:a.relation, cited_unit_ids: units.filter(u => a.evidence_ids.includes(u.evidence_id)).map(u => u.unit_id) })), source_units: units, explanation_evidence:explanationEvidence(evidence), draft_explanation:{summary_en:assessment.summary_en,summary_ar:assessment.summary_ar} }), text: { format: { type: 'json_schema', name: 'positive_entailment_units', strict: true, schema } } });
   const reservationId = reserveSpend(model, body, limit); calls++; inFlight++;
@@ -108,8 +106,7 @@ export class ProviderFailure extends Error {
 export async function reviewQualifiedExplanation(claim:string,assessment:SemanticAssessment,evidence:EvidenceItem[]) {
   const model=primaryModel()==='gpt-5.6-luna'?'gpt-5.6-terra':primaryModel(),limit=outputLimit(model,1000,2500);
   if(!providerReady())throw new ProviderFailure('PROVIDER_UNAVAILABLE',model,null);
-  const cap=Math.min(1000,Math.max(0,Number(process.env.ISNADLENS_MAX_CALLS??20)));
-  if(!Number.isFinite(cap)||calls>=cap||inFlight>=2)throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP',model,null);
+  if(testCallLimitReached(calls)||inFlight>=2)throw new ProviderFailure('SPEND_OR_CONCURRENCY_STOP',model,null);
   const ids=new Set(assessment.atomic_claims.filter(a=>a.material).flatMap(a=>a.evidence_ids));
   const cards=evidence.filter(e=>ids.has(e.evidence_id)),units=buildSourceUnits(cards);
   if(!units.length||claim.length>1200||units.reduce((n,u)=>n+u.text.length,0)>48000)throw new ProviderFailure('PACKET_LIMIT',model,null);
@@ -145,8 +142,7 @@ export function structuredOutputSchema(): Record<string, unknown> {
 }
 export async function assessClaim(claim: string, inputLanguage: ClaimLanguage, evidence: EvidenceItem[], modelOverride?: AppModel, feedback?: {previous_summary_en:string;previous_summary_ar:string;review:EntailmentReview;original_diagnostic?:EntailmentReview['explanation_diagnostic']}): Promise<{ assessment: SemanticAssessment; model: string; usage: { input_tokens: number; output_tokens: number; estimated_cost_usd: number; reservation_id: string } | null }> {
   if (!providerReady()) throw new Error('PROVIDER_UNAVAILABLE');
-  const cap = Math.min(1000, Math.max(0, Number(process.env.ISNADLENS_MAX_CALLS ?? 20)));
-  if (!Number.isFinite(cap) || calls >= cap || inFlight >= 2) throw new Error('SPEND_OR_CONCURRENCY_STOP');
+  if (testCallLimitReached(calls) || inFlight >= 2) throw new Error('SPEND_OR_CONCURRENCY_STOP');
   const model = modelOverride ?? primaryModel();
   if (!['gpt-5.4-mini', 'gpt-5.4', 'gpt-5.6-luna', 'gpt-5.6-terra'].includes(model)) throw new Error('MODEL_NOT_ALLOWLISTED');
   const limit = outputLimit(model, 3500, 8000);

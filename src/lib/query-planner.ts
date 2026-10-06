@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { primaryModel, modelReasoning, outputLimit } from './model-config';
 import { providerReady } from './provider';
-import { reserveSpend, settleSpend } from './budget';
+import { reserveSpend, settleSpend, testCallLimitReached } from './budget';
 import { scopeGate } from './policy';
 import type { VerificationRecord } from './contracts';
 
@@ -47,8 +47,7 @@ export async function planClaimQueries({ claim, inputLanguage, admittedTextual =
   if (typeof claim !== 'string' || !['ar', 'en'].includes(inputLanguage) || claim.length > 1200) throw new QueryPlannerFailure('QUERY_PLAN_INPUT_INVALID');
   const blocked = scopeGate(claim, admittedTextual); if (blocked) throw new QueryPlannerFailure(blocked);
   if (!providerReady()) throw new QueryPlannerFailure('PROVIDER_UNAVAILABLE');
-  const cap = Math.min(1000, Math.max(0, Number(process.env.ISNADLENS_MAX_CALLS ?? 20)));
-  if (!Number.isFinite(cap) || calls >= cap || inFlight >= 2) throw new QueryPlannerFailure('QUERY_PLAN_CALL_OR_CONCURRENCY_STOP');
+  if (testCallLimitReached(calls) || inFlight >= 2) throw new QueryPlannerFailure('QUERY_PLAN_CALL_OR_CONCURRENCY_STOP');
   const model = primaryModel();
   const limit = outputLimit(model, 900, 2400);
   const body = JSON.stringify({ model, reasoning: modelReasoning(model), store: false, max_output_tokens: limit,

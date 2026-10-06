@@ -3,7 +3,7 @@ import { closeWordingRepair, missingContentCopy } from './clarification';
 import { primaryModel, modelReasoning, outputLimit, type AppModel } from './model-config';
 import { CLAIM_LANGUAGES, type ClaimLanguage, type ClaimInputSelection } from './claim-language';
 import { inputValidityGate } from './policy';
-import { reserveSpend, settleSpend } from './budget';
+import { reserveSpend, settleSpend, testCallLimitReached } from './budget';
 import { providerReady } from './provider';
 import { validateQueryTerms } from './query-planner';
 import { verifyClaim, verifyClaimWithRecovery, sealRecord, checkExplicitCitation } from './verification';
@@ -46,8 +46,7 @@ export function intakeScriptMatches(claim: string, language: ClaimLanguage): boo
 async function routeOnce(claim: string, requested: ClaimInputSelection, model: AppModel, focus: VerificationFocus = 'main'): Promise<Intake> {
   const blocked = inputValidityGate(claim); if (blocked) throw new IntakeFailure(blocked);
   if (!providerReady()) throw new IntakeFailure('PROVIDER_UNAVAILABLE');
-  const cap = Math.min(1000, Math.max(0, Number(process.env.ISNADLENS_MAX_CALLS ?? 20)));
-  if (!Number.isFinite(cap) || calls >= cap || inFlight >= 2) throw new IntakeFailure('INTAKE_CALL_OR_CONCURRENCY_STOP');
+  if (testCallLimitReached(calls) || inFlight >= 2) throw new IntakeFailure('INTAKE_CALL_OR_CONCURRENCY_STOP');
   const schema = { type: 'object', properties: { referenced_content_missing:{type:'boolean'}, clarification_proposal:{anyOf:[{type:'string'},{type:'null'}]}, scope_confidence:{type:'string',enum:['high','medium','low']},clarification_en:{anyOf:[{type:'string'},{type:'null'}]},clarification_ar:{anyOf:[{type:'string'},{type:'null'}]}, detected_language: { anyOf: [{ type: 'string', enum: [...CLAIM_LANGUAGES] }, { type: 'null' }] }, confidence: { type: 'string', enum: ['high', 'medium', 'low'] }, scope_category: { type: 'string', enum: ['textual', 'general', 'personal', 'sensitive', 'injection', 'unsupported', 'clarification'] }, english_gloss: { type: 'string' }, arabic_terms: { type: 'array', items: { type: 'string' } }, english_terms: { type: 'array', items: { type: 'string' } } }, required: ['referenced_content_missing','clarification_proposal','scope_confidence','clarification_en','clarification_ar','detected_language', 'confidence', 'scope_category', 'english_gloss', 'arabic_terms', 'english_terms'], additionalProperties: false };
   if (focus === 'pilgrimage') {
     Object.assign(schema.properties, {pilgrimage_topic:{type:'string',enum:['pilgrimage','other','unclear']}});

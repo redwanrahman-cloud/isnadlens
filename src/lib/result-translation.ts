@@ -3,7 +3,7 @@ import { primaryModel, modelReasoning } from './model-config';
 import { recordSchema } from './contracts';
 import { verifySeal } from './verification';
 import { providerReady } from './provider';
-import { reserveSpend, settleSpend } from './budget';
+import { reserveSpend, settleSpend, testCallLimitReached } from './budget';
 
 export const resultTranslationLanguageSchema = z.enum(['bn', 'hi', 'ur', 'id', 'es', 'fr', 'de']);
 export type ResultTranslationLanguage = z.infer<typeof resultTranslationLanguageSchema>;
@@ -67,8 +67,7 @@ export async function translateResultExplanation(record: unknown, targetLanguage
   const source = sourceResult.data;
   if (source.summary.length + source.limitations.reduce((sum, text) => sum + text.length, 0) > 8000) throw new Error('TRANSLATION_INPUT_LIMIT');
   if (!providerReady()) throw new Error('PROVIDER_UNAVAILABLE');
-  const callCap = Math.min(1000, Math.max(0, Number(process.env.ISNADLENS_MAX_CALLS ?? 20)));
-  if (!Number.isFinite(callCap) || calls >= callCap) throw new Error('TRANSLATION_CALL_LIMIT');
+  if (testCallLimitReached(calls)) throw new Error('TRANSLATION_CALL_LIMIT');
   if (inFlight >= 2) throw new Error('TRANSLATION_CONCURRENCY_STOP');
   const model = primaryModel();
   const body = JSON.stringify({
