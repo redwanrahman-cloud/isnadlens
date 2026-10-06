@@ -4,12 +4,12 @@ An evidence assistant for Islamic questions in nine languages. Ask in your own w
 
 ## Review the working product
 
-Use the [product walkthrough](docs/REVIEWER-GUIDE.md). Current preview: http://127.0.0.1:3100. A hosted competition URL will be added after deployment.
+Open the [live application](https://isnadlens.alfarrajpolyclinic.com) and the [product walkthrough](docs/REVIEWER-GUIDE.md). The [Arabic submission/testing report](docs/submission-ar/IsnadLens-Arabic-Submission-and-Testing.pdf) documents the project, latest benchmark, development history and measured usage-cost estimates.
 
 - `/` — verification, source evidence, published passage translations, read-aloud, reviewed voice/image inputs and optional recent checks.
 - `/pilgrimage` — focused Umrah/Hajj source questions, topic shortcuts and manual Tawaf/Sa’i progress.
-- `/tools` — prayer calculations and countdown, saved locations, Gregorian/Hijri calendars/conversion and Qibla bearing.
-- `/evaluation/latest` — the provided latest verification results.
+- `/tools` — prayer calculations and countdown, saved locations and Gregorian/Hijri calendars/conversion. The Qibla interface has been removed.
+- `/evaluation/latest` — historical evaluation dashboard. Use the round-seven report below for the most recent complete benchmark.
 
 Reviewers use the working product and inspect the results we provide. No development-suite reruns or reproduction of historical failures is required.
 
@@ -17,9 +17,11 @@ The emerald/ivory workspace presents the assessed explanation separately from or
 
 ## Provided results
 
-Latest verification benchmark: **over 95% success — 96.7% satisfactory responses** in the tested sample (29/30), including 26/27 religious questions and 3/3 boundary requests. Zero incorrect decisive answers, inadequate decisive proofs or badge/explanation mismatches were found in this set. One context-related withholding remains in the denominator. [Recorded results](docs/RELEASE30-ROUND5.md).
+Latest complete verification benchmark: **29/30 satisfactory responses (96.7%)** in the tested sample, including 23/24 religious questions and 6/6 boundary requests. No incorrect decisive conclusion was found in this sample. One source-grounded qualified answer did not meet the frozen expectation and remains in the denominator. [Round-seven results and limits](docs/VERIFICATION-ROUND7-MIXED-2026-10-06.md).
 
-Current application checks: **448 tests across 38 files**, TypeScript and production build passed. Desktop/mobile-width checks passed starters in all nine languages, explicit saved-check persistence, receipt download, reload, deletion/clearing and reviewed text/voice/image handoffs without automatic verification. [Journey evidence](artifacts/input-journeys-2026-10-05.json). Four live image-reader controls passed: English, Arabic, blank and embedded-instruction screenshots. [Image evidence](artifacts/image-input-checks-2026-10-05.json).
+Development coverage: **425 distinct normalized question texts across 12 completed major live sets**. This conservative count excludes targeted reruns and smaller probes. Earlier versions and datasets are not pooled into a current-version accuracy estimate. [Audited inputs and hashes](docs/submission-ar/testing-volume-audit.json). A separate offline lab passed 2,924 replay/integrity checks around 150 historical records; these are not additional live religious answers.
+
+Latest recorded full offline regression: **542 tests across 51 files**, with TypeScript passed after the tawaf retrieval repair. [Hosted smoke test and targeted repair](docs/HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md). The later favicon production build passed as recorded in the [deployment log](docs/DEPLOYMENT-PLAN-2026-10-06.md). Earlier desktop/mobile and image checks remain available as historical evidence: [input journeys](artifacts/input-journeys-2026-10-05.json), [image controls](artifacts/image-input-checks-2026-10-05.json). They do not certify every physical device or every current hosted media interaction.
 
 [Current results packet](artifacts/reviewer-evidence-index.json) is the compact machine-readable index. UI/microphone mocks and feature controls are disclosed separately from the semantic benchmark. These are observed results, not general accuracy, physical-device certification or independent scholarly approval. Later convenience additions do not change the frozen benchmark score.
 
@@ -52,7 +54,7 @@ Source acquisitions must match the documented pins and notices. Changed publishe
 
 Developers can run `npm test`, `npm run typecheck` and `npm run build`. `scripts/check-input-journeys.mjs` uses installed Chrome, mocked providers/microphone and a public trimmed UI fixture; it makes no paid calls and creates its own synthetic image. Private user images, audio and development captures remain excluded from Git.
 
-Implementation began during the authorized competition window; [pre-challenge disclosure](PRE_CHALLENGE_DISCLOSURE.md). Git commits and the development archive preserve engineering provenance. Current work is a local prototype; evening visual design, physical-device checks, hosting controls, deployment, presentation/video and final submission remain pending.
+Implementation began during the authorized competition window; [pre-challenge disclosure](PRE_CHALLENGE_DISCLOSURE.md). Git commits and the development archive preserve engineering provenance. The application is deployed on AWS Lightsail behind HTTPS and Cloudflare. Broader physical-device testing, independent scholarly review, the final video and the portal submission remain separate completion items. Publishing this documentation does not constitute a competition submission.
 
 ### PDF and recorded audio runtime
 

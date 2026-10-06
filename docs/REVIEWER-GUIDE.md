@@ -2,23 +2,23 @@
 
 Review the working product. There is no requirement to run the development suites or reproduce earlier failures.
 
-Current preview: http://127.0.0.1:3100 (local prototype). A hosted competition URL will be added after deployment. Choose your display language from the selector; nine languages are available.
+Live application: https://isnadlens.alfarrajpolyclinic.com. Choose your display language from the compact selector; nine languages are available, with Arabic and English the immediate presentation focus. Read the [Arabic project and testing report](submission-ar/IsnadLens-Arabic-Submission-and-Testing.pdf).
 
 ## Main verification
 
 1. Open the main workbench. A clearly labelled previously checked example shows the evidence report immediately; it is not an answer to a newly typed question. Choose a starter question or type an Islamic source question in your own words, such as “Does trusting Allah mean I should stop planning and taking practical steps?”
-2. Leave automatic language and Quran/Hadith selection enabled, or select the source you want to examine.
+2. The input language follows the selected display language by default. Change the small language control in the composer if needed. Leave Quran/Hadith selection automatic, or choose the source scope.
 3. Press **Examine the evidence**.
 4. Read the answer and its evidence. Each passage has its source reference, original wording and attribution. Published passage translations appear separately. **Listen** reads the explanation or passage aloud.
 5. The visible **Evidence map** connects the question, retrieved sources, available context and actual result. **Create share card** previews an explicitly labelled excerpt, downloads a PNG or copies text.
 6. **Download evidence receipt** saves the displayed question, answer and sources. **Save this check on this device** keeps a historical receipt and the question in this browser.
 
-**365 distinct questions across 10 documented development evaluation sets, plus targeted reruns and offline/application checks. Latest frozen benchmark: 29/30 satisfactory responses (96.7%).** The 30-question final run is one part of the development history. Earlier versions and different datasets are counted as coverage, not pooled into a current-version accuracy claim. The product is an evidence assistant, not personal scholarly certification.
+**425 distinct normalized question texts across 12 completed major live evaluation sets, plus separately recorded targeted reruns and offline/application checks. Latest complete frozen benchmark: 29/30 satisfactory responses (96.7%).** Round seven includes 23/24 satisfactory religious answers and 6/6 correct boundary responses. Earlier versions and different datasets are coverage, not pooled current-version accuracy. [Round-seven report](VERIFICATION-ROUND7-MIXED-2026-10-06.md), [count audit](submission-ar/testing-volume-audit.json). The product is an evidence assistant, not personal scholarly certification.
 
 ## Voice and image input
 
-- Voice: choose the **Voice** tab, record a short question, stop, press **Transcribe**, review/edit the words, then **Use this text**.
-- Image: choose the **Image** tab, then **Choose an image**. Select or paste a screenshot or photographed quote, press **Read image**, select and edit the extracted claim, then **Use this claim**.
+- Voice: tap the microphone inside the typing box, record a short question and stop. Review/edit the transcribed words before submitting.
+- Image: use the **plus** menu to choose an image or take a photo, where camera access is available. Review the extracted text before verification.
 - Both methods place reviewed text in the claim box. Press **Examine the evidence** when ready. Choosing a file or recording does not automatically verify it.
 
 Text, PNG/JPEG/WebP images and short recordings are supported. Tap Voice to record, then Stop to place the transcription in the editable question. Tap Listen for automatic speech; Quran Arabic has a separate full-verse recitation control. Download evidence receipt produces a branded PDF. The free Google reader can pause at quota; typing remains available. Reading a screenshot extracts its claim rather than proving the photograph's authenticity.
@@ -33,12 +33,12 @@ Open `/pilgrimage`. Select an Umrah or Hajj topic or a starter question, then ex
 
 ## Daily tools
 
-Open `/tools`. Choose a city or your coordinates, check the calculation method and request prayer times. The page shows the location timezone and next calculated prayer countdown. Save a location for reuse if desired. Qibla gives a bearing from true north. Gregorian/Hijri conversion and the month calendar are also available.
+Open `/tools`. Choose a city or your coordinates, check the calculation method and request prayer times. The page shows the location timezone and next calculated prayer countdown. Save a location for reuse if desired. Gregorian/Hijri conversion and the month calendar are also available. The Qibla interface has been removed.
 
 ## Supporting evidence
 
-The app's `/evaluation/latest` page shows the latest provided benchmark. [Current results packet](../artifacts/reviewer-evidence-index.json). Reviewers can inspect these results and use the working product; no historical test reruns are required.
+The app's `/evaluation/latest` dashboard retains earlier evaluation history. The [round-seven report](VERIFICATION-ROUND7-MIXED-2026-10-06.md) and [current results packet](../artifacts/reviewer-evidence-index.json) identify the latest complete benchmark. Reviewers can inspect these results and use the working product; no historical test reruns are required.
 
-The current interface retains your selected display language across the verification workspace, companion, daily tools and reloads. The saved landing example includes separate branded PDF receipt and PNG share exports. Its exports identify the historical abridged example. Attached audio icons provide explanation reading and separately recorded Quran recitation. Current UI audit: `artifacts/site-polish-2026-10-05.json`; automated suite: 459 passing checks across 40 files. These interface checks do not change the reported semantic benchmark. Predefined journey questions outside Arabic remain explicitly labelled English; navigation and counter controls support all nine display languages.
+The interface retains your selected display language across the verification workspace, companion, daily tools and reloads. The landing example includes branded PDF receipt and PNG share exports, labelled as a curated illustration. Attached audio controls provide explanation reading and separately recorded Quran recitation. Historical UI audit: `artifacts/site-polish-2026-10-05.json`. Latest recorded full offline regression: 542 passing checks across 51 files after the tawaf repair. These checks do not change the frozen semantic benchmark. Predefined journey questions outside Arabic remain explicitly labelled English; navigation and counter controls support all nine display languages.
 
 The landing example is now a curated source-based illustration answering the displayed planning question with No. Question, explanation, audio, share card and PDF use the selected language. The stored earlier assessment remains unchanged as evidence provenance. Automated accessibility results: `artifacts/accessibility-audit-2026-10-05.json` (12 tested views, zero detected WCAG violations; not a complete UX/content review). Reviewed screenshot regression tests are in `qa/`; run the Playwright test configuration without updating snapshots to detect unintended visual changes. The original semantic benchmark remains unchanged.

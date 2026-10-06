@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-05",
+  "as_of": "2026-10-06",
   "project": "IsnadLens",
   "review_scope": "Use the working product and inspect the provided current results. Historical failures and developer reruns are not required.",
   "product_walkthrough": "docs/REVIEWER-GUIDE.md",
@@ -14,30 +14,32 @@
     "satisfactory": 29,
     "total": 30,
     "sample_percentage": 96.7,
-    "presentation_headline": "365 distinct questions across10 documented development evaluation sets; latest frozen benchmark29/30 satisfactory (96.7%).",
-    "religious_satisfactory": 26,
-    "religious_total": 27,
-    "correct_boundary_responses": 3,
+    "presentation_headline": "425 distinct normalized question texts across 12 major live evaluation sets; latest complete frozen benchmark 29/30 satisfactory (96.7%).",
+    "religious_satisfactory": 23,
+    "religious_total": 24,
+    "correct_boundary_responses": 6,
     "incorrect_decisive_found": 0,
     "badge_mismatches_found": 0,
     "retained_current_withhold": 1,
-    "report": "docs/RELEASE30-ROUND5.md",
+    "report": "docs/VERIFICATION-ROUND7-MIXED-2026-10-06.md",
     "evidence": [
-      "artifacts/release30-round5-principal-review-2026-10-05.json",
-      "artifacts/release30-round5-mechanical-audit-2026-10-05.json"
+      "artifacts/release30-round7-first-pass-2026-10-06.json",
+      "artifacts/release30-round7-principal-review-2026-10-06.json"
     ],
-    "limit": "Reviewed sample result, not general accuracy or independent scholarly certification."
+    "limit": "Reviewed sample result, not general accuracy or independent scholarly certification.",
+    "boundary_total": 6,
+    "unmet_expectation_note": "N09 returned a source-grounded qualified answer about exact opening wording. Frozen expectation retained."
   },
   "current_application_checks": {
-    "tests_passed": 459,
-    "test_files": 40,
+    "tests_passed": 542,
+    "test_files": 51,
     "typecheck": "passed",
     "production_build": "passed",
     "desktop_mobile_journeys": "artifacts/input-journeys-2026-10-05.json",
     "image_input": "artifacts/image-input-checks-2026-10-05.json",
     "daily_companion_tools": "artifacts/feature-window-browser-2026-10-05.json",
     "paid_calls_for_current_convenience_increment": 0,
-    "limit": "Mocked UI journeys and live feature controls are separate from semantic accuracy.",
+    "limit": "Recorded checks at their stated revisions, not a fresh run on every documentation commit. Mocked UI and live feature controls are separate from semantic accuracy.",
     "dashboard_design": "artifacts/dashboard-design-2026-10-05.json",
     "audio_interactions": "artifacts/media-polish-2026-10-05.json",
     "pdf_receipts": "artifacts/receipt-pdf-2026-10-05.json",
@@ -48,7 +50,9 @@
     },
     "site_polish": "artifacts/site-polish-2026-10-05.json",
     "accessibility": "artifacts/accessibility-audit-2026-10-05.json",
-    "visual_regression": "qa/playwright.config.mjs (4 reviewed sample baselines)"
+    "visual_regression": "qa/playwright.config.mjs (4 reviewed sample baselines)",
+    "full_suite_evidence": "docs/HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md",
+    "production_build_evidence": "docs/DEPLOYMENT-PLAN-2026-10-06.md"
   },
   "working_features": [
     "Nine input/display languages",
@@ -60,16 +64,17 @@
     "Manual progress counters",
     "Prayer times and countdown",
     "Gregorian/Hijri tools",
-    "Qibla bearing",
     "Responsive evidence workspace with visible evidence map and PNG share-card export"
   ],
-  "release_state": "Working local prototype; hosted URL and final submission pending",
+  "release_state": "Deployed on AWS Lightsail with HTTPS; video, public judge repository access and final portal submission remain separate checks",
   "development_testing_coverage": {
-    "documented_distinct_question_texts": 365,
-    "major_evaluation_sets": 10,
+    "documented_distinct_question_texts": 425,
+    "major_evaluation_sets": 12,
     "count_is_lower_bound": true,
     "targeted_reruns_and_offline_checks": "Additional; not counted in this conservative total",
     "current_version_accuracy_claim": false,
-    "artifact": "artifacts/cumulative-evaluation-history-2026-10-05.json"
-  }
+    "artifact": "docs/submission-ar/testing-volume-audit.json"
+  },
+  "live_url": "https://isnadlens.alfarrajpolyclinic.com",
+  "evaluation_dashboard_note": "The deployed /evaluation/latest dashboard retains earlier history; this index and round-seven report identify the latest complete benchmark."
 }
