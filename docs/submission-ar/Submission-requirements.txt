@@ -1,0 +1,24 @@
+IsnadLens — verified submission requirements, 6 October 2026
+
+The current portal requires a name, description, track, one presentation file
+(PDF/PPT/PPTX, up to 10 MB), a video URL (up to two minutes), a public GitHub URL
+and a working live-demo URL. Upload IsnadLens-Arabic-Presentation.pdf; the PPTX
+is an editable alternative. The nine-page report is supporting evidence.
+
+The initial review of submitted files/product precedes selection of up to
+20 finalists. The later Zoom presentation uses the submitted product/deck.
+It is not necessary to rehearse the finalist interview to complete this upload,
+but the presentation file is required at submission.
+
+The organizer's 6 October, 16:09 Riyadh email confirms that submissions can
+be edited repeatedly until 23:59 Riyadh that day. It recommends submitting early
+and updating as needed; this does not waive completeness requirements.
+
+Portal-project-description-ar.txt contains the prepared Arabic project summary.
+README.md, docs/REVIEWER-GUIDE.md and docs/source-rights/ provide operating,
+reviewing and source/licence documentation. Preparation is not submission;
+the video, public access, reviewer setup and portal receipt must be verified.
+
+Official form: https://islamicaich.org/dashboard/submission/11/create
+Official participant guide:
+https://islamicaich.org/files/Hackathon/i2xgA3mxVhrbRe0ReLlA86kTDbFZ9QQ9eb856dq8.pdf
