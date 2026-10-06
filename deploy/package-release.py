@@ -9,6 +9,9 @@ for page in (repo/'src').rglob('*.tsx'):
     for relative in re.findall(r"from\s+['\"]([^'\"]*artifacts/[^'\"]+\.json)['\"]",page.read_text(encoding='utf-8')):
         resolved=(page.parent/relative).resolve()
         assert resolved.parent == (repo/'artifacts').resolve()
+        # Docker uses an explicit public-report allowlist; packaging alone is insufficient.
+        allowed = '!'+resolved.relative_to(repo).as_posix()
+        assert allowed in (repo/'.dockerignore').read_text().splitlines(), f'Missing Docker allowance: {allowed}'
         names.add(resolved.relative_to(repo).as_posix())
 for item in audit['source_files']:
     p=repo/item['path']

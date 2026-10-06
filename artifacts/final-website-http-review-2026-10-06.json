@@ -1,0 +1,130 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/"
+  },
+  {
+    "path": "/method",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/method"
+  },
+  {
+    "path": "/sources",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/sources"
+  },
+  {
+    "path": "/evaluation",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/evaluation"
+  },
+  {
+    "path": "/evaluation/holdout",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/evaluation/holdout"
+  },
+  {
+    "path": "/evaluation/latest",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/evaluation/latest"
+  },
+  {
+    "path": "/pilgrimage",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/pilgrimage"
+  },
+  {
+    "path": "/tools",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/tools"
+  },
+  {
+    "path": "/design",
+    "status": 200,
+    "contentType": [
+      "text/html; charset=utf-8"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/"
+  },
+  {
+    "path": "/api/health",
+    "status": 200,
+    "contentType": [
+      "application/json"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/api/health"
+  },
+  {
+    "path": "/api/speech",
+    "status": 200,
+    "contentType": [
+      "application/json"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/api/speech"
+  },
+  {
+    "path": "/api/transcribe",
+    "status": 200,
+    "contentType": [
+      "application/json"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/api/transcribe"
+  },
+  {
+    "path": "/api/image-input",
+    "status": 200,
+    "contentType": [
+      "application/json"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/api/image-input"
+  },
+  {
+    "path": "/favicon.ico",
+    "status": 200,
+    "contentType": [
+      "image/x-icon"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/favicon.ico"
+  },
+  {
+    "path": "/icon.svg",
+    "status": 200,
+    "contentType": [
+      "image/svg+xml"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/icon.svg"
+  },
+  {
+    "path": "/apple-icon.png",
+    "status": 200,
+    "contentType": [
+      "image/png"
+    ],
+    "finalUrl": "https://isnadlens.alfarrajpolyclinic.com/apple-icon.png"
+  }
+]

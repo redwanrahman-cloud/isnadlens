@@ -2,7 +2,7 @@
 
 ## Current status
 
-**6 October activation update:** the user subsequently approved enabling live services under the existing 60 SAR development cap. OpenAI and unpaid-project Google media are now enabled. The current live image is `isnadlens:20261006-favicon` (interface and icon follow-ups below). Four hosted verification smoke cases produced three supported answers and one safe abstention; the tawaf retrieval miss was repaired and its single targeted retest passed. Read-aloud/transcription passed with a synthetic fixture. Qibla UI was removed at the user's request. Current commitment: 56.7618646875 SAR; judging reserve untouched. Arabic and English are the webinar focus. See [the complete smoke/repair record](HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md).
+**6 October activation update:** the user subsequently approved enabling live services under the existing 60 SAR development cap. OpenAI and unpaid-project Google media are now enabled. The current live image is `isnadlens:20261006-content-review`; see [the final website review](FINAL-WEBSITE-REVIEW-2026-10-06.md) for the documentation update and qualification. Earlier interface and icon releases are recorded below. Four hosted verification smoke cases produced three supported answers and one safe abstention; the tawaf retrieval miss was repaired and its single targeted retest passed. Read-aloud/transcription passed with a synthetic fixture. Qibla UI was removed at the user's request. Current commitment: 56.7618646875 SAR; judging reserve untouched. Arabic and English are the webinar focus. See [the complete smoke/repair record](HOSTED-SMOKE-AND-TAWAF-REPAIR-2026-10-06.md).
 
 ## Favicon follow-up
 
